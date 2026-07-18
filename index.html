@@ -1,0 +1,2125 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GDD — Batalhas Poderosas</title>
+  <style>
+    /* ───────────────────────────────────────────
+       RESET & BASE
+    ─────────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:           #0d0f1a;
+      --bg2:          #13162a;
+      --bg3:          #1a1e35;
+      --border:       #2a2f52;
+      --accent:       #f0a500;
+      --accent2:      #e05c00;
+      --accent3:      #7c3aed;
+      --red:          #dc2626;
+      --green:        #16a34a;
+      --blue:         #2563eb;
+      --cyan:         #0891b2;
+      --text:         #e8eaf6;
+      --text-muted:   #8892b0;
+      --text-dim:     #5a637a;
+      --radius:       10px;
+      --shadow:       0 4px 32px rgba(0,0,0,0.5);
+      --glow-gold:    0 0 18px rgba(240,165,0,0.35);
+      --glow-purple:  0 0 18px rgba(124,58,237,0.35);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Segoe UI', system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      min-height: 100vh;
+    }
+
+    /* ───────────────────────────────────────────
+       SIDEBAR NAV
+    ─────────────────────────────────────────── */
+    #sidebar {
+      position: fixed;
+      top: 0; left: 0;
+      height: 100vh;
+      width: 260px;
+      background: var(--bg2);
+      border-right: 1px solid var(--border);
+      overflow-y: auto;
+      z-index: 100;
+      transition: transform .3s;
+      display: flex;
+      flex-direction: column;
+    }
+
+    #sidebar-header {
+      padding: 24px 20px 16px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    #sidebar-header .logo-text {
+      font-size: 1.1rem;
+      font-weight: 800;
+      letter-spacing: .05em;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    #sidebar-header .logo-sub {
+      font-size: .72rem;
+      color: var(--text-muted);
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      margin-top: 2px;
+    }
+
+    #sidebar nav { padding: 12px 0 24px; flex: 1; }
+
+    #sidebar nav a {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 9px 20px;
+      font-size: .85rem;
+      color: var(--text-muted);
+      text-decoration: none;
+      border-left: 3px solid transparent;
+      transition: all .2s;
+      white-space: nowrap;
+    }
+
+    #sidebar nav a .nav-icon { font-size: 1rem; min-width: 20px; text-align: center; }
+    #sidebar nav a .nav-num  { font-size: .7rem; opacity: .5; min-width: 18px; }
+
+    #sidebar nav a:hover,
+    #sidebar nav a.active {
+      color: var(--accent);
+      border-left-color: var(--accent);
+      background: rgba(240,165,0,0.07);
+    }
+
+    #sidebar-footer {
+      padding: 14px 20px;
+      border-top: 1px solid var(--border);
+      font-size: .72rem;
+      color: var(--text-dim);
+    }
+
+    #hamburger {
+      display: none;
+      position: fixed;
+      top: 14px; left: 14px;
+      z-index: 200;
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      width: 40px; height: 40px;
+      cursor: pointer;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.3rem;
+    }
+
+    /* ───────────────────────────────────────────
+       MAIN CONTENT
+    ─────────────────────────────────────────── */
+    #main {
+      margin-left: 260px;
+      min-height: 100vh;
+    }
+
+    /* ── HERO ── */
+    #hero {
+      background: linear-gradient(135deg, #0d0f1a 0%, #1a0a2e 40%, #0d1a0a 100%);
+      padding: 80px 60px 60px;
+      border-bottom: 1px solid var(--border);
+      position: relative;
+      overflow: hidden;
+    }
+
+    #hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 60% 50% at 80% 50%, rgba(240,165,0,0.08) 0%, transparent 70%),
+        radial-gradient(ellipse 40% 60% at 20% 80%, rgba(124,58,237,0.10) 0%, transparent 60%);
+      pointer-events: none;
+    }
+
+    #hero .badge {
+      display: inline-block;
+      background: rgba(240,165,0,0.12);
+      border: 1px solid rgba(240,165,0,0.35);
+      color: var(--accent);
+      font-size: .72rem;
+      font-weight: 700;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+      padding: 4px 14px;
+      border-radius: 999px;
+      margin-bottom: 20px;
+    }
+
+    #hero h1 {
+      font-size: clamp(2.2rem, 5vw, 3.8rem);
+      font-weight: 900;
+      letter-spacing: -.02em;
+      line-height: 1.1;
+      background: linear-gradient(135deg, #fff 0%, var(--accent) 60%, var(--accent2) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 12px;
+    }
+
+    #hero .subtitle {
+      font-size: 1.05rem;
+      color: var(--text-muted);
+      max-width: 600px;
+    }
+
+    #hero .meta {
+      display: flex;
+      gap: 24px;
+      margin-top: 28px;
+      flex-wrap: wrap;
+    }
+
+    #hero .meta-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: .8rem;
+      color: var(--text-dim);
+    }
+
+    #hero .meta-item span { color: var(--text-muted); }
+
+    /* ── SECTIONS ── */
+    #content { padding: 40px 60px 80px; }
+
+    .section {
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      margin-bottom: 28px;
+      overflow: hidden;
+      scroll-margin-top: 20px;
+    }
+
+    .section-header {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 18px 24px;
+      cursor: pointer;
+      user-select: none;
+      border-bottom: 1px solid transparent;
+      transition: background .2s;
+    }
+
+    .section-header:hover { background: rgba(255,255,255,0.03); }
+
+    .section-header.open { border-bottom-color: var(--border); }
+
+    .section-num {
+      font-size: .72rem;
+      font-weight: 700;
+      color: var(--text-dim);
+      background: var(--bg3);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 2px 8px;
+      min-width: 32px;
+      text-align: center;
+    }
+
+    .section-icon { font-size: 1.3rem; }
+
+    .section-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--text);
+      flex: 1;
+    }
+
+    .section-chevron {
+      font-size: .8rem;
+      color: var(--text-dim);
+      transition: transform .3s;
+    }
+
+    .section-chevron.open { transform: rotate(180deg); }
+
+    .section-body {
+      display: none;
+      padding: 24px;
+      gap: 20px;
+      flex-direction: column;
+    }
+
+    .section-body.open { display: flex; }
+
+    /* ── FIELD CARDS ── */
+    .field-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+      gap: 16px;
+    }
+
+    .field-card {
+      background: var(--bg3);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      transition: border-color .2s, box-shadow .2s;
+    }
+
+    .field-card:focus-within {
+      border-color: var(--accent);
+      box-shadow: var(--glow-gold);
+    }
+
+    .field-label {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: .78rem;
+      font-weight: 700;
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: .08em;
+    }
+
+    .field-label .dot {
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: var(--accent);
+      flex-shrink: 0;
+    }
+
+    .field-hint {
+      font-size: .72rem;
+      color: var(--text-dim);
+      font-style: italic;
+    }
+
+    textarea, input[type="text"] {
+      width: 100%;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 6px;
+      color: var(--text);
+      font-family: inherit;
+      font-size: .88rem;
+      line-height: 1.6;
+      padding: 10px 12px;
+      resize: vertical;
+      min-height: 80px;
+      transition: border-color .2s, background .2s;
+      outline: none;
+    }
+
+    input[type="text"] { min-height: unset; resize: none; }
+
+    textarea:focus, input[type="text"]:focus {
+      border-color: rgba(240,165,0,0.5);
+      background: rgba(240,165,0,0.04);
+    }
+
+    textarea::placeholder, input[type="text"]::placeholder {
+      color: var(--text-dim);
+      font-style: italic;
+    }
+
+    /* full-width field */
+    .field-card.full { grid-column: 1 / -1; }
+
+    /* ── STATUS TAGS ── */
+    .status-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 4px;
+    }
+
+    .tag {
+      font-size: .7rem;
+      font-weight: 700;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      padding: 3px 10px;
+      border-radius: 999px;
+      border: 1px solid;
+    }
+
+    .tag-gold   { color: var(--accent);  border-color: rgba(240,165,0,.4);  background: rgba(240,165,0,.08);  }
+    .tag-purple { color: #a78bfa;        border-color: rgba(124,58,237,.4); background: rgba(124,58,237,.08); }
+    .tag-red    { color: #f87171;        border-color: rgba(220,38,38,.4);  background: rgba(220,38,38,.08);  }
+    .tag-green  { color: #4ade80;        border-color: rgba(22,163,74,.4);  background: rgba(22,163,74,.08);  }
+    .tag-blue   { color: #60a5fa;        border-color: rgba(37,99,235,.4);  background: rgba(37,99,235,.08);  }
+    .tag-cyan   { color: #22d3ee;        border-color: rgba(8,145,178,.4);  background: rgba(8,145,178,.08);  }
+
+    /* ── DIVIDER ── */
+    .divider {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 4px 0;
+    }
+
+    /* ── INFO BOX ── */
+    .infobox {
+      background: rgba(240,165,0,0.06);
+      border: 1px solid rgba(240,165,0,0.25);
+      border-radius: 8px;
+      padding: 14px 18px;
+      font-size: .85rem;
+      color: var(--text-muted);
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+    }
+
+    .infobox .infobox-icon { font-size: 1.1rem; flex-shrink: 0; margin-top: 1px; }
+
+    .mystery-box {
+      background: rgba(124,58,237,0.06);
+      border: 1px solid rgba(124,58,237,0.25);
+      border-radius: 8px;
+      padding: 14px 18px;
+      display: flex;
+      gap: 12px;
+    }
+
+    /* ── TOOLBAR ── */
+    #toolbar {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(13,15,26,0.92);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      padding: 10px 60px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .toolbar-left {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 7px 14px;
+      border-radius: 7px;
+      font-size: .8rem;
+      font-weight: 600;
+      cursor: pointer;
+      border: 1px solid;
+      transition: all .2s;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      border-color: transparent;
+      color: #000;
+    }
+
+    .btn-primary:hover { filter: brightness(1.1); box-shadow: var(--glow-gold); }
+
+    .btn-ghost {
+      background: transparent;
+      border-color: var(--border);
+      color: var(--text-muted);
+    }
+
+    .btn-ghost:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+      background: rgba(240,165,0,0.07);
+    }
+
+    .btn-danger {
+      background: transparent;
+      border-color: rgba(220,38,38,.4);
+      color: #f87171;
+    }
+
+    .btn-danger:hover { background: rgba(220,38,38,.08); }
+
+    #version-display {
+      font-size: .78rem;
+      color: var(--text-dim);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    #version-display .v-badge {
+      background: var(--bg3);
+      border: 1px solid var(--border);
+      border-radius: 5px;
+      padding: 2px 8px;
+      color: var(--accent);
+      font-weight: 700;
+    }
+
+    /* ── SAVE TOAST ── */
+    #toast {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background: var(--bg3);
+      border: 1px solid var(--accent);
+      color: var(--accent);
+      padding: 12px 20px;
+      border-radius: 8px;
+      font-size: .85rem;
+      font-weight: 600;
+      box-shadow: var(--glow-gold), var(--shadow);
+      opacity: 0;
+      transform: translateY(10px);
+      transition: all .3s;
+      pointer-events: none;
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    #toast.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ── PROGRESS BAR ── */
+    #progress-bar {
+      position: fixed;
+      top: 0; left: 260px; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--accent), var(--accent2));
+      transform-origin: left;
+      transform: scaleX(0);
+      transition: transform .1s;
+      z-index: 200;
+    }
+
+    /* ── CHANGELOG ── */
+    .changelog-entry {
+      background: var(--bg3);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 14px 16px;
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+    }
+
+    .changelog-date {
+      font-size: .72rem;
+      color: var(--text-dim);
+      white-space: nowrap;
+      margin-top: 3px;
+      min-width: 90px;
+    }
+
+    .changelog-text { font-size: .85rem; color: var(--text-muted); }
+
+    /* ── SEARCH ── */
+    #search-wrap {
+      position: relative;
+    }
+
+    #search-input {
+      background: var(--bg3);
+      border: 1px solid var(--border);
+      border-radius: 7px;
+      color: var(--text);
+      font-size: .82rem;
+      padding: 7px 12px 7px 32px;
+      width: 200px;
+      outline: none;
+      transition: border-color .2s;
+      min-height: unset;
+      resize: none;
+    }
+
+    #search-input:focus { border-color: var(--accent); }
+
+    #search-wrap::before {
+      content: '🔍';
+      position: absolute;
+      left: 9px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: .75rem;
+      pointer-events: none;
+    }
+
+    .highlight-match { background: rgba(240,165,0,0.3); border-radius: 2px; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      #sidebar { transform: translateX(-100%); }
+      #sidebar.open { transform: translateX(0); }
+      #main { margin-left: 0; }
+      #progress-bar { left: 0; }
+      #hero { padding: 70px 24px 40px; }
+      #content { padding: 24px 20px 60px; }
+      #toolbar { padding: 10px 20px; }
+      #hamburger { display: flex; }
+      .field-grid { grid-template-columns: 1fr; }
+    }
+
+    /* ── SCROLL ── */
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: var(--bg); }
+    ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+    ::-webkit-scrollbar-thumb:hover { background: #3a405a; }
+
+    /* ── MODAL ── */
+    #modal-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,.7);
+      z-index: 500;
+      align-items: center;
+      justify-content: center;
+    }
+
+    #modal-overlay.open { display: flex; }
+
+    #modal {
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 30px;
+      max-width: 480px;
+      width: 90%;
+      box-shadow: var(--shadow);
+    }
+
+    #modal h3 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+      color: var(--text);
+    }
+
+    #modal p {
+      font-size: .88rem;
+      color: var(--text-muted);
+      margin-bottom: 20px;
+    }
+
+    #modal .modal-btns {
+      display: flex;
+      gap: 10px;
+      justify-content: flex-end;
+    }
+
+    /* Version input in modal */
+    #version-input {
+      background: var(--bg3);
+      border: 1px solid var(--border);
+      border-radius: 7px;
+      color: var(--text);
+      font-size: .9rem;
+      padding: 8px 12px;
+      width: 100%;
+      margin-bottom: 16px;
+      outline: none;
+      min-height: unset;
+    }
+
+    #version-input:focus { border-color: var(--accent); }
+  </style>
+  <script id="gdd-data" type="application/json">
+{}
+  </script>
+</head>
+<body>
+
+<!-- ─── HAMBURGER ─── -->
+<button id="hamburger" onclick="toggleSidebar()" aria-label="Menu">☰</button>
+
+<!-- ─── PROGRESS BAR ─── -->
+<div id="progress-bar"></div>
+
+<!-- ─── SIDEBAR ─── -->
+<nav id="sidebar">
+  <div id="sidebar-header">
+    <div class="logo-text">⚔️ Batalhas Poderosas</div>
+    <div class="logo-sub">Game Design Document</div>
+  </div>
+  <nav id="nav-links">
+    <a href="#s1"  class="nav-link"><span class="nav-num">01</span><span class="nav-icon">🌐</span>Visão Geral</a>
+    <a href="#s2"  class="nav-link"><span class="nav-num">02</span><span class="nav-icon">📜</span>Regras do Universo</a>
+    <a href="#s3"  class="nav-link"><span class="nav-num">03</span><span class="nav-icon">💡</span>Filosofia de Design</a>
+    <a href="#s4"  class="nav-link"><span class="nav-num">04</span><span class="nav-icon">📖</span>História & Lore</a>
+    <a href="#s5"  class="nav-link"><span class="nav-num">05</span><span class="nav-icon">🧑‍🦱</span>Personagens</a>
+    <a href="#s6"  class="nav-link"><span class="nav-num">06</span><span class="nav-icon">🌍</span>Mundos</a>
+    <a href="#s7"  class="nav-link"><span class="nav-num">07</span><span class="nav-icon">🎮</span>Gameplay</a>
+    <a href="#s8"  class="nav-link"><span class="nav-num">08</span><span class="nav-icon">⚔️</span>Equipamentos</a>
+    <a href="#s9"  class="nav-link"><span class="nav-num">09</span><span class="nav-icon">👹</span>Inimigos</a>
+    <a href="#s10" class="nav-link"><span class="nav-num">10</span><span class="nav-icon">🏰</span>Dungeons</a>
+    <a href="#s11" class="nav-link"><span class="nav-num">11</span><span class="nav-icon">🖥️</span>Interface (UI)</a>
+    <a href="#s12" class="nav-link"><span class="nav-num">12</span><span class="nav-icon">🎵</span>Áudio</a>
+    <a href="#s13" class="nav-link"><span class="nav-num">13</span><span class="nav-icon">🎨</span>Direção de Arte</a>
+    <a href="#s14" class="nav-link"><span class="nav-num">14</span><span class="nav-icon">⚙️</span>Estrutura Técnica</a>
+    <a href="#s15" class="nav-link"><span class="nav-num">15</span><span class="nav-icon">📋</span>Checklist</a>
+    <a href="#s16" class="nav-link"><span class="nav-num">16</span><span class="nav-icon">🗺️</span>Roadmap</a>
+    <a href="#s17" class="nav-link"><span class="nav-num">17</span><span class="nav-icon">❓</span>Pontos em Aberto</a>
+    <a href="#s18" class="nav-link"><span class="nav-num">18</span><span class="nav-icon">📝</span>Changelog</a>
+  </nav>
+  <div id="sidebar-footer">
+    Documento Vivo · Atualizado em<br>
+    <span id="last-saved-footer">—</span>
+  </div>
+</nav>
+
+<!-- ─── MAIN ─── -->
+<div id="main">
+
+  <!-- HERO -->
+  <header id="hero">
+    <div class="badge">📋 Game Design Document</div>
+    <h1>Batalhas Poderosas</h1>
+    <p class="subtitle">
+      Um jovem cavaleiro. Mundos desconhecidos. Um mistério maior do que qualquer guerra.
+    </p>
+    <div class="meta">
+      <div class="meta-item">🏷️ &nbsp;<span id="version-hero">v2.0</span></div>
+      <div class="meta-item">📅 &nbsp;<span id="date-hero">—</span></div>
+      <div class="meta-item">🎮 &nbsp;<span>Documento Vivo</span></div>
+      <div class="meta-item">🔒 &nbsp;<span>Confidencial</span></div>
+    </div>
+  </header>
+
+  <!-- TOOLBAR -->
+  <div id="toolbar">
+    <div class="toolbar-left">
+      <button class="btn btn-primary" onclick="saveAll()">💾 &nbsp;Salvar Local</button>
+      <button class="btn btn-primary" style="background: linear-gradient(135deg, #333, #000); color: #fff;" onclick="openGitHubModal()">☁️ &nbsp;Salvar no GitHub</button>
+      <button class="btn btn-ghost" onclick="expandAll()">📂 &nbsp;Expandir tudo</button>
+      <button class="btn btn-ghost" onclick="collapseAll()">📁 &nbsp;Recolher tudo</button>
+      <button class="btn btn-ghost" onclick="exportJSON()">📤 &nbsp;Exportar JSON</button>
+      <button class="btn btn-ghost" onclick="importJSON()">📥 &nbsp;Importar JSON</button>
+      <button class="btn btn-ghost" onclick="openVersionModal()">🔖 &nbsp;Versão</button>
+      <button class="btn btn-danger" onclick="confirmClear()">🗑️ &nbsp;Limpar tudo</button>
+    </div>
+    <div style="display:flex;align-items:center;gap:12px;">
+      <div id="search-wrap">
+        <input id="search-input" type="text" placeholder="Buscar…" oninput="searchDoc(this.value)" />
+      </div>
+      <div id="version-display">
+        Versão <span id="version-badge" class="v-badge">2.0</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTIONS -->
+  <main id="content">
+
+    <!-- ───────── 1. VISÃO GERAL ───────── -->
+    <div class="section" id="s1">
+      <div class="section-header open" onclick="toggleSection(this)">
+        <span class="section-num">01</span>
+        <span class="section-icon">🌐</span>
+        <span class="section-title">Visão Geral</span>
+        <span class="section-chevron open">▼</span>
+      </div>
+      <div class="section-body open">
+        <div class="status-row">
+          <span class="tag tag-gold">RPG de Ação</span>
+          <span class="tag tag-purple">Aventura 3D</span>
+          <span class="tag tag-blue">Roblox</span>
+          <span class="tag tag-green">Em Desenvolvimento</span>
+        </div>
+        <div class="field-grid">
+          <div class="field-card full">
+            <div class="field-label"><div class="dot"></div>Resumo do Jogo</div>
+            <div class="field-hint">Pitch rápido — o que é o jogo em 2–3 frases?</div>
+            <textarea id="f-resumo-rbx" placeholder="Ex: Batalhas Poderosas é um RPG...">Batalhas Poderosas é um Action RPG 3D desenvolvido no Roblox onde John, um jovem cavaleiro do Reino de Arkan, é lançado por um Rei Mago para além do mundo que conhece. Ele precisa explorar mundos hostis, interagir com NPCs únicos, dominar combates dinâmicos e evoluir seus equipamentos para descobrir o segredo dos portais e o caminho de volta para casa.</textarea>
+          </div>
+          <div class="field-card">
+            <div class="field-label"><div class="dot"></div>Objetivo Principal</div>
+            <div class="field-hint">O que o jogador busca ao longo do jogo?</div>
+            <textarea id="f-objetivo-rbx" placeholder="Anotações…">Explorar cenários em 3D ricos em detalhes, evoluir de cavaleiro iniciante a herói lendário através de progressão constante, descobrir quem é o Rei Mago e seu verdadeiro objetivo, e desbravar as masmorras de múltiplos mundos.</textarea>
+          </div>
+          <div class="field-card">
+            <div class="field-label"><div class="dot"></div>Público-Alvo</div>
+            <div class="field-hint">Faixa etária, perfil e referências de público.</div>
+            <textarea id="f-publico-rbx" placeholder="Anotações…">Jogadores do ecossistema Roblox (10 a 25 anos) que buscam RPGs de alta qualidade visual, mundos imersivos e sistemas de combate satisfatórios. Fãs de jogos como Vesteria e World // Zero.</textarea>
+          </div>
+          <div class="field-card">
+            <div class="field-label"><div class="dot"></div>Plataformas</div>
+            <div class="field-hint">PC, Mobile, Console?</div>
+            <textarea id="f-plataformas-rbx" placeholder="Anotações…">Ecossistema Roblox Completo:
+— PC / Mac (plataforma principal para jogabilidade de ação).
+— Mobile (adaptação de UI e inputs na tela).
+— Consoles (Xbox, PlayStation - suporte total a gamepad).</textarea>
+          </div>
+          <div class="field-card">
+            <div class="field-label"><div class="dot"></div>Gênero & Referências</div>
+            <div class="field-hint">Gênero e jogos de referência.</div>
+            <textarea id="f-genero-rbx" placeholder="Anotações…">Action RPG 3D / Aventura / Exploração.
+Referências: Zelda: Breath of the Wild (exploração e recompensas), World // Zero (estrutura e combate no Roblox).</textarea>
+          </div>
+          <div class="field-card">
+            <div class="field-label"><div class="dot"></div>Engine & Tecnologia</div>
+            <div class="field-hint">Qual engine será usada? Ferramentas de arte?</div>
+            <textarea id="f-engine-rbx" placeholder="Anotações…">Engine: Roblox Studio.
+Linguagem: Luau.
+Arte 3D: Blender (Low Poly de alta qualidade).
+Áudio e Efeitos: Roblox SoundService & TweenService.</textarea>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ───────── 2. REGRAS DO UNIVERSO ───────── -->
+    <div class="section" id="s2">
+      <div class="section-header" onclick="toggleSection(this)">
+        <span class="section-num">02</span>
+        <span class="section-icon">📜</span>
+        <span class="section-title">Regras do Universo (Constituição)</span>
+        <span class="section-chevron">▼</span>
+      </div>
+      <div class="section-body">
+        <div class="infobox">
+          <span class="infobox-icon">⚖️</span>
+          <div>Estas são as leis imutáveis de "Batalhas Poderosas". <b style="color:var(--accent)">Nenhuma mecânica ou decisão de design deve contradizê-las.</b></div>
+        </div>
+        <div class="field-grid">
+          <div class="field-card full">
+            <div class="field-label"><div class="dot"></div>Regras de Construção de Mundos</div>
+            <textarea id="f-regras-mundos-rbx" style="min-height:140px;">1. HOMEWORLD (Reino de Arkan) NUNCA possui monstros hostis em áreas normais.
+2. HOMEWORLD NUNCA possui magia visível; é um mundo puramente humano e medieval.
+3. Todo mundo (além de Homeworld) possui uma identidade visual, inimigos e regras físicas únicas.
+4. Todo mundo possui pelo menos UM Boss Principal.
+5. Todo mundo possui pelo menos UMA Dungeon principal.
+6. Todo mundo possui NPCs interativos, que agregam narrativa, comércio ou dicas.
+7. Todo portal mágico no jogo possui uma extrema importância narrativa.</textarea>
+          </div>
+          <div class="field-card full">
+            <div class="field-label"><div class="dot"></div>Regras de Progressão e Equipamentos</div>
+            <textarea id="f-regras-prog-rbx" style="min-height:120px;">1. Todo mundo possui equipamentos exclusivos forjados com materiais locais.
+2. Os melhores e mais poderosos equipamentos do jogo são conquistados APENAS explorando o mundo e derrotando inimigos, nunca apenas comprando.
+3. O jogador nunca pode perder itens conquistados definitivamente; a progressão deve respeitar o tempo investido.
+4. Novos equipamentos não fornecem apenas números maiores, mas mudanças visuais significativas e feedback de poder.</textarea>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ───────── 3. FILOSOFIA DE DESIGN ───────── -->
+    <div class="section" id="s3">
+      <div class="section-header" onclick="toggleSection(this)">
+        <span class="section-num">03</span>
+        <span class="section-icon">💡</span>
+        <span class="section-title">Filosofia de Design</span>
+        <span class="section-chevron">▼</span>
+      </div>
+      <div class="section-body">
+        <div class="infobox">
+          <span class="infobox-icon">🧭</span>
+          <div>Princípios permanentes do projeto. Servem de bússola para os desenvolvedores durante toda a produção.</div>
+        </div>
+        <div class="field-grid">
+          <div class="field-card">
+            <div class="field-label"><div class="dot"></div>Exploração & Recompensas</div>
+            <textarea id="f-fil-exp-rbx">Todo caminho deve recompensar o jogador.
+Áreas opcionais nunca devem existir sem algum tipo de recompensa (itens, baús, lore ou conquistas).
+Exploração é um dos pilares do jogo e deve instigar a curiosidade constante através de elementos visuais no horizonte ("weenies").</textarea>
+          </div>
+          <div class="field-card">
+            <div class="field-label"><div class="dot"></div>Level Design</div>
+            <textarea id="f-fil-lvl-rbx">O jogador nunca deve sentir que está preso em corredores artificiais.
+Mapas abertos e expansivos são projetados com marcos naturais (castelos, montanhas, torres) para orientação sem depender totalmente de mini-mapa.</textarea>
+          </div>
+          <div class="field-card">
+            <div class="field-label"><div class="dot"></div>Narrativa Fluida</div>
+            <textarea id="f-fil-nar-rbx">A história deve ser descoberta naturalmente através de diálogos curtos, itens e exploração do ambiente (environmental storytelling).
+Cutscenes devem ser rápidas e diretas; o jogo não deve roubar o controle do jogador frequentemente.</textarea>
+          </div>
+          <div class="field-card">
+            <div class="field-label"><div class="dot"></div>Progressão Constante</div>
+            <textarea id="f-fil-prog-rbx">O jogador deve sempre sentir que está avançando, seja adquirindo experiência, coletando materiais, abrindo atalhos ou completando missões. O tempo do jogador deve ser sempre respeitado e valorizado.</textarea>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ───────── 4. HISTÓRIA & LORE ───────── -->
+    <div class="section" id="s4">
+      <div class="section-header" onclick="toggleSection(this)">
+        <span class="section-num">04</span>
+        <span class="section-icon">📖</span>
+        <span class="section-title">História & Lore</span>
+        <span class="section-chevron">▼</span>
+      </div>
+      <div class="section-body">
+        <div class="infobox">
+          <span class="infobox-icon">💬</span>
+          <div>
+            <b style="color:var(--accent)">Frase-chave do Rei Mago (fim do Capítulo 2):</b><br>
+            <em>"Você acredita que está defendendo apenas um reino... mas este é apenas um entre muitos. Se deseja conhecer a verdade, sobreviva aos mundos além do portal."</em>
+          </div>
+        </div>
+        <div class="field-grid">
+          <div class="field-card full">
+            <div class="field-label"><div class="dot"></div>Sinopse Completa</div>
+            <div class="field-hint">Resumo narrativo da história principal.</div>
+            <textarea id="f-sinopse-rbx" style="min-height:140px;">John é um jovem cavaleiro do Reino de Arkan que vive uma vida comum no Homeworld. Quando um reino rival inicia uma guerra, ele parte para defender seu povo usando apenas uma espada de madeira e uma armadura de vidro.
+
+Após atravessar vilas, fortalezas e enfrentar tropas, John chega ao castelo inimigo esperando encontrar o rei responsável. Em vez disso, encontra o misterioso Rei Mago, que revela que a guerra era apenas o início de algo muito maior.
+
+Sem dar explicações, o Rei Mago abre um gigantesco portal de fogo e lança John para o Lava World. A partir daí, John deixa de lutar apenas por Arkan; ele explora mundos inimagináveis, coleta artefatos míticos, domina novas habilidades e busca descobrir o verdadeiro propósito do Rei Mago e o caminho de volta ao lar.</textarea>
+          </div>
+          <div class="field-card full">
+            <div class="field-label"><div class="dot"></div>Linha do Tempo</div>
+            <div class="field-hint">Cronologia dos eventos do universo.</div>
+            <textarea id="f-timeline-rbx" style="min-height:130px;">[ ANTES DO JOGO ]
+— O Reino de Arkan prospera em paz no Homeworld.
+— Um reino rival subitamente inicia ataques.
+— O Rei Mago observa o conflito pelas sombras.
+
+[ CAPÍTULO 1 — Homeworld ]
+— A guerra começa. John inicia sua jornada nos subúrbios e florestas do reino.
+— Exploração de masmorras militares e acampamentos.
+
+[ CAPÍTULO 2 — O Confronto ]
+— Invasão ao castelo inimigo e derrota de comandantes.
+— Encontro com o Rei Mago e lançamento no portal.
+
+[ CAPÍTULO 3 — Lava World ]
+— Despertar no mundo vulcânico. O início da jornada de escala cósmica.
+
+[ CAPÍTULO 4+ ]
+— Crystal World e além...</textarea>
+          </div>
+          <div class="field-card">
+            <div class="field-label"><div class="dot"></div>Tema Principal</div>
+            <div class="field-hint">Os temas emocionais e filosóficos do jogo.</div>
+            <textarea id="f-tema-rbx">Coragem. Superação. Exploração. Evolução.
+
+John representa alguém forçado a crescer além de seus limites humanos. Homeworld era seguro e previsível; o multiverso exige resiliência. Cada novo mundo reflete um amadurecimento do herói.</textarea>
+          </div>
+          <div class="field-card">
+            <div class="field-label"><div class="dot"></div>O Universo</div>
+            <div class="field-hint">Regras do mundo, cosmologia, como a magia funciona?</div>
+            <textarea id="f-universo-rbx">Mundo Natal: Homeworld (onde fica Arkan).
+Mundos Exteriores: Lava World, Crystal World, etc.
+
+Magia é uma anomalia em Homeworld, mas a essência fundamental dos outros mundos. Portais são fendas na realidade, mantidas por artefatos ou guardiões (bosses).</textarea>
+          </div>
+        </div>
+
+        <!-- MISTÉRIOS -->
+        <div class="mystery-box" style="flex-direction:column;gap:10px;background:rgba(124,58,237,0.06);border:1px solid rgba(124,58,237,0.25);border-radius:8px;padding:16px 18px;">
+          <div style="font-size:.78rem;font-weight:700;color:#a78bfa;text-transform:uppercase;letter-spacing:.1em;margin-bottom:4px;">❓ Mistérios em Aberto</div>
+          <div id="mysteries-list" style="display:flex;flex-direction:column;gap:8px;"></div>
+          <div style="display:flex;gap:8px;margin-top:4px;">
+            <input type="text" id="mystery-input" style="flex:1;min-height:unset;background:rgba(255,255,255,0.04);border:1px solid rgba(124,58,237,.3);border-radius:6px;color:var(--text);padding:7px 10px;font-size:.82rem;" placeholder="Adicionar novo mistério…" onkeydown="if(event.key==='Enter')addMystery()" />
+            <button class="btn btn-ghost" onclick="addMystery()" style="border-color:rgba(124,58,237,.4);color:#a78bfa;">+ Adicionar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ───────── 5. PERSONAGENS ───────── -->
+    <div class="section" id="s5">
+      <div class="section-header" onclick="toggleSection(this)">
+        <span class="section-num">05</span>
+        <span class="section-icon">🧑‍🦱</span>
+        <span class="section-title">Personagens</span>
+        <span class="section-chevron">▼</span>
+      </div>
+      <div class="section-body">
+        <div class="field-grid">
+          <!-- JOHN -->
+          <div class="field-card">
+            <div class="field-label"><div class="dot"></div>John — Protagonista</div>
+            <div class="field-hint">História, motivação, personalidade.</div>
+            <textarea id="f-john-rbx">Jovem cavaleiro de Arkan (Homeworld).
+Começa com: Espada de Madeira e Armadura de Vidro.
+Evolui através da exploração de mundos e domina equipamentos absurdamente mágicos em níveis altos.
+Motivação: Retornar para casa e salvar seu reino do que quer que o Rei Mago esteja planejando.</textarea>
+          </div>
+          <!-- REI MAGO -->
+          <div class="field-card">
+            <div class="field-label"><div class="dot"></div>Rei Mago — Antagonista</div>
+            <div class="field-hint">O mistério por trás do conflito.</div>
+            <textarea id="f-reimago-rbx">Manipulador da guerra em Homeworld.
+Aparência: Manto místico, demonstra magia poderosa incomum aos humanos de Arkan.
+Objetivo Oculto: Está testando John? Preparando-o para uma ameaça maior? Ou apenas eliminando uma peça do tabuleiro?</textarea>
+          </div>
+          <!-- NPCs -->
+          <div class="field-card full">
+            <div class="field-label"><div class="dot"></div>Categorias de NPCs</div>
+            <div class="field-hint">Ecossistema vivo de interações e missões.</div>
+            <textarea id="f-npcs-rbx" style="min-height:120px;">— Comerciantes: Vendem poções básicas, materiais comuns e compram lixo/loot do jogador.
+— Ferreiros: Fundamentais para a estrutura futura de Crafting; melhoram equipamentos usando fragmentos e minérios.
+— Curandeiros: Restauram a saúde do jogador e oferecem buffs temporários.
+— Guardas e Soldados: Elementos narrativos em Homeworld, informam sobre movimentação inimiga e dão pequenas side-quests.
+— Moradores/Fazendeiros: Povoam o mundo para torná-lo vivo; podem pedir favores (resgatar itens, encontrar familiares).
+— NPCs Viajantes: Encontrados em locais inusitados (como mercadores secretos dentro de Dungeons) que vendem itens raros.
+— Reis e Líderes: Concedem Títulos e Quests principais.</textarea>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ───────── 6. MUNDOS ───────── -->
+    <div class="section" id="s6">
+      <div class="section-header" onclick="toggleSection(this)">
+        <span class="section-num">06</span>
+        <span class="section-icon">🌍</span>
+        <span class="section-title">Mundos</span>
+        <span class="section-chevron">▼</span>
+      </div>
+      <div class="section-body">
+        <div class="infobox">
+          <span class="infobox-icon">🌐</span>
+          <div>Estrutura expansiva: <b style="color:var(--accent)">Ambientes 3D imersivos · Zonas secretas · Marcos naturais para navegação sem UI.</b></div>
+        </div>
+        <div class="field-grid">
+          <div class="field-card">
+            <div class="field-label"><div class="dot"></div>🏰 Homeworld (O Início)</div>
+            <div class="field-hint">Substitui o "Normal World". O lar de John.</div>
+            <textarea id="f-nworld-rbx">Descrição: O mundo natal de John, onde fica o Reino de Arkan. Atmosfera inicialmente segura que evolui para zonas de conflito. Sem presença de monstros ou magia visual.
+
+Ambientes: Grandes mapas exploráveis contendo fazendas com moinhos de vento, densas florestas de pinheiros, rios e lagos com água animada, grandes montanhas, pontes de pedra, fortalezas inimigas e ruínas esquecidas.
+
+Tom visual: Medieval, tons terrosos, vegetação vibrante movida pelo vento (Roblox Terrain + MeshParts), iluminação realista (SunRays).</textarea>
+          </div>
+          <div class="field-card">
+            <div class="field-label"><div class="dot"></div>🌋 Lava World</div>
+            <div class="field-hint">Segundo mundo — fogo, rocha e perigo.</div>
+            <textarea id="f-lworld-rbx">Descrição: Um ambiente extremamente hostil 3D. Céu coberto de cinzas, partículas incandescentes (Roblox ParticleEmitters) e rios de magma.
+
+Ambientes: Cavernas abissais, pontes de obsidiana estreitas, ilhas flutuando em lava.
+Mecânica ambiental: Zonas de calor extremo que consomem stamina mais rápido; saltos precisos.
+Boss: Titã de Magma. Escala monumental.</textarea>
+          </div>
+          <div class="field-card">
+            <div class="field-label"><div class="dot"></div>💎 Crystal World</div>
+            <div class="field-hint">Terceiro mundo — magia, cristais e reflexos.</div>
+            <textarea id="f-cworld-rbx">Descrição: Mundo dominado por formações cristalinas gigantescas, reflexos luminosos e flora mágica bioluminescente.
+
+Ambientes: Florestas de gemas flutuantes, palácios de vidro cintilante, abismos de luz.
+Mecânica ambiental: Plataformas que aparecem/desaparecem baseadas em fontes de luz, reflexos enganosos, inimigos elementais.
+Tom visual: Uso pesado de Bloom e Neon parts no Roblox.</textarea>
+          </div>
+          <div class="field-card">
+            <div class="field-label"><div class="dot"></div>🌀 Estrutura do Mapa & Exploração</div>
+            <div class="field-hint">Como os mapas são arquitetados no Studio.</div>
+            <textarea id="f-otherworlds-rbx">Design de Mundo (Roblox):
+— Zonas conectadas organicamente (StreamingEnabled ativado para boa performance).
+— Trilhas principais guiando o jogador pela história, mas repletas de passagens secretas, cavernas escondidas e atalhos desbloqueáveis.
+— Tesouros colocados intencionalmente em locais de difícil acesso, validando a "Filosofia de Exploração".</textarea>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ───────── 7. GAMEPLAY ───────── -->
+    <div class="section" id="s7">
+      <div class="section-header" onclick="toggleSection(this)">
+        <span class="section-num">07</span>
+        <span class="section-icon">🎮</span>
+        <span class="section-title">Gameplay</span>
+        <span class="section-chevron">▼</span>
+      </div>
+      <div class="section-body">
+        <div class="field-grid">
+          <div class="field-card">
+            <div class="field-label"><div class="dot"></div>Movimentação & Interação</div>
+            <textarea id="f-mov-rbx">Câmera: 3ª pessoa, fixada sobre o ombro (com zoom scroll).
+Movimento: WASD / Gamepad / Touch joystick.
+Ações Base: Correr (Shift), Pular (Espaço).
+Integração 3D: ProximityPrompts (Roblox) usados nativamente para interação com portas, baús, alavancas e NPCs ("Aperte E para interagir").</textarea>
+          </div>
+          <div class="field-card">
+            <div class="field-label"><div class="dot"></div>Combate 3D Action</div>
+            <textarea id="f-combate-rbx">Ataques Leves (LMB): Golpes rápidos em sequência (combo).
+Ataques Pesados (RMB/Segurar LMB): Golpe quebra-guarda e aplica knockback.
+Defesa: Bloqueio direcional ativo; Esquiva (Roll/Dash) com i-frames.
+Stamina: Atacar forte e esquivar consome barra de Stamina.
+
+Feedback Visual (Roblox): Hitstops sutis (congelamento de milissegundos), ParticleEmitters de impacto, trails de armas, Tween nas barras de UI para dano. Animações completas e fluidas.</textarea>
+          </div>
+          <div class="field-card">
+            <div class="field-label"><div class="dot"></div>Sistema de Missões (Quests)</div>
+            <textarea id="f-quests-rbx">NPCs com marcadores visuais sobre a cabeça (! para nova missão, ? para entregar).
+Tipos:
+— Main Quests (história principal).
+— Side Quests (coletar materiais, eliminar mini-bosses secretos, explorar cavernas).
+Recompensas: XP, Moedas, Títulos, Fragmentos de Crafting.</textarea>
+          </div>
+          <div class="field-card">
+            <div class="field-label"><div class="dot"></div>Progressão de Personagem</div>
+            <textarea id="f-progressao-rbx">Níveis & Experiência:
+O jogador acumula XP derrotando inimigos e completando quests, subindo de nível e ganhando aumento base de HP e Stamina.
+Save System (DataStoreService): Checkpoints automáticos nas vilas e entradas de Dungeons, garantindo que progressão e itens nunca sejam perdidos, mas posicionando o jogador no último ponto seguro em caso de morte.</textarea>
+          </div>
+          <div class="field-card">
+            <div class="field-label"><div class="dot"></div>Sistema de Conquistas</div>
+            <textarea id="f-conquistas-rbx">Achievements: Recompensas por feitos grandiosos (ex: "Sobrevivente Vulcânico").
+Títulos (Titles): Títulos cosméticos exibidos acima do nome do jogador (ex: [Cavaleiro de Arkan] John, [Lenda de Cristal] John). Liberados via conquistas extremas ou descobertas secretas.</textarea>
+          </div>
+          <div class="field-card">
+            <div class="field-label"><div class="dot"></div>Sistemas Sociais (Preparação)</div>
+            <textarea id="f-emotes-rbx">Emotes: Estrutura preparada para uso de emotes (danças, saudações, sentar em fogueiras) para aumentar a imersão e possível convivência no ecossistema Roblox, mesmo em experiências singleplayer/coop limitadas.</textarea>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ───────── 8. EQUIPAMENTOS ───────── -->
+    <div class="section" id="s8">
+      <div class="section-header" onclick="toggleSection(this)">
+        <span class="section-num">08</span>
+        <span class="section-icon">⚔️</span>
+        <span class="section-title">Equipamentos & Crafting</span>
+        <span class="section-chevron">▼</span>
+      </div>
+      <div class="section-body">
+        <div class="field-grid">
+          <div class="field-card full">
+            <div class="field-label"><div class="dot"></div>Sistema de Raridades (Loot)</div>
+            <div class="field-hint">Hierarquia visual e de poder dos itens.</div>
+            <textarea id="f-raridades-rbx">🔘 COMUM      (Cinza)   — Itens básicos.
+🟢 INCOMUM    (Verde)   — Status aprimorados.
+🔵 RARO       (Azul)    — Status fortes, brilho visual leve.
+🟣 ÉPICO      (Roxo)    — Drops de boss e Dungeons; efeitos mágicos no modelo 3D.
+🟡 LENDÁRIO   (Dourado) — Únicos, alteram o gameplay, partículas épicas intensas.
+
+Todos os itens equipados alteram o visual do personagem (Morphs/MeshParts conectadas ao rig do Roblox).</textarea>
+          </div>
+          <div class="field-card">
+            <div class="field-label"><div class="dot"></div>Inventário 3D UI</div>
+            <textarea id="f-inventario-rbx">Menu de inventário interativo na tela, exibindo o modelo 3D do John rodando no canto da tela (ViewportFrame).
+Categorias: Armas, Armaduras, Consumíveis, Materiais, Chaves.
+Comparativo de Stats exibido ao passar o mouse ou focar no item.</textarea>
+          </div>
+          <div class="field-card">
+            <div class="field-label"><div class="dot"></div>Crafting (Forja)</div>
+            <textarea id="f-crafting-rbx">Mecânica de evolução e criação em NPCs Ferreiros.
+Minérios recolhidos pelo mapa e fragmentos derrubados de inimigos são combinados com Moedas para melhorar o Tier de uma arma, ou forjar armas únicas dependendo do Mundo (Ex: Fragmento Ígneo forja Espada de Magma).</textarea>
+          </div>
+          <div class="field-card">
+            <div class="field-label"><div class="dot"></div>Espadas & Armaduras</div>
+            <textarea id="f-espadas-rbx">[ HOMEWORLD ]
+Espada de Madeira, Armadura de Vidro (inicial).
+Metalurgias clássicas: Ferro, Aço, Couro e Malha.
+
+[ LAVA WORLD ]
+Materiais hostis: Obsidiana endurecida, Cristal Vulcânico, Magma contido.
+
+Armas pesadas (Montante) vs Armas Rápidas (Espadas curtas) possuem animações e timings distintos.</textarea>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ───────── 9. INIMIGOS ───────── -->
+    <div class="section" id="s9">
+      <div class="section-header" onclick="toggleSection(this)">
+        <span class="section-num">09</span>
+        <span class="section-icon">👹</span>
+        <span class="section-title">Inimigos e Bosses</span>
+        <span class="section-chevron">▼</span>
+      </div>
+      <div class="section-body">
+        <div class="field-grid">
+          <div class="field-card">
+            <div class="field-label"><div class="dot"></div>IA de Combate (Roblox)</div>
+            <textarea id="f-ia-rbx">Inimigos usam Roblox PathfindingService para navegar em terreno complexo (desviando de obstáculos 3D).
+Mecânicas de AI:
+— Percepção Visual (Cone de Visão via Raycasting) e Audição (raio circular).
+— Telegrafia Visual: Inimigos brilham brevemente em vermelho ou preparam animações de ataque antes de golpear, permitindo bloqueios/esquivas por parte do jogador.</textarea>
+          </div>
+          <div class="field-card">
+            <div class="field-label"><div class="dot"></div>Bosses e Mini-bosses</div>
+            <textarea id="f-bosses-rbx">Todo mundo possui:
+— Mini Bosses: Defendem zonas opcionais, baús épicos ou atalhos cruciais.
+— Boss Principal: Ocupa uma Arena Exclusiva, possui História/Lore atrelado, e tem transição de Fases (HP thresholds) que mudam seu padrão de ataque e música. Câmera do jogo entra em modo cinematográfico brevemente ao início da luta.</textarea>
+          </div>
+          <div class="field-card">
+            <div class="field-label"><div class="dot"></div>Inimigos em Homeworld</div>
+            <textarea id="f-en1-rbx">Puramente humanos. Soldados rasos, arqueiros em torres de vigia, cavaleiros pesados de armadura (requerem quebra-guarda pesada). Nenhum uso de magias, ataques puramente físicos (espada, flecha, lanças, escudos).</textarea>
+          </div>
+          <div class="field-card">
+            <div class="field-label"><div class="dot"></div>Inimigos em Lava World</div>
+            <textarea id="f-en2-rbx">Criaturas nascidas do fogo. Golens que resistem a ataques físicos, demônios alados que disparam projéteis previsíveis, enxames vulcânicos que causam dano ao longo do tempo (DoT de queimadura).</textarea>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ───────── 10. DUNGEONS ───────── -->
+    <div class="section" id="s10">
+      <div class="section-header" onclick="toggleSection(this)">
+        <span class="section-num">10</span>
+        <span class="section-icon">🏰</span>
+        <span class="section-title">Dungeons (Masmorras)</span>
+        <span class="section-chevron">▼</span>
+      </div>
+      <div class="section-body">
+        <div class="field-grid">
+          <div class="field-card full">
+            <div class="field-label"><div class="dot"></div>Filosofia de Design de Dungeons</div>
+            <textarea id="f-dungeon-struct-rbx" style="min-height:90px;">Todas as Dungeons devem possuir identidade visual própria e uma arquitetura que faça sentido lógico naquele mundo. Cada Dungeon obrigatoriamente ensina pelo menos UMA mecânica nova (como acender tochas em sequência, pisar em placas de pressão, ou desviar de projéteis rítmicos).</textarea>
+          </div>
+          <div class="field-card">
+            <div class="field-label"><div class="dot"></div>Puzzles e Armadilhas</div>
+            <textarea id="f-traps-rbx">Ambiente Interativo 3D:
+— Alavancas pesadas que abrem grandes portões (usando TweenService para movimento suave).
+— Quebra-cabeças físicos (empurrar blocos de pedra sobre placas de pressão).
+— Armadilhas: Lâminas pendulares, dardos lançados de paredes, pisos falsos que caem na lava/abismo.</textarea>
+          </div>
+          <div class="field-card">
+            <div class="field-label"><div class="dot"></div>Salas Secretas, Portas e Chaves</div>
+            <textarea id="f-baus-rbx">Toda Dungeon possui atalhos liberáveis (portas bloqueadas apenas por um lado) que facilitam a vida caso o jogador morra e retorne do Checkpoint.
+Chaves específicas (ex: "Chave do Portão de Ferro") são escondidas em mini-bosses ou puzzles e necessárias para acessar a sala do Boss Final.
+Paredes ilusórias ou quebráveis recompensam olhos atentos com Baús Épicos.</textarea>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ───────── 11. INTERFACE (UI) ───────── -->
+    <div class="section" id="s11">
+      <div class="section-header" onclick="toggleSection(this)">
+        <span class="section-num">11</span>
+        <span class="section-icon">🖥️</span>
+        <span class="section-title">Interface e UX</span>
+        <span class="section-chevron">▼</span>
+      </div>
+      <div class="section-body">
+        <div class="field-grid">
+          <div class="field-card">
+            <div class="field-label"><div class="dot"></div>HUD (In-Game)</div>
+            <textarea id="f-hud-rbx">HUD minimalista construído no StarterGui (ScreenGui).
+Canto superior esquerdo: Barra de Vida (Vermelha), Barra de Stamina (Verde/Amarela), Nível e XP circular ao lado da foto do personagem.
+Canto inferior direito: Slot dinâmico para Poções com contagem, ícones de Habilidade (com Cooldown radial).</textarea>
+          </div>
+          <div class="field-card">
+            <div class="field-label"><div class="dot"></div>Interação Contextual</div>
+            <textarea id="f-ui-context-rbx">ProximityPrompts do Roblox Studio customizados estilisticamente.
+"Pressione [F] para falar com Ferreiro", "Segure [E] para abrir Baú". O texto deve ser nítido e com fonte estilizada (ex: Antique ou Fantasy).</textarea>
+          </div>
+          <div class="field-card">
+            <div class="field-label"><div class="dot"></div>UI de Boss e Dano</div>
+            <textarea id="f-boss-ui-rbx">Boss Fight: Transição onde uma grande barra de vida aparece no centro superior da tela, ladeada por adornos de metal/fogo dependendo do mundo.
+Damage Indicators (BillboardGui): Números de dano saltam do inimigo no impacto. Críticos são maiores, tremem levemente e possuem cores diferentes (Laranja/Ouro).</textarea>
+          </div>
+          <div class="field-card">
+            <div class="field-label"><div class="dot"></div>Menus, Mapas e Diálogos</div>
+            <textarea id="f-menus-rbx">Menu Pause Blur: Quando o menu de inventário/mapa é aberto, o fundo recebe um blur dinâmico (DepthOfField).
+Diálogos: Estilo RPG clássico rodapé ou balões 3D (BillboardGui) acima do NPC com avanço progressivo de texto (Typewriter effect) via script de interface.</textarea>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ───────── 12. ÁUDIO ───────── -->
+    <div class="section" id="s12">
+      <div class="section-header" onclick="toggleSection(this)">
+        <span class="section-num">12</span>
+        <span class="section-icon">🎵</span>
+        <span class="section-title">Áudio e Sonoplastia</span>
+        <span class="section-chevron">▼</span>
+      </div>
+      <div class="section-body">
+        <div class="field-grid">
+          <div class="field-card full">
+            <div class="field-label"><div class="dot"></div>Implementação de Áudio 3D (Roblox)</div>
+            <textarea id="f-aud-tech-rbx" style="min-height:90px;">Uso de Sounds inseridos em Parts do mundo para Áudio Espacial (RollOffMaxDistance) — como o barulho de rios, fornalhas crepitando, e correntes batendo em masmorras. Música ambiente controlada pelo SoundService, com transições Crossfade suaves entre diferentes zonas.</textarea>
+          </div>
+          <div class="field-card">
+            <div class="field-label"><div class="dot"></div>Trilha de Exploração & Bosses</div>
+            <textarea id="f-aud-exp-rbx">Homeworld: Orquestra medieval leve, alaúde, ventos.
+Lava World: Tambores de guerra graves, metais tensos.
+Bosses: Trilha exclusiva ativada por script na entrada da arena. Dramática, em sincronia com a ameaça colossal do chefe.</textarea>
+          </div>
+          <div class="field-card">
+            <div class="field-label"><div class="dot"></div>Efeitos de Combate (SFX)</div>
+            <textarea id="f-sfx-rbx">Sons de metal raspando, impacto grave ao acertar escudos, whoosh para esquivas e rolagens. Passo (Footsteps) mudando de material via Raycast inferior (pedra, grama, madeira, lama).</textarea>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ───────── 13. DIREÇÃO DE ARTE ───────── -->
+    <div class="section" id="s13">
+      <div class="section-header" onclick="toggleSection(this)">
+        <span class="section-num">13</span>
+        <span class="section-icon">🎨</span>
+        <span class="section-title">Direção de Arte</span>
+        <span class="section-chevron">▼</span>
+      </div>
+      <div class="section-body">
+        <div class="field-grid">
+          <div class="field-card">
+            <div class="field-label"><div class="dot"></div>Identidade Visual Geral</div>
+            <textarea id="f-art-style-rbx">Estilo: 3D Stylized / Fantasy Medieval.
+Modelagem: Low Poly de alta qualidade (bordas chanfradas, silhuetas limpas). Texturas flat ou gradientes, dependendo muito da iluminação do motor gráfico para profundidade e beleza.</textarea>
+          </div>
+          <div class="field-card">
+            <div class="field-label"><div class="dot"></div>Iluminação & Atmosfera</div>
+            <textarea id="f-paleta-rbx">Uso intensivo de Roblox Lighting properties: ColorCorrection, SunRays, Bloom.
+Homeworld: Céu dinâmico, nuvens volumétricas suaves, sombras quentes de fim de tarde.
+Lava World: Atmosfera asfixiante, neblina vulcânica espessa (Atmosphere prop), brilho laranja reflexivo nos materiais.</textarea>
+          </div>
+          <div class="field-card">
+            <div class="field-label"><div class="dot"></div>Ambientes Vivos & Animações</div>
+            <textarea id="f-anims-rbx">Vegetação animada: Grama balança com o vento; folhas caem das árvores (ParticleEmitters invisíveis no dossel das árvores). Água animada com reflexos e opacidade adequada.
+Personagens com Rigs customizados ou R15 com AnimationTracks profissionais, fluidos, sem robótica.</textarea>
+          </div>
+          <div class="field-card">
+            <div class="field-label"><div class="dot"></div>Partículas & Efeitos Especiais</div>
+            <textarea id="f-vfx-rbx">Leitura visual excelente: Cores opostas ao cenário (ex: ataques inimigos emitem brilho vermelho contrastando com a grama verde). Trails e Beams usados para arcos de espadas e magias de chefes. Ambientes devem possuir partículas de poeira e luz (motes) voando sutilmente.</textarea>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ───────── 14. ESTRUTURA TÉCNICA (ROBLOX) ───────── -->
+    <div class="section" id="s14">
+      <div class="section-header" onclick="toggleSection(this)">
+        <span class="section-num">14</span>
+        <span class="section-icon">⚙️</span>
+        <span class="section-title">Estrutura Técnica</span>
+        <span class="section-chevron">▼</span>
+      </div>
+      <div class="section-body">
+        <div class="infobox">
+          <span class="infobox-icon">🛠️</span>
+          <div>Arquitetura padronizada para o ecossistema Roblox Studio. Todas as mecânicas devem ser alocadas nos serviços corretos para garantir otimização, segurança contra exploração (anti-cheat) e sincronia cliente-servidor.</div>
+        </div>
+        <div class="field-grid">
+          <div class="field-card full">
+            <div class="field-label"><div class="dot"></div>Mapeamento de Serviços (Roblox Services)</div>
+            <textarea id="f-tech-services-rbx" style="min-height:220px;">— DataStoreService: Salva o inventário completo, status de Quests, Nível, XP, Checkpoint atual e títulos desbloqueados (usando ProfileService ou similar para segurança de dados).
+— ReplicatedStorage: Armazena módulos compartilhados (combate, status matemáticos), Eventos Remotos (RemoteEvents) para comunicação entre cliente e servidor, VFX pré-carregados e configurações de armas.
+— ServerScriptService: O cérebro do jogo. Valida todos os ataques (anti-hitbox exploit), calcula dano, gerencia a IA dos inimigos (estado da máquina), spawners, e concede drops/quests.
+— ServerStorage: Guarda mapas, dungeons pré-fabricadas e modelos de chefes. Só são inseridos no Workspace quando necessário (instanciamento).
+— StarterPlayer (Scripts): Controla os scripts locais — detecção de clique, movimentação da câmera 3ª pessoa customizada, efeitos visuais locais (hit-feedback imediato antes da confirmação do server).
+— StarterGui: Interface completa, hud, telas de diálogo, inventários.
+— PathfindingService: Usado por inimigos para perseguir jogadores pelas masmorras sem ficar travado nas paredes.
+— CollectionService: Agrupa objetos por tags. Ex: Tag "Baú" permite que um único script controle todos os baús do jogo; Tag "Lava" aplica dano em tudo que toca.</textarea>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ───────── 15. CHECKLIST ───────── -->
+    <div class="section" id="s15">
+      <div class="section-header" onclick="toggleSection(this)">
+        <span class="section-num">15</span>
+        <span class="section-icon">📋</span>
+        <span class="section-title">Checklist de Implementação</span>
+        <span class="section-chevron">▼</span>
+      </div>
+      <div class="section-body">
+        <div class="field-grid">
+          <div class="field-card">
+            <div class="field-label"><div class="dot"></div>Core Systems</div>
+            <textarea id="f-check-core-rbx">[ ] Configurar Base de Dados (DataStore).
+[ ] Sistema de Câmera 3ª pessoa e Controles (WASD/Gamepad).
+[ ] Sistema de Combate Local (Hitbox client-sided).
+[ ] Validação de Combate no Servidor (Anti-cheat).
+[ ] Sistema de Inventário Básico (Interface + Dados).</textarea>
+          </div>
+          <div class="field-card">
+            <div class="field-label"><div class="dot"></div>Homeworld & Exploração</div>
+            <textarea id="f-check-world-rbx">[ ] Terreno base e iluminação do Reino de Arkan.
+[ ] Construção de Vilas e NPCs iniciais.
+[ ] Sistema de Interação (ProximityPrompts).
+[ ] Configurar a primeira Dungeon (Castelo inimigo).
+[ ] Otimização do Mapa (StreamingEnabled).</textarea>
+          </div>
+          <div class="field-card">
+            <div class="field-label"><div class="dot"></div>Inimigos & Bosses</div>
+            <textarea id="f-check-enemies-rbx">[ ] Máquina de Estados da IA (Idle, Chase, Attack).
+[ ] Integração com PathfindingService.
+[ ] Inimigo Básico (Soldado).
+[ ] Primeiro Boss (Rei Mago / Guardião).
+[ ] Sistema de Drops e XP ao derrotar.</textarea>
+          </div>
+          <div class="field-card">
+            <div class="field-label"><div class="dot"></div>UI e Áudio</div>
+            <textarea id="f-check-ui-rbx">[ ] HUD Principal (Vida, Stamina).
+[ ] Tela de Diálogos com NPCs.
+[ ] Feedback de Dano (Números voadores).
+[ ] Efeitos Sonoros de Espada, Passos e Magia.
+[ ] Música Dinâmica via Zonas.</textarea>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ───────── 16. ROADMAP ───────── -->
+    <div class="section" id="s16">
+      <div class="section-header" onclick="toggleSection(this)">
+        <span class="section-num">16</span>
+        <span class="section-icon">🗺️</span>
+        <span class="section-title">Roadmap</span>
+        <span class="section-chevron">▼</span>
+      </div>
+      <div class="section-body">
+        <div class="field-grid">
+          <div class="field-card full">
+            <div class="field-label"><div class="dot"></div>Fases de Desenvolvimento</div>
+            <textarea id="f-roadmap-fases-rbx" style="min-height:220px;">[ FASE 1 — Pré-Produção e Protótipo (Mês 1) ]
+✅ Revisão do GDD para Roblox / 3D.
+⬜ Criar esqueleto do projeto, estrutura de pastas no Studio.
+⬜ Programar Core Loop: Andar, Atacar, Causar Dano, Receber Dano, Salvar Jogo.
+
+[ FASE 2 — Vertical Slice (Mês 2) ]
+⬜ Um trecho 100% polido do Homeworld.
+⬜ 1 tipo de NPC interativo, 1 Espada básica, 1 Inimigo.
+⬜ Uma pequena Dungeon com portas e alavancas.
+⬜ Combate e visuais finais aplicados nesta fatia.
+
+[ FASE 3 — Alpha (Meses 3 e 4) ]
+⬜ Homeworld completo e jogável até o Castelo.
+⬜ Batalha final do capítulo com Rei Mago estruturada.
+⬜ Sistemas de Missões, Títulos e Crafting implementados.
+
+[ FASE 4 — Beta (Meses 5 e 6) ]
+⬜ Adição do Lava World.
+⬜ Novos Inimigos, Drops e Boss de Fogo.
+⬜ Testes abertos fechados para balanceamento de economia e combate.
+
+[ FASE 5 — Release e Atualizações ]
+⬜ Lançamento oficial da Fase 1 do jogo (Homeworld + Lava World).
+⬜ Roadmap de atualizações live-ops (Eventos sazonais, Crystal World, expansão de level cap).</textarea>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ───────── 17. PONTOS EM ABERTO ───────── -->
+    <div class="section" id="s17">
+      <div class="section-header" onclick="toggleSection(this)">
+        <span class="section-num">17</span>
+        <span class="section-icon">❓</span>
+        <span class="section-title">Pontos em Aberto</span>
+        <span class="section-chevron">▼</span>
+      </div>
+      <div class="section-body">
+        <div class="infobox" style="margin-bottom:4px;">
+          <span class="infobox-icon">📌</span>
+          <div>Decisões que precisam ser tomadas antes de avançar no desenvolvimento. Marque como resolvido ao definir cada ponto.</div>
+        </div>
+        <div id="open-points-list" style="display:flex;flex-direction:column;gap:10px;"></div>
+        <div style="display:flex;gap:8px;margin-top:8px;">
+          <input type="text" id="open-point-input" style="flex:1;min-height:unset;background:rgba(255,255,255,0.04);border:1px solid var(--border);border-radius:6px;color:var(--text);padding:7px 10px;font-size:.82rem;" placeholder="Adicionar ponto em aberto…" onkeydown="if(event.key==='Enter')addOpenPoint()" />
+          <button class="btn btn-ghost" onclick="addOpenPoint()">+ Adicionar</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ───────── 18. CHANGELOG ───────── -->
+    <div class="section" id="s18">
+      <div class="section-header" onclick="toggleSection(this)">
+        <span class="section-num">18</span>
+        <span class="section-icon">📝</span>
+        <span class="section-title">Changelog</span>
+        <span class="section-chevron">▼</span>
+      </div>
+      <div class="section-body">
+        <div id="changelog-list" style="display:flex;flex-direction:column;gap:8px;"></div>
+        <div style="display:flex;gap:8px;margin-top:8px;align-items:flex-start;">
+          <input type="text" id="changelog-input" style="flex:1;min-height:unset;background:rgba(255,255,255,0.04);border:1px solid var(--border);border-radius:6px;color:var(--text);padding:7px 10px;font-size:.82rem;" placeholder="Descreva a mudança feita no documento…" onkeydown="if(event.key==='Enter')addChangelog()" />
+          <button class="btn btn-primary" onclick="addChangelog()">+ Registrar</button>
+        </div>
+      </div>
+    </div>
+
+  </main>
+</div>
+
+<!-- ─── TOAST ─── -->
+<div id="toast">✅ Salvo com sucesso!</div>
+
+<!-- ─── MODAL ─── -->
+<div id="modal-overlay" onclick="closeModal(event)">
+  <div id="modal">
+    <h3 id="modal-title">Definir versão do documento</h3>
+    <p id="modal-desc">Insira o número de versão atual do GDD.</p>
+    <input type="text" id="version-input" value="2.0" placeholder="ex: 2.1, 3.0…" />
+    <div class="modal-btns">
+      <button class="btn btn-ghost" onclick="document.getElementById('modal-overlay').classList.remove('open')">Cancelar</button>
+      <button class="btn btn-primary" onclick="applyVersion()">Aplicar</button>
+    </div>
+  </div>
+</div>
+
+<!-- ─── GITHUB MODAL ─── -->
+<div id="modal-github" onclick="closeGitHubModal(event)" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,.7); z-index:500; align-items:center; justify-content:center;">
+  <div style="background:var(--bg2); border:1px solid var(--border); border-radius:12px; padding:30px; max-width:480px; width:90%; box-shadow:var(--shadow);">
+    <h3 style="font-size:1.1rem; font-weight:700; margin-bottom:8px; color:var(--text);">Salvar no GitHub</h3>
+    <p style="font-size:.88rem; color:var(--text-muted); margin-bottom:16px;">
+      Isso enviará suas alterações diretamente para o repositório <b>creativethb/Batalhas-Poderosas</b> no GitHub.<br><br>
+      Para autenticar, você precisa de um <b>Personal Access Token (PAT)</b> do GitHub com permissão de repositório (repo).
+    </p>
+    <input type="password" id="github-token-input" placeholder="ghp_seu_token_aqui" style="background:var(--bg3); border:1px solid var(--border); border-radius:7px; color:var(--text); font-size:.9rem; padding:8px 12px; width:100%; margin-bottom:12px; outline:none;" />
+    <input type="text" id="github-msg-input" placeholder="Mensagem de commit (opcional)" style="background:var(--bg3); border:1px solid var(--border); border-radius:7px; color:var(--text); font-size:.9rem; padding:8px 12px; width:100%; margin-bottom:20px; outline:none;" />
+    <div style="display:flex; gap:10px; justify-content:flex-end;">
+      <button class="btn btn-ghost" onclick="document.getElementById('modal-github').style.display='none'">Cancelar</button>
+      <button class="btn btn-primary" onclick="saveToGitHub()" id="btn-github-save">Salvar no Repositório</button>
+    </div>
+  </div>
+</div>
+
+<!-- ─── INPUT FILE (hidden) ─── -->
+<input type="file" id="import-file" accept=".json" style="display:none" onchange="handleImport(event)" />
+
+<script>
+  // ─── DADOS INICIAIS ────────────────────────────
+  const DEFAULT_MYSTERIES = [
+    "Quem é o Rei Mago?",
+    "Quem criou os outros mundos além de Homeworld?",
+    "Como existem tantos portais no universo?",
+    "Existe alguém acima do Rei Mago controlando tudo?",
+    "Por que John foi escolhido para cair no portal?",
+    "Como John voltará para Arkan?"
+  ];
+
+  const DEFAULT_OPEN_POINTS = [
+    "Nome do reino rival em Homeworld.",
+    "Nome do continente do Homeworld.",
+    "Nome do rei de Arkan.",
+    "Idade de John.",
+    "O verdadeiro motivo da existência dos portais.",
+    "O que acontece quando John reunir todos os equipamentos lendários 3D.",
+    "A estrutura visual do Crystal World no Roblox Studio."
+  ];
+
+  // ─── STATE ────────────────────────────────────
+  let mysteries = [];
+  let openPoints = [];
+  let changelog = [];
+  let currentVersion = "2.0";
+  let sidebarOpen = false;
+
+  // ─── INIT ─────────────────────────────────────
+  window.addEventListener('DOMContentLoaded', () => {
+    loadAll();
+    updateDateDisplay();
+    setupScrollProgress();
+    setupNavHighlight();
+  });
+
+  function updateDateDisplay() {
+    const now = new Date();
+    const fmt = now.toLocaleDateString('pt-BR', { day:'2-digit', month:'long', year:'numeric' });
+    document.getElementById('date-hero').textContent = fmt;
+    document.getElementById('last-saved-footer').textContent = fmt;
+  }
+
+  // ─── SIDEBAR ──────────────────────────────────
+  function toggleSidebar() {
+    sidebarOpen = !sidebarOpen;
+    document.getElementById('sidebar').classList.toggle('open', sidebarOpen);
+  }
+
+  // close sidebar on outside click (mobile)
+  document.addEventListener('click', e => {
+    if (window.innerWidth <= 900 && sidebarOpen) {
+      const sb = document.getElementById('sidebar');
+      const hb = document.getElementById('hamburger');
+      if (!sb.contains(e.target) && !hb.contains(e.target)) {
+        sidebarOpen = false;
+        sb.classList.remove('open');
+      }
+    }
+  });
+
+  // ─── SECTION TOGGLE ───────────────────────────
+  function toggleSection(header) {
+    const body = header.nextElementSibling;
+    const chevron = header.querySelector('.section-chevron');
+    const isOpen = body.classList.contains('open');
+    body.classList.toggle('open', !isOpen);
+    header.classList.toggle('open', !isOpen);
+    chevron.classList.toggle('open', !isOpen);
+  }
+
+  function expandAll() {
+    document.querySelectorAll('.section-header').forEach(h => {
+      const body = h.nextElementSibling;
+      const chevron = h.querySelector('.section-chevron');
+      body.classList.add('open');
+      h.classList.add('open');
+      chevron.classList.add('open');
+    });
+  }
+
+  function collapseAll() {
+    document.querySelectorAll('.section-header').forEach(h => {
+      const body = h.nextElementSibling;
+      const chevron = h.querySelector('.section-chevron');
+      body.classList.remove('open');
+      h.classList.remove('open');
+      chevron.classList.remove('open');
+    });
+  }
+
+  // ─── SCROLL PROGRESS ──────────────────────────
+  function setupScrollProgress() {
+    const bar = document.getElementById('progress-bar');
+    window.addEventListener('scroll', () => {
+      const max = document.documentElement.scrollHeight - window.innerHeight;
+      const pct = max > 0 ? window.scrollY / max : 0;
+      bar.style.transform = `scaleX(${pct})`;
+    });
+  }
+
+  // ─── NAV HIGHLIGHT ────────────────────────────
+  function setupNavHighlight() {
+    const sections = document.querySelectorAll('.section');
+    const links = document.querySelectorAll('.nav-link');
+
+    const obs = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          links.forEach(l => l.classList.remove('active'));
+          const id = entry.target.id;
+          const active = document.querySelector(`.nav-link[href="#${id}"]`);
+          if (active) active.classList.add('active');
+        }
+      });
+    }, { threshold: 0.3 });
+
+    sections.forEach(s => obs.observe(s));
+  }
+
+  // ─── MYSTERIES ────────────────────────────────
+  function renderMysteries() {
+    const list = document.getElementById('mysteries-list');
+    list.innerHTML = '';
+    mysteries.forEach((m, i) => {
+      const el = document.createElement('div');
+      el.style.cssText = 'display:flex;align-items:center;gap:10px;background:rgba(124,58,237,0.07);border:1px solid rgba(124,58,237,0.2);border-radius:6px;padding:8px 12px;';
+      el.innerHTML = `
+        <span style="color:#a78bfa;font-size:.9rem;">❓</span>
+        <span style="flex:1;font-size:.85rem;color:#c4b5fd;">${escHtml(m)}</span>
+        <button onclick="removeMystery(${i})" style="background:none;border:none;color:#6d6a85;cursor:pointer;font-size:.9rem;padding:2px 4px;" title="Remover">✕</button>
+      `;
+      list.appendChild(el);
+    });
+  }
+
+  function addMystery() {
+    const inp = document.getElementById('mystery-input');
+    const val = inp.value.trim();
+    if (!val) return;
+    mysteries.push(val);
+    inp.value = '';
+    renderMysteries();
+    autoSave();
+  }
+
+  function removeMystery(i) {
+    mysteries.splice(i, 1);
+    renderMysteries();
+    autoSave();
+  }
+
+  // ─── OPEN POINTS ──────────────────────────────
+  function renderOpenPoints() {
+    const list = document.getElementById('open-points-list');
+    list.innerHTML = '';
+    openPoints.forEach((p, i) => {
+      const el = document.createElement('div');
+      el.style.cssText = 'display:flex;align-items:center;gap:10px;background:var(--bg3);border:1px solid var(--border);border-radius:6px;padding:10px 14px;';
+      el.innerHTML = `
+        <input type="checkbox" id="op-${i}" ${p.done ? 'checked' : ''} onchange="togglePoint(${i})" style="width:16px;height:16px;cursor:pointer;accent-color:var(--accent);" />
+        <label for="op-${i}" style="flex:1;font-size:.85rem;color:${p.done ? 'var(--text-dim)' : 'var(--text-muted)'};cursor:pointer;${p.done ? 'text-decoration:line-through;' : ''}">
+          ${escHtml(p.text)}
+        </label>
+        ${p.done ? '<span style="font-size:.72rem;color:#4ade80;font-weight:700;">✓ RESOLVIDO</span>' : '<span style="font-size:.72rem;color:#f87171;font-weight:700;">PENDENTE</span>'}
+        <button onclick="removeOpenPoint(${i})" style="background:none;border:none;color:#6d6a85;cursor:pointer;font-size:.9rem;padding:2px 4px;" title="Remover">✕</button>
+      `;
+      list.appendChild(el);
+    });
+  }
+
+  function addOpenPoint() {
+    const inp = document.getElementById('open-point-input');
+    const val = inp.value.trim();
+    if (!val) return;
+    openPoints.push({ text: val, done: false });
+    inp.value = '';
+    renderOpenPoints();
+    autoSave();
+  }
+
+  function togglePoint(i) {
+    openPoints[i].done = !openPoints[i].done;
+    renderOpenPoints();
+    autoSave();
+  }
+
+  function removeOpenPoint(i) {
+    openPoints.splice(i, 1);
+    renderOpenPoints();
+    autoSave();
+  }
+
+  // ─── CHANGELOG ────────────────────────────────
+  function renderChangelog() {
+    const list = document.getElementById('changelog-list');
+    list.innerHTML = '';
+    if (changelog.length === 0) {
+      list.innerHTML = '<div style="color:var(--text-dim);font-size:.82rem;font-style:italic;">Nenhuma entrada ainda. Registre mudanças no documento.</div>';
+      return;
+    }
+    [...changelog].reverse().forEach((c, i) => {
+      const el = document.createElement('div');
+      el.className = 'changelog-entry';
+      el.innerHTML = `
+        <div class="changelog-date">${escHtml(c.date)}<br><span style="color:var(--accent);font-weight:700;">${escHtml(c.version)}</span></div>
+        <div class="changelog-text" style="flex:1;">${escHtml(c.text)}</div>
+        <button onclick="removeChangelog(${changelog.length - 1 - i})" style="background:none;border:none;color:#6d6a85;cursor:pointer;font-size:.9rem;padding:2px 4px;" title="Remover">✕</button>
+      `;
+      list.appendChild(el);
+    });
+  }
+
+  function addChangelog(customMsg) {
+    const inp = document.getElementById('changelog-input');
+    const val = customMsg || (inp ? inp.value.trim() : '');
+    if (!val) return;
+    const now = new Date();
+    changelog.push({
+      date: now.toLocaleDateString('pt-BR', { day:'2-digit', month:'short', year:'numeric' }),
+      version: 'v' + currentVersion,
+      text: val
+    });
+    if(inp) inp.value = '';
+    renderChangelog();
+    autoSave();
+  }
+
+  function removeChangelog(i) {
+    changelog.splice(i, 1);
+    renderChangelog();
+    autoSave();
+  }
+
+  // ─── VERSION ──────────────────────────────────
+  function openVersionModal() {
+    document.getElementById('version-input').value = currentVersion;
+    document.getElementById('modal-overlay').classList.add('open');
+  }
+
+  function applyVersion() {
+    const v = document.getElementById('version-input').value.trim();
+    if (!v) return;
+    currentVersion = v;
+    document.getElementById('version-badge').textContent = v;
+    document.getElementById('version-hero').textContent = 'v' + v;
+    document.getElementById('modal-overlay').classList.remove('open');
+    autoSave();
+  }
+
+  function closeModal(e) {
+    if (e.target === document.getElementById('modal-overlay')) {
+      document.getElementById('modal-overlay').classList.remove('open');
+    }
+  }
+
+  // ─── SAVE / LOAD ──────────────────────────────
+  function gatherFields() {
+    const data = {};
+    document.querySelectorAll('textarea[id], input[type="text"][id]').forEach(el => {
+      if (el.id && !['mystery-input','open-point-input','changelog-input','search-input','version-input'].includes(el.id)) {
+        data[el.id] = el.value;
+      }
+    });
+    return data;
+  }
+
+  function saveAll() {
+    const payload = {
+      version: currentVersion,
+      savedAt: new Date().toISOString(),
+      fields: gatherFields(),
+      mysteries,
+      openPoints,
+      changelog
+    };
+    localStorage.setItem('gdd_batalhas', JSON.stringify(payload));
+    showToast('✅ Salvo com sucesso!');
+    updateDateDisplay();
+    document.getElementById('last-saved-footer').textContent = new Date().toLocaleString('pt-BR');
+  }
+
+  function autoSave() {
+    const payload = {
+      version: currentVersion,
+      savedAt: new Date().toISOString(),
+      fields: gatherFields(),
+      mysteries,
+      openPoints,
+      changelog
+    };
+    localStorage.setItem('gdd_batalhas', JSON.stringify(payload));
+  }
+
+  function applyData(data) {
+    if (!data.version || parseFloat(data.version) < 2.0) {
+      currentVersion = "2.0";
+    } else {
+      currentVersion = data.version;
+    }
+    document.getElementById('version-badge').textContent = currentVersion;
+    document.getElementById('version-hero').textContent = 'v' + currentVersion;
+
+    if (data.fields) {
+      Object.entries(data.fields).forEach(([id, val]) => {
+        const el = document.getElementById(id);
+        if (el) el.value = val;
+      });
+    }
+
+    mysteries = data.mysteries && data.mysteries.length > 0 ? data.mysteries : DEFAULT_MYSTERIES.slice();
+    openPoints = data.openPoints && data.openPoints.length > 0 ? data.openPoints : DEFAULT_OPEN_POINTS.map(t => ({ text: t, done: false }));
+    changelog = data.changelog || [];
+  }
+
+  function loadAll() {
+    initDefaults();
+    let needsRobloxRebootChangelog = true;
+    let embeddedSavedAt = 0;
+
+    // 1. Try to load from embedded script (GitHub state)
+    try {
+      const embeddedData = document.getElementById('gdd-data').textContent.trim();
+      if (embeddedData && embeddedData !== '{}') {
+        const data = JSON.parse(embeddedData);
+        applyData(data);
+        if (data.savedAt) embeddedSavedAt = new Date(data.savedAt).getTime();
+        needsRobloxRebootChangelog = false;
+      }
+    } catch(e) {
+      console.warn('Erro ao carregar dados embutidos:', e);
+    }
+
+    // 2. Try to load from localStorage
+    const raw = localStorage.getItem('gdd_batalhas');
+    if (raw) {
+      try {
+        const data = JSON.parse(raw);
+        const localTime = data.savedAt ? new Date(data.savedAt).getTime() : 0;
+        
+        // If local is newer or equal, apply it
+        if (localTime >= embeddedSavedAt) {
+          applyData(data);
+          if (data.version && parseFloat(data.version) >= 2.0) {
+            needsRobloxRebootChangelog = false;
+          }
+        } else {
+          // Local is stale compared to GitHub, clear it
+          localStorage.removeItem('gdd_batalhas');
+        }
+      } catch(e) {
+        console.warn('Erro ao carregar dados locais:', e);
+      }
+    }
+
+    if (needsRobloxRebootChangelog) {
+        addChangelog("Refatoração Completa do Projeto. Migração do motor 2D/Phaser/HTML5 para arquitetura Roblox Studio/Luau em Ambiente 3D. Adição das Regras do Universo, Filosofia de Design e Estrutura Técnica Roblox. O 'Normal World' passa a ser 'Homeworld'.");
+    }
+
+    renderMysteries();
+    renderOpenPoints();
+    renderChangelog();
+  }
+
+  function initDefaults() {
+    mysteries = DEFAULT_MYSTERIES.slice();
+    openPoints = DEFAULT_OPEN_POINTS.map(t => ({ text: t, done: false }));
+    changelog = [];
+  }
+
+  // ─── GITHUB INTEGRATION ───────────────────────
+  function openGitHubModal() {
+    document.getElementById('modal-github').style.display = 'flex';
+  }
+
+  function closeGitHubModal(e) {
+    if (e.target === document.getElementById('modal-github')) {
+      document.getElementById('modal-github').style.display = 'none';
+    }
+  }
+
+  async function saveToGitHub() {
+    const token = document.getElementById('github-token-input').value.trim();
+    if (!token) {
+      alert('Por favor, insira seu Personal Access Token do GitHub.');
+      return;
+    }
+    
+    const msg = document.getElementById('github-msg-input').value.trim() || `Atualizando GDD para versão ${currentVersion}`;
+    const btn = document.getElementById('btn-github-save');
+    const repo = 'creativethb/Batalhas-Poderosas';
+    const path = 'index.html';
+    const url = `https://api.github.com/repos/${repo}/contents/${path}`;
+    
+    btn.textContent = 'Salvando...';
+    btn.disabled = true;
+
+    try {
+      // 1. Puxar o arquivo atual para pegar o SHA
+      const res = await fetch(url, {
+        headers: { 'Authorization': `token ${token}` }
+      });
+      
+      if (!res.ok) {
+        throw new Error('Falha ao obter o arquivo atual. Verifique o token e se o repositório existe.');
+      }
+      
+      const fileData = await res.json();
+      const sha = fileData.sha;
+      
+      // Decodificar base64 com segurança
+      const currentHtml = decodeURIComponent(escape(atob(fileData.content)));
+      
+      // 2. Preparar payload novo
+      const payload = {
+        version: currentVersion,
+        savedAt: new Date().toISOString(),
+        fields: gatherFields(),
+        mysteries,
+        openPoints,
+        changelog
+      };
+      
+      // 3. Injetar no HTML
+      const regex = /(<script id="gdd-data" type="application\/json">)[\s\S]*?(<\/script>)/;
+      const newHtml = currentHtml.replace(regex, `$1\n${JSON.stringify(payload, null, 2)}\n$2`);
+      
+      if (newHtml === currentHtml) {
+        throw new Error('Falha ao injetar os dados no HTML. A tag <script id="gdd-data"> pode estar ausente no repositório.');
+      }
+
+      // Codificar base64 com segurança
+      const newContentBase64 = btoa(unescape(encodeURIComponent(newHtml)));
+      
+      // 4. Commitar
+      const commitRes = await fetch(url, {
+        method: 'PUT',
+        headers: {
+          'Authorization': `token ${token}`,
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          message: msg,
+          content: newContentBase64,
+          sha: sha
+        })
+      });
+      
+      if (!commitRes.ok) {
+        const errorData = await commitRes.json();
+        throw new Error(`Falha ao commitar no GitHub: ${errorData.message}`);
+      }
+      
+      showToast('✅ Salvo no GitHub com sucesso!');
+      document.getElementById('modal-github').style.display = 'none';
+      
+      // Remove cache local, o GitHub agora é a fonte principal
+      localStorage.removeItem('gdd_batalhas');
+      
+    } catch (err) {
+      alert(err.message);
+    } finally {
+      btn.textContent = 'Salvar no Repositório';
+      btn.disabled = false;
+    }
+  }
+
+  // auto-save on textarea change
+  document.addEventListener('input', e => {
+    if (e.target.matches('textarea') || e.target.matches('input[type="text"]')) {
+      clearTimeout(window._saveTimer);
+      window._saveTimer = setTimeout(autoSave, 1200);
+    }
+  });
+
+  // ─── EXPORT / IMPORT ──────────────────────────
+  function exportJSON() {
+    const payload = {
+      version: currentVersion,
+      exportedAt: new Date().toISOString(),
+      fields: gatherFields(),
+      mysteries,
+      openPoints,
+      changelog
+    };
+    const blob = new Blob([JSON.stringify(payload, null, 2)], { type: 'application/json' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = `gdd-batalhas-poderosas-v${currentVersion}.json`;
+    a.click();
+    URL.revokeObjectURL(url);
+    showToast('📤 Exportado com sucesso!');
+  }
+
+  function importJSON() {
+    document.getElementById('import-file').click();
+  }
+
+  function handleImport(e) {
+    const file = e.target.files[0];
+    if (!file) return;
+    const reader = new FileReader();
+    reader.onload = ev => {
+      try {
+        const data = JSON.parse(ev.target.result);
+        currentVersion = data.version || currentVersion;
+        document.getElementById('version-badge').textContent = currentVersion;
+        document.getElementById('version-hero').textContent = 'v' + currentVersion;
+
+        if (data.fields) {
+          Object.entries(data.fields).forEach(([id, val]) => {
+            const el = document.getElementById(id);
+            if (el) el.value = val;
+          });
+        }
+
+        mysteries = data.mysteries || mysteries;
+        openPoints = data.openPoints || openPoints;
+        changelog = data.changelog || changelog;
+
+        renderMysteries();
+        renderOpenPoints();
+        renderChangelog();
+        autoSave();
+        showToast('📥 Importado com sucesso!');
+      } catch {
+        alert('Erro ao importar: arquivo JSON inválido.');
+      }
+    };
+    reader.readAsText(file);
+    e.target.value = '';
+  }
+
+  // ─── CLEAR ────────────────────────────────────
+  function confirmClear() {
+    const modal = document.getElementById('modal-overlay');
+    document.getElementById('modal-title').textContent = '⚠️ Limpar todos os dados?';
+    document.getElementById('modal-desc').textContent = 'Isso apagará TODO o conteúdo do GDD. Esta ação não pode ser desfeita. Exporte um backup JSON antes!';
+    document.getElementById('version-input').style.display = 'none';
+    document.querySelector('#modal .modal-btns').innerHTML = `
+      <button class="btn btn-ghost" onclick="cancelClear()">Cancelar</button>
+      <button class="btn btn-danger" onclick="clearAll()">🗑️ Confirmar</button>
+    `;
+    modal.classList.add('open');
+  }
+
+  function cancelClear() {
+    document.getElementById('version-input').style.display = '';
+    document.querySelector('#modal .modal-btns').innerHTML = `
+      <button class="btn btn-ghost" onclick="document.getElementById('modal-overlay').classList.remove('open')">Cancelar</button>
+      <button class="btn btn-primary" onclick="applyVersion()">Aplicar</button>
+    `;
+    document.getElementById('modal-title').textContent = 'Definir versão do documento';
+    document.getElementById('modal-desc').textContent = 'Insira o número de versão atual do GDD.';
+    document.getElementById('modal-overlay').classList.remove('open');
+  }
+
+  function clearAll() {
+    localStorage.removeItem('gdd_batalhas');
+    location.reload();
+  }
+
+  // ─── SEARCH ───────────────────────────────────
+  let searchTimeout;
+  function searchDoc(q) {
+    clearTimeout(searchTimeout);
+    searchTimeout = setTimeout(() => {
+      // Remove previous highlights
+      document.querySelectorAll('.highlight-match').forEach(el => {
+        el.outerHTML = el.textContent;
+      });
+
+      if (!q || q.length < 2) return;
+
+      const lower = q.toLowerCase();
+      // Search in section titles
+      document.querySelectorAll('.section-title').forEach(el => {
+        if (el.textContent.toLowerCase().includes(lower)) {
+          const sec = el.closest('.section');
+          const body = sec.querySelector('.section-body');
+          const header = sec.querySelector('.section-header');
+          const chevron = sec.querySelector('.section-chevron');
+          body.classList.add('open');
+          header.classList.add('open');
+          chevron.classList.add('open');
+          sec.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    }, 300);
+  }
+
+  // ─── TOAST ────────────────────────────────────
+  function showToast(msg) {
+    const t = document.getElementById('toast');
+    t.textContent = msg;
+    t.classList.add('show');
+    setTimeout(() => t.classList.remove('show'), 3000);
+  }
+
+  // ─── UTILS ────────────────────────────────────
+  function escHtml(str) {
+    return String(str)
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;');
+  }
+
+  // Keyboard shortcuts
+  document.addEventListener('keydown', e => {
+    if ((e.ctrlKey || e.metaKey) && e.key === 's') {
+      e.preventDefault();
+      saveAll();
+    }
+  });
+</script>
+</body>
+</html>
