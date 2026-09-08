@@ -189,9 +189,10 @@ Todos os 20+ NPCs da vila utilizam rig oficial **R15 com malha arredondada (Rig 
 
 ## 7. Itens & Economia Básica
 
-- **`Madeira Comum` (Item ID: `Madeira`):** Coletada na mesa principal de residências marcadas com `BP_ResidenciaMadeira`.
-- **`Madeira Sagrada` (Item ID: `MadeiraSagrada`):** Ramo ancestral concedido pelo Ancião Eldrin na Árvore Sagrada.
-- **`Espada de Madeira Sagrada` (Item ID: `EspadaMadeira`):** Forjada na bigorna de Mestre Cedric consumindo 1 Madeira Comum + 1 Madeira Sagrada. Arma com Mesh IA e brilho místico verde.
+- **`Madeira Comum` (Item ID: `Madeira` / `ITEM-001`):** Coletada na mesa principal de residências marcadas com `BP_ResidenciaMadeira`.
+- **`Madeira Sagrada` (Item ID: `MadeiraSagrada` / `ITEM-002`):** Ramo ancestral concedido pelo Ancião Eldrin na Árvore Sagrada.
+- **`Espada de Madeira Sagrada` (Item ID: `EspadaMadeira` / `ITEM-003`):** Forjada na bigorna de Mestre Cedric consumindo 1 Madeira Comum + 1 Madeira Sagrada. Arma com Mesh IA e brilho místico verde.
+- **`Diário de John` (Item ID: `DiarioDeJohn` / `ITEM-004`):** Caderno encadernado em couro rústico encontrado na mesa de repouso no início do jogo. Item permanente e indescartável que abre a interface do Diário em tempo real.
 - **Banco de Dados Central:** `ReplicatedStorage.DadosItens.BancoDeItens` (ModuleScript canônico utilizado tanto pelo servidor quanto pelo cliente).
 
 ---

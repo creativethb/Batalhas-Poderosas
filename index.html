@@ -595,7 +595,7 @@
       projeto: {
         nome: "Batalhas Poderosas",
         universo: "Reino de Arkan",
-        versao: "2.5.0",
+        versao: "2.5.1",
         ultimaAtualizacao: "08/09/2026",
         estado: "Vila de Arkham Operacional • R15 • Diálogos & Combate",
         engine: "Roblox Studio (Luau + Rojo)",
@@ -795,7 +795,7 @@ Responsável pela produção dos lotes agrícolas no norte de Arkham.`
           tipo: "Material de Criação / Recurso",
           raridade: "Comum (Branco)",
           status: "CANONICO",
-          imagem: "./assets/npcs/NPC-001.png",
+          imagem: "./assets/itens/ITEM-001.png",
           relacionados: ["NPC-001", "LOCAL-001", "ITEM-003"],
           markdown: `**Origem:** Coletada na bancada da Casa de John e residências marcadas com \`BP_ResidenciaMadeira\`.  
 **Uso:** Forja da Espada de Madeira Sagrada (1x Madeira Comum + 1x Madeira Sagrada).`
@@ -806,7 +806,7 @@ Responsável pela produção dos lotes agrícolas no norte de Arkham.`
           tipo: "Material Místico / Relíquia",
           raridade: "Raro (Ciano)",
           status: "CANONICO",
-          imagem: "./assets/npcs/NPC-001.png",
+          imagem: "./assets/itens/ITEM-002.png",
           relacionados: ["NPC-002", "LOCAL-004", "ITEM-003"],
           markdown: `**Origem:** Concedida pelo Ancião Eldrin na Árvore Sagrada após ouvir a lenda ancestral.  
 **Propriedade:** Concede têmpera eterna e inquebrável à lâmina.`
@@ -817,12 +817,25 @@ Responsável pela produção dos lotes agrícolas no norte de Arkham.`
           tipo: "Arma Branca / Espada de Uma Mão",
           raridade: "Sagrada / Lendária Inicial",
           status: "CANONICO",
-          imagem: "./assets/npcs/NPC-001.png",
+          imagem: "./assets/itens/ITEM-003.png",
           relacionados: ["NPC-001", "GAME-002", "ITEM-001", "ITEM-002"],
           markdown: `**Dano:** 22 pontos por impacto  
 **Combo:** Sequência encadeada de 5 golpes fluidos  
 **Aparência:** Mesh 3D esculpida com iluminação mística esmeralda suave  
 **Forja:** Mestre Cedric na Oficina da Vila.`
+        },
+        {
+          id: "ITEM-004",
+          nome: "Diário de John",
+          tipo: "Item Narrativo & Ferramenta de Gameplay",
+          raridade: "Único / Relíquia Pessoal",
+          status: "CANONICO",
+          imagem: "./assets/itens/ITEM-004.png",
+          relacionados: ["CANON-006", "CANON-007", "GAME-005", "LORE-003", "LOCAL-001"],
+          markdown: `**Origem:** Encontrado sobre a mesa de repouso na Casa de John (\`LOCAL-001\`) no início da aventura.  
+**Comportamento:** Item de inventário permanente e indescartável.  
+**Uso:** Quando acionado fora de combate, abre a interface imersiva do Diário (\`HUD_Diario\`), registrando a memória progressiva e as descobertas de John ao longo de cada capítulo.  
+**Desbloqueio:** Novas entradas são adicionadas automaticamente a cada marco relevante da história.`
         }
       ],
       locais: [
@@ -1263,6 +1276,16 @@ Responsável pela produção dos lotes agrícolas no norte de Arkham.`
         }
       ],
       changelog: [
+        {
+          data: "08 SET 2026",
+          versao: "v2.5.1",
+          tipo: "Catálogo de Itens & Auditoria",
+          mudancas: [
+            "Inclusão de ITEM-004: Diário de John no catálogo de itens, inventário e mini-site.",
+            "Normalização das imagens de itens (ITEM-001, ITEM-002, ITEM-003, ITEM-004) apontando para a pasta assets/itens/.",
+            "Sincronização do catálogo em INDICE.md, MEMORIA_BIBLIOTECARIO.md e gdd/04-itens/."
+          ]
+        },
         {
           data: "08 SET 2026",
           versao: "v2.5",

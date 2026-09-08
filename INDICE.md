@@ -31,6 +31,7 @@
 | **`ITEM-001`** | Madeira Comum | Material de Criação | Comum | `CANONICO` | `gdd/04-itens/ITEM-001-madeira-comum.md` | Coletada na bancada da Casa de John para base da primeira espada. |
 | **`ITEM-002`** | Madeira Sagrada | Relíquia Mística | Raro | `CANONICO` | `gdd/04-itens/ITEM-002-madeira-sagrada.md` | Ramo ancestral da Árvore Sagrada concedido por Eldrin. |
 | **`ITEM-003`** | Espada de Madeira Sagrada | Arma Branca (1H) | Sagrada | `CANONICO` | `gdd/04-itens/ITEM-003-espada-de-madeira-sagrada.md` | Lâmina forjada por Cedric; dano 22, combo de 5 hits e brilho místico. |
+| **`ITEM-004`** | Diário de John | Item Narrativo / Gameplay | Único | `CANONICO` | `gdd/04-itens/ITEM-004-diario-de-john.md` | Caderno permanente no inventário que registra as memórias e capítulos da jornada. |
 
 ---
 
