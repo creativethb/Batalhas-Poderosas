@@ -1,22 +1,22 @@
 ---
 id: "LORE-001"
-nome: "Origem do Conflito de Arkan e o Rei Mago"
+nome: "A Lenda de Arkan e a Queda do Mago"
 status: "CANONICO"
 atualizado_por: "agente"
 ---
 
-# Origem do Conflito: O Reino de Arkan e o Rei Mago
+# LORE-001: A Lenda de Arkan e a Queda do Mago
 
-## 1. O Reino de Arkan
-O Reino de Arkan é uma terra ancestral, marcada por vilarejos de arquitetura medieval, bosques antigos e minas nas encostas das montanhas. O reino viveu longos períodos de paz e desenvolvimento agrário e militar.
+O Reino de Arkan é marcado por uma guerra de grandes proporções contra uma figura ameaçadora e de imenso poder: o **Rei Mago**. Esta guerra é conhecida por todos os habitantes, mas a verdade por trás do conflito está envolta nos fragmentos intencionalmente perdidos da história.
 
-## 2. A Queda do Antigo Servo
-Diferente das fábulas comuns, o **Rei Mago** não nasceu como uma entidade maligna:
-- Em uma era remota, muito anterior à de John, ele servia como conselheiro e conjurador ao antigo rei de Arkan.
-- O antigo rei de Arkan é uma figura histórica fundamental para explicar as origens da cisão e a quebra dos pactos antigos.
-- Em busca de poder além dos limites humanos e do multiverso, o mago se corrompeu, proclamando-se o Rei Mago e iniciando uma guerra de conquista contra o reino que outrora serviu.
+## A Verdade Obscurecida
+Na lenda espalhada pelo reino, o Rei Mago é retratado apenas como um déspota perverso. No entanto, os fatos históricos — mantidos a sete chaves pelas antigas muralhas — revelam um passado trágico.
 
-## 3. O Estado Atual da Guerra
-- A guerra é conhecida por todos os habitantes da Vila de Arkham.
-- O Rei Mago possui forças arcanas devastadoras.
-- O Reino de Arkan tenta resistir enquanto seus jovens soldados se preparam para os desafios vindouros.
+Em uma época remota ao nascimento de John, este ser era apenas um mago talentoso e subserviente ao Antigo Rei de Arkan. 
+O Antigo Rei, uma figura governante cuja rainha pereceu de forma trágica em sua juventude, decretou ordens severas. Por designações do rei, a família do mago foi exilada e enviada como refém ou mão-de-obra forçada para o fundo das **Minas da Montanha Leste**.
+
+## O Ponto de Ruptura
+A separação brutal, acompanhada do sofrimento excruciante imposto à sua família pelas mãos da coroa, destroçou o espírito de servo do mago. 
+A partir dessa tragédia indizível, onde a luz de sua humanidade pereceu, nasceu a fagulha incontrolável do **Rei Mago**. Seu juramento de vingança não foi apenas quebrar suas correntes, mas subjugar e despedaçar a própria fundação do reino que o aterrorizou.
+
+*Nota de Desenvolvimento (Diretriz Canônica): Nenhuma das partes da guerra inicial era moralmente "Certa" ou "Errada". A lenda atual de Arkan será a base que o jogador entende; a verdade sombria do passado, enterrada nas antigas minas e manuscritos, é a que subverterá essa realidade.*
