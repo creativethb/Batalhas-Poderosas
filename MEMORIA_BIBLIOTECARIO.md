@@ -143,6 +143,7 @@ Todos os 20+ NPCs da vila utilizam rig oficial **R15 com malha arredondada (Rig 
 
 | NPC | Profissão | Zona de Atuação & Rota Territorial |
 |---|---|---|
+| **O Rei Mago (Alric)** | Antagonista Trágico / Soberano | Domínio do Rei Mago / Fronteiras e Montanhas de Arkan (`NPC-000`) |
 | **Mestre Cedric** | Ferreiro Real | Oficina da Vila (balcão e forja da Espada Sagrada) |
 | **Ancião Eldrin** | Guardião da Floresta | Árvore Sagrada no bosque a oeste (entrega do Galho Sagrado) |
 | **Mercador Tobias** | Mercador | Armazém de Provisões da Vila |

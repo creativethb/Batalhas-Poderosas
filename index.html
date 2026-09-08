@@ -595,13 +595,32 @@
       projeto: {
         nome: "Batalhas Poderosas",
         universo: "Reino de Arkan",
-        versao: "2.5.1",
+        versao: "2.5.2",
         ultimaAtualizacao: "08/09/2026",
         estado: "Vila de Arkham Operacional • R15 • Diálogos & Combate",
         engine: "Roblox Studio (Luau + Rojo)",
         autor: "Thiago Mendes e Castro & Agentes"
       },
       npcs: [
+        {
+          id: "NPC-000",
+          nome: "O Rei Mago (Alric)",
+          funcao: "Antagonista Trágico / Soberano da Guerra da Reparação",
+          localizacao: "Domínio do Rei Mago / Fronteiras de Arkan",
+          status: "CANONICO",
+          imagem: "./assets/npcs/NPC-000.png",
+          relacionados: ["LORE-001", "LORE-004", "LORE-005", "LORE-006", "LOCAL-007", "CANON-003"],
+          dialogos: [
+            "Arkan esqueceu o preço do sangue que construiu suas muralhas. Mas eu não esqueci.",
+            "Vocês chamam isso de guerra. Eu chamo de acerto de contas com uma coroa que me traiu."
+          ],
+          markdown: `### O Conjurador e a Dívida de Sangue
+Antes de ser temido como a maior calamidade arcana de Arkan, ele foi **Alric** — um jovem camponês cuja existência desafiava as regras do próprio mundo.
+
+Dotado de envelhecimento extraordinariamente lento e de uma inteligência investigativa insaciável, serviu lealmente à corte do Antigo Rei de Arkan como conselheiro e conjurador. A ganância da coroa antiga culminou na traição de suas criações e no cativeiro trágico de sua família nas **Minas da Montanha** (\`LOCAL-007\`).
+
+Banido para o exílio, sobreviveu à adversidade, fundou seu próprio domínio soberano e assumiu o manto supremo de **Rei Mago**. No presente, marcha contra o Novo Rei de Arkan para cobrar uma dívida histórica e moral de sangue que os séculos não foram capazes de apagar.`
+        },
         {
           id: "NPC-001",
           nome: "Mestre Cedric",
@@ -1276,6 +1295,17 @@ Responsável pela produção dos lotes agrícolas no norte de Arkham.`
         }
       ],
       changelog: [
+        {
+          data: "08 SET 2026",
+          versao: "v2.5.2",
+          tipo: "Lore Pública do Rei Mago & Personagens Principais",
+          mudancas: [
+            "Criação de NPC-000: Ficha pública e literária de O Rei Mago (Alric) no catálogo de personagens.",
+            "Criação de LORE-006: Perfil público com preservação rigorosa dos 12 mistérios narrativos.",
+            "Inclusão do card destacado do Rei Mago na interface visual do mini-site.",
+            "Sincronização com INDICE.md e MEMORIA_BIBLIOTECARIO.md."
+          ]
+        },
         {
           data: "08 SET 2026",
           versao: "v2.5.1",

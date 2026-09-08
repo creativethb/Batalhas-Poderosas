@@ -5,10 +5,11 @@
 
 ---
 
-## 👥 NPCs de Arkham (`/gdd/03-npcs/`)
+## 👥 NPCs e Personagens Principais (`/gdd/03-npcs/`)
 
 | ID | Nome | Função / Cargo | Localização | Status | Arquivo | Resumo |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| **`NPC-000`** | O Rei Mago (Alric) | Antagonista Trágico | Fronteiras de Arkan | `CANONICO` | `gdd/03-npcs/NPC-000-o-rei-mago.md` | Antigo conselheiro traído; marcha na Guerra da Reparação por sua família e exílio. |
 | **`NPC-001`** | Mestre Cedric | Ferreiro Real da Vila | Oficina (Praça Sul) | `CANONICO` | `gdd/03-npcs/NPC-001-mestre-cedric.md` | Forja a Espada de Madeira Sagrada usando Madeira Comum e Sagrada. |
 | **`NPC-002`** | Ancião Eldrin | Guardião da Árvore Sagrada | Santuário Oeste | `CANONICO` | `gdd/03-npcs/NPC-002-anciao-eldrin.md` | Sábio milenar que transmite a lenda e concede o Galho Sagrado. |
 | **`NPC-003`** | Guarda Rowan | Sentinela dos Acessos Leste | Estrada da Mina | `CANONICO` | `gdd/03-npcs/NPC-003-guarda-rowan.md` | Patrulha a rota da montanha e mina com armadura R15 detalhada. |
@@ -59,6 +60,7 @@
 | **`LORE-003`** | Diário de John — Registros da Jornada | `CANONICO` | `gdd/01-lore/LORE-003-diario-de-john.md` | Diário com entradas refinadas (CAP1-001 a CAP1-005). Primeira página revisada. |
 | **`LORE-004`** | Paralelo Narrativo: John e o Rei Mago | `CANONICO` | `gdd/01-lore/LORE-004-paralelo-john-rei-mago.md` | Princípio canônico: ambos fortalecidos pela adversidade. John protege, Rei Mago busca reparação. |
 | **`LORE-005`** | Prólogo: Antes das Batalhas | `CANONICO` | `gdd/01-lore/LORE-005-prologo-antes-das-batalhas.md` | Texto literário integral de abertura do Livro com Matriz Editorial de Metadados. |
+| **`LORE-006`** | Perfil Público: O Rei Mago (Alric) | `CANONICO` | `gdd/01-lore/LORE-006-perfil-publico-rei-mago.md` | Perfil literário e complexidade moral do antagonista com preservação dos mistérios. |
 
 ---
 
