@@ -1,0 +1,7 @@
+# Configurações locais do OpenCode
+opencode.json
+.opencode/
+
+# Arquivos do sistema operacional
+.DS_Store
+Thumbs.db
