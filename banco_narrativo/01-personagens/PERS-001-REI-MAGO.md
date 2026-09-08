@@ -1,200 +1,172 @@
-# 👑 FICHA HISTÓRICA PROFUNDA — REI MAGO
+# 👑 FICHA HISTÓRICA PROFUNDA — REI MAGO (ALRIC)
 > **ID:** `PERS-001-REI-MAGO`  
+> **NOME VERDADEIRO:** `ALRIC` `[🟢 CANÔNICO]`  
 > **CLASSIFICAÇÃO:** BANCO DE CONHECIMENTO NARRATIVO INTERNO (NÃO PÚBLICO)  
 > **FUNÇÃO:** Matriz de continuidade, psicologia, cronologia de longa duração e controle de mistérios para construção de roteiro, diálogos, contos e plot twists.  
-> **ÚLTIMA ATUALIZAÇÃO:** 08/09/2026 — *Sessão de Estruturação Primária*
+> **ÚLTIMA ATUALIZAÇÃO:** 08/09/2026 — *Sessão Fase 2: Juventude, Despertar no Riacho & Pesquisa Empírica*
 
 ---
 
 ## 1. IDENTIFICAÇÃO GERAL & TÍTULOS
 - **ID Interno:** `PERS-001-REI-MAGO`
-- **Nome Verdadeiro:** `[🟡 EM CONSTRUÇÃO]` *(O nome próprio original de nascimento não foi revelado ao mundo nem ao jogador).*
-- **Títulos & Alcunhas Atuais:** O Rei Mago `[🟢 CANÔNICO]`, O Conjurador Exilado `[🟢 CANÔNICO]`, O Antigo Conselheiro `[🟢 CANÔNICO]`.
-- **Títulos Anteriores:** Conselheiro Real de Arkan `[🟢 CANÔNICO]`, O Jovem Camponês `[🟢 CANÔNICO]`.
-- **Natureza / Espécie:** Ser não nativo de Arkan com envelhecimento atípico e domínio arcano inato `[🟢 CANÔNICO]`.
+- **Nome Verdadeiro:** `Alric` `[🟢 CANÔNICO]` *(Nome pelo qual era chamado na vila durante sua infância e juventude; desconhecido para o jogador e para as gerações atuais no presente).*
+- **Títulos & Alcunhas no Presente:** O Rei Mago `[🟢 CANÔNICO]`, O Conjurador Exilado `[🟢 CANÔNICO]`, O Antigo Conselheiro `[🟢 CANÔNICO]`.
+- **Títulos / Papéis na Juventude:** O Jovem Camponês de Arkan `[🟢 CANÔNICO]`, O Garoto Prodígio `[🟢 CANÔNICO]`, Conselheiro Real de Arkan `[🟢 CANÔNICO]`.
+- **Natureza / Espécie:** Ser não nativo de Arkan com envelhecimento atípico, alta densidade biológica e domínio arcano inato `[🟢 CANÔNICO]`.
 - **Origem Geográfica:** Desconhecida / Fora do mundo de Arkan `[🟢 CANÔNICO]`.
 - **Estado de Canonização Geral:** `[🟢 CANÔNICO]` (Estrutura de vida definida com mistérios propositais preservados).
 
 ---
 
-## 2. ORIGEM VERDADEIRA & INFÂNCIA EM ARKAN
+## 2. ORIGEM VERDADEIRA & INFÂNCIA EM ARKAN (FASE 1)
 
-### A. Chegada a Arkan
+### A. Chegada e Acolhimento
 - O futuro Rei Mago **não nasceu em Arkan** `[🟢 CANÔNICO]`.
-- Chegou ao reino de Arkan ainda muito jovem (criança/infante) e ali foi criado `[🟢 CANÔNICO]`.
-- No mundo de Arkan, a magia não existe como elemento cotidiano da sociedade (a vida é puramente física, agrária e marcial). Sua presença sempre foi uma anomalia fundamental `[🟢 CANÔNICO]`.
+- Chegou a Arkan ainda criança e foi acolhido na comunidade, crescendo como uma criança humilde da vila `[🟢 CANÔNICO]`.
+- No mundo de Arkan, a magia não existe como elemento cotidiano da sociedade. Sua presença sempre foi uma anomalia fundamental `[🟢 CANÔNICO]`.
 
-### B. Infância Camponesa & Diferenças Biológicas
-- Criado em ambiente humilde como camponês comum, sem privilégios ou sangue nobre `[🟢 CANÔNICO]`.
-- Apresentava características físicas que o distinguiam claramente dos habitantes nativos de Arkan (estatura, traços e ritmo de desenvolvimento) `[🟢 CANÔNICO]`.
-- **Regra de Representação:** Essas diferenças *nunca* foram deficiências ou deformidades, mas sinais evidentes de não pertencer àquela linhagem biológica humana `[🟢 CANÔNICO]`.
-- Não sofria rejeição violenta na infância, mas despertava curiosidade e fascínio `[🟢 CANÔNICO]`.
-
-### C. Mistérios Propositais de Origem (🔴 PROIBIDO PREENCHER SEM DECISÃO)
-- `[🔴 DESCONHECIDO]` De qual mundo, dimensão ou povo ele veio originalmente.
-- `[🔴 DESCONHECIDO]` Quem eram seus pais biológicos.
-- `[🔴 DESCONHECIDO]` Como e por que motivo foi enviado a Arkan.
-- `[🟠 HIPÓTESE EM ABERTO 1]` Os pais fugiam de um perigo extremo e o enviaram para sobreviver.
-- `[🟠 HIPÓTESE EM ABERTO 2]` Os pais foram perseguidos e assassinados antes ou durante o envio.
-- *(Ambas as hipóteses devem permanecer em aberto para futuros desenvolvimentos multiversais).*
+### B. Diferenças Físicas e Convivência
+- Criado como camponês comum, sem títulos ou linhagem nobre `[🟢 CANÔNICO]`.
+- Apresentava estatura, traços e ritmo de crescimento diferentes dos nativos `[🟢 CANÔNICO]`.
+- **Regra de Representação:** Essas características *nunca* foram defeitos ou deformidades, mas marcas evidentes de sua linhagem não humana `[🟢 CANÔNICO]`.
+- Era conhecido, querido e plenamente integrado à comunidade da vila `[🟢 CANÔNICO]`.
 
 ---
 
-## 3. PASSAGEM DO TEMPO, PERCEPÇÃO & LONGEVIDADE
+## 3. JUVENTUDE, TEMPO & DESPERTAR (FASE 2)
 
-- **Envelhecimento Biológico Não Humano:** O Rei Mago envelhece em ritmo incomensuravelmente mais lento que os humanos mortais de Arkan `[🟢 CANÔNICO]`.
-- **Percepção Temporal Elástica:** Períodos que para um humano representam vidas inteiras (gerações, reinados completos) são vivenciados por ele como fases relativamente curtas de sua existência `[🟢 CANÔNICO]`.
-- **Impacto Cronológico:** Isso permite que sua vida atravesse eras inteiras. O Antigo Rei nasceu, governou, envelheceu e morreu, e múltiplas gerações se sucederam, enquanto o mago manteve vigor e capacidade de combate plenos `[🟢 CANÔNICO]`.
+### A. O Envelhecimento Descompassado & Impacto Social
+- O tempo biológico de Alric não acompanha o ritmo humano comum `[🟢 CANÔNICO]`.
+- **O Salto Geracional:** Uma geração humana inteira passa enquanto Alric ainda não atinge a maturidade adulta `[🟢 CANÔNICO]`.
+- **Reação da Vila:** Sua longevidade torna-se notória na comunidade. Surgem histórias e lendas locais sobre o jovem que não envelhece no ritmo dos demais. Alguns vizinhos guardam segredo por afeto; outros aceitam naturalmente como parte de sua identidade `[🟢 CANÔNICO]`.
+- **Perspectiva de Alric:** Para ele, seu tempo é natural. Não encara sua longevidade como um espetáculo, mas como seu fluxo biológico ordinário `[🟢 CANÔNICO]`.
 
----
+### B. Alric Adolescente — O Prodígio Curioso
+- Possui maturidade intelectual extraordinariamente precoce `[🟢 CANÔNICO]`.
+- Aprende em velocidade assombrosa, questiona todas as regras da natureza ao redor e observa tudo metoduosamente `[🟢 CANÔNICO]`.
+- **Equilíbrio Psicológico:** Mantém a espontaneidade e a capacidade de brincar próprias da juventude, sem amargura ou afetação `[🟢 CANÔNICO]`.
+- **Hiperfoco Científico:** É capaz de passar semanas em isolamento voluntário no seu espaço de estudo na vila, absorto em experimentos e investigações `[🟢 CANÔNICO]`.
+- **Motivação Primária:** Pura curiosidade e necessidade de decifrar sua própria essência, sem qualquer ambição de tirania ou poder político `[🟢 CANÔNICO]`.
 
-## 4. NATUREZA DOS PODERES, PESQUISA & AUTODESCOBERTA
+### C. O Primeiro Grande Despertar — O Incidente no Riacho
+- **O Acidente:** Durante um mergulho em um riacho da região, sua perna fica presa debaixo d'água entre detritos/rochas `[🟢 CANÔNICO]`.
+- **A Erupção Involuntária:** Diante do desespero e do risco iminente de afogamento, ocorre uma erupção involuntária de energia concentrada de dentro de seu corpo `[🟢 CANÔNICO]`.
+- **A Projeção Física:** A explosão dissipa a água e o projeta violentamente a uma distância considerável para a margem `[🟢 CANÔNICO]`.
+- **Resistência Biológica:** Alric cai no solo sem sofrer fraturas ou lesões graves, revelando uma resistência corporal muito superior à de um humano comum `[🟢 CANÔNICO]`.
+- **Ponto de Inflexão:** O episódio não gera trauma paralisante, mas fascínio: Alric percebe a existência de uma força interna que precisa ser decifrada `[🟢 CANÔNICO]`.
 
-- **Despertar Inato:** Suas habilidades manifestaram-se espontaneamente na juventude, sem mestres, escolas ou tradições mágicas prévias em Arkan `[🟢 CANÔNICO]`.
-- **Origem do Poder:** Ligada à sua própria natureza biológica/ancestral, herdada pelo sangue ou ligação espiritual `[🟢 PARCIALMENTE CANÔNICO]`. A explicação exata permanece `[🔴 DESCONHECIDO]`.
-- **O Mago como Pesquisador Científico:** Não atua apenas como conjurador de força bruta; é um pesquisador incessante de sua própria existência. Desde jovem realizava experimentos, testes de limites e estudos metódicos para decifrar a energia que emanava de seu corpo `[🟢 CANÔNICO]`.
-- Seu poder cresce na exata medida em que sua compreensão teórica e filosófica do multiverso se expande `[🟢 CANÔNICO]`.
+### D. Início da Pesquisa Empírica Consciente
+- Antes do incidente, pequenas anomalias já ocorriam (objetos que se moviam imperceptivelmente sob emoção intensa, reações ambientais atípicas) `[🟢 CANÔNICO]`.
+- Sem tradição mágica, mestres ou livros arcanos em Arkan, Alric desenvolve seu **próprio método científico empírico**:
+  1. Observação atenta dos gatilhos corporais e mentais.
+  2. Formulação de hipóteses.
+  3. Realização de testes controlados.
+  4. Análise de erros e ajustes.
+  5. Registro mental metódico dos padrões de energia `[🟢 CANÔNICO]`.
 
----
-
-## 5. APROXIMAÇÃO DA COROA & O ANTIGO REI DE ARKAN
-
-### A. Juventude e Destaque
-- O jovem camponês destacou-se pela inteligência extraordinária e pela capacidade de interagir com o ambiente de formas nunca vistas em Arkan `[🟢 CANÔNICO]`.
-- Sua fama crescente chamou a atenção do **Antigo Rei de Arkan** `[🟢 CANÔNICO]`.
-
-### B. O Pacto de Estabilidade
-- O Antigo Rei era carismático, persuasivo e soube conquistar a confiança do jovem mago `[🟢 CANÔNICO]`.
-- **Motivação do Mago para Servir:** O mago não buscava riqueza ou poder político; aceitou o cargo de conselheiro porque a corte oferecia **estabilidade, tempo e recursos** para continuar suas pesquisas sem a obrigação do trabalho braçal diário (lavoura, alfaiataria, forja) `[🟢 CANÔNICO]`.
-- **A Construção da Vida:** Durante os anos de serviço real, o mago estabeleceu raízes profundas em Arkan e **constituiu família** `[🟢 CANÔNICO]`.
-- `[🟡 EM CONSTRUÇÃO]` A profundidade exata da amizade com o Antigo Rei (se afeto quase fraternal ou lealdade profissional nobre) será refinada futuramente.
-
----
-
-## 6. A GANÂNCIA DO ANTIGO REI & A GRANDE RUPTURA
-
-### A. A Ganância Real (Origem do Pecado Histórico)
-- A ganância pertencia exclusivamente ao **Antigo Rei**, não ao mago e não ao rei atual `[🟢 CANÔNICO]`.
-- Ao perceber a magnitude dos poderes do conselheiro, o rei passou a desejar o domínio irrestrito daquela força para expansão da coroa além dos limites humanos `[🟢 CANÔNICO]`.
-- `[🟡 EM CONSTRUÇÃO]` As tentativas exatas de usurpação/experimentos feitas pelo rei e o ponto de atrito final estão em desenvolvimento.
-
-### B. A Ruptura e a Tragédia das Minas da Montanha
-- Ocorreu a quebra irrevogável da confiança. O mago foi declarado traidor e sentenciado ao **exílio imediato** `[🟢 CANÔNICO]`.
-- **O Aprisionamento da Família:** A família do mago foi capturada e levada para as **Minas da Montanha** (`LOCAL-007` / galerias profundas a leste) `[🟢 CANÔNICO]`.
-- O mago foi afastado de Arkan e **perdeu sua família**, tornando o evento o maior trauma e marco de transformação de sua existência `[🟢 CANÔNICO]`.
-- `[🔴 DESCONHECIDO]` O motivo jurídico/estratégico exato que levou à prisão da família nas minas.
-- `[🔴 DESCONHECIDO]` O destino final de cada membro da família (morte no cativeiro, desaparecimento ou morte ao longo das eras).
+### E. Natureza do Poder & Hipótese de Conexão Externa
+- O poder de Alric é parte de sua própria constituição fisiológica e espiritual `[🟢 NÚCLEO CANÔNICO]`.
+- Não se trata de "magia de sangue" no sentido folclórico tradicional de sacrifício `[🟢 CANÔNICO]`.
+- `[🟡 HIPÓTESE EM CONSTRUÇÃO]` Existe a possibilidade de que a linhagem de Alric esteja ancorada a uma **fonte externa de poder dimensional** localizada além do mundo de Arkan, o que explicaria a presença de poder arcano em um plano sem magia nativa.
 
 ---
 
-## 7. O EXÍLIO, SOBREVIVÊNCIA & FUNDAÇÃO DO NOVO DOMÍNIO
+## 4. TRAJETÓRIA CRONOLÓGICA CONSOLIDADA (FASE 1 & 2)
 
-- **Fortalecimento na Adversidade:** Forçado a viver fora da proteção da civilização, o mago sobreviveu sozinho em terras inóspitas. A adversidade acelerou seu domínio arcano e consolidou sua maturidade militar `[🟢 CANÔNICO]`.
-- **A Fundação do Novo Reino:** Com o passar do tempo, reuniu recursos e ergueu seu próprio reino em uma terra distante `[🟢 CANÔNICO]`.
-- `[🔴 DESCONHECIDO]` A localização geográfica, povo, cultura e arquitetura desse reino fundado no exílio.
-- **Nascimento do Rei Mago:** Nesse novo reino, assumiu o manto e o título de **Rei Mago**, deixando para trás a identidade de conselheiro e assumindo o papel de soberano absoluto `[🟢 CANÔNICO]`.
-
----
-
-## 8. O RETORNO & A GUERRA DA REPARAÇÃO (O PRESENTE)
-
-### A. A Linhagem e a Dívida Herdada
-- Após um longo hiato temporal, o Rei Mago retorna com suas legiões a Arkan `[🟢 CANÔNICO]`.
-- O Antigo Rei já faleceu há muito tempo; o trono é ocupado por um **Novo Rei**, descendente direto de sua linhagem `[🟢 CANÔNICO]`.
-- Para o Rei Mago, a morte do traidor não apagou a dívida: a coroa e a linhagem de Arkan continuam devedoras da vida de sua família e de seu banimento `[🟢 CANÔNICO]`.
-
-### B. Natureza da Guerra: REPARAÇÃO
-- O motor da guerra **não é a conquista gratuita de terras** ou pura tirania `[🟢 CANÔNICO]`.
-- É uma **Guerra de Reparação**: ele busca cobrar a dívida moral e existencial que Arkan nunca pagou `[🟢 CANÔNICO]`.
-- Ele acredita legitimamente que possui uma razão justa para o conflito `[🟢 CANÔNICO]`.
+```
+[1. Criança Encontrada / Chegada a Arkan] ──► [2. Criança da Vila & Vida Camponesa]
+                      │
+[3. Envelhecimento Anormalmente Lento (Salto Geracional)]
+                      │
+[4. Adolescente Prodígio & Hiperfoco Investigativo]
+                      │
+[5. Manifestações Involuntárias Sutis] ──► [6. Incidente no Riacho & Despertar de Sobrevivência]
+                      │
+[7. Pesquisa Empírica Consciente & Domínio Metódico] ──► [8. Maturação do Jovem Alric]
+                      │
+          (PRÓXIMA ETAPA A DESENVOLVER)
+[9. Reconhecimento Público ──► Descoberta pela Coroa ──► Aproximação com o Antigo Rei]
+```
 
 ---
 
-## 9. PSICOLOGIA & MORALIDADE DO PERSONAGEM
+## 5. APROXIMAÇÃO DA COROA & O ANTIGO REI (FASE 3 — MAPA GERAL)
 
-- **Anti-Vilão Tridimensional:** O Rei Mago **não nasceu mau** e não opera por maldade sádica `[🟢 CANÔNICO]`.
-- **Eixos Psicológicos:** Perda traumática + Memória inabalável de longa duração + Convicção de injustiça não reparada + Senso de dever para com os seus `[🟢 CANÔNICO]`.
-- **Diretriz de Roteiro:** O jogador deve ser capaz de compreender perfeitamente a dor e a lógica do Rei Mago, mesmo quando for obrigado a combater suas forças para salvar vidas inocentes em Arkham `[🟢 CANÔNICO]`.
+### A. O Destaque e o Encontro
+- O destaque de Alric chega aos ouvidos do **Antigo Rei de Arkan** `[🟢 CANÔNICO]`.
+- O Antigo Rei, carismático e visionário, conquista a confiança do jovem pesquisador `[🟢 CANÔNICO]`.
+- Alric aceita servir à corte para obter **estabilidade, abrigo e recursos** para manter suas pesquisas em tempo integral `[🟢 CANÔNICO]`.
 
----
-
-## 10. A CONEXÃO COM JOHN & O PARALELO FILOSÓFICO
-
-### A. O Anonimato Inicial Mútuo
-- No início da trama, o Rei Mago **não sabe quem John é** `[🟢 CANÔNICO]`.
-- Para o Rei Mago, John é apenas mais um soldado anônimo de um posto periférico de Arkan `[🟢 CANÔNICO]`.
-- John não possui status de "escolhido profetizado" perante o Rei Mago `[🟢 CANÔNICO]`.
-
-### B. A Estrutura de Trajetória Paralela
-| Eixo Narrativo | **JOHN** | **REI MAGO** |
-| :--- | :--- | :--- |
-| **Origem no Conflito** | Jovem sem poderes na pacífica Arkham | Jovem camponês com anomalia arcana |
-| **Reação à Adversidade** | Precisa treinar, coletar e forjar do zero | Precisa sobreviver, pesquisar e construir um reino |
-| **Escala de Poder** | Progressão humana através do esforço e guias | Expansão cósmica através da pesquisa e dor |
-| **Motivação Central** | **FORÇA PARA PROTEGER** *(Arkham e seus amigos)* | **FORÇA PARA EXIGIR REPARAÇÃO** *(Pela família e traição)* |
+### B. Vida na Corte e Família
+- Durante os anos na corte, Alric atua como conselheiro e conjurador, estabelece raízes e **constitui família** `[🟢 CANÔNICO]`.
+- `[🟡 EM CONSTRUÇÃO]` A profundidade dos laços afetivos com o Antigo Rei será desenvolvida na próxima etapa.
 
 ---
 
-## 11. MATRIZ EPISTÊMICA (CONHECIMENTOS & VISIBILIDADE)
+## 6. A GANÂNCIA DO ANTIGO REI, TRAIÇÃO & MINAS (FASE 4)
+
+- **A Ganância Exclusiva do Antigo Rei:** O soberano busca usurpar e monopolizar o poder de Alric para dominar além dos limites humanos `[🟢 CANÔNICO]`.
+- **A Ruptura e o Exílio:** Alric é traído e sentenciado ao exílio forçado `[🟢 CANÔNICO]`.
+- **O Cativeiro nas Minas:** A família de Alric é aprisionada nas **Minas da Montanha** (`LOCAL-007`) `[🟢 CANÔNICO]`.
+- Alric perde sua família e é expulso de Arkan, marcando a maior dor de sua existência `[🟢 CANÔNICO]`.
+
+---
+
+## 7. EXÍLIO, NOVO REINO & GUERRA DA REPARAÇÃO (FASE 5)
+
+- **Sobrevivência & Ascensão:** Alric sobrevive no exílio, expande seu poder e ergue um reino próprio em terras distantes `[🟢 CANÔNICO]`.
+- **O Título:** Assume o título de **Rei Mago** `[🟢 CANÔNICO]`.
+- **O Retorno no Presente:** Retorna marchando contra o **Novo Rei** (descendente direto do Antigo Rei) `[🟢 CANÔNICO]`.
+- **A Causa Moral:** Conduz uma **Guerra da Reparação** por uma dívida histórica e familiar que Arkan nunca pagou `[🟢 CANÔNICO]`.
+
+---
+
+## 8. MATRIZ EPISTÊMICA REVISADA (CONHECIMENTO DE ALRIC)
 
 ```
 ┌─────────────────────────────────────────────────────────────────────────────┐
-│ 1. O QUE O REI MAGO SABE:                                                  │
-│    - A traição do Antigo Rei e a prisão da família nas Minas.              │
-│    - A extensão real de seus próprios poderes e a existência de seu reino. │
-│    - Que o rei atual é o herdeiro direto de seu antigo algoz.              │
+│ 1. O QUE ALRIC SABE NA JUVENTUDE:                                          │
+│    - Que seu corpo é mais resistente e envelhece mais devagar que o normal. │
+│    - Que possui energia latente capaz de explodir sob estresse ou foco.     │
+│    - Que seu método empírico funciona para controlar pequenos fluxos.      │
 │                                                                             │
-│ 2. O QUE O REI MAGO NÃO SABE:                                              │
-│    - A existência de John e o papel que o soldado terá no futuro.           │
-│    - A localização exata de cada foco de resistência oculta de Arkan.      │
+│ 2. O QUE ALRIC NÃO SABE NA JUVENTUDE:                                      │
+│    - De onde veio seu sangue ou quem foram seus pais de origem.            │
+│    - A extensão cósmica de seu poder no futuro.                            │
+│    - Que será traído pelo rei que ainda irá conhecer.                      │
+│    - A existência futura de John.                                          │
 │                                                                             │
-│ 3. O QUE O MUNDO (HABITANTES DE ARKAN/ARKHAM) SABE:                        │
-│    - Que o Rei Mago é uma força arcana avassaladora em marcha.             │
-│    - Que ele serviu ao reino há muito tempo (lenda popular distorcida).     │
-│    - Que a guerra é iminente e destrutiva.                                  │
-│                                                                             │
-│ 4. O QUE O MUNDO NÃO SABE:                                                 │
-│    - A dor pessoal da família perdida e a motivação moral de reparação.    │
-│    - A verdadeira origem não nativa do mago.                               │
-│                                                                             │
-│ 5. O QUE O JOGADOR SABE (VIA PRÓLOGO DO LIVRO):                            │
-│    - A história real da traição e a dor da família nas Minas.              │
-│    - O paralelo moral de intenção entre John e o Rei Mago.                 │
+│ 3. O QUE A VILA DE ARKAN SABE NA JUVENTUDE:                                │
+│    - Que Alric é um garoto prodígio que não envelhece no tempo comum.      │
+│    - Que ele é inteligente, bondoso, curioso e querido pela comunidade.     │
 └─────────────────────────────────────────────────────────────────────────────┘
 ```
 
 ---
 
-## 12. CATÁLOGO DOS 12 MISTÉRIOS PROPOSITAIS (🔴 DESCONHECIDO)
-*(Essas 12 lacunas são intencionais e funcionam como âncoras para futuros arcos e revelações; nenhuma IA ou roteirista deve respondê-las sem autorização explícita).*
+## 9. CATÁLOGO DOS MISTÉRIOS PROPOSITAIS (🔴 DESCONHECIDO)
+*(Intocáveis até decisão explícita de revelação)*
 
-1. `[🔴 DESCONHECIDO]` De onde o Rei Mago veio originalmente?
+1. `[🔴 DESCONHECIDO]` De onde Alric veio originalmente antes de chegar a Arkan?
 2. `[🔴 DESCONHECIDO]` Quem eram seus pais biológicos?
-3. `[🔴 DESCONHECIDO]` Por que e por quem ele foi enviado para Arkan na infância?
-4. `[🔴 DESCONHECIDO]` O que aconteceu com seus pais de sangue?
-5. `[🔴 DESCONHECIDO]` Qual é a verdadeira linhagem ou entidade por trás de seu sangue?
-6. `[🔴 DESCONHECIDO]` Qual a causa metafísica exata de seu envelhecimento retardado?
-7. `[🔴 DESCONHECIDO]` Por que seus poderes arcanos existem em um mundo puramente físico?
-8. `[🔴 DESCONHECIDO]` Qual era o projeto/experimento exato que o Antigo Rei tentou realizar?
-9. `[🔴 DESCONHECIDO]` Por qual razão estratégica a família foi trancada nas Minas e não executada?
-10. `[🔴 DESCONHECIDO]` Qual foi o destino biológico final da família nas Minas da Montanha?
-11. `[🔴 DESCONHECIDO]` Onde fica geograficamente o reino construído pelo Rei Mago?
-12. `[🔴 DESCONHECIDO]` Existe alguma testemunha ancestral em Arkan que saiba de onde ele veio?
+3. `[🔴 DESCONHECIDO]` O que aconteceu com seus pais de sangue (fuga ou assassinato)?
+4. `[🔴 DESCONHECIDO]` Por qual razão exata Alric foi enviado para Arkan ainda criança?
+5. `[🔴 DESCONHECIDO]` Qual a fonte dimensional ou metafísica externa conectada à sua linhagem?
+6. `[🔴 DESCONHECIDO]` Onde fica localizada essa fonte externa no Multiverso?
+7. `[🔴 DESCONHECIDO]` Por que sua biologia possui densidade e envelhecimento retardado?
+8. `[🔴 DESCONHECIDO]` Qual o plano exato que o Antigo Rei tentou executar com o poder de Alric?
+9. `[🔴 DESCONHECIDO]` Por qual motivo a família foi encarcerada nas Minas da Montanha?
+10. `[🔴 DESCONHECIDO]` Qual foi o destino biológico final de cada membro da família nas Minas?
+11. `[🔴 DESCONHECIDO]` Onde fica geograficamente o reino fundado por Alric no exílio?
+12. `[🔴 DESCONHECIDO]` Existe alguma testemunha ancestral que conheça o nome da terra de onde Alric veio?
 
 ---
 
-## 13. RESUMO CONSOLIDADO DE ESTADOS DO PERSONAGEM
+## 10. REGRAS DE CONTINUIDADE EDITORIAL (FASE 2)
 
-- **🟢 DEFINIDO & CANÔNICO:** Origem não nativa; infância camponesa; diferenças físicas não deformantes; longevidade/percepção temporal lenta; poderes inatos e método de pesquisa contínua; aproximação do Antigo Rei por estabilidade; constituição de família; ganância exclusiva do Antigo Rei; traição, exílio e prisão familiar nas Minas; fortalecimento solitário; fundação de reino no exílio; ascensão como Rei Mago; retorno contra o Novo Rei descendente; motivação de reparação; tridimensionalidade moral; anonimato perante John; dualidade paralela (Proteger vs Reparação).
-- **🟡 EM CONSTRUÇÃO:** Nome original de nascimento; visual detalhado e vestimentas de cada era; detalhes da relação de confiança com o Antigo Rei; identidade/nomes da esposa e filhos; método específico de seus experimentos arcanos; momento exato da adoção do título; modo de revelação do paralelo para o jogador no gameplay.
-- **🔴 DESCONHECIDO / MISTÉRIO:** As 12 perguntas catalogadas na seção 12.
-- **⚫ DESCARTADO:** Vilania gratuita ou sádica desde o nascimento; deformidade física como causa de isolamento; conhecimento profético prévio sobre John.
-
----
-
-## 14. PROTOCOLO DE CONTINUIDADE DO BIBLIOTECÁRIO
-Ao redigir qualquer fala, missão, cena de batalha ou texto que envolva o Rei Mago:
-1. Consultar esta ficha antes de gerar texto.
-2. Garantir que o Rei Mago aja por **senso de cobrança de dívida e dignidade ferida**, nunca como vilão genérico de desenho animado.
-3. Não permitir que NPCs de Arkham justifiquem as ações do Rei Mago (para o povo, ele é uma calamidade militar).
-4. Manter estritamente intocadas as 12 lacunas `[🔴 DESCONHECIDO]`.
+Ao redigir qualquer passagem da juventude de Alric:
+1. **Nome:** Tratar o personagem por **Alric** (ele ainda não possui nem ambiciona o título de Rei Mago).
+2. **Tom e Personalidade:** Retratá-lo como um jovem prodígio fascinado pelo mundo, espontâneo, afetuoso com a vila e apaixonado por decifrar mistérios.
+3. **Sem Vilania Prematura:** Proibido adicionar traços sádicos, tirânicos ou sombrios nesta fase de sua vida.
+4. **Respeitar o Incidente do Riacho:** Usar o evento do afogamento acidental como o marco do primeiro despertar consciente.
+5. **Preservar as 12 lacunas `[🔴 DESCONHECIDO]`.**

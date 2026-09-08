@@ -7,25 +7,37 @@
 
 ## 1. LINHA TEMPORAL GLOBAL
 
-### ERA I: A ERA ANCESTRAL (A FUNDAÇÃO & O MAGO CONSELHEIRO)
+### ERA I: A ERA ANCESTRAL (ORIGEM DE ALRIC & O MAGO CONSELHEIRO)
 
-#### Período 1.1: O Reino Antigo de Arkan
-- **Evento:** O Reino de Arkan vive sob paz e expansão militar e agrária. Sociedade sem magia cotidiana.
-- **Personagens Envolvidos:** O Antigo Rei de Arkan, O Mago (Conselheiro Real).
-- **Consequência:** O mago é integrado à corte como conselheiro e conjurador devido a habilidades excepcionais únicas.
+#### Período 1.0: A Chegada e a Infância na Vila
+- **Evento:** Uma criança de origem misteriosa chega a Arkan e é acolhida na comunidade camponesa. Recebe o nome de Alric.
+- **Personagens Envolvidos:** Alric (criança), Habitantes da Vila.
+- **Consequência:** Alric cresce integrado e querido, embora apresente traços e ritmo de desenvolvimento físico diferentes dos nativos.
 - **Status:** `[🟢 CANÔNICO]`
-- **Lacunas:** Origem exata dos poderes do mago `[🔴 DESCONHECIDO]`; Nome de nascimento do mago `[🔴 DESCONHECIDO]`.
+- **Lacunas:** De onde Alric veio e quem eram seus pais `[🔴 DESCONHECIDO]`.
 
-#### Período 1.2: A Ganância e a Ruptura
-- **Evento:** O Antigo Rei tenta explorar e controlar os poderes do mago para ultrapassar os limites do reino.
-- **Personagens Envolvidos:** O Antigo Rei, O Mago, Família do Mago.
-- **Consequência:** Ruptura política e moral. O mago é traído e expulso de Arkan.
+#### Período 1.1: O Descompasso Temporal & O Incidente no Riacho
+- **Evento:** Passa-se uma geração inteira de humanos enquanto Alric ainda é um adolescente prodígio. Durante um mergulho no riacho, sua perna fica presa; sob desespero, ocorre o primeiro despertar de energia involuntária, lançando-o à margem ileso.
+- **Personagens Envolvidos:** Alric (adolescente).
+- **Consequência:** Alric inicia seu método próprio de pesquisa empírica metódica (observação, teste, erro, ajuste) para decifrar a força que habita em si.
 - **Status:** `[🟢 CANÔNICO]`
 
-#### Período 1.3: O Exílio e o Cativeiro nas Minas
-- **Evento:** A família do mago é aprisionada nas Minas da Montanha (`LOCAL-007`). O mago perde sua família e é forçado ao exílio solitário.
-- **Personagens Envolvidos:** O Mago, Família do Mago, Guardas do Antigo Rei.
-- **Consequência:** O mago jura sobreviver e se fortalecer. As minas tornam-se um túmulo e ferida histórica.
+#### Período 1.2: A Aproximação da Corte e o Pacto de Estabilidade
+- **Evento:** O destaque científico e arcano de Alric chega aos ouvidos do Antigo Rei de Arkan. O rei, carismático, oferece estabilidade e recursos para Alric pesquisar; Alric torna-se conselheiro real e constitui família na corte.
+- **Personagens Envolvidos:** O Antigo Rei de Arkan, Alric (Conselheiro Real), Família de Alric.
+- **Consequência:** Longo período de cooperação produtiva e paz.
+- **Status:** `[🟢 CANÔNICO]`
+
+#### Período 1.3: A Ganância e a Ruptura
+- **Evento:** O Antigo Rei tenta explorar e controlar os poderes de Alric para ultrapassar os limites do reino.
+- **Personagens Envolvidos:** O Antigo Rei, Alric, Família de Alric.
+- **Consequência:** Ruptura política e moral. Alric é traído e expulso de Arkan.
+- **Status:** `[🟢 CANÔNICO]`
+
+#### Período 1.4: O Exílio e o Cativeiro nas Minas
+- **Evento:** A família de Alric é aprisionada nas Minas da Montanha (`LOCAL-007`). Alric perde sua família e é forçado ao exílio solitário.
+- **Personagens Envolvidos:** Alric, Família de Alric, Guardas do Antigo Rei.
+- **Consequência:** Alric jura sobreviver e se fortalecer. As minas tornam-se um túmulo e ferida histórica.
 - **Status:** `[🟢 CANÔNICO]`
 - **Lacunas:** O destino específico da família nas minas (morte ou cativeiro permanente) `[🔴 DESCONHECIDO]`.
 
