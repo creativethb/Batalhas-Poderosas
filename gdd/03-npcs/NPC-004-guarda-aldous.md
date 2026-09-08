@@ -1,21 +1,22 @@
 ---
 id: "NPC-004"
 nome: "Guarda Aldous"
-funcao: "Sentinela da Praça Central"
 status: "CANONICO"
-localizacao: "Praça Central de Arkham"
-relacionados:
-  - "LOCAL-003"
-  - "NPC-003"
-imagem: "./assets/npcs/NPC-004.png"
-atualizado_por: "agente_bibliotecario"
-data_atualizacao: "2026-09-08"
+atualizado_por: "agente"
 ---
 
-# Biografia & Propósito
-Aldous é o sentinela responsável pela segurança dos cidadãos e pela ordem nos 6 portões do perímetro central de Arkham. Equipado com lança e tabardo com as cores reais de Arkan.
+# Ficha Técnica: Guarda Aldous
 
-### Diálogos Canônicos
+## 1. Identificação
+- **ID do Modelo:** `Base_Guarda_Aldous`
+- **Profissão:** Sentinela da Praça Central
+- **Rota Territorial:** `RotaGuarda` (cobre o perímetro dos 6 portões e a praça)
+- **Equipamento:** Elmo metálico, tabardo azul de soldado de Arkan e lança de guarda
+
+## 2. Papel Narrativo & Gameplay
+- Comandante de sentinela responsável pela ordem interna e segurança dos moradores na Praça Central de Arkham.
+
+## 3. Falas
 - *"A patrulha está em alerta. Nenhum invasor passará pelos portões."*
 - *"Pela honra e proteção de Batalhas Poderosas!"*
 - *"Circulando com honra. Não cause tumulto na praça."*
