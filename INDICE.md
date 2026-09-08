@@ -53,8 +53,45 @@
 
 | ID | Nome | Status | Arquivo | Resumo |
 | :--- | :--- | :--- | :--- | :--- |
-| **`LORE-001`** | A Lenda de Arkan e a Queda do Mago | `CANONICO` | `gdd/01-lore/LORE-001-origem-de-arkan-e-o-rei-mago.md` | Origem da guerra: o servo do antigo rei cuja família foi exilada nas minas. |
-| **`LORE-002`** | A Saga de John | `CANONICO` | `gdd/01-lore/LORE-002-jornada-de-john.md` | A jornada do único soldado de Arkham, sua preparação e o banimento. |
+| **`LORE-001`** | Origem do Conflito de Arkan e o Rei Mago | `CANONICO` | `gdd/01-lore/LORE-001-origem-de-arkan-e-o-rei-mago.md` | Origem do Rei Mago, exílio, família nas minas, guerra da reparação. Atualizado com cânone expandido. |
+| **`LORE-002`** | A Saga de John | `CANONICO` | `gdd/01-lore/LORE-002-jornada-de-john.md` | Sequência inicial canônica de 10 passos. Localização de coleta provisória. |
+| **`LORE-003`** | Diário de John — Registros da Jornada | `CANONICO` | `gdd/01-lore/LORE-003-diario-de-john.md` | Diário com entradas refinadas (CAP1-001 a CAP1-005). Primeira página revisada. |
+| **`LORE-004`** | Paralelo Narrativo: John e o Rei Mago | `CANONICO` | `gdd/01-lore/LORE-004-paralelo-john-rei-mago.md` | Princípio canônico: ambos fortalecidos pela adversidade. John protege, Rei Mago busca reparação. |
+
+---
+
+## 📖 Livro / Lore do Universo — Estrutura de Capítulos (`appDb.livro[]`)
+
+| ID | Cap | Título | Status |
+| :--- | :--- | :--- | :--- |
+| `LIVRO-CAP1` | 1 | As Raízes de Arkan | `CANONICO` |
+| `LIVRO-CAP1-001` | 1 | O Reino e o Mago | `CANONICO` |
+| `LIVRO-CAP1-002` | 1 | A Ganância do Antigo Rei | `CANONICO` |
+| `LIVRO-CAP1-003` | 1 | O Exílio e o Fortalecimento | `CANONICO` |
+| `LIVRO-CAP2` | 2 | A Guerra da Reparação | `CANONICO` |
+| `LIVRO-CAP2-001` | 2 | O Retorno | `CANONICO` |
+| `LIVRO-CAP2-002` | 2 | A Situação de Arkham | `CANONICO` |
+| `LIVRO-CAP3` | 3 | John | `CANONICO` |
+| `LIVRO-CAP3-001` | 3 | O Soldado Sem Poderes | `CANONICO` |
+| `LIVRO-CAP3-002` | 3 | Eldrin e a Árvore Sagrada | `CANONICO` |
+| `LIVRO-CAP3-003` | 3 | A Forja de Cedric | `CANONICO` |
+| `LIVRO-CAP3-004` | 3 | O Confronto e o Banimento | `CANONICO` |
+| `LIVRO-CAP4` | 4 | A Jornada Multiversal | `EM_DESENVOLVIMENTO` |
+| `LIVRO-CAP4-001` | 4 | O Multiverso | `EM_DESENVOLVIMENTO` |
+
+> Nome definitivo do Livro: 🟡 EM CONSTRUÇÃO. Divisão de capítulos: 🟡 pode ser alterada.
+
+---
+
+## 📓 Diário de John — Entradas (`appDb.diario[]`)
+
+| ID | Título | Estado | Missão | Status |
+| :--- | :--- | :--- | :--- | :--- |
+| `DIARIO-CAP1-001` | Primeira Página | `DESBLOQUEADO` | Prólogo | `CANONICO` |
+| `DIARIO-CAP1-002` | A Bênção de Eldrin | `BLOQUEADO` | MISSAO-001 | `CANONICO` |
+| `DIARIO-CAP1-003` | A Lâmina de Cedric | `BLOQUEADO` | MISSAO-001 | `CANONICO` |
+| `DIARIO-CAP1-004` | Primeiro Confronto | `BLOQUEADO` | A definir | `PLANEJADO` |
+| `DIARIO-CAP1-005` | O Teletransporte | `BLOQUEADO` | A definir | `PLANEJADO` |
 
 ---
 
@@ -66,6 +103,7 @@
 | **`GAME-002`** | Sistema de Combate e Combos | Combate | `CANONICO` | `gdd/02-gameplay/GAME-002-sistema-de-combate-e-combos.md` |
 | **`GAME-003`** | Locomoção, Dash e Pulo | Movimentação | `CANONICO` | `gdd/02-gameplay/GAME-003-locomocao-dash-e-pulo.md` |
 | **`GAME-004`** | Sistema de Diálogo e Câmera | Interação & Cena | `CANONICO` | `gdd/02-gameplay/GAME-004-sistema-de-dialogo-e-camera.md` |
+| **`GAME-005`** | Sistema do Diário de John | Inventário, Narrativa & Desbloqueio | `CANONICO` | `gdd/02-gameplay/GAME-005-sistema-do-diario.md` |
 
 ---
 
@@ -78,3 +116,5 @@
 | **`BP-2026-003`** | A Guerra do Rei Mago | Lore & História | `CANONICO` | `gdd/99-canon/CANON-003-a-guerra-do-rei-mago.md` |
 | **`BP-2026-004`** | Desacoplamento do Sandbox | Arquitetura | `CANONICO` | `gdd/99-canon/CANON-004-desacoplamento-sandbox-mundo-livre.md` |
 | **`BP-2026-005`** | Padrão UX Multiplataforma | Interface | `CANONICO` | `gdd/99-canon/CANON-005-padrao-ux-multiplataforma.md` |
+| **`BP-2026-006`** | Diário de John — Elemento Narrativo e Funcional | Narrativa & Lore | `CANONICO` | `gdd/99-canon/CANON-006-diario-de-john.md` |
+| **`BP-2026-007`** | Protocolo Narrativo — Diário e Livro/Lore | Narrativa & Sistema | `CANONICO` | `gdd/99-canon/CANON-007-protocolo-narrativo-diario-e-lore.md` |

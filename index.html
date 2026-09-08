@@ -88,6 +88,55 @@
     .prose-medieval code { background: #201d2c; color: #f3e5ab; padding: 0.15rem 0.4rem; border-radius: 4px; font-family: 'JetBrains Mono', monospace; font-size: 0.88em; }
     .prose-medieval pre { background: #110f17; border: 1px solid #2e283b; padding: 1rem; border-radius: 6px; overflow-x: auto; margin-bottom: 1rem; }
     .prose-medieval pre code { background: transparent; padding: 0; }
+    /* Book Tome Styling */
+    .tome-leather {
+      background: radial-gradient(circle at 50% 20%, #201a28 0%, #120f18 100%);
+      border: 2px solid #5a4622;
+      box-shadow: 0 15px 40px rgba(0,0,0,0.8), inset 0 0 15px rgba(212,175,55,0.15);
+    }
+    .tome-page {
+      background: linear-gradient(135deg, #181520 0%, #13111a 100%);
+      border: 1px solid rgba(212,175,55,0.25);
+      position: relative;
+    }
+    .tome-page-left {
+      box-shadow: inset -15px 0 25px -10px rgba(0,0,0,0.7);
+    }
+    .tome-page-right {
+      box-shadow: inset 15px 0 25px -10px rgba(0,0,0,0.7);
+    }
+    .tome-spine {
+      background: linear-gradient(90deg, #0d0a13 0%, #241e2e 50%, #0d0a13 100%);
+      box-shadow: inset 0 0 10px rgba(0,0,0,0.9);
+    }
+    .drop-cap {
+      float: left;
+      font-family: 'Cinzel', serif;
+      font-size: 2.8rem;
+      line-height: 0.8;
+      padding-top: 4px;
+      padding-right: 8px;
+      padding-bottom: 2px;
+      color: #d4af37;
+      font-weight: bold;
+      text-shadow: 0 2px 8px rgba(212,175,55,0.3);
+    }
+    .ornament-divider {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      color: #8c7336;
+      font-family: 'Cinzel', serif;
+      font-size: 0.85rem;
+      margin: 1.5rem 0;
+    }
+    .ornament-divider::before, .ornament-divider::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(212,175,55,0.4), transparent);
+    }
   </style>
 </head>
 <body class="min-h-screen flex flex-col bg-arkan-950 text-arkan-parchment antialiased selection:bg-arkan-gold selection:text-arkan-950">
@@ -108,7 +157,7 @@
         <div>
           <div class="font-cinzel font-bold text-base tracking-wider text-arkan-parchment group-hover:text-arkan-gold transition leading-tight flex items-center gap-2">
             BATALHAS PODEROSAS
-            <span class="text-[10px] uppercase font-sans font-semibold bg-arkan-800 text-arkan-gold border border-arkan-gold/30 px-1.5 py-0.5 rounded">GDD v1.8</span>
+            <span class="text-[10px] uppercase font-sans font-semibold bg-arkan-800 text-arkan-gold border border-arkan-gold/30 px-1.5 py-0.5 rounded">GDD v2.4</span>
           </div>
           <p class="text-xs text-arkan-parchmentMuted hidden sm:block">Reino de Arkan • Documento Vivo Canônico</p>
         </div>
@@ -195,13 +244,26 @@
           <div class="text-[11px] font-cinzel font-bold text-arkan-gold uppercase tracking-wider mb-2 px-2">Universo</div>
           <ul class="space-y-1">
             <li><a href="#historia" class="nav-link flex items-center gap-2.5 px-2.5 py-1.5 rounded-lg text-arkan-parchment hover:bg-arkan-800 hover:text-arkan-gold transition">
-              <span class="text-base">📜</span> História & Lore
+              <span class="text-base">📜</span> Introdução Narrativa
             </a></li>
             <li><a href="#locais" class="nav-link flex items-center gap-2.5 px-2.5 py-1.5 rounded-lg text-arkan-parchment hover:bg-arkan-800 hover:text-arkan-gold transition">
               <span class="text-base">🏰</span> Mundo & Locais
             </a></li>
             <li><a href="#npcs" class="nav-link flex items-center gap-2.5 px-2.5 py-1.5 rounded-lg text-arkan-parchment hover:bg-arkan-800 hover:text-arkan-gold transition">
               <span class="text-base">👥</span> NPCs & Personagens
+            </a></li>
+          </ul>
+        </div>
+
+        <!-- Categoria: Narrativa -->
+        <div>
+          <div class="text-[11px] font-cinzel font-bold text-arkan-gold uppercase tracking-wider mb-2 px-2">Narrativa</div>
+          <ul class="space-y-1">
+            <li><a href="#livro" class="nav-link flex items-center gap-2.5 px-2.5 py-1.5 rounded-lg text-arkan-parchment hover:bg-arkan-800 hover:text-arkan-gold transition">
+              <span class="text-base">📖</span> Livro / Lore do Universo
+            </a></li>
+            <li><a href="#diario" class="nav-link flex items-center gap-2.5 px-2.5 py-1.5 rounded-lg text-arkan-parchment hover:bg-arkan-800 hover:text-arkan-gold transition">
+              <span class="text-base">📓</span> Diário de John
             </a></li>
           </ul>
         </div>
@@ -533,7 +595,7 @@
       projeto: {
         nome: "Batalhas Poderosas",
         universo: "Reino de Arkan",
-        versao: "2.0.0",
+        versao: "2.4.0",
         ultimaAtualizacao: "08/09/2026",
         estado: "Vila de Arkham Operacional • R15 • Diálogos & Combate",
         engine: "Roblox Studio (Luau + Rojo)",
@@ -892,6 +954,28 @@ Responsável pela produção dos lotes agrícolas no norte de Arkham.`
           substitui: null,
           relacionados: [],
           markdown: `**Decisão:** PC e Console não possuem botões virtuais na tela; Mobile possui HUD contextual que expande botões de combate ao sacar a arma.`
+        },
+        {
+          id: "BP-2026-006",
+          titulo: "Diário de John — Elemento Narrativo e Funcional",
+          data: "2026-09-08",
+          categoria: "Narrativa & Lore",
+          status: "CANONICO",
+          motivo: "Contextualizar o jogador progressivamente sem expor todo o universo de uma vez, usando o diário como ferramenta narrativa e de gameplay integradas.",
+          substitui: null,
+          relacionados: ["LORE-002", "LORE-003", "CANON-001", "CANON-002", "LOCAL-001"],
+          markdown: `**Decisão:** Existe um diário pertencente a John, elemento narrativo oficial de Batalhas Poderosas. O jogador o encontra no início da gameplay. Contém poucos registros iniciais que situam o jogador sobre: onde está, em que momento da história está, o que ocorre em Arkan, o que John sabe sobre a ameaça e seus objetivos imediatos. É atualizado conforme John avança na história, organizado em capítulos e crônicas. O nome definitivo do livro e sua transformação futura em grande conto permanecem **EM CONSTRUÇÃO**.`
+        },
+        {
+          id: "BP-2026-007",
+          titulo: "Protocolo Narrativo — Diário de John e Livro/Lore do Universo",
+          data: "2026-09-08",
+          categoria: "Narrativa & Sistema",
+          status: "CANONICO",
+          motivo: "Separar com clareza as duas camadas narrativas para que agentes, designers e programadores nunca as confundam ao criar conteúdo.",
+          substitui: null,
+          relacionados: ["BP-2026-006", "LORE-003", "GAME-005"],
+          markdown: `**Duas camadas distintas e relacionadas:**\n\n**📓 Diário de John** — gameplay e narrativa pessoal, primeira pessoa, cronológico. Existe no mundo, é coletado, fica no inventário, pode ser consultado. Responde: *"O que está acontecendo comigo?"*\n\n**📖 Livro/Lore do Universo** — camada histórica. Registra acontecimentos anteriores a John, lendas, reis, origens. Responde: *"O que aconteceu neste mundo?"*\n\n**Fluxo canônico:** John vive → acontecimento entra no Diário → jogador consulta o novo registro.\n\nO Bibliotecário não deve transformar automaticamente uma ideia em cânone.`
         }
       ],
       sistemas: [
@@ -936,6 +1020,203 @@ Responsável pela produção dos lotes agrícolas no norte de Arkham.`
           categoria: "Veículos",
           status: "CANONICO",
           markdown: `Rodas com giro concêntrico perfeito e animação procedural das patas do cavalo.`
+        },
+        {
+          id: "GAME-005",
+          nome: "Sistema do Diário de John",
+          categoria: "Inventário, Narrativa & Desbloqueio",
+          status: "CANONICO",
+          markdown: `**Aquisição:** Coletado na Casa de John (LOCAL-001) no início da introdução via ProximityPrompt ou pickup automático.\n\n**Inventário:** Permanece com o jogador durante toda a progressão. Não pode ser descartado.\n\n**Consulta:** Acessado via inventário/hotbar fora de combate. Entradas organizadas por Capítulo → ordem cronológica. Novo conteúdo marcado com indicador visual até ser lido.\n\n**Desbloqueio:** Cada entrada é desbloqueada por evento específico da campanha (missão, diálogo, coleta, confronto). Entradas OBRIGATÓRIAS desbloqueiam automaticamente; OPCIONAIS dependem de exploração.\n\n**Entradas ativas:** DIARIO-CAP1-001 (automático), CAP1-002 (após Eldrin), CAP1-003 (após forja Cedric).`
+        }
+      ],
+      livro: [
+        {
+          id: "LIVRO-CAP1",
+          capitulo: 1,
+          titulo: "As Raízes de Arkan",
+          subtitulo: "A história antiga: o reino, o mago, a traição",
+          status: "CANONICO",
+          cronicas: [
+            {
+              id: "LIVRO-CAP1-001",
+              titulo: "O Reino e o Mago",
+              status: "CANONICO",
+              fonte: "LORE-001",
+              texto: `O Reino de Arkan é uma terra ancestral — vilarejos medievais, bosques antigos, minas nas encostas das montanhas. Por longos períodos viveu em paz.\n\nNaquela era, a magia não era parte comum do mundo conhecido. Um mago de poderes excepcionais, cuja origem permanece misteriosa, servia como conselheiro e conjurador ao antigo rei de Arkan.\n\n[🔴 DESCONHECIDO: a origem dos poderes do mago ainda não foi estabelecida.]`
+            },
+            {
+              id: "LIVRO-CAP1-002",
+              titulo: "A Ganância do Antigo Rei",
+              status: "CANONICO",
+              fonte: "LORE-001",
+              texto: `O antigo rei, movido por ganância, tentou explorar os poderes do mago para seu próprio proveito.\n\nA ruptura foi inevitável:\n\n— O mago foi exilado.\n— Sua família foi aprisionada nas Minas da Montanha — as galerias escavadas nas encostas leste de Arkan.\n— O mago perdeu sua família.\n— Foi forçado a sobreviver longe de tudo que conhecia.\n\n[🔴 DESCONHECIDO: o destino exato da família — se morreram, permaneceram presas, ou fugiram — ainda não foi definido.]`
+            },
+            {
+              id: "LIVRO-CAP1-003",
+              titulo: "O Exílio e o Fortalecimento",
+              status: "CANONICO",
+              fonte: "LORE-001",
+              texto: `Longe de Arkan, o mago exilado não desapareceu.\n\nPrecisou sobreviver. Precisou crescer. Tornou-se ainda mais poderoso do que quando servia ao antigo rei.\n\nConstruiu seu próprio reino em algum lugar ainda não revelado.\n\nPassou a ser conhecido como Rei Mago.\n\n[🔴 DESCONHECIDO: a localização do reino do Rei Mago ainda não foi definida.]`
+            }
+          ]
+        },
+        {
+          id: "LIVRO-CAP2",
+          capitulo: 2,
+          titulo: "A Guerra da Reparação",
+          subtitulo: "O retorno, o novo rei e o início do conflito atual",
+          status: "CANONICO",
+          cronicas: [
+            {
+              id: "LIVRO-CAP2-001",
+              titulo: "O Retorno",
+              status: "CANONICO",
+              fonte: "LORE-001",
+              texto: `O presente de Arkan possui um novo rei — descendente direto do antigo rei que traiu o mago e aprisionou sua família.\n\nO Rei Mago retornou.\n\nNão para conquistar por conquista. Para buscar reparação pelo que foi feito a ele e à sua família.\n\nEle não se considera um vilão. Acredita possuir uma razão legítima — e acredita que Arkan lhe deve algo que nunca foi pago.`
+            },
+            {
+              id: "LIVRO-CAP2-002",
+              titulo: "A Situação de Arkham",
+              status: "CANONICO",
+              fonte: "LORE-001",
+              texto: `A guerra já afeta outras regiões do reino.\n\nArkham, porém, ainda vive em relativa paz. É um dos últimos locais onde a ordem se mantém, onde os ferreiros ainda trabalham, os pescadores ainda pescam e os campos ainda produzem.\n\nToda a população conhece a existência do conflito. Ninguém ignora a ameaça do Rei Mago. A questão não é se ele chegará — mas quando.\n\nE Arkham tem apenas um soldado.`
+            }
+          ]
+        },
+        {
+          id: "LIVRO-CAP3",
+          capitulo: 3,
+          titulo: "John",
+          subtitulo: "A preparação do único soldado de Arkham",
+          status: "CANONICO",
+          cronicas: [
+            {
+              id: "LIVRO-CAP3-001",
+              titulo: "O Soldado Sem Poderes",
+              status: "CANONICO",
+              fonte: "LORE-002",
+              texto: `John está em Arkham no início da aventura.\n\nEle é um jovem soldado — sem poderes extraordinários, sem equipamento forjado, sem história de batalhas. Sabe que precisa se preparar. Sabe que o que chega é maior do que ele está agora.\n\nA vila ainda respira. Mas o vento muda.\n\n[🟡 EM CONSTRUÇÃO: detalhes biográficos de John — origem, história pessoal anterior — ainda não foram estabelecidos como cânone.]`
+            },
+            {
+              id: "LIVRO-CAP3-002",
+              titulo: "Eldrin e a Árvore Sagrada",
+              status: "CANONICO",
+              fonte: "LORE-002",
+              texto: `No bosque a oeste de Arkham existe uma árvore que não é comum.\n\nO Ancião Eldrin a guarda há mais tempo do que qualquer habitante consegue lembrar. Ele conhece a lenda. Conhece a história das raízes de Arkan.\n\nJohn foi até ele. Ouviu. Recebeu o Galho Sagrado — um ramo cuja têmpera, segundo Eldrin, é eterna. A madeira não é o que importa. É a intenção de quem a empunha.`
+            },
+            {
+              id: "LIVRO-CAP3-003",
+              titulo: "A Forja de Cedric",
+              status: "CANONICO",
+              fonte: "LORE-002",
+              texto: `Mestre Cedric não faz perguntas.\n\nEle recebeu a Madeira Comum e o Galho Sagrado. Trabalhou. Da bacia de têmpera saiu a Espada de Madeira Sagrada — a primeira arma forjada para John.\n\nA lâmina pesa menos do que deveria. No escuro, brilha um pouco. Isso não é comum.\n\nCedric apenas assentiu. Para ele, era trabalho. Para John, era o início de algo maior.`
+            },
+            {
+              id: "LIVRO-CAP3-004",
+              titulo: "O Confronto e o Banimento",
+              status: "CANONICO",
+              fonte: "LORE-002",
+              texto: `Após se preparar e proteger os arredores de Arkham, John enfrentou uma força esmagadoramente superior.\n\nEsse confronto culminou em um teletransporte forçado — para dimensões desconhecidas. O Multiverso.\n\nPara salvar Arkan, John precisará sobreviver a esses novos mundos, desvendar chaves dimensionais e retornar incomparavelmente mais forte.\n\n[🔴 DESCONHECIDO: a natureza exata do confronto e de quem ou o que provocou o teletransporte ainda não foi definida.]`
+            }
+          ]
+        },
+        {
+          id: "LIVRO-CAP4",
+          capitulo: 4,
+          titulo: "A Jornada Multiversal",
+          subtitulo: "Dimensões desconhecidas, chaves e o retorno",
+          status: "EM_DESENVOLVIMENTO",
+          cronicas: [
+            {
+              id: "LIVRO-CAP4-001",
+              titulo: "O Multiverso",
+              status: "EM_DESENVOLVIMENTO",
+              fonte: "LORE-002",
+              texto: `[🟡 EM CONSTRUÇÃO]\n\nJohn foi teletransportado para dimensões desconhecidas.\n\nO que existe além de Arkham e Arkan ainda não foi completamente documentado. Sabe-se que existem mundos a explorar, chaves dimensionais a desvendar e que o retorno depende de sobreviver a tudo isso.\n\nO Portal do Mundo Livre existe como um ponto de acesso alternativo — uma caverna mística na borda leste de Arkham, guardada pelo Guardião Seraphin.\n\n[🔴 DESCONHECIDO: os mundos do Multiverso, suas regras, desafios e habitantes ainda não foram estabelecidos.]`
+            }
+          ]
+        }
+      ],
+      diario: [
+        {
+          id: "DIARIO-CAP1-001",
+          capitulo: 1,
+          capituloTitulo: "Capítulo I — As Raízes de Arkham",
+          titulo: "Primeira Página",
+          momento: "Início da gameplay — antes de qualquer ação",
+          local: "Arkham — localização exata provisória",
+          eventoGatilho: "O jogador encontra o Diário no mundo",
+          condicao: "Automático — desbloqueado ao adquirir o Diário",
+          obrigatorio: true,
+          estado: "DESBLOQUEADO",
+          missao: "Prólogo",
+          status: "CANONICO",
+          continuidade: "Estabelece: John está em Arkham, Arkham ainda vive em paz relativa, a guerra existe em outras regiões, John sabe que não está preparado. Não revela detalhes biográficos de John. Não explica o universo inteiro.",
+          texto: `Arkham ainda respira.\n\nLá fora, do lado de fora das muralhas, a guerra já chegou em outros lugares. As notícias chegam com os viajantes — sempre mais sombrias, sempre mais próximas. Todos aqui sabem. Ninguém finge que não sabe.\n\nSou o único soldado desta vila. Isso não é glória — é uma responsabilidade que pesa mais do que qualquer armadura.\n\nAinda não estou pronto. Preciso me preparar. Cada dia que passa é um dia a menos antes que o que chegou a outros lugares chegue aqui também.\n\nComeço hoje.`
+        },
+        {
+          id: "DIARIO-CAP1-002",
+          capitulo: 1,
+          capituloTitulo: "Capítulo I — As Raízes de Arkham",
+          titulo: "A Bênção de Eldrin",
+          momento: "Após receber a Madeira Sagrada do Ancião Eldrin",
+          local: "Árvore Sagrada — Santuário Oeste (LOCAL-004)",
+          eventoGatilho: "Conclusão do diálogo com Ancião Eldrin (NPC-002)",
+          condicao: "Após receber ITEM-002 (Madeira Sagrada / Galho Sagrado)",
+          obrigatorio: true,
+          estado: "BLOQUEADO",
+          missao: "MISSAO-001 — A Primeira Lâmina Sagrada",
+          status: "CANONICO",
+          continuidade: "Reforça o peso simbólico da Madeira Sagrada (ITEM-002). Desenvolve o personagem de Eldrin (NPC-002). Introduz a ideia de que a força vem da intenção, não apenas do material.",
+          texto: `Eldrin tem olhos que parecem ver além das árvores.\n\nQuando me entregou o galho, disse que a madeira desta árvore nunca quebra — não a madeira, mas a intenção de quem a empunha.\n\nNão sei se sou digno disso. Mas a vila precisa de alguém que tente.`
+        },
+        {
+          id: "DIARIO-CAP1-003",
+          capitulo: 1,
+          capituloTitulo: "Capítulo I — As Raízes de Arkham",
+          titulo: "A Lâmina de Cedric",
+          momento: "Após forjar a Espada de Madeira Sagrada",
+          local: "Oficina do Cedric — Praça Sul (LOCAL-002)",
+          eventoGatilho: "Forja concluída na bigorna de Mestre Cedric (NPC-001)",
+          condicao: "Após receber ITEM-003 (Espada de Madeira Sagrada)",
+          obrigatorio: true,
+          estado: "BLOQUEADO",
+          missao: "MISSAO-001 — A Primeira Lâmina Sagrada",
+          status: "CANONICO",
+          continuidade: "Confirma as propriedades incomuns da espada (ITEM-003). Caracteriza Mestre Cedric (NPC-001) como homem de ação, não de palavras.",
+          texto: `Cedric é um homem de poucas palavras e muitas faíscas.\n\nQuando a lâmina saiu da bacia de têmpera, ele apenas assentiu. Para ele, era trabalho. Para mim, era o início de algo que ainda não entendo completamente.\n\nA espada pesa menos do que deveria. Brilha um pouco no escuro. Isso não é normal.\n\nMas Arkan precisa de coisas que não são normais agora.`
+        },
+        {
+          id: "DIARIO-CAP1-004",
+          capitulo: 1,
+          capituloTitulo: "Capítulo I — As Raízes de Arkham",
+          titulo: "Primeiro Confronto",
+          momento: "Primeiro combate real contra inimigo",
+          local: "Arredores de Arkham — localização não definida",
+          eventoGatilho: "Primeiro combate real da campanha",
+          condicao: "A definir — aguarda definição do evento de gameplay",
+          obrigatorio: true,
+          estado: "BLOQUEADO",
+          missao: "A definir",
+          status: "PLANEJADO",
+          continuidade: "A definir. Conectará com a progressão de combate (GAME-002).",
+          texto: `[🟣 PLANEJADO — entrada não redigida. Aguarda definição do evento de gameplay correspondente.]`
+        },
+        {
+          id: "DIARIO-CAP1-005",
+          capitulo: 1,
+          capituloTitulo: "Capítulo I — As Raízes de Arkham",
+          titulo: "O Teletransporte",
+          momento: "Confronto culminante — banimento dimensional",
+          local: "A definir",
+          eventoGatilho: "Confronto com força esmagadoramente superior",
+          condicao: "A definir — aguarda definição do evento de gameplay",
+          obrigatorio: true,
+          estado: "BLOQUEADO",
+          missao: "A definir",
+          status: "PLANEJADO",
+          continuidade: "Conecta com LORE-002 (O Confronto Maior e o Teletransporte). Marca a transição do Capítulo I para o Capítulo II do Diário.",
+          texto: `[🟣 PLANEJADO — entrada não redigida. Aguarda definição do confronto e do mecanismo de teletransporte.]`
         }
       ],
       missoes: [
@@ -954,6 +1235,55 @@ Responsável pela produção dos lotes agrícolas no norte de Arkham.`
       changelog: [
         {
           data: "08 SET 2026",
+          versao: "v2.4",
+          tipo: "Lore Expandida — Livro & Diário Preenchidos",
+          mudancas: [
+            "LORE-001 atualizado: exílio do mago, família presa nas Minas, guerra da reparação, origem dos poderes desconhecida.",
+            "LORE-002 atualizado: sequência inicial canônica de 10 passos, localização de coleta marcada como provisória.",
+            "LORE-004 criado: Paralelo Narrativo canônico entre John e o Rei Mago.",
+            "appDb.livro[] expandido para 4 capítulos e 9 crônicas baseadas exclusivamente em material canônico.",
+            "appDb.diario[] atualizado: primeira entrada revisada ('Primeira Página'), textos refinados.",
+            "Itens DESCONHECIDOS marcados explicitamente nas crônicas do Livro.",
+            "INDICE.md atualizado com LORE-004 e tabelas completas do Livro e Diário."
+          ]
+        },
+        {
+          data: "08 SET 2026",
+          versao: "v2.3",
+          tipo: "Arquitetura Narrativa — Livro & Diário",
+          mudancas: [
+            "Criação da seção #livro: capítulos e crônicas com conteúdo canônico de LORE-001 e LORE-002.",
+            "Criação da seção #diario: entradas com tabs Leitura (imersiva) e GDD (ficha técnica), estados BLOQUEADO/DESBLOQUEADO/LIDO.",
+            "Sidebar: nova categoria Narrativa com links para Livro e Diário.",
+            "renderHistoria() reescrito — removido conteúdo genérico não canônico, adicionada arquitetura narrativa visual.",
+            "appDb.livro[] e appDb.diario[] criados com dados canônicos baseados em LORE-001, LORE-002 e LORE-003.",
+            "Regra de preservação de histórico documentada na interface do Diário."
+          ]
+        },
+        {
+          data: "08 SET 2026",
+          versao: "v2.2",
+          tipo: "Protocolo Narrativo & Sistema",
+          mudancas: [
+            "Canonização do Protocolo Narrativo (BP-2026-007): separação formal entre Diário de John e Livro/Lore do universo.",
+            "Criação de GAME-005: Sistema do Diário como sistema real de gameplay (aquisição, inventário, consulta, desbloqueio).",
+            "Criação de CANON-007 com fluxo canônico e regra de canonização do Bibliotecário.",
+            "Atualização de LORE-003 com estrutura expandida de entradas e campos obrigatórios.",
+            "Regra de Ouro registrada: o Bibliotecário não transforma automaticamente ideias em cânone."
+          ]
+        },
+        {
+          data: "08 SET 2026",
+          versao: "v2.1",
+          tipo: "Lore & Narrativa",
+          mudancas: [
+            "Canonização do Diário de John como elemento narrativo e funcional (BP-2026-006).",
+            "Criação de LORE-003 com estrutura completa de capítulos, entradas e campos de progressão.",
+            "Atualização do INDICE.md e MEMORIA_BIBLIOTECARIO.md com a nova decisão canônica."
+          ]
+        },
+        {
+          data: "08 SET 2026",
           versao: "v2.0",
           tipo: "Sistemas & Lore Consolidada",
           mudancas: [
@@ -966,8 +1296,28 @@ Responsável pela produção dos lotes agrícolas no norte de Arkham.`
       ]
     };
 
-    // Initialize local storage database
-    let appDb = JSON.parse(localStorage.getItem('bp_gdd_db')) || defaultData;
+    // Initialize local storage database with version tracking & deep migration
+    function loadDatabase() {
+      try {
+        const cached = JSON.parse(localStorage.getItem('bp_gdd_db'));
+        if (!cached || !cached.projeto || cached.projeto.versao !== defaultData.projeto.versao || !cached.livro || !cached.diario) {
+          localStorage.setItem('bp_gdd_db', JSON.stringify(defaultData));
+          return JSON.parse(JSON.stringify(defaultData));
+        }
+        return {
+          ...defaultData,
+          ...cached,
+          livro: (cached.livro && cached.livro.length >= defaultData.livro.length) ? cached.livro : defaultData.livro,
+          diario: (cached.diario && cached.diario.length >= defaultData.diario.length) ? cached.diario : defaultData.diario,
+          decisoes: (cached.decisoes && cached.decisoes.length >= defaultData.decisoes.length) ? cached.decisoes : defaultData.decisoes,
+          sistemas: (cached.sistemas && cached.sistemas.length >= defaultData.sistemas.length) ? cached.sistemas : defaultData.sistemas
+        };
+      } catch (e) {
+        return JSON.parse(JSON.stringify(defaultData));
+      }
+    }
+
+    let appDb = loadDatabase();
     function saveLocalDb() {
       localStorage.setItem('bp_gdd_db', JSON.stringify(appDb));
       updateConsistencyDashboard();
@@ -1133,6 +1483,8 @@ Responsável pela produção dos lotes agrícolas no norte de Arkham.`
     const routes = {
       dashboard: renderDashboard,
       historia: renderHistoria,
+      livro: renderLivro,
+      diario: renderDiario,
       locais: renderLocais,
       npcs: renderNPCs,
       gameplay: renderGameplay,
@@ -1349,10 +1701,12 @@ Responsável pela produção dos lotes agrícolas no norte de Arkham.`
               <div class="medieval-card p-4 rounded-xl space-y-2">
                 <span class="font-cinzel text-xs text-arkan-gold uppercase font-bold block">Acesso Imediato</span>
                 <div class="grid grid-cols-2 gap-2 text-xs">
+                  <a href="#livro" class="p-2 rounded bg-arkan-800 hover:bg-arkan-700 text-center text-arkan-gold font-medium transition border border-arkan-gold/30">📖 Livro / Lore</a>
+                  <a href="#diario" class="p-2 rounded bg-arkan-800 hover:bg-arkan-700 text-center text-arkan-gold font-medium transition border border-arkan-gold/30">📓 Diário de John</a>
                   <a href="#npcs" class="p-2 rounded bg-arkan-800 hover:bg-arkan-700 text-center text-arkan-parchment font-medium transition">👥 Ver NPCs</a>
                   <a href="#locais" class="p-2 rounded bg-arkan-800 hover:bg-arkan-700 text-center text-arkan-parchment font-medium transition">🏰 Locais de Arkan</a>
                   <a href="#itens" class="p-2 rounded bg-arkan-800 hover:bg-arkan-700 text-center text-arkan-parchment font-medium transition">🗡️ Tabela de Itens</a>
-                  <a href="#referencias" class="p-2 rounded bg-arkan-800 hover:bg-arkan-700 text-center text-arkan-parchment font-medium transition">🖼️ Galeria de Arte</a>
+                  <a href="#canon" class="p-2 rounded bg-arkan-800 hover:bg-arkan-700 text-center text-arkan-parchment font-medium transition">👑 Decisões</a>
                 </div>
               </div>
 
@@ -1783,35 +2137,496 @@ Responsável pela produção dos lotes agrícolas no norte de Arkham.`
       `;
     }
 
-    /* PAGE: HISTÓRIA & LORE */
-    function renderHistoria() {
+    /* PAGE: LIVRO / LORE DO UNIVERSO (EXPERIÊNCIA DE TOMO MEDIEVAL) */
+    let currentBookChapterIndex = 0;
+    let currentBookCronicaIndex = 0;
+    let bookDisplayMode = 'tomo'; // 'tomo' ou 'indice'
+
+    function renderLivro() {
       const container = document.getElementById('pageContainer');
+      
+      function getLivroStatusBadge(status) {
+        switch(status) {
+          case 'CANONICO': return `<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-emerald-950/90 text-emerald-300 border border-emerald-500/50 shadow-sm">✅ CANÔNICO</span>`;
+          case 'EM_DESENVOLVIMENTO': return `<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-amber-950/90 text-amber-300 border border-amber-500/50 shadow-sm">🟡 EM CONSTRUÇÃO</span>`;
+          case 'PLANEJADO': return `<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-purple-950/90 text-purple-300 border border-purple-500/50 shadow-sm">🟣 PLANEJADO</span>`;
+          default: return `<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-arkan-800 text-arkan-parchmentMuted">SEM STATUS</span>`;
+        }
+      }
+
+      const activeCap = appDb.livro[currentBookChapterIndex] || appDb.livro[0];
+      const activeCronica = (activeCap.cronicas && activeCap.cronicas[currentBookCronicaIndex]) || (activeCap.cronicas && activeCap.cronicas[0]) || { titulo: '', texto: '', fonte: '', status: '' };
+
+      // Helper for drop cap
+      function formatBookParagraphs(rawText) {
+        if (!rawText) return '';
+        const paragraphs = rawText.split('\n\n').filter(p => p.trim());
+        return paragraphs.map((p, idx) => {
+          let clean = p.trim();
+          if (idx === 0 && clean.length > 2 && !clean.startsWith('[')) {
+            const firstChar = clean.charAt(0);
+            const rest = clean.slice(1);
+            return `<p class="leading-relaxed mb-4 text-justify"><span class="drop-cap">${firstChar}</span>${rest.replace(/\n/g, '<br>')}</p>`;
+          }
+          return `<p class="leading-relaxed mb-4 text-justify">${clean.replace(/\n/g, '<br>')}</p>`;
+        }).join('');
+      }
+
+      container.innerHTML = `
+        <div class="space-y-6 max-w-6xl mx-auto">
+          
+          <!-- Top Controls & Mode Switcher -->
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-arkan-border">
+            <div>
+              <div class="flex items-center gap-2">
+                <span class="text-2xl">📖</span>
+                <h2 class="font-cinzel text-2xl lg:text-3xl font-bold text-arkan-parchment">O Grande Livro de Arkan</h2>
+              </div>
+              <p class="text-xs text-arkan-parchmentMuted mt-1">Crônicas históricas, mitos fundadores e lendas do universo de Batalhas Poderosas.</p>
+            </div>
+            
+            <div class="flex items-center gap-2">
+              <button onclick="setBookMode('tomo')" class="px-3 py-1.5 rounded-lg text-xs font-semibold transition flex items-center gap-1.5 border ${bookDisplayMode === 'tomo' ? 'bg-arkan-gold text-arkan-950 border-arkan-gold shadow-lg font-bold' : 'bg-arkan-850 text-arkan-parchment hover:bg-arkan-800 border-arkan-border'}">
+                <span>📖</span> Tomo Ilustrado
+              </button>
+              <button onclick="setBookMode('indice')" class="px-3 py-1.5 rounded-lg text-xs font-semibold transition flex items-center gap-1.5 border ${bookDisplayMode === 'indice' ? 'bg-arkan-gold text-arkan-950 border-arkan-gold shadow-lg font-bold' : 'bg-arkan-850 text-arkan-parchment hover:bg-arkan-800 border-arkan-border'}">
+                <span>📜</span> Índice Expandido
+              </button>
+            </div>
+          </div>
+
+          <!-- Alert de Construção do Nome do Livro -->
+          <div class="p-3 bg-amber-950/30 border border-amber-700/50 rounded-xl text-xs text-amber-300 flex items-center justify-between gap-3">
+            <div class="flex items-center gap-2">
+              <span class="text-lg">📜</span>
+              <span><b>Nome Definitivo em Construção:</b> "O Livro dos Conhecimentos", "Livro Sagrado", "Bíblia de Arkan" ou "O Conto das Batalhas Poderosas" (Status: 🟡 EM CONSTRUÇÃO).</span>
+            </div>
+            <span class="text-[10px] font-mono uppercase bg-amber-900/60 px-2 py-0.5 rounded border border-amber-600/50 text-amber-200 shrink-0">BP-2026-007</span>
+          </div>
+
+          ${bookDisplayMode === 'tomo' ? `
+            <!-- ================= TOMO / LIVRO MEDIEVAL VIVO ================= -->
+            <div class="tome-leather rounded-2xl p-3 sm:p-6 lg:p-8 shadow-2xl relative border-4 border-[#6b5329]">
+              
+              <!-- Ornamental Corner Clamps -->
+              <div class="absolute top-2 left-2 text-[#d4af37]/60 text-base pointer-events-none">⚜</div>
+              <div class="absolute top-2 right-2 text-[#d4af37]/60 text-base pointer-events-none">⚜</div>
+              <div class="absolute bottom-2 left-2 text-[#d4af37]/60 text-base pointer-events-none">⚜</div>
+              <div class="absolute bottom-2 right-2 text-[#d4af37]/60 text-base pointer-events-none">⚜</div>
+
+              <!-- Top Chapter Ribbons / Bookmarks -->
+              <div class="flex items-center gap-2 overflow-x-auto pb-4 mb-4 border-b border-arkan-gold/20 custom-scrollbar">
+                <span class="font-cinzel text-xs text-arkan-gold font-bold uppercase tracking-wider shrink-0 pl-2">Capítulos:</span>
+                ${appDb.livro.map((cap, idx) => `
+                  <button onclick="selectBookChapter(${idx})" 
+                    class="px-3.5 py-1.5 rounded-t-lg text-xs font-cinzel transition shrink-0 flex items-center gap-1.5 border-t border-x ${idx === currentBookChapterIndex ? 'bg-gradient-to-b from-[#3a3020] to-[#201a28] text-arkan-gold font-bold border-arkan-gold/60 shadow-inner' : 'bg-arkan-950/60 text-arkan-parchmentMuted hover:text-arkan-parchment border-arkan-border/40 hover:bg-arkan-900'}">
+                    <span>Cap. ${cap.capitulo}</span>
+                    <span class="hidden sm:inline">• ${cap.titulo}</span>
+                  </button>
+                `).join('')}
+              </div>
+
+              <!-- Open Folio / Dual Page Grid -->
+              <div class="grid grid-cols-1 lg:grid-cols-12 gap-0 bg-[#16131c] rounded-xl border border-arkan-gold/30 overflow-hidden shadow-2xl">
+                
+                <!-- LEFT FOLIO (Índice do Capítulo & Contexto Histórico) -->
+                <div class="lg:col-span-5 tome-page tome-page-left p-6 sm:p-8 flex flex-col justify-between border-b lg:border-b-0 lg:border-r border-arkan-border/80">
+                  <div>
+                    <div class="flex items-center justify-between gap-2 mb-3">
+                      <span class="font-cinzel text-xs tracking-widest text-arkan-gold uppercase font-bold">Volume I • Crônicas de Arkan</span>
+                      ${getLivroStatusBadge(activeCap.status)}
+                    </div>
+                    
+                    <h3 class="font-cinzel text-2xl font-extrabold text-arkan-parchment tracking-wide mb-1">${activeCap.titulo}</h3>
+                    <p class="text-xs text-arkan-parchmentMuted italic mb-6">${activeCap.subtitulo}</p>
+
+                    <div class="ornament-divider">❦ — ⚔ — ❦</div>
+
+                    <div class="space-y-2 mb-6">
+                      <span class="text-[11px] font-cinzel font-bold text-arkan-gold uppercase tracking-wider block mb-2">Crônicas Deste Capítulo:</span>
+                      <div class="space-y-1.5">
+                        ${(activeCap.cronicas || []).map((cron, cIdx) => `
+                          <button onclick="selectBookCronica(${cIdx})" 
+                            class="w-full p-2.5 rounded-lg text-left text-xs transition flex items-center justify-between group border ${cIdx === currentBookCronicaIndex ? 'bg-arkan-gold/15 text-arkan-gold border-arkan-gold/40 shadow-sm font-semibold' : 'bg-arkan-950/40 text-arkan-parchment hover:bg-arkan-850 border-arkan-border/40 hover:text-white'}">
+                            <div class="flex items-center gap-2">
+                              <span class="font-mono text-[10px] text-arkan-gold">${cron.id}</span>
+                              <span>${cron.titulo}</span>
+                            </div>
+                            <span class="text-[10px] text-arkan-parchmentMuted group-hover:text-arkan-gold">▶</span>
+                          </button>
+                        `).join('')}
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Left Page Footer -->
+                  <div class="pt-4 border-t border-arkan-gold/20 flex items-center justify-between text-[11px] text-arkan-parchmentMuted">
+                    <span class="font-cinzel text-arkan-gold/80">Reino de Arkan</span>
+                    <span class="font-mono">Página ${activeCap.capitulo * 2 - 1}</span>
+                  </div>
+                </div>
+
+                <!-- RIGHT FOLIO (Leitura da Crônica Ativa) -->
+                <div class="lg:col-span-7 tome-page tome-page-right p-6 sm:p-8 flex flex-col justify-between min-h-[480px]">
+                  <div>
+                    <div class="flex items-center justify-between gap-2 mb-2">
+                      <span class="font-mono text-[10px] text-arkan-gold bg-arkan-950 px-2 py-0.5 rounded border border-arkan-gold/40">${activeCronica.id}</span>
+                      <div class="flex items-center gap-2">
+                        <span class="text-[10px] text-arkan-parchmentMuted font-mono">Fonte: ${activeCronica.fonte}</span>
+                        ${getLivroStatusBadge(activeCronica.status)}
+                      </div>
+                    </div>
+
+                    <h4 class="font-cinzel text-xl sm:text-2xl font-bold text-arkan-parchment mb-4 pb-2 border-b border-arkan-gold/30">
+                      ${activeCronica.titulo}
+                    </h4>
+
+                    <div class="prose-medieval text-sm sm:text-base text-arkan-parchment/90 font-serif leading-relaxed" style="font-family: 'Georgia', serif;">
+                      ${formatBookParagraphs(activeCronica.texto)}
+                    </div>
+                  </div>
+
+                  <!-- Right Page Navigation & Footer -->
+                  <div class="pt-6 mt-6 border-t border-arkan-gold/20 flex items-center justify-between text-xs">
+                    <button onclick="prevBookCronica()" class="px-3 py-1.5 bg-arkan-900/80 hover:bg-arkan-800 text-arkan-gold rounded border border-arkan-gold/30 transition flex items-center gap-1">
+                      <span>◀</span> <span class="hidden sm:inline">Crônica Anterior</span>
+                    </button>
+                    <span class="font-mono text-[11px] text-arkan-parchmentMuted">Página ${activeCap.capitulo * 2}</span>
+                    <button onclick="nextBookCronica()" class="px-3 py-1.5 bg-arkan-900/80 hover:bg-arkan-800 text-arkan-gold rounded border border-arkan-gold/30 transition flex items-center gap-1">
+                      <span class="hidden sm:inline">Próxima Crônica</span> <span>▶</span>
+                    </button>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          ` : `
+            <!-- ================= MODO ÍNDICE EXPANDIDO ================= -->
+            <div class="space-y-6">
+              ${appDb.livro.map((cap, capIdx) => `
+                <div class="medieval-card p-6 rounded-2xl space-y-4">
+                  <div class="flex items-center justify-between gap-2 border-b border-arkan-border pb-3">
+                    <div class="flex items-center gap-3">
+                      <span class="font-cinzel text-arkan-gold font-bold text-xl">Capítulo ${cap.capitulo}</span>
+                      <h3 class="font-cinzel font-bold text-lg text-arkan-parchment">${cap.titulo}</h3>
+                    </div>
+                    ${getLivroStatusBadge(cap.status)}
+                  </div>
+                  <p class="text-xs text-arkan-parchmentMuted">${cap.subtitulo}</p>
+                  
+                  <div class="grid grid-cols-1 md:grid-cols-2 gap-4 pt-2">
+                    ${(cap.cronicas || []).map((cronica, cIdx) => `
+                      <div class="p-4 bg-arkan-950/70 rounded-xl border border-arkan-border space-y-2">
+                        <div class="flex items-center justify-between">
+                          <span class="font-mono text-[10px] text-arkan-gold font-bold">${cronica.id}</span>
+                          ${getLivroStatusBadge(cronica.status)}
+                        </div>
+                        <h4 class="font-cinzel font-bold text-sm text-arkan-parchment">${cronica.titulo}</h4>
+                        <p class="text-xs text-arkan-parchmentMuted leading-relaxed whitespace-pre-line line-clamp-4 font-serif" style="font-family: 'Georgia', serif;">${cronica.texto}</p>
+                        <button onclick="setBookMode('tomo'); selectBookChapter(${capIdx}); selectBookCronica(${cIdx});" class="text-[11px] text-arkan-gold hover:underline pt-1 inline-block">Ler no Tomo ↗</button>
+                      </div>
+                    `).join('')}
+                  </div>
+                </div>
+              `).join('')}
+            </div>
+          `}
+
+          <!-- Rodapé de Relação Futura -->
+          <div class="p-4 bg-arkan-850 rounded-xl border border-arkan-border text-xs text-arkan-parchmentMuted space-y-1">
+            <p class="font-cinzel text-arkan-gold text-[11px] uppercase font-bold">Arquitetura de Conexão com o Diário (BP-2026-007)</p>
+            <p>📖 <b>Livro:</b> orienta a história com a lore do universo → 🎮 <b>John vive:</b> o jogador experimenta os eventos → 📓 <b>Diário:</b> registra a vivência pessoal → alimenta e expande o Livro.</p>
+          </div>
+
+        </div>
+      `;
+    }
+
+    function setBookMode(mode) {
+      bookDisplayMode = mode;
+      renderLivro();
+    }
+
+    function selectBookChapter(idx) {
+      currentBookChapterIndex = idx;
+      currentBookCronicaIndex = 0;
+      renderLivro();
+    }
+
+    function selectBookCronica(idx) {
+      currentBookCronicaIndex = idx;
+      renderLivro();
+    }
+
+    function prevBookCronica() {
+      if (currentBookCronicaIndex > 0) {
+        currentBookCronicaIndex--;
+      } else if (currentBookChapterIndex > 0) {
+        currentBookChapterIndex--;
+        const prevCap = appDb.livro[currentBookChapterIndex];
+        currentBookCronicaIndex = (prevCap.cronicas && prevCap.cronicas.length) ? prevCap.cronicas.length - 1 : 0;
+      }
+      renderLivro();
+    }
+
+    function nextBookCronica() {
+      const activeCap = appDb.livro[currentBookChapterIndex];
+      if (activeCap.cronicas && currentBookCronicaIndex < activeCap.cronicas.length - 1) {
+        currentBookCronicaIndex++;
+      } else if (currentBookChapterIndex < appDb.livro.length - 1) {
+        currentBookChapterIndex++;
+        currentBookCronicaIndex = 0;
+      }
+      renderLivro();
+    }
+
+    /* PAGE: DIÁRIO DE JOHN */
+    function renderDiario(selectedId) {
+      const container = document.getElementById('pageContainer');
+
+      function getEstadoBadge(estado) {
+        switch(estado) {
+          case 'DESBLOQUEADO': return `<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] font-bold bg-emerald-950/80 text-emerald-400 border border-emerald-600/50">🔓 DESBLOQUEADO</span>`;
+          case 'BLOQUEADO': return `<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] font-bold bg-arkan-800 text-arkan-parchmentMuted border border-arkan-border">🔒 BLOQUEADO</span>`;
+          case 'LIDO': return `<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] font-bold bg-arkan-700 text-arkan-parchmentMuted border border-arkan-border">✓ LIDO</span>`;
+          default: return `<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] font-bold bg-arkan-800 text-arkan-parchmentMuted">${estado}</span>`;
+        }
+      }
+
+      const capitulosUnicos = [...new Set(appDb.diario.map(e => e.capituloTitulo))];
+
+      container.innerHTML = `
+        <div class="space-y-8 max-w-4xl">
+          <div class="pb-4 border-b border-arkan-border">
+            <h2 class="font-cinzel text-2xl font-bold text-arkan-parchment">📓 Diário de John</h2>
+            <p class="text-xs text-arkan-parchmentMuted mt-1">Registro pessoal de John. Elemento de gameplay com aquisição, inventário e desbloqueio progressivo. Responde: <em>"O que está acontecendo comigo?"</em></p>
+          </div>
+
+          <!-- Integração com gameplay -->
+          <div class="medieval-card p-5 rounded-xl space-y-3 text-xs">
+            <h3 class="font-cinzel text-sm text-arkan-gold font-bold uppercase tracking-wide">Integração com o Jogo (GAME-005)</h3>
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 text-center">
+              <div class="p-3 bg-arkan-850 rounded-lg border border-arkan-border space-y-1">
+                <div class="text-lg">📦</div>
+                <b class="text-arkan-parchment block">Aquisição</b>
+                <p class="text-arkan-parchmentMuted text-[10px]">Encontrado na casa de John no início da aventura</p>
+              </div>
+              <div class="p-3 bg-arkan-850 rounded-lg border border-arkan-border space-y-1">
+                <div class="text-lg">🎒</div>
+                <b class="text-arkan-parchment block">Inventário</b>
+                <p class="text-arkan-parchmentMuted text-[10px]">Vai para o inventário. Permanece com o jogador. Não pode ser descartado</p>
+              </div>
+              <div class="p-3 bg-arkan-850 rounded-lg border border-arkan-border space-y-1">
+                <div class="text-lg">📖</div>
+                <b class="text-arkan-parchment block">Consulta</b>
+                <p class="text-arkan-parchmentMuted text-[10px]">Acessado pelo inventário ou hotbar. Entradas por capítulo</p>
+              </div>
+              <div class="p-3 bg-arkan-850 rounded-lg border border-arkan-border space-y-1">
+                <div class="text-lg">🔓</div>
+                <b class="text-arkan-parchment block">Desbloqueio</b>
+                <p class="text-arkan-parchmentMuted text-[10px]">Cada avanço relevante libera nova entrada. Novo conteúdo marcado visualmente</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Entradas por capítulo -->
+          ${capitulosUnicos.map(capTitulo => {
+            const entradas = appDb.diario.filter(e => e.capituloTitulo === capTitulo);
+            return `
+              <div class="space-y-4">
+                <h3 class="font-cinzel text-base text-arkan-gold font-bold border-b border-arkan-border pb-2">${capTitulo}</h3>
+                <div class="space-y-4">
+                  ${entradas.map(entrada => `
+                    <div class="medieval-card rounded-xl overflow-hidden border ${entrada.estado === 'DESBLOQUEADO' ? 'border-emerald-800/40' : 'border-arkan-border'}">
+                      <!-- Cabeçalho da entrada -->
+                      <div class="p-4 flex flex-col sm:flex-row sm:items-center justify-between gap-2 bg-arkan-850/40">
+                        <div class="flex items-center gap-2 flex-wrap">
+                          <span class="font-mono text-[10px] text-arkan-gold bg-arkan-950 px-1.5 py-0.5 rounded border border-arkan-gold/30">${entrada.id}</span>
+                          <span class="font-cinzel font-bold text-arkan-parchment text-sm">${entrada.titulo}</span>
+                          ${getEstadoBadge(entrada.estado)}
+                          ${getStatusBadge(entrada.status)}
+                        </div>
+                        <button onclick="toggleDiarioTabs('${entrada.id}')"
+                          class="text-[11px] text-arkan-gold border border-arkan-gold/30 px-3 py-1 rounded hover:bg-arkan-800 transition whitespace-nowrap">
+                          Expandir ▼
+                        </button>
+                      </div>
+
+                      <!-- Conteúdo (tabs) -->
+                      <div id="diario-${entrada.id}" class="hidden border-t border-arkan-border">
+
+                        <!-- Tab buttons -->
+                        <div class="flex border-b border-arkan-border bg-arkan-900/60">
+                          <button onclick="switchDiarioTab('${entrada.id}', 'leitura')"
+                            id="tab-leitura-${entrada.id}"
+                            class="diario-tab px-4 py-2 text-xs font-semibold text-arkan-gold border-b-2 border-arkan-gold transition">
+                            ✍️ Leitura
+                          </button>
+                          <button onclick="switchDiarioTab('${entrada.id}', 'gdd')"
+                            id="tab-gdd-${entrada.id}"
+                            class="diario-tab px-4 py-2 text-xs font-semibold text-arkan-parchmentMuted border-b-2 border-transparent hover:text-arkan-gold transition">
+                            ⚙️ GDD
+                          </button>
+                        </div>
+
+                        <!-- Tab: Leitura -->
+                        <div id="panel-leitura-${entrada.id}" class="p-5">
+                          ${entrada.estado === 'BLOQUEADO' || entrada.status === 'PLANEJADO' ? `
+                            <div class="flex items-center gap-3 p-4 bg-arkan-950/60 rounded-lg border border-arkan-border text-xs text-arkan-parchmentMuted">
+                              <span class="text-2xl">🔒</span>
+                              <div>
+                                <p class="font-semibold text-arkan-parchment">Entrada bloqueada</p>
+                                <p>Esta entrada será desbloqueada conforme John avança na história.</p>
+                                <p class="mt-1 text-arkan-gold font-mono text-[10px]">Gatilho: ${entrada.eventoGatilho}</p>
+                              </div>
+                            </div>
+                          ` : `
+                            <div class="space-y-3">
+                              <div class="flex items-center gap-2 text-[10px] text-arkan-parchmentMuted font-mono">
+                                <span>📍 ${entrada.local}</span>
+                                <span>•</span>
+                                <span>${entrada.momento}</span>
+                              </div>
+                              <div class="p-4 bg-arkan-950/40 rounded-lg border border-arkan-border/60 text-sm text-arkan-parchment leading-relaxed whitespace-pre-line italic font-serif" style="font-family: 'Georgia', serif;">
+                                ${entrada.texto}
+                              </div>
+                            </div>
+                          `}
+                        </div>
+
+                        <!-- Tab: GDD (oculta por padrão) -->
+                        <div id="panel-gdd-${entrada.id}" class="hidden p-5">
+                          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
+                            ${[
+                              ['Capítulo', entrada.capitulo],
+                              ['Momento', entrada.momento],
+                              ['Local', entrada.local],
+                              ['Evento Gatilho', entrada.eventoGatilho],
+                              ['Condição', entrada.condicao],
+                              ['Obrigatório', entrada.obrigatorio ? 'OBRIGATÓRIO' : 'OPCIONAL'],
+                              ['Missão', entrada.missao],
+                              ['Status', entrada.status],
+                            ].map(([k, v]) => `
+                              <div class="p-2.5 bg-arkan-850 rounded border border-arkan-border">
+                                <span class="text-[10px] font-bold text-arkan-gold uppercase tracking-wider block mb-0.5">${k}</span>
+                                <span class="text-arkan-parchment font-mono">${v}</span>
+                              </div>
+                            `).join('')}
+                            <div class="p-2.5 bg-arkan-850 rounded border border-arkan-border sm:col-span-2">
+                              <span class="text-[10px] font-bold text-arkan-gold uppercase tracking-wider block mb-0.5">Continuidade</span>
+                              <span class="text-arkan-parchment">${entrada.continuidade}</span>
+                            </div>
+                          </div>
+                        </div>
+
+                      </div>
+                    </div>
+                  `).join('')}
+                </div>
+              </div>
+            `;
+          }).join('')}
+
+          <div class="p-4 bg-arkan-850 rounded-xl border border-arkan-border text-xs text-arkan-parchmentMuted">
+            <p class="font-cinzel text-arkan-gold text-[11px] uppercase font-bold mb-1">Preservação de Histórico (BP-2026-007)</p>
+            <p>Entradas nunca são apagadas. Revisões alteram apenas os campos correspondentes e mantêm o ID estável. Conteúdo descontinuado recebe status <code class="bg-arkan-900 px-1 rounded">DESCONTINUADO</code> e permanece visível no GDD.</p>
+          </div>
+        </div>
+      `;
+    }
+
+    function toggleDiarioTabs(id) {
+      const panel = document.getElementById('diario-' + id);
+      const btn = panel ? panel.previousElementSibling.querySelector('button[onclick]') : null;
+      if (!panel) return;
+      const isHidden = panel.classList.contains('hidden');
+      panel.classList.toggle('hidden');
+      if (btn) btn.textContent = isHidden ? 'Recolher ▲' : 'Expandir ▼';
+    }
+
+    function switchDiarioTab(id, tab) {
+      const tabLeitura = document.getElementById('tab-leitura-' + id);
+      const tabGdd = document.getElementById('tab-gdd-' + id);
+      const panelLeitura = document.getElementById('panel-leitura-' + id);
+      const panelGdd = document.getElementById('panel-gdd-' + id);
+      if (!tabLeitura || !tabGdd || !panelLeitura || !panelGdd) return;
+      if (tab === 'leitura') {
+        panelLeitura.classList.remove('hidden');
+        panelGdd.classList.add('hidden');
+        tabLeitura.classList.add('text-arkan-gold', 'border-arkan-gold');
+        tabLeitura.classList.remove('text-arkan-parchmentMuted', 'border-transparent');
+        tabGdd.classList.remove('text-arkan-gold', 'border-arkan-gold');
+        tabGdd.classList.add('text-arkan-parchmentMuted', 'border-transparent');
+      } else {
+        panelGdd.classList.remove('hidden');
+        panelLeitura.classList.add('hidden');
+        tabGdd.classList.add('text-arkan-gold', 'border-arkan-gold');
+        tabGdd.classList.remove('text-arkan-parchmentMuted', 'border-transparent');
+        tabLeitura.classList.remove('text-arkan-gold', 'border-arkan-gold');
+        tabLeitura.classList.add('text-arkan-parchmentMuted', 'border-transparent');
+      }
+    }
+
+    /* PAGE: HISTÓRIA — INTRODUÇÃO NARRATIVA */
+    function renderHistoria() {      const container = document.getElementById('pageContainer');
       container.innerHTML = `
         <div class="space-y-6 max-w-4xl">
           <div class="pb-4 border-b border-arkan-border">
-            <h2 class="font-cinzel text-2xl font-bold text-arkan-parchment">História & Criação do Mundo</h2>
-            <p class="text-xs text-arkan-parchmentMuted">Fundamentos narrativos do Reino de Arkan.</p>
+            <h2 class="font-cinzel text-2xl font-bold text-arkan-parchment">Introdução Narrativa</h2>
+            <p class="text-xs text-arkan-parchmentMuted">Fundamentos canônicos do universo de Batalhas Poderosas. Para a lore completa por capítulos, acesse <a href="#livro" class="text-arkan-gold hover:underline">📖 Livro / Lore</a>. Para o diário de John, acesse <a href="#diario" class="text-arkan-gold hover:underline">📓 Diário de John</a>.</p>
           </div>
 
+          <!-- Arquitetura narrativa -->
+          <div class="medieval-card p-6 rounded-xl space-y-4">
+            <h3 class="font-cinzel text-base text-arkan-gold font-bold uppercase tracking-wide">Arquitetura Narrativa</h3>
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 text-center text-xs">
+              <div class="p-4 bg-arkan-850 rounded-xl border border-arkan-border space-y-2">
+                <div class="text-2xl">📖</div>
+                <b class="font-cinzel text-arkan-gold block text-sm">Livro / Lore</b>
+                <p class="text-arkan-parchmentMuted leading-relaxed">"O que aconteceu neste mundo?" — A história maior do universo, lendas, reis, origens.</p>
+                <a href="#livro" class="inline-block mt-1 px-3 py-1 bg-arkan-800 hover:bg-arkan-700 text-arkan-gold rounded text-[11px] border border-arkan-gold/30 transition">Ver Livro →</a>
+              </div>
+              <div class="p-4 bg-arkan-850 rounded-xl border border-arkan-gold/30 space-y-2">
+                <div class="text-2xl">🎮</div>
+                <b class="font-cinzel text-arkan-parchment block text-sm">John Vive</b>
+                <p class="text-arkan-parchmentMuted leading-relaxed">O jogador protagoniza a jornada. O que é vivido alimenta o Diário.</p>
+              </div>
+              <div class="p-4 bg-arkan-850 rounded-xl border border-arkan-border space-y-2">
+                <div class="text-2xl">📓</div>
+                <b class="font-cinzel text-arkan-gold block text-sm">Diário de John</b>
+                <p class="text-arkan-parchmentMuted leading-relaxed">"O que está acontecendo comigo?" — Registro pessoal, cronológico, de gameplay.</p>
+                <a href="#diario" class="inline-block mt-1 px-3 py-1 bg-arkan-800 hover:bg-arkan-700 text-arkan-gold rounded text-[11px] border border-arkan-gold/30 transition">Ver Diário →</a>
+              </div>
+            </div>
+            <p class="text-[11px] text-arkan-parchmentMuted text-center pt-2 border-t border-arkan-border">
+              📖 Livro orienta John → 🎮 John vive → 📓 Diário registra → alimenta/expande o Livro
+            </p>
+          </div>
+
+          <!-- Cânones fundamentais -->
           <div class="medieval-card p-6 rounded-xl space-y-4 prose-medieval">
             <div class="canon-banner p-4 rounded-lg">
-              <span class="text-xs font-bold text-arkan-gold uppercase font-cinzel">Cânone Fundamental</span>
-              <p class="text-sm mt-1">
-                O mundo de <b>Batalhas Poderosas</b> se passa após a Grande Ruptura das Torres Ancestrais. A Vila de Arkham permanece como o último refúgio seguro onde a forja de Cedric ainda pulsa.
+              <span class="text-xs font-bold text-arkan-gold uppercase font-cinzel">Cânone Fundamental — BP-2026-001 / BP-2026-003</span>
+              <p class="text-sm mt-2">
+                <b>John</b> é um jovem soldado do <b>Reino de Arkan</b>, habitante da <b>Vila de Arkham</b>. No início da jornada, é o único soldado local. Ainda não é poderoso — precisará se preparar e evoluir passo a passo.
+              </p>
+              <p class="text-sm mt-2">
+                O conflito central é a <b>guerra de Arkan contra o Rei Mago</b>: um antigo conselheiro do reino que se corrompeu em busca de poder absoluto e declarou guerra contra quem outrora serviu.
               </p>
             </div>
 
-            <h2>A Era das Brasas Frias</h2>
-            <p>
-              Quando o núcleo primordial se partiu, os antigos cavaleiros deixaram para trás relíquias de poder incalculável. Os jogadores assumem o papel de novatos guiados por veteranos como John para restaurar as rotas comerciais e derrotar as anomalias que emergem da floresta.
-            </p>
-
-            <h2>Os Três Pilares da Identidade</h2>
-            <ul>
-              <li><b>Sobriedade Fantástica:</b> Nada de magias puramente neon ou efeitos cegantes. O mundo é feito de pedra, fogo, aço e carvalho.</li>
-              <li><b>Comunidade & Duelo:</b> Toda interação visa criar respeito mútuo e competição leal na arena.</li>
-              <li><b>Construção Coerente:</b> Cada localidade possui uma função produtiva real (a forja precisa de madeira, as muralhas precisam de vigias).</li>
-            </ul>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs">
+              <div class="p-3 bg-arkan-850 rounded-lg border border-arkan-border space-y-1">
+                <span class="font-cinzel text-arkan-gold text-[11px] uppercase font-bold block">Ambiente Principal</span>
+                <p class="text-arkan-parchment">Vila de Arkham — Reino de Arkan</p>
+                <p class="text-arkan-parchmentMuted">Arquitetura medieval, bosques, minas, personagens com rotas territoriais.</p>
+              </div>
+              <div class="p-3 bg-arkan-850 rounded-lg border border-arkan-border space-y-1">
+                <span class="font-cinzel text-arkan-gold text-[11px] uppercase font-bold block">Ambiente Secundário</span>
+                <p class="text-arkan-parchment">Mundo Livre / Multiverso</p>
+                <p class="text-arkan-parchmentMuted">Portal dimensional. Destino do teletransporte. Dimensões a explorar.</p>
+              </div>
+            </div>
           </div>
         </div>
       `;
@@ -2306,6 +3121,25 @@ ${markdownVal}
         (appDb.decisoes || []).forEach(dec => {
           if (dec.titulo.toLowerCase().includes(term) || (dec.motivo || '').toLowerCase().includes(term) || (dec.markdown || '').toLowerCase().includes(term)) {
             results.push({ cat: 'Decisões Canônicas', id: dec.id, title: dec.titulo, subtitle: dec.categoria, link: `#canon` });
+          }
+        });
+
+        // Search in Livro
+        (appDb.livro || []).forEach(cap => {
+          if (cap.titulo.toLowerCase().includes(term) || cap.subtitulo.toLowerCase().includes(term)) {
+            results.push({ cat: 'Livro', id: cap.id, title: `Capítulo ${cap.capitulo}: ${cap.titulo}`, subtitle: cap.subtitulo, link: `#livro` });
+          }
+          (cap.cronicas || []).forEach(cron => {
+            if (cron.titulo.toLowerCase().includes(term) || cron.texto.toLowerCase().includes(term)) {
+              results.push({ cat: 'Livro (Crônica)', id: cron.id, title: cron.titulo, subtitle: `Cap. ${cap.capitulo}`, link: `#livro` });
+            }
+          });
+        });
+
+        // Search in Diário
+        (appDb.diario || []).forEach(ent => {
+          if (ent.titulo.toLowerCase().includes(term) || ent.texto.toLowerCase().includes(term) || ent.continuidade.toLowerCase().includes(term)) {
+            results.push({ cat: 'Diário de John', id: ent.id, title: ent.titulo, subtitle: ent.capituloTitulo, link: `#diario` });
           }
         });
 
