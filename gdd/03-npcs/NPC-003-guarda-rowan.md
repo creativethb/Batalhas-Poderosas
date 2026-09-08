@@ -1,24 +1,21 @@
 ---
 id: "NPC-003"
 nome: "Guarda Rowan"
+funcao: "Sentinela dos Acessos Leste"
 status: "CANONICO"
-atualizado_por: "agente"
+localizacao: "Estrada da Mina Leste"
+relacionados:
+  - "LOCAL-007"
+  - "GAME-002"
+imagem: "./assets/npcs/NPC-003.png"
+atualizado_por: "agente_bibliotecario"
+data_atualizacao: "2026-09-08"
 ---
 
-# Ficha Técnica: Guarda Rowan
+# Biografia & Propósito
+Rowan é o guarda sentinela encarregado da vigilância das encostas montanhosas e das antigas minas a leste da vila. Utiliza armadura detalhada em placas com texturas metálicas e patrulha a rota territorial `RotaGuardaLeste`.
 
-## 1. Identificação
-- **ID do Modelo:** `NPC_Guarda_Rowan`
-- **Modelo Base:** `MedievalGuardDetailed` (Rig R15 com 15 juntas Motor6D e texturas em SurfaceAppearance)
-- **Profissão:** Sentinela de Arkham / Guarda dos Acessos Leste
-- **Rota Territorial:** `RotaGuardaLeste` (Praça → Acesso Norte → Perímetro Leste → Caminho da Mina e retorno)
-- **HipHeight:** `1.774`
-
-## 2. Papel Narrativo & Gameplay
-- Patrulheiro encarregado de vigiar a estrada leste que sobe em direção às montanhas e antigas minas.
-- Monitora os movimentos suspeitos fora dos muros da vila.
-
-## 3. Falas
+### Diálogos Canônicos
 - *"Patrulho o acesso leste e volto pela praça."*
 - *"Aldous cuida do centro, eu observo os caminhos."*
 - *"Mantenha as armas embainhadas na vila, viajante."*

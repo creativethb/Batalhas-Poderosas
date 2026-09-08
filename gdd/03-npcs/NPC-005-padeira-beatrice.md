@@ -1,22 +1,21 @@
 ---
 id: "NPC-005"
 nome: "Padeira Beatrice"
+funcao: "Mestra dos Pães da Vila"
 status: "CANONICO"
-atualizado_por: "agente"
+localizacao: "Padaria Medieval / Praça"
+relacionados:
+  - "LOCAL-005"
+  - "LOCAL-003"
+imagem: "./assets/npcs/NPC-005.png"
+atualizado_por: "agente_bibliotecario"
+data_atualizacao: "2026-09-08"
 ---
 
-# Ficha Técnica: Padeira Beatrice
+# Biografia & Propósito
+Beatrice opera o grande forno a lenha da padaria e a banca de alimentos frescos na praça central. Produz pães a partir do trigo colhido nas fazendas norte da vila.
 
-## 1. Identificação
-- **ID do Modelo:** `Base_Padeira_Beatrice`
-- **Profissão:** Mestra dos Pães
-- **Rota Territorial:** `RotaPadeira` (Forno da Padaria → Balcão de atendimento → Banca de pães na Praça)
-- **Acessórios:** Chapéu de cozinheira, avental de linho e bandeja de pães
-
-## 2. Papel Narrativo & Gameplay
-- Fornece pão fresco produzido com o trigo colhido nas fazendas norte de Arkham.
-
-## 3. Falas
+### Diálogos Canônicos
 - *"Pão quente saindo do forno!"*
 - *"O trigo vem direto das fazendas da vila."*
 - *"Prove o pão de hoje, está fresquinho e crocante!"*

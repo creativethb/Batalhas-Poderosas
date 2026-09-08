@@ -533,230 +533,434 @@
       projeto: {
         nome: "Batalhas Poderosas",
         universo: "Reino de Arkan",
-        versao: "1.8.0",
+        versao: "2.0.0",
         ultimaAtualizacao: "08/09/2026",
-        estado: "Em Expansão Ativa (Vila & Diálogos)",
-        engine: "Roblox Studio (Luau)",
+        estado: "Vila de Arkham Operacional • R15 • Diálogos & Combate",
+        engine: "Roblox Studio (Luau + Rojo)",
         autor: "Thiago Mendes e Castro & Agentes"
       },
       npcs: [
         {
           id: "NPC-001",
-          nome: "Cedric",
-          funcao: "Ferreiro da Vila",
-          localizacao: "Oficina de Arkham",
+          nome: "Mestre Cedric",
+          funcao: "Ferreiro Real da Vila",
+          localizacao: "Oficina da Vila (Praça Sul)",
           status: "CANONICO",
           imagem: "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=600&auto=format&fit=crop&q=80",
-          relacionados: ["LOCAL-002", "ITEM-001", "ITEM-003", "SISTEMA-003"],
+          relacionados: ["LOCAL-002", "ITEM-001", "ITEM-002", "ITEM-003", "GAME-001"],
           dialogos: [
-            "O aço de Arkan não se molda com pressa, garoto.",
-            "Se você trouxer madeira da Floresta Antiga, posso reforçar sua empunhadura.",
-            "A guarda de John não aguenta outro ataque das sombras sem lâminas novas."
+            "O fogo da forja nunca se apaga! Precisa de lâminas afiadas?",
+            "Sua Espada de Madeira Sagrada reluz com a bênção antiga! Honre a bênção da Árvore Sagrada e defenda a vila."
           ],
           markdown: `### História & Papel
-Cedric é o mestre da forja da **Vila de Arkham**. Ele é o responsável por introduzir o jogador ao sistema de aprimoramento de equipamentos e reparação. Conhece segredos antigos da metalurgia do Reino anterior à fragmentação.
-
-### Relações Canônicas
-- **John**: Cedric forjou o escudo que John usou na defesa dos portões do norte.
-- **Oficina**: Sua bancada contém a primeira bigorna funcional do jogo.`
+Mestre Cedric é o ferreiro mais respeitado de **Arkham**. Responsável pela bigorna da oficina real, forja a lendária **Espada de Madeira Sagrada** combinando a Madeira Comum da casa de John com o Galho Sagrado de Eldrin.`
         },
         {
           id: "NPC-002",
-          nome: "John",
-          funcao: "Veterano & Protetor da Entrada",
-          localizacao: "Casa de John / Entrada da Vila",
+          nome: "Ancião Eldrin",
+          funcao: "Guardião da Árvore Sagrada",
+          localizacao: "Santuário da Floresta Oeste",
           status: "CANONICO",
-          imagem: "https://images.unsplash.com/photo-1563089145-599997674d42?w=600&auto=format&fit=crop&q=80",
-          relacionados: ["LOCAL-001", "DECISAO-009", "SISTEMA-001"],
+          imagem: "https://images.unsplash.com/photo-1544717305-2782549b5136?w=600&auto=format&fit=crop&q=80",
+          relacionados: ["LOCAL-004", "ITEM-002", "LORE-001"],
           dialogos: [
-            "Fique perto das tochas. A floresta ao redor de Arkan tem olhos.",
-            "Acorde, novato. O dia mal nasceu e o dever nos chama."
+            "Esta é a Árvore Sagrada. Suas raízes habitam este solo muito antes da própria vila existir.",
+            "A madeira comum se parte fácil. Mas um ramo sagrado confere têmpera eterna à lâmina!",
+            "Tome este Galho Sagrado! Que ele guie seu braço com justiça e coragem."
           ],
-          markdown: `### Ponto Inicial Canônico
-O jogador acorda na residência de John. Ele serve como mentor inicial das mecânicas de movimentação (Dash, Pulo e Orientação de Câmera).`
+          markdown: `### Guardião das Tradições Ancestrais
+Eldrin habita o bosque milenar a oeste de Arkham. Apresenta a história dos antigos pactos e entrega a **Madeira Sagrada** para a iniciação guerreira de John.`
         },
         {
           id: "NPC-003",
-          nome: "Ancião Oakhaven",
-          funcao: "Guardião das Memórias",
-          localizacao: "Santuário de Pedra",
-          status: "EM_DESENVOLVIMENTO",
-          imagem: "https://images.unsplash.com/photo-1544717305-2782549b5136?w=600&auto=format&fit=crop&q=80",
-          relacionados: ["HISTORIA-001", "LOCAL-004"],
+          nome: "Guarda Rowan",
+          funcao: "Sentinela dos Acessos Leste",
+          localizacao: "Estrada da Mina Leste",
+          status: "CANONICO",
+          imagem: "https://images.unsplash.com/photo-1563089145-599997674d42?w=600&auto=format&fit=crop&q=80",
+          relacionados: ["LOCAL-007", "NPC-004", "GAME-002"],
           dialogos: [
-            "Antes dos reinos colidirem, Arkan era uno.",
-            "As pedras ressoam quando os heróis retornam."
+            "Patrulho o acesso leste e volto pela praça.",
+            "Aldous cuida do centro, eu observo os caminhos.",
+            "Mantenha as armas embainhadas na vila, viajante."
           ],
-          markdown: `### Função Narrativa
-Guarda as memórias das Eras Perdidas e explica a origem das Fendas Elementais que se abrem no Roblox Studio.`
+          markdown: `### Sentinela da Montanha
+Vigia a rota leste que conduz às antigas minas de Arkham. Utiliza armadura de placas completa (*MedievalGuardDetailed*) com texturas SurfaceAppearance e juntas R15.`
+        },
+        {
+          id: "NPC-004",
+          nome: "Guarda Aldous",
+          funcao: "Sentinela da Praça Central",
+          localizacao: "Praça Central de Arkham",
+          status: "CANONICO",
+          imagem: "https://images.unsplash.com/photo-1543857778-c4a1a3e0b2eb?w=600&auto=format&fit=crop&q=80",
+          relacionados: ["LOCAL-003", "NPC-003"],
+          dialogos: [
+            "A patrulha está em alerta. Nenhum invasor passará pelos portões.",
+            "Pela honra e proteção de Batalhas Poderosas!",
+            "Circulando com honra. Não cause tumulto na praça."
+          ],
+          markdown: `### Comandante dos Portões
+Vigia os 6 portões do perímetro central da vila de Arkham com tabardo real e lança de infantaria.`
+        },
+        {
+          id: "NPC-005",
+          nome: "Padeira Beatrice",
+          funcao: "Mestra dos Pães",
+          localizacao: "Padaria da Vila / Praça",
+          status: "CANONICO",
+          imagem: "https://images.unsplash.com/photo-1509440159596-0249088772ff?w=600&auto=format&fit=crop&q=80",
+          relacionados: ["LOCAL-005", "LOCAL-003"],
+          dialogos: [
+            "Pão quente saindo do forno!",
+            "O trigo vem direto das fazendas da vila.",
+            "Prove o pão de hoje, está fresquinho e crocante!"
+          ],
+          markdown: `### Produção & Alimentos
+Opera o forno tradicional a lenha e a banca da praça com avental e bandeja de pães recém-assados.`
+        },
+        {
+          id: "NPC-006",
+          nome: "Pescador Lucan",
+          funcao: "Pescador do Cais",
+          localizacao: "Cais do Lago Nobre",
+          status: "CANONICO",
+          imagem: "https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=600&auto=format&fit=crop&q=80",
+          relacionados: ["LOCAL-006"],
+          dialogos: [
+            "O lago está calmo hoje, bom para pescar.",
+            "Peixes frescos, direto do lago para a sua mesa.",
+            "A paciência é a melhor isca para um bom pescador."
+          ],
+          markdown: `### Vida no Lago
+Administra o cais nordeste, mantendo o barco, balde e a cabana de pesca sobre as águas do Lago Nobre.`
+        },
+        {
+          id: "NPC-007",
+          nome: "Mercador Tobias",
+          funcao: "Comerciante de Provisões",
+          localizacao: "Armazém da Vila",
+          status: "CANONICO",
+          imagem: "https://images.unsplash.com/photo-1555529669-e69e7aa0ba9a?w=600&auto=format&fit=crop&q=80",
+          relacionados: ["LOCAL-003", "ITEM-001"],
+          dialogos: [
+            "Mercadorias de todos os cantos do reino! O que procura hoje, viajante?",
+            "O armazém está abastecido para o inverno que se aproxima."
+          ],
+          markdown: `### Comércio Central
+Responsável pela estocagem de suprimentos, ferramentas e comércio de provisões da comunidade.`
+        },
+        {
+          id: "NPC-008",
+          nome: "Agricultor Hugo",
+          funcao: "Agricultor da Colina",
+          localizacao: "Campos da Colina Leste",
+          status: "CANONICO",
+          imagem: "https://images.unsplash.com/photo-1595956553066-fe24a8c33395?w=600&auto=format&fit=crop&q=80",
+          relacionados: ["LOCAL-001"],
+          dialogos: [
+            "A terra responde com fartura para quem acorda antes do amanhecer.",
+            "Trabalho honesto na terra é o que sustenta todas as muralhas deste reino."
+          ],
+          markdown: `### Cultivo & Colheitas
+Cobre as rotas agrárias na encosta leste próxima à residência de John com colete de couro e foice.`
+        },
+        {
+          id: "NPC-009",
+          nome: "Guardião Seraphin",
+          funcao: "Guardião Místico do Portal",
+          localizacao: "Caverna do Portal Leste",
+          status: "CANONICO",
+          imagem: "https://images.unsplash.com/photo-1514539079130-25950c84af65?w=600&auto=format&fit=crop&q=80",
+          relacionados: ["LOCAL-008"],
+          dialogos: [
+            "Nem todas as ameaças chegam marchando pelos portões principais.",
+            "Vigio os caminhos arcanos e os portais que ligam nossos mundos."
+          ],
+          markdown: `### Protetor da Fenda Dimensional
+Guarda a caverna mística onde reside o portal de transição para o universo do Mundo Livre.`
+        },
+        {
+          id: "NPC-010",
+          nome: "Lenhador Garrick",
+          funcao: "Lenhador da Serraria",
+          localizacao: "Serraria & Floresta Nordeste",
+          status: "CANONICO",
+          imagem: "https://images.unsplash.com/photo-1502082553048-f009c37129b9?w=600&auto=format&fit=crop&q=80",
+          relacionados: ["LOCAL-006", "ITEM-001"],
+          dialogos: [
+            "A floresta nos dá madeira nobre, mas exige respeito aos seus limites.",
+            "Transporto as toras para a serraria antes do anoitecer."
+          ],
+          markdown: `### Extração de Madeira
+Opera a serraria e o corte de carvalhos no perímetro nordeste da vila.`
+        },
+        {
+          id: "NPC-011",
+          nome: "Mineiro Borin",
+          funcao: "Mineiro das Profundezas",
+          localizacao: "Minas da Montanha Leste",
+          status: "CANONICO",
+          imagem: "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=600&auto=format&fit=crop&q=80",
+          relacionados: ["LOCAL-007"],
+          dialogos: [
+            "As minas nas encostas guardam segredos e riquezas há muito esquecidas.",
+            "Mantenha sua tocha acesa se decidir explorar as galerias montanhosas."
+          ],
+          markdown: `### Mineração & Mistérios
+Percorre o trajeto entre o armazém e as galerias profundas onde jaz a história do Rei Mago.`
+        },
+        {
+          id: "NPC-012",
+          nome: "Agricultora Nalia",
+          funcao: "Agricultora das Fazendas Norte",
+          localizacao: "Campos do Norte & Estábulo",
+          status: "CANONICO",
+          imagem: "https://images.unsplash.com/photo-1500937386664-56d1dfef3854?w=600&auto=format&fit=crop&q=80",
+          relacionados: ["LOCAL-003"],
+          dialogos: [
+            "Os campos de trigo do norte estão dourados e prontos para colheita!",
+            "Cuidar do rebanho e da plantação é o coração da nossa vila."
+          ],
+          markdown: `### Grandes Campos Feudais
+Responsável pela produção dos lotes agrícolas no norte de Arkham.`
         }
       ],
       itens: [
         {
           id: "ITEM-001",
-          nome: "Espada de Aço de Arkan",
-          tipo: "Arma Melee",
-          raridade: "Comum / Inicial",
+          nome: "Madeira Comum",
+          tipo: "Material de Criação / Recurso",
+          raridade: "Comum (Branco)",
           status: "CANONICO",
-          imagem: "https://images.unsplash.com/photo-1595590424283-b8f17842773f?w=600&auto=format&fit=crop&q=80",
-          relacionados: ["NPC-001", "SISTEMA-002"],
-          markdown: `**Dano:** 18 físico  
-**Velocidade:** 1.1s por golpe  
-Lâmina balanceada forjada por Cedric na Vila de Arkham.`
+          imagem: "https://images.unsplash.com/photo-1546484396-fb3fc6f95f98?w=600&auto=format&fit=crop&q=80",
+          relacionados: ["NPC-001", "LOCAL-001", "ITEM-003"],
+          markdown: `**Origem:** Coletada na bancada da Casa de John e residências marcadas com \`BP_ResidenciaMadeira\`.  
+**Uso:** Forja da Espada de Madeira Sagrada (1x Madeira Comum + 1x Madeira Sagrada).`
         },
         {
           id: "ITEM-002",
-          nome: "Tora de Madeira Antiga",
-          tipo: "Recurso / Material",
-          raridade: "Básico",
+          nome: "Madeira Sagrada",
+          tipo: "Material Místico / Relíquia",
+          raridade: "Raro (Ciano)",
           status: "CANONICO",
-          imagem: "https://images.unsplash.com/photo-1546484396-fb3fc6f95f98?w=600&auto=format&fit=crop&q=80",
-          relacionados: ["NPC-001", "SISTEMA-004"],
-          markdown: `Recurso primário colhido nas imediações da vila. Usado na forja para cabos de armas e reforço estrutural.`
+          imagem: "https://images.unsplash.com/photo-1513836279014-a89f7a76ae86?w=600&auto=format&fit=crop&q=80",
+          relacionados: ["NPC-002", "LOCAL-004", "ITEM-003"],
+          markdown: `**Origem:** Concedida pelo Ancião Eldrin na Árvore Sagrada após ouvir a lenda ancestral.  
+**Propriedade:** Concede têmpera eterna e inquebrável à lâmina.`
         },
         {
           id: "ITEM-003",
-          nome: "Elmo do Guardião Solar",
-          tipo: "Armadura",
-          raridade: "Raro",
-          status: "PLANEJADO",
-          imagem: "https://images.unsplash.com/photo-1543857778-c4a1a3e0b2eb?w=600&auto=format&fit=crop&q=80",
-          relacionados: ["NPC-002"],
-          markdown: `Forjado em eras esquecidas. Concede resistência extra a ataques de escuridão.`
+          nome: "Espada de Madeira Sagrada",
+          tipo: "Arma Branca / Espada de Uma Mão",
+          raridade: "Sagrada / Lendária Inicial",
+          status: "CANONICO",
+          imagem: "https://images.unsplash.com/photo-1595590424283-b8f17842773f?w=600&auto=format&fit=crop&q=80",
+          relacionados: ["NPC-001", "GAME-002", "ITEM-001", "ITEM-002"],
+          markdown: `**Dano:** 22 pontos por impacto  
+**Combo:** Sequência encadeada de 5 golpes fluidos  
+**Aparência:** Mesh 3D esculpida com iluminação mística esmeralda suave  
+**Forja:** Mestre Cedric na Oficina da Vila.`
         }
       ],
       locais: [
         {
           id: "LOCAL-001",
           nome: "Casa de John",
-          tipo: "Residência / Ponto Inicial",
+          tipo: "Residência / Ponto Inicial Canônico",
           status: "CANONICO",
           imagem: "https://images.unsplash.com/photo-1513694203232-719a280e022f?w=600&auto=format&fit=crop&q=80",
-          relacionados: ["NPC-002", "DECISAO-009"],
-          markdown: `Ponto onde a jornada de todo jogador se inicia em **Batalhas Poderosas**. Construção rústica de madeira e pedra.`
+          relacionados: ["BP-2026-002", "ITEM-001"],
+          markdown: `Localizada na Colina Leste (\`X ≈ 128, Y ≈ 29, Z ≈ 68\`). Mobiliada com 22 MeshParts customizadas por IA (lareira anatômica, bancada com Madeira Coletável e barreira anti-NPC).`
         },
         {
           id: "LOCAL-002",
-          nome: "Oficina e Forja de Cedric",
-          tipo: "Estrutura Funcional",
+          nome: "Oficina do Cedric",
+          tipo: "Forja Real & Artesanato",
           status: "CANONICO",
           imagem: "https://images.unsplash.com/photo-1504917599217-d4dc5ebe6122?w=600&auto=format&fit=crop&q=80",
-          relacionados: ["NPC-001", "ITEM-001", "ITEM-002"],
-          markdown: `Localizada no quadrante oeste da praça central da Vila de Arkham. É equipada com fole, forja aquecida e bigorna pesada.`
+          relacionados: ["NPC-001", "ITEM-003"],
+          markdown: `Setor Sul da Vila (\`X ≈ -18, Y ≈ 19, Z ≈ -71\`). Placa em carvalho e ferro forjado, bigorna, bacia de têmpera, rebolo e balcão oficial de forja.`
         },
         {
           id: "LOCAL-003",
-          nome: "Taverna do Corvo Dourado",
-          tipo: "Ponto Social / Quests",
-          status: "EM_DESENVOLVIMENTO",
+          nome: "Praça Central de Arkham",
+          tipo: "Centro Comunitário & Cruzamento",
+          status: "CANONICO",
           imagem: "https://images.unsplash.com/photo-1514933651103-005eec06c04b?w=600&auto=format&fit=crop&q=80",
-          relacionados: ["MISSAO-001"],
-          markdown: `Centro de boatos e contratação de mercenários na vila.`
+          relacionados: ["NPC-004", "NPC-005"],
+          markdown: `Coração da vila (\`X ≈ 32, Z ≈ 46\`). Poço de pedra, assentos anatômicos com anti-loop, postes de ferro com iluminação noturna e confluência de rotas.`
+        },
+        {
+          id: "LOCAL-004",
+          nome: "Árvore Sagrada & Santuário da Floresta",
+          tipo: "Santuário Místico Ancestral",
+          status: "CANONICO",
+          imagem: "https://images.unsplash.com/photo-1511497584788-87676104235f?w=600&auto=format&fit=crop&q=80",
+          relacionados: ["NPC-002", "ITEM-002", "LORE-001"],
+          markdown: `Bosque Oeste (\`X ≈ -115 → -130, Z ≈ -152\`). Árvore milenar radiante onde reside o Ancião Eldrin.`
+        },
+        {
+          id: "LOCAL-005",
+          nome: "Padaria da Vila",
+          tipo: "Produção de Alimentos",
+          status: "CANONICO",
+          imagem: "https://images.unsplash.com/photo-1509440159596-0249088772ff?w=600&auto=format&fit=crop&q=80",
+          relacionados: ["NPC-005"],
+          markdown: `Próxima à praça (\`X ≈ 71, Z ≈ -32\`). Forno a lenha, mesas externas e portas duplas automáticas inteligentes com passagem livre.`
+        },
+        {
+          id: "LOCAL-006",
+          nome: "Cais do Lago Nobre",
+          tipo: "Área Aquática & Pesca",
+          status: "CANONICO",
+          imagem: "https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=600&auto=format&fit=crop&q=80",
+          relacionados: ["NPC-006"],
+          markdown: `Setor Nordeste (\`X ≈ 204 → 250, Z ≈ 64 → 140\`). Plataformas de madeira, peixes nadando em tempo real, cabana e posto do Lucan.`
+        },
+        {
+          id: "LOCAL-007",
+          nome: "Minas da Montanha Leste",
+          tipo: "Área de Mineração & Segredos Históricos",
+          status: "CANONICO",
+          imagem: "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=600&auto=format&fit=crop&q=80",
+          relacionados: ["NPC-003", "NPC-011", "LORE-001"],
+          markdown: `Encostas montanhosas (\`X ≈ 382 → 484, Z ≈ -248 → -339, Y ≈ 114\`). Entrada escavada, trilhos e ponto onde a família do mago foi exilada.`
+        },
+        {
+          id: "LOCAL-008",
+          nome: "Portal do Mundo Livre",
+          tipo: "Portal Dimensional Inter-Place",
+          status: "CANONICO",
+          imagem: "https://images.unsplash.com/photo-1514539079130-25950c84af65?w=600&auto=format&fit=crop&q=80",
+          relacionados: ["NPC-009", "BP-2026-004"],
+          markdown: `Caverna mística (\`X ≈ 339, Z ≈ -196\`). Teleporta para a experiência Sandbox do Mundo Livre (Place ID: 92821469286193).`
         }
       ],
       decisoes: [
         {
-          id: "BP-2026-009",
-          titulo: "Início Canônico na Residência de John",
+          id: "BP-2026-001",
+          titulo: "Protagonista John e Início como Soldado Inexperiente",
           data: "2026-09-08",
-          categoria: "Narrativa / Gameplay Inicial",
+          categoria: "Narrativa Core",
           status: "CANONICO",
-          motivo: "Estabelecer um vínculo imediato com um NPC mentor antes de jogar o aventureiro no mundo aberto.",
-          substitui: "BP-2026-001 (Spawn genérico na praça central)",
-          relacionados: ["NPC-002", "LOCAL-001"],
-          markdown: `**Decisão:** O jogador sempre inicia sua aventura dentro da casa de John, acordando com um diálogo dinâmico que o orienta a pegar seus primeiros mantimentos.`
-        },
-        {
-          id: "BP-2026-008",
-          titulo: "Sistema de Dash com Cooldown Rápido",
-          data: "2026-08-20",
-          categoria: "Gameplay / Combate",
-          status: "CANONICO",
-          motivo: "Garantir fluidez e esquiva reativa durante duelos de espada no Roblox.",
+          motivo: "Estabelecer uma curva de evolução orgânica e humana.",
           substitui: null,
-          relacionados: ["SISTEMA-001"],
-          markdown: `O dash possui tempo de recarga de 1.2 segundos e concede 0.2s de invulnerabilidade seletiva contra golpes frontais.`
+          relacionados: ["NPC-001", "LOCAL-001"],
+          markdown: `**Decisão:** John é o único soldado da Vila de Arkham. Não inicia poderoso e deve forjar seus equipamentos através de preparação e treino.`
         },
         {
-          id: "BP-2026-007",
-          titulo: "Estética Medieval Sem Luzes Neon",
-          data: "2026-08-10",
-          categoria: "Direção de Arte",
+          id: "BP-2026-002",
+          titulo: "Início Canônico na Casa de John",
+          data: "2026-09-08",
+          categoria: "Gameplay & Narrativa",
           status: "CANONICO",
-          motivo: "Preservar a imersão de fantasia rústica e evitar poluição visual de jogos genéricos.",
+          motivo: "Garantir imersão inicial e ambientação residencial antes de explorar a vila.",
+          substitui: null,
+          relacionados: ["LOCAL-001", "ITEM-001"],
+          markdown: `**Decisão:** A jornada sempre inicia no quarto da residência de John na Colina Leste.`
+        },
+        {
+          id: "BP-2026-003",
+          titulo: "A Guerra contra o Rei Mago e Origem Trágica",
+          data: "2026-09-08",
+          categoria: "Lore & História",
+          status: "CANONICO",
+          motivo: "Evitar maniqueísmo raso e aprofundar o conflito com segredos históricos nas minas.",
+          substitui: null,
+          relacionados: ["LOCAL-007"],
+          markdown: `**Decisão:** O Rei Mago era um antigo servo do rei de Arkan cuja família foi exilada nas minas após a morte da rainha.`
+        },
+        {
+          id: "BP-2026-004",
+          titulo: "Desacoplamento do Sandbox e Conexão por Portal",
+          data: "2026-09-08",
+          categoria: "Arquitetura do Mundo",
+          status: "CANONICO",
+          motivo: "Preservar a imersão de Arkham e manter o laboratório Sandbox como mundo acessível por portal.",
+          substitui: null,
+          relacionados: ["LOCAL-008"],
+          markdown: `**Decisão:** A maleta e interface do Sandbox vivem apenas no Mundo Livre; Arkham é 100% focado em narrativa e RPG.`
+        },
+        {
+          id: "BP-2026-005",
+          titulo: "Padrão de UX Multiplataforma (PC, Mobile, Gamepad)",
+          data: "2026-09-08",
+          categoria: "Interface & Controles",
+          status: "CANONICO",
+          motivo: "Proporcionar tela limpa no PC/Console e ergonomia adaptativa de combate no mobile.",
           substitui: null,
           relacionados: [],
-          markdown: `A iluminação de tochas, pedras e forjas deve usar tonalidades âmbar e fogo natural.`
+          markdown: `**Decisão:** PC e Console não possuem botões virtuais na tela; Mobile possui HUD contextual que expande botões de combate ao sacar a arma.`
         }
       ],
       sistemas: [
         {
           id: "SISTEMA-001",
-          nome: "Movimentação & Dash Dinâmico",
-          categoria: "Core Gameplay",
+          nome: "Sistema de Diálogo Imersivo & Câmera Over-The-Shoulder",
+          categoria: "Interação & Narrativa",
           status: "CANONICO",
-          markdown: `Implementado em Luau no Roblox Studio. Suporta corrida contínua com gasto de stamina e dash direcional.`
+          markdown: `Aproximação suave a 4.8 studs, travamento 100% frontal, câmera cinematográfica em terceira pessoa, HUD nobre com typewriter e suporte total a Gamepad.`
         },
         {
           id: "SISTEMA-002",
-          nome: "Combate Melee & Hitbox Client-Server",
+          nome: "Combate Melee & Combo de 5 Golpes",
           categoria: "Combate",
           status: "CANONICO",
-          markdown: `Detecção de acertos validada no servidor para impedir trapaças e garantir sincronização precisa entre jogadores.`
+          markdown: `Combo encadeado de 5 hits fluidos com espada, hitbox espacial validada no servidor e braço livre relaxado.`
         },
         {
           id: "SISTEMA-003",
-          nome: "Sistema de Diálogo com NPCs",
-          categoria: "Interação",
-          status: "EM_DESENVOLVIMENTO",
-          markdown: `Caixa de diálogo cinematográfica com digitação progressiva e seleção de respostas via teclado ou toque.`
+          nome: "Locomoção: Dash + Corrida Unificados e Duplo Pulo",
+          categoria: "Locomoção",
+          status: "CANONICO",
+          markdown: `Toque para dash, segurar para corrida e pulo duplo físico no ar com VFX nos pés.`
         },
         {
           id: "SISTEMA-004",
-          nome: "Coleta de Recursos & Forja",
-          categoria: "Economia",
-          status: "PLANEJADO",
-          markdown: `Derrubada de árvores selecionadas e mineração para suprir a oficina de Cedric.`
+          nome: "Assentos Universais por Auto-Sentar & Giro 180°",
+          categoria: "Ambiente",
+          status: "CANONICO",
+          markdown: `Detecção de qualquer banco ou cadeira com altura anatômica (-0.45), orientação de encosto/mesa e anti-loop de 2.0s.`
+        },
+        {
+          id: "SISTEMA-005",
+          nome: "Portas Inteligentes Push-Away",
+          categoria: "Ambiente",
+          status: "CANONICO",
+          markdown: `Abertura direcional suave que se afasta do jogador ou NPC ao se aproximar.`
+        },
+        {
+          id: "SISTEMA-006",
+          nome: "Montarias & Charretes com Física Unanchored",
+          categoria: "Veículos",
+          status: "CANONICO",
+          markdown: `Rodas com giro concêntrico perfeito e animação procedural das patas do cavalo.`
         }
       ],
       missoes: [
         {
           id: "MISSAO-001",
-          nome: "A Primeira Lâmina",
+          nome: "A Primeira Lâmina Sagrada",
           status: "CANONICO",
-          dadorId: "NPC-002",
-          recompensa: "10 Moedas de Arkan, Espada de Aço",
-          relacionados: ["NPC-001", "NPC-002", "ITEM-001"],
-          markdown: `John pede que o jogador caminhe até a oficina de Cedric na praça da vila para coletar sua primeira arma forjada.`
+          dadorId: "NPC-001",
+          recompensa: "Espada de Madeira Sagrada, Desbloqueio da Hotbar de Combate",
+          relacionados: ["NPC-001", "NPC-002", "ITEM-001", "ITEM-002", "ITEM-003"],
+          markdown: `1. Colete a Madeira Comum na mesa de sua casa.  
+2. Vá até o bosque oeste e obtenha o Galho Sagrado com o Ancião Eldrin.  
+3. Forje sua primeira lâmina na bigorna de Mestre Cedric.`
         }
       ],
       changelog: [
         {
           data: "08 SET 2026",
-          versao: "v1.8",
-          tipo: "Sistemas & GDD",
+          versao: "v2.0",
+          tipo: "Sistemas & Lore Consolidada",
           mudancas: [
-            "Integração do modo Editor com suporte a GitHub Token (PAT).",
-            "Painel de Auditoria de Consistência para Agentes de IA.",
-            "Consolidação da casa de John como início canônico."
-          ]
-        },
-        {
-          data: "20 AGO 2026",
-          versao: "v1.7",
-          tipo: "Mecânicas",
-          mudancas: [
-            "Refatoração dos scripts de Dash e pulo duplo no Roblox Studio.",
-            "Primeiros testes da bancada de forja de Cedric."
-          ]
-        },
-        {
-          data: "10 AGO 2026",
-          versao: "v1.5",
-          tipo: "Direção de Arte",
-          mudancas: [
-            "Definição da paleta de cores escura com ouro e pergaminho.",
-            "Banimento de estética RGB/neon nas construções de Arkham."
+            "Implementação do Sistema Imersivo de Diálogo e Câmera Cinematográfica (Missão 27).",
+            "Mapeamento de 20 rotas territoriais exclusivas para todos os NPCs da vila.",
+            "Desbloqueio da entrada da Padaria e suporte nativo completo a Gamepad.",
+            "Consolidação da Lore Canônica Oficial de Arkan e do Rei Mago no GDD."
           ]
         }
       ]
