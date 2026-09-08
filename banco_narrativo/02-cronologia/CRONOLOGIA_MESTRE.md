@@ -16,30 +16,35 @@
 - **Status:** `[🟢 CANÔNICO]`
 - **Lacunas:** De onde Alric veio e quem eram seus pais `[🔴 DESCONHECIDO]`.
 
-#### Período 1.1: O Descompasso Temporal & O Incidente no Riacho
-- **Evento:** Passa-se uma geração inteira de humanos enquanto Alric ainda é um adolescente prodígio. Durante um mergulho no riacho, sua perna fica presa; sob desespero, ocorre o primeiro despertar de energia involuntária, lançando-o à margem ileso.
-- **Personagens Envolvidos:** Alric (adolescente).
-- **Consequência:** Alric inicia seu método próprio de pesquisa empírica metódica (observação, teste, erro, ajuste) para decifrar a força que habita em si.
+#### Período 1.1: O Descompasso Temporal, Riacho & A Cabana de Pesquisa
+- **Evento:** Passa-se uma geração inteira de humanos enquanto Alric ainda é um jovem prodígio. Ocorre o despertar involuntário no riacho. Alric ergue uma cabana de pesquisa isolada da vila para estudos arcanos com segurança.
+- **Personagens Envolvidos:** Alric.
+- **Consequência:** Início do método empírico sistemático.
 - **Status:** `[🟢 CANÔNICO]`
 
-#### Período 1.2: A Aproximação da Corte e o Pacto de Estabilidade
-- **Evento:** O destaque científico e arcano de Alric chega aos ouvidos do Antigo Rei de Arkan. O rei, carismático, oferece estabilidade e recursos para Alric pesquisar; Alric torna-se conselheiro real e constitui família na corte.
-- **Personagens Envolvidos:** O Antigo Rei de Arkan, Alric (Conselheiro Real), Família de Alric.
-- **Consequência:** Longo período de cooperação produtiva e paz.
+#### Período 1.2: O Espelho Dimensional, O Mundo Paralelo & A Família
+- **Evento:** Em sua cabana, Alric descobre o primeiro portal através de um espelho místico, acessando uma realidade paralela habitada por pessoas com características semelhantes às suas. Conhece sua futura esposa, casa-se e tem um filho, transitando entre os mundos.
+- **Personagens Envolvidos:** Alric, Futura Esposa, Filho.
+- **Consequência:** Alric descobre que sua natureza não é uma anomalia isolada e constitui família amorosa.
 - **Status:** `[🟢 CANÔNICO]`
 
-#### Período 1.3: A Ganância e a Ruptura
-- **Evento:** O Antigo Rei tenta explorar e controlar os poderes de Alric para ultrapassar os limites do reino.
-- **Personagens Envolvidos:** O Antigo Rei, Alric, Família de Alric.
-- **Consequência:** Ruptura política e moral. Alric é traído e expulso de Arkan.
+#### Período 1.3: A Entrada na Corte & O Serviço Real
+- **Evento:** O Antigo Rei de Arkan descobre o jovem pesquisador e oferece estabilidade e recursos para suas pesquisas. Alric torna-se conselheiro e conjurador real.
+- **Personagens Envolvidos:** O Antigo Rei de Arkan, Alric.
+- **Consequência:** Longo período de prosperidade mútua, enquanto as criações de Alric expandem o poder da coroa.
 - **Status:** `[🟢 CANÔNICO]`
 
-#### Período 1.4: O Exílio e o Cativeiro nas Minas
-- **Evento:** A família de Alric é aprisionada nas Minas da Montanha (`LOCAL-007`). Alric perde sua família e é forçado ao exílio solitário.
-- **Personagens Envolvidos:** Alric, Família de Alric, Guardas do Antigo Rei.
-- **Consequência:** Alric jura sobreviver e se fortalecer. As minas tornam-se um túmulo e ferida histórica.
+#### Período 1.4: A Ganância Real, A Usurpação & O Cativeiro nas Minas
+- **Evento:** O Antigo Rei utiliza invenções do próprio Alric (tecnologias de ocultamento/bloqueio) para capturar secretamente a esposa e o filho de Alric e trancá-los nas Minas da Montanha (`LOCAL-007`).
+- **Personagens Envolvidos:** O Antigo Rei, Alric, Esposa, Filho.
+- **Consequência:** Alric é chantageado e forçado a cometer atos terríveis a mando da coroa para manter a família viva.
 - **Status:** `[🟢 CANÔNICO]`
-- **Lacunas:** O destino específico da família nas minas (morte ou cativeiro permanente) `[🔴 DESCONHECIDO]`.
+
+#### Período 1.5: A Tragédia da Morte do Filho & O Banimento
+- **Evento:** Alric localiza o cativeiro nas Minas da Montanha, mas encontra seu filho morto. A esposa sobreviveu ao cativeiro. Alric se revolta, mas fica em xeque para proteger a esposa. O confronto culmina no banimento oficial de Alric de Arkan.
+- **Personagens Envolvidos:** Alric, Antigo Rei, Esposa, Filho (falecido).
+- **Consequência:** Ruptura irrevogável. Alric parte para o exílio jurando se fortalecer para obter reparação.
+- **Status:** `[🟢 CANÔNICO]`
 
 ---
 

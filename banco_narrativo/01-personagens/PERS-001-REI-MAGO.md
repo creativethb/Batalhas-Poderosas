@@ -3,18 +3,18 @@
 > **NOME VERDADEIRO:** `ALRIC` `[🟢 CANÔNICO]`  
 > **CLASSIFICAÇÃO:** BANCO DE CONHECIMENTO NARRATIVO INTERNO (NÃO PÚBLICO)  
 > **FUNÇÃO:** Matriz de continuidade, psicologia, cronologia de longa duração e controle de mistérios para construção de roteiro, diálogos, contos e plot twists.  
-> **ÚLTIMA ATUALIZAÇÃO:** 08/09/2026 — *Sessão Fase 2: Juventude, Despertar no Riacho & Pesquisa Empírica*
+> **ÚLTIMA ATUALIZAÇÃO:** 08/09/2026 — *Sessão Fase 3: Vida Adulta, O Espelho Dimensional, Família, Traição Real, Morte do Filho & Banimento*
 
 ---
 
 ## 1. IDENTIFICAÇÃO GERAL & TÍTULOS
 - **ID Interno:** `PERS-001-REI-MAGO`
-- **Nome Verdadeiro:** `Alric` `[🟢 CANÔNICO]` *(Nome pelo qual era chamado na vila durante sua infância e juventude; desconhecido para o jogador e para as gerações atuais no presente).*
-- **Títulos & Alcunhas no Presente:** O Rei Mago `[🟢 CANÔNICO]`, O Conjurador Exilado `[🟢 CANÔNICO]`, O Antigo Conselheiro `[🟢 CANÔNICO]`.
-- **Títulos / Papéis na Juventude:** O Jovem Camponês de Arkan `[🟢 CANÔNICO]`, O Garoto Prodígio `[🟢 CANÔNICO]`, Conselheiro Real de Arkan `[🟢 CANÔNICO]`.
+- **Nome Verdadeiro:** `Alric` `[🟢 CANÔNICO]` *(Nome pelo qual era chamado na vila e na corte durante sua juventude e vida adulta em Arkan; esquecido no presente).*
+- **Títulos no Presente:** O Rei Mago `[🟢 CANÔNICO]`, O Conjurador Exilado `[🟢 CANÔNICO]`, O Antigo Conselheiro `[🟢 CANÔNICO]`.
+- **Títulos Anteriores:** O Jovem Camponês de Arkan `[🟢 CANÔNICO]`, O Pesquisador da Cabana `[🟢 CANÔNICO]`, Conselheiro Real e Arcano de Arkan `[🟢 CANÔNICO]`.
 - **Natureza / Espécie:** Ser não nativo de Arkan com envelhecimento atípico, alta densidade biológica e domínio arcano inato `[🟢 CANÔNICO]`.
 - **Origem Geográfica:** Desconhecida / Fora do mundo de Arkan `[🟢 CANÔNICO]`.
-- **Estado de Canonização Geral:** `[🟢 CANÔNICO]` (Estrutura de vida definida com mistérios propositais preservados).
+- **Estado de Canonização Geral:** `[🟢 CANÔNICO]` (Trajetória cronológica das Fases 1, 2 e 3 consolidada).
 
 ---
 
@@ -35,138 +35,164 @@
 
 ## 3. JUVENTUDE, TEMPO & DESPERTAR (FASE 2)
 
-### A. O Envelhecimento Descompassado & Impacto Social
-- O tempo biológico de Alric não acompanha o ritmo humano comum `[🟢 CANÔNICO]`.
-- **O Salto Geracional:** Uma geração humana inteira passa enquanto Alric ainda não atinge a maturidade adulta `[🟢 CANÔNICO]`.
-- **Reação da Vila:** Sua longevidade torna-se notória na comunidade. Surgem histórias e lendas locais sobre o jovem que não envelhece no ritmo dos demais. Alguns vizinhos guardam segredo por afeto; outros aceitam naturalmente como parte de sua identidade `[🟢 CANÔNICO]`.
-- **Perspectiva de Alric:** Para ele, seu tempo é natural. Não encara sua longevidade como um espetáculo, mas como seu fluxo biológico ordinário `[🟢 CANÔNICO]`.
+### A. O Descompasso Temporal
+- O tempo biológico de Alric não acompanha o ritmo humano comum. Uma geração humana inteira passa enquanto Alric ainda é um adolescente `[🟢 CANÔNICO]`.
+- Sua longevidade torna-se conhecida e cercada por lendas locais na comunidade `[🟢 CANÔNICO]`.
 
-### B. Alric Adolescente — O Prodígio Curioso
-- Possui maturidade intelectual extraordinariamente precoce `[🟢 CANÔNICO]`.
-- Aprende em velocidade assombrosa, questiona todas as regras da natureza ao redor e observa tudo metoduosamente `[🟢 CANÔNICO]`.
-- **Equilíbrio Psicológico:** Mantém a espontaneidade e a capacidade de brincar próprias da juventude, sem amargura ou afetação `[🟢 CANÔNICO]`.
-- **Hiperfoco Científico:** É capaz de passar semanas em isolamento voluntário no seu espaço de estudo na vila, absorto em experimentos e investigações `[🟢 CANÔNICO]`.
-- **Motivação Primária:** Pura curiosidade e necessidade de decifrar sua própria essência, sem qualquer ambição de tirania ou poder político `[🟢 CANÔNICO]`.
+### B. O Adolescente Prodígio & Hiperfoco
+- Maturidade intelectual precoce, observação constante e mente científica `[🟢 CANÔNICO]`.
+- Mantém o espírito jovem e espontâneo, sem malícia `[🟢 CANÔNICO]`.
+- Capaz de semanas de isolamento voluntário para experimentos e estudos `[🟢 CANÔNICO]`.
 
-### C. O Primeiro Grande Despertar — O Incidente no Riacho
-- **O Acidente:** Durante um mergulho em um riacho da região, sua perna fica presa debaixo d'água entre detritos/rochas `[🟢 CANÔNICO]`.
-- **A Erupção Involuntária:** Diante do desespero e do risco iminente de afogamento, ocorre uma erupção involuntária de energia concentrada de dentro de seu corpo `[🟢 CANÔNICO]`.
-- **A Projeção Física:** A explosão dissipa a água e o projeta violentamente a uma distância considerável para a margem `[🟢 CANÔNICO]`.
-- **Resistência Biológica:** Alric cai no solo sem sofrer fraturas ou lesões graves, revelando uma resistência corporal muito superior à de um humano comum `[🟢 CANÔNICO]`.
-- **Ponto de Inflexão:** O episódio não gera trauma paralisante, mas fascínio: Alric percebe a existência de uma força interna que precisa ser decifrada `[🟢 CANÔNICO]`.
+### C. O Incidente do Riacho (Primeiro Grande Despertar)
+- Perna presa sob a água em um riacho → desespero → explosão involuntária de energia corporal → arremesso violento para a margem ileso `[🟢 CANÔNICO]`.
+- Constatação de alta resistência física e início da investigação metódica `[🟢 CANÔNICO]`.
 
-### D. Início da Pesquisa Empírica Consciente
-- Antes do incidente, pequenas anomalias já ocorriam (objetos que se moviam imperceptivelmente sob emoção intensa, reações ambientais atípicas) `[🟢 CANÔNICO]`.
-- Sem tradição mágica, mestres ou livros arcanos em Arkan, Alric desenvolve seu **próprio método científico empírico**:
-  1. Observação atenta dos gatilhos corporais e mentais.
-  2. Formulação de hipóteses.
-  3. Realização de testes controlados.
-  4. Análise de erros e ajustes.
-  5. Registro mental metódico dos padrões de energia `[🟢 CANÔNICO]`.
-
-### E. Natureza do Poder & Hipótese de Conexão Externa
-- O poder de Alric é parte de sua própria constituição fisiológica e espiritual `[🟢 NÚCLEO CANÔNICO]`.
-- Não se trata de "magia de sangue" no sentido folclórico tradicional de sacrifício `[🟢 CANÔNICO]`.
-- `[🟡 HIPÓTESE EM CONSTRUÇÃO]` Existe a possibilidade de que a linhagem de Alric esteja ancorada a uma **fonte externa de poder dimensional** localizada além do mundo de Arkan, o que explicaria a presença de poder arcano em um plano sem magia nativa.
+### D. O Método Científico Empírico
+- Sem mestres em Arkan, Alric cria seu próprio método: *observação → hipótese → teste → erro → ajuste mental* `[🟢 CANÔNICO]`.
 
 ---
 
-## 4. TRAJETÓRIA CRONOLÓGICA CONSOLIDADA (FASE 1 & 2)
+## 4. VIDA ADULTA, O ESPELHO DIMENSIONAL & FAMÍLIA (FASE 3A)
+
+### A. A Cabana de Pesquisa e o Primeiro Portal
+- Alric ergue uma **cabana de pesquisa afastada da vila**, pois seus experimentos eram perigosos e causavam detonações que assustavam os camponeses `[🟢 CANÔNICO]`.
+- **A Descoberta do Portal:** Durante suas investigações, Alric constrói um **espelho místico** dentro de sua cabana que se transforma em uma passagem secreta para uma realidade paralela semelhante a Arkan `[🟢 CANÔNICO]`.
+- Passa a transitar entre os mundos, permanecendo semanas ou meses do outro lado e retornando a Arkan para continuar seus estudos `[🟢 CANÔNICO]`.
+
+### B. O Outro Mundo & O Povo Semelhante
+- Naquela realidade paralela, Alric encontra pessoas com características físicas, traços e natureza semelhantes às suas `[🟢 CANÔNICO]`.
+- É o primeiro indício de que suas diferenças não eram uma anomalia individual solitária `[🟢 CANÔNICO]`.
+- `[🟡 EM CONSTRUÇÃO]` O nome desse mundo, a cultura de seu povo e a relação genealógica direta com a linhagem de Alric.
+
+### C. O Encontro com a Futura Esposa
+- Alric apaixona-se por uma mulher daquela realidade paralela `[🟢 CANÔNICO]`.
+- Ela também possui um ritmo de envelhecimento diferente dos mortais comuns de Arkan, permitindo a construção de um vínculo profundo ao longo de décadas `[🟢 CANÔNICO]`.
+- Alric casa-se e **constitui família**, tendo um filho `[🟢 CANÔNICO]`.
+- Divide sua vida entre o amor no outro mundo e suas obrigações e pesquisas em Arkan `[🟢 CANÔNICO]`.
+
+---
+
+## 5. ENTRADA NA CORTE & O SERVIÇO REAL (FASE 3B)
+
+### A. O Convite da Coroa
+- As capacidades de Alric tornam-se monumentais e atraem o **Antigo Rei de Arkan** `[🟢 CANÔNICO]`.
+- O rei, carismático e persuasivo, oferece uma posição oficial na corte `[🟢 CANÔNICO]`.
+- **Motivação de Alric:** Aceita o cargo em troca de **estabilidade, recursos e tempo** para suas pesquisas, libertando-se de afazeres manuais que não condiziam com sua busca pelo conhecimento `[🟢 CANÔNICO]`.
+
+### B. Benefícios Mútuos & Prosperidade
+- Alric atua lealmente como conselheiro e conjurador real `[🟢 CANÔNICO]`.
+- Suas criações, ferramentas e conselhos trazem grande prosperidade e expansão bélica/estratégica para a coroa de Arkan `[🟢 CANÔNICO]`.
+- Alric acredita ter encontrado paz e segurança duradouras para sua família `[🟢 CANÔNICO]`.
+
+---
+
+## 6. A TRAIÇÃO REAL, A CHANTAGEM & A MORTE DO FILHO (FASE 3C)
+
+### A. A Usurpação das Criações de Alric
+- A ganância do Antigo Rei cresce desmedidamente ao vislumbrar o poder irrestrito `[🟢 CANÔNICO]`.
+- O rei apropria-se de invenções e recursos arcanos desenvolvidos pelo próprio Alric — especificamente ferramentas criadas para ocultar e bloquear rastreamento e acesso a locais `[🟢 CANÔNICO]`.
+- Utilizando essas próprias criações de Alric contra ele, o rei captura secretamente a esposa e o filho de Alric e os tranca nas **Minas da Montanha** (`LOCAL-007`) `[🟢 CANÔNICO]`.
+
+### B. Coerção & A Degradação Moral Forçada
+- O Antigo Rei chantageia Alric: para manter a família viva, Alric é forçado a executar ordens terríveis e destrutivas para a coroa `[🟢 CANÔNICO]`.
+- Alric não comete tais atos por maldade, mas pelo desespero absoluto de proteger quem ama `[🟢 CANÔNICO]`.
+- **A Grande Contradição:** O pesquisador puro do saber é reduzido a um instrumento de tirania e ambição alheia `[🟢 CANÔNICO]`.
+- `[🟡 EM CONSTRUÇÃO]` Os atos específicos realizados sob chantagem e o número de pessoas impactadas.
+
+### C. A Tragédia das Minas: A Morte do Filho
+- Alric consegue finalmente decifrar a localização de sua família nas profundezas das Minas da Montanha `[🟢 CANÔNICO]`.
+- Ao chegar, a perda já é irreversível: **seu filho está morto** `[🟢 CANÔNICO]`.
+- **Sua esposa sobreviveu** ao cativeiro `[🟢 CANÔNICO]`.
+- A morte do filho destrói qualquer resquício de confiança e lealdade de Alric para com o rei e o reino `[🟢 CANÔNICO]`.
+
+### D. A Revolta, O Impasse e o Banimento
+- Alric revolta-se frontalmente contra o Antigo Rei `[🟢 CANÔNICO]`.
+- **O Impasse Tático:** Alric não pode aniquilar o rei de imediato porque sua esposa continua sob ameaça e vulnerável às armadilhas da corte `[🟢 CANÔNICO]`.
+- O confronto culmina no **banimento oficial de Alric de Arkan** `[🟢 CANÔNICO]`.
+- Alric deixa para trás sua cabana, o espelho, sua posição na corte e a vida que construiu `[🟢 CANÔNICO]`.
+
+---
+
+## 7. O EXÍLIO COMO PREPARAÇÃO & A GUERRA FUTURA (FASE 4 & 5)
+
+- **O Exílio:** Fora de Arkan, Alric não perece; utiliza décadas de dor, conhecimento e superação para se tornar uma força cósmica incontrolável `[🟢 CANÔNICO]`.
+- **A Fundação do Novo Reino:** Ergue seu próprio domínio e assume o título soberano de **Rei Mago** `[🟢 CANÔNICO]`.
+- **O Retorno no Presente:** Marcha contra o **Novo Rei** (descendente da linhagem do Antigo Rei) na **Guerra da Reparação** pela dívida de sangue de seu filho e de seu exílio `[🟢 CANÔNICO]`.
+- **Anonimato Perante John:** No início da guerra presente, o Rei Mago não sabe da existência do jovem soldado John de Arkham `[🟢 CANÔNICO]`.
+
+---
+
+## 8. A TRAJETÓRIA CANÔNICA CONSOLIDADA (18 PASSOS)
 
 ```
-[1. Criança Encontrada / Chegada a Arkan] ──► [2. Criança da Vila & Vida Camponesa]
-                      │
-[3. Envelhecimento Anormalmente Lento (Salto Geracional)]
-                      │
-[4. Adolescente Prodígio & Hiperfoco Investigativo]
-                      │
-[5. Manifestações Involuntárias Sutis] ──► [6. Incidente no Riacho & Despertar de Sobrevivência]
-                      │
-[7. Pesquisa Empírica Consciente & Domínio Metódico] ──► [8. Maturação do Jovem Alric]
-                      │
-          (PRÓXIMA ETAPA A DESENVOLVER)
-[9. Reconhecimento Público ──► Descoberta pela Coroa ──► Aproximação com o Antigo Rei]
+ 1. 🟢 Criança desconhecida chega a Arkan
+ 2. 🟢 Acolhido como camponês na vila
+ 3. 🟢 Adolescente de envelhecimento anormalmente lento
+ 4. 🟢 Jovem prodígio intelectual
+ 5. 🟢 Despertar involuntário no incidente do riacho
+ 6. 🟢 Pesquisador metódico (método empírico próprio)
+ 7. 🟢 Descoberta do primeiro portal no espelho da cabana
+ 8. 🟢 Encontro e casamento com a esposa no mundo paralelo
+ 9. 🟢 Nascimento do filho e construção de família
+10. 🟢 Descoberto pelo Antigo Rei de Arkan
+11. 🟢 Entrada na corte como conselheiro e conjurador
+12. 🟢 Crescimento do poder e prosperidade da coroa
+13. 🟢 Ganância do Antigo Rei e traição pelas criações de Alric
+14. 🟢 Família capturada e presa nas Minas da Montanha
+15. 🟢 Chantagem real e atos cometidos sob coerção
+16. 🟢 Morte trágica do filho (esposa sobrevive)
+17. 🟢 Revolta, impasse de proteção e banimento de Arkan
+18. 🟢 Exílio, fortalecimento, fundação do reino e nascimento do Rei Mago
 ```
 
 ---
 
-## 5. APROXIMAÇÃO DA COROA & O ANTIGO REI (FASE 3 — MAPA GERAL)
-
-### A. O Destaque e o Encontro
-- O destaque de Alric chega aos ouvidos do **Antigo Rei de Arkan** `[🟢 CANÔNICO]`.
-- O Antigo Rei, carismático e visionário, conquista a confiança do jovem pesquisador `[🟢 CANÔNICO]`.
-- Alric aceita servir à corte para obter **estabilidade, abrigo e recursos** para manter suas pesquisas em tempo integral `[🟢 CANÔNICO]`.
-
-### B. Vida na Corte e Família
-- Durante os anos na corte, Alric atua como conselheiro e conjurador, estabelece raízes e **constitui família** `[🟢 CANÔNICO]`.
-- `[🟡 EM CONSTRUÇÃO]` A profundidade dos laços afetivos com o Antigo Rei será desenvolvida na próxima etapa.
-
----
-
-## 6. A GANÂNCIA DO ANTIGO REI, TRAIÇÃO & MINAS (FASE 4)
-
-- **A Ganância Exclusiva do Antigo Rei:** O soberano busca usurpar e monopolizar o poder de Alric para dominar além dos limites humanos `[🟢 CANÔNICO]`.
-- **A Ruptura e o Exílio:** Alric é traído e sentenciado ao exílio forçado `[🟢 CANÔNICO]`.
-- **O Cativeiro nas Minas:** A família de Alric é aprisionada nas **Minas da Montanha** (`LOCAL-007`) `[🟢 CANÔNICO]`.
-- Alric perde sua família e é expulso de Arkan, marcando a maior dor de sua existência `[🟢 CANÔNICO]`.
-
----
-
-## 7. EXÍLIO, NOVO REINO & GUERRA DA REPARAÇÃO (FASE 5)
-
-- **Sobrevivência & Ascensão:** Alric sobrevive no exílio, expande seu poder e ergue um reino próprio em terras distantes `[🟢 CANÔNICO]`.
-- **O Título:** Assume o título de **Rei Mago** `[🟢 CANÔNICO]`.
-- **O Retorno no Presente:** Retorna marchando contra o **Novo Rei** (descendente direto do Antigo Rei) `[🟢 CANÔNICO]`.
-- **A Causa Moral:** Conduz uma **Guerra da Reparação** por uma dívida histórica e familiar que Arkan nunca pagou `[🟢 CANÔNICO]`.
-
----
-
-## 8. MATRIZ EPISTÊMICA REVISADA (CONHECIMENTO DE ALRIC)
+## 9. MATRIZ EPISTÊMICA REVISADA (FASE 3)
 
 ```
 ┌─────────────────────────────────────────────────────────────────────────────┐
-│ 1. O QUE ALRIC SABE NA JUVENTUDE:                                          │
-│    - Que seu corpo é mais resistente e envelhece mais devagar que o normal. │
-│    - Que possui energia latente capaz de explodir sob estresse ou foco.     │
-│    - Que seu método empírico funciona para controlar pequenos fluxos.      │
+│ 1. O QUE ALRIC SABE NA FASE DA CORTE/RUPTURA:                              │
+│    - Que existem mundos paralelos acessíveis por portais de espelho.        │
+│    - Que seu filho foi morto pela negligência/crueldade do Antigo Rei.      │
+│    - Que suas próprias invenções foram manipuladas contra sua família.      │
+│    - Que sua esposa sobreviveu ao cativeiro nas Minas.                     │
 │                                                                             │
-│ 2. O QUE ALRIC NÃO SABE NA JUVENTUDE:                                      │
-│    - De onde veio seu sangue ou quem foram seus pais de origem.            │
-│    - A extensão cósmica de seu poder no futuro.                            │
-│    - Que será traído pelo rei que ainda irá conhecer.                      │
-│    - A existência futura de John.                                          │
+│ 2. O QUE ALRIC NÃO SABE:                                                   │
+│    - A origem ancestral de onde seus pais biológicos vieram.               │
+│    - A existência futura de John em Arkham.                                 │
+│    - O destino final a longo prazo de sua esposa após o banimento.         │
 │                                                                             │
-│ 3. O QUE A VILA DE ARKAN SABE NA JUVENTUDE:                                │
-│    - Que Alric é um garoto prodígio que não envelhece no tempo comum.      │
-│    - Que ele é inteligente, bondoso, curioso e querido pela comunidade.     │
+│ 3. O QUE O POVO DE ARKAN SABE NO PRESENTE:                                 │
+│    - Que um conselheiro antigo se revoltou e foi expulso (lenda distorcida).│
+│    - Que o Rei Mago é um invasor sem misericórdia.                          │
+│                                                                             │
+│ 4. O QUE O POVO DE ARKAN NÃO SABE:                                         │
+│    - Que o Antigo Rei sequestrou a família de Alric e causou a morte do filho.
+│    - Que a guerra atual é uma cobrança de dívida de sangue e reparação.    │
 └─────────────────────────────────────────────────────────────────────────────┘
 ```
 
 ---
 
-## 9. CATÁLOGO DOS MISTÉRIOS PROPOSITAIS (🔴 DESCONHECIDO)
-*(Intocáveis até decisão explícita de revelação)*
+## 10. CATÁLOGO DOS MISTÉRIOS PROPOSITAIS (🔴 DESCONHECIDO)
+*(Preservados rigorosamente sem preenchimento precipitado)*
 
-1. `[🔴 DESCONHECIDO]` De onde Alric veio originalmente antes de chegar a Arkan?
-2. `[🔴 DESCONHECIDO]` Quem eram seus pais biológicos?
-3. `[🔴 DESCONHECIDO]` O que aconteceu com seus pais de sangue (fuga ou assassinato)?
-4. `[🔴 DESCONHECIDO]` Por qual razão exata Alric foi enviado para Arkan ainda criança?
-5. `[🔴 DESCONHECIDO]` Qual a fonte dimensional ou metafísica externa conectada à sua linhagem?
-6. `[🔴 DESCONHECIDO]` Onde fica localizada essa fonte externa no Multiverso?
-7. `[🔴 DESCONHECIDO]` Por que sua biologia possui densidade e envelhecimento retardado?
-8. `[🔴 DESCONHECIDO]` Qual o plano exato que o Antigo Rei tentou executar com o poder de Alric?
-9. `[🔴 DESCONHECIDO]` Por qual motivo a família foi encarcerada nas Minas da Montanha?
-10. `[🔴 DESCONHECIDO]` Qual foi o destino biológico final de cada membro da família nas Minas?
-11. `[🔴 DESCONHECIDO]` Onde fica geograficamente o reino fundado por Alric no exílio?
-12. `[🔴 DESCONHECIDO]` Existe alguma testemunha ancestral que conheça o nome da terra de onde Alric veio?
+1. `[🔴 DESCONHECIDO]` Qual é o destino final e atual da esposa de Alric?
+2. `[🔴 DESCONHECIDO]` Onde fica localizado no Multiverso o mundo paralelo do espelho?
+3. `[🔴 DESCONHECIDO]` Qual a origem do povo com características semelhantes a Alric naquele mundo?
+4. `[🔴 DESCONHECIDO]` Aquele mundo paralelo possui ligação direta com os pais de Alric?
+5. `[🔴 DESCONHECIDO]` Quem eram os pais biológicos de Alric e por que o enviaram para Arkan?
+6. `[🔴 DESCONHECIDO]` Qual a fonte dimensional externa primordial que alimenta a linhagem de Alric?
+7. `[🔴 DESCONHECIDO]` Quais foram os recursos específicos criados por Alric que o rei usou para o sequestro?
+8. `[🔴 DESCONHECIDO]` Onde exatamente nas Minas da Montanha o filho de Alric morreu?
+9. `[🔴 DESCONHECIDO]` Onde fica geograficamente o reino fundado por Alric no exílio?
+10. `[🔴 DESCONHECIDO]` Existem outros descendentes ou sobreviventes da família de Alric?
 
 ---
 
-## 10. REGRAS DE CONTINUIDADE EDITORIAL (FASE 2)
-
-Ao redigir qualquer passagem da juventude de Alric:
-1. **Nome:** Tratar o personagem por **Alric** (ele ainda não possui nem ambiciona o título de Rei Mago).
-2. **Tom e Personalidade:** Retratá-lo como um jovem prodígio fascinado pelo mundo, espontâneo, afetuoso com a vila e apaixonado por decifrar mistérios.
-3. **Sem Vilania Prematura:** Proibido adicionar traços sádicos, tirânicos ou sombrios nesta fase de sua vida.
-4. **Respeitar o Incidente do Riacho:** Usar o evento do afogamento acidental como o marco do primeiro despertar consciente.
-5. **Preservar as 12 lacunas `[🔴 DESCONHECIDO]`.**
+## 11. REGRAS DE CONTINUIDADE DO BIBLIOTECÁRIO
+1. **Nome:** Durante toda a narrativa na corte e antes do exílio, o personagem deve ser chamado de **Alric**. O título *Rei Mago* surge apenas após o banimento e fundação de seu domínio.
+2. **A Morte do Filho:** Tratar a perda do filho como a fratura moral definitiva que impede qualquer reconciliação com a coroa de Arkan.
+3. **A Sobrevivência da Esposa:** A esposa sobreviveu ao cativeiro inicial nas minas, mas seu destino final a longo prazo é `[🔴 DESCONHECIDO]`.
+4. **O Espelho da Cabana:** O primeiro portal não foi um acidente geográfico, mas um artefato construído metódicamente por Alric em sua cabana de pesquisa isolada.

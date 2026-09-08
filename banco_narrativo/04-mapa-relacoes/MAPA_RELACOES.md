@@ -6,12 +6,15 @@
 
 ## 1. NÓS CENTRAIS & SUAS CONEXÕES
 
-### [NÓ 1] O REI MAGO (Antagonista Trágico)
--  conectado a **Antigo Rei de Arkan** *(Relação: Antigo servo/conselheiro → Traição por ganância)* `[🟢 CANÔNICO]`
-- conectado a **Família do Mago** *(Relação: Perda traumática fundamental que move sua vingança)* `[🟢 CANÔNICO]`
-- conectado a **Minas da Montanha (`LOCAL-007`)** *(Relação: Local do encarceramento familiar)* `[🟢 CANÔNICO]`
-- conectado a **Novo Rei de Arkan** *(Relação: Alvo da cobrança da dívida histórica hereditária)* `[🟢 CANÔNICO]`
-- conectado a **Reino do Rei Mago** *(Relação: Domínio fundado no exílio)* `[🟢 CANÔNICO]`
+### [NÓ 1] O REI MAGO / ALRIC (Antagonista Trágico)
+- conectado a **Antigo Rei de Arkan** *(Relação: Antigo servo/conselheiro → Traição por ganância e usurpação das criações de Alric)* `[🟢 CANÔNICO]`
+- conectado a **Esposa de Alric** *(Relação: Amor no mundo paralelo, cúmplice de vida e sobrevivente do cativeiro)* `[🟢 CANÔNICO]`
+- conectado a **Filho de Alric (falecido)** *(Relação: Criança morta no cativeiro das Minas; motivo nuclear de ruptura irrevogável)* `[🟢 CANÔNICO]`
+- conectado a **O Espelho da Cabana** *(Relação: Primeiro portal dimensional criado por Alric para a realidade paralela)* `[🟢 CANÔNICO]`
+- conectado a **O Mundo Paralelo** *(Relação: Realidade habitada por povo com traços biológicos semelhantes aos seus)* `[🟢 CANÔNICO]`
+- conectado a **Minas da Montanha (`LOCAL-007`)** *(Relação: Local do cativeiro e da morte do filho)* `[🟢 CANÔNICO]`
+- conectado a **Novo Rei de Arkan** *(Relação: Alvo da cobrança da dívida histórica hereditária de sangue)* `[🟢 CANÔNICO]`
+- conectado a **Reino do Rei Mago** *(Relação: Domínio soberano fundado no exílio)* `[🟢 CANÔNICO]`
 - conectado a **Guerra da Reparação** *(Relação: Idealizador e comandante supremo)* `[🟢 CANÔNICO]`
 - conectado a **John** *(Relação: Paralelo de adversidade e superação; colisão de destinos)* `[🟢 CANÔNICO]`
 
