@@ -82,6 +82,15 @@ O Bibliotecário não deve transformar automaticamente uma ideia em cânone.
 DATA: 08/09/2026
 ```
 
+```text
+STATUS: CANÔNICO
+DECISÃO: Prólogo literário oficial ("Antes das Batalhas") estabelecido como abertura canônica do
+Grande Livro de Arkan (LORE-005). Registra a história remota do mago conselheiro, a traição do antigo
+rei, o exílio e perda da família nas Minas, a ascensão do Rei Mago e o início da guerra da reparação
+contra o novo rei descendente, convergindo para o despertar de John em Arkham.
+DATA: 08/09/2026
+```
+
 ---
 
 ## 4. Sistemas Implementados & Operacionais

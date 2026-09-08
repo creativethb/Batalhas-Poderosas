@@ -57,6 +57,7 @@
 | **`LORE-002`** | A Saga de John | `CANONICO` | `gdd/01-lore/LORE-002-jornada-de-john.md` | Sequência inicial canônica de 10 passos. Localização de coleta provisória. |
 | **`LORE-003`** | Diário de John — Registros da Jornada | `CANONICO` | `gdd/01-lore/LORE-003-diario-de-john.md` | Diário com entradas refinadas (CAP1-001 a CAP1-005). Primeira página revisada. |
 | **`LORE-004`** | Paralelo Narrativo: John e o Rei Mago | `CANONICO` | `gdd/01-lore/LORE-004-paralelo-john-rei-mago.md` | Princípio canônico: ambos fortalecidos pela adversidade. John protege, Rei Mago busca reparação. |
+| **`LORE-005`** | Prólogo: Antes das Batalhas | `CANONICO` | `gdd/01-lore/LORE-005-prologo-antes-das-batalhas.md` | Texto literário integral de abertura do Livro com Matriz Editorial de Metadados. |
 
 ---
 
@@ -64,6 +65,10 @@
 
 | ID | Cap | Título | Status |
 | :--- | :--- | :--- | :--- |
+| `LIVRO-PROLOGO` | 0 | Prólogo: Antes das Batalhas | `CANONICO` |
+| `LIVRO-PROL-001` | 0 | O Começo Oculto & O Mago de Arkan | `CANONICO` |
+| `LIVRO-PROL-002` | 0 | A Ruptura, O Exílio e O Novo Reino | `CANONICO` |
+| `LIVRO-PROL-003` | 0 | A Dívida, A Guerra e O Despertar de John | `CANONICO` |
 | `LIVRO-CAP1` | 1 | As Raízes de Arkan | `CANONICO` |
 | `LIVRO-CAP1-001` | 1 | O Reino e o Mago | `CANONICO` |
 | `LIVRO-CAP1-002` | 1 | A Ganância do Antigo Rei | `CANONICO` |
