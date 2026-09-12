@@ -682,7 +682,7 @@
         const treeData = await treeRes.json();
 
         // 2. Filtra arquivos markdown de /gdd/
-        const gddBlobs = treeData.tree.filter(item => item.type === 'blob' && item.path.startsWith('gdd/') && item.path.endsWith('.md'));
+        const gddBlobs = treeData.tree.filter(item => item.type === 'blob' && item.path.startsWith('gdd/') && item.path.endsWith('.md') && !item.path.includes('_TEMPLATE'));
 
         // 3. Lê o conteúdo sob demanda
         const docs = await Promise.all(gddBlobs.map(async (item) => {
