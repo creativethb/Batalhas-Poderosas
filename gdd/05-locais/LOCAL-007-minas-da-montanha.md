@@ -2,6 +2,7 @@
 id: "LOCAL-007"
 nome: "Minas da Montanha Leste"
 status: "CANONICO"
+imagem: "./assets/locais/LOCAL-007.png"
 atualizado_por: "agente"
 ---
 

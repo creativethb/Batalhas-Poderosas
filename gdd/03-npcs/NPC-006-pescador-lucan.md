@@ -2,6 +2,7 @@
 id: "NPC-006"
 nome: "Pescador Lucan"
 status: "CANONICO"
+imagem: "./assets/npcs/NPC-006.png"
 atualizado_por: "agente"
 ---
 

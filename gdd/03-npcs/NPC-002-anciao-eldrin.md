@@ -2,6 +2,7 @@
 id: "NPC-002"
 nome: "Ancião Eldrin"
 status: "CANONICO"
+imagem: "./assets/npcs/NPC-002.jpg"
 atualizado_por: "agente"
 ---
 

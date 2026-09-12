@@ -2,6 +2,7 @@
 id: "LOCAL-001"
 nome: "Casa de John"
 status: "CANONICO"
+imagem: "./assets/locais/LOCAL-001.png"
 atualizado_por: "agente"
 ---
 

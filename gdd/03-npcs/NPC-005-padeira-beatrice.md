@@ -2,6 +2,7 @@
 id: "NPC-005"
 nome: "Padeira Beatrice"
 status: "CANONICO"
+imagem: "./assets/npcs/NPC-005.jpg"
 atualizado_por: "agente"
 ---
 

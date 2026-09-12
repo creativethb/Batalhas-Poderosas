@@ -2,6 +2,7 @@
 id: "NPC-004"
 nome: "Guarda Aldous"
 status: "CANONICO"
+imagem: "./assets/npcs/NPC-004.jpg"
 atualizado_por: "agente"
 ---
 

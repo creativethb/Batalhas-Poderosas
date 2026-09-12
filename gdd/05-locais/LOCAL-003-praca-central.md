@@ -2,6 +2,7 @@
 id: "LOCAL-003"
 nome: "Praça Central de Arkham"
 status: "CANONICO"
+imagem: "./assets/locais/LOCAL-003.png"
 atualizado_por: "agente"
 ---
 

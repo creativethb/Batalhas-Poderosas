@@ -2,6 +2,7 @@
 id: "NPC-007"
 nome: "Mercador Tobias"
 status: "CANONICO"
+imagem: "./assets/npcs/NPC-007.png"
 atualizado_por: "agente"
 ---
 

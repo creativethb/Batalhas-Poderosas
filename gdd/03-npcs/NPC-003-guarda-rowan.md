@@ -2,6 +2,7 @@
 id: "NPC-003"
 nome: "Guarda Rowan"
 status: "CANONICO"
+imagem: "./assets/npcs/NPC-003.jpg"
 atualizado_por: "agente"
 ---
 

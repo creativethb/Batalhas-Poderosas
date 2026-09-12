@@ -2,6 +2,7 @@
 id: "LOCAL-008"
 nome: "Portal do Mundo Livre"
 status: "CANONICO"
+imagem: "./assets/locais/LOCAL-008.png"
 atualizado_por: "agente"
 ---
 

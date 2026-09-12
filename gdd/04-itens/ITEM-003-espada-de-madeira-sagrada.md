@@ -2,6 +2,7 @@
 id: "ITEM-003"
 nome: "Espada de Madeira Sagrada"
 status: "CANONICO"
+imagem: "./assets/itens/ITEM-003.png"
 atualizado_por: "agente"
 ---
 

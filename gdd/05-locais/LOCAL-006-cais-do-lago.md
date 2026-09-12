@@ -2,6 +2,7 @@
 id: "LOCAL-006"
 nome: "Cais do Lago Nobre"
 status: "CANONICO"
+imagem: "./assets/locais/LOCAL-006.png"
 atualizado_por: "agente"
 ---
 

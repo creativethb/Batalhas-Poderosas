@@ -2,6 +2,7 @@
 id: "LOCAL-005"
 nome: "Padaria da Vila"
 status: "CANONICO"
+imagem: "./assets/locais/LOCAL-005.png"
 atualizado_por: "agente"
 ---
 

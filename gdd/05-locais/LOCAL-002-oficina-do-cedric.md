@@ -2,6 +2,7 @@
 id: "LOCAL-002"
 nome: "Oficina do Cedric"
 status: "CANONICO"
+imagem: "./assets/locais/LOCAL-002.png"
 atualizado_por: "agente"
 ---
 
