@@ -674,12 +674,109 @@
         const headers = { 'Accept': 'application/vnd.github.v3+json' };
         if (auth && auth.token) headers['Authorization'] = `Bearer ${auth.token}`;
 
-        // 1. Consulta a árvore completa do repositório (1 requisição)
+        // 1. Consulta a árvore completa do repositório (1 requisição) — tenta API primeiro, fallback para raw
+        let treeData = null;
         const treeUrl = `https://api.github.com/repos/${REPO_OWNER}/${REPO_NAME}/git/trees/${REPO_BRANCH}?recursive=1&t=${Date.now()}`;
-        const treeRes = await fetch(treeUrl, { headers });
+        
+        try {
+          const treeRes = await fetch(treeUrl, { headers });
+          if (treeRes.ok) {
+            treeData = await treeRes.json();
+          }
+        } catch (e) {
+          console.warn('API GitHub falhou, tentando fallback...', e);
+        }
 
-        if (!treeRes.ok) throw new Error(`Falha HTTP ${treeRes.status}`);
-        const treeData = await treeRes.json();
+        // Fallback: buscar lista de arquivos via raw.githubusercontent.com (funciona sem token)
+        if (!treeData) {
+          try {
+            // Para repo público, podemos usar a API sem auth ou tentar listar via contents
+            const contentsUrl = `https://api.github.com/repos/${REPO_OWNER}/${REPO_NAME}/contents/gdd?ref=${REPO_BRANCH}&t=${Date.now()}`;
+            const contentsRes = await fetch(contentsUrl, { headers });
+            if (contentsRes.ok) {
+              const contents = await contentsRes.json();
+              // Recursivamente buscar todos os arquivos .md
+              async function fetchAllMd(folderPath) {
+                const url = `https://api.github.com/repos/${REPO_OWNER}/${REPO_NAME}/contents/${folderPath}?ref=${REPO_BRANCH}&t=${Date.now()}`;
+                const res = await fetch(url, { headers });
+                if (!res.ok) return [];
+                const items = await res.json();
+                let mdFiles = [];
+                for (const item of items) {
+                  if (item.type === 'file' && item.name.endsWith('.md')) {
+                    mdFiles.push({ path: item.path, type: 'blob' });
+                  } else if (item.type === 'dir') {
+                    mdFiles = mdFiles.concat(await fetchAllMd(item.path));
+                  }
+                }
+                return mdFiles;
+              }
+              const allMd = await fetchAllMd('gdd');
+              treeData = { tree: allMd };
+            }
+          } catch (e) {
+            console.warn('Fallback contents falhou:', e);
+          }
+        }
+
+        // Último fallback: lista conhecida estática (para desenvolvimento offline)
+        if (!treeData) {
+          console.warn('Usando lista estática de fallback — dados podem estar desatualizados');
+          treeData = { tree: [
+            { path: 'gdd/01-lore/LORE-001-origem-de-arkan-e-o-rei-mago.md', type: 'blob' },
+            { path: 'gdd/01-lore/LORE-002-jornada-de-john.md', type: 'blob' },
+            { path: 'gdd/01-lore/LORE-003-diario-de-john.md', type: 'blob' },
+            { path: 'gdd/01-lore/LORE-004-paralelo-john-rei-mago.md', type: 'blob' },
+            { path: 'gdd/01-lore/LORE-005-prologo-antes-das-batalhas.md', type: 'blob' },
+            { path: 'gdd/01-lore/LORE-006-perfil-publico-rei-mago.md', type: 'blob' },
+            { path: 'gdd/02-gameplay/GAME-001-loop-principal-e-progressao.md', type: 'blob' },
+            { path: 'gdd/02-gameplay/GAME-002-sistema-de-combate-e-combos.md', type: 'blob' },
+            { path: 'gdd/02-gameplay/GAME-003-locomocao-dash-e-pulo.md', type: 'blob' },
+            { path: 'gdd/02-gameplay/GAME-004-sistema-de-dialogo-e-camera.md', type: 'blob' },
+            { path: 'gdd/02-gameplay/GAME-005-sistema-do-diario.md', type: 'blob' },
+            { path: 'gdd/02-gameplay/GAME-006-cadeia-produtiva-e-economia-rural.md', type: 'blob' },
+            { path: 'gdd/03-npcs/NPC-000-o-rei-mago.md', type: 'blob' },
+            { path: 'gdd/03-npcs/NPC-001-mestre-cedric.md', type: 'blob' },
+            { path: 'gdd/03-npcs/NPC-002-anciao-eldrin.md', type: 'blob' },
+            { path: 'gdd/03-npcs/NPC-003-guarda-rowan.md', type: 'blob' },
+            { path: 'gdd/03-npcs/NPC-004-guarda-aldous.md', type: 'blob' },
+            { path: 'gdd/03-npcs/NPC-005-padeira-beatrice.md', type: 'blob' },
+            { path: 'gdd/03-npcs/NPC-006-pescador-lucan.md', type: 'blob' },
+            { path: 'gdd/03-npcs/NPC-007-mercador-tobias.md', type: 'blob' },
+            { path: 'gdd/03-npcs/NPC-008-agricultor-hugo.md', type: 'blob' },
+            { path: 'gdd/03-npcs/NPC-009-guardiao-seraphin.md', type: 'blob' },
+            { path: 'gdd/03-npcs/NPC-010-lenhador-garrick.md', type: 'blob' },
+            { path: 'gdd/03-npcs/NPC-011-mineiro-borin.md', type: 'blob' },
+            { path: 'gdd/03-npcs/NPC-012-agricultora-nalia.md', type: 'blob' },
+            { path: 'gdd/03-npcs/NPC-013-fazendeiro-geraldo.md', type: 'blob' },
+            { path: 'gdd/04-itens/ITEM-001-madeira-comum.md', type: 'blob' },
+            { path: 'gdd/04-itens/ITEM-002-madeira-sagrada.md', type: 'blob' },
+            { path: 'gdd/04-itens/ITEM-003-espada-de-madeira-sagrada.md', type: 'blob' },
+            { path: 'gdd/04-itens/ITEM-004-diario-de-john.md', type: 'blob' },
+            { path: 'gdd/05-locais/LOCAL-001-casa-de-john.md', type: 'blob' },
+            { path: 'gdd/05-locais/LOCAL-002-oficina-do-cedric.md', type: 'blob' },
+            { path: 'gdd/05-locais/LOCAL-003-praca-central.md', type: 'blob' },
+            { path: 'gdd/05-locais/LOCAL-004-arvore-sagrada.md', type: 'blob' },
+            { path: 'gdd/05-locais/LOCAL-005-padaria-medieval.md', type: 'blob' },
+            { path: 'gdd/05-locais/LOCAL-006-cais-do-lago.md', type: 'blob' },
+            { path: 'gdd/05-locais/LOCAL-007-minas-da-montanha.md', type: 'blob' },
+            { path: 'gdd/05-locais/LOCAL-008-portal-mundo-livre.md', type: 'blob' },
+            { path: 'gdd/05-locais/LOCAL-009-fazenda-de-arkan.md', type: 'blob' },
+            { path: 'gdd/99-canon/CANON-001-protagonista-john.md', type: 'blob' },
+            { path: 'gdd/99-canon/CANON-002-inicio-na-casa-de-john.md', type: 'blob' },
+            { path: 'gdd/99-canon/CANON-003-a-guerra-do-rei-mago.md', type: 'blob' },
+            { path: 'gdd/99-canon/CANON-004-desacoplamento-sandbox-mundo-livre.md', type: 'blob' },
+            { path: 'gdd/99-canon/CANON-005-padrao-ux-multiplataforma.md', type: 'blob' },
+            { path: 'gdd/99-canon/CANON-006-diario-de-john.md', type: 'blob' },
+            { path: 'gdd/99-canon/CANON-007-protocolo-narrativo-diario-e-lore.md', type: 'blob' },
+            { path: 'gdd/99-canon/CANON-008-masterplan-fazenda-de-arkan.md', type: 'blob' },
+            { path: 'gdd/06-dossies/02-npcs/DOSSIER-001-CEDRIC.md', type: 'blob' },
+            { path: 'gdd/06-dossies/02-npcs/DOSSIER-TEST-001.md', type: 'blob' },
+            { path: 'gdd/06-dossies/07-misterios/DOSSIER-TEST-002.md', type: 'blob' },
+            { path: 'gdd/06-dossies/README.md', type: 'blob' },
+            { path: 'gdd/06-dossies/_TEMPLATE_DOSsie.md', type: 'blob' }
+          ] };
+        }
 
         // 2. Filtra arquivos markdown de /gdd/
         const gddBlobs = treeData.tree.filter(item => item.type === 'blob' && item.path.startsWith('gdd/') && item.path.endsWith('.md'));
