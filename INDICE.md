@@ -22,6 +22,7 @@
 | **`NPC-010`** | Lenhador Garrick | Lenhador da Serraria | Serraria Nordeste | `CANONICO` | `gdd/03-npcs/NPC-010-lenhador-garrick.md` | Extrai toras de carvalho no perímetro florestal. |
 | **`NPC-011`** | Mineiro Borin | Mineiro das Profundezas | Minas da Montanha | `CANONICO` | `gdd/03-npcs/NPC-011-mineiro-borin.md` | Explora as galerias montanhosas ligadas ao passado do Rei Mago. |
 | **`NPC-012`** | Agricultora Nalia | Agricultora das Fazendas | Fazendas Norte | `CANONICO` | `gdd/03-npcs/NPC-012-agricultora-nalia.md` | Cultiva os grandes campos agrícolas e cuida do estábulo. |
+| **`NPC-013`** | Fazendeiro Geraldo | Administrador da Fazenda | Administração da Fazenda | `CANONICO` | `gdd/03-npcs/NPC-013-fazendeiro-geraldo.md` | Administra a produção rural, safras, estocagem e rotinas da Fazenda de Arkan. |
 
 ---
 
@@ -48,6 +49,7 @@
 | **`LOCAL-006`** | Cais do Lago Nobre | Pesca & Lago | `CANONICO` | `gdd/05-locais/LOCAL-006-cais-do-lago.md` | Decks de madeira, peixes em tempo real e posto de Lucan. |
 | **`LOCAL-007`** | Minas da Montanha Leste | Mineração & Segredos | `CANONICO` | `gdd/05-locais/LOCAL-007-minas-da-montanha.md` | Galerias onde a família do mago foi exilada pelo antigo rei. |
 | **`LOCAL-008`** | Portal do Mundo Livre | Portal Dimensional | `CANONICO` | `gdd/05-locais/LOCAL-008-portal-mundo-livre.md` | Caverna com teleporte inter-place para o universo Sandbox. |
+| **`LOCAL-009`** | Fazenda de Arkan | Expansão Rural & Produção | `CANONICO` | `gdd/05-locais/LOCAL-009-fazenda-de-arkan.md` | Polo agropecuário externo (768.000 studs²), Masterplan de 26 lotes, **26/26 construções e áreas concluídas (CANÔNICO/CONCLUÍDO)**, 32 zonas funcionais, pátio de carga e cadeia econômica. |
 
 ---
 
@@ -112,6 +114,7 @@
 | **`GAME-003`** | Locomoção, Dash e Pulo | Movimentação | `CANONICO` | `gdd/02-gameplay/GAME-003-locomocao-dash-e-pulo.md` |
 | **`GAME-004`** | Sistema de Diálogo e Câmera | Interação & Cena | `CANONICO` | `gdd/02-gameplay/GAME-004-sistema-de-dialogo-e-camera.md` |
 | **`GAME-005`** | Sistema do Diário de John | Inventário, Narrativa & Desbloqueio | `CANONICO` | `gdd/02-gameplay/GAME-005-sistema-do-diario.md` |
+| **`GAME-006`** | Cadeia Produtiva e Economia Rural | Economia & Produção | `CANONICO` | `gdd/02-gameplay/GAME-006-cadeia-produtiva-e-economia-rural.md` |
 
 ---
 
@@ -126,3 +129,4 @@
 | **`BP-2026-005`** | Padrão UX Multiplataforma | Interface | `CANONICO` | `gdd/99-canon/CANON-005-padrao-ux-multiplataforma.md` |
 | **`BP-2026-006`** | Diário de John — Elemento Narrativo e Funcional | Narrativa & Lore | `CANONICO` | `gdd/99-canon/CANON-006-diario-de-john.md` |
 | **`BP-2026-007`** | Protocolo Narrativo — Diário e Livro/Lore | Narrativa & Sistema | `CANONICO` | `gdd/99-canon/CANON-007-protocolo-narrativo-diario-e-lore.md` |
+| **`BP-2026-008`** | Expansão Rural e Masterplan da Fazenda | Arquitetura & Economia | `CANONICO` | `gdd/99-canon/CANON-008-masterplan-fazenda-de-arkan.md` |

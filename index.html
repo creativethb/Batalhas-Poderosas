@@ -157,7 +157,7 @@
         <div>
           <div class="font-cinzel font-bold text-base tracking-wider text-arkan-parchment group-hover:text-arkan-gold transition leading-tight flex items-center gap-2">
             BATALHAS PODEROSAS
-            <span class="text-[10px] uppercase font-sans font-semibold bg-arkan-800 text-arkan-gold border border-arkan-gold/30 px-1.5 py-0.5 rounded">GDD v2.5</span>
+            <span class="text-[10px] uppercase font-sans font-semibold bg-arkan-800 text-arkan-gold border border-arkan-gold/30 px-1.5 py-0.5 rounded">GDD v2.7</span>
           </div>
           <p class="text-xs text-arkan-parchmentMuted hidden sm:block">Reino de Arkan • Documento Vivo Canônico</p>
         </div>
@@ -357,7 +357,7 @@
         <div class="flex items-center gap-4 text-[11px]">
           <span>Reino de Arkan © 2026</span>
           <span>•</span>
-          <span id="footerLastUpdate">Atualizado: 08/09/2026</span>
+          <span id="footerLastUpdate">Atualizado: 11/09/2026</span>
           <span>•</span>
           <span class="text-emerald-400">Pronto para GitHub Pages</span>
         </div>
@@ -595,9 +595,9 @@
       projeto: {
         nome: "Batalhas Poderosas",
         universo: "Reino de Arkan",
-        versao: "2.5.2",
-        ultimaAtualizacao: "08/09/2026",
-        estado: "Vila de Arkham Operacional • R15 • Diálogos & Combate",
+        versao: "2.7.0",
+        ultimaAtualizacao: "11/09/2026",
+        estado: "Vila de Arkham & Fazenda de Arkan Operacionais • R15 • Masterplan Rural",
         engine: "Roblox Studio (Luau + Rojo)",
         autor: "Thiago Mendes e Castro & Agentes"
       },
@@ -805,6 +805,21 @@ Percorre o trajeto entre o armazém e as galerias profundas onde jaz a história
           ],
           markdown: `### Grandes Campos Feudais
 Responsável pela produção dos lotes agrícolas no norte de Arkham.`
+        },
+        {
+          id: "NPC-013",
+          nome: "Fazendeiro Geraldo",
+          funcao: "Administrador da Fazenda de Arkan",
+          localizacao: "Casa do Fazendeiro / Administração da Fazenda",
+          status: "CANONICO",
+          imagem: "./assets/npcs/NPC-013.png",
+          relacionados: ["LOCAL-009", "GAME-006", "NPC-008", "NPC-012"],
+          dialogos: [
+            "A Fazenda de Arkan sustenta os celeiros e o comércio de toda a vila.",
+            "As safras deste ano dependem do transporte até o Armazém de Produção."
+          ],
+          markdown: `### Gestor do Polo Agropecuário
+Geraldo é o gestor geral e administrador da Fazenda de Arkan, o polo agropecuário e econômico do reino. Opera a partir da Casa do Fazendeiro, coordenando os setores de grãos, beneficiamento, estocagem, pecuária e a logística de abastecimento para a Vila de Arkham.\n\n**Rotina:** \`RotaFazendeiro_Geraldo\` (Mesa de Administração → Alpendre → Pátio de Carga → Armazém de Produção → Linha de Beneficiamento → Celeiro Principal → Retorno ao Escritório).`
         }
       ],
       itens: [
@@ -929,6 +944,15 @@ Responsável pela produção dos lotes agrícolas no norte de Arkham.`
           imagem: "./assets/npcs/NPC-001.png",
           relacionados: ["NPC-009", "BP-2026-004"],
           markdown: `Caverna mística (\`X ≈ 339, Z ≈ -196\`). Teleporta para a experiência Sandbox do Mundo Livre (Place ID: 92821469286193).`
+        },
+        {
+          id: "LOCAL-009",
+          nome: "Fazenda de Arkan",
+          tipo: "Expansão Rural, Agrícola & Econômica",
+          status: "CANONICO",
+          imagem: "./assets/locais/LOCAL-001.png",
+          relacionados: ["BP-2026-008", "GAME-006", "LOCAL-003", "LOCAL-005", "NPC-005", "NPC-007", "NPC-008", "NPC-012", "NPC-013"],
+          markdown: "**Estado: CANÔNICO / CONCLUÍDO — 26/26 construções e áreas catalogadas como construídas.** Nenhuma área permanece planejada, pendente ou em construção. A Fazenda é a principal área rural, produtiva e econômica associada à Vila de Arkham — cenário ativo de agricultura, criação de animais, armazenamento, beneficiamento, processamento, transporte, logística e economia, com futuras missões e integração com NPCs.\n\n**Masterplan Oficial:** Área geral `960 × 800 studs` (768.000 studs²). Centro `X = -10, Y = 124.2, Z = -1110`. Limites `X = -490→470` e `Z = -1510→-710`. Entrada principal `(-10, 124.2, -650)` com corredor de 60 studs. 26 lotes e setores; 32 zonas funcionais indexadas no `FazendaManager` a partir de 136 elementos do `Fazenda_Arkan_Blueprint` (referências lógicas permanentes).\n\n**Construções & Áreas Concluídas (26):** 1) Casa do Fazendeiro, 2) Armazém de Produção, 3) Celeiro Principal, 4) Estábulo Rural, 5) Galpão de Ferramentas, 6) Beneficiamento, 7) Depósito de Feno, 8) Moinho, 9) Curral Principal, 10) Galinheiro, 11) Cercado de Ovelhas, 12) Cercado de Porcos, 13) Campo de Milho/Milharal, 14) Campo de Trigo, 15) Campo de Vegetais, 16) Campo Variado, 17) Pomar, 18) Horta, 19) Poço, 20) Reservatório, 21) Área de Carroças, 22) Pátio Econômico, 23) Pasto de Animais Futuros, 24) Expansão Agrícola, 25) Expansão Estrutural, 26) Pátio de Carga.\n\n**Áreas Agrícolas:** Milharal, Trigo, Vegetais, Campo Variado, Pomar e Horta (todos construídos).\n\n**Áreas de Animais:** Estábulo Rural, Curral Principal, Galinheiro, Cercado de Ovelhas, Cercado de Porcos e Pasto de Animais Futuros (todos construídos).\n\n**Infraestrutura:** Galpão de Ferramentas, Poço, Reservatório, Casa do Fazendeiro, Armazém de Produção, Celeiro, Depósito de Feno, Beneficiamento e Moinho (todos construídos).\n\n**Logística & Transporte:** Pátio de Carga (lote `160 × 70`, bloco `100 × 2 × 40`, node rel `(-96.00, 4.89, 335.25)`) conectado diretamente ao Armazém de Produção (node rel `(-96.00, 4.89, 235.25)`), além da Área de Carroças.\n\n**Expansões:** Pátio Econômico, Expansão Agrícola e Expansão Estrutural (concluídas nesta etapa).\n\n**Cadeia Econômica — Agrícola:** PLANTIO → CRESCIMENTO → COLHEITA → TRANSPORTE → ARMAZENAMENTO → BENEFICIAMENTO → PROCESSAMENTO → DISTRIBUIÇÃO → ECONOMIA DE ARKAN.\n\n**Cadeia Animal:** ALIMENTAÇÃO → CRIAÇÃO → MANEJO → PRODUÇÃO → COLETA → ARMAZENAMENTO/COMÉRCIO."
         }
       ],
       decisoes: [
@@ -1008,6 +1032,17 @@ Responsável pela produção dos lotes agrícolas no norte de Arkham.`
           substitui: null,
           relacionados: ["BP-2026-006", "LORE-003", "GAME-005"],
           markdown: `**Duas camadas distintas e relacionadas:**\n\n**📓 Diário de John** — gameplay e narrativa pessoal, primeira pessoa, cronológico. Existe no mundo, é coletado, fica no inventário, pode ser consultado. Responde: *"O que está acontecendo comigo?"*\n\n**📖 Livro/Lore do Universo** — camada histórica. Registra acontecimentos anteriores a John, lendas, reis, origens. Responde: *"O que aconteceu neste mundo?"*\n\n**Fluxo canônico:** John vive → acontecimento entra no Diário → jogador consulta o novo registro.\n\nO Bibliotecário não deve transformar automaticamente uma ideia em cânone.`
+        },
+        {
+          id: "BP-2026-008",
+          titulo: "Expansão Rural e Masterplan da Fazenda de Arkan",
+          data: "2026-09-11",
+          categoria: "Arquitetura do Mundo & Economia",
+          status: "CANONICO",
+          motivo: "Estabelecer um distrito agropecuário de grande porte fora da vila, concentrando a produção rural e preservando a integridade espacial do Masterplan.",
+          substitui: null,
+          relacionados: ["LOCAL-009", "GAME-006", "LOCAL-003", "LOCAL-005"],
+          markdown: `**Decisão:** A Fazenda de Arkan é a expansão rural canônica oficial (768.000 studs²).\n\n1. **Intocabilidade do Masterplan:** 26 lotes, 5 setores e 32 zonas funcionais indexadas no \`FazendaManager\` (\`Fazenda_Arkan_Blueprint\` com 136 elementos) são imutáveis em geometria e zoneamento.\n2. **Protocolo de Demarcação:** Peças físicas são temporárias e removidas após validação das construções definitivas, enquanto os scripts e referências de Blueprint persistem como referência técnica.\n3. **Estado de Construção CONCLUÍDO:** A construção da Fazenda nesta etapa está concluída — 26/26 estruturas e áreas catalogadas como construídas (CANÔNICO/CONCLUÍDO). Nenhuma área permanece como planejada, pendente ou em construção. Novas construções serão tratadas como expansões futuras ou novas necessidades de gameplay.`
         }
       ],
       sistemas: [
@@ -1059,6 +1094,13 @@ Responsável pela produção dos lotes agrícolas no norte de Arkham.`
           categoria: "Inventário, Narrativa & Desbloqueio",
           status: "CANONICO",
           markdown: `**Aquisição:** Coletado na Casa de John (LOCAL-001) no início da introdução via ProximityPrompt ou pickup automático.\n\n**Inventário:** Permanece com o jogador durante toda a progressão. Não pode ser descartado.\n\n**Consulta:** Acessado via inventário/hotbar fora de combate. Entradas organizadas por Capítulo → ordem cronológica. Novo conteúdo marcado com indicador visual até ser lido.\n\n**Desbloqueio:** Cada entrada é desbloqueada por evento específico da campanha (missão, diálogo, coleta, confronto). Entradas OBRIGATÓRIAS desbloqueiam automaticamente; OPCIONAIS dependem de exploração.\n\n**Entradas ativas:** DIARIO-CAP1-001 (automático), CAP1-002 (após Eldrin), CAP1-003 (após forja Cedric).`
+        },
+        {
+          id: "GAME-006",
+          nome: "Cadeia Produtiva & Economia Rural da Fazenda",
+          categoria: "Economia & Produção",
+          status: "CANONICO",
+          markdown: `**Fazenda concluída nesta etapa:** 26/26 estruturas e áreas catalogadas como construídas.\n\n**Cadeia Agrícola:** Plantio → Crescimento → Colheita → Transporte → Armazenamento → Beneficiamento → Moinho (Processamento) → Distribuição (Padaria & Armazém de Arkham) → Economia de Arkan.\n\n**Cadeia Pecuária:** Alimentação & Forragem → Criação & Abrigo (Estábulo, Curral Principal, Galinheiro, Cercado de Ovelhas, Cercado de Porcos) → Manejo Zootécnico → Produção & Coleta (Ovos, Lã, Leite, Tração) → Armazenamento/Comércio.\n\n**Logística:** Conexão intencional entre Pátio de Carga, Armazém de Produção e o comércio central da vila.`
         }
       ],
       livro: [
@@ -1295,6 +1337,31 @@ Responsável pela produção dos lotes agrícolas no norte de Arkham.`
         }
       ],
       changelog: [
+        {
+          data: "11 SET 2026",
+          versao: "v2.7.0",
+          tipo: "Fazenda de Arkan — Estado Consolidado 26/26 (CANÔNICO/CONCLUÍDO)",
+          mudancas: [
+            "Registro oficial do estado atual da Fazenda de Arkan: 26/26 construções e áreas catalogadas como CONSTRUÍDAS.",
+            "Conclusão das áreas antes planejadas: Pomar, Horta, Poço, Reservatório, Área de Carroças, Pátio Econômico, Pasto de Animais Futuros, Expansão Agrícola, Expansão Estrutural, Pátio de Carga e Cercado de Porcos.",
+            "Atualização de LOCAL-009 com lista completa das 26 áreas, função econômica, Masterplan, estrutura técnica, relações logísticas e cadeia econômica (agrícola e animal).",
+            "Atualização de BP-2026-008 (CANON-008) e GAME-006 para refletir o estado CANÔNICO/CONCLUÍDO sem fila de construções pendentes.",
+            "Inclusão do NPC-013 (Fazendeiro Geraldo, Administrador da Fazenda de Arkan) no catálogo de personagens do mini-site.",
+            "Sincronização completa do mini-site index.html, INDICE.md e MEMORIA_BIBLIOTECARIO.md."
+          ]
+        },
+        {
+          data: "11 SET 2026",
+          versao: "v2.6.0",
+          tipo: "Masterplan Canônico da Fazenda de Arkan & Expansão Rural",
+          mudancas: [
+            "Criação de LOCAL-009: Ficha oficial da Fazenda de Arkan com limites, eixos, corredores e as 15 estruturas concluídas.",
+            "Criação de BP-2026-008 (CANON-008): Decisão canônica do Masterplan rural, preservação de zoneamento e protocolo de demarcação.",
+            "Criação de GAME-006: Sistema da Cadeia Produtiva Agrícola e Economia Rural integrada à Vila de Arkham.",
+            "Catalogação das 15 estruturas construídas, próximo lote na fila (Pomar) e estruturas/expansões planejadas.",
+            "Sincronização completa do mini-site index.html, INDICE.md e MEMORIA_BIBLIOTECARIO.md."
+          ]
+        },
         {
           data: "08 SET 2026",
           versao: "v2.5.2",

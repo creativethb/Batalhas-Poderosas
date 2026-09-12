@@ -2,7 +2,7 @@
 
 > **DIRETÓRIO OFICIAL DE MEMÓRIA:** `F:\Bibliotecário_GDD`  
 > **FUNÇÃO DO DOCUMENTO:** Registro consolidado, fidedigno e persistente do estado, lore canônica, mecânicas e sistemas do projeto **Batalhas Poderosas** entre sessões de desenvolvimento.  
-> **ÚLTIMA ATUALIZAÇÃO:** 08/09/2026  
+> **ÚLTIMA ATUALIZAÇÃO:** 11/09/2026  
 
 ---
 
@@ -91,6 +91,23 @@ contra o novo rei descendente, convergindo para o despertar de John em Arkham.
 DATA: 08/09/2026
 ```
 
+```text
+STATUS: CANÔNICO / CONCLUÍDO
+DECISÃO: A Fazenda de Arkan é a expansão rural canônica oficial (768.000 studs²).
+1. Masterplan intocável com 26 lotes, 5 setores, corredores e 32 zonas funcionais indexadas no FazendaManager
+   (136 elementos no ReplicatedStorage.Fazenda_Arkan_Blueprint).
+2. Peças físicas de demarcação são temporárias e removidas após validação da construção definitiva; o Blueprint
+   e o FazendaManager permanecem como referência técnica (não são construções do mundo).
+3. A construção da Fazenda nesta etapa está CONCLUÍDA: 26/26 estruturas e áreas catalogadas como construídas:
+   Casa do Fazendeiro, Armazém de Produção, Celeiro Principal, Estábulo Rural, Galpão de Ferramentas,
+   Beneficiamento, Depósito de Feno, Moinho, Curral Principal, Galinheiro, Cercado de Ovelhas, Cercado de Porcos,
+   Campo de Milho, Campo de Trigo, Campo de Vegetais, Campo Variado, Pomar, Horta, Poço, Reservatório,
+   Área de Carroças, Pátio Econômico, Pasto de Animais Futuros, Expansões Agrícola e Estrutural e Pátio de Carga.
+4. Nenhuma área permanece PLANEJADA, PENDENTE ou EM CONSTRUÇÃO. Novas construções serão tratadas como expansões
+   futuras ou novas necessidades de gameplay.
+DATA: 11/09/2026
+```
+
 ---
 
 ## 4. Sistemas Implementados & Operacionais
@@ -154,6 +171,7 @@ Todos os 20+ NPCs da vila utilizam rig oficial **R15 com malha arredondada (Rig 
 | **Garrick** | Lenhador | Cabana e Serraria Nordeste (`RotaLenhadorA`) |
 | **Torren** | Lenhador | Serraria e campos ao norte (`RotaLenhadorB`) |
 | **Nalia** | Agricultora | Fazendas Norte e estábulo (`RotaAgricultorNorte`) |
+| **Geraldo** | Administrador da Fazenda | Fazenda de Arkan — Casa do Fazendeiro, Pátio de Carga, Armazém, Beneficiamento e Celeiro (`RotaFazendeiro_Geraldo`) |
 | **Eamon** | Agricultor | Campos e colinas ao leste (`RotaAgricultorSul`) |
 | **Aldous** | Guarda Sentinela | Perímetro dos 6 portões da vila (`RotaGuarda`) |
 | **Maelis** | Guarda | Sul e Oeste até o Santuário da Floresta (`RotaGuardaSul`) |
@@ -184,6 +202,7 @@ Todos os 20+ NPCs da vila utilizam rig oficial **R15 com malha arredondada (Rig 
 - **Cais do Lago Nobre (`X ≈ 204→250, Z ≈ 64→140`):** Plataformas de madeira, peixes nadando, barco e posto de pesca do Lucan.
 - **Minas da Montanha Leste (`X ≈ 382→484, Z ≈ -248→-332, Y ≈ 114`):** Galerias montanhosas, trilhos e área de extração mineral.
 - **Portal do Mundo Livre (`X ≈ 339, Z ≈ -196`):** Caverna mística com sensor de aproximação que transporta para a experiência Sandbox.
+- **Fazenda de Arkan (`X ≈ -10, Y ≈ 124.2, Z ≈ -1110` / `768.000 studs²`):** Polo agropecuário externo com Masterplan de 26 lotes, 5 setores e 32 zonas funcionais indexadas no `FazendaManager` (`Fazenda_Arkan_Blueprint` com 136 elementos). **26/26 construções e áreas concluídas — CANÔNICO/CONCLUÍDO** — incluindo: Casa do Fazendeiro, Armazém de Produção, Celeiro Principal, Estábulo Rural, Galpão de Ferramentas, Beneficiamento, Depósito de Feno, Moinho, Curral Principal, Galinheiro, Cercado de Ovelhas, Cercado de Porcos, 4 campos agrícolas (Milho, Trigo, Vegetais, Variado), Pomar, Horta, Poço, Reservatório, Área de Carroças, Pátio Econômico, Pasto de Animais Futuros, Expansões Agrícola e Estrutural e Pátio de Carga.
 - **Acampamentos Militares Externos (`X ≈ -231, Z ≈ 708` e `X ≈ -690, Z ≈ -334`):** Postos de vigia distantes nas bordas do mapa.
 
 ---
