@@ -674,55 +674,36 @@
         const headers = { 'Accept': 'application/vnd.github.v3+json' };
         if (auth && auth.token) headers['Authorization'] = `Bearer ${auth.token}`;
 
-        // 1. Consulta a árvore completa do repositório (1 requisição) — tenta API primeiro, fallback para raw
-        let treeData = null;
-        const treeUrl = `https://api.github.com/repos/${REPO_OWNER}/${REPO_NAME}/git/trees/${REPO_BRANCH}?recursive=1&t=${Date.now()}`;
-        
-        try {
-          const treeRes = await fetch(treeUrl, { headers });
-          if (treeRes.ok) {
-            treeData = await treeRes.json();
-          }
-        } catch (e) {
-          console.warn('API GitHub falhou, tentando fallback...', e);
-        }
+        // ---------- ESTRATÉGIA 1: Contents API recursiva (funciona sem auth para repo público) ----------
+        let gddBlobs = [];
 
-        // Fallback: buscar lista de arquivos via raw.githubusercontent.com (funciona sem token)
-        if (!treeData) {
-          try {
-            // Para repo público, podemos usar a API sem auth ou tentar listar via contents
-            const contentsUrl = `https://api.github.com/repos/${REPO_OWNER}/${REPO_NAME}/contents/gdd?ref=${REPO_BRANCH}&t=${Date.now()}`;
-            const contentsRes = await fetch(contentsUrl, { headers });
-            if (contentsRes.ok) {
-              const contents = await contentsRes.json();
-              // Recursivamente buscar todos os arquivos .md
-              async function fetchAllMd(folderPath) {
-                const url = `https://api.github.com/repos/${REPO_OWNER}/${REPO_NAME}/contents/${folderPath}?ref=${REPO_BRANCH}&t=${Date.now()}`;
-                const res = await fetch(url, { headers });
-                if (!res.ok) return [];
-                const items = await res.json();
-                let mdFiles = [];
-                for (const item of items) {
-                  if (item.type === 'file' && item.name.endsWith('.md')) {
-                    mdFiles.push({ path: item.path, type: 'blob' });
-                  } else if (item.type === 'dir') {
-                    mdFiles = mdFiles.concat(await fetchAllMd(item.path));
-                  }
-                }
-                return mdFiles;
-              }
-              const allMd = await fetchAllMd('gdd');
-              treeData = { tree: allMd };
+        async function fetchAllMdFromContents(folderPath = 'gdd') {
+          const url = `https://api.github.com/repos/${REPO_OWNER}/${REPO_NAME}/contents/${folderPath}?ref=${REPO_BRANCH}&t=${Date.now()}`;
+          const res = await fetch(url, { headers });
+          if (!res.ok) return [];
+          const items = await res.json();
+          let mdFiles = [];
+          for (const item of items) {
+            if (item.type === 'file' && item.name.endsWith('.md')) {
+              mdFiles.push({ path: item.path, type: 'blob' });
+            } else if (item.type === 'dir') {
+              mdFiles = mdFiles.concat(await fetchAllMdFromContents(item.path));
             }
-          } catch (e) {
-            console.warn('Fallback contents falhou:', e);
           }
+          return mdFiles;
         }
 
-        // Último fallback: lista conhecida estática (para desenvolvimento offline)
-        if (!treeData) {
-          console.warn('Usando lista estática de fallback — dados podem estar desatualizados');
-          treeData = { tree: [
+        try {
+          gddBlobs = await fetchAllMdFromContents('gdd');
+        } catch (e) {
+          console.warn('Contents API falhou:', e);
+          gddBlobs = [];
+        }
+
+        // ---------- ESTRATÉGIA 2: Fallback estático (lista conhecida de arquivos) ----------
+        if (!gddBlobs || gddBlobs.length === 0) {
+          console.warn('Usando lista estática de fallback');
+          gddBlobs = [
             { path: 'gdd/01-lore/LORE-001-origem-de-arkan-e-o-rei-mago.md', type: 'blob' },
             { path: 'gdd/01-lore/LORE-002-jornada-de-john.md', type: 'blob' },
             { path: 'gdd/01-lore/LORE-003-diario-de-john.md', type: 'blob' },
@@ -762,6 +743,11 @@
             { path: 'gdd/05-locais/LOCAL-007-minas-da-montanha.md', type: 'blob' },
             { path: 'gdd/05-locais/LOCAL-008-portal-mundo-livre.md', type: 'blob' },
             { path: 'gdd/05-locais/LOCAL-009-fazenda-de-arkan.md', type: 'blob' },
+            { path: 'gdd/06-dossies/02-npcs/DOSSIER-001-CEDRIC.md', type: 'blob' },
+            { path: 'gdd/06-dossies/02-npcs/DOSSIER-TEST-001.md', type: 'blob' },
+            { path: 'gdd/06-dossies/07-misterios/DOSSIER-TEST-002.md', type: 'blob' },
+            { path: 'gdd/06-dossies/README.md', type: 'blob' },
+            { path: 'gdd/06-dossies/_TEMPLATE_DOSsie.md', type: 'blob' },
             { path: 'gdd/99-canon/CANON-001-protagonista-john.md', type: 'blob' },
             { path: 'gdd/99-canon/CANON-002-inicio-na-casa-de-john.md', type: 'blob' },
             { path: 'gdd/99-canon/CANON-003-a-guerra-do-rei-mago.md', type: 'blob' },
@@ -769,55 +755,36 @@
             { path: 'gdd/99-canon/CANON-005-padrao-ux-multiplataforma.md', type: 'blob' },
             { path: 'gdd/99-canon/CANON-006-diario-de-john.md', type: 'blob' },
             { path: 'gdd/99-canon/CANON-007-protocolo-narrativo-diario-e-lore.md', type: 'blob' },
-            { path: 'gdd/99-canon/CANON-008-masterplan-fazenda-de-arkan.md', type: 'blob' },
-            { path: 'gdd/06-dossies/02-npcs/DOSSIER-001-CEDRIC.md', type: 'blob' },
-            { path: 'gdd/06-dossies/02-npcs/DOSSIER-TEST-001.md', type: 'blob' },
-            { path: 'gdd/06-dossies/07-misterios/DOSSIER-TEST-002.md', type: 'blob' },
-            { path: 'gdd/06-dossies/README.md', type: 'blob' },
-            { path: 'gdd/06-dossies/_TEMPLATE_DOSsie.md', type: 'blob' }
-          ] };
+            { path: 'gdd/99-canon/CANON-008-masterplan-fazenda-de-arkan.md', type: 'blob' }
+          ];
         }
 
-        // 2. Filtra arquivos markdown de /gdd/
-        const gddBlobs = treeData.tree.filter(item => item.type === 'blob' && item.path.startsWith('gdd/') && item.path.endsWith('.md'));
-
-        // 3. Lê o conteúdo sob demanda
+        // ---------- 3. Lê o conteúdo via raw.githubusercontent.com (sempre funciona para repo público) ----------
         const docs = await Promise.all(gddBlobs.map(async (item) => {
           try {
-            // Tenta caminho relativo do GitHub Pages primeiro; se falhar, puxa do raw GitHub
-            let res = await fetch(`./${item.path}?t=${Date.now()}`);
-            if (!res.ok) {
-              res = await fetch(`https://raw.githubusercontent.com/${REPO_OWNER}/${REPO_NAME}/${REPO_BRANCH}/${item.path}?t=${Date.now()}`);
-            }
-            if (res.ok) {
-              const text = await res.text();
-              const parsed = parseFrontmatter(text);
-              const parts = item.path.split('/');
-              const folder = parts[1] || 'geral';
+            const rawUrl = `https://raw.githubusercontent.com/${REPO_OWNER}/${REPO_NAME}/${REPO_BRANCH}/${item.path}?t=${Date.now()}`;
+            const res = await fetch(rawUrl);
+            if (!res.ok) return null;
+            const text = await res.text();
+            const parsed = parseFrontmatter(text);
+            const parts = item.path.split('/');
+            const folder = parts[1] || 'geral';
 
-              return {
-                path: item.path,
-                folder: folder,
-                id: parsed.meta.id || item.path.split('/').pop().replace('.md', ''),
-                nome: parsed.meta.nome || parsed.meta.titulo || item.path.split('/').pop().replace('.md', ''),
-                funcao: parsed.meta.funcao || parsed.meta.tipo || parsed.meta.categoria || '',
-                localizacao: parsed.meta.localizacao || '',
-                status: parsed.meta.status || 'CANONICO',
-                imagem: parsed.meta.imagem ? resolveAssetUrl(parsed.meta.imagem) : '',
-                markdown: parsed.markdown,
-                // FASE 2 fields
-                info_id: parsed.meta.info_id || '',
-                entidade_principal: parsed.meta.entidade_principal || '',
-                tipo_informacao: parsed.meta.tipo_informacao || '',
-                categoria_classificacao: parsed.meta.categoria_classificacao || '',
-                tags: parsed.meta.tags ? (typeof parsed.meta.tags === 'string' ? JSON.parse(parsed.meta.tags) : parsed.meta.tags) : [],
-                entidade_principal: parsed.meta.entidade_principal || '',
-                categoria_classificacao: parsed.meta.categoria_classificacao || '',
-                tipo_informacao: parsed.meta.tipo_informacao || ''
-              };
-            }
-          } catch(e) {}
-          return null;
+            return {
+              path: item.path,
+              folder: folder,
+              id: parsed.meta.id || item.path.split('/').pop().replace('.md', ''),
+              nome: parsed.meta.nome || parsed.meta.titulo || item.path.split('/').pop().replace('.md', ''),
+              funcao: parsed.meta.funcao || parsed.meta.tipo || parsed.meta.categoria || '',
+              localizacao: parsed.meta.localizacao || '',
+              status: parsed.meta.status || 'CANONICO',
+              imagem: parsed.meta.imagem ? resolveAssetUrl(parsed.meta.imagem) : '',
+              markdown: parsed.markdown
+            };
+          } catch(e) {
+            console.warn(`Erro ao carregar ${item.path}:`, e);
+            return null;
+          }
         }));
 
         appDb.docs = docs.filter(Boolean);
