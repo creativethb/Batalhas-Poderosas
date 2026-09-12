@@ -108,7 +108,33 @@ Mestre Cedric é o ferreiro mais respeitado de **Arkham**. Responsável pela big
 
 ---
 
-## 9. Referências Técnicas
+## 9. Personalidade Detalhada
+🟢 CANÔNICO
+
+Personalidade forte, orgulhosa e firme. Não costuma se curvar facilmente. Presença marcante com atitude que pode lembrar antigos guerreiros, apesar de não ser militar.
+
+Referência comportamental: austero, combativo, disciplinado, direto, resistente, orgulhoso, de forte presença. Espírito associado a figura de estilo viking.
+
+Cabelos ruivos marcantes e estrutura física robusta. Pode lembrar visualmente um anão guerreiro, mas Cedric não é anão — possui estatura humana normal. A semelhança está na robustez, presença e atitude.
+
+---
+
+## 10. Papel em Arkham
+🟢 CANÔNICO
+
+A oficina é seu local de trabalho e onde mantém a tradição familiar, preserva técnicas antigas, produz armas, transmite conhecimento e mantém viva a história de sua família. Sua importância não vem de cargo político — vem do valor daquilo que sabe fazer.
+
+Cedric conhece armas melhor do que muitos combatentes. Sabe onde uma arma pode falhar, como um escudo se comporta sob impacto, reconhece metal mal trabalhado e diferencia arma feita para durar de arma feita apenas para parecer boa. Sua oficina tem importância estratégica para o reino.
+
+---
+
+## 11. Regra de Continuidade
+
+Cedric não deve ser tratado apenas como "o ferreiro que cria a espada de John". Ele é **um descendente de uma antiga linhagem de ferreiros, guardião de uma tradição técnica fragmentada, ligado indiretamente aos acontecimentos antigos de Arkham**.
+
+---
+
+## 12. Referências Técnicas
 - **Rig:** R15 (`Cedric_ferreiro`)
 - **Localização:** Oficina da Vila (`X = -18.84, Y = 14.5, Z = -75.20`)
 - **Tipo:** Mesh R15 Estático atrás do balcão de forja
