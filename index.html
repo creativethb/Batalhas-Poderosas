@@ -272,6 +272,40 @@
           <ul id="sidebarDynamicCategoriesList" class="space-y-1"></ul>
         </div>
 
+        <!-- DOSSIÊS — Nova Camada de Profundidade -->
+        <div>
+          <div class="text-[11px] font-cinzel font-bold text-codex-gold uppercase tracking-wider mb-2 px-2 flex items-center justify-between">
+            <span>Dossiês</span>
+            <span class="text-[9px] font-mono text-emerald-400">Fase 1</span>
+          </div>
+          <ul class="space-y-1">
+            <li><a href="#categoria/06-dossies/01-personagens" class="nav-link flex items-center gap-2.5 px-2.5 py-1.5 rounded-lg text-codex-parchment hover:bg-codex-850 hover:text-codex-gold transition font-tome text-base">
+              <span>👤</span> Personagens
+            </a></li>
+            <li><a href="#categoria/06-dossies/02-npcs" class="nav-link flex items-center gap-2.5 px-2.5 py-1.5 rounded-lg text-codex-parchment hover:bg-codex-850 hover:text-codex-gold transition font-tome text-base">
+              <span>👥</span> NPCs
+            </a></li>
+            <li><a href="#categoria/06-dossies/03-locais" class="nav-link flex items-center gap-2.5 px-2.5 py-1.5 rounded-lg text-codex-parchment hover:bg-codex-850 hover:text-codex-gold transition font-tome text-base">
+              <span>🏰</span> Locais
+            </a></li>
+            <li><a href="#categoria/06-dossies/04-itens-e-artefatos" class="nav-link flex items-center gap-2.5 px-2.5 py-1.5 rounded-lg text-codex-parchment hover:bg-codex-850 hover:text-codex-gold transition font-tome text-base">
+              <span>🗡️</span> Itens e Artefatos
+            </a></li>
+            <li><a href="#categoria/06-dossies/05-eventos-historicos" class="nav-link flex items-center gap-2.5 px-2.5 py-1.5 rounded-lg text-codex-parchment hover:bg-codex-850 hover:text-codex-gold transition font-tome text-base">
+              <span>📜</span> Eventos Históricos
+            </a></li>
+            <li><a href="#categoria/06-dossies/06-linhagens-povos-faccoes" class="nav-link flex items-center gap-2.5 px-2.5 py-1.5 rounded-lg text-codex-parchment hover:bg-codex-850 hover:text-codex-gold transition font-tome text-base">
+              <span>🏴</span> Linhagens / Facções
+            </a></li>
+            <li><a href="#categoria/06-dossies/07-misterios" class="nav-link flex items-center gap-2.5 px-2.5 py-1.5 rounded-lg text-codex-parchment hover:bg-codex-850 hover:text-codex-gold transition font-tome text-base">
+              <span>🔮</span> Mistérios
+            </a></li>
+            <li><a href="#categoria/06-dossies/08-universo-geral" class="nav-link flex items-center gap-2.5 px-2.5 py-1.5 rounded-lg text-codex-parchment hover:bg-codex-850 hover:text-codex-gold transition font-tome text-base">
+              <span>🌍</span> Universo Geral
+            </a></li>
+          </ul>
+        </div>
+
         <div>
           <div class="text-[11px] font-cinzel font-bold text-codex-gold uppercase tracking-wider mb-2 px-2">Cânone & Agentes</div>
           <ul class="space-y-1">
@@ -822,7 +856,7 @@
             </div>
           </div>
 
-          <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
+          <div class="grid grid-cols-2 sm:grid-cols-5 gap-4">
             <div class="codex-card p-4 rounded-xl text-center cursor-pointer hover:border-codex-gold" onclick="window.location.hash='#npcs'">
               <span class="font-cinzel text-xs text-codex-gold font-bold block mb-1">NPCs & Personagens</span>
               <span class="text-3xl font-mono font-bold text-codex-parchment">${appDb.npcs.length}</span>
@@ -842,6 +876,11 @@
               <span class="font-cinzel text-xs text-emerald-400 font-bold block mb-1">Decisões Canônicas</span>
               <span class="text-3xl font-mono font-bold text-emerald-400">${appDb.decisoes.length}</span>
               <span class="text-xs font-tome text-emerald-300 block mt-1">Lidas em gdd/99-canon</span>
+            </div>
+            <div class="codex-card p-4 rounded-xl text-center cursor-pointer hover:border-codex-gold" onclick="window.location.hash='#categoria/06-dossies/01-personagens'">
+              <span class="font-cinzel text-xs text-codex-gold font-bold block mb-1">Dossiês</span>
+              <span class="text-3xl font-mono font-bold text-codex-parchment">${Object.values(appDb.pastas).flat().filter(d => d.folder.startsWith('06-dossies')).length}</span>
+              <span class="text-xs font-tome text-emerald-400 block mt-1">Lidos em gdd/06-dossies</span>
             </div>
           </div>
         </div>
