@@ -707,7 +707,16 @@
                 localizacao: parsed.meta.localizacao || '',
                 status: parsed.meta.status || 'CANONICO',
                 imagem: parsed.meta.imagem ? resolveAssetUrl(parsed.meta.imagem) : '',
-                markdown: parsed.markdown
+                markdown: parsed.markdown,
+                // FASE 2 fields
+                info_id: parsed.meta.info_id || '',
+                entidade_principal: parsed.meta.entidade_principal || '',
+                tipo_informacao: parsed.meta.tipo_informacao || '',
+                categoria_classificacao: parsed.meta.categoria_classificacao || '',
+                tags: parsed.meta.tags ? (typeof parsed.meta.tags === 'string' ? JSON.parse(parsed.meta.tags) : parsed.meta.tags) : [],
+                entidade_principal: parsed.meta.entidade_principal || '',
+                categoria_classificacao: parsed.meta.categoria_classificacao || '',
+                tipo_informacao: parsed.meta.tipo_informacao || ''
               };
             }
           } catch(e) {}
@@ -1071,6 +1080,16 @@
       const docs = appDb.pastas[folder] || [];
       const cleanName = folder.replace(/^[0-9]+-/, '').toUpperCase();
 
+      // Extrair valores únicos para filtros
+      const allStatus = [...new Set(docs.map(d => d.status || 'CANONICO').filter(Boolean))].sort();
+      const allTags = [...new Set(docs.flatMap(d => {
+        try { return JSON.parse(d.tags || '[]'); } catch { return []; }
+      }))].filter(Boolean).sort();
+      const allTipos = [...new Set(docs.map(d => {
+        try { return JSON.parse(d.tipo_informacao || '""'); } catch { return ''; }
+      }))].filter(Boolean).sort();
+      const allCats = [...new Set(docs.map(d => d.categoria_classificacao || '')).filter(Boolean)].sort();
+
       container.innerHTML = `
         <div class="space-y-6">
           <div class="flex items-center justify-between pb-4 border-b border-codex-borderGold/30">
@@ -1079,13 +1098,58 @@
               <p class="text-xs text-codex-parchmentMuted">Arquivos lidos dinamicamente de <code>gdd/${folder}/</code></p>
             </div>
           </div>
-          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+          <!-- Painel de Filtros FASE 2 -->
+          <div class="codex-card p-4 rounded-xl space-y-3 bg-codex-950/40">
+            <div class="flex items-center gap-2 font-cinzel text-xs text-codex-gold uppercase tracking-wider">🔍 Filtros Avançados</div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3 text-xs">
+              <div>
+                <label class="block text-codex-parchmentMuted mb-1">Status</label>
+                <select id="filterStatus" class="w-full px-2 py-1.5 bg-codex-850 border border-codex-borderGold/30 rounded text-codex-parchment focus:border-codex-gold focus:outline-none">
+                  <option value="">Todos</option>
+                  ${allStatus.map(s => `<option value="${s}">${s}</option>`).join('')}
+                </select>
+              </div>
+              <div>
+                <label class="block text-codex-parchmentMuted mb-1">Tipo Info</label>
+                <select id="filterTipo" class="w-full px-2 py-1.5 bg-codex-850 border border-codex-borderGold/30 rounded text-codex-parchment focus:border-codex-gold focus:outline-none">
+                  <option value="">Todos</option>
+                  ${allTipos.map(t => `<option value="${t}">${t}</option>`).join('')}
+                </select>
+              </div>
+              <div>
+                <label class="block text-codex-parchmentMuted mb-1">Categoria</label>
+                <select id="filterCat" class="w-full px-2 py-1.5 bg-codex-850 border border-codex-borderGold/30 rounded text-codex-parchment focus:border-codex-gold focus:outline-none">
+                  <option value="">Todas</option>
+                  ${allCats.map(c => `<option value="${c}">${c}</option>`).join('')}
+                </select>
+              </div>
+              <div>
+                <label class="block text-codex-parchmentMuted mb-1">Tags</label>
+                <select id="filterTag" class="w-full px-2 py-1.5 bg-codex-850 border border-codex-borderGold/30 rounded text-codex-parchment focus:border-codex-gold focus:outline-none">
+                  <option value="">Todas</option>
+                  ${allTags.map(t => `<option value="${t}">${t}</option>`).join('')}
+                </select>
+              </div>
+              <div>
+                <label class="block text-codex-parchmentMuted mb-1">Entidade</label>
+                <input type="text" id="filterEntidade" placeholder="INFO-XXX ou NPC-XXX" class="w-full px-2 py-1.5 bg-codex-850 border border-codex-borderGold/30 rounded text-codex-parchment focus:border-codex-gold focus:outline-none font-mono">
+              </div>
+            </div>
+            <button onclick="clearFilters()" class="px-3 py-1.5 bg-codex-800 hover:bg-codex-gold hover:text-codex-950 rounded text-xs font-cinzel transition">Limpar Filtros</button>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="filteredDocsContainer">
             ${docs.map(doc => `
-              <div class="codex-card rounded-xl overflow-hidden flex flex-col justify-between cursor-pointer group" onclick="openInspector('${doc.path}')">
+              <div class="codex-card rounded-xl overflow-hidden flex flex-col justify-between cursor-pointer group filterable-doc" data-path="${doc.path}" data-status="${doc.status || 'CANONICO'}" data-tipo="${JSON.stringify(doc.tipo_informacao || '')}" data-cat="${doc.categoria_classificacao || ''}" data-tags="${JSON.stringify(doc.tags || [])}" data-entidade="${doc.entidade_principal || ''}" onclick="openInspector('${doc.path}')">
                 <div>
                   <div class="h-44 bg-codex-900 relative overflow-hidden flex items-center justify-center border-b border-codex-borderGold/20">
                     ${doc.imagem ? `<img src="${doc.imagem}" alt="${doc.nome}" onerror="handleCardImgError(this, '${doc.id}', '${doc.nome}')" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">` : `<span class="text-3xl">📁</span>`}
                     <span class="absolute top-2 left-2 font-mono text-[10px] text-codex-gold bg-codex-950/80 px-2 py-0.5 rounded border border-codex-borderGold/40">${doc.id}</span>
+                    <div class="absolute top-2 right-2 flex gap-1">
+                      ${doc.status ? `<span class="wax-seal seal-${doc.status.toLowerCase().replace('_','-')}" style="font-size: 7px;">${doc.status}</span>` : ''}
+                      ${doc.tipo_informacao ? `<span class="px-1.5 py-0.5 bg-codex-950/80 text-[7px] text-codex-parchmentMuted rounded border border-codex-borderGold/20 font-mono">${doc.tipo_informacao}</span>` : ''}
+                    </div>
                   </div>
                   <div class="p-4 text-xs font-tome text-codex-parchmentMuted line-clamp-3">
                     <h3 class="font-cinzel font-bold text-base text-white mb-1">${doc.nome}</h3>
@@ -1103,6 +1167,9 @@
           </div>
         </div>
       `;
+
+      // Inicializar filtros
+      setupFilters();
     }
 
     function renderDiarioView() { renderCustomCategoryView('01-lore'); }
@@ -1400,8 +1467,72 @@ ${descricao || 'Nova categoria documental criada via Códice.'}
         dropdown.classList.remove('hidden');
       });
 
-      loadRepositoryLive();
-    });
-  </script>
-</body>
-</html>
+loadRepositoryLive();
+
+    // FASE 2: Sistema de Filtros Avançados
+    function setupFilters() {
+      const statusSel = document.getElementById('filterStatus');
+      const tipoSel = document.getElementById('filterTipo');
+      const catSel = document.getElementById('filterCat');
+      const tagSel = document.getElementById('filterTag');
+      const entidadeInp = document.getElementById('filterEntidade');
+      const container = document.getElementById('filteredDocsContainer');
+      if (!container) return;
+
+      const cards = container.querySelectorAll('.filterable-doc');
+
+      function applyFilters() {
+        const statusVal = statusSel?.value || '';
+        const tipoVal = tipoSel?.value || '';
+        const catVal = catSel?.value || '';
+        const tagVal = tagSel?.value || '';
+        const entidadeVal = (entidadeInp?.value || '').trim().toLowerCase();
+
+        cards.forEach(card => {
+          const docStatus = card.dataset.status || 'CANONICO';
+          const docTipo = card.dataset.tipo || '';
+          const docCat = card.dataset.cat || '';
+          const docTags = card.dataset.tags || '[]';
+          const docEntidade = (card.dataset.entidade || '').toLowerCase();
+
+          let show = true;
+          if (statusVal && docStatus !== statusVal) show = false;
+          if (tipoVal && docTipo !== `"${tipoVal}"`) show = false;
+          if (catVal && docCat !== catVal) show = false;
+          if (tagVal) {
+            let tags = [];
+            try { tags = JSON.parse(docTags); } catch { tags = []; }
+            if (!tags.includes(tagVal)) show = false;
+          }
+          if (entidadeVal && !docEntidade.includes(entidadeVal)) show = false;
+
+          card.style.display = show ? '' : 'none';
+        });
+      }
+
+      [statusSel, tipoSel, catSel, tagSel].forEach(sel => {
+        sel?.addEventListener('change', applyFilters);
+      });
+      entidadeInp?.addEventListener('input', applyFilters);
+    }
+
+    function clearFilters() {
+      const statusSel = document.getElementById('filterStatus');
+      const tipoSel = document.getElementById('filterTipo');
+      const catSel = document.getElementById('filterCat');
+      const tagSel = document.getElementById('filterTag');
+      const entidadeInp = document.getElementById('filterEntidade');
+      const container = document.getElementById('filteredDocsContainer');
+      if (!container) return;
+
+      statusSel?.value = '';
+      tipoSel?.value = '';
+      catSel?.value = '';
+      tagSel?.value = '';
+      entidadeInp?.value = '';
+
+      const cards = container.querySelectorAll('.filterable-doc');
+      cards.forEach(card => card.style.display = '');
+    }
+
+    loadRepositoryLive();

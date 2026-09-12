@@ -10,7 +10,36 @@ imagem: "./assets/npcs/NPC-001.jpg"
 resumo: "Dossiê aprofundado do Ferreiro Real de Arkham, Mestre Cedric. Documenta sua linhagem, formação, personalidade, conhecimentos ancestrais da forja, relação com a Árvore Sagrada e Eldrin, e sua conexão histórica remota com Alric (Rei Mago)."
 tags: ["ferreiro", "linhagem", "forja-ancestral", "arvore-sagrada", "alric"]
 relacionados: ["DOSSIER-002", "DOSSIER-003"]
-versao: "1.0"
+
+# === FASE 2: CLASSIFICAÇÃO, MARCAÇÃO E RASTREABILIDADE ===
+info_id: "INFO-CEDRIC-001"
+entidade_principal: "NPC-001"
+tipo_informacao: "biografia"
+categoria_classificacao: "identidade"
+status: "EM_CONSTRUCAO"
+periodo: "Vida Adulta"
+localizacao: "LOCAL-002"
+personagens_envolvidos: ["NPC-001", "NPC-002", "CHAR-001"]
+tema: "forja ancestral, linhagem ferreira, conexão Alric"
+origem: "banco_narrativo"
+relevancia_narrativa: "alta"
+relevancia_gameplay: "media"
+aplicabilidade_livro: true
+aplicabilidade_diario: true
+relacao_misterio: "MST-ALRIC-IDENTITY"
+observacoes: "Incorpora Blocos 1 e 2 do Banco Narrativo (PERS-002-CEDRIC.md)"
+
+# Rastreabilidade
+origem_documento: "banco_narrativo/01-personagens/PERS-002-CEDRIC.md"
+origem_entidade: "NPC-001"
+origem_registro: "Blocos 1 e 2 - Seções 1 a 14"
+decisao_canonica: "BP-2026-001, BP-2026-002"
+atualizacoes: [{"data": "2026-09-12", "autor": "agente_bibliotecario", "descricao": "Criação inicial com FASE 1"}, {"data": "2026-09-12", "autor": "agente_bibliotecario", "descricao": "Adição campos FASE 2"}]
+
+# Destino / Aplicabilidade
+destino: ["GDD", "LIVRO", "DIARIO", "NPC", "GAMEPLAY", "MISSAO", "CRONOLOGIA", "MISTERIO"]
+
+versao: "2.0"
 atualizado_por: "agente_bibliotecario"
 data_atualizacao: "2026-09-12"
 ---
