@@ -219,6 +219,28 @@ Todos os 20+ NPCs da vila utilizam rig oficial **R15 com malha arredondada (Rig 
 
 ## 8. Pendências e Próximos Passos (Backlog)
 
+### 8A. Atualização de Imagens do GDD (em andamento — pausado em 12/09/2026)
+**Objetivo:** Substituir todas as imagens placeholder (`NPC-001.png` genérico) por retratos e ilustrações individuais.
+
+| Status | Entidade | Arquivo | Push? |
+| :--- | :--- | :--- | :--- |
+| ✅ Concluído | NPC-001 — Mestre Cedric | `assets/npcs/NPC-001.jpg` | Sim |
+| ✅ Concluído | NPC-002 — Ancião Eldrin | `assets/npcs/NPC-002.jpg` | Sim |
+| ✅ Concluído | NPC-003 — Guarda Rowan | `assets/npcs/NPC-003.jpg` | Sim |
+| ✅ Concluído | NPC-004 — Guarda Aldous | `assets/npcs/NPC-004.jpg` | Sim |
+| ✅ Concluído | NPC-005 — Padeira Beatrice | `assets/npcs/NPC-005.jpg` | Sim |
+| ⏳ Pendente | NPC-006 — Pescador Lucan | `assets/npcs/NPC-006.jpg` | Não |
+| ⏳ Pendente | NPC-007 — Mercador Tobias | `assets/npcs/NPC-007.jpg` | Não |
+| ⏳ Pendente | LOCAL-001 — Casa de John | `assets/locais/LOCAL-001.jpg` | Não |
+| ⏳ Pendente | LOCAL-002 — Oficina do Cedric | `assets/locais/LOCAL-002.jpg` | Não |
+| ⏳ Pendente | LOCAL-003 — Praça Central | `assets/locais/LOCAL-003.jpg` | Não |
+
+**Formato:** JPG, 800×450px (16:9). Usuário salva na pasta `assets/npcs/` ou `assets/locais/` e avisa o nome. Agente renomeia, atualiza `index.html` e faz push.
+
+**Pendência técnica:** Resolver cache do navegador (imagens não atualizam sem navegação anônima). Solução: adicionar meta tags de cache-busting ou query string versionada no `index.html`.
+
+### 8B. Outras pendências do backlog
+
 1. **Animações Personalizadas:**
    - Preencher `ID_ANIMACAO_CONVERSA_PADRAO` em `ServerScriptService.ComportamentoNPC` quando o dono fornecer a animação de gesticulação de conversa em loop.
    - Preencher `ID_ANIMACAO_IDLE_NATURAL` em `MOOV TESTE` quando a animação de postura relaxada com espada na mão estiver pronta.
