@@ -674,117 +674,44 @@
         const headers = { 'Accept': 'application/vnd.github.v3+json' };
         if (auth && auth.token) headers['Authorization'] = `Bearer ${auth.token}`;
 
-        // ---------- ESTRATÉGIA 1: Contents API recursiva (funciona sem auth para repo público) ----------
-        let gddBlobs = [];
+        // 1. Consulta a árvore completa do repositório (1 requisição)
+        const treeUrl = `https://api.github.com/repos/${REPO_OWNER}/${REPO_NAME}/git/trees/${REPO_BRANCH}?recursive=1&t=${Date.now()}`;
+        const treeRes = await fetch(treeUrl, { headers });
 
-        async function fetchAllMdFromContents(folderPath = 'gdd') {
-          const url = `https://api.github.com/repos/${REPO_OWNER}/${REPO_NAME}/contents/${folderPath}?ref=${REPO_BRANCH}&t=${Date.now()}`;
-          const res = await fetch(url, { headers });
-          if (!res.ok) return [];
-          const items = await res.json();
-          let mdFiles = [];
-          for (const item of items) {
-            if (item.type === 'file' && item.name.endsWith('.md')) {
-              mdFiles.push({ path: item.path, type: 'blob' });
-            } else if (item.type === 'dir') {
-              mdFiles = mdFiles.concat(await fetchAllMdFromContents(item.path));
-            }
-          }
-          return mdFiles;
-        }
+        if (!treeRes.ok) throw new Error(`Falha HTTP ${treeRes.status}`);
+        const treeData = await treeRes.json();
 
-        try {
-          gddBlobs = await fetchAllMdFromContents('gdd');
-        } catch (e) {
-          console.warn('Contents API falhou:', e);
-          gddBlobs = [];
-        }
+        // 2. Filtra arquivos markdown de /gdd/
+        const gddBlobs = treeData.tree.filter(item => item.type === 'blob' && item.path.startsWith('gdd/') && item.path.endsWith('.md'));
 
-        // ---------- ESTRATÉGIA 2: Fallback estático (lista conhecida de arquivos) ----------
-        if (!gddBlobs || gddBlobs.length === 0) {
-          console.warn('Usando lista estática de fallback');
-          gddBlobs = [
-            { path: 'gdd/01-lore/LORE-001-origem-de-arkan-e-o-rei-mago.md', type: 'blob' },
-            { path: 'gdd/01-lore/LORE-002-jornada-de-john.md', type: 'blob' },
-            { path: 'gdd/01-lore/LORE-003-diario-de-john.md', type: 'blob' },
-            { path: 'gdd/01-lore/LORE-004-paralelo-john-rei-mago.md', type: 'blob' },
-            { path: 'gdd/01-lore/LORE-005-prologo-antes-das-batalhas.md', type: 'blob' },
-            { path: 'gdd/01-lore/LORE-006-perfil-publico-rei-mago.md', type: 'blob' },
-            { path: 'gdd/02-gameplay/GAME-001-loop-principal-e-progressao.md', type: 'blob' },
-            { path: 'gdd/02-gameplay/GAME-002-sistema-de-combate-e-combos.md', type: 'blob' },
-            { path: 'gdd/02-gameplay/GAME-003-locomocao-dash-e-pulo.md', type: 'blob' },
-            { path: 'gdd/02-gameplay/GAME-004-sistema-de-dialogo-e-camera.md', type: 'blob' },
-            { path: 'gdd/02-gameplay/GAME-005-sistema-do-diario.md', type: 'blob' },
-            { path: 'gdd/02-gameplay/GAME-006-cadeia-produtiva-e-economia-rural.md', type: 'blob' },
-            { path: 'gdd/03-npcs/NPC-000-o-rei-mago.md', type: 'blob' },
-            { path: 'gdd/03-npcs/NPC-001-mestre-cedric.md', type: 'blob' },
-            { path: 'gdd/03-npcs/NPC-002-anciao-eldrin.md', type: 'blob' },
-            { path: 'gdd/03-npcs/NPC-003-guarda-rowan.md', type: 'blob' },
-            { path: 'gdd/03-npcs/NPC-004-guarda-aldous.md', type: 'blob' },
-            { path: 'gdd/03-npcs/NPC-005-padeira-beatrice.md', type: 'blob' },
-            { path: 'gdd/03-npcs/NPC-006-pescador-lucan.md', type: 'blob' },
-            { path: 'gdd/03-npcs/NPC-007-mercador-tobias.md', type: 'blob' },
-            { path: 'gdd/03-npcs/NPC-008-agricultor-hugo.md', type: 'blob' },
-            { path: 'gdd/03-npcs/NPC-009-guardiao-seraphin.md', type: 'blob' },
-            { path: 'gdd/03-npcs/NPC-010-lenhador-garrick.md', type: 'blob' },
-            { path: 'gdd/03-npcs/NPC-011-mineiro-borin.md', type: 'blob' },
-            { path: 'gdd/03-npcs/NPC-012-agricultora-nalia.md', type: 'blob' },
-            { path: 'gdd/03-npcs/NPC-013-fazendeiro-geraldo.md', type: 'blob' },
-            { path: 'gdd/04-itens/ITEM-001-madeira-comum.md', type: 'blob' },
-            { path: 'gdd/04-itens/ITEM-002-madeira-sagrada.md', type: 'blob' },
-            { path: 'gdd/04-itens/ITEM-003-espada-de-madeira-sagrada.md', type: 'blob' },
-            { path: 'gdd/04-itens/ITEM-004-diario-de-john.md', type: 'blob' },
-            { path: 'gdd/05-locais/LOCAL-001-casa-de-john.md', type: 'blob' },
-            { path: 'gdd/05-locais/LOCAL-002-oficina-do-cedric.md', type: 'blob' },
-            { path: 'gdd/05-locais/LOCAL-003-praca-central.md', type: 'blob' },
-            { path: 'gdd/05-locais/LOCAL-004-arvore-sagrada.md', type: 'blob' },
-            { path: 'gdd/05-locais/LOCAL-005-padaria-medieval.md', type: 'blob' },
-            { path: 'gdd/05-locais/LOCAL-006-cais-do-lago.md', type: 'blob' },
-            { path: 'gdd/05-locais/LOCAL-007-minas-da-montanha.md', type: 'blob' },
-            { path: 'gdd/05-locais/LOCAL-008-portal-mundo-livre.md', type: 'blob' },
-            { path: 'gdd/05-locais/LOCAL-009-fazenda-de-arkan.md', type: 'blob' },
-            { path: 'gdd/06-dossies/02-npcs/DOSSIER-001-CEDRIC.md', type: 'blob' },
-            { path: 'gdd/06-dossies/02-npcs/DOSSIER-TEST-001.md', type: 'blob' },
-            { path: 'gdd/06-dossies/07-misterios/DOSSIER-TEST-002.md', type: 'blob' },
-            { path: 'gdd/06-dossies/README.md', type: 'blob' },
-            { path: 'gdd/06-dossies/_TEMPLATE_DOSsie.md', type: 'blob' },
-            { path: 'gdd/99-canon/CANON-001-protagonista-john.md', type: 'blob' },
-            { path: 'gdd/99-canon/CANON-002-inicio-na-casa-de-john.md', type: 'blob' },
-            { path: 'gdd/99-canon/CANON-003-a-guerra-do-rei-mago.md', type: 'blob' },
-            { path: 'gdd/99-canon/CANON-004-desacoplamento-sandbox-mundo-livre.md', type: 'blob' },
-            { path: 'gdd/99-canon/CANON-005-padrao-ux-multiplataforma.md', type: 'blob' },
-            { path: 'gdd/99-canon/CANON-006-diario-de-john.md', type: 'blob' },
-            { path: 'gdd/99-canon/CANON-007-protocolo-narrativo-diario-e-lore.md', type: 'blob' },
-            { path: 'gdd/99-canon/CANON-008-masterplan-fazenda-de-arkan.md', type: 'blob' }
-          ];
-        }
-
-        // ---------- 3. Lê o conteúdo via raw.githubusercontent.com (sempre funciona para repo público) ----------
+        // 3. Lê o conteúdo sob demanda
         const docs = await Promise.all(gddBlobs.map(async (item) => {
           try {
-            const rawUrl = `https://raw.githubusercontent.com/${REPO_OWNER}/${REPO_NAME}/${REPO_BRANCH}/${item.path}?t=${Date.now()}`;
-            const res = await fetch(rawUrl);
-            if (!res.ok) return null;
-            const text = await res.text();
-            const parsed = parseFrontmatter(text);
-            const parts = item.path.split('/');
-            const folder = parts[1] || 'geral';
+            // Tenta caminho relativo do GitHub Pages primeiro; se falhar, puxa do raw GitHub
+            let res = await fetch(`./${item.path}?t=${Date.now()}`);
+            if (!res.ok) {
+              res = await fetch(`https://raw.githubusercontent.com/${REPO_OWNER}/${REPO_NAME}/${REPO_BRANCH}/${item.path}?t=${Date.now()}`);
+            }
+            if (res.ok) {
+              const text = await res.text();
+              const parsed = parseFrontmatter(text);
+              const parts = item.path.split('/');
+              const folder = parts[1] || 'geral';
 
-            return {
-              path: item.path,
-              folder: folder,
-              id: parsed.meta.id || item.path.split('/').pop().replace('.md', ''),
-              nome: parsed.meta.nome || parsed.meta.titulo || item.path.split('/').pop().replace('.md', ''),
-              funcao: parsed.meta.funcao || parsed.meta.tipo || parsed.meta.categoria || '',
-              localizacao: parsed.meta.localizacao || '',
-              status: parsed.meta.status || 'CANONICO',
-              imagem: parsed.meta.imagem ? resolveAssetUrl(parsed.meta.imagem) : '',
-              markdown: parsed.markdown
-            };
-          } catch(e) {
-            console.warn(`Erro ao carregar ${item.path}:`, e);
-            return null;
-          }
+              return {
+                path: item.path,
+                folder: folder,
+                id: parsed.meta.id || item.path.split('/').pop().replace('.md', ''),
+                nome: parsed.meta.nome || parsed.meta.titulo || item.path.split('/').pop().replace('.md', ''),
+                funcao: parsed.meta.funcao || parsed.meta.tipo || parsed.meta.categoria || '',
+                localizacao: parsed.meta.localizacao || '',
+                status: parsed.meta.status || 'CANONICO',
+                imagem: parsed.meta.imagem ? resolveAssetUrl(parsed.meta.imagem) : '',
+                markdown: parsed.markdown
+              };
+            }
+          } catch(e) {}
+          return null;
         }));
 
         appDb.docs = docs.filter(Boolean);
@@ -1144,16 +1071,6 @@
       const docs = appDb.pastas[folder] || [];
       const cleanName = folder.replace(/^[0-9]+-/, '').toUpperCase();
 
-      // Extrair valores únicos para filtros
-      const allStatus = [...new Set(docs.map(d => d.status || 'CANONICO').filter(Boolean))].sort();
-      const allTags = [...new Set(docs.flatMap(d => {
-        try { return JSON.parse(d.tags || '[]'); } catch { return []; }
-      }))].filter(Boolean).sort();
-      const allTipos = [...new Set(docs.map(d => {
-        try { return JSON.parse(d.tipo_informacao || '""'); } catch { return ''; }
-      }))].filter(Boolean).sort();
-      const allCats = [...new Set(docs.map(d => d.categoria_classificacao || '')).filter(Boolean)].sort();
-
       container.innerHTML = `
         <div class="space-y-6">
           <div class="flex items-center justify-between pb-4 border-b border-codex-borderGold/30">
@@ -1162,58 +1079,13 @@
               <p class="text-xs text-codex-parchmentMuted">Arquivos lidos dinamicamente de <code>gdd/${folder}/</code></p>
             </div>
           </div>
-
-          <!-- Painel de Filtros FASE 2 -->
-          <div class="codex-card p-4 rounded-xl space-y-3 bg-codex-950/40">
-            <div class="flex items-center gap-2 font-cinzel text-xs text-codex-gold uppercase tracking-wider">🔍 Filtros Avançados</div>
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3 text-xs">
-              <div>
-                <label class="block text-codex-parchmentMuted mb-1">Status</label>
-                <select id="filterStatus" class="w-full px-2 py-1.5 bg-codex-850 border border-codex-borderGold/30 rounded text-codex-parchment focus:border-codex-gold focus:outline-none">
-                  <option value="">Todos</option>
-                  ${allStatus.map(s => `<option value="${s}">${s}</option>`).join('')}
-                </select>
-              </div>
-              <div>
-                <label class="block text-codex-parchmentMuted mb-1">Tipo Info</label>
-                <select id="filterTipo" class="w-full px-2 py-1.5 bg-codex-850 border border-codex-borderGold/30 rounded text-codex-parchment focus:border-codex-gold focus:outline-none">
-                  <option value="">Todos</option>
-                  ${allTipos.map(t => `<option value="${t}">${t}</option>`).join('')}
-                </select>
-              </div>
-              <div>
-                <label class="block text-codex-parchmentMuted mb-1">Categoria</label>
-                <select id="filterCat" class="w-full px-2 py-1.5 bg-codex-850 border border-codex-borderGold/30 rounded text-codex-parchment focus:border-codex-gold focus:outline-none">
-                  <option value="">Todas</option>
-                  ${allCats.map(c => `<option value="${c}">${c}</option>`).join('')}
-                </select>
-              </div>
-              <div>
-                <label class="block text-codex-parchmentMuted mb-1">Tags</label>
-                <select id="filterTag" class="w-full px-2 py-1.5 bg-codex-850 border border-codex-borderGold/30 rounded text-codex-parchment focus:border-codex-gold focus:outline-none">
-                  <option value="">Todas</option>
-                  ${allTags.map(t => `<option value="${t}">${t}</option>`).join('')}
-                </select>
-              </div>
-              <div>
-                <label class="block text-codex-parchmentMuted mb-1">Entidade</label>
-                <input type="text" id="filterEntidade" placeholder="INFO-XXX ou NPC-XXX" class="w-full px-2 py-1.5 bg-codex-850 border border-codex-borderGold/30 rounded text-codex-parchment focus:border-codex-gold focus:outline-none font-mono">
-              </div>
-            </div>
-            <button onclick="clearFilters()" class="px-3 py-1.5 bg-codex-800 hover:bg-codex-gold hover:text-codex-950 rounded text-xs font-cinzel transition">Limpar Filtros</button>
-          </div>
-
-          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="filteredDocsContainer">
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             ${docs.map(doc => `
-              <div class="codex-card rounded-xl overflow-hidden flex flex-col justify-between cursor-pointer group filterable-doc" data-path="${doc.path}" data-status="${doc.status || 'CANONICO'}" data-tipo="${JSON.stringify(doc.tipo_informacao || '')}" data-cat="${doc.categoria_classificacao || ''}" data-tags="${JSON.stringify(doc.tags || [])}" data-entidade="${doc.entidade_principal || ''}" onclick="openInspector('${doc.path}')">
+              <div class="codex-card rounded-xl overflow-hidden flex flex-col justify-between cursor-pointer group" onclick="openInspector('${doc.path}')">
                 <div>
                   <div class="h-44 bg-codex-900 relative overflow-hidden flex items-center justify-center border-b border-codex-borderGold/20">
                     ${doc.imagem ? `<img src="${doc.imagem}" alt="${doc.nome}" onerror="handleCardImgError(this, '${doc.id}', '${doc.nome}')" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">` : `<span class="text-3xl">📁</span>`}
                     <span class="absolute top-2 left-2 font-mono text-[10px] text-codex-gold bg-codex-950/80 px-2 py-0.5 rounded border border-codex-borderGold/40">${doc.id}</span>
-                    <div class="absolute top-2 right-2 flex gap-1">
-                      ${doc.status ? `<span class="wax-seal seal-${doc.status.toLowerCase().replace('_','-')}" style="font-size: 7px;">${doc.status}</span>` : ''}
-                      ${doc.tipo_informacao ? `<span class="px-1.5 py-0.5 bg-codex-950/80 text-[7px] text-codex-parchmentMuted rounded border border-codex-borderGold/20 font-mono">${doc.tipo_informacao}</span>` : ''}
-                    </div>
                   </div>
                   <div class="p-4 text-xs font-tome text-codex-parchmentMuted line-clamp-3">
                     <h3 class="font-cinzel font-bold text-base text-white mb-1">${doc.nome}</h3>
@@ -1231,9 +1103,6 @@
           </div>
         </div>
       `;
-
-      // Inicializar filtros
-      setupFilters();
     }
 
     function renderDiarioView() { renderCustomCategoryView('01-lore'); }
@@ -1531,72 +1400,8 @@ ${descricao || 'Nova categoria documental criada via Códice.'}
         dropdown.classList.remove('hidden');
       });
 
-loadRepositoryLive();
-
-    // FASE 2: Sistema de Filtros Avançados
-    function setupFilters() {
-      const statusSel = document.getElementById('filterStatus');
-      const tipoSel = document.getElementById('filterTipo');
-      const catSel = document.getElementById('filterCat');
-      const tagSel = document.getElementById('filterTag');
-      const entidadeInp = document.getElementById('filterEntidade');
-      const container = document.getElementById('filteredDocsContainer');
-      if (!container) return;
-
-      const cards = container.querySelectorAll('.filterable-doc');
-
-      function applyFilters() {
-        const statusVal = statusSel?.value || '';
-        const tipoVal = tipoSel?.value || '';
-        const catVal = catSel?.value || '';
-        const tagVal = tagSel?.value || '';
-        const entidadeVal = (entidadeInp?.value || '').trim().toLowerCase();
-
-        cards.forEach(card => {
-          const docStatus = card.dataset.status || 'CANONICO';
-          const docTipo = card.dataset.tipo || '';
-          const docCat = card.dataset.cat || '';
-          const docTags = card.dataset.tags || '[]';
-          const docEntidade = (card.dataset.entidade || '').toLowerCase();
-
-          let show = true;
-          if (statusVal && docStatus !== statusVal) show = false;
-          if (tipoVal && docTipo !== `"${tipoVal}"`) show = false;
-          if (catVal && docCat !== catVal) show = false;
-          if (tagVal) {
-            let tags = [];
-            try { tags = JSON.parse(docTags); } catch { tags = []; }
-            if (!tags.includes(tagVal)) show = false;
-          }
-          if (entidadeVal && !docEntidade.includes(entidadeVal)) show = false;
-
-          card.style.display = show ? '' : 'none';
-        });
-      }
-
-      [statusSel, tipoSel, catSel, tagSel].forEach(sel => {
-        sel?.addEventListener('change', applyFilters);
-      });
-      entidadeInp?.addEventListener('input', applyFilters);
-    }
-
-    function clearFilters() {
-      const statusSel = document.getElementById('filterStatus');
-      const tipoSel = document.getElementById('filterTipo');
-      const catSel = document.getElementById('filterCat');
-      const tagSel = document.getElementById('filterTag');
-      const entidadeInp = document.getElementById('filterEntidade');
-      const container = document.getElementById('filteredDocsContainer');
-      if (!container) return;
-
-      statusSel?.value = '';
-      tipoSel?.value = '';
-      catSel?.value = '';
-      tagSel?.value = '';
-      entidadeInp?.value = '';
-
-      const cards = container.querySelectorAll('.filterable-doc');
-      cards.forEach(card => card.style.display = '');
-    }
-
-    loadRepositoryLive();
+      loadRepositoryLive();
+    });
+  </script>
+</body>
+</html>
