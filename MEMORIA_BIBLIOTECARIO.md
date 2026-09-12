@@ -2,7 +2,7 @@
 
 > **DIRETÓRIO OFICIAL DE MEMÓRIA:** `F:\Bibliotecário_GDD`  
 > **FUNÇÃO DO DOCUMENTO:** Registro consolidado, fidedigno e persistente do estado, lore canônica, mecânicas e sistemas do projeto **Batalhas Poderosas** entre sessões de desenvolvimento.  
-> **ÚLTIMA ATUALIZAÇÃO:** 11/09/2026  
+> **ÚLTIMA ATUALIZAÇÃO:** 12/09/2026  
 
 ---
 
@@ -239,7 +239,43 @@ Todos os 20+ NPCs da vila utilizam rig oficial **R15 com malha arredondada (Rig 
 
 **Pendência técnica:** Resolver cache do navegador (imagens não atualizam sem navegação anônima). Solução: adicionar meta tags de cache-busting ou query string versionada no `index.html`.
 
-### 8B. Outras pendências do backlog
+---
+
+## 8B. Upgrade do Mini-site para Códice v2.8.0 (implementado 12/09/2026)
+**Objetivo:** Substituir `index.html` (GDD v2.7) por `minisite_v2.8.0` — leitor 100% ao vivo do `/gdd/`, sem `defaultData` hardcoded, com:
+- Leitura dinâmica da árvore GitHub (`/git/trees/main?recursive=1`)
+- Parse de frontmatter YAML + Markdown
+- CRUD de categorias inteiras via GitHub Contents API
+- Inspetor canônico interativo
+- Fallback heráldico de assets (brasão medieval + ID)
+- Version Guard anti-cache (`v2.8.0-20260912`)
+
+**Estado:** ✅ **IMPLEMENTADO E PUBLICADO** — commit `35fe65e` em 12/09/2026.
+- Backup da versão anterior: `index.html.backup_20260912`
+- Testado localmente: dados carregam do GitHub, 4 contadores, cards clicáveis, fallback heráldico, busca, modal de categoria/edição.
+
+**Plano de Rollback (se necessário):**
+1. `Copy-Item index.html.backup_20260912 index.html -Force`
+2. Commit semântico `revert(site): rollback Códice v2.8.0`
+
+---
+
+## 8C. Campos `imagem:` preenchidos em 30 entidades (12/09/2026)
+**Objetivo:** Substituir fallback heráldico por fotos reais nas 30 entidades que já têm arquivo em `assets/`.
+
+| Tipo | Entidades atualizadas | Arquivo de asset |
+| :--- | :--- | :--- |
+| **NPCs (14)** | NPC-000 a NPC-013 | `assets/npcs/NPC-XXX.jpg|png` |
+| **Locais (9)** | LOCAL-001 a LOCAL-009 | `assets/locais/LOCAL-XXX.png` |
+| **Itens (4)** | ITEM-001 a ITEM-004 | `assets/itens/ITEM-XXX.png` |
+
+**Commit:** `2e3105e` — campo `imagem:` adicionado ao frontmatter de todos os 30 arquivos `.md`.
+
+**Resultado:** Ao recarregar o Códice v2.8.0 (com PAT), todas as 30 entidades exibem sua foto real. O fallback heráldico permanece apenas para entidades futuras sem asset.
+
+---
+
+## 8D. Outras pendências do backlog
 
 1. **Animações Personalizadas:**
    - Preencher `ID_ANIMACAO_CONVERSA_PADRAO` em `ServerScriptService.ComportamentoNPC` quando o dono fornecer a animação de gesticulação de conversa em loop.
