@@ -6,6 +6,7 @@ categoria: "npcs"
 subcategoria: "npcs"
 status: "EM_CONSTRUCAO"
 entidade_ref: "NPC-001"
+imagem: "./assets/npcs/NPC-001.jpg"
 resumo: "Dossiê aprofundado do Ferreiro Real de Arkham, Mestre Cedric. Documenta sua linhagem, formação, personalidade, conhecimentos ancestrais da forja, relação com a Árvore Sagrada e Eldrin, e sua conexão histórica remota com Alric (Rei Mago)."
 tags: ["ferreiro", "linhagem", "forja-ancestral", "arvore-sagrada", "alric"]
 relacionados: ["DOSSIER-002", "DOSSIER-003"]
