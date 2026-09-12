@@ -696,7 +696,12 @@
               const text = await res.text();
               const parsed = parseFrontmatter(text);
               const parts = item.path.split('/');
-              const folder = parts[1] || 'geral';
+              
+              // Inteligência de Pastas: Se estiver em 06-dossies, precisamos salvar a subpasta para não misturar tudo
+              let folder = parts[1] || 'geral';
+              if (folder === '06-dossies' && parts[2] && parts[2].endsWith('.md') === false) {
+                  folder = `${parts[1]}/${parts[2]}`; // ex: '06-dossies/02-npcs'
+              }
 
               return {
                 path: item.path,
@@ -707,7 +712,13 @@
                 localizacao: parsed.meta.localizacao || '',
                 status: parsed.meta.status || 'CANONICO',
                 imagem: parsed.meta.imagem ? resolveAssetUrl(parsed.meta.imagem) : '',
-                markdown: parsed.markdown
+                markdown: parsed.markdown,
+                // Metadados Fase 2 em tempo real:
+                info_id: parsed.meta.info_id || '',
+                entidade_principal: parsed.meta.entidade_principal || '',
+                tipo_informacao: parsed.meta.tipo_informacao || '',
+                categoria_classificacao: parsed.meta.categoria_classificacao || '',
+                tags: parsed.meta.tags ? (typeof parsed.meta.tags === 'string' ? JSON.parse(parsed.meta.tags) : parsed.meta.tags) : []
               };
             }
           } catch(e) {}
