@@ -8,8 +8,8 @@
   <meta http-equiv="Expires" content="0">
   <title>Batalhas Poderosas — Códice Real & Leitor Dinâmico</title>
   
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script></script>
+  <script></script>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -1138,33 +1138,33 @@
       renderLivroView();
     }
 
-    function formatBookParagraphs(rawText) {
-      if (!rawText) return '';
-      const paragraphs = rawText.split('\\n\\n').filter(p => p.trim());
-      return paragraphs.map((p, idx) => {
-        let clean = p.trim();
-        if (idx === 0 && clean.length > 2 && !clean.startsWith('[')) {
-          const firstChar = clean.charAt(0);
-          const rest = clean.slice(1);
-          return \`<p class="leading-relaxed mb-4 text-justify"><span class="drop-cap" style="float:left;font-family:'Cinzel',serif;font-size:2.8rem;line-height:0.8;padding-right:8px;color:#cba338;">\${firstChar}</span>\${rest.replace(/\\n/g, '<br>')}</p>\`;
-        }
-        return \`<p class="leading-relaxed mb-4 text-justify">\${clean.replace(/\\n/g, '<br>')}</p>\`;
-      }).join('');
-    }
-
-    function getLivroStatusBadge(status) {
-      switch(status) {
-        case 'CANONICO': return \`<span class="px-2 py-0.5 rounded text-[10px] font-bold bg-emerald-950 text-emerald-400 border border-emerald-600/50">✅ CANÔNICO</span>\`;
-        case 'EM_CONSTRUCAO': return \`<span class="px-2 py-0.5 rounded text-[10px] font-bold bg-amber-950 text-amber-400 border border-amber-600/50">🟡 EM DEV</span>\`;
-        default: return \`<span class="px-2 py-0.5 rounded text-[10px] font-bold bg-codex-800 text-codex-parchmentMuted">⚪ \${status}</span>\`;
+function formatBookParagraphs(rawText) {
+        if (!rawText) return '';
+        const paragraphs = rawText.split('\\n\\n').filter(p => p.trim());
+        return paragraphs.map((p, idx) => {
+          let clean = p.trim();
+          if (idx === 0 && clean.length > 2 && !clean.startsWith('[')) {
+            const firstChar = clean.charAt(0);
+            const rest = clean.slice(1);
+            return '<p class="leading-relaxed mb-4 text-justify"><span class="drop-cap" style="float:left;font-family:\'Cinzel\',serif;font-size:2.8rem;line-height:0.8;padding-right:8px;color:#cba338;">' + firstChar + '</span>' + rest.replace(/\\n/g, '<br>') + '</p>';
+          }
+          return '<p class="leading-relaxed mb-4 text-justify">' + clean.replace(/\\n/g, '<br>') + '</p>';
+        }).join('');
       }
-    }
+
+      function getLivroStatusBadge(status) {
+        switch(status) {
+          case 'CANONICO': return '<span class="px-2 py-0.5 rounded text-[10px] font-bold bg-emerald-950 text-emerald-400 border border-emerald-600/50">✅ CANÔNICO</span>';
+          case 'EM_CONSTRUCAO': return '<span class="px-2 py-0.5 rounded text-[10px] font-bold bg-amber-950 text-amber-400 border border-amber-600/50">🟡 EM DEV</span>';
+          default: return '<span class="px-2 py-0.5 rounded text-[10px] font-bold bg-codex-800 text-codex-parchmentMuted">⚪ ' + status + '</span>';
+        }
+      }
 
     function renderLivroView() {
       const container = document.getElementById('pageContainer');
       const docs = appDb.livro;
       
-      container.innerHTML = \`
+      container.innerHTML = `
         <div class="space-y-6 max-w-6xl mx-auto">
           <div class="pb-4 border-b border-codex-borderGold/30 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
             <div>
@@ -1183,17 +1183,17 @@
             </div>
           </div>
 
-          \${bookDisplayMode === 'tomo' ? \`
+          \${bookDisplayMode === 'tomo' ? `
             <!-- ================= TOMO / LIVRO MEDIEVAL VIVO ================= -->
             <div class="tome-leather rounded-2xl p-3 sm:p-6 lg:p-8 shadow-2xl relative border-4 border-[#6b5329]">
               <div class="flex items-center gap-2 overflow-x-auto pb-4 mb-4 border-b border-codex-gold/20 custom-scrollbar">
                 <span class="font-cinzel text-xs text-codex-gold font-bold uppercase tracking-wider shrink-0 pl-2">Crônicas:</span>
-                \${docs.map((doc, idx) => \`
+                \${docs.map((doc, idx) => `
                   <button onclick="selectBookChapter(\${idx})" 
                     class="px-3.5 py-1.5 rounded-t-lg text-xs font-cinzel transition shrink-0 flex items-center gap-1.5 border-t border-x \${idx === currentBookChapterIndex ? 'bg-[#201a28] text-codex-gold font-bold border-codex-gold/60 shadow-inner' : 'bg-codex-950/60 text-codex-parchmentMuted hover:text-codex-parchment border-codex-borderGold/20 hover:bg-codex-900'}">
                     <span>\${doc.id}</span>
                   </button>
-                \`).join('')}
+                `).join('')}
               </div>
 
               <div class="grid grid-cols-1 lg:grid-cols-12 gap-0 bg-[#16131d] rounded-xl border border-codex-gold/30 overflow-hidden shadow-2xl">
@@ -1244,10 +1244,10 @@
                 </div>
               </div>
             </div>
-          \` : \`
+          ` : `
             <!-- ================= MODO ÍNDICE EXPANDIDO ================= -->
             <div class="space-y-6">
-              \${docs.map((doc, capIdx) => \`
+              \${docs.map((doc, capIdx) => `
                 <div class="codex-card p-6 rounded-2xl space-y-4">
                   <div class="flex items-center justify-between gap-2 border-b border-codex-borderGold/30 pb-3">
                     <div class="flex items-center gap-3">
@@ -1262,11 +1262,11 @@
                     <button onclick="setBookMode('tomo'); selectBookChapter(\${capIdx});" class="text-[11px] text-codex-gold hover:underline pt-1 inline-block">Ler no Tomo ↗</button>
                   </div>
                 </div>
-              \`).join('')}
+              `).join('')}
             </div>
-          \`}
+          `}
         </div>
-      \`;
+      `;
     }
 
     function renderCustomCategoryView(folder) {
