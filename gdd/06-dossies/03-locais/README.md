@@ -1,0 +1,1 @@
+---\ncategoria: "locais"\npasta: "gdd/06-dossies/03-locais"\n---\n\n# locais\n\nCategoria de dossiês em construção.
