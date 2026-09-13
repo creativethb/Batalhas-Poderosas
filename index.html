@@ -1041,40 +1041,167 @@
           </div>
         </div>
       `;
+}
+
+    let currentBookChapterIndex = 0;
+    let currentBookCronicaIndex = 0;
+    let bookDisplayMode = 'tomo'; // 'tomo' ou 'indice'
+    
+    function setBookMode(mode) {
+      bookDisplayMode = mode;
+      renderLivroView();
+    }
+    function selectBookChapter(idx) {
+      currentBookChapterIndex = idx;
+      currentBookCronicaIndex = 0;
+      renderLivroView();
+    }
+    function selectBookCronica(idx) {
+      currentBookCronicaIndex = idx;
+      renderLivroView();
+    }
+    function prevBookCronica() {
+      if (currentBookCronicaIndex > 0) currentBookCronicaIndex--;
+      else if (currentBookChapterIndex > 0) {
+        currentBookChapterIndex--;
+        currentBookCronicaIndex = 0;
+      }
+      renderLivroView();
+    }
+    function nextBookCronica() {
+      currentBookCronicaIndex++;
+      renderLivroView();
+    }
+
+    function formatBookParagraphs(rawText) {
+      if (!rawText) return '';
+      const paragraphs = rawText.split('\\n\\n').filter(p => p.trim());
+      return paragraphs.map((p, idx) => {
+        let clean = p.trim();
+        if (idx === 0 && clean.length > 2 && !clean.startsWith('[')) {
+          const firstChar = clean.charAt(0);
+          const rest = clean.slice(1);
+          return \`<p class="leading-relaxed mb-4 text-justify"><span class="drop-cap" style="float:left;font-family:'Cinzel',serif;font-size:2.8rem;line-height:0.8;padding-right:8px;color:#cba338;">\${firstChar}</span>\${rest.replace(/\\n/g, '<br>')}</p>\`;
+        }
+        return \`<p class="leading-relaxed mb-4 text-justify">\${clean.replace(/\\n/g, '<br>')}</p>\`;
+      }).join('');
+    }
+
+    function getLivroStatusBadge(status) {
+      switch(status) {
+        case 'CANONICO': return \`<span class="px-2 py-0.5 rounded text-[10px] font-bold bg-emerald-950 text-emerald-400 border border-emerald-600/50">✅ CANÔNICO</span>\`;
+        case 'EM_CONSTRUCAO': return \`<span class="px-2 py-0.5 rounded text-[10px] font-bold bg-amber-950 text-amber-400 border border-amber-600/50">🟡 EM DEV</span>\`;
+        default: return \`<span class="px-2 py-0.5 rounded text-[10px] font-bold bg-codex-800 text-codex-parchmentMuted">⚪ \${status}</span>\`;
+      }
     }
 
     function renderLivroView() {
       const container = document.getElementById('pageContainer');
       const docs = appDb.livro;
-      container.innerHTML = `
+      
+      container.innerHTML = \`
         <div class="space-y-6 max-w-6xl mx-auto">
-          <div class="pb-4 border-b border-codex-borderGold/30">
-            <h2 class="font-cinzel text-3xl font-bold text-codex-goldBright">O Grande Livro de Arkan</h2>
-            <p class="text-xs text-codex-parchmentMuted">Crônicas lidas diretamente de <code>gdd/01-lore/</code></p>
-          </div>
-          <div class="tome-leather rounded-2xl p-6 lg:p-8 shadow-2xl relative border-4 border-[#5d471d]">
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-0 bg-[#16131d] rounded-xl border border-codex-borderGold/30 overflow-hidden shadow-2xl">
-              <div class="lg:col-span-5 tome-page tome-page-left p-6 sm:p-8 flex flex-col justify-between border-b lg:border-b-0 lg:border-r border-codex-borderGold/20">
-                <div>
-                  <span class="font-cinzel text-xs text-codex-gold uppercase font-bold block mb-2">Crônicas Encontradas:</span>
-                  <div class="space-y-1.5">
-                    ${docs.map((doc, idx) => `
-                      <button onclick="openInspector('${doc.path}')" class="w-full text-left p-2 rounded text-xs transition flex items-center justify-between text-codex-parchment hover:bg-codex-850">
-                        <span>${doc.nome}</span>
-                        <span class="font-mono text-[10px] text-codex-gold">${doc.id}</span>
-                      </button>
-                    `).join('')}
-                  </div>
-                </div>
-                <div class="pt-4 border-t border-codex-borderGold/20 text-[11px] text-codex-parchmentMuted font-mono">Reino de Arkan</div>
-              </div>
-              <div class="lg:col-span-7 tome-page tome-page-right p-6 sm:p-8 flex flex-col justify-center items-center text-center text-codex-parchmentMuted font-tome text-lg">
-                Selecione uma crônica à esquerda para abrir a leitura completa.
-              </div>
+          <div class="pb-4 border-b border-codex-borderGold/30 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+            <div>
+              <h2 class="font-cinzel text-3xl font-bold text-codex-goldBright">O Grande Livro de Arkan</h2>
+              <p class="text-xs text-codex-parchmentMuted">Crônicas lidas diretamente de <code>gdd/01-lore/</code></p>
+            </div>
+            <div class="flex items-center gap-2">
+              <button onclick="setBookMode('tomo')" 
+                class="px-3 py-1.5 rounded-lg text-xs font-semibold transition flex items-center gap-1.5 border \${bookDisplayMode === 'tomo' ? 'bg-codex-gold text-codex-950 border-codex-gold shadow-lg font-bold' : 'bg-codex-850 text-codex-parchment hover:bg-codex-800 border-codex-borderGold/30'}">
+                <span>📖</span> Tomo Ilustrado
+              </button>
+              <button onclick="setBookMode('indice')" 
+                class="px-3 py-1.5 rounded-lg text-xs font-semibold transition flex items-center gap-1.5 border \${bookDisplayMode === 'indice' ? 'bg-codex-gold text-codex-950 border-codex-gold shadow-lg font-bold' : 'bg-codex-850 text-codex-parchment hover:bg-codex-800 border-codex-borderGold/30'}">
+                <span>📜</span> Índice Expandido
+              </button>
             </div>
           </div>
+
+          \${bookDisplayMode === 'tomo' ? \`
+            <!-- ================= TOMO / LIVRO MEDIEVAL VIVO ================= -->
+            <div class="tome-leather rounded-2xl p-3 sm:p-6 lg:p-8 shadow-2xl relative border-4 border-[#6b5329]">
+              <div class="flex items-center gap-2 overflow-x-auto pb-4 mb-4 border-b border-codex-gold/20 custom-scrollbar">
+                <span class="font-cinzel text-xs text-codex-gold font-bold uppercase tracking-wider shrink-0 pl-2">Crônicas:</span>
+                \${docs.map((doc, idx) => \`
+                  <button onclick="selectBookChapter(\${idx})" 
+                    class="px-3.5 py-1.5 rounded-t-lg text-xs font-cinzel transition shrink-0 flex items-center gap-1.5 border-t border-x \${idx === currentBookChapterIndex ? 'bg-[#201a28] text-codex-gold font-bold border-codex-gold/60 shadow-inner' : 'bg-codex-950/60 text-codex-parchmentMuted hover:text-codex-parchment border-codex-borderGold/20 hover:bg-codex-900'}">
+                    <span>\${doc.id}</span>
+                  </button>
+                \`).join('')}
+              </div>
+
+              <div class="grid grid-cols-1 lg:grid-cols-12 gap-0 bg-[#16131d] rounded-xl border border-codex-gold/30 overflow-hidden shadow-2xl">
+                <div class="lg:col-span-5 tome-page tome-page-left p-6 sm:p-8 flex flex-col justify-between border-b lg:border-b-0 lg:border-r border-codex-borderGold/20">
+                  <div>
+                    <div class="flex items-center justify-between gap-2 mb-3">
+                      <span class="font-cinzel text-xs tracking-widest text-codex-gold uppercase font-bold">Volume I • Crônicas de Arkan</span>
+                      \${getLivroStatusBadge(docs[currentBookChapterIndex]?.status || 'CANONICO')}
+                    </div>
+                    
+                    <h3 class="font-cinzel text-2xl font-extrabold text-codex-parchment tracking-wide mb-1">\${docs[currentBookChapterIndex]?.nome || ''}</h3>
+
+                    <div style="flex:1;height:1px;background:linear-gradient(90deg,transparent,rgba(203,163,56,0.4),transparent);margin:1.5rem 0;"></div>
+
+                    <div class="space-y-2 mb-6">
+                      <div class="p-4 bg-codex-950/40 rounded-lg text-xs text-codex-parchmentMuted font-tome leading-relaxed">
+                        \${safeMarkdown(docs[currentBookChapterIndex]?.markdown || '').substring(0, 300)}...
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="pt-4 border-t border-codex-gold/20 flex items-center justify-between text-[11px] text-codex-parchmentMuted">
+                    <span class="font-cinzel text-codex-gold/80">Reino de Arkan</span>
+                    <span class="font-mono">Página \${currentBookChapterIndex * 2 - 1}</span>
+                  </div>
+                </div>
+
+                <div class="lg:col-span-7 tome-page tome-page-right p-6 sm:p-8 flex flex-col justify-between min-h-[480px]">
+                  <div>
+                    <div class="flex items-center justify-between gap-2 mb-2">
+                      <span class="font-mono text-[10px] text-codex-gold bg-codex-950 px-2 py-0.5 rounded border border-codex-gold/40">\${docs[currentBookChapterIndex]?.id || ''}</span>
+                    </div>
+
+                    <div class="prose-medieval text-sm sm:text-base text-codex-parchment/90 font-serif leading-relaxed" style="font-family: 'Cormorant Garamond', Georgia, serif;">
+                      \${formatBookParagraphs(docs[currentBookChapterIndex]?.markdown || '')}
+                    </div>
+                  </div>
+
+                  <div class="pt-6 mt-6 border-t border-codex-gold/20 flex items-center justify-between text-xs">
+                    <button onclick="prevBookCronica()" class="px-3 py-1.5 bg-codex-900/80 hover:bg-codex-800 text-codex-gold rounded border border-codex-gold/30 transition flex items-center gap-1">
+                      <span>◀</span> <span class="hidden sm:inline">Anterior</span>
+                    </button>
+                    <span class="font-mono text-[11px] text-codex-parchmentMuted">Página \${currentBookChapterIndex * 2}</span>
+                    <button onclick="nextBookCronica()" class="px-3 py-1.5 bg-codex-900/80 hover:bg-codex-800 text-codex-gold rounded border border-codex-gold/30 transition flex items-center gap-1">
+                      <span class="hidden sm:inline">Próxima</span> <span>▶</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          \` : \`
+            <!-- ================= MODO ÍNDICE EXPANDIDO ================= -->
+            <div class="space-y-6">
+              \${docs.map((doc, capIdx) => \`
+                <div class="codex-card p-6 rounded-2xl space-y-4">
+                  <div class="flex items-center justify-between gap-2 border-b border-codex-borderGold/30 pb-3">
+                    <div class="flex items-center gap-3">
+                      <span class="font-cinzel text-codex-gold font-bold text-xl">\${doc.id}</span>
+                      <h3 class="font-cinzel font-bold text-lg text-codex-parchment">\${doc.nome}</h3>
+                    </div>
+                    \${getLivroStatusBadge(doc.status)}
+                  </div>
+                  
+                  <div class="p-4 bg-codex-950/70 rounded-xl border border-codex-borderGold/20 space-y-2">
+                    <p class="text-sm text-codex-parchmentMuted leading-relaxed font-tome">\${safeMarkdown(doc.markdown).substring(0, 500)}...</p>
+                    <button onclick="setBookMode('tomo'); selectBookChapter(\${capIdx});" class="text-[11px] text-codex-gold hover:underline pt-1 inline-block">Ler no Tomo ↗</button>
+                  </div>
+                </div>
+              \`).join('')}
+            </div>
+          \`}
         </div>
-      `;
+      \`;
     }
 
     function renderCustomCategoryView(folder) {
@@ -1116,15 +1243,75 @@
       `;
     }
 
-    function renderDiarioView() { renderCustomCategoryView('01-lore'); }
-    function renderGameplayView() { renderCustomCategoryView('02-gameplay'); }
-    function renderSistemasView() { renderCustomCategoryView('02-gameplay'); }
-    function renderHistoriaView() { renderCustomCategoryView('01-lore'); }
-    function renderReferenciasView() { renderCustomCategoryView('03-npcs'); }
-    function renderChangelogView() { renderCustomCategoryView('99-canon'); }
-    function renderEstadoView() { renderDashboardView(); }
-    function renderTimelineView() { renderDashboardView(); }
-    function renderSaudeView() { renderDashboardView(); }
+function renderDiarioView() { renderCustomCategoryView('01-lore'); }
+      function renderGameplayView() { renderCustomCategoryView('02-gameplay'); }
+      function renderSistemasView() { renderCustomCategoryView('02-gameplay'); }
+      function renderHistoriaView() { renderCustomCategoryView('01-lore'); }
+      function renderReferenciasView() { renderCustomCategoryView('03-npcs'); }
+      function renderChangelogView() { renderCustomCategoryView('99-canon'); }
+      function renderEstadoProducaoView() {
+        const container = document.getElementById('pageContainer');
+        container.innerHTML = `
+          <div class="space-y-6">
+            <div class="pb-4 border-b border-codex-borderGold/30">
+              <h2 class="font-cinzel text-2xl font-bold text-codex-goldBright">Estado da Produção</h2>
+              <p class="text-xs text-codex-parchmentMuted">Visão consolidada das frentes do GDD e do Roblox Studio.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <div class="codex-card p-5 rounded-xl space-y-4 border-emerald-800/40 bg-emerald-950/10">
+                <div class="flex items-center justify-between"><h3 class="font-cinzel font-bold text-sm text-emerald-400">Implementado</h3><span class="w-2 h-2 rounded-full bg-emerald-400"></span></div>
+                <ul class="space-y-2 text-xs font-tome">
+                  <li class="p-2 bg-codex-900 rounded border border-codex-borderGold/20">✅ Leitor ao vivo do GDD via GitHub API</li>
+                  <li class="p-2 bg-codex-900 rounded border border-codex-borderGold/20">✅ Masterplan da Fazenda de Arkan (26/26)</li>
+                  <li class="p-2 bg-codex-900 rounded border border-codex-borderGold/20">✅ Sistema de Dossiês (Fase 1 e 2)</li>
+                </ul>
+              </div>
+              <div class="codex-card p-5 rounded-xl space-y-4 border-amber-800/40 bg-amber-950/10">
+                <div class="flex items-center justify-between"><h3 class="font-cinzel font-bold text-sm text-amber-400">Em Desenvolvimento</h3><span class="w-2 h-2 rounded-full bg-amber-400"></span></div>
+                <ul class="space-y-2 text-xs font-tome">
+                  <li class="p-2 bg-codex-900 rounded border border-codex-borderGold/20">🟡 Grafo de Relações (Fase 3)</li>
+                  <li class="p-2 bg-codex-900 rounded border border-codex-borderGold/20">🟡 Sincronização automática Livro/Diário</li>
+                </ul>
+              </div>
+              <div class="codex-card p-5 rounded-xl space-y-4 border-purple-800/40 bg-purple-950/10">
+                <div class="flex items-center justify-between"><h3 class="font-cinzel font-bold text-sm text-purple-400">Planejado</h3><span class="w-2 h-2 rounded-full bg-purple-400"></span></div>
+                <ul class="space-y-2 text-xs font-tome">
+                  <li class="p-2 bg-codex-900 rounded border border-codex-borderGold/20">🟣 Protocolo do Bibliotecário automatizado</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        `;
+      }
+
+      function renderLinhaTempoView() {
+        const container = document.getElementById('pageContainer');
+        container.innerHTML = `
+          <div class="space-y-6 max-w-3xl">
+            <div class="pb-4 border-b border-codex-borderGold/30">
+              <h2 class="font-cinzel text-2xl font-bold text-codex-goldBright">Linha do Tempo da Produção</h2>
+              <p class="text-xs text-codex-parchmentMuted">Marcos de engenharia e direção criativa no Roblox Studio e GDD.</p>
+            </div>
+            <div class="space-y-6 border-l-2 border-codex-borderGold/30 pl-6 ml-3 font-tome">
+              <div class="relative space-y-1">
+                <div class="absolute -left-[31px] top-1 w-4 h-4 rounded-full bg-codex-gold border-4 border-codex-950"></div>
+                <span class="text-xs font-mono text-codex-gold font-bold">SETEMBRO 2026</span>
+                <h4 class="font-cinzel font-bold text-base text-codex-parchment">Códice v2.8.0 & Arquitetura de Dossiês (Fases 1 e 2)</h4>
+                <p class="text-xs text-codex-parchmentMuted leading-relaxed">Implementação da leitura ao vivo de arquivos Markdown, CRUD de categorias, tags de classificação e rastreabilidade Fase 2.</p>
+              </div>
+              <div class="relative space-y-1">
+                <div class="absolute -left-[31px] top-1 w-4 h-4 rounded-full bg-codex-850 border-4 border-codex-950"></div>
+                <span class="text-xs font-mono text-codex-parchmentMuted font-bold">AGOSTO 2026</span>
+                <h4 class="font-cinzel font-bold text-base text-codex-parchment">Consolidação da Física, Dash & Fazenda de Arkan</h4>
+                <p class="text-xs text-codex-parchmentMuted leading-relaxed">Finalização dos 26 lotes da Fazenda de Arkan e mecânicas corporativas de combate R15.</p>
+              </div>
+            </div>
+          </div>
+        `;
+      }
+      function renderEstadoView() { renderEstadoProducaoView(); }
+      function renderTimelineView() { renderLinhaTempoView(); }
+      function renderSaudeView() { renderSaudeView(); }
 
     /* INSPETOR */
     function openInspector(filePath) {
