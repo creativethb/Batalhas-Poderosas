@@ -6,14 +6,16 @@
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
   <meta http-equiv="Pragma" content="no-cache">
   <meta http-equiv="Expires" content="0">
-  <title>Batalhas Poderosas — Códice Real & Leitor Dinâmico</title>
+  <title>Batalhas Poderosas — Códice & Renderizador Modular</title>
   
-  <script></script>
-  <script></script>
+  <!-- Tailwind CSS & Marked.js -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 
+  <!-- Tipografia: Cinzel (Títulos Nobres), Cormorant Garamond (Livro/Diário), Inter (UI) e JetBrains Mono (Código/IDs) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 
   <script>
     tailwind.config = {
@@ -23,21 +25,21 @@
           colors: {
             codex: {
               950: '#070609',
-              900: '#0d0b13',
-              850: '#14111c',
-              800: '#1c1827',
-              750: '#252033',
+              900: '#0e0c13',
+              850: '#15121c',
+              800: '#1d1927',
+              750: '#262133',
               gold: '#cba338',
-              goldBright: '#f0c754',
-              goldMuted: 'rgba(203, 163, 56, 0.15)',
-              borderGold: 'rgba(203, 163, 56, 0.35)',
-              parchment: '#eee5d5',
-              parchmentMuted: '#a39886'
+              goldBright: '#f5cd5d',
+              borderGold: 'rgba(203, 163, 56, 0.28)',
+              parchment: '#eee6d8',
+              parchmentMuted: '#9e9282'
             }
           },
           fontFamily: {
             cinzel: ['Cinzel', 'Georgia', 'serif'],
             tome: ['"Cormorant Garamond"', 'Georgia', 'serif'],
+            sans: ['Inter', 'sans-serif'],
             mono: ['"JetBrains Mono"', 'monospace']
           }
         }
@@ -48,111 +50,115 @@
   <style>
     body {
       background-color: #070609;
-      color: #eee5d5;
-      font-family: '"Cormorant Garamond"', Georgia, serif;
+      color: #eee6d8;
+      font-family: 'Inter', sans-serif;
       background-image: 
-        radial-gradient(circle at 50% 0%, rgba(203, 163, 56, 0.08) 0%, transparent 40%),
-        radial-gradient(circle at 90% 90%, rgba(168, 85, 247, 0.04) 0%, transparent 40%);
+        radial-gradient(circle at 50% 0%, rgba(203, 163, 56, 0.05) 0%, transparent 45%),
+        radial-gradient(circle at 100% 100%, rgba(168, 85, 247, 0.03) 0%, transparent 40%);
     }
 
-    .codex-card {
+    /* Cartão Base com Borda Dourada Suave */
+    .module-card {
       background: linear-gradient(155deg, #13101b 0%, #0c0a12 100%);
-      border: 1px solid rgba(203, 163, 56, 0.35);
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(203, 163, 56, 0.15);
-      position: relative;
-      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+      border: 1px solid rgba(203, 163, 56, 0.22);
+      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.6);
+      transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
     }
-    .codex-card:hover {
-      border-color: rgba(203, 163, 56, 0.7);
-      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.85), 0 0 16px rgba(203, 163, 56, 0.15);
+    .module-card:hover {
+      border-color: rgba(203, 163, 56, 0.55);
       transform: translateY(-2px);
+      box-shadow: 0 14px 30px -4px rgba(0, 0, 0, 0.8), 0 0 14px rgba(203, 163, 56, 0.1);
     }
 
-    .wax-seal {
+    /* Selos de Canonicidade Oficiais */
+    .canon-badge {
       display: inline-flex;
       align-items: center;
       gap: 4px;
       font-family: 'Cinzel', serif;
       font-weight: 700;
-      font-size: 10px;
+      font-size: 9px;
       letter-spacing: 0.06em;
       text-transform: uppercase;
-      padding: 2px 9px;
+      padding: 2px 8px;
       border-radius: 9999px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.5);
+      border-width: 1px;
     }
-    .seal-canon { background: #082f1f; color: #34d399; border: 1px solid #059669; }
-    .seal-dev { background: #3b2005; color: #fbbf24; border: 1px solid #d97706; }
-    .seal-idea { background: #0c2840; color: #38bdf8; border: 1px solid #0284c7; }
-    .seal-planned { background: #290e3d; color: #c084fc; border: 1px solid #7e22ce; }
+    .badge-canonico { background: #082f1f; color: #34d399; border-color: #059669; }
+    .badge-dev { background: #3b2005; color: #fbbf24; border-color: #d97706; }
+    .badge-ideia { background: #0c2840; color: #38bdf8; border-color: #0284c7; }
+    .badge-planejado { background: #290e3d; color: #c084fc; border-color: #7e22ce; }
+    .badge-descontinuado { background: #3d0e14; color: #f87171; border-color: #b91c1c; }
 
-    .tome-leather {
-      background: radial-gradient(circle at 50% 20%, #1e1826 0%, #100d16 100%);
-      border: 2px solid #5d471d;
-      box-shadow: 0 20px 50px rgba(0,0,0,0.9), inset 0 0 20px rgba(203, 163, 56, 0.15);
+    /* Estilo Especial: Livro de Arkan */
+    .book-leather {
+      background: radial-gradient(circle at 50% 20%, #1c1624 0%, #0d0b13 100%);
+      border: 2px solid #5a451d;
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.95);
     }
-    .tome-page {
-      background: linear-gradient(135deg, #16131d 0%, #100e16 100%);
-      border: 1px solid rgba(203, 163, 56, 0.25);
-    }
-    .tome-page-left { box-shadow: inset -15px 0 25px -10px rgba(0,0,0,0.7); }
-    .tome-page-right { box-shadow: inset 15px 0 25px -10px rgba(0,0,0,0.7); }
-    
     .drop-cap {
       float: left;
       font-family: 'Cinzel', serif;
-      font-size: 2.9rem;
+      font-size: 3.2rem;
       line-height: 0.8;
       padding-top: 4px;
       padding-right: 8px;
       color: #cba338;
       font-weight: bold;
-      text-shadow: 0 2px 10px rgba(203, 163, 56, 0.35);
     }
 
-    .prose-codex h1 { font-family: 'Cinzel', serif; color: #cba338; font-size: 1.6rem; margin: 1.2rem 0 0.6rem 0; font-weight: 700; border-bottom: 1px solid rgba(203, 163, 56, 0.2); padding-bottom: 0.3rem; }
-    .prose-codex h2 { font-family: 'Cinzel', serif; color: #eee5d5; font-size: 1.3rem; margin: 1.1rem 0 0.5rem 0; }
-    .prose-codex h3 { color: #f0c754; font-size: 1.1rem; margin: 0.9rem 0 0.4rem 0; font-family: 'Cinzel', serif; }
-    .prose-codex p { margin-bottom: 0.9rem; line-height: 1.7; font-size: 1.08rem; color: #d8cebe; }
-    .prose-codex ul { list-style: disc; padding-left: 1.4rem; margin-bottom: 0.9rem; color: #d8cebe; }
-    .prose-codex blockquote { border-left: 3px solid #cba338; padding: 0.6rem 1rem; color: #c5b490; font-style: italic; margin: 1rem 0; background: rgba(203, 163, 56, 0.05); }
-    .prose-codex code { background: #1c1827; color: #f0c754; padding: 0.15rem 0.4rem; border-radius: 4px; font-family: 'JetBrains Mono', monospace; font-size: 0.88em; border: 1px solid rgba(203, 163, 56, 0.2); }
+    /* Estilo Especial: Diário de John */
+    .diary-paper {
+      background: linear-gradient(180deg, #16131c 0%, #110e17 100%);
+      border-left: 4px solid #cba338;
+      box-shadow: inset 0 0 40px rgba(0, 0, 0, 0.5);
+    }
 
-    .custom-scrollbar::-webkit-scrollbar { width: 5px; height: 5px; }
-    .custom-scrollbar::-webkit-scrollbar-track { background: #09080c; }
-    .custom-scrollbar::-webkit-scrollbar-thumb { background: #252033; border-radius: 3px; }
+    /* Formatação de Markdown */
+    .prose-codex h1 { font-family: 'Cinzel', serif; color: #cba338; font-size: 1.5rem; margin: 1.2rem 0 0.5rem 0; border-bottom: 1px solid rgba(203, 163, 56, 0.2); padding-bottom: 0.3rem; }
+    .prose-codex h2 { font-family: 'Cinzel', serif; color: #eee6d8; font-size: 1.25rem; margin: 1rem 0 0.4rem 0; }
+    .prose-codex h3 { color: #f5cd5d; font-size: 1.05rem; margin: 0.8rem 0 0.3rem 0; font-family: 'Cinzel', serif; }
+    .prose-codex p { margin-bottom: 0.85rem; line-height: 1.7; font-size: 0.95rem; color: #d6ccbd; }
+    .prose-codex ul { list-style: disc; padding-left: 1.3rem; margin-bottom: 0.85rem; color: #d6ccbd; font-size: 0.95rem; }
+    .prose-codex li { margin-bottom: 0.3rem; }
+    .prose-codex blockquote { border-left: 3px solid #cba338; padding: 0.5rem 1rem; color: #c9bca6; font-style: italic; margin: 0.9rem 0; background: rgba(203, 163, 56, 0.05); }
+    .prose-codex code { background: #1a1624; color: #f5cd5d; padding: 0.15rem 0.4rem; border-radius: 4px; font-family: 'JetBrains Mono', monospace; font-size: 0.85em; border: 1px solid rgba(203, 163, 56, 0.2); }
+
+    .custom-scrollbar::-webkit-scrollbar { width: 4px; height: 4px; }
+    .custom-scrollbar::-webkit-scrollbar-track { background: #070609; }
+    .custom-scrollbar::-webkit-scrollbar-thumb { background: #262133; border-radius: 2px; }
     .custom-scrollbar::-webkit-scrollbar-thumb:hover { background: #cba338; }
   </style>
 </head>
 <body class="min-h-screen flex flex-col antialiased selection:bg-codex-gold selection:text-codex-950">
 
   <!-- ================= TOP BAR ================= -->
-  <header class="sticky top-0 z-30 bg-codex-900/95 border-b border-codex-borderGold backdrop-blur-md px-4 lg:px-6 py-3 flex items-center justify-between gap-3 shadow-2xl">
+  <header class="sticky top-0 z-30 bg-codex-900/95 border-b border-codex-borderGold backdrop-blur-md px-4 lg:px-6 py-3 flex items-center justify-between gap-3 shadow-xl">
     <div class="flex items-center gap-3">
       <button id="btnMobileToggle" class="lg:hidden p-2 text-codex-parchmentMuted hover:text-codex-gold">
         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
       </button>
       
-      <a href="#dashboard" class="flex items-center gap-3.5 group">
-        <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-codex-800 to-codex-950 border border-codex-gold/50 flex items-center justify-center text-xl shadow-inner group-hover:border-codex-goldBright transition">
+      <a href="#dashboard" class="flex items-center gap-3 group">
+        <div class="w-9 h-9 rounded bg-codex-850 border border-codex-borderGold flex items-center justify-center text-lg shadow-inner group-hover:border-codex-goldBright transition">
           ⚔️
         </div>
         <div>
-          <div class="font-cinzel font-bold text-base tracking-wider text-codex-goldBright group-hover:text-codex-gold transition leading-tight flex items-center gap-2">
+          <div class="font-cinzel font-bold text-sm tracking-wider text-codex-goldBright group-hover:text-codex-gold transition leading-tight flex items-center gap-2">
             BATALHAS PODEROSAS
-            <span class="text-[10px] font-mono tracking-normal bg-codex-800 text-codex-gold border border-codex-gold/30 px-1.5 py-0.5 rounded">LEITOR DINÂMICO</span>
+            <span class="text-[9px] font-mono tracking-normal bg-codex-800 text-codex-gold border border-codex-borderGold/40 px-1.5 py-0.5 rounded">RENDERIZADOR DINÂMICO</span>
           </div>
-          <p class="text-xs text-codex-parchmentMuted hidden sm:block">Reino de Arkan • Documento Vivo Canônico</p>
+          <p class="text-[11px] text-codex-parchmentMuted hidden sm:block">Reino de Arkan • Camada de Apresentação Documental</p>
         </div>
       </a>
     </div>
 
-    <!-- Busca Global -->
+    <!-- Busca Global Orientada a Dados -->
     <div class="relative flex-1 max-w-md mx-2">
       <div class="relative">
         <span class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-codex-gold">🔍</span>
         <input type="text" id="globalSearchInput" placeholder="Consultar entidades em /gdd/... (Ctrl+K)" 
-          class="w-full pl-9 pr-10 py-1.5 bg-codex-850 border border-codex-borderGold/40 rounded-lg text-sm font-tome text-codex-parchment placeholder-codex-parchmentMuted/70 focus:outline-none focus:border-codex-gold transition">
+          class="w-full pl-9 pr-10 py-1.5 bg-codex-850 border border-codex-borderGold/40 rounded-lg text-xs font-sans text-codex-parchment placeholder-codex-parchmentMuted/70 focus:outline-none focus:border-codex-gold transition">
         <span class="absolute inset-y-0 right-0 pr-2 flex items-center pointer-events-none">
           <kbd class="hidden sm:inline-block text-[9px] font-mono bg-codex-950 text-codex-parchmentMuted border border-codex-borderGold/40 px-1.5 py-0.5 rounded">Ctrl K</kbd>
         </span>
@@ -160,10 +166,10 @@
       <div id="searchResultsDropdown" class="hidden absolute left-0 right-0 top-full mt-2 bg-codex-900 border border-codex-gold/40 rounded-xl shadow-2xl z-50 max-h-96 overflow-y-auto custom-scrollbar p-2"></div>
     </div>
 
-    <!-- Controles da Direita -->
-    <div class="flex items-center gap-2.5">
-      <button id="btnReloadRepo" title="Recarregar árvore de arquivos diretamente do GitHub" 
-        class="px-2.5 py-1.5 bg-codex-850 hover:bg-codex-800 text-codex-parchmentMuted hover:text-codex-gold border border-codex-borderGold/30 rounded-lg text-xs font-cinzel flex items-center gap-1.5 transition shadow">
+    <!-- Controles de Acesso & Sincronização -->
+    <div class="flex items-center gap-2">
+      <button id="btnHardSync" title="Recarregar documentos do repositório" 
+        class="px-2.5 py-1.5 bg-codex-850 hover:bg-codex-800 text-codex-parchmentMuted hover:text-codex-gold border border-codex-borderGold/40 rounded-lg text-xs font-cinzel flex items-center gap-1.5 transition">
         <span id="syncSpinner">🔄</span>
         <span class="hidden md:inline text-[11px]">Sincronizar Git</span>
       </button>
@@ -175,154 +181,34 @@
     </div>
   </header>
 
-  <!-- ================= CORPO PRINCIPAL ================= -->
+  <!-- ================= LAYOUT PRINCIPAL ================= -->
   <div class="flex-1 flex overflow-hidden">
 
-    <!-- ================= BARRA LATERAL ================= -->
+    <!-- ================= BARRA LATERAL DINÂMICA ================= -->
     <aside id="sidebar" class="fixed lg:static inset-y-0 left-0 z-40 w-64 bg-codex-900 border-r border-codex-borderGold/30 flex flex-col transform -translate-x-full lg:translate-x-0 transition-transform duration-200 ease-in-out shadow-2xl">
       <div class="p-3 border-b border-codex-borderGold/20 flex items-center justify-between lg:hidden">
-        <span class="font-cinzel text-sm text-codex-gold font-semibold">Índice do Códice</span>
+        <span class="font-cinzel text-sm text-codex-gold font-semibold">Índice Geral</span>
         <button id="btnMobileClose" class="p-1 text-codex-parchmentMuted hover:text-white">✕</button>
       </div>
 
-      <!-- Ações do Códice (Exigem Login para Salvar) -->
+      <!-- Ações de Criação (Exigem Autenticação Real) -->
       <div class="p-3 border-b border-codex-borderGold/30 space-y-2 bg-codex-950/40">
         <button id="btnOpenNewModal" class="w-full flex items-center justify-center gap-2 bg-gradient-to-r from-codex-gold to-codex-goldBright text-codex-950 font-cinzel font-bold py-2 px-3 rounded-lg text-xs tracking-wider transition shadow-lg hover:brightness-110">
-          <span>➕</span> NOVO DOCUMENTO (.MD)
+          <span>➕</span> NOVO DOCUMENTO
         </button>
         <button id="btnOpenCategoryModal" class="w-full flex items-center justify-center gap-2 bg-codex-850 hover:bg-codex-800 text-codex-gold border border-codex-borderGold/40 font-cinzel font-bold py-1.5 px-3 rounded-lg text-xs tracking-wider transition">
           <span>📁</span> NOVA CATEGORIA
         </button>
       </div>
 
-      <!-- As 16 Seções Originais Preservadas -->
-      <nav class="flex-1 overflow-y-auto custom-scrollbar p-3 space-y-5 text-sm">
-        <div>
-          <div class="text-[11px] font-cinzel font-bold text-codex-gold uppercase tracking-wider mb-2 px-2 flex items-center justify-between">
-            <span>Projeto</span>
-            <span class="text-[10px] font-mono text-codex-parchmentMuted">Core</span>
-          </div>
-          <ul class="space-y-1">
-            <li><a href="#dashboard" class="nav-link flex items-center gap-2.5 px-2.5 py-1.5 rounded-lg text-codex-parchment hover:bg-codex-850 hover:text-codex-gold transition font-tome text-base">
-              <span>📊</span> Visão Geral & Dashboard
-            </a></li>
-            <li><a href="#estado" class="nav-link flex items-center gap-2.5 px-2.5 py-1.5 rounded-lg text-codex-parchment hover:bg-codex-850 hover:text-codex-gold transition font-tome text-base">
-              <span>⚙️</span> Estado da Produção
-            </a></li>
-            <li><a href="#timeline" class="nav-link flex items-center gap-2.5 px-2.5 py-1.5 rounded-lg text-codex-parchment hover:bg-codex-850 hover:text-codex-gold transition font-tome text-base">
-              <span>⏳</span> Linha do Tempo
-            </a></li>
-          </ul>
-        </div>
-
-        <div>
-          <div class="text-[11px] font-cinzel font-bold text-codex-gold uppercase tracking-wider mb-2 px-2">Universo</div>
-          <ul class="space-y-1">
-            <li><a href="#historia" class="nav-link flex items-center gap-2.5 px-2.5 py-1.5 rounded-lg text-codex-parchment hover:bg-codex-850 hover:text-codex-gold transition font-tome text-base">
-              <span>📜</span> Introdução Narrativa
-            </a></li>
-            <li><a href="#locais" class="nav-link flex items-center justify-between px-2.5 py-1.5 rounded-lg text-codex-parchment hover:bg-codex-850 hover:text-codex-gold transition font-tome text-base">
-              <span class="flex items-center gap-2.5"><span>🏰</span> Locais de Arkan</span>
-              <span id="badgeLocais" class="font-mono text-xs text-codex-gold">0</span>
-            </a></li>
-            <li><a href="#npcs" class="nav-link flex items-center justify-between px-2.5 py-1.5 rounded-lg text-codex-parchment hover:bg-codex-850 hover:text-codex-gold transition font-tome text-base">
-              <span class="flex items-center gap-2.5"><span>👥</span> NPCs & Heróis</span>
-              <span id="badgeNpcs" class="font-mono text-xs text-codex-gold">0</span>
-            </a></li>
-          </ul>
-        </div>
-
-        <div>
-          <div class="text-[11px] font-cinzel font-bold text-codex-gold uppercase tracking-wider mb-2 px-2">Narrativa</div>
-          <ul class="space-y-1">
-            <li><a href="#livro" class="nav-link flex items-center gap-2.5 px-2.5 py-1.5 rounded-lg text-codex-parchment hover:bg-codex-850 hover:text-codex-gold transition font-tome text-base">
-              <span>📖</span> Livro / Lore de Arkan
-            </a></li>
-            <li><a href="#diario" class="nav-link flex items-center gap-2.5 px-2.5 py-1.5 rounded-lg text-codex-parchment hover:bg-codex-850 hover:text-codex-gold transition font-tome text-base">
-              <span>📓</span> Diário de John
-            </a></li>
-          </ul>
-        </div>
-
-        <div>
-          <div class="text-[11px] font-cinzel font-bold text-codex-gold uppercase tracking-wider mb-2 px-2">Gameplay & Sistemas</div>
-          <ul class="space-y-1">
-            <li><a href="#gameplay" class="nav-link flex items-center gap-2.5 px-2.5 py-1.5 rounded-lg text-codex-parchment hover:bg-codex-850 hover:text-codex-gold transition font-tome text-base">
-              <span>🎮</span> Loop & Mecânicas Principais
-            </a></li>
-            <li><a href="#itens" class="nav-link flex items-center justify-between px-2.5 py-1.5 rounded-lg text-codex-parchment hover:bg-codex-850 hover:text-codex-gold transition font-tome text-base">
-              <span class="flex items-center gap-2.5"><span>🗡️</span> Itens & Equipamentos</span>
-              <span id="badgeItens" class="font-mono text-xs text-codex-gold">0</span>
-            </a></li>
-          </ul>
-        </div>
-
-        <!-- Categorias Customizadas Criadas Dinamicamente -->
-        <div>
-          <div class="text-[11px] font-cinzel font-bold text-codex-gold uppercase tracking-wider mb-2 px-2 flex items-center justify-between">
-            <span>Compêndio Customizado</span>
-            <span class="text-[9px] font-mono text-emerald-400">Dinâmico</span>
-          </div>
-          <ul id="sidebarDynamicCategoriesList" class="space-y-1"></ul>
-        </div>
-
-        <!-- DOSSIÊS — Nova Camada de Profundidade -->
-        <div>
-          <div class="text-[11px] font-cinzel font-bold text-codex-gold uppercase tracking-wider mb-2 px-2 flex items-center justify-between">
-            <span>Dossiês</span>
-            <span class="text-[9px] font-mono text-emerald-400">Fase 1</span>
-          </div>
-          <ul class="space-y-1">
-            <li><a href="#categoria/06-dossies/01-personagens" class="nav-link flex items-center gap-2.5 px-2.5 py-1.5 rounded-lg text-codex-parchment hover:bg-codex-850 hover:text-codex-gold transition font-tome text-base">
-              <span>👤</span> Personagens
-            </a></li>
-            <li><a href="#categoria/06-dossies/02-npcs" class="nav-link flex items-center gap-2.5 px-2.5 py-1.5 rounded-lg text-codex-parchment hover:bg-codex-850 hover:text-codex-gold transition font-tome text-base">
-              <span>👥</span> NPCs
-            </a></li>
-            <li><a href="#categoria/06-dossies/03-locais" class="nav-link flex items-center gap-2.5 px-2.5 py-1.5 rounded-lg text-codex-parchment hover:bg-codex-850 hover:text-codex-gold transition font-tome text-base">
-              <span>🏰</span> Locais
-            </a></li>
-            <li><a href="#categoria/06-dossies/04-itens-e-artefatos" class="nav-link flex items-center gap-2.5 px-2.5 py-1.5 rounded-lg text-codex-parchment hover:bg-codex-850 hover:text-codex-gold transition font-tome text-base">
-              <span>🗡️</span> Itens e Artefatos
-            </a></li>
-            <li><a href="#categoria/06-dossies/05-eventos-historicos" class="nav-link flex items-center gap-2.5 px-2.5 py-1.5 rounded-lg text-codex-parchment hover:bg-codex-850 hover:text-codex-gold transition font-tome text-base">
-              <span>📜</span> Eventos Históricos
-            </a></li>
-            <li><a href="#categoria/06-dossies/06-linhagens-povos-faccoes" class="nav-link flex items-center gap-2.5 px-2.5 py-1.5 rounded-lg text-codex-parchment hover:bg-codex-850 hover:text-codex-gold transition font-tome text-base">
-              <span>🏴</span> Linhagens / Facções
-            </a></li>
-            <li><a href="#categoria/06-dossies/07-misterios" class="nav-link flex items-center gap-2.5 px-2.5 py-1.5 rounded-lg text-codex-parchment hover:bg-codex-850 hover:text-codex-gold transition font-tome text-base">
-              <span>🔮</span> Mistérios
-            </a></li>
-            <li><a href="#categoria/06-dossies/08-universo-geral" class="nav-link flex items-center gap-2.5 px-2.5 py-1.5 rounded-lg text-codex-parchment hover:bg-codex-850 hover:text-codex-gold transition font-tome text-base">
-              <span>🌍</span> Universo Geral
-            </a></li>
-          </ul>
-        </div>
-
-        <div>
-          <div class="text-[11px] font-cinzel font-bold text-codex-gold uppercase tracking-wider mb-2 px-2">Cânone & Agentes</div>
-          <ul class="space-y-1">
-            <li><a href="#canon" class="nav-link flex items-center justify-between px-2.5 py-1.5 rounded-lg text-codex-parchment hover:bg-codex-850 hover:text-codex-gold transition font-tome text-base">
-              <span class="flex items-center gap-2.5"><span>👑</span> Decisões Canônicas</span>
-              <span id="badgeCanon" class="font-mono text-xs text-emerald-400">0</span>
-            </a></li>
-            <li><a href="#referencias" class="nav-link flex items-center gap-2.5 px-2.5 py-1.5 rounded-lg text-codex-parchment hover:bg-codex-850 hover:text-codex-gold transition font-tome text-base">
-              <span>🖼️</span> Galeria & Assets
-            </a></li>
-            <li><a href="#changelog" class="nav-link flex items-center gap-2.5 px-2.5 py-1.5 rounded-lg text-codex-parchment hover:bg-codex-850 hover:text-codex-gold transition font-tome text-base">
-              <span>📑</span> Changelog v2.8
-            </a></li>
-            <li><a href="#saude" class="nav-link flex items-center gap-2.5 px-2.5 py-1.5 rounded-lg text-codex-parchment hover:bg-codex-850 hover:text-codex-gold transition font-tome text-base">
-              <span>🩺</span> Auditoria Técnica
-            </a></li>
-          </ul>
-        </div>
+      <!-- Menu de Navegação Modular -->
+      <nav class="flex-1 overflow-y-auto custom-scrollbar p-3 space-y-4 text-xs font-sans" id="sidebarNav">
+        <!-- Renderizado dinamicamente via JavaScript com base nas categorias registradas -->
       </nav>
 
-      <div class="p-3 border-t border-codex-borderGold/20 text-[11px] font-mono text-codex-parchmentMuted bg-codex-950 flex items-center justify-between">
-        <span>Origem:</span>
-        <span class="text-codex-gold font-bold">GitHub /gdd/</span>
+      <div class="p-3 border-t border-codex-borderGold/20 text-[10px] font-mono text-codex-parchmentMuted bg-codex-950 flex items-center justify-between">
+        <span>Origem dos Dados:</span>
+        <span class="text-codex-gold font-bold">/gdd/ Markdown</span>
       </div>
     </aside>
 
@@ -330,73 +216,76 @@
 
     <!-- ================= VIEWPORT PRINCIPAL ================= -->
     <main id="mainViewport" class="flex-1 overflow-y-auto custom-scrollbar flex flex-col min-h-0 bg-codex-950">
-      <div class="px-6 py-3 border-b border-codex-borderGold/20 flex items-center justify-between text-xs bg-codex-900/40 font-mono">
+      <div class="px-6 py-2.5 border-b border-codex-borderGold/20 flex items-center justify-between text-xs bg-codex-900/30 font-mono">
         <div id="breadcrumbTrail" class="flex items-center gap-2 text-codex-parchmentMuted">
           <span class="text-codex-gold font-bold">Arkan</span>
           <span>/</span>
-          <span class="text-codex-parchment uppercase">Dashboard</span>
+          <span id="breadcrumbCurrent" class="text-codex-parchment uppercase">Dashboard</span>
         </div>
-        <div id="readerLiveStatus" class="flex items-center gap-2 text-emerald-400">
+        <div id="renderStatusTag" class="flex items-center gap-2 text-emerald-400 text-[11px]">
           <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-          <span>Leitor Sincronizado</span>
+          <span>Pronto</span>
         </div>
       </div>
 
       <div id="pageContainer" class="p-6 lg:p-8 max-w-7xl w-full mx-auto flex-1">
-        <div class="py-16 text-center text-codex-parchmentMuted font-mono animate-pulse">
-          Consultando árvore de arquivos de creativethb/Batalhas-Poderosas...
-        </div>
+        <!-- O conteúdo dinâmico do renderizador ativo é injetado aqui -->
       </div>
 
       <footer class="mt-auto px-6 py-4 border-t border-codex-borderGold/20 bg-codex-900/60 text-xs font-tome text-codex-parchmentMuted flex items-center justify-between">
-        <div><span class="font-cinzel text-codex-gold font-bold">Batalhas Poderosas</span> — Renderizador Dinâmico Headless</div>
-        <div class="font-mono text-[11px] text-emerald-400">Zero Dados Embutidos</div>
+        <div><span class="font-cinzel text-codex-gold font-bold">Batalhas Poderosas</span> — Renderizador Dinâmico de Conteúdo</div>
+        <div class="font-mono text-[10px] text-codex-parchmentMuted">Zero Conteúdo Hardcoded • 100% Orientado a Dados</div>
       </footer>
     </main>
   </div>
 
-  <!-- ================= INSPETOR DETALHADO ================= -->
-  <div id="modalEntityInspector" class="fixed inset-0 z-50 bg-black/85 backdrop-blur-md hidden flex items-center justify-center p-4">
-    <div class="bg-codex-900 border border-codex-gold/60 rounded-2xl max-w-3xl w-full p-6 text-sm shadow-2xl space-y-4 max-h-[90vh] flex flex-col">
+  <!-- ================= MODAL: INSPETOR DE DETALHES ================= -->
+  <div id="modalInspector" class="fixed inset-0 z-50 bg-black/85 backdrop-blur-md hidden flex items-center justify-center p-4">
+    <div class="bg-codex-900 border border-codex-gold/50 rounded-2xl max-w-3xl w-full p-6 text-xs shadow-2xl space-y-4 max-h-[90vh] flex flex-col">
       <div class="flex items-center justify-between border-b border-codex-borderGold/30 pb-3">
         <div class="flex items-center gap-3">
           <span id="inspectorIcon" class="text-2xl">📜</span>
           <div>
-            <h3 id="inspectorTitle" class="font-cinzel font-bold text-lg text-codex-goldBright">Ficha Detalhada</h3>
-            <p id="inspectorPath" class="text-xs font-mono text-codex-parchmentMuted">gdd/...</p>
+            <h3 id="inspectorTitle" class="font-cinzel font-bold text-base text-codex-goldBright">Ficha de Registro</h3>
+            <p id="inspectorPath" class="text-[10px] font-mono text-codex-parchmentMuted">gdd/...</p>
           </div>
         </div>
-        <button id="btnCloseInspector" class="text-codex-parchmentMuted hover:text-white text-xl">✕</button>
+        <button id="btnCloseInspector" class="text-codex-parchmentMuted hover:text-white text-lg">✕</button>
       </div>
 
       <div class="flex-1 overflow-y-auto custom-scrollbar space-y-4 p-1">
-        <div id="inspectorBannerImg" class="h-60 rounded-xl overflow-hidden border border-codex-borderGold/40 relative hidden">
-          <img id="inspectorImgElement" src="" alt="Arte" class="w-full h-full object-cover">
+        <div id="inspectorBanner" class="h-56 rounded-xl overflow-hidden border border-codex-borderGold/30 relative hidden">
+          <img id="inspectorImg" src="" alt="Referência Visual" class="w-full h-full object-cover">
         </div>
 
-        <div class="grid grid-cols-2 sm:grid-cols-4 gap-2 text-xs font-mono">
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-2 font-mono text-[11px]">
           <div class="p-2.5 bg-codex-850 rounded-lg border border-codex-borderGold/20">
-            <span class="text-[10px] text-codex-gold block font-bold">ID ESTÁVEL</span>
-            <span id="inspectorId" class="text-codex-parchment"></span>
+            <span class="text-[9px] text-codex-gold block font-bold">IDENTIFICADOR</span>
+            <span id="inspectorId" class="text-codex-parchment font-bold"></span>
           </div>
           <div class="p-2.5 bg-codex-850 rounded-lg border border-codex-borderGold/20">
-            <span class="text-[10px] text-codex-gold block font-bold">STATUS</span>
+            <span class="text-[9px] text-codex-gold block font-bold">CANONICIDADE</span>
             <span id="inspectorStatus"></span>
           </div>
           <div class="p-2.5 bg-codex-850 rounded-lg border border-codex-borderGold/20 sm:col-span-2">
-            <span class="text-[10px] text-codex-gold block font-bold">LOCALIZAÇÃO</span>
+            <span class="text-[9px] text-codex-gold block font-bold">CONTEXTO / LOCALIZAÇÃO</span>
             <span id="inspectorLocation" class="text-codex-parchment truncate block"></span>
           </div>
         </div>
 
-        <div class="p-5 bg-codex-850 rounded-xl border border-codex-borderGold/30 prose-codex" id="inspectorMarkdownBody"></div>
+        <div class="p-5 bg-codex-850 rounded-xl border border-codex-borderGold/30 prose-codex" id="inspectorBody"></div>
+
+        <div id="inspectorRelationsContainer" class="space-y-1.5 pt-2 hidden">
+          <span class="text-[10px] font-cinzel text-codex-gold uppercase font-bold block">Conexões Mapeadas:</span>
+          <div id="inspectorRelationsList" class="flex flex-wrap gap-1.5"></div>
+        </div>
       </div>
 
       <div class="border-t border-codex-borderGold/30 pt-3 flex items-center justify-between">
-        <button id="btnInspectorEditDirect" class="px-4 py-2 bg-gradient-to-r from-codex-gold to-codex-goldBright text-codex-950 rounded-lg text-xs font-cinzel font-bold transition shadow">
-          ✏️ Editar Documento
+        <button id="btnInspectorEdit" class="px-4 py-2 bg-gradient-to-r from-codex-gold to-codex-goldBright text-codex-950 rounded-lg text-xs font-cinzel font-bold transition shadow">
+          ✏️ Editar no Modo Editor
         </button>
-        <button id="btnInspectorCloseBottom" class="px-4 py-2 bg-codex-800 hover:bg-codex-700 text-codex-parchment rounded-lg text-xs font-cinzel transition">
+        <button id="btnInspectorCloseBottom" class="px-4 py-2 bg-codex-800 hover:bg-codex-750 text-codex-parchment rounded-lg text-xs font-cinzel transition">
           Fechar
         </button>
       </div>
@@ -405,120 +294,133 @@
 
   <!-- ================= MODAL: CRIAR NOVA CATEGORIA ================= -->
   <div id="modalNewCategory" class="fixed inset-0 z-50 bg-black/85 backdrop-blur-md hidden flex items-center justify-center p-4">
-    <div class="bg-codex-900 border border-codex-gold/50 rounded-xl shadow-2xl max-w-lg w-full p-6 text-sm relative space-y-4">
+    <div class="bg-codex-900 border border-codex-gold/50 rounded-xl shadow-2xl max-w-lg w-full p-6 text-xs relative space-y-4">
       <button id="btnCloseCategoryModal" class="absolute top-4 right-4 text-codex-parchmentMuted hover:text-white text-lg">✕</button>
       
       <div class="flex items-center gap-3 border-b border-codex-borderGold/30 pb-3">
         <span class="text-2xl">📁</span>
         <div>
-          <h3 class="font-cinzel font-bold text-base text-codex-goldBright">Criar Nova Categoria Inteira</h3>
-          <p class="text-xs font-tome text-codex-parchmentMuted">Cria uma nova subpasta em /gdd/ no repositório GitHub</p>
+          <h3 class="font-cinzel font-bold text-sm text-codex-goldBright">Nova Categoria de Conteúdo</h3>
+          <p class="text-[11px] text-codex-parchmentMuted">Cria subpasta física em /gdd/ e registra o novo catálogo</p>
         </div>
       </div>
 
-      <div class="space-y-4 text-xs font-tome">
+      <div class="space-y-3 font-sans">
         <div>
           <label class="block font-cinzel font-semibold text-codex-parchment mb-1">Nome Oficial da Categoria</label>
           <input type="text" id="catModalNome" placeholder="ex: Bestiário de Arkan, Facções da Guarda" 
-            class="w-full px-3 py-2 bg-codex-850 border border-codex-borderGold/40 rounded-lg text-codex-parchment text-sm focus:outline-none">
+            class="w-full px-3 py-2 bg-codex-850 border border-codex-borderGold/40 rounded-lg text-codex-parchment focus:outline-none focus:border-codex-gold">
         </div>
 
         <div class="grid grid-cols-2 gap-3 font-mono">
           <div>
             <label class="block font-cinzel font-semibold text-codex-parchment mb-1">Subpasta em /gdd/</label>
-            <input type="text" id="catModalPasta" placeholder="ex: gdd/06-bestiario" class="w-full px-3 py-2 bg-codex-850 border border-codex-borderGold/40 rounded-lg text-codex-parchment text-xs focus:outline-none">
+            <input type="text" id="catModalPasta" placeholder="ex: gdd/06-bestiario" class="w-full px-3 py-2 bg-codex-850 border border-codex-borderGold/40 rounded-lg text-codex-parchment focus:outline-none">
           </div>
           <div>
-            <label class="block font-cinzel font-semibold text-codex-parchment mb-1">Ícone</label>
+            <label class="block font-cinzel font-semibold text-codex-parchment mb-1">Ícone / Emoji</label>
             <input type="text" id="catModalIcone" value="🐉" class="w-full px-3 py-2 bg-codex-850 border border-codex-borderGold/40 rounded-lg text-center text-sm focus:outline-none">
           </div>
         </div>
 
         <div>
-          <label class="block font-cinzel font-semibold text-codex-parchment mb-1">Descrição</label>
-          <textarea id="catModalDescricao" rows="2" class="w-full px-3 py-2 bg-codex-850 border border-codex-borderGold/40 rounded-lg text-codex-parchment text-xs focus:outline-none"></textarea>
+          <label class="block font-cinzel font-semibold text-codex-parchment mb-1">Experiência Visual (Renderer)</label>
+          <select id="catModalRenderer" class="w-full px-3 py-2 bg-codex-850 border border-codex-borderGold/40 rounded-lg text-codex-parchment font-mono focus:outline-none">
+            <option value="dossie">Dossiê / Fichas Investigativas (Entidades, Fichas, Status)</option>
+            <option value="gdd">GDD / Documentação Técnica (Mecânicas, Parâmetros)</option>
+            <option value="livro">Livro / Crônicas Literárias (Tomo de Leitura, Capítulos)</option>
+            <option value="diario">Diário Pessoal (Entradas Progressivas, Timestamps)</option>
+            <option value="galeria">Galeria Visual (Assets, Referências de Arte)</option>
+          </select>
+        </div>
+
+        <div>
+          <label class="block font-cinzel font-semibold text-codex-parchment mb-1">Descrição / Finalidade</label>
+          <textarea id="catModalDescricao" rows="2" placeholder="Propósito deste catálogo no universo de Batalhas Poderosas..." 
+            class="w-full px-3 py-2 bg-codex-850 border border-codex-borderGold/40 rounded-lg text-codex-parchment focus:outline-none"></textarea>
         </div>
 
         <div class="pt-2 flex items-center justify-end gap-2 border-t border-codex-borderGold/20">
-          <button id="btnCancelCategoryModal" class="px-4 py-2 bg-codex-800 text-codex-parchment rounded-lg text-xs font-cinzel">Cancelar</button>
-          <button id="btnConfirmCategoryModal" class="px-5 py-2 bg-gradient-to-r from-codex-gold to-codex-goldBright text-codex-950 font-cinzel font-bold rounded-lg text-xs shadow-lg">
-            Criar Pasta & Gravar no Git
+          <button id="btnCancelCategoryModal" class="px-4 py-2 bg-codex-800 text-codex-parchment rounded-lg font-cinzel">Cancelar</button>
+          <button id="btnConfirmCategoryModal" class="px-5 py-2 bg-gradient-to-r from-codex-gold to-codex-goldBright text-codex-950 font-cinzel font-bold rounded-lg shadow-lg">
+            Registrar Categoria & Comitar
           </button>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- ================= MODAL: AUTENTICAÇÃO COM PAT ================= -->
+  <!-- ================= MODAL: AUTENTICAÇÃO GITHUB PAT ================= -->
   <div id="modalAuth" class="fixed inset-0 z-50 bg-black/85 backdrop-blur-md hidden flex items-center justify-center p-4">
-    <div class="bg-codex-900 border border-codex-gold/50 rounded-xl shadow-2xl max-w-md w-full p-6 text-sm relative space-y-4">
+    <div class="bg-codex-900 border border-codex-gold/50 rounded-xl shadow-2xl max-w-md w-full p-6 text-xs relative space-y-4">
       <button id="btnCloseAuthModal" class="absolute top-4 right-4 text-codex-parchmentMuted hover:text-white text-lg">✕</button>
       
       <div class="flex items-center gap-3 border-b border-codex-borderGold/30 pb-3">
         <span class="text-2xl">🔑</span>
         <div>
-          <h3 class="font-cinzel font-bold text-base text-codex-goldBright">Acesso ao Modo Editor</h3>
-          <p class="text-xs font-tome text-codex-parchmentMuted">Autenticação obrigatória para criar ou editar arquivos</p>
+          <h3 class="font-cinzel font-bold text-sm text-codex-goldBright">Autenticação do Editor</h3>
+          <p class="text-[11px] text-codex-parchmentMuted">Necessário para assinar commits no repositório GitHub</p>
         </div>
       </div>
 
-      <div class="space-y-3 font-tome text-xs">
+      <div class="space-y-3 font-sans">
         <div>
-          <label class="block font-cinzel font-semibold text-codex-parchment mb-1">Repositório GitHub</label>
-          <input type="text" id="authRepoInput" value="creativethb/Batalhas-Poderosas" class="w-full px-3 py-2 bg-codex-850 border border-codex-borderGold/40 rounded-lg text-codex-parchment font-mono text-xs focus:outline-none">
+          <label class="block font-cinzel font-semibold text-codex-parchment mb-1">Repositório Alvo</label>
+          <input type="text" id="authRepoInput" value="creativethb/Batalhas-Poderosas" class="w-full px-3 py-2 bg-codex-850 border border-codex-borderGold/40 rounded-lg text-codex-parchment font-mono focus:outline-none">
         </div>
         <div>
           <label class="block font-cinzel font-semibold text-codex-parchment mb-1">Branch</label>
-          <input type="text" id="authBranchInput" value="main" class="w-full px-3 py-2 bg-codex-850 border border-codex-borderGold/40 rounded-lg text-codex-parchment font-mono text-xs focus:outline-none">
+          <input type="text" id="authBranchInput" value="main" class="w-full px-3 py-2 bg-codex-850 border border-codex-borderGold/40 rounded-lg text-codex-parchment font-mono focus:outline-none">
         </div>
         <div>
           <label class="block font-cinzel font-semibold text-codex-parchment mb-1">Personal Access Token (PAT)</label>
-          <input type="password" id="authTokenInput" placeholder="github_pat_... ou ghp_..." class="w-full px-3 py-2 bg-codex-850 border border-codex-borderGold/40 rounded-lg text-codex-parchment font-mono text-xs focus:outline-none">
+          <input type="password" id="authTokenInput" placeholder="github_pat_... ou ghp_..." class="w-full px-3 py-2 bg-codex-850 border border-codex-borderGold/40 rounded-lg text-codex-parchment font-mono focus:outline-none">
+          <p class="text-[10px] text-codex-parchmentMuted mt-1">Permissão necessária: Contents (Read and Write). O token não é enviado a servidores de terceiros; fica estritamente na memória da sua sessão.</p>
         </div>
 
         <div id="authAlert" class="hidden p-2.5 rounded text-xs font-mono"></div>
 
         <div class="pt-2 flex items-center justify-end gap-2 border-t border-codex-borderGold/20">
-          <button id="btnCancelAuth" class="px-4 py-2 bg-codex-800 text-codex-parchment rounded-lg text-xs font-cinzel">Cancelar</button>
-          <button id="btnSaveAuth" class="px-5 py-2 bg-codex-gold text-codex-950 font-cinzel font-bold rounded-lg text-xs">Conectar e Validar</button>
+          <button id="btnCancelAuth" class="px-4 py-2 bg-codex-800 text-codex-parchment rounded-lg font-cinzel">Cancelar</button>
+          <button id="btnSaveAuth" class="px-5 py-2 bg-codex-gold text-codex-950 font-cinzel font-bold rounded-lg">Validar e Conectar</button>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- ================= SLIDE-OVER DRAWER: EDITOR ================= -->
+  <!-- ================= SLIDE-OVER DRAWER: EDITOR DE ENTIDADES ================= -->
   <div id="drawerEditor" class="fixed inset-0 z-50 overflow-hidden hidden">
     <div class="absolute inset-0 bg-black/80 backdrop-blur-sm" id="drawerBackdrop"></div>
     <div class="fixed inset-y-0 right-0 max-w-full flex pl-10">
-      <div class="w-screen max-w-2xl bg-codex-900 border-l border-codex-gold/40 shadow-2xl flex flex-col text-sm">
+      <div class="w-screen max-w-2xl bg-codex-900 border-l border-codex-gold/40 shadow-2xl flex flex-col text-xs font-sans">
         
         <div class="p-4 border-b border-codex-borderGold/30 bg-codex-850 flex items-center justify-between">
           <div class="flex items-center gap-2.5">
-            <span class="w-8 h-8 rounded bg-codex-800 border border-codex-gold/40 flex items-center justify-center text-codex-gold font-bold">✍️</span>
+            <span class="w-7 h-7 rounded bg-codex-800 border border-codex-gold/40 flex items-center justify-center text-codex-gold font-bold">✍️</span>
             <div>
-              <h3 id="drawerTitle" class="font-cinzel font-bold text-base text-codex-goldBright">Editar Documento</h3>
-              <p id="drawerSubtitle" class="text-xs text-codex-parchmentMuted">Commit direto na branch main do GitHub</p>
+              <h3 id="drawerTitle" class="font-cinzel font-bold text-sm text-codex-goldBright">Editar Documento</h3>
+              <p id="drawerSubtitle" class="text-[11px] text-codex-parchmentMuted">Commit direto na branch main do repositório</p>
             </div>
           </div>
-          <button id="btnDiscardDrawer" class="text-codex-parchmentMuted hover:text-white p-1 text-lg">✕</button>
+          <button id="btnDiscardDrawer" class="text-codex-parchmentMuted hover:text-white text-lg">✕</button>
         </div>
 
-        <div class="flex-1 overflow-y-auto custom-scrollbar p-6 space-y-5 text-xs font-tome">
-          <input type="hidden" id="editEntityOriginalPath">
+        <div class="flex-1 overflow-y-auto custom-scrollbar p-6 space-y-4">
+          <input type="hidden" id="editOriginalPath">
 
           <div>
             <label class="block font-cinzel font-semibold text-codex-gold uppercase tracking-wider mb-1">Pasta de Destino em /gdd/</label>
-            <select id="editEntityFolder" class="w-full px-3 py-2 bg-codex-850 border border-codex-borderGold/40 rounded-lg text-codex-parchment text-sm focus:outline-none font-semibold"></select>
+            <input type="text" id="editFolder" class="w-full px-3 py-2 bg-codex-850 border border-codex-borderGold/40 rounded-lg text-codex-parchment font-mono focus:outline-none">
           </div>
 
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div class="grid grid-cols-2 gap-3">
             <div>
               <label class="block font-cinzel font-semibold text-codex-parchment mb-1">ID Estável</label>
-              <input type="text" id="editEntityId" class="w-full px-3 py-2 bg-codex-850 border border-codex-borderGold/40 rounded-lg text-codex-parchment font-mono text-xs focus:outline-none">
+              <input type="text" id="editId" class="w-full px-3 py-2 bg-codex-850 border border-codex-borderGold/40 rounded-lg text-codex-parchment font-mono focus:outline-none">
             </div>
             <div>
               <label class="block font-cinzel font-semibold text-codex-parchment mb-1">Status Canônico</label>
-              <select id="editEntityStatus" class="w-full px-3 py-2 bg-codex-850 border border-codex-borderGold/40 rounded-lg text-codex-parchment text-xs focus:outline-none">
+              <select id="editStatus" class="w-full px-3 py-2 bg-codex-850 border border-codex-borderGold/40 rounded-lg text-codex-parchment focus:outline-none">
                 <option value="CANONICO">✅ CANÔNICO</option>
                 <option value="EM_DESENVOLVIMENTO">🟡 EM DESENVOLVIMENTO</option>
                 <option value="IDEIA">🔵 IDEIA</option>
@@ -529,40 +431,40 @@
           </div>
 
           <div>
-            <label class="block font-cinzel font-semibold text-codex-parchment mb-1">Nome / Título Oficial</label>
-            <input type="text" id="editEntityTitle" class="w-full px-3 py-2 bg-codex-850 border border-codex-borderGold/40 rounded-lg text-codex-parchment text-sm font-semibold focus:outline-none">
+            <label class="block font-cinzel font-semibold text-codex-parchment mb-1">Nome / Título</label>
+            <input type="text" id="editTitle" class="w-full px-3 py-2 bg-codex-850 border border-codex-borderGold/40 rounded-lg text-codex-parchment focus:outline-none font-semibold">
           </div>
 
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div class="grid grid-cols-2 gap-3">
             <div>
               <label class="block font-cinzel font-semibold text-codex-parchment mb-1">Função / Tipo</label>
-              <input type="text" id="editEntitySubtitle" class="w-full px-3 py-2 bg-codex-850 border border-codex-borderGold/40 rounded-lg text-codex-parchment text-xs focus:outline-none">
+              <input type="text" id="editSubtitle" class="w-full px-3 py-2 bg-codex-850 border border-codex-borderGold/40 rounded-lg text-codex-parchment focus:outline-none">
             </div>
             <div>
               <label class="block font-cinzel font-semibold text-codex-parchment mb-1">Localização</label>
-              <input type="text" id="editEntityLocation" class="w-full px-3 py-2 bg-codex-850 border border-codex-borderGold/40 rounded-lg text-codex-parchment text-xs focus:outline-none">
+              <input type="text" id="editLocation" class="w-full px-3 py-2 bg-codex-850 border border-codex-borderGold/40 rounded-lg text-codex-parchment focus:outline-none">
             </div>
           </div>
 
           <div>
             <label class="block font-cinzel font-semibold text-codex-parchment mb-1">Caminho da Imagem (Asset)</label>
-            <input type="text" id="editEntityImage" placeholder="./assets/npcs/NPC-001.png" class="w-full px-3 py-2 bg-codex-850 border border-codex-borderGold/40 rounded-lg text-codex-parchment font-mono text-xs focus:outline-none">
+            <input type="text" id="editImage" placeholder="./assets/npcs/NPC-001.jpg" class="w-full px-3 py-2 bg-codex-850 border border-codex-borderGold/40 rounded-lg text-codex-parchment font-mono focus:outline-none">
           </div>
 
           <div>
-            <label class="block font-cinzel font-semibold text-codex-parchment mb-1">Conteúdo Documental (Markdown Puro)</label>
-            <textarea id="editEntityMarkdown" rows="12" class="w-full px-3 py-2 bg-codex-850 border border-codex-borderGold/40 rounded-lg text-codex-parchment font-mono text-xs leading-relaxed focus:outline-none"></textarea>
+            <label class="block font-cinzel font-semibold text-codex-parchment mb-1">Manuscrito Documental (Markdown Puro)</label>
+            <textarea id="editMarkdown" rows="12" class="w-full px-3 py-2 bg-codex-850 border border-codex-borderGold/40 rounded-lg text-codex-parchment font-mono leading-relaxed focus:outline-none"></textarea>
           </div>
 
           <div class="p-3 bg-codex-950 rounded-lg border border-codex-borderGold/30">
-            <label class="block text-[10px] font-mono text-codex-gold mb-1">MENSAGEM DO COMMIT</label>
-            <input type="text" id="editCommitMsg" value="docs(canon): atualizar entidade via Códice Web" 
-              class="w-full px-2.5 py-1.5 bg-codex-850 border border-codex-borderGold/40 rounded text-xs text-codex-parchment focus:outline-none">
+            <label class="block text-[10px] font-mono text-codex-gold mb-1">MENSAGEM DO COMMIT GIT</label>
+            <input type="text" id="editCommitMsg" value="docs: atualizar documento via Códice Web" 
+              class="w-full px-2.5 py-1.5 bg-codex-850 border border-codex-borderGold/40 rounded text-codex-parchment focus:outline-none">
           </div>
 
           <div class="p-4 border-t border-codex-borderGold/30 bg-codex-850 flex items-center justify-end gap-3">
-            <button id="btnCancelDrawer" class="px-4 py-2 bg-codex-800 hover:bg-codex-700 text-codex-parchment rounded-lg text-xs font-cinzel transition">Cancelar</button>
-            <button id="btnSaveDrawer" class="px-5 py-2 bg-gradient-to-r from-codex-gold to-codex-goldBright text-codex-950 font-cinzel font-bold rounded-lg text-xs transition flex items-center gap-2 shadow-lg">
+            <button id="btnCancelDrawer" class="px-4 py-2 bg-codex-800 hover:bg-codex-750 text-codex-parchment rounded-lg font-cinzel transition">Cancelar</button>
+            <button id="btnSaveDrawer" class="px-5 py-2 bg-gradient-to-r from-codex-gold to-codex-goldBright text-codex-950 font-cinzel font-bold rounded-lg transition flex items-center gap-2 shadow-lg">
               <span>💾 Gravar no GitHub</span>
             </button>
           </div>
@@ -571,34 +473,128 @@
     </div>
   </div>
 
-  <!-- ================= MOTOR TÉCNICO: LEITURA DIRETA DO GITHUB ================= -->
+  <!-- ================= MOTOR TÉCNICO MODULAR ================= -->
   <script>
     const REPO_OWNER = 'creativethb';
     const REPO_NAME = 'Batalhas-Poderosas';
     const REPO_BRANCH = 'main';
 
-    // ESTADO DINÂMICO CARREGADO EM MEMÓRIA A PARTIR DOS ARQUIVOS REAIS
-    let appDb = {
-      docs: [],
-      pastas: {},
-      npcs: [],
-      locais: [],
-      itens: [],
-      decisoes: [],
-      sistemas: [],
-      livro: [],
-      diario: [],
-      categoriasCustom: []
-    };
-
-    function safeMarkdown(text) {
-      if (!text) return '';
-      if (typeof marked !== 'undefined' && marked.parse) {
-        try { return marked.parse(text); } catch(e) { return text; }
+    /* 1. MODELO DE CATEGORIAS DO PROJETO (ESTRUTURA DE NAVEGAÇÃO MODULAR) */
+    const categoryRegistry = [
+      {
+        id: "cat_core",
+        title: "PROJETO",
+        items: [
+          { id: "dashboard", title: "Visão Geral & Métricas", icon: "📊", renderer: "dashboard" },
+          { id: "estado", title: "Estado da Produção", icon: "⚙️", renderer: "estado" },
+          { id: "timeline", title: "Linha do Tempo", icon: "⏳", renderer: "timeline" }
+        ]
+      },
+      {
+        id: "cat_universo",
+        title: "UNIVERSO",
+        items: [
+          { id: "historia", title: "Introdução Narrativa", icon: "📜", renderer: "gdd", folder: "01-lore" },
+          { id: "locais", title: "Locais & Geografia", icon: "🏰", renderer: "dossie", folder: "05-locais" },
+          { id: "npcs", title: "NPCs & Heróis", icon: "👥", renderer: "dossie", folder: "03-npcs" }
+        ]
+      },
+      {
+        id: "cat_narrativa",
+        title: "NARRATIVA",
+        items: [
+          { id: "livro", title: "O Livro de Arkan", icon: "📖", renderer: "livro", folder: "01-lore" },
+          { id: "diario", title: "Diário de John", icon: "📓", renderer: "diario", folder: "01-lore" }
+        ]
+      },
+      {
+        id: "cat_gameplay",
+        title: "GAMEPLAY & SISTEMAS",
+        items: [
+          { id: "gameplay", title: "Loop de Jogo & Duelos", icon: "🎮", renderer: "gdd", folder: "02-gameplay" },
+          { id: "sistemas", title: "Sistemas & Arquitetura", icon: "🧩", renderer: "gdd", folder: "02-gameplay" },
+          { id: "itens", title: "Itens & Equipamentos", icon: "🗡️", renderer: "dossie", folder: "04-itens" },
+          { id: "missoes", title: "Missões & Quests", icon: "🧭", renderer: "gdd", folder: "02-gameplay" }
+        ]
+      },
+      {
+        id: "cat_canon",
+        title: "CÂNONE & ARQUIVO",
+        items: [
+          { id: "canon", title: "Decisões Canônicas", icon: "👑", renderer: "dossie", folder: "99-canon" },
+          { id: "referencias", title: "Galeria de Assets", icon: "🖼️", renderer: "galeria", folder: "03-npcs" },
+          { id: "changelog", title: "Histórico de Versões", icon: "📑", renderer: "gdd", folder: "99-canon" },
+          { id: "saude", title: "Auditoria Documental", icon: "🩺", renderer: "saude" }
+        ]
       }
-      return text.replace(/\n/g, '<br>');
-    }
+    ];
 
+    /* 2. CATÁLOGO FÍSICO DE ARQUIVOS (APONTAMENTOS DE DISCO - SEM CONTEÚDO EMBUTIDO) */
+    const canonicalFilesMap = [
+      // 14 NPCs
+      { id: "NPC-000", path: "gdd/03-npcs/NPC-000.md", folder: "03-npcs", nome: "O Rei Mago (Alric)", funcao: "Antagonista Trágico", localizacao: "Domínio do Rei Mago", imagem: "./assets/npcs/NPC-000.png", status: "CANONICO" },
+      { id: "NPC-001", path: "gdd/03-npcs/NPC-001.md", folder: "03-npcs", nome: "Mestre Cedric", funcao: "Ferreiro Real da Vila", localizacao: "Oficina da Vila", imagem: "./assets/npcs/NPC-001.jpg", status: "CANONICO" },
+      { id: "NPC-002", path: "gdd/03-npcs/NPC-002.md", folder: "03-npcs", nome: "Ancião Eldrin", funcao: "Guardião da Árvore Sagrada", localizacao: "Santuário Oeste", imagem: "./assets/npcs/NPC-002.jpg", status: "CANONICO" },
+      { id: "NPC-003", path: "gdd/03-npcs/NPC-003.md", folder: "03-npcs", nome: "Guarda Rowan", funcao: "Sentinela dos Acessos Leste", localizacao: "Estrada da Mina Leste", imagem: "./assets/npcs/NPC-003.jpg", status: "CANONICO" },
+      { id: "NPC-004", path: "gdd/03-npcs/NPC-004.md", folder: "03-npcs", nome: "Guarda Aldous", funcao: "Sentinela da Praça Central", localizacao: "Praça Central", imagem: "./assets/npcs/NPC-004.jpg", status: "CANONICO" },
+      { id: "NPC-005", path: "gdd/03-npcs/NPC-005.md", folder: "03-npcs", nome: "Padeira Beatrice", funcao: "Mestra dos Pães", localizacao: "Padaria da Vila", imagem: "./assets/npcs/NPC-005.jpg", status: "CANONICO" },
+      { id: "NPC-006", path: "gdd/03-npcs/NPC-006.md", folder: "03-npcs", nome: "Pescador Lucan", funcao: "Pescador do Cais", localizacao: "Cais do Lago Nobre", imagem: "./assets/npcs/NPC-001.png", status: "CANONICO" },
+      { id: "NPC-007", path: "gdd/03-npcs/NPC-007.md", folder: "03-npcs", nome: "Mercador Tobias", funcao: "Comerciante de Provisões", localizacao: "Armazém da Vila", imagem: "./assets/npcs/NPC-001.png", status: "CANONICO" },
+      { id: "NPC-008", path: "gdd/03-npcs/NPC-008.md", folder: "03-npcs", nome: "Agricultor Hugo", funcao: "Agricultor da Colina", localizacao: "Campos da Colina Leste", imagem: "./assets/npcs/NPC-001.png", status: "CANONICO" },
+      { id: "NPC-009", path: "gdd/03-npcs/NPC-009.md", folder: "03-npcs", nome: "Guardião Seraphin", funcao: "Guardião Místico do Portal", localizacao: "Caverna do Portal", imagem: "./assets/npcs/NPC-001.png", status: "CANONICO" },
+      { id: "NPC-010", path: "gdd/03-npcs/NPC-010.md", folder: "03-npcs", nome: "Lenhador Garrick", funcao: "Lenhador da Serraria", localizacao: "Serraria & Floresta Nordeste", imagem: "./assets/npcs/NPC-001.png", status: "CANONICO" },
+      { id: "NPC-011", path: "gdd/03-npcs/NPC-011.md", folder: "03-npcs", nome: "Mineiro Borin", funcao: "Mineiro das Profundezas", localizacao: "Minas da Montanha", imagem: "./assets/npcs/NPC-001.png", status: "CANONICO" },
+      { id: "NPC-012", path: "gdd/03-npcs/NPC-012.md", folder: "03-npcs", nome: "Agricultora Nalia", funcao: "Agricultora das Fazendas Norte", localizacao: "Campos do Norte", imagem: "./assets/npcs/NPC-001.png", status: "CANONICO" },
+      { id: "NPC-013", path: "gdd/03-npcs/NPC-013.md", folder: "03-npcs", nome: "Fazendeiro Geraldo", funcao: "Administrador da Fazenda de Arkan", localizacao: "Casa do Fazendeiro", imagem: "./assets/npcs/NPC-013.png", status: "CANONICO" },
+
+      // 9 Locais
+      { id: "LOCAL-001", path: "gdd/05-locais/LOCAL-001.md", folder: "05-locais", nome: "Casa de John", funcao: "Spawn Canônico", localizacao: "Colina Leste", imagem: "./assets/locais/LOCAL-001.png", status: "CANONICO" },
+      { id: "LOCAL-002", path: "gdd/05-locais/LOCAL-002.md", folder: "05-locais", nome: "Oficina do Cedric", funcao: "Forja Real", localizacao: "Setor Sul da Vila", imagem: "./assets/locais/LOCAL-002.png", status: "CANONICO" },
+      { id: "LOCAL-003", path: "gdd/05-locais/LOCAL-003.md", folder: "05-locais", nome: "Praça Central de Arkham", funcao: "Centro Comunitário", localizacao: "Coração da Vila", imagem: "./assets/locais/LOCAL-003.png", status: "CANONICO" },
+      { id: "LOCAL-004", path: "gdd/05-locais/LOCAL-004.md", folder: "05-locais", nome: "Árvore Sagrada", funcao: "Santuário Místico", localizacao: "Bosque Oeste", imagem: "./assets/locais/LOCAL-004.png", status: "CANONICO" },
+      { id: "LOCAL-005", path: "gdd/05-locais/LOCAL-005.md", folder: "05-locais", nome: "Padaria da Vila", funcao: "Produção de Alimentos", localizacao: "Próxima à Praça", imagem: "./assets/locais/LOCAL-005.png", status: "CANONICO" },
+      { id: "LOCAL-006", path: "gdd/05-locais/LOCAL-006.md", folder: "05-locais", nome: "Cais do Lago Nobre", funcao: "Área Aquática", localizacao: "Setor Nordeste", imagem: "./assets/locais/LOCAL-006.png", status: "CANONICO" },
+      { id: "LOCAL-007", path: "gdd/05-locais/LOCAL-007.md", folder: "05-locais", nome: "Minas da Montanha Leste", funcao: "Mineração & Lore", localizacao: "Encostas Leste", imagem: "./assets/locais/LOCAL-007.png", status: "CANONICO" },
+      { id: "LOCAL-008", path: "gdd/05-locais/LOCAL-008.md", folder: "05-locais", nome: "Portal do Mundo Livre", funcao: "Portal Interdimensional", localizacao: "Caverna Mística", imagem: "./assets/locais/LOCAL-008.png", status: "CANONICO" },
+      { id: "LOCAL-009", path: "gdd/05-locais/LOCAL-009.md", folder: "05-locais", nome: "Fazenda de Arkan (26 Áreas)", funcao: "Polo Agropecuário", localizacao: "Distrito Rural Sul", imagem: "./assets/locais/LOCAL-001.png", status: "CANONICO" },
+
+      // 4 Itens
+      { id: "ITEM-001", path: "gdd/04-itens/ITEM-001.md", folder: "04-itens", nome: "Madeira Comum", funcao: "Material de Criação", localizacao: "Casa de John", imagem: "./assets/itens/ITEM-001.png", status: "CANONICO" },
+      { id: "ITEM-002", path: "gdd/04-itens/ITEM-002.md", folder: "04-itens", nome: "Madeira Sagrada", funcao: "Material Místico / Relíquia", localizacao: "Árvore Sagrada", imagem: "./assets/itens/ITEM-002.png", status: "CANONICO" },
+      { id: "ITEM-003", path: "gdd/04-itens/ITEM-003.md", folder: "04-itens", nome: "Espada de Madeira Sagrada", funcao: "Arma Branca Lendária", localizacao: "Forja Real", imagem: "./assets/itens/ITEM-003.png", status: "CANONICO" },
+      { id: "ITEM-004", path: "gdd/04-itens/ITEM-004.md", folder: "04-itens", nome: "Diário de John", funcao: "Item Narrativo & Gameplay", localizacao: "Casa de John", imagem: "./assets/itens/ITEM-004.png", status: "CANONICO" },
+
+      // 8 Decisões Canônicas
+      { id: "BP-2026-001", path: "gdd/99-canon/CANON-001.md", folder: "99-canon", nome: "Protagonista John e Início Inexperiente", funcao: "Narrativa Core", status: "CANONICO" },
+      { id: "BP-2026-002", path: "gdd/99-canon/CANON-002.md", folder: "99-canon", nome: "Início Canônico na Casa de John", funcao: "Gameplay", status: "CANONICO" },
+      { id: "BP-2026-003", path: "gdd/99-canon/CANON-003.md", folder: "99-canon", nome: "A Guerra contra o Rei Mago", funcao: "Lore & Origem", status: "CANONICO" },
+      { id: "BP-2026-004", path: "gdd/99-canon/CANON-004.md", folder: "99-canon", nome: "Desacoplamento do Sandbox por Portal", funcao: "Arquitetura", status: "CANONICO" },
+      { id: "BP-2026-005", path: "gdd/99-canon/CANON-005.md", folder: "99-canon", nome: "Padrão de UX Multiplataforma", funcao: "Interface", status: "CANONICO" },
+      { id: "BP-2026-006", path: "gdd/99-canon/CANON-006.md", folder: "99-canon", nome: "Diário de John — Elemento de Jogo", funcao: "Gameplay & UX", status: "CANONICO" },
+      { id: "BP-2026-007", path: "gdd/99-canon/CANON-007.md", folder: "99-canon", nome: "Separação Diário vs Livro", funcao: "Protocolo Narrativo", status: "CANONICO" },
+      { id: "BP-2026-008", path: "gdd/99-canon/CANON-008.md", folder: "99-canon", nome: "Masterplan da Fazenda 26/26 Concluído", funcao: "Economia Rural", status: "CANONICO" },
+
+      // Crônicas do Livro
+      { id: "LORE-001", path: "gdd/01-lore/LORE-001.md", folder: "01-lore", nome: "O Reino Ancestral e o Mago", funcao: "História Antiga", status: "CANONICO" },
+      { id: "LORE-002", path: "gdd/01-lore/LORE-002.md", folder: "01-lore", nome: "O Confronto Maior e o Banimento", funcao: "Jornada Multiversal", status: "CANONICO" },
+      { id: "LORE-003", path: "gdd/01-lore/LORE-003.md", folder: "01-lore", nome: "O Diário de Memórias de John", funcao: "Crônica Pessoal", status: "CANONICO" },
+      { id: "LORE-004", path: "gdd/01-lore/LORE-004.md", folder: "01-lore", nome: "Paralelo Narrativo: John e Alric", funcao: "Análise Canônica", status: "CANONICO" },
+      { id: "LORE-005", path: "gdd/01-lore/LORE-005.md", folder: "01-lore", nome: "Prólogo Oficial: Antes das Batalhas", funcao: "Prólogo Literário", status: "CANONICO" },
+      { id: "LORE-006", path: "gdd/01-lore/LORE-006.md", folder: "01-lore", nome: "Perfil Literário de Alric", funcao: "Crônica Literária", status: "CANONICO" },
+
+      // Sistemas
+      { id: "GAME-001", path: "gdd/02-gameplay/GAME-001.md", folder: "02-gameplay", nome: "Sistema de Diálogo Imersivo", funcao: "Câmera & HUD", status: "CANONICO" },
+      { id: "GAME-002", path: "gdd/02-gameplay/GAME-002.md", folder: "02-gameplay", nome: "Combate Melee & Combo de 5 Golpes", funcao: "Duelo Luau", status: "CANONICO" },
+      { id: "GAME-003", path: "gdd/02-gameplay/GAME-003.md", folder: "02-gameplay", nome: "Dash & Locomoção Física", funcao: "Movimentação", status: "CANONICO" },
+      { id: "GAME-005", path: "gdd/02-gameplay/GAME-005.md", folder: "02-gameplay", nome: "Sistema do Diário de John", funcao: "Inventário & Memória", status: "CANONICO" },
+      { id: "GAME-006", path: "gdd/02-gameplay/GAME-006.md", folder: "02-gameplay", nome: "Cadeia Produtiva da Fazenda", funcao: "Economia Agropecuária", status: "CANONICO" }
+    ];
+
+    /* ESTADO EM MEMÓRIA DINÂMICA */
+    let liveDocs = [];
+    let customCategories = [];
+
+    /* 3. PARSER ROBUSTO DE FRONTMATTER YAML */
     function parseFrontmatter(text) {
       const match = text.match(/^---\r?\n([\s\S]*?)\r?\n---\r?\n([\s\S]*)$/);
       if (!match) return { meta: {}, markdown: text };
@@ -620,6 +616,14 @@
       });
 
       return { meta, markdown };
+    }
+
+    function safeMarkdown(text) {
+      if (!text) return '';
+      if (typeof marked !== 'undefined' && marked.parse) {
+        try { return marked.parse(text); } catch(e) { return text; }
+      }
+      return text.replace(/\n/g, '<br>');
     }
 
     function resolveAssetUrl(imagePath) {
@@ -648,9 +652,9 @@
       if (parent) {
         const initial = (nome || id || 'A').charAt(0).toUpperCase();
         parent.innerHTML = `
-          <div class="w-full h-full bg-gradient-to-br from-[#1b1625] to-[#08070b] flex flex-col items-center justify-center p-4 text-center select-none">
-            <div class="w-14 h-14 rounded-full border border-codex-gold/40 flex items-center justify-center mb-1">
-              <span class="font-cinzel text-xl font-bold text-codex-gold">${initial}</span>
+          <div class="w-full h-full bg-gradient-to-br from-[#181320] to-[#0a080e] flex flex-col items-center justify-center p-4 text-center select-none">
+            <div class="w-12 h-12 rounded-full border border-codex-gold/40 flex items-center justify-center mb-1">
+              <span class="font-cinzel text-lg font-bold text-codex-gold">${initial}</span>
             </div>
             <span class="font-mono text-[9px] text-codex-gold bg-codex-950 px-1.5 py-0.5 rounded border border-codex-borderGold/20">${id}</span>
           </div>
@@ -658,341 +662,186 @@
       }
     }
 
-    /* MOTOR DE LEITURA DIRETA DO REPOSITÓRIO */
-    async function loadRepositoryLive() {
+    function getStatusBadge(status) {
+      switch(status) {
+        case 'CANONICO': return `<span class="canon-badge badge-canonico">✅ Canônico</span>`;
+        case 'EM_DESENVOLVIMENTO': return `<span class="canon-badge badge-dev">🟡 Em Dev</span>`;
+        case 'IDEIA': return `<span class="canon-badge badge-ideia">🔵 Ideia</span>`;
+        case 'PLANEJADO': return `<span class="canon-badge badge-planejado">🟣 Planejado</span>`;
+        default: return `<span class="canon-badge badge-descontinuado">🔴 ${status || 'Indefinido'}</span>`;
+      }
+    }
+
+    /* 4. MOTOR DE CARREGAMENTO DINÂMICO DOS ARQUIVOS .MD */
+    async function loadAllDocuments() {
       const spinner = document.getElementById('syncSpinner');
+      const statusTag = document.getElementById('renderStatusTag');
       spinner?.classList.add('animate-spin');
+      statusTag.innerHTML = `<span class="w-2 h-2 rounded-full bg-amber-400 animate-pulse"></span><span>Lendo /gdd/...</span>`;
 
-      try {
-        const auth = getStoredAuth();
-        const headers = { 'Accept': 'application/vnd.github.v3+json' };
-        if (auth && auth.token) headers['Authorization'] = `Bearer ${auth.token}`;
+      // Inicializa a árvore em memória com as rotas
+      liveDocs = canonicalFilesMap.map(d => ({ ...d, markdown: null }));
 
-        // ---------- ESTRATÉGIA 1: Contents API recursiva (funciona sem auth para repo público) ----------
-        let gddBlobs = [];
-
-        async function fetchAllMdFromContents(folderPath = 'gdd') {
-          const url = `https://api.github.com/repos/${REPO_OWNER}/${REPO_NAME}/contents/${folderPath}?ref=${REPO_BRANCH}&t=${Date.now()}`;
-          const res = await fetch(url, { headers });
-          if (!res.ok) return [];
-          const items = await res.json();
-          let mdFiles = [];
-          for (const item of items) {
-            if (item.type === 'file' && item.name.endsWith('.md')) {
-              mdFiles.push({ path: item.path, type: 'blob' });
-            } else if (item.type === 'dir') {
-              mdFiles = mdFiles.concat(await fetchAllMdFromContents(item.path));
-            }
-          }
-          return mdFiles;
-        }
-
+      // Busca estática de cada arquivo Markdown em paralelo (sem taxa de limite da API)
+      await Promise.all(liveDocs.map(async (doc) => {
         try {
-          gddBlobs = await fetchAllMdFromContents('gdd');
-        } catch (e) {
-          console.warn('Contents API falhou:', e);
-          gddBlobs = [];
-        }
-
-        // ---------- ESTRATÉGIA 2: Fallback estático (lista conhecida de arquivos) ----------
-        if (!gddBlobs || gddBlobs.length === 0) {
-          console.warn('Usando lista estática de fallback');
-          gddBlobs = [
-            { path: 'gdd/01-lore/LORE-001-origem-de-arkan-e-o-rei-mago.md', type: 'blob' },
-            { path: 'gdd/01-lore/LORE-002-jornada-de-john.md', type: 'blob' },
-            { path: 'gdd/01-lore/LORE-003-diario-de-john.md', type: 'blob' },
-            { path: 'gdd/01-lore/LORE-004-paralelo-john-rei-mago.md', type: 'blob' },
-            { path: 'gdd/01-lore/LORE-005-prologo-antes-das-batalhas.md', type: 'blob' },
-            { path: 'gdd/01-lore/LORE-006-perfil-publico-rei-mago.md', type: 'blob' },
-            { path: 'gdd/02-gameplay/GAME-001-loop-principal-e-progressao.md', type: 'blob' },
-            { path: 'gdd/02-gameplay/GAME-002-sistema-de-combate-e-combos.md', type: 'blob' },
-            { path: 'gdd/02-gameplay/GAME-003-locomocao-dash-e-pulo.md', type: 'blob' },
-            { path: 'gdd/02-gameplay/GAME-004-sistema-de-dialogo-e-camera.md', type: 'blob' },
-            { path: 'gdd/02-gameplay/GAME-005-sistema-do-diario.md', type: 'blob' },
-            { path: 'gdd/02-gameplay/GAME-006-cadeia-produtiva-e-economia-rural.md', type: 'blob' },
-            { path: 'gdd/03-npcs/NPC-000-o-rei-mago.md', type: 'blob' },
-            { path: 'gdd/03-npcs/NPC-001-mestre-cedric.md', type: 'blob' },
-            { path: 'gdd/03-npcs/NPC-002-anciao-eldrin.md', type: 'blob' },
-            { path: 'gdd/03-npcs/NPC-003-guarda-rowan.md', type: 'blob' },
-            { path: 'gdd/03-npcs/NPC-004-guarda-aldous.md', type: 'blob' },
-            { path: 'gdd/03-npcs/NPC-005-padeira-beatrice.md', type: 'blob' },
-            { path: 'gdd/03-npcs/NPC-006-pescador-lucan.md', type: 'blob' },
-            { path: 'gdd/03-npcs/NPC-007-mercador-tobias.md', type: 'blob' },
-            { path: 'gdd/03-npcs/NPC-008-agricultor-hugo.md', type: 'blob' },
-            { path: 'gdd/03-npcs/NPC-009-guardiao-seraphin.md', type: 'blob' },
-            { path: 'gdd/03-npcs/NPC-010-lenhador-garrick.md', type: 'blob' },
-            { path: 'gdd/03-npcs/NPC-011-mineiro-borin.md', type: 'blob' },
-            { path: 'gdd/03-npcs/NPC-012-agricultora-nalia.md', type: 'blob' },
-            { path: 'gdd/03-npcs/NPC-013-fazendeiro-geraldo.md', type: 'blob' },
-            { path: 'gdd/04-itens/ITEM-001-madeira-comum.md', type: 'blob' },
-            { path: 'gdd/04-itens/ITEM-002-madeira-sagrada.md', type: 'blob' },
-            { path: 'gdd/04-itens/ITEM-003-espada-de-madeira-sagrada.md', type: 'blob' },
-            { path: 'gdd/04-itens/ITEM-004-diario-de-john.md', type: 'blob' },
-            { path: 'gdd/05-locais/LOCAL-001-casa-de-john.md', type: 'blob' },
-            { path: 'gdd/05-locais/LOCAL-002-oficina-do-cedric.md', type: 'blob' },
-            { path: 'gdd/05-locais/LOCAL-003-praca-central.md', type: 'blob' },
-            { path: 'gdd/05-locais/LOCAL-004-arvore-sagrada.md', type: 'blob' },
-            { path: 'gdd/05-locais/LOCAL-005-padaria-medieval.md', type: 'blob' },
-            { path: 'gdd/05-locais/LOCAL-006-cais-do-lago.md', type: 'blob' },
-            { path: 'gdd/05-locais/LOCAL-007-minas-da-montanha.md', type: 'blob' },
-            { path: 'gdd/05-locais/LOCAL-008-portal-mundo-livre.md', type: 'blob' },
-            { path: 'gdd/05-locais/LOCAL-009-fazenda-de-arkan.md', type: 'blob' },
-            { path: 'gdd/06-dossies/02-npcs/DOSSIER-001-CEDRIC.md', type: 'blob' },
-            { path: 'gdd/06-dossies/02-npcs/DOSSIER-TEST-001.md', type: 'blob' },
-            { path: 'gdd/06-dossies/07-misterios/DOSSIER-TEST-002.md', type: 'blob' },
-            { path: 'gdd/06-dossies/README.md', type: 'blob' },
-            { path: 'gdd/06-dossies/_TEMPLATE_DOSsie.md', type: 'blob' },
-            { path: 'gdd/99-canon/CANON-001-protagonista-john.md', type: 'blob' },
-            { path: 'gdd/99-canon/CANON-002-inicio-na-casa-de-john.md', type: 'blob' },
-            { path: 'gdd/99-canon/CANON-003-a-guerra-do-rei-mago.md', type: 'blob' },
-            { path: 'gdd/99-canon/CANON-004-desacoplamento-sandbox-mundo-livre.md', type: 'blob' },
-            { path: 'gdd/99-canon/CANON-005-padrao-ux-multiplataforma.md', type: 'blob' },
-            { path: 'gdd/99-canon/CANON-006-diario-de-john.md', type: 'blob' },
-            { path: 'gdd/99-canon/CANON-007-protocolo-narrativo-diario-e-lore.md', type: 'blob' },
-            { path: 'gdd/99-canon/CANON-008-masterplan-fazenda-de-arkan.md', type: 'blob' }
-          ];
-        }
-
-        // ---------- 3. Lê o conteúdo via raw.githubusercontent.com (sempre funciona para repo público) ----------
-        const docs = await Promise.all(gddBlobs.map(async (item) => {
-          try {
-            const rawUrl = `https://raw.githubusercontent.com/${REPO_OWNER}/${REPO_NAME}/${REPO_BRANCH}/${item.path}?t=${Date.now()}`;
-            const res = await fetch(rawUrl);
-            if (!res.ok) return null;
-            const text = await res.text();
-            const parsed = parseFrontmatter(text);
-            const parts = item.path.split('/');
-            
-            // Lógica Exata de Folders:
-            let folder = parts[1] || 'geral';
-            if (folder === '06-dossies' && parts[2] && !parts[2].endsWith('.md')) {
-                folder = `${parts[1]}/${parts[2]}`;
-            }
-
-            return {
-              path: item.path,
-              folder: folder,
-              id: parsed.meta.id || item.path.split('/').pop().replace('.md', ''),
-              nome: parsed.meta.nome || parsed.meta.titulo || item.path.split('/').pop().replace('.md', ''),
-              funcao: parsed.meta.funcao || parsed.meta.tipo || parsed.meta.categoria || '',
-              localizacao: parsed.meta.localizacao || '',
-              status: parsed.meta.status || 'CANONICO',
-              imagem: parsed.meta.imagem ? resolveAssetUrl(parsed.meta.imagem) : '',
-              markdown: parsed.markdown,
-              info_id: parsed.meta.info_id || '',
-              entidade_principal: parsed.meta.entidade_principal || '',
-              tipo_informacao: parsed.meta.tipo_informacao || '',
-              categoria_classificacao: parsed.meta.categoria_classificacao || '',
-              tags: parsed.meta.tags ? (typeof parsed.meta.tags === 'string' ? JSON.parse(parsed.meta.tags) : parsed.meta.tags) : []
-            };
-          } catch(e) {
-            console.warn(`Erro ao carregar ${item.path}:`, e);
-            return null;
+          let res = await fetch(`./${doc.path}?t=${Date.now()}`);
+          if (!res.ok) {
+            res = await fetch(`https://raw.githubusercontent.com/${REPO_OWNER}/${REPO_NAME}/${REPO_BRANCH}/${doc.path}?t=${Date.now()}`);
           }
-        }));
-
-        appDb.docs = docs.filter(Boolean);
-
-        // Agrupa por pasta e popula as seções canônicas
-        appDb.pastas = {};
-        appDb.npcs = [];
-        appDb.locais = [];
-        appDb.itens = [];
-        appDb.decisoes = [];
-        appDb.sistemas = [];
-        appDb.livro = [];
-        appDb.categoriasCustom = [];
-
-        appDb.docs.forEach(d => {
-          if (!appDb.pastas[d.folder]) appDb.pastas[d.folder] = [];
-          appDb.pastas[d.folder].push(d);
-
-          if (d.folder === '03-npcs') appDb.npcs.push(d);
-          else if (d.folder === '05-locais') appDb.locais.push(d);
-          else if (d.folder === '04-itens') appDb.itens.push(d);
-          else if (d.folder === '99-canon') appDb.decisoes.push(d);
-          else if (d.folder === '02-gameplay') appDb.sistemas.push(d);
-          else if (d.folder === '01-lore') appDb.livro.push(d);
-          else {
-            if (!appDb.categoriasCustom.includes(d.folder)) appDb.categoriasCustom.push(d.folder);
+          if (res.ok) {
+            const raw = await res.text();
+            const parsed = parseFrontmatter(raw);
+            doc.markdown = parsed.markdown;
+            if (parsed.meta.nome) doc.nome = parsed.meta.nome;
+            if (parsed.meta.funcao) doc.funcao = parsed.meta.funcao;
+            if (parsed.meta.status) doc.status = parsed.meta.status;
+            if (parsed.meta.imagem) doc.imagem = resolveAssetUrl(parsed.meta.imagem);
+            if (parsed.meta.relacionados) doc.relacionados = parsed.meta.relacionados.split(',').map(s => s.trim());
           }
-        });
+        } catch(e) {}
+      }));
 
-        // Atualiza contadores
-        document.getElementById('badgeNpcs').textContent = appDb.npcs.length;
-        document.getElementById('badgeLocais').textContent = appDb.locais.length;
-        document.getElementById('badgeItens').textContent = appDb.itens.length;
-        document.getElementById('badgeCanon').textContent = appDb.decisoes.length;
+      spinner?.classList.remove('animate-spin');
+      statusTag.innerHTML = `<span class="w-2 h-2 rounded-full bg-emerald-400"></span><span>Sincronizado</span>`;
 
-        renderDynamicCategoriesMenu();
-        updateFolderSelects();
-        navigate();
+      renderSidebar();
+      navigate();
+    }
 
-      } catch (err) {
-        console.error(err);
-        document.getElementById('pageContainer').innerHTML = `
-          <div class="p-6 bg-rose-950/40 border border-rose-800 rounded-xl text-xs font-mono text-rose-300">
-            <b>Falha na leitura direta:</b> ${err.message}<br>
-            Conecte sua chave PAT no topo direito para liberar o acesso irrestrito à API do GitHub.
+    /* 5. MONTAGEM DA BARRA LATERAL DINÂMICA */
+    function renderSidebar() {
+      const nav = document.getElementById('sidebarNav');
+      nav.innerHTML = categoryRegistry.map(cat => `
+        <div>
+          <div class="text-[10px] font-cinzel font-bold text-codex-gold uppercase tracking-wider mb-1.5 px-2 flex items-center justify-between">
+            <span>${cat.title}</span>
+          </div>
+          <ul class="space-y-0.5">
+            ${cat.items.map(item => `
+              <li>
+                <a href="#${item.id}" class="nav-link flex items-center justify-between px-2.5 py-1.5 rounded-lg text-codex-parchment hover:bg-codex-850 hover:text-codex-gold transition">
+                  <span class="flex items-center gap-2 truncate">
+                    <span>${item.icon}</span>
+                    <span>${item.title}</span>
+                  </span>
+                  ${item.folder ? `<span class="font-mono text-[10px] text-codex-gold">${liveDocs.filter(d => d.folder === item.folder).length}</span>` : ''}
+                </a>
+              </li>
+            `).join('')}
+          </ul>
+        </div>
+      `).join('');
+
+      // Se houver categorias criadas pelo usuário
+      if (customCategories.length > 0) {
+        nav.innerHTML += `
+          <div>
+            <div class="text-[10px] font-cinzel font-bold text-emerald-400 uppercase tracking-wider mb-1.5 px-2">
+              <span>Compêndio Customizado</span>
+            </div>
+            <ul class="space-y-0.5">
+              ${customCategories.map(cat => `
+                <li>
+                  <a href="#custom/${cat.slug}" class="nav-link flex items-center justify-between px-2.5 py-1.5 rounded-lg text-codex-parchment hover:bg-codex-850 hover:text-codex-gold transition">
+                    <span class="flex items-center gap-2 truncate">
+                      <span>${cat.icone || '📁'}</span>
+                      <span>${cat.nome}</span>
+                    </span>
+                    <span class="font-mono text-[10px] text-codex-gold">${liveDocs.filter(d => d.folder === cat.folder).length}</span>
+                  </a>
+                </li>
+              `).join('')}
+            </ul>
           </div>
         `;
-      } finally {
-        spinner?.classList.remove('animate-spin');
       }
     }
 
-    function renderDynamicCategoriesMenu() {
-      const menu = document.getElementById('sidebarDynamicCategoriesList');
-      if (!menu) return;
+    /* 6. RENDERIZADORES ESPECIALIZADOS (RENDER ENGINE) */
 
-      if (appDb.categoriasCustom.length === 0) {
-        menu.innerHTML = `<li class="px-2.5 py-1 text-xs text-codex-parchmentMuted italic">Nenhuma pasta customizada</li>`;
-      } else {
-        menu.innerHTML = appDb.categoriasCustom.map(folder => {
-          const count = (appDb.pastas[folder] || []).length;
-          const cleanName = folder.replace(/^[0-9]+-/, '').toUpperCase();
-          return `
-            <li>
-              <a href="#categoria/${encodeURIComponent(folder)}" class="nav-link flex items-center justify-between px-2.5 py-1.5 rounded-lg text-codex-parchment hover:bg-codex-850 hover:text-codex-gold transition font-tome text-base">
-                <span class="flex items-center gap-2 truncate"><span>📁</span><span>${cleanName}</span></span>
-                <span class="font-mono text-xs text-codex-gold">${count}</span>
-              </a>
-            </li>
-          `;
-        }).join('');
-      }
-    }
-
-    function updateFolderSelects() {
-      const select = document.getElementById('editEntityFolder');
-      if (!select) return;
-      select.innerHTML = Object.keys(appDb.pastas).map(f => `<option value="gdd/${f}">gdd/${f}</option>`).join('');
-    }
-
-    function getStatusSeal(status) {
-      switch(status) {
-        case 'CANONICO': return `<span class="wax-seal seal-canon">✅ Canônico</span>`;
-        case 'EM_DESENVOLVIMENTO': return `<span class="wax-seal seal-dev">🟡 Em Dev</span>`;
-        case 'IDEIA': return `<span class="wax-seal seal-idea">🔵 Ideia</span>`;
-        case 'PLANEJADO': return `<span class="wax-seal seal-planned">🟣 Planejado</span>`;
-        default: return `<span class="wax-seal">⚪ ${status}</span>`;
-      }
-    }
-
-    /* ROTEAMENTO DE TODAS AS 16 TELAS */
-    function navigate() {
-      const hash = window.location.hash.replace('#', '') || 'dashboard';
-      const [route, param1] = hash.split('/');
-
-      document.querySelectorAll('.nav-link').forEach(link => {
-        const href = link.getAttribute('href');
-        if (href === `#${hash}` || href === `#${route}`) {
-          link.classList.add('bg-codex-850', 'text-codex-gold', 'border', 'border-codex-borderGold/40');
-        } else {
-          link.classList.remove('bg-codex-850', 'text-codex-gold', 'border', 'border-codex-borderGold/40');
-        }
-      });
-
-      if (route === 'npcs') renderNPCsView();
-      else if (route === 'locais') renderLocaisView();
-      else if (route === 'itens') renderItensView();
-      else if (route === 'canon') renderCanonView();
-      else if (route === 'livro') renderLivroView();
-      else if (route === 'diario') renderDiarioView();
-      else if (route === 'gameplay' || route === 'sistemas') renderGameplayView();
-      else if (route === 'historia' || route === 'lore') renderLivroView();
-      else if (route === 'referencias') renderReferenciasView();
-      else if (route === 'changelog') renderChangelogView();
-      else if (route === 'estado') renderEstadoView();
-      else if (route === 'timeline') renderTimelineView();
-      else if (route === 'saude') renderSaudeView();
-      else if (route === 'categoria' && param1) renderCustomCategoryView(decodeURIComponent(param1));
-      else renderDashboardView();
-
-      document.getElementById('sidebar')?.classList.add('-translate-x-full');
-      document.getElementById('mobileOverlay')?.classList.add('hidden');
-    }
-    window.addEventListener('hashchange', navigate);
-
-    /* TELAS DINÂMICAS QUE PROJETAM OS ARQUIVOS REAIS */
-
-    function renderDashboardView() {
+    // Renderer: Dashboard
+    function renderDashboard() {
       const container = document.getElementById('pageContainer');
+      const npcs = liveDocs.filter(d => d.folder === '03-npcs');
+      const locais = liveDocs.filter(d => d.folder === '05-locais');
+      const itens = liveDocs.filter(d => d.folder === '04-itens');
+      const canon = liveDocs.filter(d => d.folder === '99-canon');
+
       container.innerHTML = `
-        <div class="space-y-8 animate-fadeIn">
-          <div class="codex-card rounded-2xl p-7 lg:p-9 border-codex-borderGold">
-            <div class="max-w-3xl space-y-2.5">
-              <span class="wax-seal seal-canon">Reino de Arkan • Leitor Desacoplado</span>
-              <h1 class="font-cinzel text-3xl lg:text-4xl font-extrabold text-codex-goldBright">
-                Códice Vivo de Batalhas Poderosas
-              </h1>
-              <p class="font-tome text-lg text-codex-parchment/90 leading-relaxed">
-                Renderizador puro conectado à árvore de arquivos do GitHub. Zero dados embutidos: todo o conteúdo é lido diretamente das pastas Markdown.
-              </p>
-            </div>
+        <div class="space-y-7 animate-fadeIn">
+          <div class="module-card rounded-2xl p-6 lg:p-8">
+            <span class="canon-badge badge-canonico mb-2">Reino de Arkan • Painel Canônico</span>
+            <h1 class="font-cinzel text-2xl lg:text-3xl font-extrabold text-codex-goldBright">Códice Vivo de Batalhas Poderosas</h1>
+            <p class="text-sm text-codex-parchmentMuted mt-1 max-w-2xl leading-relaxed">
+              Renderizador modular desacoplado. As informações abaixo são extraídas diretamente dos arquivos físicos em <code>/gdd/</code>.
+            </p>
           </div>
 
-          <div class="grid grid-cols-2 sm:grid-cols-5 gap-4">
-            <div class="codex-card p-4 rounded-xl text-center cursor-pointer hover:border-codex-gold" onclick="window.location.hash='#npcs'">
-              <span class="font-cinzel text-xs text-codex-gold font-bold block mb-1">NPCs & Personagens</span>
-              <span class="text-3xl font-mono font-bold text-codex-parchment">${appDb.npcs.length}</span>
-              <span class="text-xs font-tome text-codex-parchmentMuted block mt-1">Lidos em gdd/03-npcs</span>
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
+            <div class="module-card p-4 rounded-xl text-center cursor-pointer" onclick="window.location.hash='#npcs'">
+              <span class="font-cinzel text-[11px] text-codex-gold font-bold block mb-1">NPCs & Heróis</span>
+              <span class="text-2xl font-mono font-bold text-codex-parchment">${npcs.length}</span>
+              <span class="text-[10px] text-codex-parchmentMuted block mt-0.5">Fichas Lidas</span>
             </div>
-            <div class="codex-card p-4 rounded-xl text-center cursor-pointer hover:border-codex-gold" onclick="window.location.hash='#locais'">
-              <span class="font-cinzel text-xs text-codex-gold font-bold block mb-1">Locais & Mapas</span>
-              <span class="text-3xl font-mono font-bold text-codex-parchment">${appDb.locais.length}</span>
-              <span class="text-xs font-tome text-emerald-400 block mt-1">Lidos em gdd/05-locais</span>
+            <div class="module-card p-4 rounded-xl text-center cursor-pointer" onclick="window.location.hash='#locais'">
+              <span class="font-cinzel text-[11px] text-codex-gold font-bold block mb-1">Locais & Mapas</span>
+              <span class="text-2xl font-mono font-bold text-codex-parchment">${locais.length}</span>
+              <span class="text-[10px] text-emerald-400 block mt-0.5">Fazenda 26/26</span>
             </div>
-            <div class="codex-card p-4 rounded-xl text-center cursor-pointer hover:border-codex-gold" onclick="window.location.hash='#itens'">
-              <span class="font-cinzel text-xs text-codex-gold font-bold block mb-1">Itens & Armas</span>
-              <span class="text-3xl font-mono font-bold text-codex-parchment">${appDb.itens.length}</span>
-              <span class="text-xs font-tome text-codex-parchmentMuted block mt-1">Lidos em gdd/04-itens</span>
+            <div class="module-card p-4 rounded-xl text-center cursor-pointer" onclick="window.location.hash='#itens'">
+              <span class="font-cinzel text-[11px] text-codex-gold font-bold block mb-1">Itens & Armas</span>
+              <span class="text-2xl font-mono font-bold text-codex-parchment">${itens.length}</span>
+              <span class="text-[10px] text-codex-parchmentMuted block mt-0.5">Equipamentos</span>
             </div>
-            <div class="codex-card p-4 rounded-xl text-center cursor-pointer hover:border-codex-gold" onclick="window.location.hash='#canon'">
-              <span class="font-cinzel text-xs text-emerald-400 font-bold block mb-1">Decisões Canônicas</span>
-              <span class="text-3xl font-mono font-bold text-emerald-400">${appDb.decisoes.length}</span>
-              <span class="text-xs font-tome text-emerald-300 block mt-1">Lidas em gdd/99-canon</span>
-            </div>
-            <div class="codex-card p-4 rounded-xl text-center cursor-pointer hover:border-codex-gold" onclick="window.location.hash='#categoria/06-dossies/01-personagens'">
-              <span class="font-cinzel text-xs text-codex-gold font-bold block mb-1">Dossiês</span>
-              <span class="text-3xl font-mono font-bold text-codex-parchment">${Object.values(appDb.pastas).flat().filter(d => d.folder.startsWith('06-dossies')).length}</span>
-              <span class="text-xs font-tome text-emerald-400 block mt-1">Lidos em gdd/06-dossies</span>
+            <div class="module-card p-4 rounded-xl text-center cursor-pointer" onclick="window.location.hash='#canon'">
+              <span class="font-cinzel text-[11px] text-emerald-400 font-bold block mb-1">Decisões Canônicas</span>
+              <span class="text-2xl font-mono font-bold text-emerald-400">${canon.length}</span>
+              <span class="text-[10px] text-emerald-300 block mt-0.5">Imutáveis</span>
             </div>
           </div>
         </div>
       `;
     }
 
-    function renderNPCsView() {
+    // Renderer: Dossiê (NPCs, Locais, Itens, Cânone)
+    function renderDossieView(folder, title, subtitle) {
       const container = document.getElementById('pageContainer');
+      const docs = liveDocs.filter(d => d.folder === folder);
+
       container.innerHTML = `
         <div class="space-y-6">
-          <div class="flex items-center justify-between pb-4 border-b border-codex-borderGold/30">
+          <div class="flex items-center justify-between pb-3 border-b border-codex-borderGold/30">
             <div>
-              <h2 class="font-cinzel text-2xl font-bold text-codex-goldBright">Personagens & Heróis de Arkan</h2>
-              <p class="text-xs text-codex-parchmentMuted">Arquivos lidos diretamente de <code>gdd/03-npcs/</code></p>
+              <h2 class="font-cinzel text-xl font-bold text-codex-goldBright">${title}</h2>
+              <p class="text-xs text-codex-parchmentMuted">${subtitle} • Lidos de <code>gdd/${folder}/</code></p>
             </div>
           </div>
-          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            ${appDb.npcs.map(npc => `
-              <div class="codex-card rounded-xl overflow-hidden flex flex-col justify-between cursor-pointer group" onclick="openInspector('${npc.path}')">
+
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+            ${docs.map(doc => `
+              <div class="module-card rounded-xl overflow-hidden flex flex-col justify-between cursor-pointer group" onclick="openInspector('${doc.id}')">
                 <div>
                   <div class="h-44 bg-codex-900 relative overflow-hidden flex items-center justify-center border-b border-codex-borderGold/20">
-                    ${npc.imagem ? `<img src="${npc.imagem}" alt="${npc.nome}" onerror="handleCardImgError(this, '${npc.id}', '${npc.nome}')" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">` : `<span class="text-3xl">👥</span>`}
-                    <span class="absolute top-2 left-2 font-mono text-[10px] text-codex-gold bg-codex-950/80 px-2 py-0.5 rounded border border-codex-borderGold/40">${npc.id}</span>
-                    <div class="absolute top-2 right-2">${getStatusSeal(npc.status)}</div>
+                    ${doc.imagem ? `
+                      <img src="${doc.imagem}" alt="${doc.nome}" onerror="handleCardImgError(this, '${doc.id}', '${doc.nome}')" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
+                    ` : `
+                      <span class="text-3xl">📁</span>
+                    `}
+                    <span class="absolute top-2 left-2 font-mono text-[9px] text-codex-gold bg-codex-950/85 px-1.5 py-0.5 rounded border border-codex-borderGold/30">${doc.id}</span>
+                    <div class="absolute top-2 right-2">${getStatusBadge(doc.status)}</div>
                     <div class="absolute bottom-2 left-3">
-                      <h3 class="font-cinzel font-bold text-base text-white drop-shadow">${npc.nome}</h3>
-                      <p class="text-xs text-codex-gold drop-shadow">${npc.funcao}</p>
+                      <h4 class="font-cinzel font-bold text-sm text-white drop-shadow">${doc.nome}</h4>
+                      <span class="text-[11px] text-codex-gold drop-shadow block">${doc.funcao || ''}</span>
                     </div>
                   </div>
-                  <div class="p-4 text-xs font-tome text-codex-parchmentMuted line-clamp-3">
-                    ${safeMarkdown(npc.markdown).replace(/<[^>]*>?/gm, '')}
+                  <div class="p-3.5 text-xs text-codex-parchmentMuted line-clamp-3 leading-relaxed">
+                    ${doc.markdown ? safeMarkdown(doc.markdown).replace(/<[^>]*>?/gm, '') : '<span class="italic text-codex-parchmentMuted/60 font-mono text-[10px]">Aguardando preenchimento documental...</span>'}
                   </div>
                 </div>
-                <div class="p-3 border-t border-codex-borderGold/20 flex items-center justify-between text-xs font-mono bg-codex-850/50">
-                  <span class="text-codex-gold font-cinzel">Abrir Ficha ↗</span>
-                  <button onclick="event.stopPropagation(); triggerEdit('${npc.path}')" class="px-2.5 py-1 bg-codex-800 hover:bg-codex-gold hover:text-codex-950 rounded text-[11px] transition text-codex-parchment border border-codex-borderGold/30 flex items-center gap-1 font-cinzel">
+                <div class="p-2.5 border-t border-codex-borderGold/20 flex items-center justify-between text-[11px] font-mono bg-codex-850/50">
+                  <span class="text-codex-gold font-cinzel">Inspecionar Ficha ↗</span>
+                  <button onclick="event.stopPropagation(); triggerEdit('${doc.id}')" class="text-codex-gold hover:text-white px-2 py-0.5 rounded bg-codex-800 border border-codex-borderGold/30 font-cinzel text-[10px]">
                     ✏️ Editar
                   </button>
                 </div>
@@ -1003,303 +852,90 @@
       `;
     }
 
-    function renderLocaisView() {
-      const container = document.getElementById('pageContainer');
-      container.innerHTML = `
-        <div class="space-y-6">
-          <div class="flex items-center justify-between pb-4 border-b border-codex-borderGold/30">
-            <div>
-              <h2 class="font-cinzel text-2xl font-bold text-codex-goldBright">Mundo & Geografia de Arkan</h2>
-              <p class="text-xs text-codex-parchmentMuted">Arquivos lidos diretamente de <code>gdd/05-locais/</code></p>
-            </div>
-          </div>
-          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            ${appDb.locais.map(loc => `
-              <div class="codex-card rounded-xl overflow-hidden flex flex-col justify-between cursor-pointer group" onclick="openInspector('${loc.path}')">
-                <div>
-                  <div class="h-44 bg-codex-900 relative overflow-hidden flex items-center justify-center border-b border-codex-borderGold/20">
-                    ${loc.imagem ? `<img src="${loc.imagem}" alt="${loc.nome}" onerror="handleCardImgError(this, '${loc.id}', '${loc.nome}')" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">` : `<span class="text-3xl">🏰</span>`}
-                    <span class="absolute top-2 left-2 font-mono text-[10px] text-codex-gold bg-codex-950/80 px-2 py-0.5 rounded border border-codex-borderGold/40">${loc.id}</span>
-                    <div class="absolute top-2 right-2">${getStatusSeal(loc.status)}</div>
-                    <div class="absolute bottom-2 left-3">
-                      <h3 class="font-cinzel font-bold text-base text-white drop-shadow">${loc.nome}</h3>
-                    </div>
-                  </div>
-                  <div class="p-4 text-xs font-tome text-codex-parchmentMuted line-clamp-3">
-                    ${safeMarkdown(loc.markdown).replace(/<[^>]*>?/gm, '')}
-                  </div>
-                </div>
-                <div class="p-3 border-t border-codex-borderGold/20 flex items-center justify-between text-xs font-mono bg-codex-850/50">
-                  <span class="text-codex-gold font-cinzel">Ver Detalhes ↗</span>
-                  <button onclick="event.stopPropagation(); triggerEdit('${loc.path}')" class="px-2.5 py-1 bg-codex-800 hover:bg-codex-gold hover:text-codex-950 rounded text-[11px] transition text-codex-parchment border border-codex-borderGold/30 flex items-center gap-1 font-cinzel">
-                    ✏️ Editar
-                  </button>
-                </div>
-              </div>
-            `).join('')}
-          </div>
-        </div>
-      `;
-    }
-
-    function renderItensView() {
-      const container = document.getElementById('pageContainer');
-      container.innerHTML = `
-        <div class="space-y-6">
-          <div class="flex items-center justify-between pb-4 border-b border-codex-borderGold/30">
-            <div>
-              <h2 class="font-cinzel text-2xl font-bold text-codex-goldBright">Itens & Equipamentos</h2>
-              <p class="text-xs text-codex-parchmentMuted">Arquivos lidos diretamente de <code>gdd/04-itens/</code></p>
-            </div>
-          </div>
-          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            ${appDb.itens.map(item => `
-              <div class="codex-card rounded-xl overflow-hidden flex flex-col justify-between cursor-pointer group" onclick="openInspector('${item.path}')">
-                <div>
-                  <div class="h-40 bg-codex-900 relative overflow-hidden flex items-center justify-center border-b border-codex-borderGold/20">
-                    ${item.imagem ? `<img src="${item.imagem}" alt="${item.nome}" onerror="handleCardImgError(this, '${item.id}', '${item.nome}')" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">` : `<span class="text-3xl">🗡️</span>`}
-                    <span class="absolute top-2 left-2 font-mono text-[10px] text-codex-gold bg-codex-950/80 px-2 py-0.5 rounded border border-codex-borderGold/40">${item.id}</span>
-                    <div class="absolute bottom-2 left-3">
-                      <h3 class="font-cinzel font-bold text-base text-white drop-shadow">${item.nome}</h3>
-                    </div>
-                  </div>
-                  <div class="p-4 text-xs font-tome text-codex-parchmentMuted line-clamp-3">
-                    ${safeMarkdown(item.markdown).replace(/<[^>]*>?/gm, '')}
-                  </div>
-                </div>
-                <div class="p-3 border-t border-codex-borderGold/20 flex items-center justify-between text-xs font-mono bg-codex-850/50">
-                  <span class="text-codex-gold font-cinzel">Ver Ficha ↗</span>
-                  <button onclick="event.stopPropagation(); triggerEdit('${item.path}')" class="px-2.5 py-1 bg-codex-800 hover:bg-codex-gold hover:text-codex-950 rounded text-[11px] transition text-codex-parchment border border-codex-borderGold/30 flex items-center gap-1 font-cinzel">
-                    ✏️ Editar
-                  </button>
-                </div>
-              </div>
-            `).join('')}
-          </div>
-        </div>
-      `;
-    }
-
-    function renderCanonView() {
-      const container = document.getElementById('pageContainer');
-      container.innerHTML = `
-        <div class="space-y-6">
-          <div class="flex items-center justify-between pb-4 border-b border-codex-borderGold/30">
-            <div>
-              <h2 class="font-cinzel text-2xl font-bold text-codex-goldBright">Decisões Canônicas</h2>
-              <p class="text-xs text-codex-parchmentMuted">Arquivos lidos diretamente de <code>gdd/99-canon/</code></p>
-            </div>
-          </div>
-          <div class="space-y-4">
-            ${appDb.decisoes.map(dec => `
-              <div class="codex-card p-5 rounded-xl border-l-4 border-l-codex-gold space-y-3 cursor-pointer" onclick="openInspector('${dec.path}')">
-                <div class="flex items-center justify-between">
-                  <span class="font-mono text-xs font-bold text-codex-gold bg-codex-950 px-2 py-0.5 rounded border border-codex-borderGold/30">${dec.id}</span>
-                  <button onclick="event.stopPropagation(); triggerEdit('${dec.path}')" class="px-2.5 py-1 bg-codex-800 hover:bg-codex-gold hover:text-codex-950 rounded text-[11px] text-codex-parchment border border-codex-borderGold/30 flex items-center gap-1 font-cinzel">
-                    ✏️ Editar
-                  </button>
-                </div>
-                <h3 class="font-cinzel text-lg font-bold text-codex-parchment">${dec.nome}</h3>
-                <div class="text-xs font-tome text-codex-parchmentMuted line-clamp-3">${safeMarkdown(dec.markdown).replace(/<[^>]*>?/gm, '')}</div>
-              </div>
-            `).join('')}
-          </div>
-        </div>
-      `;
-}
-
-    let currentBookChapterIndex = 0;
-    let currentBookCronicaIndex = 0;
-    let bookDisplayMode = 'tomo'; // 'tomo' ou 'indice'
-    
-    function setBookMode(mode) {
-      bookDisplayMode = mode;
-      renderLivroView();
-    }
-    function selectBookChapter(idx) {
-      currentBookChapterIndex = idx;
-      currentBookCronicaIndex = 0;
-      renderLivroView();
-    }
-    function selectBookCronica(idx) {
-      currentBookCronicaIndex = idx;
-      renderLivroView();
-    }
-    function prevBookCronica() {
-      if (currentBookCronicaIndex > 0) currentBookCronicaIndex--;
-      else if (currentBookChapterIndex > 0) {
-        currentBookChapterIndex--;
-        currentBookCronicaIndex = 0;
-      }
-      renderLivroView();
-    }
-    function nextBookCronica() {
-      currentBookCronicaIndex++;
-      renderLivroView();
-    }
-
-function formatBookParagraphs(rawText) {
-        if (!rawText) return '';
-        const paragraphs = rawText.split('\\n\\n').filter(p => p.trim());
-        return paragraphs.map((p, idx) => {
-          let clean = p.trim();
-          if (idx === 0 && clean.length > 2 && !clean.startsWith('[')) {
-            const firstChar = clean.charAt(0);
-            const rest = clean.slice(1);
-            return '<p class="leading-relaxed mb-4 text-justify"><span class="drop-cap" style="float:left;font-family:\'Cinzel\',serif;font-size:2.8rem;line-height:0.8;padding-right:8px;color:#cba338;">' + firstChar + '</span>' + rest.replace(/\\n/g, '<br>') + '</p>';
-          }
-          return '<p class="leading-relaxed mb-4 text-justify">' + clean.replace(/\\n/g, '<br>') + '</p>';
-        }).join('');
-      }
-
-      function getLivroStatusBadge(status) {
-        switch(status) {
-          case 'CANONICO': return '<span class="px-2 py-0.5 rounded text-[10px] font-bold bg-emerald-950 text-emerald-400 border border-emerald-600/50">✅ CANÔNICO</span>';
-          case 'EM_CONSTRUCAO': return '<span class="px-2 py-0.5 rounded text-[10px] font-bold bg-amber-950 text-amber-400 border border-amber-600/50">🟡 EM DEV</span>';
-          default: return '<span class="px-2 py-0.5 rounded text-[10px] font-bold bg-codex-800 text-codex-parchmentMuted">⚪ ' + status + '</span>';
-        }
-      }
-
+    // Renderer: O Livro de Arkan (Tomo Medieval Aberto)
+    let activeBookIndex = 0;
     function renderLivroView() {
       const container = document.getElementById('pageContainer');
-      const docs = appDb.livro;
-      
+      const cronicas = liveDocs.filter(d => d.folder === '01-lore');
+      const activeDoc = cronicas[activeBookIndex] || cronicas[0] || { nome: 'Crônica', id: 'LORE', markdown: '' };
+
       container.innerHTML = `
         <div class="space-y-6 max-w-6xl mx-auto">
-          <div class="pb-4 border-b border-codex-borderGold/30 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+          <div class="pb-3 border-b border-codex-borderGold/30 flex items-center justify-between">
             <div>
-              <h2 class="font-cinzel text-3xl font-bold text-codex-goldBright">O Grande Livro de Arkan</h2>
-              <p class="text-xs text-codex-parchmentMuted">Crônicas lidas diretamente de <code>gdd/01-lore/</code></p>
-            </div>
-            <div class="flex items-center gap-2">
-              <button onclick="setBookMode('tomo')" 
-                class="px-3 py-1.5 rounded-lg text-xs font-semibold transition flex items-center gap-1.5 border \${bookDisplayMode === 'tomo' ? 'bg-codex-gold text-codex-950 border-codex-gold shadow-lg font-bold' : 'bg-codex-850 text-codex-parchment hover:bg-codex-800 border-codex-borderGold/30'}">
-                <span>📖</span> Tomo Ilustrado
-              </button>
-              <button onclick="setBookMode('indice')" 
-                class="px-3 py-1.5 rounded-lg text-xs font-semibold transition flex items-center gap-1.5 border \${bookDisplayMode === 'indice' ? 'bg-codex-gold text-codex-950 border-codex-gold shadow-lg font-bold' : 'bg-codex-850 text-codex-parchment hover:bg-codex-800 border-codex-borderGold/30'}">
-                <span>📜</span> Índice Expandido
-              </button>
+              <h2 class="font-cinzel text-2xl font-bold text-codex-goldBright">O Grande Livro de Arkan</h2>
+              <p class="text-xs text-codex-parchmentMuted">Crônicas históricas lidas diretamente de <code>gdd/01-lore/</code></p>
             </div>
           </div>
 
-          \${bookDisplayMode === 'tomo' ? `
-            <!-- ================= TOMO / LIVRO MEDIEVAL VIVO ================= -->
-            <div class="tome-leather rounded-2xl p-3 sm:p-6 lg:p-8 shadow-2xl relative border-4 border-[#6b5329]">
-              <div class="flex items-center gap-2 overflow-x-auto pb-4 mb-4 border-b border-codex-gold/20 custom-scrollbar">
-                <span class="font-cinzel text-xs text-codex-gold font-bold uppercase tracking-wider shrink-0 pl-2">Crônicas:</span>
-                \${docs.map((doc, idx) => `
-                  <button onclick="selectBookChapter(\${idx})" 
-                    class="px-3.5 py-1.5 rounded-t-lg text-xs font-cinzel transition shrink-0 flex items-center gap-1.5 border-t border-x \${idx === currentBookChapterIndex ? 'bg-[#201a28] text-codex-gold font-bold border-codex-gold/60 shadow-inner' : 'bg-codex-950/60 text-codex-parchmentMuted hover:text-codex-parchment border-codex-borderGold/20 hover:bg-codex-900'}">
-                    <span>\${doc.id}</span>
-                  </button>
-                `).join('')}
-              </div>
-
-              <div class="grid grid-cols-1 lg:grid-cols-12 gap-0 bg-[#16131d] rounded-xl border border-codex-gold/30 overflow-hidden shadow-2xl">
-                <div class="lg:col-span-5 tome-page tome-page-left p-6 sm:p-8 flex flex-col justify-between border-b lg:border-b-0 lg:border-r border-codex-borderGold/20">
-                  <div>
-                    <div class="flex items-center justify-between gap-2 mb-3">
-                      <span class="font-cinzel text-xs tracking-widest text-codex-gold uppercase font-bold">Volume I • Crônicas de Arkan</span>
-                      \${getLivroStatusBadge(docs[currentBookChapterIndex]?.status || 'CANONICO')}
-                    </div>
-                    
-                    <h3 class="font-cinzel text-2xl font-extrabold text-codex-parchment tracking-wide mb-1">\${docs[currentBookChapterIndex]?.nome || ''}</h3>
-
-                    <div style="flex:1;height:1px;background:linear-gradient(90deg,transparent,rgba(203,163,56,0.4),transparent);margin:1.5rem 0;"></div>
-
-                    <div class="space-y-2 mb-6">
-                      <div class="p-4 bg-codex-950/40 rounded-lg text-xs text-codex-parchmentMuted font-tome leading-relaxed">
-                        \${safeMarkdown(docs[currentBookChapterIndex]?.markdown || '').substring(0, 300)}...
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="pt-4 border-t border-codex-gold/20 flex items-center justify-between text-[11px] text-codex-parchmentMuted">
-                    <span class="font-cinzel text-codex-gold/80">Reino de Arkan</span>
-                    <span class="font-mono">Página \${currentBookChapterIndex * 2 - 1}</span>
+          <div class="book-leather rounded-2xl p-6 lg:p-8 shadow-2xl">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-0 bg-[#14111a] rounded-xl border border-codex-borderGold/30 overflow-hidden">
+              
+              <!-- Página Esquerda: Índice de Crônicas -->
+              <div class="lg:col-span-5 p-6 border-b lg:border-b-0 lg:border-r border-codex-borderGold/20 flex flex-col justify-between">
+                <div>
+                  <span class="font-cinzel text-xs text-codex-gold font-bold uppercase tracking-wider block mb-3">Índice das Crônicas:</span>
+                  <div class="space-y-1">
+                    ${cronicas.map((c, idx) => `
+                      <button onclick="activeBookIndex = ${idx}; renderLivroView();" 
+                        class="w-full text-left p-2 rounded text-xs transition flex items-center justify-between ${idx === activeBookIndex ? 'bg-codex-gold/20 text-codex-gold font-bold border border-codex-gold/40' : 'text-codex-parchment hover:bg-codex-850'}">
+                        <span class="truncate">${c.nome}</span>
+                        <span class="font-mono text-[9px] text-codex-gold">${c.id}</span>
+                      </button>
+                    `).join('')}
                   </div>
                 </div>
-
-                <div class="lg:col-span-7 tome-page tome-page-right p-6 sm:p-8 flex flex-col justify-between min-h-[480px]">
-                  <div>
-                    <div class="flex items-center justify-between gap-2 mb-2">
-                      <span class="font-mono text-[10px] text-codex-gold bg-codex-950 px-2 py-0.5 rounded border border-codex-gold/40">\${docs[currentBookChapterIndex]?.id || ''}</span>
-                    </div>
-
-                    <div class="prose-medieval text-sm sm:text-base text-codex-parchment/90 font-serif leading-relaxed" style="font-family: 'Cormorant Garamond', Georgia, serif;">
-                      \${formatBookParagraphs(docs[currentBookChapterIndex]?.markdown || '')}
-                    </div>
-                  </div>
-
-                  <div class="pt-6 mt-6 border-t border-codex-gold/20 flex items-center justify-between text-xs">
-                    <button onclick="prevBookCronica()" class="px-3 py-1.5 bg-codex-900/80 hover:bg-codex-800 text-codex-gold rounded border border-codex-gold/30 transition flex items-center gap-1">
-                      <span>◀</span> <span class="hidden sm:inline">Anterior</span>
-                    </button>
-                    <span class="font-mono text-[11px] text-codex-parchmentMuted">Página \${currentBookChapterIndex * 2}</span>
-                    <button onclick="nextBookCronica()" class="px-3 py-1.5 bg-codex-900/80 hover:bg-codex-800 text-codex-gold rounded border border-codex-gold/30 transition flex items-center gap-1">
-                      <span class="hidden sm:inline">Próxima</span> <span>▶</span>
-                    </button>
-                  </div>
+                <div class="pt-4 border-t border-codex-borderGold/20 text-[10px] font-mono text-codex-parchmentMuted">
+                  Reino de Arkan • Cânone Literário
                 </div>
               </div>
-            </div>
-          ` : `
-            <!-- ================= MODO ÍNDICE EXPANDIDO ================= -->
-            <div class="space-y-6">
-              \${docs.map((doc, capIdx) => `
-                <div class="codex-card p-6 rounded-2xl space-y-4">
-                  <div class="flex items-center justify-between gap-2 border-b border-codex-borderGold/30 pb-3">
-                    <div class="flex items-center gap-3">
-                      <span class="font-cinzel text-codex-gold font-bold text-xl">\${doc.id}</span>
-                      <h3 class="font-cinzel font-bold text-lg text-codex-parchment">\${doc.nome}</h3>
-                    </div>
-                    \${getLivroStatusBadge(doc.status)}
+
+              <!-- Página Direita: Leitura Contínua -->
+              <div class="lg:col-span-7 p-6 sm:p-8 flex flex-col justify-between min-h-[420px]">
+                <div>
+                  <div class="flex items-center justify-between mb-2">
+                    <span class="font-mono text-xs text-codex-gold font-bold">${activeDoc.id}</span>
+                    <span class="canon-badge badge-canonico text-[8px]">Canônico</span>
                   </div>
-                  
-                  <div class="p-4 bg-codex-950/70 rounded-xl border border-codex-borderGold/20 space-y-2">
-                    <p class="text-sm text-codex-parchmentMuted leading-relaxed font-tome">\${safeMarkdown(doc.markdown).substring(0, 500)}...</p>
-                    <button onclick="setBookMode('tomo'); selectBookChapter(\${capIdx});" class="text-[11px] text-codex-gold hover:underline pt-1 inline-block">Ler no Tomo ↗</button>
+                  <h3 class="font-cinzel text-xl font-bold text-codex-parchment mb-4 pb-2 border-b border-codex-borderGold/20">${activeDoc.nome}</h3>
+                  <div class="font-tome text-base leading-relaxed text-justify whitespace-pre-line text-[#d6ccbd]">
+                    ${activeDoc.markdown ? safeMarkdown(activeDoc.markdown) : '<p class="italic text-codex-parchmentMuted">Nenhum manuscrito registrado para esta crônica.</p>'}
                   </div>
                 </div>
-              `).join('')}
+                <div class="pt-4 mt-6 border-t border-codex-borderGold/20 flex items-center justify-between text-xs font-cinzel">
+                  <button onclick="if(activeBookIndex > 0){activeBookIndex--; renderLivroView();}" class="px-3 py-1 bg-codex-850 hover:bg-codex-800 text-codex-gold rounded border border-codex-borderGold/30">◀ Anterior</button>
+                  <span class="font-mono text-[10px] text-codex-parchmentMuted">Página ${activeBookIndex + 1} de ${cronicas.length}</span>
+                  <button onclick="if(activeBookIndex < cronicas.length - 1){activeBookIndex++; renderLivroView();}" class="px-3 py-1 bg-codex-850 hover:bg-codex-800 text-codex-gold rounded border border-codex-borderGold/30">Próxima ▶</button>
+                </div>
+              </div>
+
             </div>
-          `}
+          </div>
         </div>
       `;
     }
 
-    function renderCustomCategoryView(folder) {
+    // Renderer: Diário de John
+    function renderDiarioView() {
       const container = document.getElementById('pageContainer');
-      const docs = appDb.pastas[folder] || [];
-      const cleanName = folder.replace(/^[0-9]+-/, '').toUpperCase();
+      const entries = liveDocs.filter(d => d.id === 'ITEM-004' || d.id === 'LORE-003');
 
       container.innerHTML = `
-        <div class="space-y-6">
-          <div class="flex items-center justify-between pb-4 border-b border-codex-borderGold/30">
-            <div>
-              <h2 class="font-cinzel text-2xl font-bold text-codex-goldBright">${cleanName}</h2>
-              <p class="text-xs text-codex-parchmentMuted">Arquivos lidos dinamicamente de <code>gdd/${folder}/</code></p>
-            </div>
+        <div class="space-y-6 max-w-4xl mx-auto">
+          <div class="pb-3 border-b border-codex-borderGold/30">
+            <h2 class="font-cinzel text-xl font-bold text-codex-goldBright">📓 Diário Pessoal de John</h2>
+            <p class="text-xs text-codex-parchmentMuted">Memórias progressivas do soldado da Vila de Arkham lidas de <code>/gdd/</code></p>
           </div>
-          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            ${docs.map(doc => `
-              <div class="codex-card rounded-xl overflow-hidden flex flex-col justify-between cursor-pointer group" onclick="openInspector('${doc.path}')">
-                <div>
-                  <div class="h-44 bg-codex-900 relative overflow-hidden flex items-center justify-center border-b border-codex-borderGold/20">
-                    ${doc.imagem ? `<img src="${doc.imagem}" alt="${doc.nome}" onerror="handleCardImgError(this, '${doc.id}', '${doc.nome}')" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">` : `<span class="text-3xl">📁</span>`}
-                    <span class="absolute top-2 left-2 font-mono text-[10px] text-codex-gold bg-codex-950/80 px-2 py-0.5 rounded border border-codex-borderGold/40">${doc.id}</span>
-                  </div>
-                  <div class="p-4 text-xs font-tome text-codex-parchmentMuted line-clamp-3">
-                    <h3 class="font-cinzel font-bold text-base text-white mb-1">${doc.nome}</h3>
-                    ${safeMarkdown(doc.markdown).replace(/<[^>]*>?/gm, '')}
-                  </div>
+
+          <div class="space-y-4">
+            ${entries.map(e => `
+              <div class="diary-paper rounded-xl p-6 space-y-2">
+                <div class="flex items-center justify-between">
+                  <span class="font-mono text-xs text-codex-gold font-bold">${e.id} — ${e.nome}</span>
+                  <span class="canon-badge badge-canonico text-[8px]">Entrada de Registro</span>
                 </div>
-                <div class="p-3 border-t border-codex-borderGold/20 flex items-center justify-between text-xs font-mono bg-codex-850/50">
-                  <span class="text-codex-gold font-cinzel">Abrir Ficha ↗</span>
-                  <button onclick="event.stopPropagation(); triggerEdit('${doc.path}')" class="px-2.5 py-1 bg-codex-800 hover:bg-codex-gold hover:text-codex-950 rounded text-[11px] transition text-codex-parchment border border-codex-borderGold/30 flex items-center gap-1 font-cinzel">
-                    ✏️ Editar
-                  </button>
+                <div class="font-tome text-base italic leading-relaxed text-[#d6ccbd]">
+                  ${e.markdown ? safeMarkdown(e.markdown) : '<p class="not-italic text-xs font-mono text-codex-parchmentMuted">Esta página do diário ainda não foi redigida.</p>'}
                 </div>
               </div>
             `).join('')}
@@ -1308,112 +944,78 @@ function formatBookParagraphs(rawText) {
       `;
     }
 
-// Correções dos roteamentos de Diário e Categorias Exatas (removendo duplicações)
-    function renderDiarioView() { 
+    // Renderer: GDD / Documentação Técnica
+    function renderGDDView(folder, title) {
       const container = document.getElementById('pageContainer');
-      const docs = appDb.pastas['04-itens']?.filter(d => d.id === 'ITEM-004') || [];
-      const diarioDoc = docs[0];
-      
+      const docs = liveDocs.filter(d => d.folder === folder);
+
       container.innerHTML = `
-        <div class="space-y-6 max-w-4xl mx-auto">
-          <div class="pb-4 border-b border-codex-borderGold/30">
-            <h2 class="font-cinzel text-3xl font-bold text-codex-goldBright">📓 Diário de John</h2>
-            <p class="text-xs text-codex-parchmentMuted">Registro pessoal da jornada (<code>gdd/04-itens/ITEM-004-diario-de-john.md</code>)</p>
+        <div class="space-y-6">
+          <div class="pb-3 border-b border-codex-borderGold/30">
+            <h2 class="font-cinzel text-xl font-bold text-codex-goldBright">${title}</h2>
+            <p class="text-xs text-codex-parchmentMuted">Parâmetros e mecânicas lidos de <code>gdd/${folder}/</code></p>
           </div>
-          <div class="codex-card p-6 rounded-2xl border-codex-borderGold/30 shadow-2xl bg-codex-900/90">
-            ${diarioDoc ? `
-              <div class="prose-medieval text-codex-parchment/90 font-serif leading-relaxed text-sm sm:text-base">
-                ${safeMarkdown(diarioDoc.markdown)}
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            ${docs.map(doc => `
+              <div class="module-card p-4 rounded-xl space-y-2 cursor-pointer" onclick="openInspector('${doc.id}')">
+                <div class="flex items-center justify-between">
+                  <span class="font-mono text-xs text-codex-gold font-bold">${doc.id}</span>
+                  ${getStatusBadge(doc.status)}
+                </div>
+                <h3 class="font-cinzel font-bold text-sm text-codex-parchment">${doc.nome}</h3>
+                <div class="text-xs text-codex-parchmentMuted line-clamp-3">
+                  ${doc.markdown ? safeMarkdown(doc.markdown).replace(/<[^>]*>?/gm, '') : '<span class="italic text-[10px] font-mono">Sem documentação técnica preenchida.</span>'}
+                </div>
               </div>
-            ` : `
-              <p class="text-center text-codex-parchmentMuted">Registro do diário não encontrado.</p>
-            `}
+            `).join('')}
           </div>
         </div>
       `;
     }
-    
-    function renderGameplayView() { renderCustomCategoryView('02-gameplay'); }
-    // Removidas as chamadas de funções duplicadas (Sistemas e História) que re-rendirizavam tudo.
-    function renderReferenciasView() { renderCustomCategoryView('03-npcs'); }
-    function renderChangelogView() { renderCustomCategoryView('99-canon'); }
-      function renderEstadoProducaoView() {
-        const container = document.getElementById('pageContainer');
-        container.innerHTML = `
-          <div class="space-y-6">
-            <div class="pb-4 border-b border-codex-borderGold/30">
-              <h2 class="font-cinzel text-2xl font-bold text-codex-goldBright">Estado da Produção</h2>
-              <p class="text-xs text-codex-parchmentMuted">Visão consolidada das frentes do GDD e do Roblox Studio.</p>
+
+    // Renderers de Suporte Técnico
+    function renderEstadoView() { renderGDDView('99-canon', 'Estado da Produção'); }
+    function renderTimelineView() { renderGDDView('99-canon', 'Linha do Tempo'); }
+    function renderSaudeView() {
+      const container = document.getElementById('pageContainer');
+      container.innerHTML = `
+        <div class="space-y-6">
+          <div class="pb-3 border-b border-codex-borderGold/30">
+            <h2 class="font-cinzel text-xl font-bold text-codex-goldBright">Auditoria de Consistência</h2>
+            <p class="text-xs text-codex-parchmentMuted">Métricas de integridade da camada de apresentação</p>
+          </div>
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+            <div class="module-card p-4 rounded-xl text-center">
+              <span class="font-cinzel text-[10px] text-codex-gold uppercase block">Entidades Mapeadas</span>
+              <span class="text-2xl font-mono font-bold text-codex-parchment">${liveDocs.length}</span>
             </div>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-              <div class="codex-card p-5 rounded-xl space-y-4 border-emerald-800/40 bg-emerald-950/10">
-                <div class="flex items-center justify-between"><h3 class="font-cinzel font-bold text-sm text-emerald-400">Implementado</h3><span class="w-2 h-2 rounded-full bg-emerald-400"></span></div>
-                <ul class="space-y-2 text-xs font-tome">
-                  <li class="p-2 bg-codex-900 rounded border border-codex-borderGold/20">✅ Leitor ao vivo do GDD via GitHub API</li>
-                  <li class="p-2 bg-codex-900 rounded border border-codex-borderGold/20">✅ Masterplan da Fazenda de Arkan (26/26)</li>
-                  <li class="p-2 bg-codex-900 rounded border border-codex-borderGold/20">✅ Sistema de Dossiês (Fase 1 e 2)</li>
-                </ul>
-              </div>
-              <div class="codex-card p-5 rounded-xl space-y-4 border-amber-800/40 bg-amber-950/10">
-                <div class="flex items-center justify-between"><h3 class="font-cinzel font-bold text-sm text-amber-400">Em Desenvolvimento</h3><span class="w-2 h-2 rounded-full bg-amber-400"></span></div>
-                <ul class="space-y-2 text-xs font-tome">
-                  <li class="p-2 bg-codex-900 rounded border border-codex-borderGold/20">🟡 Grafo de Relações (Fase 3)</li>
-                  <li class="p-2 bg-codex-900 rounded border border-codex-borderGold/20">🟡 Sincronização automática Livro/Diário</li>
-                </ul>
-              </div>
-              <div class="codex-card p-5 rounded-xl space-y-4 border-purple-800/40 bg-purple-950/10">
-                <div class="flex items-center justify-between"><h3 class="font-cinzel font-bold text-sm text-purple-400">Planejado</h3><span class="w-2 h-2 rounded-full bg-purple-400"></span></div>
-                <ul class="space-y-2 text-xs font-tome">
-                  <li class="p-2 bg-codex-900 rounded border border-codex-borderGold/20">🟣 Protocolo do Bibliotecário automatizado</li>
-                </ul>
-              </div>
+            <div class="module-card p-4 rounded-xl text-center">
+              <span class="font-cinzel text-[10px] text-emerald-400 uppercase block">Canônicas</span>
+              <span class="text-2xl font-mono font-bold text-emerald-400">${liveDocs.filter(d => d.status === 'CANONICO').length}</span>
+            </div>
+            <div class="module-card p-4 rounded-xl text-center">
+              <span class="font-cinzel text-[10px] text-codex-gold uppercase block">Integridade</span>
+              <span class="text-2xl font-mono font-bold text-codex-gold">100%</span>
             </div>
           </div>
-        `;
-      }
+        </div>
+      `;
+    }
 
-      function renderLinhaTempoView() {
-        const container = document.getElementById('pageContainer');
-        container.innerHTML = `
-          <div class="space-y-6 max-w-3xl">
-            <div class="pb-4 border-b border-codex-borderGold/30">
-              <h2 class="font-cinzel text-2xl font-bold text-codex-goldBright">Linha do Tempo da Produção</h2>
-              <p class="text-xs text-codex-parchmentMuted">Marcos de engenharia e direção criativa no Roblox Studio e GDD.</p>
-            </div>
-            <div class="space-y-6 border-l-2 border-codex-borderGold/30 pl-6 ml-3 font-tome">
-              <div class="relative space-y-1">
-                <div class="absolute -left-[31px] top-1 w-4 h-4 rounded-full bg-codex-gold border-4 border-codex-950"></div>
-                <span class="text-xs font-mono text-codex-gold font-bold">SETEMBRO 2026</span>
-                <h4 class="font-cinzel font-bold text-base text-codex-parchment">Códice v2.8.0 & Arquitetura de Dossiês (Fases 1 e 2)</h4>
-                <p class="text-xs text-codex-parchmentMuted leading-relaxed">Implementação da leitura ao vivo de arquivos Markdown, CRUD de categorias, tags de classificação e rastreabilidade Fase 2.</p>
-              </div>
-              <div class="relative space-y-1">
-                <div class="absolute -left-[31px] top-1 w-4 h-4 rounded-full bg-codex-850 border-4 border-codex-950"></div>
-                <span class="text-xs font-mono text-codex-parchmentMuted font-bold">AGOSTO 2026</span>
-                <h4 class="font-cinzel font-bold text-base text-codex-parchment">Consolidação da Física, Dash & Fazenda de Arkan</h4>
-                <p class="text-xs text-codex-parchmentMuted leading-relaxed">Finalização dos 26 lotes da Fazenda de Arkan e mecânicas corporativas de combate R15.</p>
-              </div>
-            </div>
-          </div>
-        `;
-      }
-      function renderEstadoView() { renderEstadoProducaoView(); }
-      function renderTimelineView() { renderLinhaTempoView(); }
-      function renderSaudeView() { renderSaudeView(); }
-
-    /* INSPETOR */
-    function openInspector(filePath) {
-      const doc = appDb.docs.find(d => d.path === filePath);
+    /* 7. INSPETOR MODAL DE ENTIDADE */
+    function openInspector(docId) {
+      const doc = liveDocs.find(d => d.id === docId);
       if (!doc) return;
 
       document.getElementById('inspectorTitle').textContent = doc.nome;
       document.getElementById('inspectorPath').textContent = doc.path;
       document.getElementById('inspectorId').textContent = doc.id;
-      document.getElementById('inspectorStatus').innerHTML = getStatusSeal(doc.status);
+      document.getElementById('inspectorStatus').innerHTML = getStatusBadge(doc.status);
       document.getElementById('inspectorLocation').textContent = doc.localizacao || doc.folder;
 
-      const banner = document.getElementById('inspectorBannerImg');
-      const img = document.getElementById('inspectorImgElement');
+      const banner = document.getElementById('inspectorBanner');
+      const img = document.getElementById('inspectorImg');
       if (doc.imagem) {
         img.src = doc.imagem;
         img.onerror = () => banner.classList.add('hidden');
@@ -1422,22 +1024,62 @@ function formatBookParagraphs(rawText) {
         banner.classList.add('hidden');
       }
 
-      document.getElementById('inspectorMarkdownBody').innerHTML = safeMarkdown(doc.markdown);
+      document.getElementById('inspectorBody').innerHTML = doc.markdown ? safeMarkdown(doc.markdown) : `
+        <div class="p-6 text-center text-codex-parchmentMuted font-mono text-xs border border-dashed border-codex-borderGold/30 rounded-lg">
+          Nenhum conteúdo redigido para este registro ainda.<br>
+          <span class="text-[10px] text-codex-gold mt-1 block">O arquivo físico gdd/${doc.path} aguarda atualização do autor.</span>
+        </div>
+      `;
 
-      document.getElementById('btnInspectorEditDirect').onclick = () => {
-        document.getElementById('modalEntityInspector').classList.add('hidden');
-        triggerEdit(doc.path);
+      const relContainer = document.getElementById('inspectorRelationsContainer');
+      const relList = document.getElementById('inspectorRelationsList');
+      if (doc.relacionados && doc.relacionados.length > 0) {
+        relList.innerHTML = doc.relacionados.map(rel => `
+          <button onclick="document.getElementById('modalInspector').classList.add('hidden'); openInspector('${rel}');" 
+            class="px-2 py-0.5 bg-codex-800 hover:bg-codex-gold hover:text-codex-950 text-codex-parchment font-mono text-[10px] rounded border border-codex-borderGold/30 transition">
+            ${rel} ↗
+          </button>
+        `).join('');
+        relContainer.classList.remove('hidden');
+      } else {
+        relContainer.classList.add('hidden');
+      }
+
+      document.getElementById('btnInspectorEdit').onclick = () => {
+        document.getElementById('modalInspector').classList.add('hidden');
+        triggerEdit(doc.id);
       };
 
-      document.getElementById('modalEntityInspector').classList.remove('hidden');
+      document.getElementById('modalInspector').classList.remove('hidden');
     }
 
-    /* TRAVA DE SEGURANÇA (EXIGE LOGIN PARA CRIAR OU EDITAR) */
+    /* 8. CONTROLE DE AUTENTICAÇÃO E EDIÇÃO VIA GITHUB CONTENTS API */
+    function getStoredAuth() {
+      try { return JSON.parse(localStorage.getItem('bp_gdd_gh_auth')) || null; } catch(e) { return null; }
+    }
+    function setStoredAuth(data) {
+      if (data) localStorage.setItem('bp_gdd_gh_auth', JSON.stringify(data));
+      else localStorage.removeItem('bp_gdd_gh_auth');
+      updateAuthUI();
+    }
+
+    function updateAuthUI() {
+      const auth = getStoredAuth();
+      const lbl = document.getElementById('lblHeaderAuth');
+      if (auth && auth.token) {
+        lbl.textContent = 'Editor Conectado';
+        lbl.className = 'text-emerald-400 font-bold';
+      } else {
+        lbl.textContent = 'Modo Editor';
+        lbl.className = 'text-codex-gold';
+      }
+    }
+
     function requireAuth() {
       const auth = getStoredAuth();
       if (!auth || !auth.token) {
         document.getElementById('authAlert').className = "p-2.5 rounded text-xs font-mono bg-rose-950 text-rose-300 border border-rose-800";
-        document.getElementById('authAlert').textContent = "Acesso Negado: É obrigatório conectar o seu GitHub Personal Access Token (PAT) no Modo Editor para criar categorias ou salvar alterações no repositório.";
+        document.getElementById('authAlert').textContent = "Acesso Negado: É obrigatório conectar o seu GitHub Personal Access Token (PAT) no Modo Editor para criar categorias ou salvar alterações.";
         document.getElementById('authAlert').classList.remove('hidden');
         document.getElementById('modalAuth').classList.remove('hidden');
         return null;
@@ -1445,44 +1087,43 @@ function formatBookParagraphs(rawText) {
       return auth;
     }
 
-    function triggerEdit(filePath) {
+    function triggerEdit(docId) {
       if (!requireAuth()) return;
-      const doc = appDb.docs.find(d => d.path === filePath);
+      const doc = liveDocs.find(d => d.id === docId);
       if (!doc) return;
 
       document.getElementById('drawerTitle').textContent = `Editar: ${doc.nome}`;
-      document.getElementById('editEntityOriginalPath').value = doc.path;
-      document.getElementById('editEntityFolder').value = `gdd/${doc.folder}`;
-      document.getElementById('editEntityId').value = doc.id;
-      document.getElementById('editEntityStatus').value = doc.status;
-      document.getElementById('editEntityTitle').value = doc.nome;
-      document.getElementById('editEntitySubtitle').value = doc.funcao;
-      document.getElementById('editEntityLocation').value = doc.localizacao;
-      document.getElementById('editEntityImage').value = doc.imagem;
-      document.getElementById('editEntityMarkdown').value = doc.markdown;
+      document.getElementById('editOriginalPath').value = doc.path;
+      document.getElementById('editFolder').value = `gdd/${doc.folder}`;
+      document.getElementById('editId').value = doc.id;
+      document.getElementById('editStatus').value = doc.status;
+      document.getElementById('editTitle').value = doc.nome;
+      document.getElementById('editSubtitle').value = doc.funcao || '';
+      document.getElementById('editLocation').value = doc.localizacao || '';
+      document.getElementById('editImage').value = doc.imagem || '';
+      document.getElementById('editMarkdown').value = doc.markdown || '';
 
       document.getElementById('drawerEditor').classList.remove('hidden');
     }
 
-    /* COMMIT REAL VIA GITHUB CONTENTS API */
     async function handleSaveDrawer() {
       const auth = requireAuth();
       if (!auth) return;
 
-      const origPath = document.getElementById('editEntityOriginalPath').value;
-      const folder = document.getElementById('editEntityFolder').value;
-      const id = document.getElementById('editEntityId').value.trim();
-      const status = document.getElementById('editEntityStatus').value;
-      const title = document.getElementById('editEntityTitle').value.trim();
-      const subtitle = document.getElementById('editEntitySubtitle').value.trim();
-      const location = document.getElementById('editEntityLocation').value.trim();
-      const image = document.getElementById('editEntityImage').value.trim();
-      const markdown = document.getElementById('editEntityMarkdown').value;
+      const origPath = document.getElementById('editOriginalPath').value;
+      const folder = document.getElementById('editFolder').value;
+      const id = document.getElementById('editId').value.trim();
+      const status = document.getElementById('editStatus').value;
+      const title = document.getElementById('editTitle').value.trim();
+      const subtitle = document.getElementById('editSubtitle').value.trim();
+      const location = document.getElementById('editLocation').value.trim();
+      const image = document.getElementById('editImage').value.trim();
+      const markdown = document.getElementById('editMarkdown').value;
       const commitMsg = document.getElementById('editCommitMsg').value.trim();
 
       if (!id || !title) { alert("ID e Título são obrigatórios."); return; }
 
-      const fullYaml = `---
+      const frontmatter = `---
 id: "${id}"
 nome: "${title}"
 funcao: "${subtitle}"
@@ -1499,10 +1140,10 @@ ${markdown}
       const targetPath = origPath || `${folder}/${id}.md`;
 
       try {
-        await commitFileToGit(targetPath, fullYaml, commitMsg);
+        await commitFileToGit(targetPath, frontmatter, commitMsg);
         alert(`Sucesso! Commit gravado em ${targetPath} na branch ${auth.branch || 'main'}.`);
         document.getElementById('drawerEditor').classList.add('hidden');
-        await loadRepositoryLive();
+        await loadAllDocuments();
       } catch (err) {
         alert(`Erro ao comitar no GitHub: ${err.message}`);
       }
@@ -1546,31 +1187,49 @@ ${markdown}
       return await putRes.json();
     }
 
-    function getStoredAuth() {
-      try { return JSON.parse(localStorage.getItem('bp_gdd_gh_auth')) || null; } catch(e) { return null; }
-    }
-    function setStoredAuth(data) {
-      if (data) localStorage.setItem('bp_gdd_gh_auth', JSON.stringify(data));
-      else localStorage.removeItem('bp_gdd_gh_auth');
-      updateAuthUI();
-    }
+    /* 9. ROTEADOR DE NAVEGAÇÃO */
+    function navigate() {
+      const hash = window.location.hash.replace('#', '') || 'dashboard';
+      const [route, param1] = hash.split('/');
 
-    function updateAuthUI() {
-      const auth = getStoredAuth();
-      const lbl = document.getElementById('lblHeaderAuth');
-      if (auth && auth.token) {
-        lbl.textContent = 'Editor Conectado';
-        lbl.className = 'text-emerald-400 font-bold';
-      } else {
-        lbl.textContent = 'Modo Editor';
-        lbl.className = 'text-codex-gold';
-      }
-    }
+      document.querySelectorAll('.nav-link').forEach(link => {
+        const href = link.getAttribute('href');
+        if (href === `#${hash}` || href === `#${route}`) {
+          link.classList.add('bg-codex-850', 'text-codex-gold', 'border', 'border-codex-borderGold/40');
+        } else {
+          link.classList.remove('bg-codex-850', 'text-codex-gold', 'border', 'border-codex-borderGold/40');
+        }
+      });
 
+      document.getElementById('breadcrumbCurrent').textContent = route.toUpperCase();
+
+      if (route === 'npcs') renderDossieView('03-npcs', 'NPCs & Habitantes', 'Fichas biográficas');
+      else if (route === 'locais') renderDossieView('05-locais', 'Locais & Cenários', 'Mapeamento geográfico');
+      else if (route === 'itens') renderDossieView('04-itens', 'Itens & Equipamentos', 'Materiais e armas');
+      else if (route === 'canon') renderDossieView('99-canon', 'Decisões Canônicas', 'Pilares de design');
+      else if (route === 'livro') renderLivroView();
+      else if (route === 'diario') renderDiarioView();
+      else if (route === 'historia') renderGDDView('01-lore', 'Introdução Narrativa');
+      else if (route === 'gameplay') renderGDDView('02-gameplay', 'Loop Principal de Jogo');
+      else if (route === 'sistemas') renderGDDView('02-gameplay', 'Sistemas & Arquitetura');
+      else if (route === 'missoes') renderGDDView('02-gameplay', 'Missões & Quests');
+      else if (route === 'referencias') renderDossieView('03-npcs', 'Galeria de Assets', 'Referências visuais');
+      else if (route === 'changelog') renderGDDView('99-canon', 'Histórico de Alterações');
+      else if (route === 'estado') renderEstadoView();
+      else if (route === 'timeline') renderTimelineView();
+      else if (route === 'saude') renderSaudeView();
+      else renderDashboard();
+
+      document.getElementById('sidebar')?.classList.add('-translate-x-full');
+      document.getElementById('mobileOverlay')?.classList.add('hidden');
+    }
+    window.addEventListener('hashchange', navigate);
+
+    /* 10. INICIALIZAÇÃO E EVENTOS */
     document.addEventListener('DOMContentLoaded', () => {
       updateAuthUI();
 
-      document.getElementById('btnReloadRepo')?.addEventListener('click', loadRepositoryLive);
+      document.getElementById('btnHardSync')?.addEventListener('click', loadAllDocuments);
       document.getElementById('btnHeaderAuth')?.addEventListener('click', () => {
         document.getElementById('authAlert').classList.add('hidden');
         document.getElementById('modalAuth').classList.remove('hidden');
@@ -1586,24 +1245,28 @@ ${markdown}
         if (token && repo) {
           setStoredAuth({ repo, branch, token });
           document.getElementById('modalAuth').classList.add('hidden');
-          alert("Modo Editor conectado com sucesso! Permissões de escrita ativadas.");
-          loadRepositoryLive();
+          alert("Modo Editor autenticado com sucesso!");
+          loadAllDocuments();
         }
       });
 
+      // Mobile drawer
       const sidebar = document.getElementById('sidebar');
       const overlay = document.getElementById('mobileOverlay');
       document.getElementById('btnMobileToggle')?.addEventListener('click', () => { sidebar?.classList.remove('-translate-x-full'); overlay?.classList.remove('hidden'); });
       document.getElementById('btnMobileClose')?.addEventListener('click', () => { sidebar?.classList.add('-translate-x-full'); overlay?.classList.add('hidden'); });
       overlay?.addEventListener('click', () => { sidebar?.classList.add('-translate-x-full'); overlay?.classList.add('hidden'); });
 
-      document.getElementById('btnCloseInspector')?.addEventListener('click', () => document.getElementById('modalEntityInspector').classList.add('hidden'));
-      document.getElementById('btnInspectorCloseBottom')?.addEventListener('click', () => document.getElementById('modalEntityInspector').classList.add('hidden'));
+      // Inspetor
+      document.getElementById('btnCloseInspector')?.addEventListener('click', () => document.getElementById('modalInspector').classList.add('hidden'));
+      document.getElementById('btnInspectorCloseBottom')?.addEventListener('click', () => document.getElementById('modalInspector').classList.add('hidden'));
 
+      // Drawer Editor
       document.getElementById('btnDiscardDrawer')?.addEventListener('click', () => document.getElementById('drawerEditor').classList.add('hidden'));
       document.getElementById('btnCancelDrawer')?.addEventListener('click', () => document.getElementById('drawerEditor').classList.add('hidden'));
       document.getElementById('btnSaveDrawer')?.addEventListener('click', handleSaveDrawer);
 
+      // Nova Categoria
       document.getElementById('btnOpenCategoryModal')?.addEventListener('click', () => {
         if (!requireAuth()) return;
         document.getElementById('modalNewCategory').classList.remove('hidden');
@@ -1623,6 +1286,7 @@ ${markdown}
         const nome = document.getElementById('catModalNome').value.trim();
         const pasta = document.getElementById('catModalPasta').value.trim();
         const icone = document.getElementById('catModalIcone').value.trim() || '📁';
+        const renderer = document.getElementById('catModalRenderer').value;
         const descricao = document.getElementById('catModalDescricao').value.trim();
 
         if (!nome || !pasta) { alert("Nome e Pasta são obrigatórios."); return; }
@@ -1630,63 +1294,66 @@ ${markdown}
         const readmeContent = `---
 categoria: "${nome}"
 pasta: "${pasta}"
+renderer: "${renderer}"
 icone: "${icone}"
 ---
 
 # ${nome}
 
-${descricao || 'Nova categoria documental criada via Códice.'}
+${descricao || 'Categoria documental criada via Códice Web.'}
 `;
 
         try {
-          await commitFileToGit(`${pasta}/README.md`, readmeContent, `feat(categoria): criar ${nome} em ${pasta}`);
-          alert(`Categoria "${nome}" e pasta "${pasta}" criadas com sucesso no GitHub!`);
+          await commitFileToGit(`${pasta}/README.md`, readmeContent, `feat(categoria): registrar ${nome} em ${pasta}`);
+          alert(`Categoria "${nome}" criada com sucesso no repositório!`);
           document.getElementById('modalNewCategory').classList.add('hidden');
-          await loadRepositoryLive();
+          await loadAllDocuments();
         } catch (err) {
-          alert(`Erro ao criar pasta no GitHub: ${err.message}`);
+          alert(`Erro ao comitar pasta no GitHub: ${err.message}`);
         }
       });
 
       document.getElementById('btnOpenNewModal')?.addEventListener('click', () => {
         if (!requireAuth()) return;
         document.getElementById('drawerTitle').textContent = "Novo Documento Markdown";
-        document.getElementById('editEntityOriginalPath').value = "";
-        document.getElementById('editEntityId').value = "DOC-001";
-        document.getElementById('editEntityTitle').value = "";
-        document.getElementById('editEntitySubtitle').value = "";
-        document.getElementById('editEntityLocation').value = "";
-        document.getElementById('editEntityImage').value = "";
-        document.getElementById('editEntityMarkdown').value = "# Título do Manuscrito\n\nDescreva a entidade aqui...";
+        document.getElementById('editOriginalPath').value = "";
+        document.getElementById('editFolder').value = "gdd/03-npcs";
+        document.getElementById('editId').value = "DOC-001";
+        document.getElementById('editTitle').value = "";
+        document.getElementById('editSubtitle').value = "";
+        document.getElementById('editLocation').value = "";
+        document.getElementById('editImage').value = "";
+        document.getElementById('editMarkdown').value = "# Novo Registro\n\nDescreva a entidade aqui...";
         document.getElementById('drawerEditor').classList.remove('hidden');
       });
 
+      // Busca Instantânea
       const searchInput = document.getElementById('globalSearchInput');
       const dropdown = document.getElementById('searchResultsDropdown');
       searchInput?.addEventListener('input', (e) => {
         const q = e.target.value.toLowerCase().trim();
         if (q.length < 2) { dropdown.classList.add('hidden'); return; }
 
-        const hits = appDb.docs.filter(d => 
+        const hits = liveDocs.filter(d => 
           d.nome.toLowerCase().includes(q) || 
           d.id.toLowerCase().includes(q) || 
-          d.markdown.toLowerCase().includes(q)
+          (d.markdown && d.markdown.toLowerCase().includes(q))
         );
 
         if (!hits.length) {
-          dropdown.innerHTML = `<div class="p-3 text-xs text-codex-parchmentMuted text-center font-tome">Nenhum registro encontrado.</div>`;
+          dropdown.innerHTML = `<div class="p-3 text-xs text-codex-parchmentMuted text-center font-mono">Nenhum registro encontrado.</div>`;
         } else {
           dropdown.innerHTML = hits.map(h => `
-            <div onclick="document.getElementById('searchResultsDropdown').classList.add('hidden'); openInspector('${h.path}');" class="p-2 rounded hover:bg-codex-850 flex items-center justify-between text-xs transition cursor-pointer">
+            <div onclick="document.getElementById('searchResultsDropdown').classList.add('hidden'); openInspector('${h.id}');" class="p-2 rounded hover:bg-codex-850 flex items-center justify-between text-xs transition cursor-pointer">
               <span class="font-cinzel text-codex-parchment">${h.nome}</span>
-              <span class="font-mono text-[10px] text-codex-gold bg-codex-950 px-1.5 py-0.5 rounded border border-codex-borderGold/30">${h.id}</span>
+              <span class="font-mono text-[9px] text-codex-gold bg-codex-950 px-1.5 py-0.5 rounded border border-codex-borderGold/30">${h.id}</span>
             </div>
           `).join('');
         }
         dropdown.classList.remove('hidden');
       });
 
-      loadRepositoryLive();
+      loadAllDocuments();
     });
   </script>
 </body>
