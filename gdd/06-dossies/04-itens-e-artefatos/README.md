@@ -1,0 +1,1 @@
+---\ncategoria: "itens-e-artefatos"\npasta: "gdd/06-dossies/04-itens-e-artefatos"\n---\n\n# itens-e-artefatos\n\nCategoria de dossiês em construção.
