@@ -1,0 +1,1 @@
+---\ncategoria: "linhagens-povos-faccoes"\npasta: "gdd/06-dossies/06-linhagens-povos-faccoes"\n---\n\n# linhagens-povos-faccoes\n\nCategoria de dossiês em construção.
