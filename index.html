@@ -12,7 +12,7 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 
-  <!-- Tipografia: Cinzel (Títulos Nobres), Cormorant Garamond (Livro/Diário), Inter (UI) e JetBrains Mono (Código/IDs) -->
+  <!-- Tipografia: Cinzel, Cormorant Garamond, Inter e JetBrains Mono -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
@@ -57,7 +57,6 @@
         radial-gradient(circle at 100% 100%, rgba(168, 85, 247, 0.03) 0%, transparent 40%);
     }
 
-    /* Cartão Base com Borda Dourada Suave */
     .module-card {
       background: linear-gradient(155deg, #13101b 0%, #0c0a12 100%);
       border: 1px solid rgba(203, 163, 56, 0.22);
@@ -70,7 +69,6 @@
       box-shadow: 0 14px 30px -4px rgba(0, 0, 0, 0.8), 0 0 14px rgba(203, 163, 56, 0.1);
     }
 
-    /* Selos de Canonicidade Oficiais */
     .canon-badge {
       display: inline-flex;
       align-items: center;
@@ -90,7 +88,6 @@
     .badge-planejado { background: #290e3d; color: #c084fc; border-color: #7e22ce; }
     .badge-descontinuado { background: #3d0e14; color: #f87171; border-color: #b91c1c; }
 
-    /* Estilo Especial: Livro de Arkan */
     .book-leather {
       background: radial-gradient(circle at 50% 20%, #1c1624 0%, #0d0b13 100%);
       border: 2px solid #5a451d;
@@ -107,14 +104,12 @@
       font-weight: bold;
     }
 
-    /* Estilo Especial: Diário de John */
     .diary-paper {
       background: linear-gradient(180deg, #16131c 0%, #110e17 100%);
       border-left: 4px solid #cba338;
       box-shadow: inset 0 0 40px rgba(0, 0, 0, 0.5);
     }
 
-    /* Formatação de Markdown */
     .prose-codex h1 { font-family: 'Cinzel', serif; color: #cba338; font-size: 1.5rem; margin: 1.2rem 0 0.5rem 0; border-bottom: 1px solid rgba(203, 163, 56, 0.2); padding-bottom: 0.3rem; }
     .prose-codex h2 { font-family: 'Cinzel', serif; color: #eee6d8; font-size: 1.25rem; margin: 1rem 0 0.4rem 0; }
     .prose-codex h3 { color: #f5cd5d; font-size: 1.05rem; margin: 0.8rem 0 0.3rem 0; font-family: 'Cinzel', serif; }
@@ -166,7 +161,7 @@
       <div id="searchResultsDropdown" class="hidden absolute left-0 right-0 top-full mt-2 bg-codex-900 border border-codex-gold/40 rounded-xl shadow-2xl z-50 max-h-96 overflow-y-auto custom-scrollbar p-2"></div>
     </div>
 
-    <!-- Controles de Acesso & Sincronização -->
+    <!-- Controles de Sincronização & Login -->
     <div class="flex items-center gap-2">
       <button id="btnHardSync" title="Recarregar documentos do repositório" 
         class="px-2.5 py-1.5 bg-codex-850 hover:bg-codex-800 text-codex-parchmentMuted hover:text-codex-gold border border-codex-borderGold/40 rounded-lg text-xs font-cinzel flex items-center gap-1.5 transition">
@@ -202,9 +197,7 @@
       </div>
 
       <!-- Menu de Navegação Modular -->
-      <nav class="flex-1 overflow-y-auto custom-scrollbar p-3 space-y-4 text-xs font-sans" id="sidebarNav">
-        <!-- Renderizado dinamicamente via JavaScript com base nas categorias registradas -->
-      </nav>
+      <nav class="flex-1 overflow-y-auto custom-scrollbar p-3 space-y-4 text-xs font-sans" id="sidebarNav"></nav>
 
       <div class="p-3 border-t border-codex-borderGold/20 text-[10px] font-mono text-codex-parchmentMuted bg-codex-950 flex items-center justify-between">
         <span>Origem dos Dados:</span>
@@ -228,9 +221,7 @@
         </div>
       </div>
 
-      <div id="pageContainer" class="p-6 lg:p-8 max-w-7xl w-full mx-auto flex-1">
-        <!-- O conteúdo dinâmico do renderizador ativo é injetado aqui -->
-      </div>
+      <div id="pageContainer" class="p-6 lg:p-8 max-w-7xl w-full mx-auto flex-1"></div>
 
       <footer class="mt-auto px-6 py-4 border-t border-codex-borderGold/20 bg-codex-900/60 text-xs font-tome text-codex-parchmentMuted flex items-center justify-between">
         <div><span class="font-cinzel text-codex-gold font-bold">Batalhas Poderosas</span> — Renderizador Dinâmico de Conteúdo</div>
@@ -479,7 +470,7 @@
     const REPO_NAME = 'Batalhas-Poderosas';
     const REPO_BRANCH = 'main';
 
-    /* 1. MODELO DE CATEGORIAS DO PROJETO (ESTRUTURA DE NAVEGAÇÃO MODULAR) */
+    /* 1. MODELO DE CATEGORIAS DO PROJETO */
     const categoryRegistry = [
       {
         id: "cat_core",
@@ -494,7 +485,7 @@
         id: "cat_universo",
         title: "UNIVERSO",
         items: [
-          { id: "historia", title: "Introdução Narrativa", icon: "📜", renderer: "gdd", folder: "01-lore" },
+          { id: "historia", title: "Introdução Narrativa", icon: "📜", renderer: "historia", folder: "01-lore" },
           { id: "locais", title: "Locais & Geografia", icon: "🏰", renderer: "dossie", folder: "05-locais" },
           { id: "npcs", title: "NPCs & Heróis", icon: "👥", renderer: "dossie", folder: "03-npcs" }
         ]
@@ -590,7 +581,6 @@
       { id: "GAME-006", path: "gdd/02-gameplay/GAME-006.md", folder: "02-gameplay", nome: "Cadeia Produtiva da Fazenda", funcao: "Economia Agropecuária", status: "CANONICO" }
     ];
 
-    /* ESTADO EM MEMÓRIA DINÂMICA */
     let liveDocs = [];
     let customCategories = [];
 
@@ -679,15 +669,13 @@
       spinner?.classList.add('animate-spin');
       statusTag.innerHTML = `<span class="w-2 h-2 rounded-full bg-amber-400 animate-pulse"></span><span>Lendo /gdd/...</span>`;
 
-      // Inicializa a árvore em memória com as rotas
       liveDocs = canonicalFilesMap.map(d => ({ ...d, markdown: null }));
 
-      // Busca estática de cada arquivo Markdown em paralelo (sem taxa de limite da API)
       await Promise.all(liveDocs.map(async (doc) => {
         try {
-          let res = await fetch(`./${doc.path}?t=${Date.now()}`);
+          let res = await fetch(`./${doc.path}?v=${Date.now()}`);
           if (!res.ok) {
-            res = await fetch(`https://raw.githubusercontent.com/${REPO_OWNER}/${REPO_NAME}/${REPO_BRANCH}/${doc.path}?t=${Date.now()}`);
+            res = await fetch(`https://raw.githubusercontent.com/${REPO_OWNER}/${REPO_NAME}/${REPO_BRANCH}/${doc.path}?v=${Date.now()}`);
           }
           if (res.ok) {
             const raw = await res.text();
@@ -733,7 +721,6 @@
         </div>
       `).join('');
 
-      // Se houver categorias criadas pelo usuário
       if (customCategories.length > 0) {
         nav.innerHTML += `
           <div>
@@ -800,6 +787,63 @@
               <span class="text-[10px] text-emerald-300 block mt-0.5">Imutáveis</span>
             </div>
           </div>
+        </div>
+      `;
+    }
+
+    // Renderer: Introdução Narrativa (Leitura Literária Fluida)
+    let activeHistoriaDocId = "LORE-005";
+    function renderHistoriaView() {
+      const container = document.getElementById('pageContainer');
+      const loreDocs = liveDocs.filter(d => d.folder === '01-lore');
+      
+      let activeDoc = loreDocs.find(d => d.id === activeHistoriaDocId) || loreDocs[0] || {
+        id: "LORE-005",
+        nome: "Introdução Narrativa",
+        markdown: null,
+        path: "gdd/01-lore/LORE-005.md"
+      };
+
+      container.innerHTML = `
+        <div class="space-y-6 max-w-4xl mx-auto animate-fadeIn">
+          <div class="pb-4 border-b border-codex-borderGold/30 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+            <div>
+              <span class="canon-badge badge-canonico mb-1.5">Cânone Literário • Reino de Arkan</span>
+              <h2 class="font-cinzel text-2xl font-bold text-codex-goldBright">Introdução Narrativa</h2>
+              <p class="text-xs text-codex-parchmentMuted">Crônicas fundamentais lidas diretamente de <code>gdd/01-lore/</code></p>
+            </div>
+            <button onclick="triggerEdit('${activeDoc.id}')" class="self-start px-3 py-1.5 bg-codex-800 hover:bg-codex-750 text-codex-gold border border-codex-borderGold/40 rounded-lg text-xs font-cinzel transition flex items-center gap-1.5">
+              <span>✏️</span> Editar Crônica
+            </button>
+          </div>
+
+          <div class="flex items-center gap-2 overflow-x-auto custom-scrollbar pb-2">
+            ${loreDocs.map(doc => `
+              <button onclick="activeHistoriaDocId = '${doc.id}'; renderHistoriaView();" 
+                class="px-3 py-1.5 rounded-lg text-xs font-cinzel whitespace-nowrap transition border ${doc.id === activeDoc.id ? 'bg-codex-gold/20 text-codex-gold border-codex-gold/50 font-bold' : 'bg-codex-900/60 text-codex-parchmentMuted border-codex-borderGold/20 hover:text-codex-parchment hover:bg-codex-850'}">
+                ${doc.nome || doc.id}
+              </button>
+            `).join('')}
+          </div>
+
+          <article class="module-card rounded-2xl p-6 sm:p-10 border-codex-borderGold/35 relative">
+            <header class="mb-6 pb-4 border-b border-codex-borderGold/20 flex items-center justify-between">
+              <div>
+                <span class="font-mono text-[10px] text-codex-gold font-bold block">${activeDoc.id}</span>
+                <h3 class="font-cinzel text-xl font-bold text-codex-parchment">${activeDoc.nome || 'Crônica Narrativa'}</h3>
+              </div>
+              ${getStatusBadge(activeDoc.status || 'CANONICO')}
+            </header>
+
+            <div class="font-tome text-base sm:text-lg leading-relaxed text-[#dcd2c4] text-justify space-y-4">
+              ${activeDoc.markdown ? safeMarkdown(activeDoc.markdown) : `
+                <div class="py-12 text-center text-codex-parchmentMuted font-mono text-xs border border-dashed border-codex-borderGold/30 rounded-xl">
+                  Nenhum texto encontrado em <code>${activeDoc.path}</code>.<br>
+                  <span class="text-[11px] text-codex-gold mt-1 block">Suba o arquivo .md correspondente ou redija o conteúdo pelo Modo Editor.</span>
+                </div>
+              `}
+            </div>
+          </article>
         </div>
       `;
     }
@@ -871,7 +915,6 @@
           <div class="book-leather rounded-2xl p-6 lg:p-8 shadow-2xl">
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-0 bg-[#14111a] rounded-xl border border-codex-borderGold/30 overflow-hidden">
               
-              <!-- Página Esquerda: Índice de Crônicas -->
               <div class="lg:col-span-5 p-6 border-b lg:border-b-0 lg:border-r border-codex-borderGold/20 flex flex-col justify-between">
                 <div>
                   <span class="font-cinzel text-xs text-codex-gold font-bold uppercase tracking-wider block mb-3">Índice das Crônicas:</span>
@@ -890,7 +933,6 @@
                 </div>
               </div>
 
-              <!-- Página Direita: Leitura Contínua -->
               <div class="lg:col-span-7 p-6 sm:p-8 flex flex-col justify-between min-h-[420px]">
                 <div>
                   <div class="flex items-center justify-between mb-2">
@@ -977,6 +1019,8 @@
     // Renderers de Suporte Técnico
     function renderEstadoView() { renderGDDView('99-canon', 'Estado da Produção'); }
     function renderTimelineView() { renderGDDView('99-canon', 'Linha do Tempo'); }
+    function renderGaleriaView() { renderDossieView('03-npcs', 'Galeria de Assets', 'Referências visuais do projeto'); }
+    function renderChangelogView() { renderGDDView('99-canon', 'Histórico de Versões'); }
     function renderSaudeView() {
       const container = document.getElementById('pageContainer');
       container.innerHTML = `
@@ -1001,6 +1045,15 @@
           </div>
         </div>
       `;
+    }
+
+    function renderCustomCategoryView(slug) {
+      const cat = customCategories.find(c => c.slug === slug);
+      if (!cat) return;
+      if (cat.renderer === 'livro') renderLivroView();
+      else if (cat.renderer === 'diario') renderDiarioView();
+      else if (cat.renderer === 'dossie') renderDossieView(cat.folder, cat.nome, cat.descricao);
+      else renderGDDView(cat.folder, cat.nome);
     }
 
     /* 7. INSPETOR MODAL DE ENTIDADE */
@@ -1204,20 +1257,21 @@ ${markdown}
       document.getElementById('breadcrumbCurrent').textContent = route.toUpperCase();
 
       if (route === 'npcs') renderDossieView('03-npcs', 'NPCs & Habitantes', 'Fichas biográficas');
-      else if (route === 'locais') renderDossieView('05-locais', 'Locais & Cenários', 'Mapeamento geográfico');
+      else if (route === 'locais') renderDossieView('05-locais', 'Locais & Geografia', 'Mapeamento territorial');
       else if (route === 'itens') renderDossieView('04-itens', 'Itens & Equipamentos', 'Materiais e armas');
       else if (route === 'canon') renderDossieView('99-canon', 'Decisões Canônicas', 'Pilares de design');
       else if (route === 'livro') renderLivroView();
       else if (route === 'diario') renderDiarioView();
-      else if (route === 'historia') renderGDDView('01-lore', 'Introdução Narrativa');
+      else if (route === 'historia') renderHistoriaView();
       else if (route === 'gameplay') renderGDDView('02-gameplay', 'Loop Principal de Jogo');
       else if (route === 'sistemas') renderGDDView('02-gameplay', 'Sistemas & Arquitetura');
       else if (route === 'missoes') renderGDDView('02-gameplay', 'Missões & Quests');
-      else if (route === 'referencias') renderDossieView('03-npcs', 'Galeria de Assets', 'Referências visuais');
-      else if (route === 'changelog') renderGDDView('99-canon', 'Histórico de Alterações');
+      else if (route === 'referencias') renderGaleriaView();
+      else if (route === 'changelog') renderChangelogView();
       else if (route === 'estado') renderEstadoView();
       else if (route === 'timeline') renderTimelineView();
       else if (route === 'saude') renderSaudeView();
+      else if (route === 'custom' && param1) renderCustomCategoryView(decodeURIComponent(param1));
       else renderDashboard();
 
       document.getElementById('sidebar')?.classList.add('-translate-x-full');
@@ -1250,7 +1304,7 @@ ${markdown}
         }
       });
 
-      // Mobile drawer
+      // Mobile
       const sidebar = document.getElementById('sidebar');
       const overlay = document.getElementById('mobileOverlay');
       document.getElementById('btnMobileToggle')?.addEventListener('click', () => { sidebar?.classList.remove('-translate-x-full'); overlay?.classList.remove('hidden'); });
@@ -1307,7 +1361,11 @@ ${descricao || 'Categoria documental criada via Códice Web.'}
           await commitFileToGit(`${pasta}/README.md`, readmeContent, `feat(categoria): registrar ${nome} em ${pasta}`);
           alert(`Categoria "${nome}" criada com sucesso no repositório!`);
           document.getElementById('modalNewCategory').classList.add('hidden');
-          await loadAllDocuments();
+          
+          const slug = nome.toLowerCase().trim().replace(/[^a-z0-9]+/g, '-');
+          customCategories.push({ nome, pasta, folder: pasta.replace('gdd/', ''), icone, renderer, slug, descricao });
+          renderSidebar();
+          window.location.hash = `#custom/${slug}`;
         } catch (err) {
           alert(`Erro ao comitar pasta no GitHub: ${err.message}`);
         }
@@ -1327,12 +1385,12 @@ ${descricao || 'Categoria documental criada via Códice Web.'}
         document.getElementById('drawerEditor').classList.remove('hidden');
       });
 
-      // Busca Instantânea
+      // Busca Global
       const searchInput = document.getElementById('globalSearchInput');
       const dropdown = document.getElementById('searchResultsDropdown');
       searchInput?.addEventListener('input', (e) => {
         const q = e.target.value.toLowerCase().trim();
-        if (q.length < 2) { dropdown.classList.add('hidden'); return; }
+        if (q.length < 2) { dropdown?.classList.add('hidden'); return; }
 
         const hits = liveDocs.filter(d => 
           d.nome.toLowerCase().includes(q) || 
@@ -1350,7 +1408,7 @@ ${descricao || 'Categoria documental criada via Códice Web.'}
             </div>
           `).join('');
         }
-        dropdown.classList.remove('hidden');
+        dropdown?.classList.remove('hidden');
       });
 
       loadAllDocuments();
