@@ -1,0 +1,1 @@
+---\ncategoria: "personagens"\npasta: "gdd/06-dossies/01-personagens"\n---\n\n# personagens\n\nCategoria de dossiês em construção.
