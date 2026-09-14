@@ -1,1 +1,0 @@
----\ncategoria: "universo-geral"\npasta: "gdd/06-dossies/08-universo-geral"\n---\n\n# universo-geral\n\nCategoria de dossiês em construção.
