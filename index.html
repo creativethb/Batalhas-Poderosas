@@ -12,7 +12,7 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 
-  <!-- Tipografia Oficial -->
+  <!-- Tipografia Oficial do Reino de Arkan -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
@@ -93,16 +93,6 @@
       border: 2px solid #5a451d;
       box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.95);
     }
-    .drop-cap {
-      float: left;
-      font-family: 'Cinzel', serif;
-      font-size: 3.2rem;
-      line-height: 0.8;
-      padding-top: 4px;
-      padding-right: 8px;
-      color: #cba338;
-      font-weight: bold;
-    }
 
     .diary-paper {
       background: linear-gradient(180deg, #16131c 0%, #110e17 100%);
@@ -127,7 +117,7 @@
 </head>
 <body class="min-h-screen flex flex-col antialiased selection:bg-codex-gold selection:text-codex-950">
 
-  <!-- ================= TOP BAR ================= -->
+  <!-- ================= BARRA SUPERIOR ================= -->
   <header class="sticky top-0 z-30 bg-codex-900/95 border-b border-codex-borderGold backdrop-blur-md px-4 lg:px-6 py-3 flex items-center justify-between gap-3 shadow-xl">
     <div class="flex items-center gap-3">
       <button id="btnMobileToggle" class="lg:hidden p-2 text-codex-parchmentMuted hover:text-codex-gold">
@@ -141,29 +131,36 @@
         <div>
           <div class="font-cinzel font-bold text-sm tracking-wider text-codex-goldBright group-hover:text-codex-gold transition leading-tight flex items-center gap-2">
             BATALHAS PODEROSAS
-            <span class="text-[9px] font-mono tracking-normal bg-codex-800 text-codex-gold border border-codex-borderGold/40 px-1.5 py-0.5 rounded">RENDERIZADOR MODULAR</span>
+            <span class="text-[9px] font-mono tracking-normal bg-codex-800 text-codex-gold border border-codex-borderGold/40 px-1.5 py-0.5 rounded">RENDERIZADOR PROCEDURAL</span>
           </div>
           <p class="text-[11px] text-codex-parchmentMuted hidden sm:block">Reino de Arkan • Camada de Apresentação Documental</p>
         </div>
       </a>
     </div>
 
-    <!-- Busca Global -->
-    <div class="relative flex-1 max-w-md mx-2">
-      <div class="relative">
-        <span class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-codex-gold">🔍</span>
-        <input type="text" id="globalSearchInput" placeholder="Consultar entidades em /gdd/... (Ctrl+K)" 
-          class="w-full pl-9 pr-10 py-1.5 bg-codex-850 border border-codex-borderGold/40 rounded-lg text-xs font-sans text-codex-parchment placeholder-codex-parchmentMuted/70 focus:outline-none focus:border-codex-gold transition">
-        <span class="absolute inset-y-0 right-0 pr-2 flex items-center pointer-events-none">
-          <kbd class="hidden sm:inline-block text-[9px] font-mono bg-codex-950 text-codex-parchmentMuted border border-codex-borderGold/40 px-1.5 py-0.5 rounded">Ctrl K</kbd>
+    <!-- Busca Global com Filtro de Categoria -->
+    <div class="relative flex-1 max-w-xl mx-2">
+      <div class="flex items-center gap-1 bg-codex-850 border border-codex-borderGold/40 rounded-lg px-2 py-1 focus-within:border-codex-gold transition">
+        <span class="text-codex-gold text-xs">🔍</span>
+        
+        <select id="searchCategoryFilter" class="bg-codex-900 text-codex-gold font-mono text-[11px] py-1 px-1.5 rounded border border-codex-borderGold/30 focus:outline-none cursor-pointer">
+          <option value="all">Todas as Pastas</option>
+        </select>
+
+        <input type="text" id="globalSearchInput" placeholder="Buscar entidades... (Ctrl+K)" 
+          class="w-full bg-transparent text-xs font-sans text-codex-parchment placeholder-codex-parchmentMuted/70 focus:outline-none px-1.5">
+        
+        <span class="hidden sm:inline-block text-[9px] font-mono bg-codex-950 text-codex-parchmentMuted border border-codex-borderGold/40 px-1.5 py-0.5 rounded pointer-events-none">
+          Ctrl K
         </span>
       </div>
+
       <div id="searchResultsDropdown" class="hidden absolute left-0 right-0 top-full mt-2 bg-codex-900 border border-codex-gold/40 rounded-xl shadow-2xl z-50 max-h-96 overflow-y-auto custom-scrollbar p-2"></div>
     </div>
 
     <!-- Controles -->
     <div class="flex items-center gap-2">
-      <button id="btnHardSync" title="Recarregar documentos do repositório" 
+      <button id="btnHardSync" title="Recarregar manifesto e documentos do repositório" 
         class="px-2.5 py-1.5 bg-codex-850 hover:bg-codex-800 text-codex-parchmentMuted hover:text-codex-gold border border-codex-borderGold/40 rounded-lg text-xs font-cinzel flex items-center gap-1.5 transition">
         <span id="syncSpinner">🔄</span>
         <span class="hidden md:inline text-[11px]">Sincronizar Git</span>
@@ -179,14 +176,14 @@
   <!-- ================= LAYOUT ================= -->
   <div class="flex-1 flex overflow-hidden">
 
-    <!-- ================= BARRA LATERAL ================= -->
+    <!-- ================= BARRA LATERAL PROCEDURAL ================= -->
     <aside id="sidebar" class="fixed lg:static inset-y-0 left-0 z-40 w-64 bg-codex-900 border-r border-codex-borderGold/30 flex flex-col transform -translate-x-full lg:translate-x-0 transition-transform duration-200 ease-in-out shadow-2xl">
       <div class="p-3 border-b border-codex-borderGold/20 flex items-center justify-between lg:hidden">
         <span class="font-cinzel text-sm text-codex-gold font-semibold">Índice Geral</span>
         <button id="btnMobileClose" class="p-1 text-codex-parchmentMuted hover:text-white">✕</button>
       </div>
 
-      <!-- Ações de Criação -->
+      <!-- Ações de Criação (Exigem Autenticação) -->
       <div class="p-3 border-b border-codex-borderGold/30 space-y-2 bg-codex-950/40">
         <button id="btnOpenNewModal" class="w-full flex items-center justify-center gap-2 bg-gradient-to-r from-codex-gold to-codex-goldBright text-codex-950 font-cinzel font-bold py-2 px-3 rounded-lg text-xs tracking-wider transition shadow-lg hover:brightness-110">
           <span>➕</span> NOVO DOCUMENTO
@@ -196,12 +193,12 @@
         </button>
       </div>
 
-      <!-- Menu Modular -->
+      <!-- Navegação Construída Proceduralmente -->
       <nav class="flex-1 overflow-y-auto custom-scrollbar p-3 space-y-4 text-xs font-sans" id="sidebarNav"></nav>
 
       <div class="p-3 border-t border-codex-borderGold/20 text-[10px] font-mono text-codex-parchmentMuted bg-codex-950 flex items-center justify-between">
-        <span>Origem:</span>
-        <span class="text-codex-gold font-bold">/gdd/ Markdown</span>
+        <span>Estrutura:</span>
+        <span id="lblManifestOrigin" class="text-codex-gold font-bold">manifest.json</span>
       </div>
     </aside>
 
@@ -225,7 +222,7 @@
 
       <footer class="mt-auto px-6 py-4 border-t border-codex-borderGold/20 bg-codex-900/60 text-xs font-tome text-codex-parchmentMuted flex items-center justify-between">
         <div><span class="font-cinzel text-codex-gold font-bold">Batalhas Poderosas</span> — Renderizador Dinâmico de Conteúdo</div>
-        <div class="font-mono text-[10px] text-codex-parchmentMuted">Zero Conteúdo Hardcoded • 100% Orientado a Dados</div>
+        <div class="font-mono text-[10px] text-codex-parchmentMuted">100% Orientado a Dados • Manifesto Procedural</div>
       </footer>
     </main>
   </div>
@@ -291,8 +288,8 @@
       <div class="flex items-center gap-3 border-b border-codex-borderGold/30 pb-3">
         <span class="text-2xl">📁</span>
         <div>
-          <h3 class="font-cinzel font-bold text-sm text-codex-goldBright">Nova Categoria de Conteúdo</h3>
-          <p class="text-[11px] text-codex-parchmentMuted">Cria subpasta física em /gdd/ e registra o novo catálogo</p>
+          <h3 class="font-cinzel font-bold text-sm text-codex-goldBright">Nova Categoria Procedural</h3>
+          <p class="text-[11px] text-codex-parchmentMuted">Atualiza o manifest.json e cria a subpasta física em /gdd/</p>
         </div>
       </div>
 
@@ -314,19 +311,25 @@
           </div>
         </div>
 
-        <div>
-          <label class="block font-cinzel font-semibold text-codex-parchment mb-1">Experiência Visual (Renderer)</label>
-          <select id="catModalRenderer" class="w-full px-3 py-2 bg-codex-850 border border-codex-borderGold/40 rounded-lg text-codex-parchment font-mono focus:outline-none">
-            <option value="dossie">Dossiê / Fichas Investigativas (Entidades, Fichas, Status)</option>
-            <option value="gdd">GDD / Documentação Técnica (Mecânicas, Parâmetros)</option>
-            <option value="livro">Livro / Crônicas Literárias (Tomo de Leitura, Capítulos)</option>
-            <option value="diario">Diário Pessoal (Entradas Progressivas, Timestamps)</option>
-            <option value="galeria">Galeria Visual (Assets, Referências de Arte)</option>
-          </select>
+        <div class="grid grid-cols-2 gap-3">
+          <div>
+            <label class="block font-cinzel font-semibold text-codex-parchment mb-1">Grupo do Menu</label>
+            <input type="text" id="catModalGrupo" value="COMPÊNDIO GERAL" class="w-full px-3 py-2 bg-codex-850 border border-codex-borderGold/40 rounded-lg text-codex-parchment font-mono focus:outline-none">
+          </div>
+          <div>
+            <label class="block font-cinzel font-semibold text-codex-parchment mb-1">Experiência Visual</label>
+            <select id="catModalRenderer" class="w-full px-3 py-2 bg-codex-850 border border-codex-borderGold/40 rounded-lg text-codex-parchment font-mono focus:outline-none">
+              <option value="dossie">Dossiê (Fichas & Entidades)</option>
+              <option value="gdd">GDD (Documentação Técnica)</option>
+              <option value="livro">Livro (Tomo Literário)</option>
+              <option value="diario">Diário (Notas Pessoais)</option>
+              <option value="galeria">Galeria (Assets de Arte)</option>
+            </select>
+          </div>
         </div>
 
         <div>
-          <label class="block font-cinzel font-semibold text-codex-parchment mb-1">Descrição / Finalidade</label>
+          <label class="block font-cinzel font-semibold text-codex-parchment mb-1">Descrição / Propósito</label>
           <textarea id="catModalDescricao" rows="2" placeholder="Propósito deste catálogo..." 
             class="w-full px-3 py-2 bg-codex-850 border border-codex-borderGold/40 rounded-lg text-codex-parchment focus:outline-none"></textarea>
         </div>
@@ -334,7 +337,7 @@
         <div class="pt-2 flex items-center justify-end gap-2 border-t border-codex-borderGold/20">
           <button id="btnCancelCategoryModal" class="px-4 py-2 bg-codex-800 text-codex-parchment rounded-lg font-cinzel">Cancelar</button>
           <button id="btnConfirmCategoryModal" class="px-5 py-2 bg-gradient-to-r from-codex-gold to-codex-goldBright text-codex-950 font-cinzel font-bold rounded-lg shadow-lg">
-            Registrar Categoria & Comitar
+            Comitar no Manifest.json
           </button>
         </div>
       </div>
@@ -463,65 +466,34 @@
     </div>
   </div>
 
-  <!-- ================= MOTOR DE DADOS ================= -->
+  <!-- ================= MOTOR PROCEDURAL JS ================= -->
   <script>
     const REPO_OWNER = 'creativethb';
     const REPO_NAME = 'Batalhas-Poderosas';
     const REPO_BRANCH = 'main';
+    const MANIFEST_PATH = 'gdd/manifest.json';
 
-    /* MODELO DE CATEGORIAS PADRÃO */
-    const categoryRegistry = [
-      {
-        id: "cat_core",
-        title: "PROJETO",
-        items: [
-          { id: "dashboard", title: "Visão Geral & Métricas", icon: "📊", renderer: "dashboard" },
-          { id: "estado", title: "Estado da Produção", icon: "⚙️", renderer: "estado" },
-          { id: "timeline", title: "Linha do Tempo", icon: "⏳", renderer: "timeline" }
-        ]
-      },
-      {
-        id: "cat_universo",
-        title: "UNIVERSO",
-        items: [
-          { id: "historia", title: "Introdução Narrativa", icon: "📜", renderer: "historia", folder: "01-lore" },
-          { id: "locais", title: "Locais & Geografia", icon: "🏰", renderer: "dossie", folder: "05-locais" },
-          { id: "npcs", title: "NPCs & Heróis", icon: "👥", renderer: "dossie", folder: "03-npcs" }
-        ]
-      },
-      {
-        id: "cat_narrativa",
-        title: "NARRATIVA",
-        items: [
-          { id: "livro", title: "O Livro de Arkan", icon: "📖", renderer: "livro", folder: "01-lore" },
-          { id: "diario", title: "Diário de John", icon: "📓", renderer: "diario", folder: "01-lore" }
-        ]
-      },
-      {
-        id: "cat_gameplay",
-        title: "GAMEPLAY & SISTEMAS",
-        items: [
-          { id: "gameplay", title: "Loop de Jogo & Duelos", icon: "🎮", renderer: "gdd", folder: "02-gameplay" },
-          { id: "sistemas", title: "Sistemas & Arquitetura", icon: "🧩", renderer: "gdd", folder: "02-gameplay" },
-          { id: "itens", title: "Itens & Equipamentos", icon: "🗡️", renderer: "dossie", folder: "04-itens" },
-          { id: "missoes", title: "Missões & Quests", icon: "🧭", renderer: "gdd", folder: "02-gameplay" }
-        ]
-      },
-      {
-        id: "cat_canon",
-        title: "CÂNONE & ARQUIVO",
-        items: [
-          { id: "canon", title: "Decisões Canônicas", icon: "👑", renderer: "dossie", folder: "99-canon" },
-          { id: "referencias", title: "Galeria de Assets", icon: "🖼️", renderer: "galeria", folder: "03-npcs" },
-          { id: "changelog", title: "Histórico de Versões", icon: "📑", renderer: "gdd", folder: "99-canon" },
-          { id: "saude", title: "Auditoria Documental", icon: "🩺", renderer: "saude" }
-        ]
-      }
-    ];
+    /* CATÁLOGO BASE DE SEGURANÇA (FALLBACK PARA QUANDO O MANIFEST.JSON AINDA NÃO EXISTE) */
+    const baseFallbackManifest = {
+      categorias: [
+        { id: "historia", nome: "Introdução Narrativa", pasta: "gdd/01-lore", folder: "01-lore", icone: "📜", renderer: "historia", slug: "historia", grupo: "UNIVERSO" },
+        { id: "locais", nome: "Locais & Geografia", pasta: "gdd/05-locais", folder: "05-locais", icone: "🏰", renderer: "dossie", slug: "locais", grupo: "UNIVERSO" },
+        { id: "npcs", nome: "NPCs & Heróis", pasta: "gdd/03-npcs", folder: "03-npcs", icone: "👥", renderer: "dossie", slug: "npcs", grupo: "UNIVERSO" },
+        { id: "livro", nome: "O Livro de Arkan", pasta: "gdd/01-lore", folder: "01-lore", icone: "📖", renderer: "livro", slug: "livro", grupo: "NARRATIVA" },
+        { id: "diario", nome: "Diário de John", pasta: "gdd/01-lore", folder: "01-lore", icone: "📓", renderer: "diario", slug: "diario", grupo: "NARRATIVA" },
+        { id: "gameplay", nome: "Loop de Jogo & Duelos", pasta: "gdd/02-gameplay", folder: "02-gameplay", icone: "🎮", renderer: "gdd", slug: "gameplay", grupo: "GAMEPLAY & SISTEMAS" },
+        { id: "sistemas", nome: "Sistemas & Arquitetura", pasta: "gdd/02-gameplay", folder: "02-gameplay", icone: "🧩", renderer: "gdd", slug: "sistemas", grupo: "GAMEPLAY & SISTEMAS" },
+        { id: "itens", nome: "Itens & Equipamentos", pasta: "gdd/04-itens", folder: "04-itens", icone: "🗡️", renderer: "dossie", slug: "itens", grupo: "GAMEPLAY & SISTEMAS" },
+        { id: "missoes", nome: "Missões & Quests", pasta: "gdd/02-gameplay", folder: "02-gameplay", icone: "🧭", renderer: "gdd", slug: "missoes", grupo: "GAMEPLAY & SISTEMAS" },
+        { id: "canon", nome: "Decisões Canônicas", pasta: "gdd/99-canon", folder: "99-canon", icone: "👑", renderer: "dossie", slug: "canon", grupo: "CÂNONE & ARQUIVO" },
+        { id: "referencias", nome: "Galeria de Assets", pasta: "gdd/03-npcs", folder: "03-npcs", icone: "🖼️", renderer: "galeria", slug: "referencias", grupo: "CÂNONE & ARQUIVO" },
+        { id: "changelog", nome: "Histórico de Versões", pasta: "gdd/99-canon", folder: "99-canon", icone: "📑", renderer: "gdd", slug: "changelog", grupo: "CÂNONE & ARQUIVO" },
+        { id: "saude", nome: "Auditoria Documental", pasta: "gdd/99-canon", folder: "99-canon", icone: "🩺", renderer: "saude", slug: "saude", grupo: "CÂNONE & ARQUIVO" }
+      ]
+    };
 
-    /* CATÁLOGO CANÔNICO DE ARQUIVOS */
+    /* CATÁLOGO FÍSICO DE ARQUIVOS */
     const canonicalFilesMap = [
-      // 14 NPCs
       { id: "NPC-000", path: "gdd/03-npcs/NPC-000.md", folder: "03-npcs", nome: "O Rei Mago (Alric)", funcao: "Antagonista Trágico", localizacao: "Domínio do Rei Mago", imagem: "./assets/npcs/NPC-000.png", status: "CANONICO" },
       { id: "NPC-001", path: "gdd/03-npcs/NPC-001.md", folder: "03-npcs", nome: "Mestre Cedric", funcao: "Ferreiro Real da Vila", localizacao: "Oficina da Vila", imagem: "./assets/npcs/NPC-001.jpg", status: "CANONICO" },
       { id: "NPC-002", path: "gdd/03-npcs/NPC-002.md", folder: "03-npcs", nome: "Ancião Eldrin", funcao: "Guardião da Árvore Sagrada", localizacao: "Santuário Oeste", imagem: "./assets/npcs/NPC-002.jpg", status: "CANONICO" },
@@ -581,24 +553,29 @@
     ];
 
     let liveDocs = [];
-    let customCategories = [];
+    let projectManifest = { categorias: [] };
 
-    /* GERENCIADOR DE PERSISTÊNCIA LOCAL */
-    function getStoredCustomCategories() {
-      try { return JSON.parse(localStorage.getItem('bp_gdd_custom_cats')) || []; } catch(e) { return []; }
-    }
-    function saveStoredCustomCategories(cats) {
-      localStorage.setItem('bp_gdd_custom_cats', JSON.stringify(cats));
+    /* 1. CARREGAMENTO PROCEDURAL DO MANIFESTO */
+    async function loadManifest() {
+      const originLbl = document.getElementById('lblManifestOrigin');
+      try {
+        let res = await fetch(`./${MANIFEST_PATH}?v=${Date.now()}`);
+        if (!res.ok) {
+          res = await fetch(`https://raw.githubusercontent.com/${REPO_OWNER}/${REPO_NAME}/${REPO_BRANCH}/${MANIFEST_PATH}?v=${Date.now()}`);
+        }
+        if (res.ok) {
+          projectManifest = await res.json();
+          if (originLbl) originLbl.textContent = "manifest.json (Git)";
+          return;
+        }
+      } catch (err) {}
+
+      // Fallback gracioso enquanto o arquivo físico não for commitado na Fase 2
+      projectManifest = JSON.parse(JSON.stringify(baseFallbackManifest));
+      if (originLbl) originLbl.textContent = "Catálogo Base (Fase 1)";
     }
 
-    function getStoredCustomDocs() {
-      try { return JSON.parse(localStorage.getItem('bp_gdd_custom_docs')) || []; } catch(e) { return []; }
-    }
-    function saveStoredCustomDocs(docs) {
-      localStorage.setItem('bp_gdd_custom_docs', JSON.stringify(docs));
-    }
-
-    /* PARSERS E HELPERS */
+    /* 2. PARSER DE FRONTMATTER YAML */
     function parseFrontmatter(text) {
       const match = text.match(/^---\r?\n([\s\S]*?)\r?\n---\r?\n([\s\S]*)$/);
       if (!match) return { meta: {}, markdown: text };
@@ -676,28 +653,20 @@
       }
     }
 
-    /* CARREGAMENTO UNIFICADO (CANÔNICO + CUSTOM) */
+    /* 3. CARREGAMENTO DOS DOCUMENTOS */
     async function loadAllDocuments() {
       const spinner = document.getElementById('syncSpinner');
       const statusTag = document.getElementById('renderStatusTag');
       spinner?.classList.add('animate-spin');
       statusTag.innerHTML = `<span class="w-2 h-2 rounded-full bg-amber-400 animate-pulse"></span><span>Lendo /gdd/...</span>`;
 
-      // 1. Carrega categorias customizadas salvas
-      customCategories = getStoredCustomCategories();
-      const customDocs = getStoredCustomDocs();
+      // 1. Carrega o manifesto primeiro
+      await loadManifest();
 
-      // 2. Mescla arquivos canônicos com documentos customizados
-      const fullList = [...canonicalFilesMap];
-      customDocs.forEach(cd => {
-        if (!fullList.some(f => f.id === cd.id)) {
-          fullList.push(cd);
-        }
-      });
+      // 2. Mapeia documentos
+      liveDocs = canonicalFilesMap.map(d => ({ ...d }));
 
-      liveDocs = fullList.map(d => ({ ...d }));
-
-      // 3. Busca arquivos Markdown
+      // 3. Lê o Markdown dos arquivos sob demanda
       await Promise.all(liveDocs.map(async (doc) => {
         try {
           let res = await fetch(`./${doc.path}?v=${Date.now()}`);
@@ -721,26 +690,18 @@
       statusTag.innerHTML = `<span class="w-2 h-2 rounded-full bg-emerald-400"></span><span>Sincronizado</span>`;
 
       updateFolderSelectOptions();
+      updateSearchFilterOptions();
       renderSidebar();
       navigate();
     }
 
-    /* ATUALIZA O SELETOR DE PASTAS DO DRAWER DE EDIÇÃO */
+    /* 4. SELETOR DE PASTAS DO DRAWER */
     function updateFolderSelectOptions() {
       const select = document.getElementById('editFolderSelect');
       if (!select) return;
 
-      const folders = [
-        { val: "gdd/03-npcs", label: "03-npcs (Personagens)" },
-        { val: "gdd/05-locais", label: "05-locais (Mundo e Cenários)" },
-        { val: "gdd/04-itens", label: "04-itens (Equipamentos)" },
-        { val: "gdd/01-lore", label: "01-lore (Narrativa e Crônicas)" },
-        { val: "gdd/02-gameplay", label: "02-gameplay (Mecânicas e Sistemas)" },
-        { val: "gdd/99-canon", label: "99-canon (Decisões Canônicas)" }
-      ];
-
-      // Adiciona pastas das categorias criadas
-      customCategories.forEach(cat => {
+      const folders = [];
+      (projectManifest.categorias || []).forEach(cat => {
         if (!folders.some(f => f.val === cat.pasta)) {
           folders.push({ val: cat.pasta, label: `${cat.pasta} (${cat.nome})` });
         }
@@ -749,21 +710,55 @@
       select.innerHTML = folders.map(f => `<option value="${f.val}">${f.label}</option>`).join('');
     }
 
-    /* BARRA LATERAL DINÂMICA */
+    /* 5. SELETOR DE CATEGORIA DA BUSCA */
+    function updateSearchFilterOptions() {
+      const select = document.getElementById('searchCategoryFilter');
+      if (!select) return;
+
+      const currentVal = select.value;
+      let optionsHtml = `<option value="all">Todas as Pastas</option>`;
+
+      (projectManifest.categorias || []).forEach(cat => {
+        optionsHtml += `<option value="${cat.folder}">${cat.icone || '📁'} ${cat.nome}</option>`;
+      });
+
+      select.innerHTML = optionsHtml;
+      select.value = currentVal || "all";
+    }
+
+    /* 6. BARRA LATERAL PROCEDURAL (BASEADA NO MANIFESTO) */
     function renderSidebar() {
       const nav = document.getElementById('sidebarNav');
-      nav.innerHTML = categoryRegistry.map(cat => `
+      if (!nav) return;
+
+      const groups = {};
+      
+      // Grupo Fixo de Projeto
+      groups["PROJETO"] = [
+        { slug: "dashboard", nome: "Visão Geral & Métricas", icone: "📊" },
+        { slug: "estado", nome: "Estado da Produção", icone: "⚙️" },
+        { slug: "timeline", nome: "Linha do Tempo", icone: "⏳" }
+      ];
+
+      // Agrupamento automático de categorias a partir do manifesto
+      (projectManifest.categorias || []).forEach(cat => {
+        const grp = cat.grupo || "COMPÊNDIO GERAL";
+        if (!groups[grp]) groups[grp] = [];
+        groups[grp].push(cat);
+      });
+
+      nav.innerHTML = Object.keys(groups).map(grpName => `
         <div>
           <div class="text-[10px] font-cinzel font-bold text-codex-gold uppercase tracking-wider mb-1.5 px-2 flex items-center justify-between">
-            <span>${cat.title}</span>
+            <span>${grpName}</span>
           </div>
           <ul class="space-y-0.5">
-            ${cat.items.map(item => `
+            ${groups[grpName].map(item => `
               <li>
-                <a href="#${item.id}" class="nav-link flex items-center justify-between px-2.5 py-1.5 rounded-lg text-codex-parchment hover:bg-codex-850 hover:text-codex-gold transition">
+                <a href="#${item.slug || item.id}" class="nav-link flex items-center justify-between px-2.5 py-1.5 rounded-lg text-codex-parchment hover:bg-codex-850 hover:text-codex-gold transition">
                   <span class="flex items-center gap-2 truncate">
-                    <span>${item.icon}</span>
-                    <span>${item.title}</span>
+                    <span>${item.icone || '📄'}</span>
+                    <span>${item.nome}</span>
                   </span>
                   ${item.folder ? `<span class="font-mono text-[10px] text-codex-gold">${liveDocs.filter(d => d.folder === item.folder).length}</span>` : ''}
                 </a>
@@ -772,34 +767,9 @@
           </ul>
         </div>
       `).join('');
-
-      // Renderiza as categorias customizadas na lateral
-      if (customCategories.length > 0) {
-        nav.innerHTML += `
-          <div>
-            <div class="text-[10px] font-cinzel font-bold text-emerald-400 uppercase tracking-wider mb-1.5 px-2 flex items-center justify-between">
-              <span>Compêndio Customizado</span>
-              <span class="text-[9px] font-mono">${customCategories.length}</span>
-            </div>
-            <ul class="space-y-0.5">
-              ${customCategories.map(cat => `
-                <li>
-                  <a href="#custom/${cat.slug}" class="nav-link flex items-center justify-between px-2.5 py-1.5 rounded-lg text-codex-parchment hover:bg-codex-850 hover:text-codex-gold transition">
-                    <span class="flex items-center gap-2 truncate">
-                      <span>${cat.icone || '📁'}</span>
-                      <span>${cat.nome}</span>
-                    </span>
-                    <span class="font-mono text-[10px] text-emerald-400">${liveDocs.filter(d => d.folder === cat.folder).length}</span>
-                  </a>
-                </li>
-              `).join('')}
-            </ul>
-          </div>
-        `;
-      }
     }
 
-    /* RENDER DO DASHBOARD (POVOADO COM DESTAQUES) */
+    /* 7. DASHBOARD POVOADO DE FORMA PROCEDURAL */
     function renderDashboard() {
       const container = document.getElementById('pageContainer');
       const npcs = liveDocs.filter(d => d.folder === '03-npcs');
@@ -807,29 +777,22 @@
       const itens = liveDocs.filter(d => d.folder === '04-itens');
       const canon = liveDocs.filter(d => d.folder === '99-canon');
 
-      // Pega 3 NPCs centrais para destaque visual
-      const featuredNpcs = npcs.slice(0, 3);
-      // Pega 3 Locais centrais
-      const featuredLocais = locais.slice(0, 3);
-
       container.innerHTML = `
         <div class="space-y-8 animate-fadeIn">
           
-          <!-- Banner Superior -->
           <div class="module-card rounded-2xl p-6 lg:p-8 relative overflow-hidden">
             <div class="max-w-3xl space-y-2 relative z-10">
               <span class="canon-badge badge-canonico mb-1">Reino de Arkan • Códice Vivo</span>
               <h1 class="font-cinzel text-2xl lg:text-3xl font-extrabold text-codex-goldBright">Central de Documentação Canônica</h1>
               <p class="text-xs sm:text-sm text-codex-parchmentMuted leading-relaxed">
-                Plataforma modular conectada à árvore de arquivos em <code>/gdd/</code>. Todas as entidades abaixo são sincronizadas dinamicamente.
+                Plataforma modular alimentada diretamente pelos arquivos em <code>/gdd/</code>.
               </p>
             </div>
           </div>
 
-          <!-- Métricas Globais -->
           <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
             <div class="module-card p-4 rounded-xl text-center cursor-pointer" onclick="window.location.hash='#npcs'">
-              <span class="font-cinzel text-[11px] text-codex-gold font-bold block mb-1">NPCs & Personagens</span>
+              <span class="font-cinzel text-[11px] text-codex-gold font-bold block mb-1">NPCs & Heróis</span>
               <span class="text-2xl font-mono font-bold text-codex-parchment">${npcs.length}</span>
               <span class="text-[10px] text-codex-parchmentMuted block mt-0.5">Cadastrados</span>
             </div>
@@ -850,17 +813,16 @@
             </div>
           </div>
 
-          <!-- Seção: Personagens Centrais em Destaque -->
           <div class="space-y-4">
             <div class="flex items-center justify-between">
               <h3 class="font-cinzel text-base text-codex-gold font-bold flex items-center gap-2">
-                <span>👥</span> Personagens Centrais (Clique no card para inspecionar)
+                <span>👥</span> Personagens Centrais (Clique no card para abrir a Ficha)
               </h3>
               <a href="#npcs" class="text-xs font-cinzel text-codex-gold hover:underline">Ver todos (${npcs.length}) →</a>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-              ${featuredNpcs.map(npc => `
+              ${npcs.slice(0, 3).map(npc => `
                 <div class="module-card rounded-xl overflow-hidden flex flex-col justify-between cursor-pointer group" onclick="openInspector('${npc.id}')">
                   <div>
                     <div class="h-44 bg-codex-900 relative overflow-hidden flex items-center justify-center border-b border-codex-borderGold/20">
@@ -887,7 +849,6 @@
             </div>
           </div>
 
-          <!-- Seção: Locais Notáveis -->
           <div class="space-y-4">
             <div class="flex items-center justify-between">
               <h3 class="font-cinzel text-base text-codex-gold font-bold flex items-center gap-2">
@@ -897,7 +858,7 @@
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-              ${featuredLocais.map(loc => `
+              ${locais.slice(0, 3).map(loc => `
                 <div class="module-card rounded-xl overflow-hidden flex flex-col justify-between cursor-pointer group" onclick="openInspector('${loc.id}')">
                   <div>
                     <div class="h-40 bg-codex-900 relative overflow-hidden flex items-center justify-center border-b border-codex-borderGold/20">
@@ -923,41 +884,11 @@
             </div>
           </div>
 
-          <!-- Seção: Categorias Customizadas Criadas (Se Houver) -->
-          ${customCategories.length > 0 ? `
-            <div class="space-y-4">
-              <h3 class="font-cinzel text-base text-emerald-400 font-bold flex items-center gap-2">
-                <span>📁</span> Categorias Customizadas Criadas
-              </h3>
-              <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-                ${customCategories.map(cat => {
-                  const itemsCount = liveDocs.filter(d => d.folder === cat.folder).length;
-                  return `
-                    <div class="module-card p-4 rounded-xl cursor-pointer hover:border-emerald-500/50 flex flex-col justify-between" onclick="window.location.hash='#custom/${cat.slug}'">
-                      <div>
-                        <div class="flex items-center justify-between mb-2">
-                          <span class="text-2xl">${cat.icone || '📁'}</span>
-                          <span class="canon-badge badge-canonico text-[8px]">${itemsCount} Registros</span>
-                        </div>
-                        <h4 class="font-cinzel font-bold text-sm text-codex-parchment mb-1">${cat.nome}</h4>
-                        <p class="text-[11px] text-codex-parchmentMuted line-clamp-2">${cat.descricao || 'Pasta ' + cat.pasta}</p>
-                      </div>
-                      <div class="pt-3 mt-3 border-t border-codex-borderGold/20 text-[10px] font-mono text-emerald-400 flex items-center justify-between">
-                        <span>Acessar Categoria</span>
-                        <span>→</span>
-                      </div>
-                    </div>
-                  `;
-                }).join('')}
-              </div>
-            </div>
-          ` : ''}
-
         </div>
       `;
     }
 
-    /* RENDER: INTRODUÇÃO NARRATIVA */
+    /* 8. RENDERIZADORES MODULARES */
     let activeHistoriaDocId = "LORE-005";
     function renderHistoriaView() {
       const container = document.getElementById('pageContainer');
@@ -976,7 +907,7 @@
             <div>
               <span class="canon-badge badge-canonico mb-1.5">Cânone Literário • Reino de Arkan</span>
               <h2 class="font-cinzel text-2xl font-bold text-codex-goldBright">Introdução Narrativa</h2>
-              <p class="text-xs text-codex-parchmentMuted">Crônicas fundamentais lidas diretamente de <code>gdd/01-lore/</code></p>
+              <p class="text-xs text-codex-parchmentMuted">Crônicas lidas diretamente de <code>gdd/01-lore/</code></p>
             </div>
             <button onclick="triggerEdit('${activeDoc.id}')" class="self-start px-3 py-1.5 bg-codex-800 hover:bg-codex-750 text-codex-gold border border-codex-borderGold/40 rounded-lg text-xs font-cinzel transition flex items-center gap-1.5">
               <span>✏️</span> Editar Crônica
@@ -1014,7 +945,6 @@
       `;
     }
 
-    /* RENDER: DOSSIÊ */
     function renderDossieView(folder, title, subtitle) {
       const container = document.getElementById('pageContainer');
       const docs = liveDocs.filter(d => d.folder === folder);
@@ -1024,7 +954,7 @@
           <div class="flex items-center justify-between pb-3 border-b border-codex-borderGold/30">
             <div>
               <h2 class="font-cinzel text-xl font-bold text-codex-goldBright">${title}</h2>
-              <p class="text-xs text-codex-parchmentMuted">${subtitle} • Lidos de <code>gdd/${folder}/</code></p>
+              <p class="text-xs text-codex-parchmentMuted">${subtitle || 'Registros catalogados'} • Lidos de <code>gdd/${folder}/</code></p>
             </div>
           </div>
 
@@ -1062,7 +992,6 @@
       `;
     }
 
-    /* RENDER: O LIVRO DE ARKAN */
     let activeBookIndex = 0;
     function renderLivroView() {
       const container = document.getElementById('pageContainer');
@@ -1074,7 +1003,7 @@
           <div class="pb-3 border-b border-codex-borderGold/30 flex items-center justify-between">
             <div>
               <h2 class="font-cinzel text-2xl font-bold text-codex-goldBright">O Grande Livro de Arkan</h2>
-              <p class="text-xs text-codex-parchmentMuted">Crônicas históricas lidas diretamente de <code>gdd/01-lore/</code></p>
+              <p class="text-xs text-codex-parchmentMuted">Crônicas históricas lidas de <code>gdd/01-lore/</code></p>
             </div>
           </div>
 
@@ -1123,7 +1052,6 @@
       `;
     }
 
-    /* RENDER: DIÁRIO DE JOHN */
     function renderDiarioView() {
       const container = document.getElementById('pageContainer');
       const entries = liveDocs.filter(d => d.id === 'ITEM-004' || d.id === 'LORE-003');
@@ -1152,7 +1080,6 @@
       `;
     }
 
-    /* RENDER: GDD / DOCUMENTAÇÃO */
     function renderGDDView(folder, title) {
       const container = document.getElementById('pageContainer');
       const docs = liveDocs.filter(d => d.folder === folder);
@@ -1182,74 +1109,6 @@
       `;
     }
 
-    /* RENDER: CATEGORIA CUSTOMIZADA DINÂMICA */
-    function renderCustomCategoryView(slug) {
-      const container = document.getElementById('pageContainer');
-      const cat = customCategories.find(c => c.slug === slug);
-      if (!cat) {
-        container.innerHTML = `<div class="p-8 text-center text-xs font-mono text-rose-400">Categoria "${slug}" não localizada.</div>`;
-        return;
-      }
-
-      const docs = liveDocs.filter(d => d.folder === cat.folder);
-
-      container.innerHTML = `
-        <div class="space-y-6">
-          <div class="flex items-center justify-between pb-3 border-b border-codex-borderGold/30">
-            <div>
-              <div class="flex items-center gap-2">
-                <span class="text-2xl">${cat.icone || '📁'}</span>
-                <h2 class="font-cinzel text-xl font-bold text-codex-goldBright">${cat.nome}</h2>
-              </div>
-              <p class="text-xs text-codex-parchmentMuted mt-0.5">${cat.descricao || 'Subpasta: ' + cat.pasta}</p>
-            </div>
-            <button onclick="triggerNewDocInFolder('${cat.pasta}')" class="px-3 py-1.5 bg-gradient-to-r from-codex-gold to-codex-goldBright text-codex-950 font-cinzel font-bold text-xs rounded-lg shadow">
-              ➕ Novo em ${cat.nome}
-            </button>
-          </div>
-
-          ${docs.length === 0 ? `
-            <div class="module-card p-10 rounded-xl text-center font-mono text-xs text-codex-parchmentMuted">
-              Nenhum documento registrado nesta categoria ainda.<br>
-              <span class="text-codex-gold mt-1 block">Clique no botão acima para redigir o primeiro arquivo .md</span>
-            </div>
-          ` : `
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-              ${docs.map(doc => `
-                <div class="module-card rounded-xl overflow-hidden flex flex-col justify-between cursor-pointer group" onclick="openInspector('${doc.id}')">
-                  <div>
-                    <div class="h-44 bg-codex-900 relative overflow-hidden flex items-center justify-center border-b border-codex-borderGold/20">
-                      ${doc.imagem ? `
-                        <img src="${doc.imagem}" alt="${doc.nome}" onerror="handleCardImgError(this, '${doc.id}', '${doc.nome}')" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
-                      ` : `
-                        <span class="text-3xl">${cat.icone || '📁'}</span>
-                      `}
-                      <span class="absolute top-2 left-2 font-mono text-[9px] text-codex-gold bg-codex-950/85 px-1.5 py-0.5 rounded border border-codex-borderGold/30">${doc.id}</span>
-                      <div class="absolute top-2 right-2">${getStatusBadge(doc.status)}</div>
-                      <div class="absolute bottom-2 left-3">
-                        <h4 class="font-cinzel font-bold text-sm text-white drop-shadow">${doc.nome}</h4>
-                        <span class="text-[11px] text-codex-gold drop-shadow block">${doc.funcao || ''}</span>
-                      </div>
-                    </div>
-                    <div class="p-3.5 text-xs text-codex-parchmentMuted line-clamp-3 leading-relaxed">
-                      ${doc.markdown ? safeMarkdown(doc.markdown).replace(/<[^>]*>?/gm, '') : '<span class="italic text-codex-parchmentMuted/60 font-mono text-[10px]">Aguardando preenchimento documental...</span>'}
-                    </div>
-                  </div>
-                  <div class="p-2.5 border-t border-codex-borderGold/20 flex items-center justify-between text-[11px] font-mono bg-codex-850/50">
-                    <span class="text-codex-gold font-cinzel">Inspecionar Ficha ↗</span>
-                    <button onclick="event.stopPropagation(); triggerEdit('${doc.id}')" class="text-codex-gold hover:text-white px-2 py-0.5 rounded bg-codex-800 border border-codex-borderGold/30 font-cinzel text-[10px]">
-                      ✏️ Editar
-                    </button>
-                  </div>
-                </div>
-              `).join('')}
-            </div>
-          `}
-        </div>
-      `;
-    }
-
-    // Suporte Técnico
     function renderEstadoView() { renderGDDView('99-canon', 'Estado da Produção'); }
     function renderTimelineView() { renderGDDView('99-canon', 'Linha do Tempo'); }
     function renderGaleriaView() { renderDossieView('03-npcs', 'Galeria de Assets', 'Referências visuais'); }
@@ -1272,15 +1131,15 @@
               <span class="text-2xl font-mono font-bold text-emerald-400">${liveDocs.filter(d => d.status === 'CANONICO').length}</span>
             </div>
             <div class="module-card p-4 rounded-xl text-center">
-              <span class="font-cinzel text-[10px] text-codex-gold uppercase block">Categorias Extras</span>
-              <span class="text-2xl font-mono font-bold text-codex-gold">${customCategories.length}</span>
+              <span class="font-cinzel text-[10px] text-codex-gold uppercase block">Categorias no Manifest</span>
+              <span class="text-2xl font-mono font-bold text-codex-gold">${(projectManifest.categorias || []).length}</span>
             </div>
           </div>
         </div>
       `;
     }
 
-    /* INSPETOR MODAL */
+    /* 9. INSPETOR MODAL DE ENTIDADE */
     function openInspector(docId) {
       const doc = liveDocs.find(d => d.id === docId);
       if (!doc) return;
@@ -1330,7 +1189,7 @@
       document.getElementById('modalInspector').classList.remove('hidden');
     }
 
-    /* AUTENTICAÇÃO E EDIÇÃO */
+    /* 10. AUTENTICAÇÃO E OPERAÇÕES VIA GITHUB CONTENTS API */
     function getStoredAuth() {
       try { return JSON.parse(localStorage.getItem('bp_gdd_gh_auth')) || null; } catch(e) { return null; }
     }
@@ -1429,30 +1288,9 @@ ${markdown}
 `;
 
       const targetPath = origPath || `${folder}/${id}.md`;
-      const cleanFolder = folder.replace('gdd/', '').replace(/^\//, '');
 
       try {
         await commitFileToGit(targetPath, frontmatter, commitMsg);
-        
-        // Atualiza a memória de documentos customizados
-        const newDoc = {
-          id,
-          path: targetPath,
-          folder: cleanFolder,
-          nome: title,
-          funcao: subtitle,
-          localizacao: location,
-          imagem: image,
-          status: status,
-          markdown: markdown
-        };
-
-        const storedCustomDocs = getStoredCustomDocs();
-        const existingIdx = storedCustomDocs.findIndex(d => d.id === id);
-        if (existingIdx >= 0) storedCustomDocs[existingIdx] = newDoc;
-        else storedCustomDocs.push(newDoc);
-        saveStoredCustomDocs(storedCustomDocs);
-
         alert(`Sucesso! Commit gravado em ${targetPath} na branch ${auth.branch || 'main'}.`);
         document.getElementById('drawerEditor').classList.add('hidden');
         await loadAllDocuments();
@@ -1499,10 +1337,78 @@ ${markdown}
       return await putRes.json();
     }
 
-    /* ROTEADOR DE NAVEGAÇÃO */
+    /* 11. COMMIT PROCEDURAL DE NOVA CATEGORIA (ATUALIZA MANIFEST.JSON NO GIT) */
+    async function commitNewCategoryProcedural(catData) {
+      const auth = requireAuth();
+      if (!auth) return;
+
+      const [owner, repo] = auth.repo.split('/');
+      const branch = auth.branch || REPO_BRANCH;
+      const manifestApiUrl = `https://api.github.com/repos/${owner}/${repo}/contents/${MANIFEST_PATH}`;
+
+      try {
+        // 1. Busca o manifest.json atual do repositório para capturar o SHA
+        let currentManifest = { categorias: [] };
+        let sha = null;
+
+        const getRes = await fetch(`${manifestApiUrl}?ref=${branch}`, {
+          headers: { 'Authorization': `Bearer ${auth.token}`, 'Accept': 'application/vnd.github.v3+json' }
+        });
+
+        if (getRes.ok) {
+          const gitData = await getRes.json();
+          sha = gitData.sha;
+          currentManifest = JSON.parse(decodeURIComponent(escape(atob(gitData.content))));
+        } else {
+          // Se não existia ainda, inicializa a partir do catálogo base
+          currentManifest = JSON.parse(JSON.stringify(projectManifest));
+        }
+
+        // 2. Insere a nova categoria no array
+        if (!currentManifest.categorias.some(c => c.slug === catData.slug)) {
+          currentManifest.categorias.push(catData);
+        }
+
+        // 3. Comita o manifest.json atualizado
+        const putBody = {
+          message: `feat(schema): registrar categoria ${catData.nome} no manifest`,
+          content: btoa(unescape(encodeURIComponent(JSON.stringify(currentManifest, null, 2)))),
+          branch: branch
+        };
+        if (sha) putBody.sha = sha;
+
+        const putRes = await fetch(manifestApiUrl, {
+          method: 'PUT',
+          headers: {
+            'Authorization': `Bearer ${auth.token}`,
+            'Accept': 'application/vnd.github.v3+json',
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(putBody)
+        });
+
+        if (!putRes.ok) throw new Error(`Falha ao gravar manifest: HTTP ${putRes.status}`);
+
+        // 4. Cria arquivo inicial na pasta para garantir existência física no repositório
+        const readmeContent = `---\ncategoria: "${catData.nome}"\npasta: "${catData.pasta}"\n---\n# ${catData.nome}\n\n${catData.descricao || ''}`;
+        await commitFileToGit(`${catData.pasta}/README.md`, readmeContent, `feat(dir): inicializar pasta ${catData.pasta}`);
+
+        projectManifest = currentManifest;
+        alert(`Categoria "${catData.nome}" gravada no manifest.json do repositório!`);
+        
+        document.getElementById('modalNewCategory').classList.add('hidden');
+        await loadAllDocuments();
+        window.location.hash = `#${catData.slug}`;
+
+      } catch (err) {
+        alert(`Erro ao comitar categoria procedural: ${err.message}`);
+      }
+    }
+
+    /* 12. ROTEADOR DE NAVEGAÇÃO */
     function navigate() {
       const hash = window.location.hash.replace('#', '') || 'dashboard';
-      const [route, param1] = hash.split('/');
+      const [route] = hash.split('/');
 
       document.querySelectorAll('.nav-link').forEach(link => {
         const href = link.getAttribute('href');
@@ -1515,30 +1421,72 @@ ${markdown}
 
       document.getElementById('breadcrumbCurrent').textContent = route.toUpperCase();
 
-      if (route === 'npcs') renderDossieView('03-npcs', 'NPCs & Habitantes', 'Fichas biográficas');
-      else if (route === 'locais') renderDossieView('05-locais', 'Locais & Geografia', 'Mapeamento territorial');
-      else if (route === 'itens') renderDossieView('04-itens', 'Itens & Equipamentos', 'Materiais e armas');
-      else if (route === 'canon') renderDossieView('99-canon', 'Decisões Canônicas', 'Pilares de design');
-      else if (route === 'livro') renderLivroView();
-      else if (route === 'diario') renderDiarioView();
-      else if (route === 'historia') renderHistoriaView();
-      else if (route === 'gameplay') renderGDDView('02-gameplay', 'Loop Principal de Jogo');
-      else if (route === 'sistemas') renderGDDView('02-gameplay', 'Sistemas & Arquitetura');
-      else if (route === 'missoes') renderGDDView('02-gameplay', 'Missões & Quests');
-      else if (route === 'referencias') renderGaleriaView();
-      else if (route === 'changelog') renderChangelogView();
-      else if (route === 'estado') renderEstadoView();
-      else if (route === 'timeline') renderTimelineView();
-      else if (route === 'saude') renderSaudeView();
-      else if (route === 'custom' && param1) renderCustomCategoryView(decodeURIComponent(param1));
-      else renderDashboard();
+      // Verifica se a rota corresponde a uma categoria cadastrada no manifesto
+      const matchedCat = (projectManifest.categorias || []).find(c => c.slug === route || c.id === route);
+
+      if (matchedCat) {
+        if (matchedCat.renderer === 'historia') renderHistoriaView();
+        else if (matchedCat.renderer === 'livro') renderLivroView();
+        else if (matchedCat.renderer === 'diario') renderDiarioView();
+        else if (matchedCat.renderer === 'galeria') renderGaleriaView();
+        else if (matchedCat.renderer === 'gdd') renderGDDView(matchedCat.folder, matchedCat.nome);
+        else renderDossieView(matchedCat.folder, matchedCat.nome, matchedCat.descricao);
+      } else {
+        if (route === 'estado') renderEstadoView();
+        else if (route === 'timeline') renderTimelineView();
+        else if (route === 'saude') renderSaudeView();
+        else renderDashboard();
+      }
 
       document.getElementById('sidebar')?.classList.add('-translate-x-full');
       document.getElementById('mobileOverlay')?.classList.add('hidden');
     }
     window.addEventListener('hashchange', navigate);
 
-    /* INICIALIZAÇÃO */
+    /* 13. MOTOR DE BUSCA */
+    function executeSearch() {
+      const searchInput = document.getElementById('globalSearchInput');
+      const searchFilter = document.getElementById('searchCategoryFilter');
+      const dropdown = document.getElementById('searchResultsDropdown');
+
+      let q = searchInput.value.toLowerCase().trim();
+      let selectedFolder = searchFilter ? searchFilter.value : 'all';
+
+      if (q.startsWith('npc:')) { selectedFolder = '03-npcs'; q = q.replace('npc:', '').trim(); }
+      else if (q.startsWith('local:')) { selectedFolder = '05-locais'; q = q.replace('local:', '').trim(); }
+      else if (q.startsWith('item:')) { selectedFolder = '04-itens'; q = q.replace('item:', '').trim(); }
+      else if (q.startsWith('lore:')) { selectedFolder = '01-lore'; q = q.replace('lore:', '').trim(); }
+
+      if (q.length < 2) { 
+        dropdown?.classList.add('hidden'); 
+        return; 
+      }
+
+      const hits = liveDocs.filter(d => {
+        const matchesCategory = (selectedFolder === 'all') || (d.folder === selectedFolder);
+        const matchesText = d.nome.toLowerCase().includes(q) || 
+                            d.id.toLowerCase().includes(q) || 
+                            (d.markdown && d.markdown.toLowerCase().includes(q));
+        return matchesCategory && matchesText;
+      });
+
+      if (!hits.length) {
+        dropdown.innerHTML = `<div class="p-3 text-xs text-codex-parchmentMuted text-center font-mono">Nenhum registro correspondente.</div>`;
+      } else {
+        dropdown.innerHTML = hits.map(h => `
+          <div onclick="document.getElementById('searchResultsDropdown').classList.add('hidden'); openInspector('${h.id}');" class="p-2 rounded hover:bg-codex-850 flex items-center justify-between text-xs transition cursor-pointer">
+            <div class="flex items-center gap-2 truncate">
+              <span class="font-cinzel text-codex-parchment">${h.nome}</span>
+              <span class="text-[10px] text-codex-parchmentMuted font-mono">(${h.funcao || h.folder})</span>
+            </div>
+            <span class="font-mono text-[9px] text-codex-gold bg-codex-950 px-1.5 py-0.5 rounded border border-codex-borderGold/30">${h.id}</span>
+          </div>
+        `).join('');
+      }
+      dropdown?.classList.remove('hidden');
+    }
+
+    /* 14. INICIALIZAÇÃO DE EVENTOS */
     document.addEventListener('DOMContentLoaded', () => {
       updateAuthUI();
 
@@ -1579,7 +1527,7 @@ ${markdown}
       document.getElementById('btnCancelDrawer')?.addEventListener('click', () => document.getElementById('drawerEditor').classList.add('hidden'));
       document.getElementById('btnSaveDrawer')?.addEventListener('click', handleSaveDrawer);
 
-      // Nova Categoria
+      // Nova Categoria Modal
       document.getElementById('btnOpenCategoryModal')?.addEventListener('click', () => {
         if (!requireAuth()) return;
         document.getElementById('modalNewCategory').classList.remove('hidden');
@@ -1593,48 +1541,31 @@ ${markdown}
       });
 
       document.getElementById('btnConfirmCategoryModal')?.addEventListener('click', async () => {
-        const auth = requireAuth();
-        if (!auth) return;
-
         const nome = document.getElementById('catModalNome').value.trim();
         const pasta = document.getElementById('catModalPasta').value.trim();
         const icone = document.getElementById('catModalIcone').value.trim() || '📁';
+        const grupo = document.getElementById('catModalGrupo').value.trim() || 'COMPÊNDIO GERAL';
         const renderer = document.getElementById('catModalRenderer').value;
         const descricao = document.getElementById('catModalDescricao').value.trim();
 
         if (!nome || !pasta) { alert("Nome e Pasta são obrigatórios."); return; }
 
-        const readmeContent = `---
-categoria: "${nome}"
-pasta: "${pasta}"
-renderer: "${renderer}"
-icone: "${icone}"
----
+        const slug = nome.toLowerCase().trim().replace(/[^a-z0-9]+/g, '-');
+        const cleanFolder = pasta.replace('gdd/', '').replace(/^\//, '');
 
-# ${nome}
+        const catPayload = {
+          id: slug,
+          nome: nome,
+          pasta: pasta,
+          folder: cleanFolder,
+          icone: icone,
+          renderer: renderer,
+          slug: slug,
+          grupo: grupo,
+          descricao: descricao
+        };
 
-${descricao || 'Categoria documental criada via Códice Web.'}
-`;
-
-        try {
-          await commitFileToGit(`${pasta}/README.md`, readmeContent, `feat(categoria): registrar ${nome} em ${pasta}`);
-          
-          const slug = nome.toLowerCase().trim().replace(/[^a-z0-9]+/g, '-');
-          const cleanFolder = pasta.replace('gdd/', '').replace(/^\//, '');
-          
-          const newCategory = { nome, pasta, folder: cleanFolder, icone, renderer, slug, descricao };
-          customCategories.push(newCategory);
-          saveStoredCustomCategories(customCategories);
-
-          alert(`Categoria "${nome}" criada com sucesso no repositório!`);
-          document.getElementById('modalNewCategory').classList.add('hidden');
-          
-          updateFolderSelectOptions();
-          renderSidebar();
-          window.location.hash = `#custom/${slug}`;
-        } catch (err) {
-          alert(`Erro ao comitar pasta no GitHub: ${err.message}`);
-        }
+        await commitNewCategoryProcedural(catPayload);
       });
 
       document.getElementById('btnOpenNewModal')?.addEventListener('click', () => {
@@ -1642,31 +1573,11 @@ ${descricao || 'Categoria documental criada via Códice Web.'}
         triggerNewDocInFolder("gdd/03-npcs");
       });
 
-      // Busca Global
+      // Busca
       const searchInput = document.getElementById('globalSearchInput');
-      const dropdown = document.getElementById('searchResultsDropdown');
-      searchInput?.addEventListener('input', (e) => {
-        const q = e.target.value.toLowerCase().trim();
-        if (q.length < 2) { dropdown?.classList.add('hidden'); return; }
-
-        const hits = liveDocs.filter(d => 
-          d.nome.toLowerCase().includes(q) || 
-          d.id.toLowerCase().includes(q) || 
-          (d.markdown && d.markdown.toLowerCase().includes(q))
-        );
-
-        if (!hits.length) {
-          dropdown.innerHTML = `<div class="p-3 text-xs text-codex-parchmentMuted text-center font-mono">Nenhum registro encontrado.</div>`;
-        } else {
-          dropdown.innerHTML = hits.map(h => `
-            <div onclick="document.getElementById('searchResultsDropdown').classList.add('hidden'); openInspector('${h.id}');" class="p-2 rounded hover:bg-codex-850 flex items-center justify-between text-xs transition cursor-pointer">
-              <span class="font-cinzel text-codex-parchment">${h.nome}</span>
-              <span class="font-mono text-[9px] text-codex-gold bg-codex-950 px-1.5 py-0.5 rounded border border-codex-borderGold/30">${h.id}</span>
-            </div>
-          `).join('');
-        }
-        dropdown?.classList.remove('hidden');
-      });
+      const searchFilter = document.getElementById('searchCategoryFilter');
+      searchInput?.addEventListener('input', executeSearch);
+      searchFilter?.addEventListener('change', executeSearch);
 
       loadAllDocuments();
     });
