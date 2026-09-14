@@ -2,6 +2,10 @@
 id: "GAME-002"
 nome: "Sistema de Combate e Combos"
 status: "CANONICO"
+relacionados:
+  - "ITEM-003"
+  - "GAME-001"
+  - "CANON-005"
 atualizado_por: "agente"
 ---
 

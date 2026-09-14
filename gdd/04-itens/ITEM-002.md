@@ -2,6 +2,10 @@
 id: "ITEM-002"
 nome: "Madeira Sagrada"
 status: "CANONICO"
+relacionados:
+  - "LOCAL-004"
+  - "NPC-002"
+  - "ITEM-003"
 imagem: "./assets/itens/ITEM-002.png"
 atualizado_por: "agente"
 ---

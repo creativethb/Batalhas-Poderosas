@@ -12,6 +12,7 @@ relacionados:
   - "LOCAL-001"
   - "NPC-001"
   - "NPC-002"
+  - "ITEM-004"
 atualizado_por: "agente_bibliotecario"
 data_atualizacao: "2026-09-08"
 ---

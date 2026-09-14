@@ -2,6 +2,12 @@
 id: "ITEM-001"
 nome: "Madeira Comum"
 status: "CANONICO"
+relacionados:
+  - "LOCAL-001"
+  - "NPC-001"
+  - "ITEM-003"
+  - "NPC-008"
+  - "NPC-010"
 imagem: "./assets/itens/ITEM-001.png"
 atualizado_por: "agente"
 ---

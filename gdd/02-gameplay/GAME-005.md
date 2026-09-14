@@ -8,6 +8,7 @@ relacionados:
   - "LORE-003"
   - "LOCAL-001"
   - "GAME-001"
+  - "ITEM-004"
 atualizado_por: "agente_bibliotecario"
 data_atualizacao: "2026-09-08"
 ---

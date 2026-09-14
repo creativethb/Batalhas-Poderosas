@@ -2,6 +2,12 @@
 id: "GAME-004"
 nome: "Sistema Imersivo de Diálogo e Câmera"
 status: "CANONICO"
+relacionados:
+  - "NPC-001"
+  - "NPC-002"
+  - "GAME-001"
+  - "GAME-003"
+  - "CANON-005"
 atualizado_por: "agente"
 ---
 

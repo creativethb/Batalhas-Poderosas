@@ -2,6 +2,11 @@
 id: "BP-2026-001"
 nome: "Protagonista John e Origem do Soldado"
 status: "CANONICO"
+relacionados:
+  - "NPC-000"
+  - "LORE-002"
+  - "LORE-004"
+  - "CANON-002"
 atualizado_por: "agente"
 ---
 

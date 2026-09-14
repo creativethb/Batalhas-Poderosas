@@ -2,6 +2,11 @@
 id: "BP-2026-002"
 nome: "Início da Jornada na Casa de John"
 status: "CANONICO"
+relacionados:
+  - "LOCAL-001"
+  - "LORE-002"
+  - "ITEM-001"
+  - "CANON-001"
 atualizado_por: "agente"
 ---
 

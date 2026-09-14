@@ -2,6 +2,11 @@
 id: "BP-2026-003"
 nome: "A Guerra contra o Rei Mago e Origem do Conflito"
 status: "CANONICO"
+relacionados:
+  - "NPC-000"
+  - "LORE-001"
+  - "LORE-006"
+  - "LOCAL-007"
 atualizado_por: "agente"
 ---
 

@@ -11,6 +11,7 @@ relacionados:
   - "NPC-007"
   - "NPC-008"
   - "NPC-012"
+  - "NPC-013"
   - "GAME-001"
 atualizado_por: "agente_bibliotecario"
 data_atualizacao: "2026-09-11"

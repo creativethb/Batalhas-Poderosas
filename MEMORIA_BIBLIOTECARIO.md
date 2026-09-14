@@ -2,7 +2,7 @@
 
 > **DIRETÓRIO OFICIAL DE MEMÓRIA:** `F:\Bibliotecário_GDD`  
 > **FUNÇÃO DO DOCUMENTO:** Registro consolidado, fidedigno e persistente do estado, lore canônica, mecânicas e sistemas do projeto **Batalhas Poderosas** entre sessões de desenvolvimento.  
-> **ÚLTIMA ATUALIZAÇÃO:** 12/09/2026  
+> **ÚLTIMA ATUALIZAÇÃO:** 14/09/2026  
 
 ---
 
@@ -291,6 +291,24 @@ Todos os 20+ NPCs da vila utilizam rig oficial **R15 com malha arredondada (Rig 
 10. **Localização do reino construído pelo Rei Mago:** 🔴 DESCONHECIDO.
 11. **Localização exata da coleta da Madeira Comum (Casa de John / Colina Leste):** 🟡 PROVISÓRIO — não é cânone definitivo.
 12. **Como o paralelo John/Rei Mago será revelado ao jogador:** 🟡 EM CONSTRUÇÃO.
+13. **Pasta duplicada `gdd/06-dossi-s/`:** Pasta órfã contendo apenas `README.md`. A pasta canônica é `gdd/06-dossie/`. Pendente de avaliação para remoção (não remover sem ordem humana para evitar impacto no histórico de commit).
+14. **Serraria (NPC-010 Garrick):** Não possui ficha `LOCAL` própria ainda. Por isso, no grafo de relações, Garrick conecta-se a `ITEM-001` e `NPC-001` (Forja), e não a um local dedicado.
+
+---
+
+## 9. Relações & Cruzamento de Informações — CONCLUÍDO EM 14/09/2026
+
+**Objetivo:** Fechar o grafo de relações e o cruzamento de informações entre todas as entidades do GDD (pedido do dono: "Relações e Cruzamento de Informações").
+
+**Entregue:**
+1. **`banco_narrativo/04-mapa-relacoes/MAPA_RELACOES.md`** reescrito e expandido de 5 nós para **cobertura de 100%** das entidades: NPC-000 a 013, ITEM-001 a 004, LOCAL-001 a 009, LORE-001 a 006, GAME-001 a 006, CANON-001 a 008 (BP-2026) e DOS-001 a 003. Inclui Núcleos Narrativos (Rei Mago, John, Jornada Diário→Livro), matriz por categoria, Matriz de Impacto de Mudanças (8 regras) e notas operacionais.
+2. **Campo `relacionados:`** preenchido no frontmatter de TODAS as fichas do `/gdd/` (42 IDs indexados). O mini-site Códice v2.8.0 lê ao vivo e agora exibe os vínculos em cada entidade.
+3. **Correções de referências quebradas:**
+   - `DOS-001` apontava para `DOSSIER-002/003` (inexistentes) → corrigido para IDs válidos (`NPC-001`, `LOCAL-002`, `ITEM-003`, `DOS-002`, `DOS-003`).
+   - `NPC-010` (Lenhador Garrick) apontava para `LOCAL-006` (Cais de pesca) por engano → corrigido para `ITEM-001` + `NPC-001` (Forja), já que a Serraria ainda não tem ficha LOCAL própria.
+4. **Auditoria automatizada executada:** 42 IDs registrados → **nenhuma referência quebrada**; nenhuma ficha ficou sem `relacionados`.
+
+**Regra de manutenção (nova):** qualquer ficha nova ou alterada deve atualizar SIMULTANEAMENTE o `relacionados:` do frontmatter e as tabelas do `MAPA_RELACOES.md`.
 
 ---
 

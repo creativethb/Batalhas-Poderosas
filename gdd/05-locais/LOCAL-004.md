@@ -2,6 +2,10 @@
 id: "LOCAL-004"
 nome: "Árvore Sagrada e Santuário da Floresta"
 status: "CANONICO"
+relacionados:
+  - "NPC-002"
+  - "ITEM-002"
+  - "DOS-002"
 imagem: "./assets/locais/LOCAL-004.png"
 atualizado_por: "agente"
 ---

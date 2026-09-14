@@ -2,6 +2,11 @@
 id: "BP-2026-005"
 nome: "Padrão de UX e Controles Multiplataforma"
 status: "CANONICO"
+relacionados:
+  - "GAME-001"
+  - "GAME-002"
+  - "GAME-003"
+  - "GAME-004"
 atualizado_por: "agente"
 ---
 

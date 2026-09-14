@@ -2,6 +2,9 @@
 id: "BP-2026-004"
 nome: "Desacoplamento do Sandbox e Conexão Inter-Place"
 status: "CANONICO"
+relacionados:
+  - "LOCAL-008"
+  - "NPC-009"
 atualizado_por: "agente"
 ---
 

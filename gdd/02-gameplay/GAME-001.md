@@ -2,6 +2,12 @@
 id: "GAME-001"
 nome: "Loop Principal e Progressão de Gameplay"
 status: "CANONICO"
+relacionados:
+  - "LORE-002"
+  - "NPC-001"
+  - "NPC-002"
+  - "ITEM-003"
+  - "CANON-002"
 atualizado_por: "agente"
 ---
 

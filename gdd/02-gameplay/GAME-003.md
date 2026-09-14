@@ -2,6 +2,10 @@
 id: "GAME-003"
 nome: "Sistema de Locomoção, Dash e Duplo Pulo"
 status: "CANONICO"
+relacionados:
+  - "GAME-002"
+  - "GAME-004"
+  - "CANON-005"
 atualizado_por: "agente"
 ---
 

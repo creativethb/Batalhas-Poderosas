@@ -2,6 +2,9 @@
 id: "LOCAL-006"
 nome: "Cais do Lago Nobre"
 status: "CANONICO"
+relacionados:
+  - "NPC-006"
+  - "GAME-001"
 imagem: "./assets/locais/LOCAL-006.png"
 atualizado_por: "agente"
 ---

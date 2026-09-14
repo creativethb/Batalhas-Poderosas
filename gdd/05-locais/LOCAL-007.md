@@ -2,6 +2,13 @@
 id: "LOCAL-007"
 nome: "Minas da Montanha Leste"
 status: "CANONICO"
+relacionados:
+  - "NPC-000"
+  - "NPC-003"
+  - "NPC-011"
+  - "LORE-001"
+  - "LORE-006"
+  - "DOS-003"
 imagem: "./assets/locais/LOCAL-007.png"
 atualizado_por: "agente"
 ---

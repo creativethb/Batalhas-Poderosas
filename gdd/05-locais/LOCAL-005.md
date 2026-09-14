@@ -2,6 +2,10 @@
 id: "LOCAL-005"
 nome: "Padaria da Vila"
 status: "CANONICO"
+relacionados:
+  - "NPC-005"
+  - "LOCAL-003"
+  - "GAME-006"
 imagem: "./assets/locais/LOCAL-005.png"
 atualizado_por: "agente"
 ---

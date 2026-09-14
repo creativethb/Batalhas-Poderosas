@@ -4,8 +4,12 @@ nome: "Origem do Conflito de Arkan e o Rei Mago"
 status: "CANONICO"
 relacionados:
   - "LORE-004"
+  - "LORE-005"
+  - "LORE-006"
   - "LOCAL-007"
   - "CANON-003"
+  - "NPC-000"
+  - "DOS-003"
 atualizado_por: "agente_bibliotecario"
 data_atualizacao: "2026-09-08"
 ---

@@ -2,6 +2,11 @@
 id: "LOCAL-002"
 nome: "Oficina do Cedric"
 status: "CANONICO"
+relacionados:
+  - "NPC-001"
+  - "ITEM-003"
+  - "GAME-001"
+  - "LORE-002"
 imagem: "./assets/locais/LOCAL-002.png"
 atualizado_por: "agente"
 ---

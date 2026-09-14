@@ -2,6 +2,13 @@
 id: "ITEM-003"
 nome: "Espada de Madeira Sagrada"
 status: "CANONICO"
+relacionados:
+  - "ITEM-001"
+  - "ITEM-002"
+  - "NPC-001"
+  - "NPC-002"
+  - "GAME-002"
+  - "LORE-002"
 imagem: "./assets/itens/ITEM-003.png"
 atualizado_por: "agente"
 ---

@@ -2,6 +2,13 @@
 id: "LOCAL-001"
 nome: "Casa de John"
 status: "CANONICO"
+relacionados:
+  - "LORE-002"
+  - "LORE-003"
+  - "NPC-008"
+  - "ITEM-001"
+  - "ITEM-004"
+  - "CANON-002"
 imagem: "./assets/locais/LOCAL-001.png"
 atualizado_por: "agente"
 ---
