@@ -1,1 +1,0 @@
----\ncategoria: "eventos-historicos"\npasta: "gdd/06-dossies/05-eventos-historicos"\n---\n\n# eventos-historicos\n\nCategoria de dossiês em construção.
