@@ -312,4 +312,24 @@ Todos os 20+ NPCs da vila utilizam rig oficial **R15 com malha arredondada (Rig 
 
 ---
 
+## 10. Módulo de Masmorras & Dungeons — CONCLUÍDO EM 16/09/2026
+
+**Objetivo:** Integrar o projeto de Masmorras Procedurais (`masmorras.md`) à camada documental do GDD e ao Códice do mini-site, criando a categoria oficial `07-masmorras`, fichas técnicas detalhadas e cruzamentos sistêmicos (lore, economia, aprimoramento de armas, ciclo de vida e algoritmos).
+
+**Entregue:**
+1. **Nova categoria no manifesto (`gdd/manifest.json`):** `masmorras` ("Masmorras & Dungeons" — `gdd/07-masmorras`, ícone 💀, renderer `gdd`).
+2. **6 Documentos Canônicos criados em `gdd/07-masmorras/`:**
+   - `DNG-001`: **Visão Geral e Propósito das Masmorras em Arkan** (origem nas criptas tocadas pela corrupção de Alric, dinâmica 5 vs 15 câmaras, integração com John e sentinelas).
+   - `DNG-002`: **Economia, Tesouros e Progressão de Equipamentos** (moedas antigas, pilhagem de baús nos becos sem saída, minérios para Mestre Cedric forjar ligas e têmperas rúnicas, comércio com Tobias).
+   - `DNG-003`: **Arquitetura de Memória e Engenharia de Runtime** (Lazy Loading em `ServerStorage.Dungeon_Templates`, reciclagem hermética In-Place Swap via Eclusa em 50-100ms, destruição de workspace `:Destroy()`, prevenção de erro de ponto flutuante).
+   - `DNG-004`: **Motor de Geração Procedural (PCG) e Gabarito Modular** (DFS com Backtracking, semente aleatória `Random.new(os.time())`, fórmula de salas, gabarito de 80 studs, paredes de 2.0 studs anti-vazamento de luz, catálogo de arquétipos A, B, C, D).
+   - `DNG-005`: **Sistema de Armadilhas Físicas e Calibração Não-Letal** (filosofia anti-one-shot, laje camuflada com microdesalinhamento orgânico de 0.05 studs, lâminas em ponto cego < 8 studs, fossos tóxicos).
+   - `DNG-006`: **Matriz de Andares, Guardiões e Puzzles Cooperativos** (progressão dos 4 biomas/chefes, câmaras de compressão com timer de 20s, medalhões rúnicos bipartidos e placas de pressão sequenciais).
+3. **Mini-site (`index.html`) sincronizado:**
+   - `baseFallbackManifest` atualizado com a categoria `masmorras`.
+   - `canonicalFilesMap` atualizado com os 6 registros (`DNG-001` a `DNG-006`), rotas, badges e conexões.
+4. **Índice e Grafo de Relações atualizados:** `INDICE.md` e `MAPA_RELACOES.md` totalmente cruzados com 100% de integridade referencial.
+
+---
+
 *Documento gerado e mantido pelo Subagente Bibliotecário de Batalhas Poderosas.*

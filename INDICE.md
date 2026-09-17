@@ -118,6 +118,19 @@
 
 ---
 
+## 💀 Masmorras & Dungeons (`/gdd/07-masmorras/`)
+
+| ID | Nome | Categoria | Status | Arquivo | Resumo |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| **`DNG-001`** | Visão Geral e Propósito das Masmorras em Arkan | Lore & Arquitetura | `CANONICO` | `gdd/07-masmorras/DNG-001.md` | Origem nas criptas ancestrais tocadas pela corrupção de Alric; dinâmica 5 vs 15 câmaras. |
+| **`DNG-002`** | Economia, Tesouros e Progressão de Equipamentos | Economia Subterrânea | `CANONICO` | `gdd/07-masmorras/DNG-002.md` | Ciclo financeiro de Arkham, baús nos becos sem saída, têmpera rúnica com Cedric e comércio com Tobias. |
+| **`DNG-003`** | Arquitetura de Memória e Engenharia de Runtime | Engenharia Luau | `CANONICO` | `gdd/07-masmorras/DNG-003.md` | Lazy Loading sob demanda e reciclagem hermética In-Place Swap via Eclusa (50-100ms). |
+| **`DNG-004`** | Motor de Geração Procedural (PCG) e Gabarito Modular | Algoritmo DFS & Grid | `CANONICO` | `gdd/07-masmorras/DNG-004.md` | Algoritmo DFS com backtracking, passo de grid 80 studs, casca 2 studs e 4 arquétipos de salas. |
+| **`DNG-005`** | Sistema de Armadilhas Físicas e Calibração Não-Letal | Balanceamento | `CANONICO` | `gdd/07-masmorras/DNG-005.md` | Filosofia anti-one-shot, laje camuflada (0.05 studs), lâminas em ponto cego e fossos tóxicos. |
+| **`DNG-006`** | Matriz de Andares, Guardiões e Puzzles Cooperativos | Progressão & Puzzles | `CANONICO` | `gdd/07-masmorras/DNG-006.md` | Matriz de 4 biomas/chefes, câmaras de compressão com timer, medalhões bipartidos e glifos sequenciais. |
+
+---
+
 ## 🛡️ Decisões Canônicas (`/gdd/99-canon/`)
 
 | ID | Título | Categoria | Status | Arquivo |

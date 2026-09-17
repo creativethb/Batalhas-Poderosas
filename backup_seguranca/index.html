@@ -339,41 +339,41 @@
   </div>
 
   <!-- ================= INSPETOR MODAL: FICHA ARQUIVÍSTICA ================= -->
-  <div id="modalInspector" class="fixed inset-0 z-50 bg-black/85 backdrop-blur-md hidden flex items-center justify-center p-2.5 sm:p-4">
-    <div class="bg-arkan-900 border border-arkan-gold/50 rounded-xl sm:rounded-2xl max-w-3xl w-full p-4 sm:p-6 text-xs shadow-2xl space-y-3 sm:space-y-4 max-h-[92vh] flex flex-col">
+  <div id="modalInspector" class="fixed inset-0 z-50 bg-black/85 backdrop-blur-md hidden flex items-center justify-center p-4">
+    <div class="bg-arkan-900 border border-arkan-gold/50 rounded-2xl max-w-3xl w-full p-6 text-xs shadow-2xl space-y-4 max-h-[90vh] flex flex-col">
       
       <div class="flex items-center justify-between border-b border-arkan-borderGold/30 pb-3">
-        <div class="flex items-center gap-2.5 sm:gap-3 truncate pr-2">
-          <span id="inspectorIcon" class="text-xl sm:text-2xl shrink-0">📜</span>
-          <div class="truncate">
-            <h3 id="inspectorTitle" class="font-cinzel font-bold text-sm sm:text-base text-arkan-goldBright truncate">Ficha de Registro</h3>
-            <p id="inspectorPath" class="text-[9px] sm:text-[10px] font-mono text-arkan-parchmentDim truncate">gdd/...</p>
+        <div class="flex items-center gap-3">
+          <span id="inspectorIcon" class="text-2xl">📜</span>
+          <div>
+            <h3 id="inspectorTitle" class="font-cinzel font-bold text-base text-arkan-goldBright">Ficha de Registro</h3>
+            <p id="inspectorPath" class="text-[10px] font-mono text-arkan-parchmentDim">gdd/...</p>
           </div>
         </div>
-        <button id="btnCloseInspector" aria-label="Fechar Inspetor" class="w-8 h-8 flex items-center justify-center rounded-lg text-arkan-parchmentDim hover:text-white hover:bg-arkan-850 text-lg shrink-0">✕</button>
+        <button id="btnCloseInspector" class="text-arkan-parchmentDim hover:text-white text-lg">✕</button>
       </div>
 
-      <div class="flex-1 overflow-y-auto custom-scrollbar space-y-3 sm:space-y-4 p-0.5">
-        <div id="inspectorBanner" class="h-40 sm:h-64 rounded-xl overflow-hidden border border-arkan-borderGold/30 relative hidden bg-arkan-950">
+      <div class="flex-1 overflow-y-auto custom-scrollbar space-y-4 p-1">
+        <div id="inspectorBanner" class="h-64 rounded-xl overflow-hidden border border-arkan-borderGold/30 relative hidden bg-arkan-950">
           <img id="inspectorImg" src="" alt="Arte" class="w-full h-full object-cover">
         </div>
 
-        <div class="grid grid-cols-2 sm:grid-cols-4 gap-2 font-mono text-[10px] sm:text-[11px]">
-          <div class="p-2 sm:p-2.5 bg-arkan-850 rounded-lg border border-arkan-borderGold/20">
-            <span class="text-[8px] sm:text-[9px] text-arkan-gold block font-bold">IDENTIFICADOR</span>
-            <span id="inspectorId" class="text-arkan-parchment font-bold truncate block"></span>
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-2.5 font-mono text-[11px]">
+          <div class="p-2.5 bg-arkan-850 rounded-lg border border-arkan-borderGold/20">
+            <span class="text-[9px] text-arkan-gold block font-bold">IDENTIFICADOR</span>
+            <span id="inspectorId" class="text-arkan-parchment font-bold"></span>
           </div>
-          <div class="p-2 sm:p-2.5 bg-arkan-850 rounded-lg border border-arkan-borderGold/20">
-            <span class="text-[8px] sm:text-[9px] text-arkan-gold block font-bold">CANONICIDADE</span>
-            <span id="inspectorStatus" class="truncate block"></span>
+          <div class="p-2.5 bg-arkan-850 rounded-lg border border-arkan-borderGold/20">
+            <span class="text-[9px] text-arkan-gold block font-bold">CANONICIDADE</span>
+            <span id="inspectorStatus"></span>
           </div>
-          <div class="p-2 sm:p-2.5 bg-arkan-850 rounded-lg border border-arkan-borderGold/20 col-span-2">
-            <span class="text-[8px] sm:text-[9px] text-arkan-gold block font-bold">LOCALIZAÇÃO / CONTEXTO</span>
+          <div class="p-2.5 bg-arkan-850 rounded-lg border border-arkan-borderGold/20 sm:col-span-2">
+            <span class="text-[9px] text-arkan-gold block font-bold">LOCALIZAÇÃO / CONTEXTO</span>
             <span id="inspectorLocation" class="text-arkan-parchment truncate block"></span>
           </div>
         </div>
 
-        <div class="p-3.5 sm:p-5 bg-arkan-850 rounded-xl border border-arkan-borderGold/30 prose-codex" id="inspectorBody"></div>
+        <div class="p-5 bg-arkan-850 rounded-xl border border-arkan-borderGold/30 prose-codex" id="inspectorBody"></div>
 
         <div id="inspectorRelationsContainer" class="space-y-2 pt-2 hidden">
           <span class="text-[10px] font-cinzel text-arkan-gold uppercase font-bold block">Conexões no Códice:</span>
@@ -381,27 +381,27 @@
         </div>
       </div>
 
-      <div class="border-t border-arkan-borderGold/30 pt-3 flex flex-col-reverse sm:flex-row gap-2 sm:gap-0 sm:items-center sm:justify-between">
-        <button id="btnInspectorCloseBottom" class="w-full sm:w-auto px-4 py-2.5 sm:py-2 bg-arkan-800 hover:bg-arkan-750 text-arkan-parchment rounded-lg text-xs font-cinzel transition text-center active:scale-98">
-          Fechar
-        </button>
-        <button id="btnInspectorEdit" class="w-full sm:w-auto px-4 py-2.5 sm:py-2 bg-gradient-to-r from-arkan-gold to-arkan-goldBright text-arkan-950 rounded-lg text-xs font-cinzel font-bold transition shadow text-center active:scale-98">
+      <div class="border-t border-arkan-borderGold/30 pt-3 flex items-center justify-between">
+        <button id="btnInspectorEdit" class="px-4 py-2 bg-gradient-to-r from-arkan-gold to-arkan-goldBright text-arkan-950 rounded-lg text-xs font-cinzel font-bold transition shadow">
           ✏️ Editar no Modo Editor
+        </button>
+        <button id="btnInspectorCloseBottom" class="px-4 py-2 bg-arkan-800 hover:bg-arkan-750 text-arkan-parchment rounded-lg text-xs font-cinzel transition">
+          Fechar
         </button>
       </div>
     </div>
   </div>
 
   <!-- ================= MODAL: CRIAR NOVA CATEGORIA ================= -->
-  <div id="modalNewCategory" class="fixed inset-0 z-50 bg-black/85 backdrop-blur-md hidden flex items-center justify-center p-2.5 sm:p-4">
-    <div class="bg-arkan-900 border border-arkan-gold/50 rounded-xl shadow-2xl max-w-lg w-full p-4 sm:p-6 text-xs relative space-y-3 sm:space-y-4 max-h-[92vh] overflow-y-auto custom-scrollbar">
-      <button id="btnCloseCategoryModal" aria-label="Fechar Modal" class="absolute top-3 sm:top-4 right-3 sm:right-4 w-7 h-7 flex items-center justify-center rounded-lg text-arkan-parchmentDim hover:text-white hover:bg-arkan-850 text-lg">✕</button>
+  <div id="modalNewCategory" class="fixed inset-0 z-50 bg-black/85 backdrop-blur-md hidden flex items-center justify-center p-4">
+    <div class="bg-arkan-900 border border-arkan-gold/50 rounded-xl shadow-2xl max-w-lg w-full p-6 text-xs relative space-y-4">
+      <button id="btnCloseCategoryModal" class="absolute top-4 right-4 text-arkan-parchmentDim hover:text-white text-lg">✕</button>
       
-      <div class="flex items-center gap-2.5 sm:gap-3 border-b border-arkan-borderGold/30 pb-3 pr-8">
-        <span class="text-xl sm:text-2xl shrink-0">📁</span>
+      <div class="flex items-center gap-3 border-b border-arkan-borderGold/30 pb-3">
+        <span class="text-2xl">📁</span>
         <div>
           <h3 class="font-cinzel font-bold text-sm text-arkan-goldBright">Nova Categoria Procedural</h3>
-          <p class="text-[10px] sm:text-[11px] text-arkan-parchmentDim">Registra no manifest.json e inicializa a subpasta em /gdd/</p>
+          <p class="text-[11px] text-arkan-parchmentDim">Registra no manifest.json e inicializa a subpasta em /gdd/</p>
         </div>
       </div>
 
@@ -409,13 +409,13 @@
         <div>
           <label class="block font-cinzel font-semibold text-arkan-parchment mb-1">Nome Oficial da Categoria</label>
           <input type="text" id="catModalNome" placeholder="ex: Bestiário de Arkan, Facções da Guarda" 
-            class="w-full px-3 py-2 bg-arkan-850 border border-arkan-borderGold/40 rounded-lg text-arkan-parchment text-sm sm:text-xs focus:outline-none focus:border-arkan-gold">
+            class="w-full px-3 py-2 bg-arkan-850 border border-arkan-borderGold/40 rounded-lg text-arkan-parchment focus:outline-none focus:border-arkan-gold">
         </div>
 
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5 sm:gap-3 font-mono">
+        <div class="grid grid-cols-2 gap-3 font-mono">
           <div>
             <label class="block font-cinzel font-semibold text-arkan-parchment mb-1">Subpasta em /gdd/</label>
-            <input type="text" id="catModalPasta" placeholder="ex: gdd/06-bestiario" class="w-full px-3 py-2 bg-arkan-850 border border-arkan-borderGold/40 rounded-lg text-arkan-parchment text-sm sm:text-xs focus:outline-none">
+            <input type="text" id="catModalPasta" placeholder="ex: gdd/06-bestiario" class="w-full px-3 py-2 bg-arkan-850 border border-arkan-borderGold/40 rounded-lg text-arkan-parchment focus:outline-none">
           </div>
           <div>
             <label class="block font-cinzel font-semibold text-arkan-parchment mb-1">Ícone / Emoji</label>
@@ -423,14 +423,14 @@
           </div>
         </div>
 
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5 sm:gap-3">
+        <div class="grid grid-cols-2 gap-3">
           <div>
             <label class="block font-cinzel font-semibold text-arkan-parchment mb-1">Grupo do Menu</label>
-            <input type="text" id="catModalGrupo" value="COMPÊNDIO GERAL" class="w-full px-3 py-2 bg-arkan-850 border border-arkan-borderGold/40 rounded-lg text-arkan-parchment font-mono text-sm sm:text-xs focus:outline-none">
+            <input type="text" id="catModalGrupo" value="COMPÊNDIO GERAL" class="w-full px-3 py-2 bg-arkan-850 border border-arkan-borderGold/40 rounded-lg text-arkan-parchment font-mono focus:outline-none">
           </div>
           <div>
             <label class="block font-cinzel font-semibold text-arkan-parchment mb-1">Experiência Visual</label>
-            <select id="catModalRenderer" class="w-full px-3 py-2 bg-arkan-850 border border-arkan-borderGold/40 rounded-lg text-arkan-parchment font-mono text-sm sm:text-xs focus:outline-none">
+            <select id="catModalRenderer" class="w-full px-3 py-2 bg-arkan-850 border border-arkan-borderGold/40 rounded-lg text-arkan-parchment font-mono focus:outline-none">
               <option value="dossie">Dossiê (Fichas & Entidades)</option>
               <option value="gdd">GDD (Documentação Técnica)</option>
               <option value="livro">Livro (Tomo Literário)</option>
@@ -443,12 +443,12 @@
         <div>
           <label class="block font-cinzel font-semibold text-arkan-parchment mb-1">Descrição / Propósito</label>
           <textarea id="catModalDescricao" rows="2" placeholder="Propósito deste catálogo..." 
-            class="w-full px-3 py-2 bg-arkan-850 border border-arkan-borderGold/40 rounded-lg text-arkan-parchment text-sm sm:text-xs focus:outline-none"></textarea>
+            class="w-full px-3 py-2 bg-arkan-850 border border-arkan-borderGold/40 rounded-lg text-arkan-parchment focus:outline-none"></textarea>
         </div>
 
-        <div class="pt-2 flex flex-col-reverse sm:flex-row gap-2 sm:items-center sm:justify-end border-t border-arkan-borderGold/20">
-          <button id="btnCancelCategoryModal" class="w-full sm:w-auto px-4 py-2.5 sm:py-2 bg-arkan-800 text-arkan-parchment rounded-lg font-cinzel text-center active:scale-98">Cancelar</button>
-          <button id="btnConfirmCategoryModal" class="w-full sm:w-auto px-5 py-2.5 sm:py-2 bg-gradient-to-r from-arkan-gold to-arkan-goldBright text-arkan-950 font-cinzel font-bold rounded-lg shadow-lg text-center active:scale-98">
+        <div class="pt-2 flex items-center justify-end gap-2 border-t border-arkan-borderGold/20">
+          <button id="btnCancelCategoryModal" class="px-4 py-2 bg-arkan-800 text-arkan-parchment rounded-lg font-cinzel">Cancelar</button>
+          <button id="btnConfirmCategoryModal" class="px-5 py-2 bg-gradient-to-r from-arkan-gold to-arkan-goldBright text-arkan-950 font-cinzel font-bold rounded-lg shadow-lg">
             Comitar no Manifest.json
           </button>
         </div>
@@ -457,37 +457,37 @@
   </div>
 
   <!-- ================= MODAL: AUTENTICAÇÃO GITHUB PAT ================= -->
-  <div id="modalAuth" class="fixed inset-0 z-50 bg-black/85 backdrop-blur-md hidden flex items-center justify-center p-2.5 sm:p-4">
-    <div class="bg-arkan-900 border border-arkan-gold/50 rounded-xl shadow-2xl max-w-md w-full p-4 sm:p-6 text-xs relative space-y-3 sm:space-y-4 max-h-[92vh] overflow-y-auto custom-scrollbar">
-      <button id="btnCloseAuthModal" aria-label="Fechar Modal" class="absolute top-3 sm:top-4 right-3 sm:right-4 w-7 h-7 flex items-center justify-center rounded-lg text-arkan-parchmentDim hover:text-white hover:bg-arkan-850 text-lg">✕</button>
+  <div id="modalAuth" class="fixed inset-0 z-50 bg-black/85 backdrop-blur-md hidden flex items-center justify-center p-4">
+    <div class="bg-arkan-900 border border-arkan-gold/50 rounded-xl shadow-2xl max-w-md w-full p-6 text-xs relative space-y-4">
+      <button id="btnCloseAuthModal" class="absolute top-4 right-4 text-arkan-parchmentDim hover:text-white text-lg">✕</button>
       
-      <div class="flex items-center gap-2.5 sm:gap-3 border-b border-arkan-borderGold/30 pb-3 pr-8">
-        <span class="text-xl sm:text-2xl shrink-0">🔑</span>
+      <div class="flex items-center gap-3 border-b border-arkan-borderGold/30 pb-3">
+        <span class="text-2xl">🔑</span>
         <div>
           <h3 class="font-cinzel font-bold text-sm text-arkan-goldBright">Autenticação do Editor</h3>
-          <p class="text-[10px] sm:text-[11px] text-arkan-parchmentDim">Necessário para assinar commits no repositório GitHub</p>
+          <p class="text-[11px] text-arkan-parchmentDim">Necessário para assinar commits no repositório GitHub</p>
         </div>
       </div>
 
       <div class="space-y-3 font-sans">
         <div>
           <label class="block font-cinzel font-semibold text-arkan-parchment mb-1">Repositório Alvo</label>
-          <input type="text" id="authRepoInput" value="creativethb/Batalhas-Poderosas" class="w-full px-3 py-2 bg-arkan-850 border border-arkan-borderGold/40 rounded-lg text-arkan-parchment font-mono text-sm sm:text-xs focus:outline-none">
+          <input type="text" id="authRepoInput" value="creativethb/Batalhas-Poderosas" class="w-full px-3 py-2 bg-arkan-850 border border-arkan-borderGold/40 rounded-lg text-arkan-parchment font-mono focus:outline-none">
         </div>
         <div>
           <label class="block font-cinzel font-semibold text-arkan-parchment mb-1">Branch</label>
-          <input type="text" id="authBranchInput" value="main" class="w-full px-3 py-2 bg-arkan-850 border border-arkan-borderGold/40 rounded-lg text-arkan-parchment font-mono text-sm sm:text-xs focus:outline-none">
+          <input type="text" id="authBranchInput" value="main" class="w-full px-3 py-2 bg-arkan-850 border border-arkan-borderGold/40 rounded-lg text-arkan-parchment font-mono focus:outline-none">
         </div>
         <div>
           <label class="block font-cinzel font-semibold text-arkan-parchment mb-1">Personal Access Token (PAT)</label>
-          <input type="password" id="authTokenInput" placeholder="github_pat_... ou ghp_..." class="w-full px-3 py-2 bg-arkan-850 border border-arkan-borderGold/40 rounded-lg text-arkan-parchment font-mono text-sm sm:text-xs focus:outline-none">
+          <input type="password" id="authTokenInput" placeholder="github_pat_... ou ghp_..." class="w-full px-3 py-2 bg-arkan-850 border border-arkan-borderGold/40 rounded-lg text-arkan-parchment font-mono focus:outline-none">
         </div>
 
         <div id="authAlert" class="hidden p-2.5 rounded text-xs font-mono"></div>
 
-        <div class="pt-2 flex flex-col-reverse sm:flex-row gap-2 sm:items-center sm:justify-end border-t border-arkan-borderGold/20">
-          <button id="btnCancelAuth" class="w-full sm:w-auto px-4 py-2.5 sm:py-2 bg-arkan-800 text-arkan-parchment rounded-lg font-cinzel text-center active:scale-98">Cancelar</button>
-          <button id="btnSaveAuth" class="w-full sm:w-auto px-5 py-2.5 sm:py-2 bg-arkan-gold text-arkan-950 font-cinzel font-bold rounded-lg text-center active:scale-98">Validar e Conectar</button>
+        <div class="pt-2 flex items-center justify-end gap-2 border-t border-arkan-borderGold/20">
+          <button id="btnCancelAuth" class="px-4 py-2 bg-arkan-800 text-arkan-parchment rounded-lg font-cinzel">Cancelar</button>
+          <button id="btnSaveAuth" class="px-5 py-2 bg-arkan-gold text-arkan-950 font-cinzel font-bold rounded-lg">Validar e Conectar</button>
         </div>
       </div>
     </div>
@@ -496,36 +496,36 @@
   <!-- ================= DRAWER: EDITOR DE ENTIDADES ================= -->
   <div id="drawerEditor" class="fixed inset-0 z-50 overflow-hidden hidden">
     <div class="absolute inset-0 bg-black/80 backdrop-blur-sm" id="drawerBackdrop"></div>
-    <div class="fixed inset-y-0 right-0 max-w-full flex pl-0 sm:pl-10">
+    <div class="fixed inset-y-0 right-0 max-w-full flex pl-10">
       <div class="w-screen max-w-2xl bg-arkan-900 border-l border-arkan-gold/40 shadow-2xl flex flex-col text-xs font-sans">
         
-        <div class="p-3.5 sm:p-4 border-b border-arkan-borderGold/30 bg-arkan-850 flex items-center justify-between">
-          <div class="flex items-center gap-2 sm:gap-2.5 truncate pr-2">
-            <span class="w-7 h-7 rounded bg-arkan-800 border border-arkan-gold/40 flex items-center justify-center text-arkan-gold font-bold shrink-0">✍️</span>
-            <div class="truncate">
-              <h3 id="drawerTitle" class="font-cinzel font-bold text-xs sm:text-sm text-arkan-goldBright truncate">Editar Documento</h3>
-              <p id="drawerSubtitle" class="text-[10px] sm:text-[11px] text-arkan-parchmentDim truncate">Commit direto na branch main do repositório</p>
+        <div class="p-4 border-b border-arkan-borderGold/30 bg-arkan-850 flex items-center justify-between">
+          <div class="flex items-center gap-2.5">
+            <span class="w-7 h-7 rounded bg-arkan-800 border border-arkan-gold/40 flex items-center justify-center text-arkan-gold font-bold">✍️</span>
+            <div>
+              <h3 id="drawerTitle" class="font-cinzel font-bold text-sm text-arkan-goldBright">Editar Documento</h3>
+              <p id="drawerSubtitle" class="text-[11px] text-arkan-parchmentDim">Commit direto na branch main do repositório</p>
             </div>
           </div>
-          <button id="btnDiscardDrawer" aria-label="Fechar Editor" class="w-8 h-8 flex items-center justify-center rounded-lg text-arkan-parchmentDim hover:text-white hover:bg-arkan-800 text-lg shrink-0">✕</button>
+          <button id="btnDiscardDrawer" class="text-arkan-parchmentDim hover:text-white text-lg">✕</button>
         </div>
 
-        <div class="flex-1 overflow-y-auto custom-scrollbar p-3.5 sm:p-6 space-y-3 sm:space-y-4">
+        <div class="flex-1 overflow-y-auto custom-scrollbar p-6 space-y-4">
           <input type="hidden" id="editOriginalPath">
 
           <div>
             <label class="block font-cinzel font-semibold text-arkan-gold uppercase tracking-wider mb-1">Pasta de Destino em /gdd/</label>
-            <select id="editFolderSelect" class="w-full px-3 py-2 bg-arkan-850 border border-arkan-borderGold/40 rounded-lg text-arkan-parchment font-mono text-sm sm:text-xs focus:outline-none"></select>
+            <select id="editFolderSelect" class="w-full px-3 py-2 bg-arkan-850 border border-arkan-borderGold/40 rounded-lg text-arkan-parchment font-mono focus:outline-none"></select>
           </div>
 
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5 sm:gap-3">
+          <div class="grid grid-cols-2 gap-3">
             <div>
               <label class="block font-cinzel font-semibold text-arkan-parchment mb-1">ID Estável</label>
-              <input type="text" id="editId" class="w-full px-3 py-2 bg-arkan-850 border border-arkan-borderGold/40 rounded-lg text-arkan-parchment font-mono text-sm sm:text-xs focus:outline-none">
+              <input type="text" id="editId" class="w-full px-3 py-2 bg-arkan-850 border border-arkan-borderGold/40 rounded-lg text-arkan-parchment font-mono focus:outline-none">
             </div>
             <div>
               <label class="block font-cinzel font-semibold text-arkan-parchment mb-1">Status Canônico</label>
-              <select id="editStatus" class="w-full px-3 py-2 bg-arkan-850 border border-arkan-borderGold/40 rounded-lg text-arkan-parchment text-sm sm:text-xs focus:outline-none">
+              <select id="editStatus" class="w-full px-3 py-2 bg-arkan-850 border border-arkan-borderGold/40 rounded-lg text-arkan-parchment focus:outline-none">
                 <option value="CANONICO">✅ CANÔNICO</option>
                 <option value="EM_DESENVOLVIMENTO">🟡 EM DESENVOLVIMENTO</option>
                 <option value="IDEIA">🔵 IDEIA</option>
@@ -537,34 +537,34 @@
 
           <div>
             <label class="block font-cinzel font-semibold text-arkan-parchment mb-1">Nome / Título</label>
-            <input type="text" id="editTitle" class="w-full px-3 py-2 bg-arkan-850 border border-arkan-borderGold/40 rounded-lg text-arkan-parchment focus:outline-none font-semibold text-sm sm:text-xs">
+            <input type="text" id="editTitle" class="w-full px-3 py-2 bg-arkan-850 border border-arkan-borderGold/40 rounded-lg text-arkan-parchment focus:outline-none font-semibold">
           </div>
 
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5 sm:gap-3">
+          <div class="grid grid-cols-2 gap-3">
             <div>
               <label class="block font-cinzel font-semibold text-arkan-parchment mb-1">Função / Tipo</label>
-              <input type="text" id="editSubtitle" class="w-full px-3 py-2 bg-arkan-850 border border-arkan-borderGold/40 rounded-lg text-arkan-parchment text-sm sm:text-xs focus:outline-none">
+              <input type="text" id="editSubtitle" class="w-full px-3 py-2 bg-arkan-850 border border-arkan-borderGold/40 rounded-lg text-arkan-parchment focus:outline-none">
             </div>
             <div>
               <label class="block font-cinzel font-semibold text-arkan-parchment mb-1">Localização</label>
-              <input type="text" id="editLocation" class="w-full px-3 py-2 bg-arkan-850 border border-arkan-borderGold/40 rounded-lg text-arkan-parchment text-sm sm:text-xs focus:outline-none">
+              <input type="text" id="editLocation" class="w-full px-3 py-2 bg-arkan-850 border border-arkan-borderGold/40 rounded-lg text-arkan-parchment focus:outline-none">
             </div>
           </div>
 
           <div>
             <label class="block font-cinzel font-semibold text-arkan-parchment mb-1">Caminho da Imagem (Asset)</label>
-            <input type="text" id="editImage" placeholder="./assets/npcs/NPC-001.jpg" class="w-full px-3 py-2 bg-arkan-850 border border-arkan-borderGold/40 rounded-lg text-arkan-parchment font-mono text-sm sm:text-xs focus:outline-none">
+            <input type="text" id="editImage" placeholder="./assets/npcs/NPC-001.jpg" class="w-full px-3 py-2 bg-arkan-850 border border-arkan-borderGold/40 rounded-lg text-arkan-parchment font-mono focus:outline-none">
           </div>
 
           <div>
             <label class="block font-cinzel font-semibold text-arkan-parchment mb-1">Manuscrito Documental (Markdown Puro)</label>
-            <textarea id="editMarkdown" rows="12" class="w-full px-3 py-2 bg-arkan-850 border border-arkan-borderGold/40 rounded-lg text-arkan-parchment font-mono text-sm sm:text-xs leading-relaxed focus:outline-none"></textarea>
+            <textarea id="editMarkdown" rows="12" class="w-full px-3 py-2 bg-arkan-850 border border-arkan-borderGold/40 rounded-lg text-arkan-parchment font-mono leading-relaxed focus:outline-none"></textarea>
           </div>
 
           <div class="p-3 bg-arkan-950 rounded-lg border border-arkan-borderGold/30">
             <label class="block text-[10px] font-mono text-arkan-gold mb-1">MENSAGEM DO COMMIT GIT</label>
             <input type="text" id="editCommitMsg" value="docs: atualizar documento via Códice Web" 
-              class="w-full px-2.5 py-1.5 bg-arkan-850 border border-arkan-borderGold/40 rounded text-arkan-parchment text-sm sm:text-xs focus:outline-none">
+              class="w-full px-2.5 py-1.5 bg-arkan-850 border border-arkan-borderGold/40 rounded text-arkan-parchment focus:outline-none">
           </div>
 
           <div class="p-4 border-t border-arkan-borderGold/30 bg-arkan-850 flex items-center justify-end gap-3">
@@ -1698,16 +1698,7 @@ ${markdown}
           setStoredAuth({ repo, branch, token });
           document.getElementById('modalAuth').classList.add('hidden');
           alert("Modo Editor autenticado com sucesso!");
-      // Fechar pesquisa ao clicar fora no mobile
-      document.addEventListener('click', (e) => {
-        const dd = document.getElementById('searchResultsDropdown');
-        const bar = document.getElementById('globalSearchInput');
-        if (dd && !dd.contains(e.target) && e.target !== bar) {
-          dd.classList.add('hidden');
-        }
-      });
-
-      loadAllDocuments();
+          loadAllDocuments();
         }
       });
 
@@ -1723,7 +1714,6 @@ ${markdown}
       document.getElementById('btnInspectorCloseBottom')?.addEventListener('click', () => document.getElementById('modalInspector').classList.add('hidden'));
 
       // Drawer Editor
-      document.getElementById('drawerBackdrop')?.addEventListener('click', () => document.getElementById('drawerEditor').classList.add('hidden'));
       document.getElementById('btnDiscardDrawer')?.addEventListener('click', () => document.getElementById('drawerEditor').classList.add('hidden'));
       document.getElementById('btnCancelDrawer')?.addEventListener('click', () => document.getElementById('drawerEditor').classList.add('hidden'));
       document.getElementById('btnSaveDrawer')?.addEventListener('click', handleSaveDrawer);

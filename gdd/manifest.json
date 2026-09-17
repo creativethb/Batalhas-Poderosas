@@ -102,6 +102,17 @@
       "descricao": "Encadeamento de objetivos, tarefas e recompensas."
     },
     {
+      "id": "masmorras",
+      "nome": "Masmorras & Dungeons",
+      "pasta": "gdd/07-masmorras",
+      "folder": "07-masmorras",
+      "icone": "💀",
+      "renderer": "gdd",
+      "slug": "masmorras",
+      "grupo": "GAMEPLAY & SISTEMAS",
+      "descricao": "Arquitetura técnica, geração procedural DFS, armadilhas e progressão das masmorras."
+    },
+    {
       "id": "dossie",
       "nome": "Dossiê Geral",
       "pasta": "gdd/06-dossie",

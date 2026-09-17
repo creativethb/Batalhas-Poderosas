@@ -2,7 +2,7 @@
 
 > **FUNÇÃO:** Mapear o impacto sistêmico e narrativo entre Personagens, Locais, Itens, Gameplay, Cânone, Lore e Dossiês. Qualquer alteração em um nó requer revisão nos nós conectados.
 > **REGRAS:** Este documento é o grafo de referência. O mesmo cruzamento está espelhado no campo `relacionados:` do frontmatter de cada ficha em `/gdd/` (renderizado ao vivo pelo Códice v2.8.0 no `index.html`). Ao editar um lado, edite o outro.
-> **ÚLTIMA ATUALIZAÇÃO:** 14/09/2026 — grafo expandido para 100% das entidades canônicas (NPC-000 a 013, ITEM-001 a 004, LOCAL-001 a 009, LORE-001 a 006, GAME-001 a 006, CANON-001 a 008, DOS-001 a 003).
+> **ÚLTIMA ATUALIZAÇÃO:** 16/09/2026 — grafo expandido com inclusão da categoria de Masmorras & Dungeons (DNG-001 a DNG-006) conectadas a NPCs, Itens, Locais, Gameplay, Cânone e Lore.
 
 ---
 
@@ -149,7 +149,20 @@
 
 ---
 
-## 9. MATRIZ DE IMPACTO DE MUDANÇAS (REGRA DO BIBLIOTECÁRIO)
+## 9. NÓS DE MASMORRAS & DUNGEONS (DNG)
+
+| Nó | Nome | Conecta-se a |
+| :--- | :--- | :--- |
+| `DNG-001` | Visão Geral e Propósito das Masmorras em Arkan | `NPC-000` `NPC-001` `NPC-003` `NPC-007` `LOCAL-007` `GAME-001` `GAME-002` `DNG-002` `DNG-003` |
+| `DNG-002` | Economia, Tesouros e Progressão de Equipamentos | `NPC-001` `NPC-007` `ITEM-001` `ITEM-002` `ITEM-003` `GAME-001` `GAME-002` `DNG-001` |
+| `DNG-003` | Arquitetura de Memória e Engenharia de Runtime | `GAME-001` `DNG-001` `DNG-004` `DNG-006` |
+| `DNG-004` | Motor de Geração Procedural (PCG) e Gabarito Modular | `DNG-001` `DNG-003` `DNG-005` `DNG-006` |
+| `DNG-005` | Sistema de Armadilhas Físicas e Calibração Não-Letal | `GAME-002` `GAME-003` `DNG-001` `DNG-004` |
+| `DNG-006` | Matriz de Andares, Guardiões e Puzzles Cooperativos | `NPC-000` `GAME-002` `DNG-001` `DNG-004` `DNG-005` |
+
+---
+
+## 10. MATRIZ DE IMPACTO DE MUDANÇAS (REGRA DO BIBLIOTECÁRIO)
 
 Se você alterar:
 1. **O destino da família do mago:** Revisar obrigatoriamente `LORE-001`, `LORE-005`, `LORE-006`, diálogos do `NPC-011 (Borin)`, narrativa de `LOCAL-007 (Minas)` e `DOS-003`.
