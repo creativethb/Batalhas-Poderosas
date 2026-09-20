@@ -124,12 +124,12 @@
 | :--- | :--- | :--- | :--- | :--- | :--- |
 | **`DNG-001`** | Visão Geral e Propósito das Masmorras em Arkan | Lore & Arquitetura | `CANONICO` | `gdd/07-masmorras/DNG-001.md` | Origem nas criptas ancestrais tocadas pela corrupção de Alric; dinâmica 5 vs 15 câmaras. |
 | **`DNG-002`** | Economia, Tesouros e Progressão de Equipamentos | Economia Subterrânea | `CANONICO` | `gdd/07-masmorras/DNG-002.md` | Ciclo financeiro de Arkham, baús nos becos sem saída, têmpera rúnica com Cedric e comércio com Tobias. |
-| **`DNG-003`** | Arquitetura de Memória e Engenharia de Runtime | Engenharia Luau | `CANONICO` | `gdd/07-masmorras/DNG-003.md` | Lazy Loading, In-Place Swap via Eclusa (50-100ms), destruição imediata abaixo de Y = -20 studs. *(v1.2)* |
+| **`DNG-003`** | Arquitetura de Memória e Engenharia de Runtime | Engenharia Luau | `CANONICO` | `gdd/07-masmorras/DNG-003.md` | Lazy Loading; Piso 01 retorna à Vila após desbloqueio da saída; transição N+1 permanece preparada para expansão futura. *(v1.2)* |
 | **`DNG-004`** | Motor de Geração Procedural (PCG) e Gabarito Modular | Algoritmo DFS & Grid | `CANONICO` | `gdd/07-masmorras/DNG-004.md` | DFS com backtracking, encaixe Butt-Joint, orientação `dirChefe`, correções Z-Fighting e vão do abismo. *(v1.2)* |
 | **`DNG-005`** | Sistema de Armadilhas Físicas e Calibração Não-Letal | Balanceamento | `CANONICO` | `gdd/07-masmorras/DNG-005.md` | Grelha 18HP/0.18s, Foice 20HP, Abismo ácido 15HP/s, vinculados a Sockets nomeados. *(v1.2)* |
-| **`DNG-006`** | Matriz de Andares, Guardiões e Puzzles Cooperativos | Progressão & Puzzles | `CANONICO` | `gdd/07-masmorras/DNG-006.md` | Matriz de 4 biomas/chefes, câmaras de compressão com timer, medalhões bipartidos e glifos sequenciais. |
+| **`DNG-006`** | Matriz de Andares, Guardiões e Puzzles Cooperativos | Progressão & Puzzles | `CANONICO` | `gdd/07-masmorras/DNG-006.md` | Piso 01 com Guardião, Chave do Guardião consumível, desbloqueio visual da saída e retorno à Vila; Piso 02 ainda indisponível. |
 | **`DNG-007`** | Arquitetura de Sockets de Assets (Greybox + FBX) | Modularidade 3D | `CANONICO` | `gdd/07-masmorras/DNG-007.md` | 7 Sockets nomeados em `ServerStorage.Dungeon_Assets`; fallback nativo se modelo ausente; compatível com Blender/FBX. *(novo v1.2)* |
-| **`DNG-008`** | Sistema de Invocação Luminosa de NPCs | Spawning & Ritual | `CANONICO` | `gdd/07-masmorras/DNG-008.md` | Spawn sob demanda por Trigger_Combate; Ritual de Emersão (runa + partículas + ascensão de Y=-4.5 em 0.8s); distribuição tática por câmara. *(novo v1.2)* |
+| **`DNG-008`** | Sistema de Invocação Luminosa de NPCs | Spawning & Ritual | `CANONICO` | `gdd/07-masmorras/DNG-008.md` | Spawn sob demanda; controlador legado duplicado desativado; autômatos ajustados em perseguição, alcance e dano; Guardião integrado ao fim do Piso 01. *(v1.2)* |
 
 ---
 
