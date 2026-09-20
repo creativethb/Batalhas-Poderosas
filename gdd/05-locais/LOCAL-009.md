@@ -14,7 +14,7 @@ relacionados:
   - "NPC-008"
   - "NPC-012"
   - "NPC-013"
-imagem: "./assets/locais/LOCAL-001.png"
+imagem: "./assets/locais/LOCAL-009.png"
 atualizado_por: "agente_bibliotecario"
 data_atualizacao: "2026-09-11"
 ---

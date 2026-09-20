@@ -180,4 +180,4 @@ Se você alterar:
 
 - **Sincronização obrigatória:** frontmatter `relacionados:` de cada ficha `/gdd/` ↔ este grafo ↔ `index.html` (Códice v2.8.0 lê ao vivo).
 - **IDs referenciais:** usar sempre o padrão do AGENTS.md (`NPC-XXX`, `LOCAL-XXX`, `ITEM-XXX`, `GAME-XXX`, `CANON-XXX`/`BP-2026-XXX`, `LORE-XXX`, `DOS-XXX`).
-- **Pontos cegos conhecidos** (não inventar conexões): Serraria (NPC-010 Garrick) não possui ficha `LOCAL` própria ainda; o destino exato da família de Alric e a origem de seus poderes permanecem `[🔴 DESCONHECIDO]`.
+- **Pontos cegos conhecidos** (não inventar conexões): Serraria (NPC-010 Garrick) não possui ficha `LOCAL` própria ainda; o destino posterior da esposa de Alric e a origem de seus poderes permanecem `[🔴 DESCONHECIDO]`.
