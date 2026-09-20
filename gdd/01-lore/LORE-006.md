@@ -48,7 +48,7 @@ Mas o que Alric via como ciência e legado, o Antigo Rei enxergava como poder a 
 ## 4. O Cativeiro nas Minas e a Ferida Eterna
 A ruptura não foi um desacordo diplomático; foi uma traição premeditada. O rei utilizou invenções concebidas pelo próprio Alric para surpreender sua família, aprisionando-os nas galerias profundas das **Minas da Montanha** (`LOCAL-007`).
 
-Sob chantagem implacável, Alric foi obrigado a submeter seu saber à vontade da coroa para manter aqueles que amava com vida, até que o peso da tragédia cobrou seu preço mais alto com a perda irremediável de sua linhagem no cativeiro.
+Sob chantagem implacável, Alric foi obrigado a submeter seu saber à vontade da coroa para manter aqueles que amava com vida, até que a tragédia cobrou seu preço mais alto: seu filho morreu no cativeiro. Sua esposa sobreviveu à prisão inicial, mas seu destino posterior continua envolto em mistério.
 
 A revolta que se seguiu quebrou para sempre a paz da corte ancestral. Alric não foi derrotado em duelo de espadas; foi expulso e banido para o vazio além das fronteiras de Arkan.
 

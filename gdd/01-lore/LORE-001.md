@@ -36,13 +36,13 @@ Essa tentativa gerou a ruptura que originou todo o conflito:
 
 - O mago foi exilado de Arkan.
 - Sua família foi presa nas **Minas da Montanha** — hoje conhecidas como Minas da Montanha Leste (`LOCAL-007`).
-- O mago perdeu sua família durante esse período.
+- O filho do mago morreu durante o cativeiro nas Minas.
+- A esposa do mago sobreviveu ao período inicial de cativeiro, mas seu destino posterior continua desconhecido.
 - Foi obrigado a sobreviver longe de Arkan.
 - Precisou se tornar ainda mais poderoso.
 - Construiu seu próprio reino em uma localização ainda não definida.
 - Passou a ser conhecido como **Rei Mago**.
 
-> 🔴 **DESCONHECIDO:** O destino exato da família do mago (morte, prisão permanente, fuga) ainda não foi definido.
 > 🔴 **DESCONHECIDO:** A localização do reino construído pelo Rei Mago ainda não foi definida.
 
 ---

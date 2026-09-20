@@ -121,12 +121,12 @@ E as Batalhas Poderosas também.
 | **Abertura do Conto** | [🟢 CANÔNICO] | A história de Batalhas Poderosas originou-se antes de John e antes de Arkham. |
 | **Título da Obra** | [🟡 EM CONSTRUÇÃO] | O título provisório do grande tomo é *"O Conto das Batalhas Poderosas"*. |
 | **O Antigo Rei e o Mago** | [🟢 CANÔNICO] | O Rei Mago serviu como conselheiro e conjurador ao antigo rei de Arkan. |
-| **Nome Original do Mago** | [🔴 DESCONHECIDO] | O nome próprio do mago anterior ao título de Rei Mago não foi estabelecido. |
+| **Nome Original do Mago** | [🟢 CANÔNICO] | O nome verdadeiro do Rei Mago é Alric (conhecimento canônico interno). |
 | **Natureza de Arkan** | [🟢 CANÔNICO] | Mundo sem magia cotidiana; sociedade baseada em ofícios manuais e físicos. |
 | **Origem dos Poderes** | [🔴 DESCONHECIDO] | A origem das habilidades mágicas excepcionais do conselheiro é misteriosa. |
 | **Ganância e Ruptura** | [🟢 CANÔNICO] | O antigo rei buscou explorar os poderes do mago para benefício próprio. |
 | **Exílio e Prisão Familiar** | [🟢 CANÔNICO] | O mago foi exilado; sua família foi aprisionada nas Minas da Montanha. |
-| **Destino da Família** | [🔴 DESCONHECIDO] | O que ocorreu à família nas minas (morte, cativeiro perene) não foi definido. |
+| **Destino da Família** | [🟢 CANÔNICO] | O filho morreu no cativeiro; a esposa sobreviveu ao cativeiro inicial, mas seu destino posterior permanece DESCONHECIDO. |
 | **Sobrevivência no Exílio** | [🟢 CANÔNICO] | O mago sobreviveu sozinho, desenvolveu seu poder e fundou seu próprio domínio. |
 | **Localização do Novo Reino** | [🔴 DESCONHECIDO] | A localização do reino do Rei Mago permanece desconhecida em Arkan. |
 | **O Novo Rei de Arkan** | [🟢 CANÔNICO] | O rei atual de Arkan é descendente direto daquele que traiu o conselheiro. |

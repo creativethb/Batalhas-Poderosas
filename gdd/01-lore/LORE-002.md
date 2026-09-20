@@ -42,7 +42,7 @@ data_atualizacao: "2026-09-08"
 9. Precisa desvendar as chaves dimensionais.
 10. Precisa retornar mais forte para salvar Arkan.
 
-> 🟡 **PROVISÓRIO:** A localização exata da coleta da Madeira Comum e detalhes como "Casa de John / Colina Leste" não devem ser tratados como cânone definitivo até nova decisão.
+> 🟢 **CANONICO:** A localização inicial e a coleta da Madeira Comum ocorrem na Casa de John, localizada na Colina Leste.
 
 ---
 

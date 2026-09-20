@@ -35,7 +35,7 @@ Escrito em primeira pessoa — com a voz e as percepções de John. Um registro 
 
 Para as regras de sistema (aquisição, inventário, consulta, desbloqueio), ver `gdd/02-gameplay/GAME-005-sistema-do-diario.md`.
 
-> 🟡 **PROVISÓRIO:** A localização exata onde o Diário é encontrado (ex: Casa de John, Colina Leste) não deve ser tratada como cânone definitivo até nova decisão.
+> 🟢 **CANONICO:** A localização onde o Diário é encontrado no início da aventura é canonicamente a Casa de John, na Colina Leste.
 
 ---
 
@@ -60,12 +60,12 @@ Para as regras de sistema (aquisição, inventário, consulta, desbloqueio), ver
 
 ## Capítulo I — As Raízes de Arkham
 
-### DIARIO-CAP1-001 — Primeira Página
+### DIARIO-CAP1-001 — O Dia em que Acordei
 
 | Campo | Valor |
 | :--- | :--- |
 | **Momento** | Início da gameplay — antes de qualquer ação |
-| **Local** | Arkham — localização exata provisória |
+| **Local** | Casa de John — Colina Leste (LOCAL-001) |
 | **Evento Gatilho** | O jogador encontra o Diário no mundo (automático) |
 | **Condição** | Desbloqueado ao adquirir o Diário |
 | **Obrigatoriedade** | OBRIGATÓRIO |

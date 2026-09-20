@@ -14,6 +14,6 @@ atualizado_por: "agente"
 
 ```text
 STATUS: CANÔNICO
-DECISÃO: O conflito central envolve a guerra de Arkan contra o Rei Mago. O Rei Mago não nasceu vilão: em uma era remota, ele serviu como mago conselheiro ao antigo rei de Arkan antes de se corromper em busca de poder absoluto no multiverso. A lenda é conhecida por todos os habitantes de Arkham.
+DECISÃO: O conflito central envolve a guerra de Arkan contra o Rei Mago. O Rei Mago é Alric, que não nasceu vilão: em uma era remota, ele serviu como mago conselheiro ao antigo rei de Arkan após ter sua família sequestrada pelo mesmo rei e mantida prisioneira nas Minas da Montanha. Após ser coagido a executar ordens da coroa sob a ameaça da vida de sua família, perder seu filho no cativeiro e, posteriormente, ser banido, Alric fundou seu próprio reino no exílio e retornou na Guerra da Reparação. O destino de sua esposa, que sobreviveu ao cativeiro inicial, a localização de seu reino e a origem final de seus poderes continuam desconhecidos. A lenda é conhecida por todos os habitantes de Arkham.
 DATA: 08/09/2026
 ```

@@ -58,7 +58,7 @@
 | ID | Nome | Status | Arquivo | Resumo |
 | :--- | :--- | :--- | :--- | :--- |
 | **`LORE-001`** | Origem do Conflito de Arkan e o Rei Mago | `CANONICO` | `gdd/01-lore/LORE-001-origem-de-arkan-e-o-rei-mago.md` | Origem do Rei Mago, exílio, família nas minas, guerra da reparação. Atualizado com cânone expandido. |
-| **`LORE-002`** | A Saga de John | `CANONICO` | `gdd/01-lore/LORE-002-jornada-de-john.md` | Sequência inicial canônica de 10 passos. Localização de coleta provisória. |
+| **`LORE-002`** | A Saga de John | `CANONICO` | `gdd/01-lore/LORE-002-jornada-de-john.md` | Sequência inicial canônica de 10 passos. Localização inicial canônica na Casa de John. |
 | **`LORE-003`** | Diário de John — Registros da Jornada | `CANONICO` | `gdd/01-lore/LORE-003-diario-de-john.md` | Diário com entradas refinadas (CAP1-001 a CAP1-005). Primeira página revisada. |
 | **`LORE-004`** | Paralelo Narrativo: John e o Rei Mago | `CANONICO` | `gdd/01-lore/LORE-004-paralelo-john-rei-mago.md` | Princípio canônico: ambos fortalecidos pela adversidade. John protege, Rei Mago busca reparação. |
 | **`LORE-005`** | Prólogo: Antes das Batalhas | `CANONICO` | `gdd/01-lore/LORE-005-prologo-antes-das-batalhas.md` | Texto literário integral de abertura do Livro com Matriz Editorial de Metadados. |
@@ -97,7 +97,7 @@
 
 | ID | Título | Estado | Missão | Status |
 | :--- | :--- | :--- | :--- | :--- |
-| `DIARIO-CAP1-001` | Primeira Página | `DESBLOQUEADO` | Prólogo | `CANONICO` |
+| `DIARIO-CAP1-001` | O Dia em que Acordei | `DESBLOQUEADO` | Prólogo | `CANONICO` |
 | `DIARIO-CAP1-002` | A Bênção de Eldrin | `BLOQUEADO` | MISSAO-001 | `CANONICO` |
 | `DIARIO-CAP1-003` | A Lâmina de Cedric | `BLOQUEADO` | MISSAO-001 | `CANONICO` |
 | `DIARIO-CAP1-004` | Primeiro Confronto | `BLOQUEADO` | A definir | `PLANEJADO` |
@@ -124,10 +124,12 @@
 | :--- | :--- | :--- | :--- | :--- | :--- |
 | **`DNG-001`** | Visão Geral e Propósito das Masmorras em Arkan | Lore & Arquitetura | `CANONICO` | `gdd/07-masmorras/DNG-001.md` | Origem nas criptas ancestrais tocadas pela corrupção de Alric; dinâmica 5 vs 15 câmaras. |
 | **`DNG-002`** | Economia, Tesouros e Progressão de Equipamentos | Economia Subterrânea | `CANONICO` | `gdd/07-masmorras/DNG-002.md` | Ciclo financeiro de Arkham, baús nos becos sem saída, têmpera rúnica com Cedric e comércio com Tobias. |
-| **`DNG-003`** | Arquitetura de Memória e Engenharia de Runtime | Engenharia Luau | `CANONICO` | `gdd/07-masmorras/DNG-003.md` | Lazy Loading sob demanda e reciclagem hermética In-Place Swap via Eclusa (50-100ms). |
-| **`DNG-004`** | Motor de Geração Procedural (PCG) e Gabarito Modular | Algoritmo DFS & Grid | `CANONICO` | `gdd/07-masmorras/DNG-004.md` | Algoritmo DFS com backtracking, passo de grid 80 studs, casca 2 studs e 4 arquétipos de salas. |
-| **`DNG-005`** | Sistema de Armadilhas Físicas e Calibração Não-Letal | Balanceamento | `CANONICO` | `gdd/07-masmorras/DNG-005.md` | Filosofia anti-one-shot, laje camuflada (0.05 studs), lâminas em ponto cego e fossos tóxicos. |
+| **`DNG-003`** | Arquitetura de Memória e Engenharia de Runtime | Engenharia Luau | `CANONICO` | `gdd/07-masmorras/DNG-003.md` | Lazy Loading, In-Place Swap via Eclusa (50-100ms), destruição imediata abaixo de Y = -20 studs. *(v1.2)* |
+| **`DNG-004`** | Motor de Geração Procedural (PCG) e Gabarito Modular | Algoritmo DFS & Grid | `CANONICO` | `gdd/07-masmorras/DNG-004.md` | DFS com backtracking, encaixe Butt-Joint, orientação `dirChefe`, correções Z-Fighting e vão do abismo. *(v1.2)* |
+| **`DNG-005`** | Sistema de Armadilhas Físicas e Calibração Não-Letal | Balanceamento | `CANONICO` | `gdd/07-masmorras/DNG-005.md` | Grelha 18HP/0.18s, Foice 20HP, Abismo ácido 15HP/s, vinculados a Sockets nomeados. *(v1.2)* |
 | **`DNG-006`** | Matriz de Andares, Guardiões e Puzzles Cooperativos | Progressão & Puzzles | `CANONICO` | `gdd/07-masmorras/DNG-006.md` | Matriz de 4 biomas/chefes, câmaras de compressão com timer, medalhões bipartidos e glifos sequenciais. |
+| **`DNG-007`** | Arquitetura de Sockets de Assets (Greybox + FBX) | Modularidade 3D | `CANONICO` | `gdd/07-masmorras/DNG-007.md` | 7 Sockets nomeados em `ServerStorage.Dungeon_Assets`; fallback nativo se modelo ausente; compatível com Blender/FBX. *(novo v1.2)* |
+| **`DNG-008`** | Sistema de Invocação Luminosa de NPCs | Spawning & Ritual | `CANONICO` | `gdd/07-masmorras/DNG-008.md` | Spawn sob demanda por Trigger_Combate; Ritual de Emersão (runa + partículas + ascensão de Y=-4.5 em 0.8s); distribuição tática por câmara. *(novo v1.2)* |
 
 ---
 
