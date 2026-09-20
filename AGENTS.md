@@ -9,7 +9,7 @@ O repositório possui duas camadas que **sempre** devem refletir a mesma verdade
 1. **Camada Documental:** Arquivos `.md` dentro de `/gdd/`.
 2. **Camada Visual:** O mini-site `index.html` na raiz, servido pelo GitHub Pages.
 
-> **Comando de Execução:** Toda vez que você criar ou atualizar uma entidade em `/gdd/`, você DEVE atualizar o objeto `defaultData` dentro de `index.html` para que o mini-site exiba a alteração em produção imediatamente após o commit.
+> **Comando de Execução:** Os arquivos Markdown em `/gdd/` são a fonte documental primária. O mini-site usa `gdd/manifest.json` para categorias e `canonicalFilesMap` em `index.html` como catálogo de caminhos/metadados de fallback. Ao criar ou atualizar uma entidade, mantenha essas camadas coerentes. O carregamento normal relê o frontmatter do Markdown, portanto o HTML não deve duplicar o texto integral das fichas.
 
 ---
 
@@ -19,12 +19,12 @@ Nunca invente prefixos novos. Use rigorosamente os identificadores abaixo em mai
 
 | Categoria | Prefixo | Exemplo de Arquivo em `/gdd/` | Destino de Imagens em `/assets/` |
 | :--- | :--- | :--- | :--- |
-| **NPCs** | `NPC-XXX` | `gdd/03-npcs/NPC-001-mestre-cedric.md` | `assets/npcs/NPC-001.png` |
-| **Itens / Armas** | `ITEM-XXX` | `gdd/04-itens/ITEM-001-madeira-comum.md` | `assets/itens/ITEM-001.png` |
-| **Locais / Cenas** | `LOCAL-XXX` | `gdd/05-locais/LOCAL-001-casa-de-john.md` | `assets/locais/LOCAL-001.png` |
-| **Cânone / Regras** | `CANON-XXX` ou `BP-2026-XXX` | `gdd/99-canon/CANON-001-protagonista-john.md` | — |
-| **Gameplay / Lógica** | `GAME-XXX` | `gdd/02-gameplay/GAME-001-loop-principal.md` | — |
-| **História / Lore** | `LORE-XXX` | `gdd/01-lore/LORE-001-origem-de-arkan.md` | — |
+| **NPCs** | `NPC-XXX` | `gdd/03-npcs/NPC-001.md` | `assets/npcs/NPC-001.png` |
+| **Itens / Armas** | `ITEM-XXX` | `gdd/04-itens/ITEM-001.md` | `assets/itens/ITEM-001.png` |
+| **Locais / Cenas** | `LOCAL-XXX` | `gdd/05-locais/LOCAL-001.md` | `assets/locais/LOCAL-001.png` |
+| **Cânone / Regras** | `CANON-XXX` ou `BP-2026-XXX` | `gdd/99-canon/CANON-001.md` | — |
+| **Gameplay / Lógica** | `GAME-XXX` | `gdd/02-gameplay/GAME-001.md` | — |
+| **História / Lore** | `LORE-XXX` | `gdd/01-lore/LORE-001.md` | — |
 
 ---
 
@@ -58,6 +58,7 @@ Valores permitidos para `status`:
 - `IDEIA`: Proposta em discussão.
 - `PLANEJADO`: Aprovado para fases futuras.
 - `DESCONTINUADO`: Ideia abandonada ou substituída.
+- `DESCONHECIDO`: Informação deliberadamente não definida no cânone atual.
 
 ---
 
@@ -85,11 +86,12 @@ Sempre que o usuário solicitar uma alteração ou adição:
 2. **Criação do Documento:** Crie o `.md` na pasta correspondente de `/gdd/` com Frontmatter completo.
 3. **Criação do Asset:** Se houver imagem gerada, salve na pasta correspondente em `/assets/`.
 4. **Atualização do index.html:** Localize o array correspondente (`npcs`, `itens`, `locais`, etc.) dentro de `defaultData` no `index.html` e insira o novo objeto espelhando os dados do Markdown.
-5. **Commit Semântico:** Faça o commit seguindo o padrão:
+5. **Atualização do índice:** Quando IDs, nomes ou caminhos do acervo mudarem, sincronize `INDICE.md`.
+6. **Commit Semântico:** Faça o commit seguindo o padrão:
    - `docs(npc): adicionar NPC-008 NomeDoNPC`
    - `feat(gameplay): balancear dano da espada ITEM-003`
    - `canon(core): registrar CANON-006 RegraX`
-6. **Push:** Envie as mudanças para a branch `main`.
+7. **Push:** Envie as mudanças para a branch `main`.
 
 ---
 
