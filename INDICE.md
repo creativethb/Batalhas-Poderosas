@@ -115,6 +115,7 @@
 | **`GAME-004`** | Sistema de Diálogo e Câmera | Interação & Cena | `CANONICO` | `gdd/02-gameplay/GAME-004.md` |
 | **`GAME-005`** | Sistema do Diário de John | Inventário, Narrativa & Desbloqueio | `CANONICO` | `gdd/02-gameplay/GAME-005.md` |
 | **`GAME-006`** | Cadeia Produtiva e Economia Rural | Economia & Produção | `CANONICO` | `gdd/02-gameplay/GAME-006.md` |
+| **`GAME-007`** | Navegação da Vila e Mapa do Diário | Navegação & Interface | `EM_DESENVOLVIMENTO` | `gdd/02-gameplay/GAME-007.md` |
 
 ---
 
