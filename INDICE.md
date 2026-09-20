@@ -109,12 +109,12 @@
 
 | ID | Nome | Categoria | Status | Arquivo |
 | :--- | :--- | :--- | :--- | :--- |
-| **`GAME-001`** | Loop Principal e Progressão | Core Gameplay | `CANONICO` | `gdd/02-gameplay/GAME-001-loop-principal-e-progressao.md` |
-| **`GAME-002`** | Sistema de Combate e Combos | Combate | `CANONICO` | `gdd/02-gameplay/GAME-002-sistema-de-combate-e-combos.md` |
-| **`GAME-003`** | Locomoção, Dash e Pulo | Movimentação | `CANONICO` | `gdd/02-gameplay/GAME-003-locomocao-dash-e-pulo.md` |
-| **`GAME-004`** | Sistema de Diálogo e Câmera | Interação & Cena | `CANONICO` | `gdd/02-gameplay/GAME-004-sistema-de-dialogo-e-camera.md` |
-| **`GAME-005`** | Sistema do Diário de John | Inventário, Narrativa & Desbloqueio | `CANONICO` | `gdd/02-gameplay/GAME-005-sistema-do-diario.md` |
-| **`GAME-006`** | Cadeia Produtiva e Economia Rural | Economia & Produção | `CANONICO` | `gdd/02-gameplay/GAME-006-cadeia-produtiva-e-economia-rural.md` |
+| **`GAME-001`** | Loop Principal e Progressão | Core Gameplay | `CANONICO` | `gdd/02-gameplay/GAME-001.md` |
+| **`GAME-002`** | Sistema de Combate e Combos | Combate | `CANONICO` | `gdd/02-gameplay/GAME-002.md` |
+| **`GAME-003`** | Locomoção, Dash e Pulo | Movimentação | `CANONICO` | `gdd/02-gameplay/GAME-003.md` |
+| **`GAME-004`** | Sistema de Diálogo e Câmera | Interação & Cena | `CANONICO` | `gdd/02-gameplay/GAME-004.md` |
+| **`GAME-005`** | Sistema do Diário de John | Inventário, Narrativa & Desbloqueio | `CANONICO` | `gdd/02-gameplay/GAME-005.md` |
+| **`GAME-006`** | Cadeia Produtiva e Economia Rural | Economia & Produção | `CANONICO` | `gdd/02-gameplay/GAME-006.md` |
 
 ---
 
@@ -137,11 +137,11 @@
 
 | ID | Título | Categoria | Status | Arquivo |
 | :--- | :--- | :--- | :--- | :--- |
-| **`BP-2026-001`** | Protagonista John e Origem do Soldado | Narrativa Core | `CANONICO` | `gdd/99-canon/CANON-001-protagonista-john.md` |
-| **`BP-2026-002`** | Início na Casa de John | Gameplay Inicial | `CANONICO` | `gdd/99-canon/CANON-002-inicio-na-casa-de-john.md` |
-| **`BP-2026-003`** | A Guerra do Rei Mago | Lore & História | `CANONICO` | `gdd/99-canon/CANON-003-a-guerra-do-rei-mago.md` |
-| **`BP-2026-004`** | Desacoplamento do Sandbox | Arquitetura | `CANONICO` | `gdd/99-canon/CANON-004-desacoplamento-sandbox-mundo-livre.md` |
-| **`BP-2026-005`** | Padrão UX Multiplataforma | Interface | `CANONICO` | `gdd/99-canon/CANON-005-padrao-ux-multiplataforma.md` |
-| **`BP-2026-006`** | Diário de John — Elemento Narrativo e Funcional | Narrativa & Lore | `CANONICO` | `gdd/99-canon/CANON-006-diario-de-john.md` |
-| **`BP-2026-007`** | Protocolo Narrativo — Diário e Livro/Lore | Narrativa & Sistema | `CANONICO` | `gdd/99-canon/CANON-007-protocolo-narrativo-diario-e-lore.md` |
-| **`BP-2026-008`** | Expansão Rural e Masterplan da Fazenda | Arquitetura & Economia | `CANONICO` | `gdd/99-canon/CANON-008-masterplan-fazenda-de-arkan.md` |
+| **`BP-2026-001`** | Protagonista John e Origem do Soldado | Narrativa Core | `CANONICO` | `gdd/99-canon/CANON-001.md` |
+| **`BP-2026-002`** | Início na Casa de John | Gameplay Inicial | `CANONICO` | `gdd/99-canon/CANON-002.md` |
+| **`BP-2026-003`** | A Guerra do Rei Mago | Lore & História | `CANONICO` | `gdd/99-canon/CANON-003.md` |
+| **`BP-2026-004`** | Desacoplamento do Sandbox | Arquitetura | `CANONICO` | `gdd/99-canon/CANON-004.md` |
+| **`BP-2026-005`** | Padrão UX Multiplataforma | Interface | `CANONICO` | `gdd/99-canon/CANON-005.md` |
+| **`BP-2026-006`** | Diário de John — Elemento Narrativo e Funcional | Narrativa & Lore | `CANONICO` | `gdd/99-canon/CANON-006.md` |
+| **`BP-2026-007`** | Protocolo Narrativo — Diário e Livro/Lore | Narrativa & Sistema | `CANONICO` | `gdd/99-canon/CANON-007.md` |
+| **`BP-2026-008`** | Expansão Rural e Masterplan da Fazenda | Arquitetura & Economia | `CANONICO` | `gdd/99-canon/CANON-008.md` |
