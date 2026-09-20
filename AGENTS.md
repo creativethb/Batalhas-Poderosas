@@ -85,7 +85,7 @@ Sempre que o usuário solicitar uma alteração ou adição:
 1. **Checagem de Consistência:** Verifique se o ID a ser usado já existe no diretório. Use sempre o próximo número disponível (`NPC-008`, `LOCAL-009`, etc.).
 2. **Criação do Documento:** Crie o `.md` na pasta correspondente de `/gdd/` com Frontmatter completo.
 3. **Criação do Asset:** Se houver imagem gerada, salve na pasta correspondente em `/assets/`.
-4. **Atualização do index.html:** Localize o array correspondente (`npcs`, `itens`, `locais`, etc.) dentro de `defaultData` no `index.html` e insira o novo objeto espelhando os dados do Markdown.
+4. **Atualização do catálogo:** Se a entidade for nova ou tiver mudado de nome, caminho, status ou imagem, atualize o `canonicalFilesMap` do `index.html`. Se a mudança for de categoria, atualize também `gdd/manifest.json`.
 5. **Atualização do índice:** Quando IDs, nomes ou caminhos do acervo mudarem, sincronize `INDICE.md`.
 6. **Commit Semântico:** Faça o commit seguindo o padrão:
    - `docs(npc): adicionar NPC-008 NomeDoNPC`
