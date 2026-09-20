@@ -10,7 +10,7 @@ relacionados:
   - "GAME-001"
   - "ITEM-004"
 atualizado_por: "agente_bibliotecario"
-data_atualizacao: "2026-09-08"
+data_atualizacao: "2026-09-20"
 ---
 
 # Sistema do Diário de John
@@ -108,3 +108,11 @@ Ver `gdd/01-lore/LORE-003-diario-de-john.md` para o conteúdo integral das entra
 | DIARIO-CAP1-004 | Primeiro Confronto | Primeiro combate nos arredores de Arkham | PLANEJADO |
 | DIARIO-CAP1-005 | O Teletransporte | Confronto com força superior / banimento | PLANEJADO |
 | DIARIO-CAP2+ | Registros do Multiverso | Exploração de dimensões desconhecidas | PLANEJADO |
+
+---
+
+## 8. Integração com a Primeira Masmorra
+
+A **vitória no primeiro andar** e a **primeira experiência completa de John na masmorra** já estão conectadas ao sistema de Diário.
+
+O gatilho de gameplay está implementado no fluxo de conclusão do Piso 01 (`DNG-006`). O texto literário definitivo da entrada deve permanecer centralizado em `LORE-003`; este documento registra apenas a integração funcional, evitando duplicar conteúdo narrativo.
