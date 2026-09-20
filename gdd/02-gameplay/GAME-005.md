@@ -5,6 +5,7 @@ status: "CANONICO"
 relacionados:
   - "BP-2026-006"
   - "BP-2026-007"
+  - "GAME-007"
   - "LORE-003"
   - "LOCAL-001"
   - "GAME-001"
