@@ -652,20 +652,20 @@
       { id: "BP-2026-008", path: "gdd/99-canon/CANON-008.md", folder: "99-canon", nome: "Masterplan da Fazenda 26/26 Concluído", funcao: "Economia Rural", status: "CANONICO" },
 
       // Crônicas do Livro
-      { id: "LORE-001", path: "gdd/01-lore/LORE-001.md", folder: "01-lore", nome: "O Reino Ancestral e o Mago", funcao: "História Antiga", status: "CANONICO" },
+      { id: "LORE-001", path: "gdd/01-lore/LORE-001.md", folder: "01-lore", nome: "Origem do Conflito de Arkan e o Rei Mago", funcao: "História Antiga", status: "CANONICO" },
       { id: "LORE-002", path: "gdd/01-lore/LORE-002.md", folder: "01-lore", nome: "A Jornada e Evolução de John", funcao: "Jornada Multiversal", status: "CANONICO" },
-      { id: "LORE-003", path: "gdd/01-lore/LORE-003.md", folder: "01-lore", nome: "O Diário de Memórias de John", funcao: "Crônica Pessoal", status: "CANONICO" },
-      { id: "LORE-004", path: "gdd/01-lore/LORE-004.md", folder: "01-lore", nome: "Paralelo Narrativo: John e Alric", funcao: "Análise Canônica", status: "CANONICO" },
-      { id: "LORE-005", path: "gdd/01-lore/LORE-005.md", folder: "01-lore", nome: "Prólogo Oficial: Antes das Batalhas", funcao: "Prólogo Literário", status: "CANONICO" },
+      { id: "LORE-003", path: "gdd/01-lore/LORE-003.md", folder: "01-lore", nome: "Diário de John — Registros da Jornada", funcao: "Crônica Pessoal", status: "CANONICO" },
+      { id: "LORE-004", path: "gdd/01-lore/LORE-004.md", folder: "01-lore", nome: "Paralelo Narrativo: John e o Rei Mago", funcao: "Análise Canônica", status: "CANONICO" },
+      { id: "LORE-005", path: "gdd/01-lore/LORE-005.md", folder: "01-lore", nome: "Prólogo: Antes das Batalhas", funcao: "Prólogo Literário", status: "CANONICO" },
       { id: "LORE-006", path: "gdd/01-lore/LORE-006.md", folder: "01-lore", nome: "Perfil Literário de Alric", funcao: "Crônica Literária", status: "CANONICO" },
 
       // Sistemas
-      { id: "GAME-001", path: "gdd/02-gameplay/GAME-001.md", folder: "02-gameplay", nome: "Sistema de Diálogo Imersivo", funcao: "Câmera & HUD", status: "CANONICO" },
-      { id: "GAME-002", path: "gdd/02-gameplay/GAME-002.md", folder: "02-gameplay", nome: "Combate Melee & Combo de 5 Golpes", funcao: "Duelo Luau", status: "CANONICO" },
-      { id: "GAME-003", path: "gdd/02-gameplay/GAME-003.md", folder: "02-gameplay", nome: "Dash & Locomoção Física", funcao: "Movimentação", status: "CANONICO" },
-      { id: "GAME-004", path: "gdd/02-gameplay/GAME-004.md", folder: "02-gameplay", nome: "Sistema Imersivo de Diálogo e Câmera", funcao: "Câmera & HUD", status: "CANONICO" },
+      { id: "GAME-001", path: "gdd/02-gameplay/GAME-001.md", folder: "02-gameplay", nome: "Loop Principal e Progressão", funcao: "Core Gameplay", status: "CANONICO" },
+      { id: "GAME-002", path: "gdd/02-gameplay/GAME-002.md", folder: "02-gameplay", nome: "Sistema de Combate e Combos", funcao: "Combate", status: "CANONICO" },
+      { id: "GAME-003", path: "gdd/02-gameplay/GAME-003.md", folder: "02-gameplay", nome: "Locomoção, Dash e Pulo", funcao: "Movimentação", status: "CANONICO" },
+      { id: "GAME-004", path: "gdd/02-gameplay/GAME-004.md", folder: "02-gameplay", nome: "Sistema de Diálogo e Câmera", funcao: "Interação & Cena", status: "CANONICO" },
       { id: "GAME-005", path: "gdd/02-gameplay/GAME-005.md", folder: "02-gameplay", nome: "Sistema do Diário de John", funcao: "Inventário & Memória", status: "CANONICO" },
-      { id: "GAME-006", path: "gdd/02-gameplay/GAME-006.md", folder: "02-gameplay", nome: "Cadeia Produtiva da Fazenda", funcao: "Economia Agropecuária", status: "CANONICO" },
+      { id: "GAME-006", path: "gdd/02-gameplay/GAME-006.md", folder: "02-gameplay", nome: "Cadeia Produtiva e Economia Rural", funcao: "Economia & Produção", status: "CANONICO" },
 
       // Dossiês
       { id: "DOS-001", path: "gdd/06-dossie/DOS-001.md", folder: "06-dossie", nome: "Mestre Cedric — Dossiê Completo", funcao: "Dossiê de NPC", status: "CANONICO" },
@@ -693,6 +693,7 @@
     };
 
     let liveDocs = [];
+    let syncFailures = [];
     let projectManifest = { categorias: [] };
 
     /* 1. CARREGAMENTO PROCEDURAL DO MANIFESTO */
@@ -800,6 +801,7 @@
       statusTag.innerHTML = `<span class="w-2 h-2 rounded-full bg-amber-400 animate-pulse"></span><span>Consultando Códice...</span>`;
 
       await loadManifest();
+      syncFailures = [];
       liveDocs = canonicalFilesMap.map(d => ({ ...d }));
 
       // Para a pasta de itens, o ID é a fonte de identidade visual do registro.
@@ -826,12 +828,26 @@
             if (parsed.meta.status) doc.status = parsed.meta.status;
             if (parsed.meta.imagem) doc.imagem = resolveAssetUrl(parsed.meta.imagem);
             if (parsed.meta.relacionados) doc.relacionados = parsed.meta.relacionados.split(',').map(s => s.trim());
+          } else {
+            doc.syncError = true;
+            doc.markdown = '';
+            syncFailures.push(doc.id);
           }
-        } catch(e) {}
+        } catch(e) {
+          doc.syncError = true;
+          doc.markdown = '';
+          syncFailures.push(doc.id);
+        }
       }));
 
       spinner?.classList.remove('animate-spin');
-      statusTag.innerHTML = `<span class="w-2 h-2 rounded-full bg-emerald-400"></span><span>Sincronizado</span>`;
+      if (syncFailures.length) {
+        statusTag.innerHTML = `<span class="w-2 h-2 rounded-full bg-rose-400"></span><span>Sincronizado com ${syncFailures.length} falha(s)</span>`;
+        statusTag.title = `Documentos não carregados: ${syncFailures.join(', ')}`;
+      } else {
+        statusTag.innerHTML = `<span class="w-2 h-2 rounded-full bg-emerald-400"></span><span>Sincronizado</span>`;
+        statusTag.title = 'Todos os documentos catalogados foram carregados.';
+      }
 
       updateFolderSelectOptions();
       updateSearchFilterOptions();
