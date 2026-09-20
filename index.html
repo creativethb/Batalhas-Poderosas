@@ -683,6 +683,15 @@
       { id: "DNG-008", path: "gdd/07-masmorras/DNG-008.md", folder: "07-masmorras", nome: "Sistema de Invocação Luminosa de NPCs", funcao: "Spawning Tático & Ritual de Emersão", localizacao: "ServerStorage.Dungeon_NPCs", imagem: "./assets/locais/LOCAL-007.png", status: "CANONICO" }
     ];
 
+    // Nomes canônicos dos itens coletáveis. Evita que metadados antigos ou cache documental
+    // façam um item aparecer com o nome de outro no catálogo do Códice.
+    const canonicalItemNames = {
+      "ITEM-001": "Madeira Comum",
+      "ITEM-002": "Madeira Sagrada",
+      "ITEM-003": "Espada de Madeira Sagrada",
+      "ITEM-004": "Diário de John"
+    };
+
     let liveDocs = [];
     let projectManifest = { categorias: [] };
 
@@ -792,6 +801,15 @@
 
       await loadManifest();
       liveDocs = canonicalFilesMap.map(d => ({ ...d }));
+
+      // Para a pasta de itens, o ID é a fonte de identidade visual do registro.
+      // O nome vindo do frontmatter pode complementar o documento, mas não pode
+      // transformar ITEM-004 em Madeira Sagrada, por exemplo.
+      liveDocs.forEach(doc => {
+        if (doc.folder === '04-itens' && canonicalItemNames[doc.id]) {
+          doc.nome = canonicalItemNames[doc.id];
+        }
+      });
 
       await Promise.all(liveDocs.map(async (doc) => {
         try {
