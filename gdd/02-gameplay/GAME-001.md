@@ -25,3 +25,30 @@ O ciclo de jogo em Batalhas Poderosas equilibra três pilares fundamentais:
 - **Objetivo 2:** Ir até o bosque a oeste e conversar com o Ancião Eldrin para obter o Galho Sagrado.
 - **Objetivo 3:** Ir até a oficina de Mestre Cedric na praça da vila e forjar a Espada de Madeira Sagrada.
 - **Recompensa:** Espada de Madeira Sagrada equipada diretamente nas mãos de John com persistência total pós-morte.
+
+## 3. Inicialização e Liberação do Jogador
+
+A abertura do jogo foi reorganizada para impedir que o jogador veja o mundo sendo montado antes de estar pronto.
+
+Fluxo atual:
+1. A tela inicial é exibida primeiro.
+2. A rotina duplicada de abertura foi removida.
+3. A Casa de John é preparada em paralelo com a inicialização geral do mundo.
+4. John só é liberado quando está corretamente posicionado, a casa foi recebida pelo cliente e os recursos visuais essenciais foram carregados.
+5. A tela de carregamento permanece cobrindo a abertura até a confirmação final do cliente.
+
+### Medição local de referência — 20/09/2026
+
+| Marco | Tempo aproximado |
+| :--- | ---: |
+| Carregamento base do jogo | 0,36 s |
+| Posicionamento de John + chegada da casa | 5,40 s |
+| Recursos visuais essenciais da casa prontos | 6,37 s |
+
+> Estes valores são **medições de teste local**, não metas canônicas de desempenho. Devem ser reavaliados conforme o projeto evoluir.
+
+## 4. Estado Atual do Áudio
+
+- IDs inválidos de sons locais que geravam avisos no console foram removidos, mantendo os objetos preparados para receber novos áudios.
+- A música global da Vila de Arkham permanece em `SoundService`, pois pertence ao gameplay geral.
+- O ID atual dessa música ainda apresenta falha de download e deve ser substituído futuramente por um áudio válido e autorizado.
