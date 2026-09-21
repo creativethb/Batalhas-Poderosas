@@ -39,3 +39,9 @@ Os lacaios do primeiro piso usam o avatar R15 padrão do golem comum e o Guardi�
 
 - Os lacaios usam perseguição direta ou pathfinding, ataque por proximidade e velocidade normal de 13 studs/s.
 - O Guardião é selecionado pelo gerador pelo prefab `Golem_Pedra`, antes do modelo antigo `Chefe`, e mantém IA própria, 450 pontos de vida, alcance e dano distintos.
+
+## 7. Guarda da Entrada da Masmorra
+Armand é o guarda estático posicionado ao lado da entrada do Mausoléu, sem bloquear o acesso ao portal. Ele permanece em espera com a animação R15 padrão do Roblox e segura uma lança na mão direita. Não patrulha nem participa de combate.
+
+- Interação: `E` para conversar.
+- Avisos: a masmorra exige preparo, os autômatos patrulham o primeiro piso e o Guardião protege a passagem adiante.
