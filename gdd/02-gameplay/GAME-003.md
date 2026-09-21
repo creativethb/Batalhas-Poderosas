@@ -6,7 +6,8 @@ relacionados:
   - "GAME-002"
   - "GAME-004"
   - "CANON-005"
-atualizado_por: "agente"
+atualizado_por: "codex"
+data_atualizacao: "2026-09-20"
 ---
 
 # Sistema de Locomoção, Dash e Duplo Pulo
@@ -25,3 +26,14 @@ O sistema integra esquiva e aceleração no mesmo canal de comando:
 - **Ativação:** Tecla `R` (PC), `ButtonR1` (Gamepad) ou toque no botão de Foco da HUD Mobile.
 - **Mecânica:** Trava a mira e retícula de combate no alvo inimigo mais próximo em até 60 studs.
 - **Cancelamento:** Ao afastar mais de 72 studs ou ao reacionar o comando.
+
+## 4. HUD Mobile e Estados de Combate
+
+- **Exploração:** mantém os comandos de pulo e dash/corrida acessíveis; o botão da arma permanece acima deles.
+- **Arma sacada:** ataque, defesa e foco se expandem em torno dos comandos principais. Ao guardar a arma, o conjunto recolhe para o estado de exploração.
+- **Dash/Corrida:** toque breve no botão executa dash; segurar ativa corrida; soltar encerra a corrida. O botão acompanha a posição do pulo.
+- **Ergonomia:** o conjunto respeita a área segura da tela e usa separação maior entre os botões para reduzir toques acidentais em paisagem.
+- **Leitura visual:** ícones próprios de ataque, escudo, foco, arma e dash substituem símbolos genéricos; as funções dos comandos permanecem iguais.
+- **Defesa:** o botão está visualmente preparado para a mecânica de defesa futura; sua ação ainda não foi implementada.
+
+A versão de desenvolvimento foi conferida no simulador de iPhone em paisagem, nos estados de exploração, arma sacada e arma guardada. O conjunto expandiu e recolheu sem sobreposição dos botões.
