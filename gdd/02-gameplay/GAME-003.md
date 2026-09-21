@@ -41,5 +41,5 @@ A versão de desenvolvimento foi conferida no simulador de iPhone em paisagem, n
 
 ## 5. Música da Masmorra
 - A exploração do primeiro piso usa música ambiente medieval de mistério, em loop, com volume moderado.
-- Ao entrar na área da arena do Guardião do Piso 1, a música de exploração faz uma transição gradual para a faixa de tensão do chefe.
+- Ao entrar no corredor de acesso da arena do Guardião do Piso 1, a música de exploração faz uma transição gradual para a faixa de tensão do chefe.
 - As duas faixas são controladas separadamente para evitar cortes bruscos e não interferem no som ambiente da vila.
