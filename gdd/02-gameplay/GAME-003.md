@@ -33,7 +33,7 @@ O sistema integra esquiva e aceleração no mesmo canal de comando:
 - **Arma sacada:** ataque, defesa e foco se expandem em torno dos comandos principais. Ao guardar a arma, o conjunto recolhe para o estado de exploração.
 - **Dash/Corrida:** toque breve no botão executa dash; segurar ativa corrida; soltar encerra a corrida. O botão acompanha a posição do pulo.
 - **Ergonomia:** o conjunto respeita a área segura da tela e usa separação maior entre os botões para reduzir toques acidentais em paisagem.
-- **Leitura visual:** ícones próprios de ataque, escudo, foco, arma e dash substituem símbolos genéricos; as funções dos comandos permanecem iguais.
+- **Leitura visual:** ícones próprios de ataque, escudo, foco, arma, dash e pulo substituem símbolos genéricos; as funções dos comandos permanecem iguais. O ícone do pulo é aplicado sobre o controle nativo, preservando sua área de toque.
 - **Defesa:** o botão está visualmente preparado para a mecânica de defesa futura; sua ação ainda não foi implementada.
 
-A versão de desenvolvimento foi conferida no simulador de iPhone em paisagem, nos estados de exploração, arma sacada e arma guardada. O conjunto expandiu e recolheu sem sobreposição dos botões.
+A versão de desenvolvimento foi conferida no simulador de iPhone em paisagem, nos estados de exploração, arma sacada e arma guardada. O conjunto expandiu e recolheu sem sobreposição dos botões. O novo botão de pulo foi conferido visualmente no simulador, e um toque nele acionou o salto.
