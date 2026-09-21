@@ -32,3 +32,7 @@ O combate corpo a corpo utiliza uma sequência encadeada de 5 animações fluida
 ## 4. Postura Natural e Braço Livre
 - A ferramenta neutraliza a postura rígida nativa do Roblox (`507768375`).
 - O braço de John permanece solto e relaxado para baixo, balançando de forma natural durante a caminhada e corrida.
+
+
+## 6. Autômatos da Masmorra
+Os lacaios do primeiro piso usam o avatar R15 padrão do golem comum, com locomoção e animação de corrida compatíveis com o rig. O controlador de combate usa perseguição direta ou pathfinding, ataque por proximidade e velocidade normal de 13 studs/s. O Guardião mantém seu controlador próprio.
