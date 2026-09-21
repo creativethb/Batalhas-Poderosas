@@ -35,6 +35,7 @@ O combate corpo a corpo utiliza uma sequência encadeada de 5 animações fluida
 
 
 ## 6. Autômatos da Masmorra
-Os lacaios do primeiro piso usam o avatar R15 padrão do golem comum. Durante a locomoção, juntas animáveis movem pernas completas, pés e braços em uma passada visível. As juntas são removidas após a morte para permitir a desmontagem. O controlador de combate usa perseguição direta ou pathfinding, ataque por proximidade e velocidade normal de 13 studs/s. O Guardião mantém seu controlador próprio.
+Os lacaios do primeiro piso usam o avatar R15 padrão do golem comum e o Guardião do Piso 1 usa o avatar R15 próprio do chefe. Ambos usam somente as animações R15 padrão do Roblox para espera, caminhada e corrida; não há marcha procedural nem juntas artificiais de locomoção.
 
-- O Guardião do Piso 1 usa o avatar R15 criado para o chefe, com animação padrão de locomoção e IA de perseguição compatível com o rig. O gerador seleciona esse prefab antes do modelo antigo `Chefe`. Seus valores de chefe permanecem distintos dos autômatos comuns, incluindo dano, alcance e 450 pontos de vida.
+- Os lacaios usam perseguição direta ou pathfinding, ataque por proximidade e velocidade normal de 13 studs/s.
+- O Guardião é selecionado pelo gerador pelo prefab `Golem_Pedra`, antes do modelo antigo `Chefe`, e mantém IA própria, 450 pontos de vida, alcance e dano distintos.
