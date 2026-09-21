@@ -17,7 +17,7 @@ data_atualizacao: "2026-09-20"
 
 # Navegação da Vila e Mapa do Diário
 
-O sistema de navegação orienta John pela Vila de Arkham sem substituir a exploração. O mapa é consultado no Diário de John; durante o percurso, uma microbússola discreta indica somente a direção do destino marcado.
+O sistema de navegação orienta John pela Vila de Arkham sem substituir a exploração. O mapa é consultado no Diário de John ou aberto diretamente pelo atalho de teclado durante o desenvolvimento. Durante o percurso, uma microbússola discreta indica somente a direção do destino marcado.
 
 ---
 
@@ -25,10 +25,12 @@ O sistema de navegação orienta John pela Vila de Arkham sem substituir a explo
 
 1. John abre o Diário.
 2. Seleciona **Mapa da Vila**.
-3. O mapa abre em tela cheia como uma representação ilustrada, fiel à topologia da vila.
+3. O mapa horizontal abre em tela cheia como uma representação ilustrada da vila.
 4. John arrasta para explorar e usa os controles de zoom quando necessário.
-5. Seleciona um local conhecido.
-6. O mapa e o Diário fecham automaticamente; a microbússola passa a indicar o caminho.
+5. Seleciona um local pelo marcador na arte ou pela lista com nomes, que também funciona em telas pequenas.
+6. O mapa e o Diário fecham automaticamente; uma microbússola com ponteiro dourado em relevo passa a indicar o caminho.
+
+No computador, o atalho **M** abre e fecha o mapa diretamente. A aba **Mapa da Vila** continua disponível no Diário para computador e mobile.
 
 O sistema marca um destino; ele não teleporta o jogador nem mostra uma rota obrigatória.
 
@@ -36,11 +38,11 @@ O sistema marca um destino; ele não teleporta o jogador nem mostra uma rota obr
 
 ## 2. Estado de Desenvolvimento
 
-Durante o desenvolvimento, o mapa fica disponível diretamente para permitir validação da navegação da vila. A implementação usa uma arte topográfica própria da Vila de Arkham, com marcadores presos às posições equivalentes dos locais reais.
+Durante o desenvolvimento, o mapa fica disponível diretamente para permitir validação da navegação da vila. A implementação usa uma arte horizontal própria da Vila de Arkham, com marcadores ligados aos destinos reais. A arte é uma interpretação visual em desenvolvimento; a conferência cartográfica fina com a topologia final do mundo ainda é necessária.
 
 A primeira versão contém destinos reais da vila, incluindo Casa de John, Mercado Central, Oficina de Cedric, Padaria, Taverna do Javali Dourado, Guilda, Estábulo, Serraria, Moinho, Igreja, Santuário de Eldrin e Paço Municipal.
 
-O mapa abre com a vila inteira visível e preserva zoom e arrasto em computador e mobile. A arte está quadrada nesta fase de desenvolvimento; o enquadramento final horizontal poderá ser refinado junto da HUD definitiva.
+O mapa abre com a vila inteira visível e preserva zoom e arrasto em computador e mobile. A tela combina arte, marcadores menores com área de toque preservada e uma lista rolável de destinos por nome. A lista de jogadores do Roblox fica oculta somente enquanto o mapa está aberto, para liberar a área de leitura.
 
 ---
 
@@ -63,7 +65,7 @@ O desbloqueio técnico previsto usa o estado `MapaDaVilaDesbloqueado` no jogador
 ## 4. Diretrizes de Experiência
 
 - O mapa oferece orientação sem eliminar a necessidade de explorar.
-- A microbússola ocupa pouco espaço e mostra somente uma seta direcional; ela some ao chegar próximo ao destino.
+- A microbússola ocupa pouco espaço e mostra somente um ponteiro dourado de aparência tridimensional; ela some ao chegar próximo ao destino.
 - O Diário é a fonte central de consulta e preserva seu papel narrativo e funcional.
 - A expansão da vila deve acrescentar novos destinos ao catálogo de navegação junto com a documentação correspondente.
 - A imagem do mapa e a posição dos marcadores devem ser atualizadas juntas quando a topologia da vila mudar.
@@ -77,6 +79,7 @@ Em playtest de desenvolvimento:
 - o Diário abriu o Mapa da Vila;
 - o mapa topográfico exibiu os 12 marcadores de destino;
 - o zoom foi validado em computador;
-- no simulador de iPhone em paisagem, a vila abriu inteiramente visível;
-- ao selecionar o Mercado Central, o mapa e o Diário fecharam e a microbússola foi ativada.
+- no simulador de iPhone em paisagem, a arte horizontal, os marcadores e a lista de destinos couberam na tela;
+- ao selecionar o Mercado Central pelo nome, o mapa e o Diário fecharam e a microbússola foi ativada;
+- o atalho M abriu o mapa diretamente no computador e a sobreposição da lista de jogadores foi removida.
 
