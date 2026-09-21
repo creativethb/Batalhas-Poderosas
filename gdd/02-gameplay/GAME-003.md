@@ -37,3 +37,9 @@ O sistema integra esquiva e aceleração no mesmo canal de comando:
 - **Defesa:** o botão está visualmente preparado para a mecânica de defesa futura; sua ação ainda não foi implementada.
 
 A versão de desenvolvimento foi conferida no simulador de iPhone em paisagem, nos estados de exploração, arma sacada e arma guardada. O conjunto expandiu e recolheu sem sobreposição dos botões. O novo botão de pulo foi conferido visualmente no simulador, e um toque nele acionou o salto.
+
+
+## 5. Música da Masmorra
+- A exploração do primeiro piso usa música ambiente medieval de mistério, em loop, com volume moderado.
+- Ao entrar na área da arena do Guardião do Piso 1, a música de exploração faz uma transição gradual para a faixa de tensão do chefe.
+- As duas faixas são controladas separadamente para evitar cortes bruscos e não interferem no som ambiente da vila.
