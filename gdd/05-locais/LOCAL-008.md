@@ -4,7 +4,7 @@ nome: "Portal do Mundo Livre"
 status: "CANONICO"
 relacionados:
   - "NPC-009"
-  - "CANON-004"
+  - "BP-2026-004"
 imagem: "./assets/locais/LOCAL-008.png"
 atualizado_por: "agente"
 ---
