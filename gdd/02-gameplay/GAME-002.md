@@ -38,6 +38,7 @@ O combate corpo a corpo utiliza uma sequência encadeada de 5 animações fluida
 Os lacaios do primeiro piso usam o avatar R15 padrão do golem comum e o Guardião do Piso 1 usa o avatar R15 próprio do chefe. Ambos usam somente as animações R15 padrão do Roblox para espera, caminhada e corrida; não há marcha procedural nem juntas artificiais de locomoção.
 
 - Os lacaios usam perseguição direta ou pathfinding, ataque por proximidade e velocidade normal de 13 studs/s.
+- O lacaio alterna entre um soco fraco e um golpe concentrado. As duas animações funcionam sem arma nesta fase e poderão ser reutilizadas quando o armamento do autômato for criado.
 - O Guardião é selecionado pelo gerador pelo prefab `Golem_Pedra`, antes do modelo antigo `Chefe`, e mantém IA própria, 450 pontos de vida, alcance e dano distintos.
 - O Guardião do Piso 1 empunha uma clava fixada na mão direita. Seu ataque atual usa uma única animação de clava, sincronizada com a janela de dano do combate.
 
