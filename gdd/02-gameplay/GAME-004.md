@@ -7,7 +7,7 @@ relacionados:
   - "NPC-002"
   - "GAME-001"
   - "GAME-003"
-  - "CANON-005"
+  - "BP-2026-005"
 atualizado_por: "agente"
 ---
 
