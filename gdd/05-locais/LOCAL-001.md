@@ -8,7 +8,7 @@ relacionados:
   - "NPC-008"
   - "ITEM-001"
   - "ITEM-004"
-  - "CANON-002"
+  - "BP-2026-002"
 imagem: "./assets/locais/LOCAL-001.png"
 atualizado_por: "agente"
 ---
