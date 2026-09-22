@@ -23,6 +23,7 @@
 | **`NPC-011`** | Mineiro Borin | Mineiro das Profundezas | Minas da Montanha | `CANONICO` | `gdd/03-npcs/NPC-011.md` | Explora as galerias montanhosas ligadas ao passado do Rei Mago. |
 | **`NPC-012`** | Agricultora Nalia | Agricultora das Fazendas | Fazendas Norte | `CANONICO` | `gdd/03-npcs/NPC-012.md` | Cultiva os grandes campos agrícolas e cuida do estábulo. |
 | **`NPC-013`** | Fazendeiro Geraldo | Administrador da Fazenda | Administração da Fazenda | `CANONICO` | `gdd/03-npcs/NPC-013.md` | Administra a produção rural, safras, estocagem e rotinas da Fazenda de Arkan. |
+| **`NPC-014`** | John | Protagonista / Jovem Soldado | Arkham | `EM_DESENVOLVIMENTO` | `gdd/03-npcs/NPC-014.md` | Ficha visual e de papel narrativo do protagonista; biografia detalhada ainda está em definição. |
 
 ---
 
@@ -75,7 +76,9 @@
 
 ---
 
-## 📖 Livro / Lore do Universo — Estrutura de Capítulos (`appDb.livro[]`)
+## 📖 Livro / Lore do Universo — Mapa Editorial Histórico
+
+> A expressão `appDb.livro[]` era uma nomenclatura de estrutura anterior. Ela é mantida apenas como referência histórica deste índice e não representa fonte de dados atual. As fontes documentais vigentes são os arquivos Markdown do GDD e o `gdd/manifest.json`.
 
 | ID | Cap | Título | Status |
 | :--- | :--- | :--- | :--- |
@@ -102,7 +105,9 @@
 
 ---
 
-## 📓 Diário de John — Entradas (`appDb.diario[]`)
+## 📓 Diário de John — Mapa Editorial Histórico
+
+> A expressão `appDb.diario[]` era uma nomenclatura de estrutura anterior. Ela é mantida apenas como referência histórica deste índice e não representa fonte de dados atual. As fontes documentais vigentes são os arquivos Markdown do GDD e o `gdd/manifest.json`.
 
 | ID | Título | Estado | Missão | Status |
 | :--- | :--- | :--- | :--- | :--- |
