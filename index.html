@@ -588,6 +588,7 @@
     let liveDocs = [];
     let syncFailures = [];
     let projectManifest = { categorias: [] };
+    let repositoryAssets = new Set();
 
     function getCategoryDocs(category) {
       if (!category) return [];
@@ -624,8 +625,10 @@
       const res = await fetch(apiUrl, { headers: { Accept: 'application/vnd.github+json' } });
       if (!res.ok) throw new Error(`Catálogo indisponível: HTTP ${res.status}`);
       const data = await res.json();
-      return (data.tree || [])
-        .filter(entry => entry.type === 'blob' && /^gdd\/.+\.md$/i.test(entry.path) && !/\/README\.md$/i.test(entry.path))
+      const blobs = (data.tree || []).filter(entry => entry.type === 'blob');
+      repositoryAssets = new Set(blobs.map(entry => entry.path));
+      return blobs
+        .filter(entry => /^gdd\/.+\.md$/i.test(entry.path) && !/\/README\.md$/i.test(entry.path))
         .map(entry => entry.path)
         .sort((a, b) => a.localeCompare(b, 'pt-BR', { numeric: true }));
     }
@@ -690,7 +693,9 @@
 
     function inferAssetPath(doc) {
       const category = (projectManifest.categorias || []).find(item => item.folder === doc.folder && item.assets);
-      return category ? resolveAssetUrl(`./${category.assets}/${doc.id}.png`) : '';
+      if (!category) return '';
+      const path = `${category.assets}/${doc.id}.png`;
+      return repositoryAssets.has(path) ? resolveAssetUrl(`./${path}`) : '';
     }
 
     function safeMarkdown(text) {
