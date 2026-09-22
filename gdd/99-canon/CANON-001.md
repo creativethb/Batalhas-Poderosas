@@ -6,7 +6,7 @@ relacionados:
   - "NPC-000"
   - "LORE-002"
   - "LORE-004"
-  - "CANON-002"
+  - "BP-2026-002"
 atualizado_por: "agente"
 ---
 
