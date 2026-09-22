@@ -591,6 +591,7 @@
         { id: "historia", nome: "Introdução Narrativa", pasta: "gdd/01-lore", folder: "01-lore", icone: "📜", renderer: "historia", slug: "historia", grupo: "UNIVERSO" },
         { id: "locais", nome: "Locais & Geografia", pasta: "gdd/05-locais", folder: "05-locais", icone: "🏰", renderer: "dossie", slug: "locais", grupo: "UNIVERSO" },
         { id: "npcs", nome: "NPCs & Heróis", pasta: "gdd/03-npcs", folder: "03-npcs", icone: "👥", renderer: "dossie", slug: "npcs", grupo: "UNIVERSO" },
+        { id: "bestiario", nome: "Bestiário", pasta: "gdd/04-bestiario", folder: "04-bestiario", icone: "🐺", renderer: "dossie", slug: "bestiario", grupo: "UNIVERSO" },
         { id: "livro", nome: "O Livro de Arkan", pasta: "gdd/01-lore", folder: "01-lore", icone: "📖", renderer: "livro", slug: "livro", grupo: "NARRATIVA" },
         { id: "diario", nome: "Diário de John", pasta: "gdd/01-lore", folder: "01-lore", icone: "📓", renderer: "diario", slug: "diario", grupo: "NARRATIVA" },
         { id: "gameplay", nome: "Loop de Jogo & Duelos", pasta: "gdd/02-gameplay", folder: "02-gameplay", icone: "🎮", renderer: "gdd", slug: "gameplay", grupo: "GAMEPLAY & SISTEMAS" },
@@ -610,7 +611,7 @@
     /* CATÁLOGO CANÔNICO FÍSICO (PRESERVADO INTEGRALMENTE) */
     const canonicalFilesMap = [
       // 14 NPCs
-      { id: "NPC-000", path: "gdd/03-npcs/NPC-000.md", folder: "03-npcs", nome: "O Rei Mago (Alric)", funcao: "Antagonista Trágico", localizacao: "Domínio do Rei Mago", imagem: "./assets/npcs/NPC-000.png", status: "CANONICO" },
+      { id: "NPC-000", path: "gdd/03-npcs/NPC-000.md", folder: "03-npcs", nome: "O Rei Mago (Alric)", funcao: "Antagonista Trágico", localizacao: "Domínio do Rei Mago", imagem: "./assets/characters/alric-wizard-king-cover.png", status: "CANONICO" },
       { id: "NPC-001", path: "gdd/03-npcs/NPC-001.md", folder: "03-npcs", nome: "Mestre Cedric", funcao: "Ferreiro Real da Vila", localizacao: "Oficina da Vila", imagem: "./assets/npcs/NPC-001.jpg", status: "CANONICO" },
       { id: "NPC-002", path: "gdd/03-npcs/NPC-002.md", folder: "03-npcs", nome: "Ancião Eldrin", funcao: "Guardião da Árvore Sagrada", localizacao: "Santuário Oeste", imagem: "./assets/npcs/NPC-002.jpg", status: "CANONICO" },
       { id: "NPC-003", path: "gdd/03-npcs/NPC-003.md", folder: "03-npcs", nome: "Guarda Rowan", funcao: "Sentinela dos Acessos Leste", localizacao: "Estrada da Mina Leste", imagem: "./assets/npcs/NPC-003.jpg", status: "CANONICO" },
@@ -624,6 +625,10 @@
       { id: "NPC-011", path: "gdd/03-npcs/NPC-011.md", folder: "03-npcs", nome: "Mineiro Borin", funcao: "Mineiro das Profundezas", localizacao: "Minas da Montanha", imagem: "./assets/npcs/NPC-011.png", status: "CANONICO" },
       { id: "NPC-012", path: "gdd/03-npcs/NPC-012.md", folder: "03-npcs", nome: "Agricultora Nalia", funcao: "Agricultora das Fazendas Norte", localizacao: "Campos do Norte", imagem: "./assets/npcs/NPC-012.png", status: "CANONICO" },
       { id: "NPC-013", path: "gdd/03-npcs/NPC-013.md", folder: "03-npcs", nome: "Fazendeiro Geraldo", funcao: "Administrador da Fazenda de Arkan", localizacao: "Casa do Fazendeiro", imagem: "./assets/npcs/NPC-013.png", status: "CANONICO" },
+
+      // 2 entradas do Bestiário
+      { id: "BEST-001", path: "gdd/04-bestiario/BEST-001.md", folder: "04-bestiario", nome: "Autômato de Pedra — Lacaio", funcao: "Inimigo Comum da Masmorra", status: "EM_DESENVOLVIMENTO" },
+      { id: "BEST-002", path: "gdd/04-bestiario/BEST-002.md", folder: "04-bestiario", nome: "Autômato de Pedra — Guardião do Piso 1", funcao: "Chefe do Primeiro Piso", status: "EM_DESENVOLVIMENTO" },
 
       // 9 Locais
       { id: "LOCAL-001", path: "gdd/05-locais/LOCAL-001.md", folder: "05-locais", nome: "Casa de John", funcao: "Spawn Canônico", localizacao: "Colina Leste", imagem: "./assets/locais/LOCAL-001.png", status: "CANONICO" },
@@ -654,7 +659,7 @@
 
       // Crônicas do Livro
       { id: "LORE-001", path: "gdd/01-lore/LORE-001.md", folder: "01-lore", nome: "Origem do Conflito de Arkan e o Rei Mago", funcao: "História Antiga", status: "CANONICO" },
-      { id: "LORE-002", path: "gdd/01-lore/LORE-002.md", folder: "01-lore", nome: "A Jornada e Evolução de John", funcao: "Jornada Multiversal", status: "CANONICO" },
+      { id: "LORE-002", path: "gdd/01-lore/LORE-002.md", folder: "01-lore", nome: "A Jornada e Evolução de John", funcao: "Jornada Multiversal", imagem: "./assets/characters/john-cover.png", status: "CANONICO" },
       { id: "LORE-003", path: "gdd/01-lore/LORE-003.md", folder: "01-lore", nome: "Diário de John — Registros da Jornada", funcao: "Crônica Pessoal", status: "CANONICO" },
       { id: "LORE-004", path: "gdd/01-lore/LORE-004.md", folder: "01-lore", nome: "Paralelo Narrativo: John e o Rei Mago", funcao: "Análise Canônica", status: "CANONICO" },
       { id: "LORE-005", path: "gdd/01-lore/LORE-005.md", folder: "01-lore", nome: "Prólogo: Antes das Batalhas", funcao: "Prólogo Literário", status: "CANONICO" },
@@ -698,6 +703,23 @@
     let liveDocs = [];
     let syncFailures = [];
     let projectManifest = { categorias: [] };
+
+    const categoryDocumentIds = {
+      historia: ["LORE-001", "LORE-002", "LORE-004", "LORE-005", "LORE-006"],
+      diario: ["LORE-003"],
+      gameplay: ["GAME-001", "GAME-002", "GAME-003"],
+      sistemas: ["GAME-004", "GAME-005", "GAME-006", "GAME-007"],
+      missoes: [],
+      integracao: ["GAME-008"],
+      changelog: []
+    };
+
+    function getCategoryDocs(category) {
+      if (!category) return [];
+      const ids = categoryDocumentIds[category.id];
+      if (Array.isArray(ids)) return liveDocs.filter(doc => ids.includes(doc.id));
+      return liveDocs.filter(doc => doc.folder === category.folder);
+    }
 
     /* 1. CARREGAMENTO PROCEDURAL DO MANIFESTO */
     async function loadManifest() {
@@ -918,7 +940,7 @@
                     <span class="text-sm opacity-80 group-hover:opacity-100">${item.icone || '📄'}</span>
                     <span class="truncate">${item.nome}</span>
                   </span>
-                  ${item.folder ? `<span class="font-mono text-[9px] text-arkan-gold/70 bg-arkan-950 px-1.5 py-0.5 rounded border border-arkan-borderGold/20">${liveDocs.filter(d => d.folder === item.folder).length}</span>` : ''}
+                  ${item.folder ? `<span class="font-mono text-[9px] text-arkan-gold/70 bg-arkan-950 px-1.5 py-0.5 rounded border border-arkan-borderGold/20">${getCategoryDocs(item).length}</span>` : ''}
                 </a>
               </li>
             `).join('')}
@@ -1121,9 +1143,9 @@
     }
 
     /* 7. EXPERIÊNCIA VISUAL: DOSSIÊ INVESTIGATIVO */
-    function renderDossieView(folder, title, subtitle) {
+    function renderDossieView(folder, title, subtitle, docsOverride = null) {
       const container = document.getElementById('pageContainer');
-      const docs = liveDocs.filter(d => d.folder === folder);
+      const docs = docsOverride || liveDocs.filter(d => d.folder === folder);
 
       container.innerHTML = `
         <div class="space-y-7 animate-fadeIn">
@@ -1299,9 +1321,9 @@
     }
 
     /* 10. EXPERIÊNCIA VISUAL: GDD & DOCUMENTAÇÃO TÉCNICA */
-    function renderGDDView(folder, title) {
+    function renderGDDView(folder, title, docsOverride = null) {
       const container = document.getElementById('pageContainer');
-      const docs = liveDocs.filter(d => d.folder === folder);
+      const docs = docsOverride || liveDocs.filter(d => d.folder === folder);
 
       container.innerHTML = `
         <div class="space-y-7 animate-fadeIn">
@@ -1344,7 +1366,9 @@
 
     function renderEstadoView() { renderGDDView('99-canon', 'Estado da Produção'); }
     function renderTimelineView() { renderGDDView('99-canon', 'Linha do Tempo'); }
-    function renderGaleriaView() { renderDossieView('03-npcs', 'Galeria de Assets', 'Referências visuais e de arte conceitual'); }
+    function renderGaleriaView() {
+      renderDossieView('assets', 'Galeria de Assets', 'Referências visuais e de arte conceitual', liveDocs.filter(doc => doc.imagem));
+    }
     function renderChangelogView() { renderGDDView('99-canon', 'Histórico de Versões'); }
     function renderSaudeView() {
       const container = document.getElementById('pageContainer');
@@ -1659,8 +1683,9 @@ ${markdown}
         else if (matchedCat.renderer === 'livro') renderLivroView();
         else if (matchedCat.renderer === 'diario') renderDiarioView();
         else if (matchedCat.renderer === 'galeria') renderGaleriaView();
-        else if (matchedCat.renderer === 'gdd') renderGDDView(matchedCat.folder, matchedCat.nome);
-        else renderDossieView(matchedCat.folder, matchedCat.nome, matchedCat.descricao);
+        else if (matchedCat.renderer === 'saude') renderSaudeView();
+        else if (matchedCat.renderer === 'gdd') renderGDDView(matchedCat.folder, matchedCat.nome, getCategoryDocs(matchedCat));
+        else renderDossieView(matchedCat.folder, matchedCat.nome, matchedCat.descricao, getCategoryDocs(matchedCat));
       } else {
         if (route === 'estado') renderEstadoView();
         else if (route === 'timeline') renderTimelineView();
