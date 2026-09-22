@@ -36,6 +36,17 @@
       "descricao": "Habitantes, diálogos e fichas biográficas da vila e além."
     },
     {
+      "id": "bestiario",
+      "nome": "Bestiário",
+      "pasta": "gdd/04-bestiario",
+      "folder": "04-bestiario",
+      "icone": "🐺",
+      "renderer": "dossie",
+      "slug": "bestiario",
+      "grupo": "UNIVERSO",
+      "descricao": "Criaturas, autômatos, guardiões e inimigos catalogados de Arkan."
+    },
+    {
       "id": "livro",
       "nome": "O Livro de Arkan",
       "pasta": "gdd/01-lore",
