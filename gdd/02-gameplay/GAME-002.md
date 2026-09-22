@@ -42,7 +42,7 @@ Os lacaios do primeiro piso usam o avatar R15 padrão do golem comum e o Guardi�
 - O Guardião do Piso 1 empunha uma clava fixada na mão direita. Seu ataque atual usa uma única animação de clava, sincronizada com a janela de dano do combate.
 
 ## 7. Guarda da Entrada da Masmorra
-Armand é o guarda estático posicionado ao lado da entrada do Mausoléu, sem bloquear o acesso ao portal. Ele permanece em espera com a animação R15 padrão do Roblox e segura uma lança na mão direita. Não patrulha nem participa de combate.
+Armand e Leofric são os guardas estáticos posicionados nas laterais da entrada do Mausoléu, sem bloquear o acesso ao portal. Ambos permanecem em espera com a animação R15 padrão do Roblox; Armand segura uma lança na mão direita e Leofric na mão esquerda. Não patrulham nem participam de combate.
 
 - Interação: `E` para conversar.
 - Avisos: a masmorra exige preparo, os autômatos patrulham o primeiro piso e o Guardião protege a passagem adiante.
