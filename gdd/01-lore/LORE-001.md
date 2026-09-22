@@ -7,7 +7,7 @@ relacionados:
   - "LORE-005"
   - "LORE-006"
   - "LOCAL-007"
-  - "CANON-003"
+  - "BP-2026-003"
   - "NPC-000"
   - "DOS-003"
 atualizado_por: "agente_bibliotecario"
