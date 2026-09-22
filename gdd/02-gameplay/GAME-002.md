@@ -35,12 +35,12 @@ O combate corpo a corpo utiliza uma sequência encadeada de 5 animações fluida
 
 
 ## 6. Autômatos da Masmorra
-Os lacaios do primeiro piso usam o avatar R15 padrão do golem comum e o Guardião do Piso 1 usa o avatar R15 próprio do chefe. Ambos usam somente as animações R15 padrão do Roblox para espera, caminhada e corrida; não há marcha procedural nem juntas artificiais de locomoção.
+Os lacaios do primeiro piso usam o avatar R15 padrão do golem comum e o Guardião do Piso 1 usa o avatar R15 próprio do chefe. Ambos usam somente as animações R15 padrão do Roblox para espera, caminhada e corrida; não há marcha procedural. Os lacaios usam juntas Motor6D R15 nativas para permanecerem firmes após o despertar, sem travar a animação.
 
 - Os lacaios usam perseguição direta ou pathfinding, ataque por proximidade e velocidade normal de 13 studs/s.
 - O lacaio alterna entre um soco fraco e um golpe concentrado. As duas animações funcionam sem arma nesta fase e poderão ser reutilizadas quando o armamento do autômato for criado.
 - O Guardião é selecionado pelo gerador pelo prefab `Golem_Pedra`, antes do modelo antigo `Chefe`, e mantém IA própria, 450 pontos de vida, alcance e dano distintos.
-- O Guardião do Piso 1 empunha uma clava fixada na mão direita. Seu ataque atual usa uma única animação de clava, sincronizada com a janela de dano do combate.
+- O Guardião do Piso 1 empunha uma clava fixada na mão direita. Seu ataque atual usa uma única animação de clava, sincronizada com a janela de dano do combate e orientada para o alvo antes do golpe.
 
 ## 7. Guarda da Entrada da Masmorra
 Armand e Leofric são os guardas estáticos posicionados nas laterais da entrada do Mausoléu, sem bloquear o acesso ao portal. Ambos permanecem em espera com a animação R15 padrão do Roblox; Armand segura uma lança na mão direita e Leofric na mão esquerda. Não patrulham nem participam de combate.
