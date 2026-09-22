@@ -5,7 +5,7 @@ status: "CANONICO"
 relacionados:
   - "GAME-002"
   - "GAME-004"
-  - "CANON-005"
+  - "BP-2026-005"
 atualizado_por: "codex"
 data_atualizacao: "2026-09-20"
 ---
