@@ -191,6 +191,25 @@
       background: linear-gradient(90deg, #cba338, transparent);
     }
 
+    /* Moldura documental única: artes do GDD seguem o padrão horizontal 16:9. */
+    .document-image-frame {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      overflow: hidden;
+      background: #0c0914;
+    }
+    .document-image {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      transition: transform 500ms ease;
+    }
+    .dossier-card:hover .document-image { transform: scale(1.02); }
+    .document-image-frame--inspector { max-height: min(64vh, 36rem); }
+
     /* Tipografia de Manuscrito Markdown */
     .prose-codex { word-break: break-word; overflow-wrap: break-word; }
     .prose-codex h1 { font-family: 'Cinzel', serif; color: #f3cf65; font-size: 1.35rem; margin: 1.2rem 0 0.5rem 0; border-bottom: 1px solid rgba(203, 163, 56, 0.22); padding-bottom: 0.35rem; font-weight: 700; }
@@ -354,8 +373,8 @@
       </div>
 
       <div class="flex-1 overflow-y-auto custom-scrollbar space-y-3 sm:space-y-4 p-0.5">
-        <div id="inspectorBanner" class="h-40 sm:h-64 rounded-xl overflow-hidden border border-arkan-borderGold/30 relative hidden bg-arkan-950">
-          <img id="inspectorImg" src="" alt="Arte" class="w-full h-full object-cover">
+        <div id="inspectorBanner" class="document-image-frame document-image-frame--inspector rounded-xl border border-arkan-borderGold/30 hidden">
+          <img id="inspectorImg" src="" alt="Arte" class="document-image">
         </div>
 
         <div class="grid grid-cols-2 sm:grid-cols-4 gap-2 font-mono text-[10px] sm:text-[11px]">
@@ -965,8 +984,8 @@
               ${npcs.slice(0, 3).map(npc => `
                 <div class="dossier-card rounded-xl overflow-hidden cursor-pointer group flex flex-col justify-between shadow-xl" onclick="openInspector('${npc.id}')">
                   <div>
-                    <div class="h-48 bg-arkan-900 relative overflow-hidden flex items-center justify-center border-b border-arkan-borderGold/25">
-                      <img src="${npc.imagem}" alt="${npc.nome}" onerror="handleCardImgError(this, '${npc.id}', '${npc.nome}')" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                    <div class="document-image-frame border-b border-arkan-borderGold/25">
+                      <img src="${npc.imagem}" alt="${npc.nome}" onerror="handleCardImgError(this, '${npc.id}', '${npc.nome}')" class="document-image">
                       <span class="absolute top-2.5 left-2.5 font-mono text-[9px] text-arkan-gold bg-arkan-950/90 px-2 py-0.5 rounded border border-arkan-borderGold/40 shadow">⟨ ${npc.id} ⟩</span>
                       <div class="absolute top-2.5 right-2.5">${getStatusBadge(npc.status)}</div>
                       <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-arkan-950 via-arkan-950/80 to-transparent p-3 pt-6">
@@ -1002,8 +1021,8 @@
               ${locais.slice(0, 3).map(loc => `
                 <div class="dossier-card rounded-xl overflow-hidden cursor-pointer group flex flex-col justify-between shadow-xl" onclick="openInspector('${loc.id}')">
                   <div>
-                    <div class="h-44 bg-arkan-900 relative overflow-hidden flex items-center justify-center border-b border-arkan-borderGold/25">
-                      <img src="${loc.imagem}" alt="${loc.nome}" onerror="handleCardImgError(this, '${loc.id}', '${loc.nome}')" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                    <div class="document-image-frame border-b border-arkan-borderGold/25">
+                      <img src="${loc.imagem}" alt="${loc.nome}" onerror="handleCardImgError(this, '${loc.id}', '${loc.nome}')" class="document-image">
                       <span class="absolute top-2.5 left-2.5 font-mono text-[9px] text-arkan-gold bg-arkan-950/90 px-2 py-0.5 rounded border border-arkan-borderGold/40 shadow">⟨ ${loc.id} ⟩</span>
                       <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-arkan-950 via-arkan-950/80 to-transparent p-3 pt-6">
                         <h4 class="font-cinzel font-bold text-sm text-white drop-shadow">${loc.nome}</h4>
@@ -1116,11 +1135,13 @@
             ${docs.map(doc => `
               <div class="dossier-card rounded-xl overflow-hidden flex flex-col justify-between cursor-pointer group shadow-xl" onclick="openInspector('${doc.id}')">
                 <div>
-                  <div class="h-48 bg-arkan-900 relative overflow-hidden flex items-center justify-center border-b border-arkan-borderGold/25">
+                  <div class="document-image-frame border-b border-arkan-borderGold/25">
                     ${doc.imagem ? `
-                      <img src="${doc.imagem}" alt="${doc.nome}" onerror="handleCardImgError(this, '${doc.id}', '${doc.nome}')" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                      <img src="${doc.imagem}" alt="${doc.nome}" onerror="handleCardImgError(this, '${doc.id}', '${doc.nome}')" class="document-image">
                     ` : `
-                      <div class="w-16 h-16 rounded-full border border-arkan-borderGold/30 flex items-center justify-center text-3xl opacity-60">📁</div>
+                      <div class="absolute inset-0 flex items-center justify-center">
+                        <div class="w-16 h-16 rounded-full border border-arkan-borderGold/30 flex items-center justify-center text-3xl opacity-60">📁</div>
+                      </div>
                     `}
                     <span class="absolute top-2.5 left-2.5 font-mono text-[9px] text-arkan-gold bg-arkan-950/90 px-2 py-0.5 rounded border border-arkan-borderGold/30 shadow">⟨ ${doc.id} ⟩</span>
                     <div class="absolute top-2.5 right-2.5">${getStatusBadge(doc.status)}</div>
