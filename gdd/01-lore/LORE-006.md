@@ -9,7 +9,7 @@ relacionados:
   - "NPC-000"
   - "LOCAL-007"
   - "DOS-003"
-  - "CANON-003"
+  - "BP-2026-003"
 atualizado_por: "agente_bibliotecario"
 data_atualizacao: "2026-09-08"
 ---
