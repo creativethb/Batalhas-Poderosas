@@ -7,7 +7,7 @@ relacionados:
   - "LORE-002"
   - "LORE-003"
   - "GAME-005"
-  - "CANON-001"
+  - "BP-2026-001"
 atualizado_por: "agente_bibliotecario"
 data_atualizacao: "2026-09-08"
 ---
