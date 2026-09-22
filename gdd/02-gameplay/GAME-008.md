@@ -31,6 +31,7 @@ relacionados:
   - "NPC-011"
   - "NPC-012"
   - "NPC-013"
+  - "NPC-014"
 atualizado_por: "ChatGPT"
 data_atualizacao: "2026-09-22"
 ---
@@ -96,27 +97,27 @@ Este documento não fixa preços, moeda, drops de masmorra ou missões ainda nã
 ## 5. Checklist mestre por etapa
 
 ### ETAPA 1 — Auditoria documental
-- [x] Cruzar NPCs atuais com LOCAL-001 a LOCAL-009.
-- [x] Cruzar Fazenda com GAME-006.
-- [x] Identificar primeiros NPCs/estabelecimentos sem casamento documental completo.
-- [x] Revisar todos os itens e equipamentos atuais.
-- [x] Revisar documentos de masmorra com impacto econômico.
-- [x] Revisar gameplay existente com impacto em missões, recompensas e progressão.
-- [x] Consolidar lista documental de construções, profissões, recursos e serviços.
 
-**Saída da etapa:** inventário documental de Arkham. **✅ CONCLUÍDA EM 22/09/2026.**
+> 🔎 **Estado atual: REABERTA EM 22/09/2026.** A lista anterior foi um levantamento inicial. Alterações posteriores — incluindo o dossiê de John (`NPC-014`) e esta revisão de referências, economia e masmorra — exigem manutenção contínua. Esta etapa não confirma a existência física nem a implementação de runtime.
+
+- [x] Registrar o levantamento documental inicial de NPCs, locais, itens e Fazenda.
+- [x] Identificar as primeiras lacunas de catálogo e referências.
+- [~] Revalidar referências e estados após cada alteração documental relevante.
+- [ ] Confrontar afirmações de implementação com o Roblox Studio, sem alterar o Workspace durante a auditoria documental.
+
+**Saída da etapa:** inventário documental rastreável, com incertezas explícitas e itens separados para validação no Studio.
 
 ### Resultado consolidado da auditoria documental
 
 **Recursos/produtos já documentados:** Madeira Comum, Madeira Sagrada, Espada de Madeira Sagrada, trigo, milho, vegetais, cultivos variados, frutas/pomar, produtos da horta, farinha, grãos, rações, feno, ovos, lã, leite, pescados, minérios e materiais subterrâneos, além de tesouros/recompensas de masmorra já citados em DNG-001/002.
 
-**Serviços/funções já documentados:** forja e aprimoramento com Cedric; comércio/provisões e avaliação de relíquias com Tobias; panificação com Beatrice; pesca com Lucan; agricultura e logística rural com Hugo/Nalia/Geraldo; madeira/serraria com Garrick; mineração com Borin; patrulha/segurança com Rowan/Aldous; guarda do portal com Seraphin; cadeia rural completa da Fazenda.
+**Serviços/funções documentados:** forja e aprimoramento com Cedric; comércio/provisões e avaliação de relíquias atribuídos a Tobias; panificação com Beatrice; pesca com Lucan; agricultura e logística rural com Hugo/Nalia/Geraldo; madeira/serraria com Garrick; mineração com Borin; patrulha/segurança com Rowan/Aldous; guarda do portal com Seraphin. A existência física e o nível de integração desses serviços devem ser validados no Studio.
 
 **Gameplay já conectado:** coleta inicial, forja, combate, diálogo, Diário, navegação, colheita/carregamento planejados, masmorra procedural, baús, minérios, Chave do Guardião e retorno à vila.
 
 ### Inconsistências e pontos que a Etapa 2 deve confirmar
 
-- 🔎 `GAME-006` chama o Armazém Central de `LOCAL-003`, mas `LOCAL-003` é a Praça Central. Tobias possui Armazém da Vila em sua ficha, sem LOCAL próprio.
+- ✅ A referência de `GAME-006` que tratava `LOCAL-003` como Armazém Central foi corrigida nesta auditoria. Tobias permanece associado ao Armazém da Vila, ainda sem `LOCAL` próprio confirmado.
 - 🔎 Garrick possui Serraria & Floresta Nordeste em sua ficha, sem LOCAL próprio.
 - 🔎 `LOCAL-007` menciona Mineiro Kellan, mas não existe ficha NPC correspondente no catálogo atual.
 - 🔎 `GAME-002` registra Armand e Leofric na entrada da masmorra, porém eles não possuem fichas NPC no catálogo atual.
