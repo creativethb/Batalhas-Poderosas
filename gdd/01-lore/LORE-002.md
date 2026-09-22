@@ -3,6 +3,7 @@ id: "LORE-002"
 nome: "A Jornada e Evolução de John"
 status: "CANONICO"
 relacionados:
+  - "NPC-014"
   - "LORE-001"
   - "LORE-003"
   - "LORE-004"
