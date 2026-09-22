@@ -47,7 +47,7 @@ Armand é o guarda estático posicionado ao lado da entrada do Mausoléu, sem bl
 - Avisos: a masmorra exige preparo, os autômatos patrulham o primeiro piso e o Guardião protege a passagem adiante.
 
 ## 8. Mestre Cedric da Oficina
-O Mestre Cedric usa um avatar R15 estático, posicionado de frente para o balcão da oficina. Ele não patrulha e usa a animação padrão R15 de espera. Ao iniciar uma conversa, volta-se brevemente para o jogador e depois retorna à posição de trabalho.
+O Mestre Cedric usa um avatar R15 estático, escalado para manter a altura do avatar anterior e posicionado de frente para o balcão da oficina. Ele não patrulha e usa somente a animação padrão R15 de espera. Ao iniciar uma conversa, volta-se brevemente para o jogador e depois retorna à posição de trabalho.
 
 - A interação de forja existente e o identificador de diálogo do Cedric são preservados.
 - O nome não é exibido sobre a cabeça do personagem.
