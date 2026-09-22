@@ -6,7 +6,7 @@ relacionados:
   - "LOCAL-001"
   - "LORE-002"
   - "ITEM-001"
-  - "CANON-001"
+  - "BP-2026-001"
 atualizado_por: "agente"
 ---
 
