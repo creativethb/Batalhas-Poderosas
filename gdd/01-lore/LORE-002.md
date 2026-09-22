@@ -12,7 +12,7 @@ relacionados:
   - "ITEM-001"
   - "ITEM-002"
   - "ITEM-003"
-  - "CANON-001"
+  - "BP-2026-001"
   - "GAME-001"
 atualizado_por: "agente_bibliotecario"
 data_atualizacao: "2026-09-08"
