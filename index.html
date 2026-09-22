@@ -710,7 +710,7 @@
       if (!imagePath) return '';
       if (imagePath.startsWith('http://') || imagePath.startsWith('https://')) return imagePath;
       const cleanPath = imagePath.replace(/^\.\//, '');
-      return `https://raw.githubusercontent.com/${REPO_OWNER}/${REPO_NAME}/${REPO_BRANCH}/${cleanPath}`;
+      return new URL(cleanPath, document.baseURI).href;
     }
 
     function handleCardImgError(img, id, nome) {
