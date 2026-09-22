@@ -15,6 +15,7 @@ relacionados:
   - "GAME-001"
 atualizado_por: "agente_bibliotecario"
 data_atualizacao: "2026-09-08"
+imagem: "./assets/characters/john-cover.png"
 ---
 
 # A Saga de John
