@@ -24,6 +24,6 @@ atualizado_por: "agente"
 
 ## 2. Atributos & Mecânicas
 - **Dano por Golpe:** `22` pontos de dano físico/sagrado por impacto.
-- **Cadência de Ataque:** Combo encadeado de 5 golpes fluidos.
+- **Cadência de Ataque:** Referência documental de combo encadeado de 5 golpes; a contagem e a cadência atuais dependem de validação posterior no Roblox Studio (`GAME-002`).
 - **Efeitos Visuais:** Lâmina entalhada em madeira nobre com iluminação mística esmeralda (`PointLight` verde suave).
 - **Persistência:** Restaurada automaticamente no inventário e mãos de John caso renasça.
