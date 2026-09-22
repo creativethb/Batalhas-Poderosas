@@ -553,7 +553,7 @@
 
           <div>
             <label class="block font-cinzel font-semibold text-arkan-parchment mb-1">Caminho da Imagem (Asset)</label>
-            <input type="text" id="editImage" placeholder="./assets/npcs/NPC-001.jpg" class="w-full px-3 py-2 bg-arkan-850 border border-arkan-borderGold/40 rounded-lg text-arkan-parchment font-mono text-sm sm:text-xs focus:outline-none">
+            <input type="text" id="editImage" placeholder="./assets/categoria/ID-DO-DOCUMENTO.png" class="w-full px-3 py-2 bg-arkan-850 border border-arkan-borderGold/40 rounded-lg text-arkan-parchment font-mono text-sm sm:text-xs focus:outline-none">
           </div>
 
           <div>
@@ -585,143 +585,19 @@
     const REPO_BRANCH = 'main';
     const MANIFEST_PATH = 'gdd/manifest.json';
 
-    /* CATÁLOGO BASE DE SEGURANÇA (FALLBACK AUTOMÁTICO) */
-    const baseFallbackManifest = {
-      categorias: [
-        { id: "historia", nome: "Introdução Narrativa", pasta: "gdd/01-lore", folder: "01-lore", icone: "📜", renderer: "historia", slug: "historia", grupo: "UNIVERSO" },
-        { id: "locais", nome: "Locais & Geografia", pasta: "gdd/05-locais", folder: "05-locais", icone: "🏰", renderer: "dossie", slug: "locais", grupo: "UNIVERSO" },
-        { id: "npcs", nome: "NPCs & Heróis", pasta: "gdd/03-npcs", folder: "03-npcs", icone: "👥", renderer: "dossie", slug: "npcs", grupo: "UNIVERSO" },
-        { id: "bestiario", nome: "Bestiário", pasta: "gdd/04-bestiario", folder: "04-bestiario", icone: "🐺", renderer: "dossie", slug: "bestiario", grupo: "UNIVERSO" },
-        { id: "livro", nome: "O Livro de Arkan", pasta: "gdd/01-lore", folder: "01-lore", icone: "📖", renderer: "livro", slug: "livro", grupo: "NARRATIVA" },
-        { id: "diario", nome: "Diário de John", pasta: "gdd/01-lore", folder: "01-lore", icone: "📓", renderer: "diario", slug: "diario", grupo: "NARRATIVA" },
-        { id: "gameplay", nome: "Loop de Jogo & Duelos", pasta: "gdd/02-gameplay", folder: "02-gameplay", icone: "🎮", renderer: "gdd", slug: "gameplay", grupo: "GAMEPLAY & SISTEMAS" },
-        { id: "sistemas", nome: "Sistemas & Arquitetura", pasta: "gdd/02-gameplay", folder: "02-gameplay", icone: "🧩", renderer: "gdd", slug: "sistemas", grupo: "GAMEPLAY & SISTEMAS" },
-        { id: "itens", nome: "Itens & Equipamentos", pasta: "gdd/04-itens", folder: "04-itens", icone: "🗡️", renderer: "dossie", slug: "itens", grupo: "GAMEPLAY & SISTEMAS" },
-        { id: "missoes", nome: "Missões & Quests", pasta: "gdd/02-gameplay", folder: "02-gameplay", icone: "🧭", renderer: "gdd", slug: "missoes", grupo: "GAMEPLAY & SISTEMAS" },
-        { id: "integracao", nome: "Integração do Mundo", pasta: "gdd/02-gameplay", folder: "02-gameplay", icone: "🔗", renderer: "gdd", slug: "integracao", grupo: "GAMEPLAY & SISTEMAS" },
-        { id: "masmorras", nome: "Masmorras & Dungeons", pasta: "gdd/07-masmorras", folder: "07-masmorras", icone: "💀", renderer: "gdd", slug: "masmorras", grupo: "GAMEPLAY & SISTEMAS" },
-        { id: "dossie", nome: "Dossiê Geral", pasta: "gdd/06-dossie", folder: "06-dossie", icone: "📁", renderer: "dossie", slug: "dossie", grupo: "ARQUIVO & INVESTIGAÇÃO" },
-        { id: "canon", nome: "Decisões Canônicas", pasta: "gdd/99-canon", folder: "99-canon", icone: "👑", renderer: "dossie", slug: "canon", grupo: "CÂNONE & ARQUIVO" },
-        { id: "referencias", nome: "Galeria de Assets", pasta: "gdd/03-npcs", folder: "03-npcs", icone: "🖼️", renderer: "galeria", slug: "referencias", grupo: "CÂNONE & ARQUIVO" },
-        { id: "changelog", nome: "Histórico de Versões", pasta: "gdd/99-canon", folder: "99-canon", icone: "📑", renderer: "gdd", slug: "changelog", grupo: "CÂNONE & ARQUIVO" },
-        { id: "saude", nome: "Auditoria Documental", pasta: "gdd/99-canon", folder: "99-canon", icone: "🩺", renderer: "saude", slug: "saude", grupo: "CÂNONE & ARQUIVO" }
-      ]
-    };
-
-    /* CATÁLOGO CANÔNICO FÍSICO (PRESERVADO INTEGRALMENTE) */
-    const canonicalFilesMap = [
-      // 14 NPCs
-      { id: "NPC-000", path: "gdd/03-npcs/NPC-000.md", folder: "03-npcs", nome: "O Rei Mago (Alric)", funcao: "Antagonista Trágico", localizacao: "Domínio do Rei Mago", imagem: "./assets/characters/alric-wizard-king-cover.png", status: "CANONICO" },
-      { id: "NPC-001", path: "gdd/03-npcs/NPC-001.md", folder: "03-npcs", nome: "Mestre Cedric", funcao: "Ferreiro Real da Vila", localizacao: "Oficina da Vila", imagem: "./assets/npcs/NPC-001.jpg", status: "CANONICO" },
-      { id: "NPC-002", path: "gdd/03-npcs/NPC-002.md", folder: "03-npcs", nome: "Ancião Eldrin", funcao: "Guardião da Árvore Sagrada", localizacao: "Santuário Oeste", imagem: "./assets/npcs/NPC-002.jpg", status: "CANONICO" },
-      { id: "NPC-003", path: "gdd/03-npcs/NPC-003.md", folder: "03-npcs", nome: "Guarda Rowan", funcao: "Sentinela dos Acessos Leste", localizacao: "Estrada da Mina Leste", imagem: "./assets/npcs/NPC-003.jpg", status: "CANONICO" },
-      { id: "NPC-004", path: "gdd/03-npcs/NPC-004.md", folder: "03-npcs", nome: "Guarda Aldous", funcao: "Sentinela da Praça Central", localizacao: "Praça Central", imagem: "./assets/npcs/NPC-004.jpg", status: "CANONICO" },
-      { id: "NPC-005", path: "gdd/03-npcs/NPC-005.md", folder: "03-npcs", nome: "Padeira Beatrice", funcao: "Mestra dos Pães", localizacao: "Padaria da Vila", imagem: "./assets/npcs/NPC-005.jpg", status: "CANONICO" },
-      { id: "NPC-006", path: "gdd/03-npcs/NPC-006.md", folder: "03-npcs", nome: "Pescador Lucan", funcao: "Pescador do Cais", localizacao: "Cais do Lago Nobre", imagem: "./assets/npcs/NPC-006.png", status: "CANONICO" },
-      { id: "NPC-007", path: "gdd/03-npcs/NPC-007.md", folder: "03-npcs", nome: "Mercador Tobias", funcao: "Comerciante de Provisões", localizacao: "Armazém da Vila", imagem: "./assets/npcs/NPC-007.png", status: "CANONICO" },
-      { id: "NPC-008", path: "gdd/03-npcs/NPC-008.md", folder: "03-npcs", nome: "Agricultor Hugo", funcao: "Agricultor da Colina", localizacao: "Campos da Colina Leste", imagem: "./assets/npcs/NPC-008.png", status: "CANONICO" },
-      { id: "NPC-009", path: "gdd/03-npcs/NPC-009.md", folder: "03-npcs", nome: "Guardião Seraphin", funcao: "Guardião Místico do Portal", localizacao: "Caverna do Portal", imagem: "./assets/npcs/NPC-009.png", status: "CANONICO" },
-      { id: "NPC-010", path: "gdd/03-npcs/NPC-010.md", folder: "03-npcs", nome: "Lenhador Garrick", funcao: "Lenhador da Serraria", localizacao: "Serraria & Floresta Nordeste", imagem: "./assets/npcs/NPC-010.png", status: "CANONICO" },
-      { id: "NPC-011", path: "gdd/03-npcs/NPC-011.md", folder: "03-npcs", nome: "Mineiro Borin", funcao: "Mineiro das Profundezas", localizacao: "Minas da Montanha", imagem: "./assets/npcs/NPC-011.png", status: "CANONICO" },
-      { id: "NPC-012", path: "gdd/03-npcs/NPC-012.md", folder: "03-npcs", nome: "Agricultora Nalia", funcao: "Agricultora das Fazendas Norte", localizacao: "Campos do Norte", imagem: "./assets/npcs/NPC-012.png", status: "CANONICO" },
-      { id: "NPC-013", path: "gdd/03-npcs/NPC-013.md", folder: "03-npcs", nome: "Fazendeiro Geraldo", funcao: "Administrador da Fazenda de Arkan", localizacao: "Casa do Fazendeiro", status: "CANONICO" },
-
-      // 2 entradas do Bestiário
-      { id: "BEST-001", path: "gdd/04-bestiario/BEST-001.md", folder: "04-bestiario", nome: "Autômato de Pedra — Lacaio", funcao: "Inimigo Comum da Masmorra", status: "EM_DESENVOLVIMENTO" },
-      { id: "BEST-002", path: "gdd/04-bestiario/BEST-002.md", folder: "04-bestiario", nome: "Autômato de Pedra — Guardião do Piso 1", funcao: "Chefe do Primeiro Piso", status: "EM_DESENVOLVIMENTO" },
-
-      // 9 Locais
-      { id: "LOCAL-001", path: "gdd/05-locais/LOCAL-001.md", folder: "05-locais", nome: "Casa de John", funcao: "Spawn Canônico", localizacao: "Colina Leste", imagem: "./assets/locais/LOCAL-001.png", status: "CANONICO" },
-      { id: "LOCAL-002", path: "gdd/05-locais/LOCAL-002.md", folder: "05-locais", nome: "Oficina do Cedric", funcao: "Forja Real", localizacao: "Setor Sul da Vila", imagem: "./assets/locais/LOCAL-002.png", status: "CANONICO" },
-      { id: "LOCAL-003", path: "gdd/05-locais/LOCAL-003.md", folder: "05-locais", nome: "Praça Central de Arkham", funcao: "Centro Comunitário", localizacao: "Coração da Vila", imagem: "./assets/locais/LOCAL-003.png", status: "CANONICO" },
-      { id: "LOCAL-004", path: "gdd/05-locais/LOCAL-004.md", folder: "05-locais", nome: "Árvore Sagrada", funcao: "Santuário Místico", localizacao: "Bosque Oeste", imagem: "./assets/locais/LOCAL-004.png", status: "CANONICO" },
-      { id: "LOCAL-005", path: "gdd/05-locais/LOCAL-005.md", folder: "05-locais", nome: "Padaria da Vila", funcao: "Produção de Alimentos", localizacao: "Próxima à Praça", imagem: "./assets/locais/LOCAL-005.png", status: "CANONICO" },
-      { id: "LOCAL-006", path: "gdd/05-locais/LOCAL-006.md", folder: "05-locais", nome: "Cais do Lago Nobre", funcao: "Área Aquática", localizacao: "Setor Nordeste", imagem: "./assets/locais/LOCAL-006.png", status: "CANONICO" },
-      { id: "LOCAL-007", path: "gdd/05-locais/LOCAL-007.md", folder: "05-locais", nome: "Minas da Montanha Leste", funcao: "Mineração & Lore", localizacao: "Encostas Leste", imagem: "./assets/locais/LOCAL-007.png", status: "CANONICO" },
-      { id: "LOCAL-008", path: "gdd/05-locais/LOCAL-008.md", folder: "05-locais", nome: "Portal do Mundo Livre", funcao: "Portal Interdimensional", localizacao: "Caverna Mística", imagem: "./assets/locais/LOCAL-008.png", status: "CANONICO" },
-      { id: "LOCAL-009", path: "gdd/05-locais/LOCAL-009.md", folder: "05-locais", nome: "Fazenda de Arkan (26 Áreas)", funcao: "Polo Agropecuário", localizacao: "Distrito Rural Sul", status: "CANONICO" },
-
-      // 4 Itens
-      { id: "ITEM-001", path: "gdd/04-itens/ITEM-001.md", folder: "04-itens", nome: "Madeira Comum", funcao: "Material de Criação", localizacao: "Casa de John", imagem: "./assets/itens/ITEM-001.png", status: "CANONICO" },
-      { id: "ITEM-002", path: "gdd/04-itens/ITEM-002.md", folder: "04-itens", nome: "Madeira Sagrada", funcao: "Material Místico / Relíquia", localizacao: "Árvore Sagrada", imagem: "./assets/itens/ITEM-002.png", status: "CANONICO" },
-      { id: "ITEM-003", path: "gdd/04-itens/ITEM-003.md", folder: "04-itens", nome: "Espada de Madeira Sagrada", funcao: "Arma Branca Lendária", localizacao: "Forja Real", imagem: "./assets/itens/ITEM-003.png", status: "CANONICO" },
-      { id: "ITEM-004", path: "gdd/04-itens/ITEM-004.md", folder: "04-itens", nome: "Diário de John", funcao: "Item Narrativo & Gameplay", localizacao: "Casa de John", imagem: "./assets/itens/ITEM-004.png", status: "CANONICO" },
-
-      // 8 Decisões Canônicas
-      { id: "BP-2026-001", path: "gdd/99-canon/CANON-001.md", folder: "99-canon", nome: "Protagonista John e Início Inexperiente", funcao: "Narrativa Core", status: "CANONICO" },
-      { id: "BP-2026-002", path: "gdd/99-canon/CANON-002.md", folder: "99-canon", nome: "Início Canônico na Casa de John", funcao: "Gameplay", status: "CANONICO" },
-      { id: "BP-2026-003", path: "gdd/99-canon/CANON-003.md", folder: "99-canon", nome: "A Guerra contra o Rei Mago", funcao: "Lore & Origem", status: "CANONICO" },
-      { id: "BP-2026-004", path: "gdd/99-canon/CANON-004.md", folder: "99-canon", nome: "Desacoplamento do Sandbox por Portal", funcao: "Arquitetura", status: "CANONICO" },
-      { id: "BP-2026-005", path: "gdd/99-canon/CANON-005.md", folder: "99-canon", nome: "Padrão de UX Multiplataforma", funcao: "Interface", status: "CANONICO" },
-      { id: "BP-2026-006", path: "gdd/99-canon/CANON-006.md", folder: "99-canon", nome: "Diário de John — Elemento de Jogo", funcao: "Gameplay & UX", status: "CANONICO" },
-      { id: "BP-2026-007", path: "gdd/99-canon/CANON-007.md", folder: "99-canon", nome: "Separação Diário vs Livro", funcao: "Protocolo Narrativo", status: "CANONICO" },
-      { id: "BP-2026-008", path: "gdd/99-canon/CANON-008.md", folder: "99-canon", nome: "Masterplan da Fazenda 26/26 Concluído", funcao: "Economia Rural", status: "CANONICO" },
-
-      // Crônicas do Livro
-      { id: "LORE-001", path: "gdd/01-lore/LORE-001.md", folder: "01-lore", nome: "Origem do Conflito de Arkan e o Rei Mago", funcao: "História Antiga", status: "CANONICO" },
-      { id: "LORE-002", path: "gdd/01-lore/LORE-002.md", folder: "01-lore", nome: "A Jornada e Evolução de John", funcao: "Jornada Multiversal", imagem: "./assets/characters/john-cover.png", status: "CANONICO" },
-      { id: "LORE-003", path: "gdd/01-lore/LORE-003.md", folder: "01-lore", nome: "Diário de John — Registros da Jornada", funcao: "Crônica Pessoal", status: "CANONICO" },
-      { id: "LORE-004", path: "gdd/01-lore/LORE-004.md", folder: "01-lore", nome: "Paralelo Narrativo: John e o Rei Mago", funcao: "Análise Canônica", status: "CANONICO" },
-      { id: "LORE-005", path: "gdd/01-lore/LORE-005.md", folder: "01-lore", nome: "Prólogo: Antes das Batalhas", funcao: "Prólogo Literário", status: "CANONICO" },
-      { id: "LORE-006", path: "gdd/01-lore/LORE-006.md", folder: "01-lore", nome: "Perfil Literário de Alric", funcao: "Crônica Literária", status: "CANONICO" },
-
-      // Sistemas
-      { id: "GAME-001", path: "gdd/02-gameplay/GAME-001.md", folder: "02-gameplay", nome: "Loop Principal e Progressão", funcao: "Core Gameplay", status: "CANONICO" },
-      { id: "GAME-002", path: "gdd/02-gameplay/GAME-002.md", folder: "02-gameplay", nome: "Sistema de Combate e Combos", funcao: "Combate", status: "CANONICO" },
-      { id: "GAME-003", path: "gdd/02-gameplay/GAME-003.md", folder: "02-gameplay", nome: "Locomoção, Dash e Pulo", funcao: "Movimentação", status: "CANONICO" },
-      { id: "GAME-004", path: "gdd/02-gameplay/GAME-004.md", folder: "02-gameplay", nome: "Sistema de Diálogo e Câmera", funcao: "Interação & Cena", status: "CANONICO" },
-      { id: "GAME-005", path: "gdd/02-gameplay/GAME-005.md", folder: "02-gameplay", nome: "Sistema do Diário de John", funcao: "Inventário & Memória", status: "CANONICO" },
-      { id: "GAME-006", path: "gdd/02-gameplay/GAME-006.md", folder: "02-gameplay", nome: "Cadeia Produtiva e Economia Rural", funcao: "Economia & Produção", status: "CANONICO" },
-      { id: "GAME-007", path: "gdd/02-gameplay/GAME-007.md", folder: "02-gameplay", nome: "Navegação da Vila e Mapa do Diário", funcao: "Mapa & Bússola", status: "EM_DESENVOLVIMENTO" },
-      { id: "GAME-008", path: "gdd/02-gameplay/GAME-008.md", folder: "02-gameplay", nome: "Mapa de Integração do Mundo de Arkham", funcao: "Consolidação & Integração", status: "EM_DESENVOLVIMENTO" },
-
-      // Dossiês
-      { id: "DOS-001", path: "gdd/06-dossie/DOS-001.md", folder: "06-dossie", nome: "Mestre Cedric — Dossiê Completo", funcao: "Dossiê de NPC", status: "CANONICO" },
-      { id: "DOS-002", path: "gdd/06-dossie/DOS-002.md", folder: "06-dossie", nome: "Árvore Sagrada — Dossiê de Mistério", funcao: "Dossiê de Mistério", status: "DESCONHECIDO" },
-      { id: "DOS-003", path: "gdd/06-dossie/DOS-003.md", folder: "06-dossie", nome: "O Rei Mago (Alric) — Dossiê Investigativo", funcao: "Dossiê de Mistério", status: "CANONICO" },
-
-      // Masmorras & Dungeons
-      { id: "DNG-001", path: "gdd/07-masmorras/DNG-001.md", folder: "07-masmorras", nome: "Visão Geral e Propósito das Masmorras em Arkan", funcao: "Arquitetura Central & Lore", localizacao: "Subsolo de Arkan", imagem: "./assets/locais/LOCAL-007.png", status: "CANONICO" },
-      { id: "DNG-002", path: "gdd/07-masmorras/DNG-002.md", folder: "07-masmorras", nome: "Economia, Tesouros e Progressão de Equipamentos", funcao: "Sistemas Financeiros e Evolução", localizacao: "Oficina & Armazém", imagem: "./assets/itens/ITEM-003.png", status: "CANONICO" },
-      { id: "DNG-003", path: "gdd/07-masmorras/DNG-003.md", folder: "07-masmorras", nome: "Arquitetura de Memória e Engenharia de Runtime", funcao: "Gestão de Ciclo de Vida Luau", localizacao: "ServerScriptService.DungeonManager", imagem: "./assets/locais/LOCAL-008.png", status: "CANONICO" },
-      { id: "DNG-004", path: "gdd/07-masmorras/DNG-004.md", folder: "07-masmorras", nome: "Motor de Geração Procedural (PCG) e Gabarito Modular", funcao: "Algoritmo DFS & Encaixe Butt-Joint", localizacao: "ServerScriptService.DungeonGenerator", imagem: "./assets/locais/LOCAL-007.png", status: "CANONICO" },
-      { id: "DNG-005", path: "gdd/07-masmorras/DNG-005.md", folder: "07-masmorras", nome: "Sistema de Armadilhas Físicas e Calibração Não-Letal", funcao: "Balanceamento de Perigo", localizacao: "ServerScriptService.TrapManager", imagem: "./assets/itens/ITEM-003.png", status: "CANONICO" },
-      { id: "DNG-006", path: "gdd/07-masmorras/DNG-006.md", folder: "07-masmorras", nome: "Matriz de Andares, Guardiões e Puzzles Cooperativos", funcao: "Progressão, Guardiões & Saídas", localizacao: "ServerStorage", imagem: "./assets/locais/LOCAL-007.png", status: "CANONICO" },
-      { id: "DNG-007", path: "gdd/07-masmorras/DNG-007.md", folder: "07-masmorras", nome: "Arquitetura de Sockets de Assets (Greybox + FBX)", funcao: "Sistema de Encaixe Modular 3D", localizacao: "ServerStorage.Dungeon_Assets", imagem: "./assets/locais/LOCAL-007.png", status: "CANONICO" },
-      { id: "DNG-008", path: "gdd/07-masmorras/DNG-008.md", folder: "07-masmorras", nome: "Sistema de Invocação Luminosa de NPCs", funcao: "Spawning Tático & Ritual de Emersão", localizacao: "ServerStorage.Dungeon_NPCs", imagem: "./assets/locais/LOCAL-007.png", status: "CANONICO" }
-    ];
-
-    // Nomes canônicos dos itens coletáveis. Evita que metadados antigos ou cache documental
-    // façam um item aparecer com o nome de outro no catálogo do Códice.
-    const canonicalItemNames = {
-      "ITEM-001": "Madeira Comum",
-      "ITEM-002": "Madeira Sagrada",
-      "ITEM-003": "Espada de Madeira Sagrada",
-      "ITEM-004": "Diário de John"
-    };
-
     let liveDocs = [];
     let syncFailures = [];
     let projectManifest = { categorias: [] };
 
-    const categoryDocumentIds = {
-      historia: ["LORE-001", "LORE-002", "LORE-004", "LORE-005", "LORE-006"],
-      diario: ["LORE-003"],
-      gameplay: ["GAME-001", "GAME-002", "GAME-003"],
-      sistemas: ["GAME-004", "GAME-005", "GAME-006", "GAME-007"],
-      missoes: [],
-      integracao: ["GAME-008"],
-      changelog: []
-    };
-
     function getCategoryDocs(category) {
       if (!category) return [];
-      const ids = categoryDocumentIds[category.id];
-      if (Array.isArray(ids)) return liveDocs.filter(doc => ids.includes(doc.id));
+      if (Array.isArray(category.documentos)) {
+        return liveDocs.filter(doc => category.documentos.includes(doc.id));
+      }
       return liveDocs.filter(doc => doc.folder === category.folder);
     }
 
-    /* 1. CARREGAMENTO PROCEDURAL DO MANIFESTO */
+    /* 1. CARREGAMENTO DO MANIFESTO — ÚNICA FONTE DA ESTRUTURA */
     async function loadManifest() {
       const originLbl = document.getElementById('lblManifestOrigin');
       try {
@@ -729,39 +605,92 @@
         if (!res.ok) {
           res = await fetch(`https://raw.githubusercontent.com/${REPO_OWNER}/${REPO_NAME}/${REPO_BRANCH}/${MANIFEST_PATH}?v=${Date.now()}`);
         }
-        if (res.ok) {
-          projectManifest = await res.json();
-          if (originLbl) originLbl.textContent = "manifest.json (Git)";
-          return;
-        }
-      } catch (err) {}
-
-      projectManifest = JSON.parse(JSON.stringify(baseFallbackManifest));
-      if (originLbl) originLbl.textContent = "Catálogo Base (Fallback)";
+        if (!res.ok) throw new Error(`Manifesto indisponível: HTTP ${res.status}`);
+        projectManifest = await res.json();
+        if (!Array.isArray(projectManifest.categorias)) throw new Error('Manifesto sem categorias válidas.');
+        if (originLbl) originLbl.textContent = "manifest.json (Git)";
+        return true;
+      } catch (err) {
+        projectManifest = { categorias: [] };
+        syncFailures.push(MANIFEST_PATH);
+        if (originLbl) originLbl.textContent = "Manifesto indisponível";
+        return false;
+      }
     }
 
-    /* 2. PARSERS E RESOLUÇÕES */
+    /* 2. DESCOBERTA DOS ARQUIVOS E PARSERS */
+    async function discoverDocumentPaths() {
+      const apiUrl = `https://api.github.com/repos/${REPO_OWNER}/${REPO_NAME}/git/trees/${REPO_BRANCH}?recursive=1`;
+      const res = await fetch(apiUrl, { headers: { Accept: 'application/vnd.github+json' } });
+      if (!res.ok) throw new Error(`Catálogo indisponível: HTTP ${res.status}`);
+      const data = await res.json();
+      return (data.tree || [])
+        .filter(entry => entry.type === 'blob' && /^gdd\/.+\.md$/i.test(entry.path) && !/\/README\.md$/i.test(entry.path))
+        .map(entry => entry.path)
+        .sort((a, b) => a.localeCompare(b, 'pt-BR', { numeric: true }));
+    }
+
     function parseFrontmatter(text) {
-      const match = text.match(/^---\r?\n([\s\S]*?)\r?\n---\r?\n([\s\S]*)$/);
-      if (!match) return { meta: {}, markdown: text };
+      const match = text.match(/^---\r?\n([\s\S]*?)\r?\n---\r?\n?([\s\S]*)$/);
+      if (!match) return { meta: {}, markdown: text.trim() };
 
-      const yaml = match[1];
-      const markdown = match[2].trim();
       const meta = {};
+      let activeArray = null;
+      match[1].split(/\r?\n/).forEach(line => {
+        const item = line.match(/^\s*-\s*(.+?)\s*$/);
+        if (item && activeArray) {
+          meta[activeArray].push(unquoteYaml(item[1]));
+          return;
+        }
 
-      yaml.split('\n').forEach(line => {
-        const colon = line.indexOf(':');
-        if (colon !== -1) {
-          const key = line.slice(0, colon).trim();
-          let val = line.slice(colon + 1).trim();
-          if ((val.startsWith('"') && val.endsWith('"')) || (val.startsWith("'") && val.endsWith("'"))) {
-            val = val.slice(1, -1);
-          }
-          meta[key] = val;
+        const field = line.match(/^([A-Za-zÀ-ÿ0-9_-]+):\s*(.*?)\s*$/);
+        if (!field) return;
+        const [, key, rawValue] = field;
+        if (!rawValue) {
+          meta[key] = [];
+          activeArray = key;
+          return;
+        }
+
+        activeArray = null;
+        const value = rawValue.trim();
+        if (value.startsWith('[') && value.endsWith(']')) {
+          meta[key] = value.slice(1, -1).split(',').map(part => unquoteYaml(part.trim())).filter(Boolean);
+        } else {
+          meta[key] = unquoteYaml(value);
         }
       });
 
-      return { meta, markdown };
+      return { meta, markdown: match[2].trim() };
+    }
+
+    function unquoteYaml(value) {
+      if (typeof value !== 'string') return value;
+      const trimmed = value.trim();
+      if ((trimmed.startsWith('"') && trimmed.endsWith('"')) || (trimmed.startsWith("'") && trimmed.endsWith("'"))) {
+        return trimmed.slice(1, -1);
+      }
+      return trimmed;
+    }
+
+    function documentIdentity(path) {
+      const parts = path.split('/');
+      const fileName = parts.at(-1) || '';
+      return {
+        id: fileName.replace(/\.md$/i, ''),
+        folder: parts.length > 2 ? parts[1] : '',
+        path
+      };
+    }
+
+    function titleFromMarkdown(markdown, fallback) {
+      const heading = (markdown || '').match(/^#\s+(.+)$/m);
+      return heading ? heading[1].replace(/[*_`]/g, '').trim() : fallback;
+    }
+
+    function inferAssetPath(doc) {
+      const category = (projectManifest.categorias || []).find(item => item.folder === doc.folder && item.assets);
+      return category ? resolveAssetUrl(`./${category.assets}/${doc.id}.png`) : '';
     }
 
     function safeMarkdown(text) {
@@ -825,53 +754,66 @@
       spinner?.classList.add('animate-spin');
       statusTag.innerHTML = `<span class="w-2 h-2 rounded-full bg-amber-400 animate-pulse"></span><span>Consultando Códice...</span>`;
 
-      await loadManifest();
       syncFailures = [];
-      liveDocs = canonicalFilesMap.map(d => ({ ...d }));
+      liveDocs = [];
+      const manifestLoaded = await loadManifest();
 
-      // Para a pasta de itens, o ID é a fonte de identidade visual do registro.
-      // O nome vindo do frontmatter pode complementar o documento, mas não pode
-      // transformar ITEM-004 em Madeira Sagrada, por exemplo.
-      liveDocs.forEach(doc => {
-        if (doc.folder === '04-itens' && canonicalItemNames[doc.id]) {
-          doc.nome = canonicalItemNames[doc.id];
-        }
-      });
-
-      await Promise.all(liveDocs.map(async (doc) => {
+      if (manifestLoaded) {
         try {
-          let res = await fetch(`./${doc.path}?v=${Date.now()}`);
-          if (!res.ok) {
-            res = await fetch(`https://raw.githubusercontent.com/${REPO_OWNER}/${REPO_NAME}/${REPO_BRANCH}/${doc.path}?v=${Date.now()}`);
-          }
-          if (res.ok) {
-            const raw = await res.text();
-            const parsed = parseFrontmatter(raw);
-            doc.markdown = parsed.markdown;
-            if (parsed.meta.nome) doc.nome = parsed.meta.nome;
-            if (parsed.meta.funcao) doc.funcao = parsed.meta.funcao;
-            if (parsed.meta.status) doc.status = parsed.meta.status;
-            if (parsed.meta.imagem) doc.imagem = resolveAssetUrl(parsed.meta.imagem);
-            if (parsed.meta.relacionados) doc.relacionados = parsed.meta.relacionados.split(',').map(s => s.trim());
-          } else {
-            doc.syncError = true;
-            doc.markdown = '';
-            syncFailures.push(doc.id);
-          }
-        } catch(e) {
-          doc.syncError = true;
-          doc.markdown = '';
-          syncFailures.push(doc.id);
+          const paths = await discoverDocumentPaths();
+          liveDocs = await Promise.all(paths.map(async path => {
+            const identity = documentIdentity(path);
+            try {
+              let res = await fetch(`./${path}?v=${Date.now()}`);
+              if (!res.ok) {
+                res = await fetch(`https://raw.githubusercontent.com/${REPO_OWNER}/${REPO_NAME}/${REPO_BRANCH}/${path}?v=${Date.now()}`);
+              }
+              if (!res.ok) throw new Error(`HTTP ${res.status}`);
+
+              const parsed = parseFrontmatter(await res.text());
+              const id = parsed.meta.id || identity.id;
+              const doc = {
+                ...identity,
+                id,
+                nome: parsed.meta.nome || titleFromMarkdown(parsed.markdown, id),
+                funcao: parsed.meta.funcao || parsed.meta.categoria || '',
+                localizacao: parsed.meta.localizacao || '',
+                status: parsed.meta.status || 'EM_DESENVOLVIMENTO',
+                relacionados: Array.isArray(parsed.meta.relacionados)
+                  ? parsed.meta.relacionados
+                  : String(parsed.meta.relacionados || '').split(',').map(value => value.trim()).filter(Boolean),
+                markdown: parsed.markdown,
+                imagem: parsed.meta.imagem ? resolveAssetUrl(parsed.meta.imagem) : ''
+              };
+              if (!doc.imagem) doc.imagem = inferAssetPath(doc);
+              return doc;
+            } catch (error) {
+              syncFailures.push(identity.id);
+              return {
+                ...identity,
+                nome: identity.id,
+                funcao: '',
+                localizacao: '',
+                status: 'EM_DESENVOLVIMENTO',
+                relacionados: [],
+                markdown: '',
+                imagem: '',
+                syncError: true
+              };
+            }
+          }));
+        } catch (error) {
+          syncFailures.push('catálogo Git');
         }
-      }));
+      }
 
       spinner?.classList.remove('animate-spin');
       if (syncFailures.length) {
         statusTag.innerHTML = `<span class="w-2 h-2 rounded-full bg-rose-400"></span><span>Sincronizado com ${syncFailures.length} falha(s)</span>`;
-        statusTag.title = `Documentos não carregados: ${syncFailures.join(', ')}`;
+        statusTag.title = `Fontes não carregadas: ${syncFailures.join(', ')}`;
       } else {
         statusTag.innerHTML = `<span class="w-2 h-2 rounded-full bg-emerald-400"></span><span>Sincronizado</span>`;
-        statusTag.title = 'Todos os documentos catalogados foram carregados.';
+        statusTag.title = `${liveDocs.length} documentos descobertos e carregados das pastas do GDD.`;
       }
 
       updateFolderSelectOptions();
@@ -1083,17 +1025,18 @@
     }
 
     /* 6. EXPERIÊNCIA VISUAL: INTRODUÇÃO NARRATIVA */
-    let activeHistoriaDocId = "LORE-005";
+    let activeHistoriaDocId = null;
     function renderHistoriaView() {
       const container = document.getElementById('pageContainer');
-      const loreDocs = liveDocs.filter(d => d.folder === '01-lore');
-      
-      let activeDoc = loreDocs.find(d => d.id === activeHistoriaDocId) || loreDocs[0] || {
-        id: "LORE-005",
-        nome: "Introdução Narrativa",
-        markdown: null,
-        path: "gdd/01-lore/LORE-005.md"
+      const category = (projectManifest.categorias || []).find(item => item.renderer === 'historia');
+      const loreDocs = getCategoryDocs(category);
+      const activeDoc = loreDocs.find(d => d.id === activeHistoriaDocId) || loreDocs[0] || {
+        id: '',
+        nome: category?.nome || 'Introdução Narrativa',
+        markdown: '',
+        path: category?.pasta || 'gdd/'
       };
+      activeHistoriaDocId = activeDoc.id || null;
 
       container.innerHTML = `
         <div class="space-y-7 max-w-4xl mx-auto animate-fadeIn">
@@ -1287,7 +1230,8 @@
     /* 9. EXPERIÊNCIA VISUAL: DIÁRIO PESSOAL DE JOHN */
     function renderDiarioView() {
       const container = document.getElementById('pageContainer');
-      const entries = liveDocs.filter(d => d.id === 'ITEM-004' || d.id === 'LORE-003');
+      const category = (projectManifest.categorias || []).find(item => item.renderer === 'diario');
+      const entries = getCategoryDocs(category);
 
       container.innerHTML = `
         <div class="space-y-7 max-w-4xl mx-auto animate-fadeIn">
