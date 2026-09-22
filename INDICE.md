@@ -26,6 +26,15 @@
 
 ---
 
+## 🐺 Bestiário (`/gdd/04-bestiario/`)
+
+| ID | Nome | Categoria | Status | Arquivo | Resumo |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| **`BEST-001`** | Autômato de Pedra — Lacaio | Autômatos | `EM_DESENVOLVIMENTO` | `gdd/04-bestiario/BEST-001.md` | Inimigo comum do primeiro piso, com dois ataques e desmontagem ao ser derrotado. |
+| **`BEST-002`** | Autômato de Pedra — Guardião do Piso 1 | Autômatos | `EM_DESENVOLVIMENTO` | `gdd/04-bestiario/BEST-002.md` | Chefe do primeiro piso, equipado com clava e responsável pela chave de progressão. |
+
+---
+
 ## 🗡️ Itens & Equipamentos (`/gdd/04-itens/`)
 
 | ID | Nome | Tipo | Raridade | Status | Arquivo | Resumo |
