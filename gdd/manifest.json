@@ -102,6 +102,17 @@
       "descricao": "Encadeamento de objetivos, tarefas e recompensas."
     },
     {
+      "id": "integracao",
+      "nome": "Integração do Mundo",
+      "pasta": "gdd/02-gameplay",
+      "folder": "02-gameplay",
+      "icone": "🔗",
+      "renderer": "gdd",
+      "slug": "integracao",
+      "grupo": "GAMEPLAY & SISTEMAS",
+      "descricao": "Checklist mestre de consolidação: NPCs, estabelecimentos, profissões, economia, logística e gameplay conectado."
+    },
+    {
       "id": "masmorras",
       "nome": "Masmorras & Dungeons",
       "pasta": "gdd/07-masmorras",
