@@ -99,12 +99,35 @@ Este documento não fixa preços, moeda, drops de masmorra ou missões ainda nã
 - [x] Cruzar NPCs atuais com LOCAL-001 a LOCAL-009.
 - [x] Cruzar Fazenda com GAME-006.
 - [x] Identificar primeiros NPCs/estabelecimentos sem casamento documental completo.
-- [ ] Revisar todos os itens e equipamentos atuais.
-- [ ] Revisar documentos de masmorra com impacto econômico.
-- [ ] Revisar gameplay existente com impacto em missões, recompensas e progressão.
-- [ ] Consolidar lista documental de construções, profissões, recursos e serviços.
+- [x] Revisar todos os itens e equipamentos atuais.
+- [x] Revisar documentos de masmorra com impacto econômico.
+- [x] Revisar gameplay existente com impacto em missões, recompensas e progressão.
+- [x] Consolidar lista documental de construções, profissões, recursos e serviços.
 
-**Saída da etapa:** inventário documental de Arkham.
+**Saída da etapa:** inventário documental de Arkham. **✅ CONCLUÍDA EM 22/09/2026.**
+
+### Resultado consolidado da auditoria documental
+
+**Recursos/produtos já documentados:** Madeira Comum, Madeira Sagrada, Espada de Madeira Sagrada, trigo, milho, vegetais, cultivos variados, frutas/pomar, produtos da horta, farinha, grãos, rações, feno, ovos, lã, leite, pescados, minérios e materiais subterrâneos, além de tesouros/recompensas de masmorra já citados em DNG-001/002.
+
+**Serviços/funções já documentados:** forja e aprimoramento com Cedric; comércio/provisões e avaliação de relíquias com Tobias; panificação com Beatrice; pesca com Lucan; agricultura e logística rural com Hugo/Nalia/Geraldo; madeira/serraria com Garrick; mineração com Borin; patrulha/segurança com Rowan/Aldous; guarda do portal com Seraphin; cadeia rural completa da Fazenda.
+
+**Gameplay já conectado:** coleta inicial, forja, combate, diálogo, Diário, navegação, colheita/carregamento planejados, masmorra procedural, baús, minérios, Chave do Guardião e retorno à vila.
+
+### Inconsistências e pontos que a Etapa 2 deve confirmar
+
+- 🔎 `GAME-006` chama o Armazém Central de `LOCAL-003`, mas `LOCAL-003` é a Praça Central. Tobias possui Armazém da Vila em sua ficha, sem LOCAL próprio.
+- 🔎 Garrick possui Serraria & Floresta Nordeste em sua ficha, sem LOCAL próprio.
+- 🔎 `LOCAL-007` menciona Mineiro Kellan, mas não existe ficha NPC correspondente no catálogo atual.
+- 🔎 `GAME-002` registra Armand e Leofric na entrada da masmorra, porém eles não possuem fichas NPC no catálogo atual.
+- 🔎 `DNG-002` já documenta comércio subterrâneo com Tobias, Ouro Arcaico, poções/tônicos/kits, taxa de Guilda e materiais de forja. Isso precisa ser confrontado com o que realmente está implementado antes de ampliar ou balancear a economia.
+- 🔎 `DNG-001` afirma que a masmorra é a única fonte de recursos raros necessários ao fortalecimento do reino, enquanto o plano de integração exige múltiplas fontes de renda e atividade. Na próxima revisão de design, separar claramente **recursos raros de aventura** de **fontes gerais de renda**.
+- 🔎 `GAME-002` documenta combo atual de 5 golpes; qualquer divergência com o comportamento real do John deve ser verificada no Studio.
+- 🔎 Defesa aparece visualmente preparada em `GAME-003`, mas ainda não implementada.
+- 🔎 `DNG-006` registra validação pendente da coleta corrigida da Chave do Guardião.
+- 🟡 Pastor, alfaiataria e destinos finais de lã/pescado/madeira continuam lacunas documentais deliberadas, a serem decididas após a auditoria física.
+
+**Decisão operacional:** nenhuma dessas inconsistências será corrigida por suposição. Elas entram como alvos objetivos da auditoria do Workspace.
 
 ### ETAPA 2 — Auditoria física do Workspace
 - [ ] Inspecionar a Vila de Arkham sem modificar nada.
