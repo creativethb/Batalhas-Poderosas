@@ -29,7 +29,8 @@
       "renderer": "dossie",
       "slug": "locais",
       "grupo": "UNIVERSO",
-      "descricao": "Mapeamento territorial, distritos e construções de Arkham."
+      "descricao": "Mapeamento territorial, distritos e construções de Arkham.",
+      "assets": "assets/locais"
     },
     {
       "id": "npcs",
@@ -40,7 +41,8 @@
       "renderer": "dossie",
       "slug": "npcs",
       "grupo": "UNIVERSO",
-      "descricao": "Habitantes, diálogos e fichas biográficas da vila e além."
+      "descricao": "Habitantes, diálogos e fichas biográficas da vila e além.",
+      "assets": "assets/npcs"
     },
     {
       "id": "bestiario",
@@ -75,7 +77,8 @@
       "grupo": "NARRATIVA",
       "descricao": "Memórias e registros pessoais do soldado de Arkham.",
       "documentos": [
-        "LORE-003"
+        "LORE-003",
+        "ITEM-004"
       ]
     },
     {
@@ -120,7 +123,8 @@
       "renderer": "dossie",
       "slug": "itens",
       "grupo": "GAMEPLAY & SISTEMAS",
-      "descricao": "Armas, madeiras de criação e artefatos de inventário."
+      "descricao": "Armas, madeiras de criação e artefatos de inventário.",
+      "assets": "assets/itens"
     },
     {
       "id": "missoes",
