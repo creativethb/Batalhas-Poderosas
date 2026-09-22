@@ -5,9 +5,9 @@ status: "CANONICO"
 relacionados:
   - "LORE-001"
   - "LORE-002"
-  - "CANON-003"
+  - "BP-2026-003"
   - "NPC-000"
-  - "CANON-001"
+  - "BP-2026-001"
 atualizado_por: "agente_bibliotecario"
 data_atualizacao: "2026-09-08"
 ---
