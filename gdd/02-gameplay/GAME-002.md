@@ -5,14 +5,16 @@ status: "CANONICO"
 relacionados:
   - "ITEM-003"
   - "GAME-001"
-  - "CANON-005"
+  - "BP-2026-005"
 atualizado_por: "agente"
 ---
 
 # Sistema de Combate e Combos de Espada
 
-## 1. Arquitetura de Golpes (Combo de 5 Hits)
-O combate corpo a corpo utiliza uma sequência encadeada de 5 animações fluidas na prioridade `Action`:
+## 1. Referência Documental de Golpes (Combo de 5 Hits — validação pendente)
+> 🔎 **Auditoria documental (22/09/2026):** os cinco golpes abaixo são a especificação registrada neste arquivo. Não há documento independente que confirme que este seja o número atualmente implementado. A contagem, IDs, tempos e comportamento real devem ser validados no Roblox Studio antes de serem tratados como estado de runtime.
+
+A especificação registrada descreve uma sequência encadeada de 5 animações na prioridade `Action`:
 - **Hit 1:** `rbxassetid://132874711732733`
 - **Hit 2:** `rbxassetid://102975027054676`
 - **Hit 3:** `rbxassetid://129511831949775`
