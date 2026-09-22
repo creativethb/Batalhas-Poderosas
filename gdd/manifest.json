@@ -11,7 +11,14 @@
       "renderer": "historia",
       "slug": "historia",
       "grupo": "UNIVERSO",
-      "descricao": "Crônicas fundamentais e narrativa canônica inicial de Arkan."
+      "descricao": "Crônicas fundamentais e narrativa canônica inicial de Arkan.",
+      "documentos": [
+        "LORE-001",
+        "LORE-002",
+        "LORE-004",
+        "LORE-005",
+        "LORE-006"
+      ]
     },
     {
       "id": "locais",
@@ -66,7 +73,10 @@
       "renderer": "diario",
       "slug": "diario",
       "grupo": "NARRATIVA",
-      "descricao": "Memórias e registros pessoais do soldado de Arkham."
+      "descricao": "Memórias e registros pessoais do soldado de Arkham.",
+      "documentos": [
+        "LORE-003"
+      ]
     },
     {
       "id": "gameplay",
@@ -77,7 +87,12 @@
       "renderer": "gdd",
       "slug": "gameplay",
       "grupo": "GAMEPLAY & SISTEMAS",
-      "descricao": "Ciclo central de exploração, combate e progressão do jogador."
+      "descricao": "Ciclo central de exploração, combate e progressão do jogador.",
+      "documentos": [
+        "GAME-001",
+        "GAME-002",
+        "GAME-003"
+      ]
     },
     {
       "id": "sistemas",
@@ -88,7 +103,13 @@
       "renderer": "gdd",
       "slug": "sistemas",
       "grupo": "GAMEPLAY & SISTEMAS",
-      "descricao": "Especificações técnicas de scripts Luau, câmera e locomoção."
+      "descricao": "Especificações técnicas de scripts Luau, câmera e locomoção.",
+      "documentos": [
+        "GAME-004",
+        "GAME-005",
+        "GAME-006",
+        "GAME-007"
+      ]
     },
     {
       "id": "itens",
@@ -110,7 +131,8 @@
       "renderer": "gdd",
       "slug": "missoes",
       "grupo": "GAMEPLAY & SISTEMAS",
-      "descricao": "Encadeamento de objetivos, tarefas e recompensas."
+      "descricao": "Encadeamento de objetivos, tarefas e recompensas.",
+      "documentos": []
     },
     {
       "id": "integracao",
@@ -121,7 +143,10 @@
       "renderer": "gdd",
       "slug": "integracao",
       "grupo": "GAMEPLAY & SISTEMAS",
-      "descricao": "Checklist mestre de consolidação: NPCs, estabelecimentos, profissões, economia, logística e gameplay conectado."
+      "descricao": "Checklist mestre de consolidação: NPCs, estabelecimentos, profissões, economia, logística e gameplay conectado.",
+      "documentos": [
+        "GAME-008"
+      ]
     },
     {
       "id": "masmorras",
@@ -176,7 +201,8 @@
       "renderer": "gdd",
       "slug": "changelog",
       "grupo": "CÂNONE & ARQUIVO",
-      "descricao": "Registro cronológico de alterações e builds do GDD."
+      "descricao": "Registro cronológico de alterações e builds do GDD.",
+      "documentos": []
     },
     {
       "id": "saude",
