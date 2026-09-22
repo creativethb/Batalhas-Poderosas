@@ -5,7 +5,6 @@ status: "CANONICO"
 relacionados:
   - "LOCAL-009"
   - "BP-2026-008"
-  - "LOCAL-003"
   - "LOCAL-005"
   - "NPC-005"
   - "NPC-007"
@@ -19,7 +18,7 @@ data_atualizacao: "2026-09-11"
 
 # Cadeia Produtiva & Economia Rural da Fazenda de Arkan
 
-A Fazenda de Arkan opera como o coração econômico e agropecuário do reino, estruturada como uma cadeia produtiva dinâmica e integrada. **A construção da Fazenda nesta etapa está concluída (26/26 estruturas e áreas).** Este sistema descreve a lógica operacional e econômica aplicada sobre o conjunto construído.
+A Fazenda de Arkan opera como o coração econômico e agropecuário do reino, estruturada como uma cadeia produtiva dinâmica e integrada. **Registro histórico:** em 11/09/2026 este documento declarou 26/26 estruturas e áreas concluídas. A presença física e a integração funcional desse conjunto exigem validação posterior no Roblox Studio; este texto não constitui confirmação atual de runtime.
 
 ---
 
@@ -49,7 +48,7 @@ A produção vegetal segue uma esteira integrada de valor:
 [PROCESSAMENTO] (Moinho para farinhas, grãos e rações)
    │
    ▼
-[DISTRIBUIÇÃO] (Padaria LOCAL-005, Armazém Central LOCAL-003, Pátio Econômico)
+[DISTRIBUIÇÃO] (Padaria `LOCAL-005`, Armazém da Vila sem `LOCAL` próprio confirmado, Pátio Econômico)
    │
    ▼
 [ECONOMIA DE ARKAN]
@@ -84,7 +83,7 @@ A criação animal opera de forma cíclica e autossustentável:
 | Estrutura / Setor | NPC Responsável / Relacionado | Destino dos Produtos |
 | :--- | :--- | :--- |
 | **Campo de Trigo & Moinho** | Agricultores locais / Nalia (`NPC-012`) | Farinha para a Padaria da Beatrice (`NPC-005`, `LOCAL-005`) |
-| **Armazém & Pátio de Carga** | Trabalhadores rurais / Hugo (`NPC-008`) | Abastecimento do Armazém do Mercador Tobias (`NPC-007`, `LOCAL-003`) |
+| **Armazém & Pátio de Carga** | Trabalhadores rurais / Hugo (`NPC-008`) | Abastecimento do Armazém do Mercador Tobias (`NPC-007`; sem `LOCAL` próprio confirmado) |
 | **Estábulo & Ferramentas** | Tratadores de animais / Mestre Cedric (`NPC-001`) | Manutenção de ferraduras, eixos de carroça e implementos de corte |
 | **Cercado de Ovelhas** | Futuro Pastor de Arkan | Fornecimento de lã para mantos, estofados e vestimentas |
 | **Galinheiro & Curral** | Trabalhadores da Fazenda | Alimentos frescos e laticínios para a comunidade |
