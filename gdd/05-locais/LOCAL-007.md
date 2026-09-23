@@ -6,6 +6,7 @@ relacionados:
   - "NPC-000"
   - "NPC-003"
   - "NPC-011"
+  - "NPC-017"
   - "LORE-001"
   - "LORE-006"
   - "DOS-003"
@@ -21,4 +22,5 @@ atualizado_por: "agente"
 
 ## 2. Elementos
 - Entrada da mina escavada na rocha, trilhos de vagonetas e depósitos de minério.
-- Rota de trabalho dos mineiros Borin e Kellan.
+- Borin permanece assentado na entrada da Mina.
+- Kellan (`NPC-017`) foi validado na Entrada Leste da Vila, no ponto técnico `Guarda_PortaLeste`, ligado ao caminho da Mina; sua rota anterior `RotaMineiroB` permanece preservada, mas pausada.
