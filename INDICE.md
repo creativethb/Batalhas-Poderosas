@@ -131,6 +131,7 @@
 | **`GAME-006`** | Cadeia Produtiva e Economia Rural | Economia & Produção | `CANONICO` | `gdd/02-gameplay/GAME-006.md` |
 | **`GAME-007`** | Navegação da Vila e Mapa do Diário | Navegação & Interface | `EM_DESENVOLVIMENTO` | `gdd/02-gameplay/GAME-007.md` |
 | **`GAME-008`** | Mapa de Integração do Mundo de Arkham | Consolidação & Integração | `EM_DESENVOLVIMENTO` | `gdd/02-gameplay/GAME-008.md` |
+| **`GAME-009`** | Painel Linear de Consolidação — Itens, Interações e Cadeias | Consolidação Linear | `EM_DESENVOLVIMENTO` | `gdd/02-gameplay/GAME-009.md` |
 
 ---
 
