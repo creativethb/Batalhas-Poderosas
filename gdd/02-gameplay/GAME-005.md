@@ -11,7 +11,7 @@ relacionados:
   - "GAME-001"
   - "ITEM-004"
 atualizado_por: "agente_bibliotecario"
-data_atualizacao: "2026-09-20"
+data_atualizacao: "2026-09-22"
 ---
 
 # Sistema do Diário de John
@@ -117,3 +117,11 @@ Ver `gdd/01-lore/LORE-003-diario-de-john.md` para o conteúdo integral das entra
 A **vitória no primeiro andar** e a **primeira experiência completa de John na masmorra** já estão conectadas ao sistema de Diário.
 
 O gatilho de gameplay está implementado no fluxo de conclusão do Piso 01 (`DNG-006`). O texto literário definitivo da entrada deve permanecer centralizado em `LORE-003`; este documento registra apenas a integração funcional, evitando duplicar conteúdo narrativo.
+
+---
+
+## 9. Interface integrada em desenvolvimento
+
+A consulta do Diário usa a aba **Diário** do menu Alforge. Selecionar o Diário no inventário, usar o atalho J ou interagir com o item físico encaminha para essa mesma aba, com a lista de entradas, o texto integral, o estado de leitura e o acesso ao Mapa da Vila. A tela antiga do Diário permanece como componente legado, mas não é exibida nesse fluxo durante o jogo.
+
+O conteúdo e os desbloqueios continuam vindo do sistema narrativo existente; a interface não cria novas entradas. A integração foi conferida em Playtest no computador em 2026-09-22.
