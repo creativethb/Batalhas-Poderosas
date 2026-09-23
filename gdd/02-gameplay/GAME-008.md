@@ -70,11 +70,11 @@ Este documento não fixa preços, moeda, drops de masmorra ou missões ainda nã
 | Mestre Cedric | Ferreiro | Oficina do Cedric (LOCAL-002) | ✅ | Assentado e validado no posto; ampliar serviços somente em etapa própria |
 | Ancião Eldrin | Guardião da Floresta | Árvore Sagrada (LOCAL-004) | ✅ | Assentado e validado no Santuário; rotina profissional futura |
 | Guarda Rowan | Sentinela | Posto dos Acessos Leste | ✅ | Assentado; rota anterior preservada e pausada de forma reversível |
-| Guarda Aldous | Sentinela | Praça Central (LOCAL-003) | ✅ | Validar rota territorial |
+| Guarda Aldous | Sentinela | Praça Central (LOCAL-003) | ✅ | Restaurado como `Base_Guarda_Aldous`, assentado e validado; rota preservada e pausada individualmente |
 | Padeira Beatrice | Padeira | Padaria (LOCAL-005) | ✅ | Assentada próxima ao balcão; rotina profissional futura |
 | Pescador Lucan | Pescador | Cais (LOCAL-006) | ✅ | Assentado no Cais; cadeia econômica do pescado ainda pendente |
-| Mercador Tobias | Mercador de provisões | Armazém da Vila | 🟡 | Prédio físico existe, mas o posto definitivo permanece pendente por divergência entre modelo/atributos; não reposicionar por suposição |
-| Agricultor Hugo | Agricultor | Colina / Fazenda | 🟡 | Definir posto definitivo após auditoria |
+| Mercador Tobias | Mercador de provisões | Armazém da Vila | ✅ | Modelo legado confirmado como o próprio Tobias, recuperado como `NPC_Mercador_Tobias`, assentado e validado; migração R6 → R15 permanece débito técnico futuro |
+| Agricultor Hugo | Agricultor / logística rural | Pátio de Carga da Fazenda (LOCAL-009) | ✅ | Recuperado, assentado sem rota ativa e validado em Playtest; diálogo funcional |
 | Guardião Seraphin | Guardião do Portal | Portal (LOCAL-008) | ✅ | Assentado no acesso ao Portal sem bloquear a passagem |
 | Lenhador Garrick | Lenhador | Serraria / Floresta Nordeste | ✅ | Assentado na Serraria Hidráulica; ficha LOCAL própria ainda pode ser avaliada |
 | Mineiro Borin | Mineiro | Minas (LOCAL-007) | ✅ | Assentado na entrada da Mina; cadeia minério → destino ainda pendente |
@@ -85,7 +85,7 @@ Este documento não fixa preços, moeda, drops de masmorra ou missões ainda nã
 
 ## 4. Lacunas já detectadas documentalmente
 
-- 🟡 **Armazém do Mercador Tobias:** NPC e função existem; confirmar construção física e necessidade de LOCAL próprio.
+- ✅ **Armazém do Mercador Tobias:** construção física e posto confirmados; Tobias recuperado e assentado. A necessidade de ficha LOCAL própria pode ser avaliada documentalmente sem bloquear a Etapa 3.
 - 🟡 **Serraria de Garrick:** profissão e área existem; confirmar construção física e necessidade de LOCAL próprio.
 - 🟡 **Pescado de Lucan:** origem definida; destino econômico ainda precisa ser fechado.
 - 🟡 **Mineração de Borin:** origem definida; cadeia de uso/comércio precisa ser fechada.
@@ -153,7 +153,7 @@ Este documento não fixa preços, moeda, drops de masmorra ou missões ainda nã
 
 ### ETAPA 3 — Casamento NPC ↔ estabelecimento
 
-> 🟡 **PARCIAL AVANÇADA EM 22/09/2026.** Os profissionais com correspondência suficientemente confirmada foram assentados. Rotas anteriores foram preservadas de forma reversível, sem afetar os civis.
+> 🟡 **PARCIAL AVANÇADA EM 23/09/2026.** O núcleo dos profissionais documentados foi consolidado: Aldous, Tobias e Hugo foram resolvidos e validados, somando-se aos dez profissionais anteriormente assentados. A pendência principal passa a ser a regularização dos NPCs físicos ainda sem correspondência documental suficiente.
 
 - [x] Assentar Mestre Cedric na Oficina/Forja.
 - [x] Assentar Ancião Eldrin no Santuário/Árvore Sagrada.
@@ -167,8 +167,9 @@ Este documento não fixa preços, moeda, drops de masmorra ou missões ainda nã
 - [x] Assentar Seraphin no acesso ao Portal Mundo Livre sem bloquear a passagem.
 - [x] Preservar as rotas anteriores e permitir pausa individual reversível para profissionais assentados.
 - [x] Validar em Playtest que os profissionais assentados permanecem no posto e que civis continuam circulando.
-- [ ] Resolver Tobias sem suposição: há divergência entre posição física encontrada e referência ao Armazém.
-- [ ] Confirmar situação de Aldous e Hugo antes de qualquer criação/reposicionamento.
+- [x] Resolver Tobias: modelo legado identificado como o próprio mercador, recuperado e assentado no Armazém; estado anterior preservado para reversão e Playtest validado.
+- [x] Restaurar e assentar Aldous na Praça Central, mantendo Maelis distinta; rota preservada/pausada individualmente e Playtest validado.
+- [x] Recuperar e assentar Hugo no Pátio de Carga da Fazenda, sem rota ativa; diálogo e permanência no posto validados.
 - [ ] Resolver documentalmente Armand, Leofric, Kellan, Maelis e demais NPCs físicos ainda sem correspondência suficiente.
 - [ ] Criar novos NPCs somente para lacunas aprovadas.
 - [ ] Criar fichas LOCAL adicionais somente para construções confirmadas que realmente precisem de documentação própria.
@@ -324,7 +325,7 @@ Se essas respostas não existirem, a construção permanece em espera.
 
 ## 8. Próximo marco
 
-**Marco imediato:** consolidar a ETAPA 3 nos casos ainda pendentes e iniciar a ETAPA 4, mapeando necessidades, utilidades e escolhas de progressão antes de expandir o catálogo econômico.
+**Marco imediato:** regularizar documentalmente os NPCs físicos ainda sem correspondência suficiente, começando por Armand e Leofric, e então concluir a ETAPA 3 antes de iniciar a ETAPA 4, mapeando necessidades, utilidades e escolhas de progressão antes de expandir o catálogo econômico.
 
 A auditoria física já foi concluída e o primeiro assentamento dos profissionais confirmados já foi validado. A partir daqui, novas decisões devem fechar lacunas verificáveis em vez de espalhar sistemas desconectados.
 
