@@ -12,7 +12,7 @@ relacionados:
   - "LOCAL-005"
   - "LOCAL-006"
 atualizado_por: "codex"
-data_atualizacao: "2026-09-20"
+data_atualizacao: "2026-09-22"
 ---
 
 # Navegação da Vila e Mapa do Diário
@@ -29,6 +29,7 @@ O sistema de navegação orienta John pela Vila de Arkham sem substituir a explo
 4. John arrasta para explorar e usa os controles de zoom quando necessário.
 5. Seleciona um local pelo marcador na arte ou pela lista com nomes, que também funciona em telas pequenas.
 6. O mapa e o Diário fecham automaticamente; uma microbússola com ponteiro dourado em relevo passa a indicar o caminho.
+7. Ao tocar ou clicar na microbússola, John pode **parar a orientação** ou **abrir o mapa** para escolher outro destino. No controle, o botão Y abre essas opções e B as fecha. Ao chegar perto do destino, a orientação é encerrada.
 
 No computador, o atalho **M** abre e fecha o mapa diretamente. A aba **Mapa da Vila** continua disponível no Diário para computador e mobile.
 
@@ -83,3 +84,9 @@ Em playtest de desenvolvimento:
 - ao selecionar o Mercado Central pelo nome, o mapa e o Diário fecharam e a microbússola foi ativada;
 - o atalho M abriu o mapa diretamente no computador e a sobreposição da lista de jogadores foi removida.
 
+
+---
+
+## 6. Ajuste de controle da microbússola
+
+O menu de opções fica associado à própria microbússola, sem botão permanente adicional na HUD. Parar a orientação limpa o destino ativo e oculta o indicador. O acesso por toque e mouse, assim como o encerramento da orientação, foi conferido em Playtest no computador em 2026-09-22. O mapeamento Y/B foi implementado para controle, mas ainda requer validação com um controle físico.
