@@ -153,6 +153,20 @@
       ]
     },
     {
+      "id": "consolidacao",
+      "nome": "Painel de Consolidação",
+      "pasta": "gdd/02-gameplay",
+      "folder": "02-gameplay",
+      "icone": "☑️",
+      "renderer": "gdd",
+      "slug": "consolidacao",
+      "grupo": "GAMEPLAY & SISTEMAS",
+      "descricao": "Fila linear para definir, criar, implementar, testar e validar itens, interações e cadeias da Vila de Arkham antes de novas expansões.",
+      "documentos": [
+        "GAME-009"
+      ]
+    },
+    {
       "id": "masmorras",
       "nome": "Masmorras & Dungeons",
       "pasta": "gdd/07-masmorras",
