@@ -31,4 +31,4 @@ data_atualizacao: "2026-09-22"
 
 ## 3. Equipamento em desenvolvimento
 
-Ao equipar a espada pelo Alforge, John a carrega na diagonal das costas. O comando de sacar transfere a arma para a mão e mantém o combate existente; guardar a arma a devolve às costas. A representação nas costas é uma cópia visual presa ao tronco, sem colisão e sem peso físico. O posicionamento foi conferido em Playtest no computador em 2026-09-22; o acabamento visual da bainha pode ser refinado futuramente.
+Ao equipar a espada pelo Alforge, John a carrega na diagonal das costas. O comando de sacar transfere a arma para a mão e mantém o combate existente; guardar a arma a devolve às costas. A representação nas costas é uma cópia visual presa ao tronco, sem colisão e sem peso físico. O posicionamento final ainda está em ajuste manual com uma referência de John no Workspace; a validação com o John em Playtest permanece pendente.
