@@ -35,6 +35,7 @@ relacionados:
   - "NPC-015"
   - "NPC-016"
   - "NPC-017"
+  - "NPC-018"
 atualizado_por: "ChatGPT"
 data_atualizacao: "2026-09-23"
 ---
@@ -82,6 +83,7 @@ Este documento não fixa preços, moeda, drops de masmorra ou missões ainda nã
 | Lenhador Garrick | Lenhador | Serraria / Floresta Nordeste | ✅ | Assentado na Serraria Hidráulica; ficha LOCAL própria ainda pode ser avaliada |
 | Mineiro Borin | Mineiro | Minas (LOCAL-007) | ✅ | Assentado na entrada da Mina; cadeia minério → destino ainda pendente |
 | Kellan | Mineiro | Entrada Leste da Vila / acesso ao caminho da Mina (LOCAL-007) | ✅ | Assentado no ponto técnico `Guarda_PortaLeste`; `RotaMineiroB` preservada e pausada; Playtest validado |
+| Maelis | Guarda do perímetro | Sul e oeste da Vila / rota até o Santuário | ✅ | Estado já coerente; `RotaGuardaSul` ativa e validada em Playtest; prompt funciona, janela de diálogo ainda requer confirmação específica |
 | Agricultora Nalia | Agricultura / animais | Fazenda (LOCAL-009) | ✅ | Assentada na Horta da Fazenda; rotina operacional futura |
 | Fazendeiro Geraldo | Administrador | Casa do Fazendeiro / Fazenda | ✅ | Assentado na Administração da Fazenda; rotina administrativa futura |
 
@@ -176,7 +178,8 @@ Este documento não fixa preços, moeda, drops de masmorra ou missões ainda nã
 - [x] Recuperar e assentar Hugo no Pátio de Carga da Fazenda, sem rota ativa; diálogo e permanência no posto validados.
 - [x] Regularizar documentalmente Armand e Leofric após validação física no pórtico da masmorra.
 - [x] Regularizar Kellan como Mineiro da Entrada Leste, preservando `RotaMineiroB` como estado anterior e validando seu posto em Playtest.
-- [ ] Resolver documentalmente Maelis e demais NPCs físicos ainda sem correspondência suficiente.
+- [x] Regularizar Maelis como guarda móvel do perímetro sul/oeste, preservando `RotaGuardaSul`; nenhuma alteração física necessária.
+- [ ] Classificar e regularizar os demais NPCs físicos ainda sem correspondência suficiente.
 - [ ] Criar novos NPCs somente para lacunas aprovadas.
 - [ ] Criar fichas LOCAL adicionais somente para construções confirmadas que realmente precisem de documentação própria.
 - [ ] Projetar rotinas profissionais contextuais somente depois do assentamento e das funções estarem consolidados.
@@ -331,7 +334,7 @@ Se essas respostas não existirem, a construção permanece em espera.
 
 ## 8. Próximo marco
 
-**Marco imediato:** investigar e regularizar Maelis, seguida pelos demais NPCs físicos ainda sem correspondência suficiente, e então concluir a ETAPA 3 antes de iniciar a ETAPA 4, mapeando necessidades, utilidades e escolhas de progressão antes de expandir o catálogo econômico.
+**Marco imediato:** classificar e regularizar os demais NPCs físicos ainda sem correspondência suficiente, separando profissionais com posto dos moradores/civis, e então concluir a ETAPA 3 antes de iniciar a ETAPA 4, mapeando necessidades, utilidades e escolhas de progressão antes de expandir o catálogo econômico.
 
 A auditoria física já foi concluída e o primeiro assentamento dos profissionais confirmados já foi validado. A partir daqui, novas decisões devem fechar lacunas verificáveis em vez de espalhar sistemas desconectados.
 
