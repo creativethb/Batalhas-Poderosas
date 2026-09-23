@@ -27,6 +27,7 @@
 | **`NPC-015`** | Armand | Guarda da Masmorra | Pórtico do Mausoléu / Entrada da Masmorra | `CANONICO` | `gdd/03-npcs/NPC-015.md` | Guarda R15 fixo em um dos lados da entrada; alerta sobre autômatos, primeiro piso e Guardião. |
 | **`NPC-016`** | Leofric | Guarda da Masmorra | Pórtico do Mausoléu / Entrada da Masmorra | `CANONICO` | `gdd/03-npcs/NPC-016.md` | Guarda R15 fixo no lado oposto do pórtico; alerta sobre a descida e o retorno da masmorra. |
 | **`NPC-017`** | Kellan | Mineiro | Entrada Leste da Vila / acesso ao caminho da Mina | `CANONICO` | `gdd/03-npcs/NPC-017.md` | Mineiro assentado no acesso leste ligado ao caminho da Mina; rota anterior preservada e pausada. |
+| **`NPC-018`** | Maelis | Guarda do Perímetro Sul e Oeste | Sul/Oeste da Vila até o Santuário | `CANONICO` | `gdd/03-npcs/NPC-018.md` | Guarda R15 móvel; patrulha validada pela `RotaGuardaSul`; prompt ativo e diálogo visual ainda pendente de confirmação. |
 
 ---
 
