@@ -33,7 +33,7 @@ relacionados:
   - "NPC-013"
   - "NPC-014"
 atualizado_por: "ChatGPT"
-data_atualizacao: "2026-09-22"
+data_atualizacao: "2026-09-23"
 ---
 
 # Mapa de Integração do Mundo de Arkham
@@ -63,19 +63,19 @@ Este documento não fixa preços, moeda, drops de masmorra ou missões ainda nã
 
 | NPC | Profissão / papel | Local relacionado | Estado | Próxima ação |
 |---|---|---|---|---|
-| Mestre Cedric | Ferreiro | Oficina do Cedric (LOCAL-002) | ✅ | Posicionar/validar posto real no Workspace e depois ampliar serviços |
-| Ancião Eldrin | Guardião da Floresta | Árvore Sagrada (LOCAL-004) | ✅ | Validar posição e rotina |
-| Guarda Rowan | Sentinela | Praça / acesso leste / mina | ✅ | Validar rota territorial |
+| Mestre Cedric | Ferreiro | Oficina do Cedric (LOCAL-002) | ✅ | Assentado e validado no posto; ampliar serviços somente em etapa própria |
+| Ancião Eldrin | Guardião da Floresta | Árvore Sagrada (LOCAL-004) | ✅ | Assentado e validado no Santuário; rotina profissional futura |
+| Guarda Rowan | Sentinela | Posto dos Acessos Leste | ✅ | Assentado; rota anterior preservada e pausada de forma reversível |
 | Guarda Aldous | Sentinela | Praça Central (LOCAL-003) | ✅ | Validar rota territorial |
-| Padeira Beatrice | Padeira | Padaria (LOCAL-005) | ✅ | Posicionar/validar balcão, forno e banca |
-| Pescador Lucan | Pescador | Cais (LOCAL-006) | ✅ | Posicionar/validar cais e definir cadeia econômica do pescado |
-| Mercador Tobias | Mercador de provisões | Armazém da Vila | 🟡 | 🔎 Confirmar prédio no Workspace e criar ficha LOCAL se necessário |
+| Padeira Beatrice | Padeira | Padaria (LOCAL-005) | ✅ | Assentada próxima ao balcão; rotina profissional futura |
+| Pescador Lucan | Pescador | Cais (LOCAL-006) | ✅ | Assentado no Cais; cadeia econômica do pescado ainda pendente |
+| Mercador Tobias | Mercador de provisões | Armazém da Vila | 🟡 | Prédio físico existe, mas o posto definitivo permanece pendente por divergência entre modelo/atributos; não reposicionar por suposição |
 | Agricultor Hugo | Agricultor | Colina / Fazenda | 🟡 | Definir posto definitivo após auditoria |
-| Guardião Seraphin | Guardião do Portal | Portal (LOCAL-008) | ✅ | Validar posto real |
-| Lenhador Garrick | Lenhador | Serraria / Floresta Nordeste | 🟡 | 🔎 Confirmar serraria no Workspace e criar ficha LOCAL se necessário |
-| Mineiro Borin | Mineiro | Minas (LOCAL-007) | ✅ | Validar posto e cadeia minério → destino |
-| Agricultora Nalia | Agricultura / animais | Fazenda (LOCAL-009) | ✅ | Fixar setor/rotina operacional |
-| Fazendeiro Geraldo | Administrador | Casa do Fazendeiro / Fazenda | ✅ | Fixar rotina administrativa e pontos de trabalho |
+| Guardião Seraphin | Guardião do Portal | Portal (LOCAL-008) | ✅ | Assentado no acesso ao Portal sem bloquear a passagem |
+| Lenhador Garrick | Lenhador | Serraria / Floresta Nordeste | ✅ | Assentado na Serraria Hidráulica; ficha LOCAL própria ainda pode ser avaliada |
+| Mineiro Borin | Mineiro | Minas (LOCAL-007) | ✅ | Assentado na entrada da Mina; cadeia minério → destino ainda pendente |
+| Agricultora Nalia | Agricultura / animais | Fazenda (LOCAL-009) | ✅ | Assentada na Horta da Fazenda; rotina operacional futura |
+| Fazendeiro Geraldo | Administrador | Casa do Fazendeiro / Fazenda | ✅ | Assentado na Administração da Fazenda; rotina administrativa futura |
 
 **Rei Mago (NPC-000):** fora da malha econômica cotidiana da vila; não entra na etapa de posicionamento profissional de Arkham.
 
@@ -126,39 +126,94 @@ Este documento não fixa preços, moeda, drops de masmorra ou missões ainda nã
 - 🔎 `GAME-002` documenta combo atual de 5 golpes; qualquer divergência com o comportamento real do John deve ser verificada no Studio.
 - 🔎 Defesa aparece visualmente preparada em `GAME-003`, mas ainda não implementada.
 - 🔎 `DNG-006` registra validação pendente da coleta corrigida da Chave do Guardião.
+- ✅ O prefab `ServerStorage.Dungeon_NPCs.Automato_Lacaio` foi limpo dos dados indevidos de Rowan; a origem era o próprio prefab salvo, sem script reaplicando a contaminação. Clonagem/controlador foram validados em Playtest controlado; a geração procedural completa permanece para validação futura.
 - 🟡 Pastor, alfaiataria e destinos finais de lã/pescado/madeira continuam lacunas documentais deliberadas, a serem decididas após a auditoria física.
 
 **Decisão operacional:** nenhuma dessas inconsistências será corrigida por suposição. Elas entram como alvos objetivos da auditoria do Workspace.
 
 ### ETAPA 2 — Auditoria física do Workspace
-- [ ] Inspecionar a Vila de Arkham sem modificar nada.
-- [ ] Listar todas as construções físicas existentes.
-- [ ] Listar interiores e estabelecimentos utilizáveis.
-- [ ] Listar NPCs realmente presentes e posição atual.
-- [ ] Listar objetos funcionais relevantes: balcões, fornos, bancadas, carroças, depósitos, campos, ferramentas, pontos de coleta etc.
-- [ ] Conferir Fazenda e suas 26 áreas contra LOCAL-009.
-- [ ] Confirmar Armazém de Tobias.
-- [ ] Confirmar Serraria de Garrick.
-- [ ] Confirmar Taverna.
-- [ ] Verificar se já existe estrutura equivalente a silo.
-- [ ] Registrar divergências GDD ↔ Workspace.
 
-**Saída da etapa:** relatório físico do jogo, sem alterações.
+> ✅ **CONCLUÍDA EM 22/09/2026.** Auditoria executada em Edit mode, sem alterações durante a inspeção. A base física mostrou-se mais completa que a documentação.
+
+- [x] Inspecionar a Vila de Arkham sem modificar nada.
+- [x] Listar construções físicas, estabelecimentos e interiores relevantes.
+- [x] Listar NPCs presentes e posições encontradas.
+- [x] Identificar objetos funcionais e pontos de interação existentes.
+- [x] Conferir a Fazenda e suas 26 áreas contra LOCAL-009.
+- [x] Confirmar estruturas físicas de comércio, serraria, taverna e outros estabelecimentos ainda sem ficha LOCAL própria.
+- [x] Registrar divergências GDD ↔ Workspace.
+- [x] Separar presença física de funcionalidade comprovada: prompts/estruturas encontrados não significam, por si só, cadeia econômica implementada.
+
+**Saída da etapa:** auditoria física concluída. Permanecem validações de runtime específicas para sistemas que exigem Playtest.
 
 ### ETAPA 3 — Casamento NPC ↔ estabelecimento
-- [ ] Definir posto definitivo de cada NPC profissional.
-- [ ] Reposicionar NPCs que já possuem estabelecimento confirmado.
-- [ ] Ajustar rotas curtas de trabalho quando necessárias.
-- [ ] Manter guardas em rotas territoriais, não presos a balcões.
-- [ ] Identificar profissões sem NPC.
-- [ ] Identificar estabelecimentos sem responsável.
+
+> 🟡 **PARCIAL AVANÇADA EM 22/09/2026.** Os profissionais com correspondência suficientemente confirmada foram assentados. Rotas anteriores foram preservadas de forma reversível, sem afetar os civis.
+
+- [x] Assentar Mestre Cedric na Oficina/Forja.
+- [x] Assentar Ancião Eldrin no Santuário/Árvore Sagrada.
+- [x] Assentar Rowan no Posto dos Acessos Leste.
+- [x] Assentar Beatrice na Padaria.
+- [x] Assentar Lucan no Cais.
+- [x] Assentar Garrick na Serraria Hidráulica.
+- [x] Assentar Borin na entrada da Mina.
+- [x] Assentar Nalia na Horta da Fazenda.
+- [x] Assentar Geraldo na Administração da Fazenda.
+- [x] Assentar Seraphin no acesso ao Portal Mundo Livre sem bloquear a passagem.
+- [x] Preservar as rotas anteriores e permitir pausa individual reversível para profissionais assentados.
+- [x] Validar em Playtest que os profissionais assentados permanecem no posto e que civis continuam circulando.
+- [ ] Resolver Tobias sem suposição: há divergência entre posição física encontrada e referência ao Armazém.
+- [ ] Confirmar situação de Aldous e Hugo antes de qualquer criação/reposicionamento.
+- [ ] Resolver documentalmente Armand, Leofric, Kellan, Maelis e demais NPCs físicos ainda sem correspondência suficiente.
 - [ ] Criar novos NPCs somente para lacunas aprovadas.
-- [ ] Criar novas fichas LOCAL somente para construções confirmadas/aprovadas.
-- [ ] Atualizar GDD após cada casamento concluído.
+- [ ] Criar fichas LOCAL adicionais somente para construções confirmadas que realmente precisem de documentação própria.
+- [ ] Projetar rotinas profissionais contextuais somente depois do assentamento e das funções estarem consolidados.
 
-**Critério de conclusão:** cada estabelecimento funcional possui responsável ou justificativa explícita para não possuir.
+**Critério de conclusão:** cada estabelecimento funcional possui responsável confirmado ou justificativa explícita para não possuir, sem inventar correspondências.
 
-### ETAPA 4 — Catálogo econômico
+### ETAPA 4 — Mapa de necessidades, utilidades e progressão
+
+> ⬜ **NOVA ETAPA DE DESIGN.** Antes de multiplicar itens ou transformar cadeias em gameplay, definir por que cada família de recurso existe, qual problema resolve e quais escolhas oferece ao jogador.
+
+Modelo de análise:
+
+```
+DESAFIO / NECESSIDADE
+        ↓
+SOLUÇÕES POSSÍVEIS
+        ↓
+ITEM / RECURSO
+        ↓
+FORMAS DE OBTENÇÃO
+(compra, coleta, produção, exploração, recompensa...)
+        ↓
+TRANSFORMAÇÃO / COMBINAÇÃO
+        ↓
+NPC / LOCAL RELACIONADO
+        ↓
+USO
+        ↓
+XP / PROGRESSÃO / NOVAS POSSIBILIDADES
+```
+
+Princípios desta etapa:
+
+- [ ] Nenhum item entra apenas porque “é comum em RPG”; cada família precisa de utilidade identificável.
+- [ ] Sempre que fizer sentido, oferecer mais de um caminho de obtenção: comprar, coletar, produzir, combinar, explorar ou receber como recompensa.
+- [ ] Fazer crafting/combinação funcionar como alternativa e escolha, não como obrigação artificial.
+- [ ] Definir necessidades da aventura antes de criar consumíveis para resolvê-las.
+- [ ] Avaliar cura, preparação para expedições, efeitos de estado, alimentação, vigor/estamina e outros sistemas antes de canonizá-los.
+- [ ] Não criar fome, estamina ou outra barra apenas para justificar itens; primeiro definir seu papel real no gameplay.
+- [ ] Relacionar atividades praticadas a possíveis formas de experiência/progressão sem descaracterizar a identidade principal de John.
+- [ ] Avaliar progressões secundárias por prática, como competências de coleta, produção ou formas limitadas de combate, antes de transformá-las em sistema canônico.
+- [ ] Usar a masmorra como fonte possível de necessidades de preparação e recursos de aventura, sem torná-la a única origem de renda ou progressão.
+- [ ] Distinguir claramente **IDEIA**, **APROVADO**, **DOCUMENTADO**, **IMPLEMENTADO** e **VALIDADO NO STUDIO**.
+
+**Exemplos discutidos, ainda NÃO canônicos:** poções de cura, antídotos, efeitos de veneno em pisos futuros, alimentos ligados a preparação/recuperação, estamina/vigor e competências secundárias de combate à distância. Estes exemplos servem para orientar o método e só viram conteúdo do jogo após decisão específica.
+
+**Critério de conclusão:** as principais famílias de necessidade/recurso possuem propósito, alternativas de obtenção, destino e relação de progressão suficientemente claros para alimentar o catálogo econômico sem criar itens órfãos.
+
+### ETAPA 5 — Catálogo econômico
 - [ ] Catalogar matérias-primas.
 - [ ] Catalogar produtos agrícolas.
 - [ ] Catalogar produtos animais.
@@ -176,7 +231,7 @@ Este documento não fixa preços, moeda, drops de masmorra ou missões ainda nã
 
 **Critério de conclusão:** nenhum preço é criado antes desta etapa estar suficientemente consolidada.
 
-### ETAPA 5 — Teia de produção e logística
+### ETAPA 6 — Teia de produção e logística
 - [ ] Fechar trigo → moinho → farinha → Beatrice/padaria.
 - [ ] Fechar Fazenda → armazenamento → carga → Tobias/vila.
 - [ ] Fechar animais → produtos → destinos.
@@ -188,7 +243,7 @@ Este documento não fixa preços, moeda, drops de masmorra ou missões ainda nã
 - [ ] Avaliar necessidade real de silo e outras construções faltantes.
 - [ ] Só então autorizar novas construções funcionais.
 
-### ETAPA 6 — Trabalhos, minijogos e missões econômicas
+### ETAPA 7 — Trabalhos, minijogos e missões econômicas
 - [ ] Converter ligações adequadas da teia em atividades do jogador.
 - [ ] Definir trabalhos repetíveis da Fazenda.
 - [ ] Definir coleta, carga, transporte e entrega onde forem divertidos.
@@ -197,7 +252,7 @@ Este documento não fixa preços, moeda, drops de masmorra ou missões ainda nã
 - [ ] Separar missões econômicas opcionais da linha narrativa principal.
 - [ ] Definir recompensas sem fixar valores prematuramente.
 
-### ETAPA 7 — Guilda, masmorra e economia de aventura
+### ETAPA 8 — Guilda, masmorra e economia de aventura
 - [ ] Confirmar papel e estrutura da Guilda.
 - [ ] Definir NPC responsável pelo atendimento.
 - [ ] Definir quais recursos de masmorra possuem valor fora da masmorra.
@@ -205,7 +260,7 @@ Este documento não fixa preços, moeda, drops de masmorra ou missões ainda nã
 - [ ] Conectar materiais de aventura a comércio, forja, progressão ou outros sistemas aprovados.
 - [ ] Evitar que a masmorra seja a única fonte de renda.
 
-### ETAPA 8 — Moeda, preços e balanceamento
+### ETAPA 9 — Moeda, preços e balanceamento
 - [ ] Definir moeda oficial.
 - [ ] Criar cesta de referência de produtos cotidianos.
 - [ ] Definir salários/recompensas de trabalhos.
@@ -215,7 +270,7 @@ Este documento não fixa preços, moeda, drops de masmorra ou missões ainda nã
 - [ ] Balancear renda × progressão × tempo de jogo.
 - [ ] Testar inflação e acúmulo excessivo.
 
-### ETAPA 9 — Conteúdo, narrativa e vida cotidiana
+### ETAPA 10 — Conteúdo, narrativa e vida cotidiana
 - [ ] Preencher diálogos profissionais.
 - [ ] Criar árvores de opções dos NPCs.
 - [ ] Integrar informações, rumores e encaminhamentos entre NPCs.
@@ -232,17 +287,19 @@ FASE B  AUDITAR WORKSPACE
    ↓
 FASE C  POSICIONAR NPCs E FECHAR ESTABELECIMENTOS
    ↓
-FASE D  CATALOGAR PRODUTOS / RECURSOS / SERVIÇOS
+FASE D  MAPEAR NECESSIDADES / UTILIDADES / ESCOLHAS DE PROGRESSÃO
    ↓
-FASE E  FECHAR CADEIAS DE PRODUÇÃO E LOGÍSTICA
+FASE E  CATALOGAR PRODUTOS / RECURSOS / SERVIÇOS
    ↓
-FASE F  TRANSFORMAR CADEIAS EM GAMEPLAY
+FASE F  FECHAR CADEIAS DE PRODUÇÃO E LOGÍSTICA
    ↓
-FASE G  CONECTAR GUILDA / MASMORRA / AVENTURA
+FASE G  TRANSFORMAR CADEIAS EM GAMEPLAY
    ↓
-FASE H  DEFINIR MOEDA, PREÇOS E BALANCEAMENTO
+FASE H  CONECTAR GUILDA / MASMORRA / AVENTURA
    ↓
-FASE I  EXPANDIR DIÁLOGOS, NARRATIVA E ROTINAS
+FASE I  DEFINIR MOEDA, PREÇOS E BALANCEAMENTO
+   ↓
+FASE J  EXPANDIR DIÁLOGOS, NARRATIVA E ROTINAS
 ```
 
 As fases são dependências de trabalho, não datas. Atividades podem avançar em paralelo apenas quando não exigirem uma definição ainda pendente.
@@ -262,14 +319,10 @@ Se essas respostas não existirem, a construção permanece em espera.
 
 ## 8. Próximo marco
 
-**Marco imediato:** concluir ETAPA 1 e executar ETAPA 2.
+**Marco imediato:** consolidar a ETAPA 3 nos casos ainda pendentes e iniciar a ETAPA 4, mapeando necessidades, utilidades e escolhas de progressão antes de expandir o catálogo econômico.
 
-Somente depois da auditoria do Workspace deve ser produzida a lista definitiva de:
-- NPCs a reposicionar;
-- NPCs novos necessários;
-- construções faltantes;
-- estabelecimentos que precisam de ficha LOCAL;
-- cadeias econômicas abertas;
-- prioridades de implementação.
+A auditoria física já foi concluída e o primeiro assentamento dos profissionais confirmados já foi validado. A partir daqui, novas decisões devem fechar lacunas verificáveis em vez de espalhar sistemas desconectados.
+
+A fundação de Menu/Inventário está em processo de atualização no Studio para receber os sistemas futuros; ela não deve ser marcada como concluída até a validação final da implementação.
 
 Este documento deve ser atualizado continuamente: cada pendência concluída muda para ✅, permitindo que o desenvolvimento avance por fechamento de lacunas em vez de expansão aleatória.
