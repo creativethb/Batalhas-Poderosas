@@ -34,6 +34,7 @@ relacionados:
   - "NPC-014"
   - "NPC-015"
   - "NPC-016"
+  - "NPC-017"
 atualizado_por: "ChatGPT"
 data_atualizacao: "2026-09-23"
 ---
@@ -80,6 +81,7 @@ Este documento não fixa preços, moeda, drops de masmorra ou missões ainda nã
 | Guardião Seraphin | Guardião do Portal | Portal (LOCAL-008) | ✅ | Assentado no acesso ao Portal sem bloquear a passagem |
 | Lenhador Garrick | Lenhador | Serraria / Floresta Nordeste | ✅ | Assentado na Serraria Hidráulica; ficha LOCAL própria ainda pode ser avaliada |
 | Mineiro Borin | Mineiro | Minas (LOCAL-007) | ✅ | Assentado na entrada da Mina; cadeia minério → destino ainda pendente |
+| Kellan | Mineiro | Entrada Leste da Vila / acesso ao caminho da Mina (LOCAL-007) | ✅ | Assentado no ponto técnico `Guarda_PortaLeste`; `RotaMineiroB` preservada e pausada; Playtest validado |
 | Agricultora Nalia | Agricultura / animais | Fazenda (LOCAL-009) | ✅ | Assentada na Horta da Fazenda; rotina operacional futura |
 | Fazendeiro Geraldo | Administrador | Casa do Fazendeiro / Fazenda | ✅ | Assentado na Administração da Fazenda; rotina administrativa futura |
 
@@ -126,7 +128,7 @@ Este documento não fixa preços, moeda, drops de masmorra ou missões ainda nã
 
 - ✅ A referência de `GAME-006` que tratava `LOCAL-003` como Armazém Central foi corrigida nesta auditoria. Tobias permanece associado ao Armazém da Vila, ainda sem `LOCAL` próprio confirmado.
 - 🔎 Garrick possui Serraria & Floresta Nordeste em sua ficha, sem LOCAL próprio.
-- 🔎 `LOCAL-007` menciona Mineiro Kellan, mas não existe ficha NPC correspondente no catálogo atual.
+- ✅ Kellan (`NPC-017`) foi identificado como Mineiro, assentado na Entrada Leste da Vila no acesso ao caminho da Mina e documentado; Borin permanece distinto na entrada da Mina.
 - ✅ Armand (`NPC-015`) e Leofric (`NPC-016`) foram confirmados fisicamente como guardas R15 fixos no pórtico da entrada da masmorra, validados em Playtest e documentados em fichas próprias.
 - 🔎 `DNG-002` já documenta comércio subterrâneo com Tobias, Ouro Arcaico, poções/tônicos/kits, taxa de Guilda e materiais de forja. Isso precisa ser confrontado com o que realmente está implementado antes de ampliar ou balancear a economia.
 - 🔎 `DNG-001` afirma que a masmorra é a única fonte de recursos raros necessários ao fortalecimento do reino, enquanto o plano de integração exige múltiplas fontes de renda e atividade. Na próxima revisão de design, separar claramente **recursos raros de aventura** de **fontes gerais de renda**.
@@ -173,7 +175,8 @@ Este documento não fixa preços, moeda, drops de masmorra ou missões ainda nã
 - [x] Restaurar e assentar Aldous na Praça Central, mantendo Maelis distinta; rota preservada/pausada individualmente e Playtest validado.
 - [x] Recuperar e assentar Hugo no Pátio de Carga da Fazenda, sem rota ativa; diálogo e permanência no posto validados.
 - [x] Regularizar documentalmente Armand e Leofric após validação física no pórtico da masmorra.
-- [ ] Resolver documentalmente Kellan, Maelis e demais NPCs físicos ainda sem correspondência suficiente.
+- [x] Regularizar Kellan como Mineiro da Entrada Leste, preservando `RotaMineiroB` como estado anterior e validando seu posto em Playtest.
+- [ ] Resolver documentalmente Maelis e demais NPCs físicos ainda sem correspondência suficiente.
 - [ ] Criar novos NPCs somente para lacunas aprovadas.
 - [ ] Criar fichas LOCAL adicionais somente para construções confirmadas que realmente precisem de documentação própria.
 - [ ] Projetar rotinas profissionais contextuais somente depois do assentamento e das funções estarem consolidados.
@@ -328,7 +331,7 @@ Se essas respostas não existirem, a construção permanece em espera.
 
 ## 8. Próximo marco
 
-**Marco imediato:** investigar e regularizar Kellan, seguido por Maelis e pelos demais NPCs físicos ainda sem correspondência suficiente, e então concluir a ETAPA 3 antes de iniciar a ETAPA 4, mapeando necessidades, utilidades e escolhas de progressão antes de expandir o catálogo econômico.
+**Marco imediato:** investigar e regularizar Maelis, seguida pelos demais NPCs físicos ainda sem correspondência suficiente, e então concluir a ETAPA 3 antes de iniciar a ETAPA 4, mapeando necessidades, utilidades e escolhas de progressão antes de expandir o catálogo econômico.
 
 A auditoria física já foi concluída e o primeiro assentamento dos profissionais confirmados já foi validado. A partir daqui, novas decisões devem fechar lacunas verificáveis em vez de espalhar sistemas desconectados.
 
