@@ -24,6 +24,8 @@
 | **`NPC-012`** | Agricultora Nalia | Agricultora das Fazendas | Fazendas Norte | `CANONICO` | `gdd/03-npcs/NPC-012.md` | Cultiva os grandes campos agrícolas e cuida do estábulo. |
 | **`NPC-013`** | Fazendeiro Geraldo | Administrador da Fazenda | Administração da Fazenda | `CANONICO` | `gdd/03-npcs/NPC-013.md` | Administra a produção rural, safras, estocagem e rotinas da Fazenda de Arkan. |
 | **`NPC-014`** | John | Protagonista / Jovem Soldado | Arkham | `EM_DESENVOLVIMENTO` | `gdd/03-npcs/NPC-014.md` | Ficha visual e de papel narrativo do protagonista; biografia detalhada ainda está em definição. |
+| **`NPC-015`** | Armand | Guarda da Masmorra | Pórtico do Mausoléu / Entrada da Masmorra | `CANONICO` | `gdd/03-npcs/NPC-015.md` | Guarda R15 fixo em um dos lados da entrada; alerta sobre autômatos, primeiro piso e Guardião. |
+| **`NPC-016`** | Leofric | Guarda da Masmorra | Pórtico do Mausoléu / Entrada da Masmorra | `CANONICO` | `gdd/03-npcs/NPC-016.md` | Guarda R15 fixo no lado oposto do pórtico; alerta sobre a descida e o retorno da masmorra. |
 
 ---
 
