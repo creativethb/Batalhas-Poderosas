@@ -53,11 +53,15 @@ Este documento não fixa preços, moeda, drops de masmorra ou missões ainda nã
 
 ## 2. Legenda de acompanhamento
 
-- ✅ **FEITO** — documentado e já casado no GDD.
-- 🟡 **PARCIAL** — existe, mas falta integração, confirmação física ou conteúdo.
+- ✅ **CONCLUÍDO** — marco executado e validado.
+- 🔄 **RECORRENTE** — processo-base já estabelecido, mas que deve ser revisitado continuamente ao longo do desenvolvimento.
+- 🔁 **SOB DEMANDA** — marco-base concluído; reabre quando uma mudança, divergência ou nova implementação exigir nova validação.
+- 🟡 **EM ANDAMENTO / PARCIAL** — etapa atualmente trabalhada ou existente, mas ainda incompleta.
 - ⬜ **PENDENTE** — precisa ser criado, definido ou implementado.
 - 🔎 **AUDITAR** — precisa ser conferido diretamente no Workspace antes de qualquer decisão.
 - ⛔ **BLOQUEADO** — depende de etapa anterior.
+
+> **Regra de leitura:** uma etapa pode estar concluída como marco histórico e, ao mesmo tempo, permanecer recorrente ou sob demanda. Isso não reabre o marco automaticamente; indica apenas que seu mecanismo de controle continua ativo.
 
 ## 3. Matriz atual: NPC ↔ local ↔ função
 
@@ -98,12 +102,13 @@ Este documento não fixa preços, moeda, drops de masmorra ou missões ainda nã
 
 ### ETAPA 1 — Auditoria documental
 
-> 🔎 **Estado atual: REABERTA EM 22/09/2026.** A lista anterior foi um levantamento inicial. Alterações posteriores — incluindo o dossiê de John (`NPC-014`) e esta revisão de referências, economia e masmorra — exigem manutenção contínua. Esta etapa não confirma a existência física nem a implementação de runtime.
+> ✅ **CONCLUÍDA COMO BASE | 🔄 RECORRENTE.** A auditoria documental inicial foi executada e consolidada. A partir deste marco, ela permanece como processo permanente de manutenção: toda alteração documental relevante deve revalidar referências, estados e coerência do GDD. Isso não significa que a etapa esteja pendente ou reaberta continuamente.
 
 - [x] Registrar o levantamento documental inicial de NPCs, locais, itens e Fazenda.
 - [x] Identificar as primeiras lacunas de catálogo e referências.
 - [~] Revalidar referências e estados após cada alteração documental relevante.
-- [ ] Confrontar afirmações de implementação com o Roblox Studio, sem alterar o Workspace durante a auditoria documental.
+- [x] Separar as afirmações que exigiam validação física e encaminhá-las para a auditoria do Workspace.
+- [~] Manter a auditoria documental ativa de forma recorrente sempre que documentos relevantes forem criados ou alterados.
 
 **Saída da etapa:** inventário documental rastreável, com incertezas explícitas e itens separados para validação no Studio.
 
@@ -133,7 +138,7 @@ Este documento não fixa preços, moeda, drops de masmorra ou missões ainda nã
 
 ### ETAPA 2 — Auditoria física do Workspace
 
-> ✅ **CONCLUÍDA EM 22/09/2026.** Auditoria executada em Edit mode, sem alterações durante a inspeção. A base física mostrou-se mais completa que a documentação.
+> ✅ **CONCLUÍDA COMO BASE EM 22/09/2026 | 🔁 SOB DEMANDA.** Auditoria geral executada em Edit mode, sem alterações durante a inspeção. A base física mostrou-se mais completa que a documentação. Esta etapa só deve ser reaberta quando mudanças físicas relevantes, divergências GDD ↔ Studio ou dúvidas de implementação exigirem nova conferência.
 
 - [x] Inspecionar a Vila de Arkham sem modificar nada.
 - [x] Listar construções físicas, estabelecimentos e interiores relevantes.
