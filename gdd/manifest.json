@@ -206,7 +206,9 @@
       "slug": "changelog",
       "grupo": "CÂNONE & ARQUIVO",
       "descricao": "Registro cronológico de alterações e builds do GDD.",
-      "documentos": []
+      "documentos": [
+        "CHANGELOG-001"
+      ]
     },
     {
       "id": "saude",
