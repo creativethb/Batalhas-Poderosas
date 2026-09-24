@@ -36,6 +36,17 @@ relacionados:
   - "NPC-016"
   - "NPC-017"
   - "NPC-018"
+  - "NPC-019"
+  - "NPC-020"
+  - "NPC-021"
+  - "NPC-022"
+  - "NPC-023"
+  - "NPC-024"
+  - "NPC-025"
+  - "NPC-026"
+  - "NPC-027"
+  - "NPC-028"
+  - "NPC-029"
 atualizado_por: "ChatGPT"
 data_atualizacao: "2026-09-23"
 ---
@@ -179,7 +190,11 @@ Este documento não fixa preços, moeda, drops de masmorra ou missões ainda nã
 - [x] Regularizar documentalmente Armand e Leofric após validação física no pórtico da masmorra.
 - [x] Regularizar Kellan como Mineiro da Entrada Leste, preservando `RotaMineiroB` como estado anterior e validando seu posto em Playtest.
 - [x] Regularizar Maelis como guarda móvel do perímetro sul/oeste, preservando `RotaGuardaSul`; nenhuma alteração física necessária.
-- [ ] Classificar e regularizar os demais NPCs físicos ainda sem correspondência suficiente.
+- [x] Catalogar os 11 NPCs físicos restantes sem alterar seu estado no Studio: Eamon, Torren, Dora, Joric, Petra, Bram, Dario, Liora, Mira, Oren e Selma.
+- [x] Registrar como civis sem posto fixo Bram, Dario, Liora, Mira e Selma; sua circulação não exige assentamento.
+- [x] Registrar Torren, Dora, Joric e Petra como personagens móveis com funções configuradas, mantendo suas rotas sem intervenção nesta etapa.
+- [ ] Resolver futuramente a divergência documental/configuracional de Eamon (`Campo Sul` × pontos Leste da rota), sem bloquear a estabilização atual.
+- [ ] Decidir futuramente se Oren permanece apenas civil ou recebe função formal de mensageiro; até lá, não lhe atribuir posto.
 - [ ] Criar novos NPCs somente para lacunas aprovadas.
 - [ ] Criar fichas LOCAL adicionais somente para construções confirmadas que realmente precisem de documentação própria.
 - [ ] Projetar rotinas profissionais contextuais somente depois do assentamento e das funções estarem consolidados.
@@ -334,7 +349,7 @@ Se essas respostas não existirem, a construção permanece em espera.
 
 ## 8. Próximo marco
 
-**Marco imediato:** classificar e regularizar os demais NPCs físicos ainda sem correspondência suficiente, separando profissionais com posto dos moradores/civis, e então concluir a ETAPA 3 antes de iniciar a ETAPA 4, mapeando necessidades, utilidades e escolhas de progressão antes de expandir o catálogo econômico.
+**Marco imediato:** estabilizar itens, recursos e demais elementos de gameplay. A população física restante já está catalogada sem necessidade de reposicionamento imediato. Eamon e Oren ficam registrados como pendências futuras de definição, e as rotas dos NPCs móveis podem ser validadas posteriormente em Playtest sem bloquear o avanço.
 
 A auditoria física já foi concluída e o primeiro assentamento dos profissionais confirmados já foi validado. A partir daqui, novas decisões devem fechar lacunas verificáveis em vez de espalhar sistemas desconectados.
 
