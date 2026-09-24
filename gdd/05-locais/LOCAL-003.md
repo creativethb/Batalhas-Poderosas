@@ -10,8 +10,9 @@ relacionados:
   - "LOCAL-005"
   - "LOCAL-009"
   - "GAME-006"
-imagem: "./assets/locais/LOCAL-003.png"
-atualizado_por: "agente"
+imagem: "./assets/characters/Praça-central-cover.png"
+atualizado_por: "ChatGPT"
+data_atualizacao: "2026-09-24"
 ---
 
 # Ficha de Local: Praça Central
