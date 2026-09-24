@@ -9,8 +9,9 @@ relacionados:
   - "ITEM-001"
   - "ITEM-004"
   - "BP-2026-002"
-imagem: "./assets/locais/LOCAL-001.png"
-atualizado_por: "agente"
+imagem: "./assets/characters/casa-do-jhon-cover.png"
+atualizado_por: "ChatGPT"
+data_atualizacao: "2026-09-24"
 ---
 
 # Ficha de Local: Casa de John
