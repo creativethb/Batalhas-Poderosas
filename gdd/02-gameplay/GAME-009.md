@@ -11,7 +11,7 @@ relacionados:
   - "ITEM-001"
   - "ITEM-002"
   - "ITEM-003"
-  - "ITEM-004"
+  - "ITEM-004"\n  - "ITEM-005"
   - "LOCAL-002"
   - "LOCAL-005"
   - "LOCAL-006"
@@ -104,7 +104,7 @@ A ordem abaixo é a fila principal. Não avançar por impulso para novas expans�
 
 **Pendências desta fase**
 - [ ] **Escudo inicial** — equipamento defensivo inicial. Nome, origem, materiais e atributos: A DEFINIR.
-- [ ] **Proteção corporal inicial** — conceito provisório de colete/gibão leve, apelidado informalmente de “colete de vidro” por sua fragilidade; não é feito de vidro. Nome definitivo, origem, materiais e atributos: A DEFINIR.
+- [x] **Peitoral de Vidro — ITEM-005** — proteção corporal inicial criada por Mestre Cedric. Peça metálica com Inscrições da Forja; ao sofrer impacto, absorve parte da força e assume temporariamente aparência translúcida. Definição documental concluída; obtenção, balanceamento, criação visual/3D, implementação, teste e validação permanecem pendentes.
 - [ ] Definir como escudo e proteção entram na sequência inicial sem alterar o que já está validado da obtenção da espada.
 
 **Critério de quitação:** os equipamentos iniciais aprovados existem, podem ser obtidos/equipados, foram testados e estão VALIDADOS.
