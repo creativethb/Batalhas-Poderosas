@@ -28,6 +28,17 @@
 | **`NPC-016`** | Leofric | Guarda da Masmorra | Pórtico do Mausoléu / Entrada da Masmorra | `CANONICO` | `gdd/03-npcs/NPC-016.md` | Guarda R15 fixo no lado oposto do pórtico; alerta sobre a descida e o retorno da masmorra. |
 | **`NPC-017`** | Kellan | Mineiro | Entrada Leste da Vila / acesso ao caminho da Mina | `CANONICO` | `gdd/03-npcs/NPC-017.md` | Mineiro assentado no acesso leste ligado ao caminho da Mina; rota anterior preservada e pausada. |
 | **`NPC-018`** | Maelis | Guarda do Perímetro Sul e Oeste | Sul/Oeste da Vila até o Santuário | `CANONICO` | `gdd/03-npcs/NPC-018.md` | Guarda R15 móvel; patrulha validada pela `RotaGuardaSul`; prompt ativo e diálogo visual ainda pendente de confirmação. |
+| **`NPC-019`** | Eamon | Agricultor | Posição salva próxima à Praça | `EM_DESENVOLVIMENTO` | `gdd/03-npcs/NPC-019.md` | Agricultor configurado; divergência Campo Sul × pontos Leste registrada para decisão futura. |
+| **`NPC-020`** | Torren | Lenhador | Circulação Serraria/campos nordeste | `EM_DESENVOLVIMENTO` | `gdd/03-npcs/NPC-020.md` | Lenhador móvel com rota ligada à Serraria; runtime ainda não validado. |
+| **`NPC-021`** | Dora | Viajante / Mensageira | Circulação pela vila | `EM_DESENVOLVIMENTO` | `gdd/03-npcs/NPC-021.md` | Personagem itinerante; rota e diálogo sustentam função de viajante/mensageira. |
+| **`NPC-022`** | Joric | Trabalhador / Ajudante | Taverna / Hospedagem | `EM_DESENVOLVIMENTO` | `gdd/03-npcs/NPC-022.md` | Ajudante móvel entre Taverna e Hospedagem. |
+| **`NPC-023`** | Petra | Trabalhadora / Entregas | Armazém e circuito de entregas | `EM_DESENVOLVIMENTO` | `gdd/03-npcs/NPC-023.md` | Ajudante associada ao Armazém e entregas pela vila. |
+| **`NPC-024`** | Bram | Civil / Morador | Circulação pela vila | `EM_DESENVOLVIMENTO` | `gdd/03-npcs/NPC-024.md` | Morador itinerante sem profissão definida ou necessidade de posto. |
+| **`NPC-025`** | Dario | Civil / Morador | Ruas da Vila | `EM_DESENVOLVIMENTO` | `gdd/03-npcs/NPC-025.md` | Morador itinerante sem profissão definida ou necessidade de posto. |
+| **`NPC-026`** | Liora | Civil / Moradora | Circulação pela vila | `EM_DESENVOLVIMENTO` | `gdd/03-npcs/NPC-026.md` | Moradora; referência à Padaria não foi tratada como profissão. |
+| **`NPC-027`** | Mira | Civil / Moradora | Praça e circulação pela vila | `EM_DESENVOLVIMENTO` | `gdd/03-npcs/NPC-027.md` | Moradora sem profissão definida ou necessidade de posto. |
+| **`NPC-028`** | Oren | Civil / função específica indefinida | Circulação pela vila | `EM_DESENVOLVIMENTO` | `gdd/03-npcs/NPC-028.md` | Civil com referências conflitantes a recados/Armazém; função formal adiada. |
+| **`NPC-029`** | Selma | Civil / Moradora | Praça e circulação pela vila | `EM_DESENVOLVIMENTO` | `gdd/03-npcs/NPC-029.md` | Moradora com rota e diálogo de vida cotidiana. |
 
 ---
 
