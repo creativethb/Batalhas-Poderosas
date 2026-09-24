@@ -7,8 +7,9 @@ relacionados:
   - "ITEM-003"
   - "GAME-001"
   - "LORE-002"
-imagem: "./assets/locais/LOCAL-002.png"
-atualizado_por: "agente"
+imagem: "./assets/characters/Oficina-Mestre-Cedric-cover.png.png"
+atualizado_por: "ChatGPT"
+data_atualizacao: "2026-09-24"
 ---
 
 # Ficha de Local: Oficina do Cedric
