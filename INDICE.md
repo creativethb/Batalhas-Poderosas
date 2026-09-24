@@ -58,7 +58,7 @@
 | **`ITEM-001`** | Madeira Comum | Material de Criação | Comum | `CANONICO` | `gdd/04-itens/ITEM-001.md` | Coletada na bancada da Casa de John para base da primeira espada. |
 | **`ITEM-002`** | Madeira Sagrada | Relíquia Mística | Raro | `CANONICO` | `gdd/04-itens/ITEM-002.md` | Ramo ancestral da Árvore Sagrada concedido por Eldrin. |
 | **`ITEM-003`** | Espada de Madeira Sagrada | Arma Branca (1H) | Sagrada | `CANONICO` | `gdd/04-itens/ITEM-003.md` | Lâmina forjada por Cedric; dano 22, combo de 5 hits e brilho místico. |
-| **`ITEM-004`** | Diário de John | Item Narrativo / Gameplay | Único | `CANONICO` | `gdd/04-itens/ITEM-004.md` | Caderno permanente no inventário que registra as memórias e capítulos da jornada. |
+| **`ITEM-004`** | Diário de John | Item Narrativo / Gameplay | Único | `CANONICO` | `gdd/04-itens/ITEM-004.md` | Caderno permanente no inventário que registra as memórias e capítulos da jornada. |\n| **`ITEM-005`** | Peitoral de Vidro | Equipamento / Proteção Corporal | A DEFINIR | `CANONICO` | `gdd/04-itens/ITEM-005.md` | Peitoral metálico forjado por Cedric; sob impacto, as Inscrições da Forja absorvem parte da força e tornam a peça temporariamente translúcida. |
 
 ---
 
