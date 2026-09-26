@@ -7,9 +7,9 @@ status: "CANONICO"
 localizacao: "Armazém da Vila / Boticário / depósitos naturais futuros"
 relacionados:
   - "07-masmorras"
-imagem: ""
+imagem: "../../assets/characters/Cordão-luminoso-cover.png"
 atualizado_por: "ChatGPT"
-data_atualizacao: "2026-09-25"
+data_atualizacao: "2026-09-26"
 ---
 
 # Sistema de Exploração: Cordão, Frasco e Fluido Luminoso
@@ -53,7 +53,7 @@ O Cordão Luminoso é o equipamento corporal que sustenta o sistema.
 - É reutilizável.
 - Não é consumido junto com a carga do frasco.
 - Sem um Frasco Luminoso carregado, não produz iluminação.
-- O design visual e o mecanismo físico de encaixe permanecem pendentes.
+- A arte de referência atual está vinculada à ficha; adaptação final para Mesh/Roblox ainda depende de validação no personagem.
 
 O Cordão Luminoso será comercializado inicialmente no **Armazém da Vila**.
 
@@ -138,6 +138,7 @@ Melhorias futuras de recipiente, capacidade ou eficiência são possibilidades d
 - Cordão Luminoso reutilizável: **CANÔNICO**
 - Frasco Cheio/Vazio substituível: **CANÔNICO**
 - Campo esférico de iluminação limitada: **CANÔNICO**
+- Arte de referência do Cordão/Frasco: **VINCULADA À FICHA**
 - Venda inicial do Cordão no Armazém: **DEFINIDA**
 - Venda inicial de Frascos Cheios no Armazém: **DEFINIDA**
 - Refinamento pelo Boticário: **DEFINIDO**
@@ -148,8 +149,8 @@ Melhorias futuras de recipiente, capacidade ou eficiência são possibilidades d
 - Duração da carga: **A DEFINIR**
 - Raio/intensidade da iluminação: **A DEFINIR**
 - Regras de quebra/dano: **A DEFINIR**
-- Design visual/3D: **PRÓXIMA ETAPA**
-- Implementação no inventário/equipamento: **PENDENTE**
-- Sistema de compra do Armazém: **PENDENTE**
+- Design visual/3D: **REFERÊNCIA DEFINIDA; MESH FINAL PENDENTE**
+- Implementação no inventário/equipamento: **PROTÓTIPO FUNCIONAL; REFINAMENTO PENDENTE**
+- Sistema de compra do Armazém: **PROTÓTIPO FUNCIONAL**
 - Serviço de refinamento/recarga do Boticário: **PENDENTE**
-- Playtest e balanceamento: **PENDENTES**
+- Playtest e balanceamento: **EM REFINAMENTO**
