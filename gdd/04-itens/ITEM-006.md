@@ -7,7 +7,7 @@ status: "CANONICO"
 localizacao: "Armazém da Vila / Boticário / depósitos naturais futuros"
 relacionados:
   - "07-masmorras"
-imagem: "../../assets/characters/Cordão-luminoso-cover.png"
+imagem: "./assets/itens/ITEM-006.png"
 atualizado_por: "ChatGPT"
 data_atualizacao: "2026-09-26"
 ---
