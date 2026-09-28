@@ -6,6 +6,7 @@ relacionados:
   - "LORE-005"
   - "LOCAL-001"
   - "LOCAL-007"
+  - "NPC-005"
 data_atualizacao: "2026-09-27"
 ---
 
@@ -17,6 +18,8 @@ data_atualizacao: "2026-09-27"
 ---
 
 ## 1. 📖 Prosa Literária
+
+### Página 1
 
 Antes que a guerra tivesse um rosto, Arkham tinha manhãs.
 
@@ -232,14 +235,256 @@ Arkham estava ali.
 
 E aquilo bastava.
 
+### Página 2
+
+John permaneceu na praça por mais algum tempo.
+
+Não porque tivesse algo para fazer ali.
+
+Na verdade, era justamente o contrário.
+
+Ainda faltava algum tempo antes que precisasse subir até a igreja, e voltar para casa apenas para sair novamente lhe pareceu um desperdício de pernas.
+
+Sentou-se por alguns minutos na borda de pedra próxima ao caminho e observou o movimento.
+
+Arkham agora já não despertava.
+
+Estava acordada.
+
+As carroças que antes rangiam solitárias começavam a disputar passagem com moradores. Portas permaneciam abertas. Vozes atravessavam janelas. De algum lugar próximo vinha o som de alguém serrando madeira, insistente o bastante para se misturar ao restante da vila até quase desaparecer.
+
+John ergueu os olhos para a igreja.
+
+Ainda não.
+
+Baixou-os novamente.
+
+Foi então que percebeu que havia cometido um erro.
+
+O cheiro do pão o encontrara outra vez.
+
+Mais forte agora.
+
+John olhou na direção da padaria.
+
+— Nem pense em fingir que não sentiu.
+
+Ele reconheceu a voz antes de encontrar quem a havia produzido.
+
+Beatrice estava à porta.
+
+Trazia o avental de linho marcado por uma pequena nuvem de farinha perto da cintura e segurava um pano dobrado nas mãos. Atrás dela, o interior da padaria parecia guardar todo o calor que a manhã havia perdido.
+
+John apontou para si mesmo.
+
+— Eu?
+
+— Não. O rapaz invisível atrás de você.
+
+John olhou por cima do ombro.
+
+Beatrice estreitou os olhos.
+
+— Não faça isso.
+
+Ele sorriu.
+
+— Eu só queria ter certeza.
+
+— Tenha certeza entrando. Acabei de tirar uma fornada.
+
+John olhou novamente para a igreja.
+
+Depois para a padaria.
+
+Depois para a igreja.
+
+Beatrice acompanhou o movimento de sua cabeça.
+
+— Ela não vai embora.
+
+— Como sabe?
+
+— Porque é uma igreja, John.
+
+Ele não encontrou argumento suficientemente bom contra aquilo.
+
+Atravessou o caminho.
+
+Assim que passou pela porta, o calor o envolveu.
+
+Era diferente do calor da oficina de Cedric. Lá, o fogo parecia empurrar as pessoas para trás. Na padaria, fazia o contrário.
+
+Convidava a ficar.
+
+O cheiro também mudava completamente. Madeira queimando no forno, farinha, massa assada e alguma coisa doce que John não conseguiu identificar de imediato.
+
+Sobre o balcão havia pães ainda descansando. Alguns tinham a crosta clara; outros, mais tostada. Perto do forno, uma nova fornada esperava pelas mãos de Beatrice.
+
+John respirou fundo.
+
+— Isso deveria ser proibido.
+
+— O pão?
+
+— O cheiro.
+
+Beatrice colocou o pano sobre o balcão.
+
+— Posso fechar a janela.
+
+— Não acho que resolveria.
+
+Ela soltou uma risada curta e voltou ao trabalho.
+
+John conhecia Beatrice havia tempo suficiente para saber que conversar com ela não significava que ela pararia o que estava fazendo. As mãos continuavam ocupadas enquanto a conversa acontecia ao redor delas.
+
+— Veio cedo hoje — disse ela.
+
+— Você também.
+
+Beatrice olhou para ele.
+
+Depois para o forno.
+
+Depois novamente para ele.
+
+— John, eu faço pão.
+
+— É um argumento justo.
+
+Ela pegou um dos pães menores e examinou a crosta.
+
+— O trigo chegou bom esta semana.
+
+John se apoiou no balcão.
+
+— Da fazenda?
+
+— De onde mais viria?
+
+Ele deu de ombros.
+
+— Tobias vende tanta coisa naquele armazém que, se amanhã disser que encontrou trigo dentro de uma caixa vinda do outro lado de Arkan, eu provavelmente acreditaria.
+
+— E pagaria o dobro.
+
+— Eu não disse que compraria.
+
+Beatrice sorriu e voltou os olhos para o pão.
+
+Era uma conversa sem importância.
+
+Talvez por isso fosse tão fácil permanecer nela.
+
+Do lado de fora, Arkham continuava passando diante da porta. Um homem atravessou carregando ferramentas. Uma carroça seguiu lentamente pelo caminho. Duas crianças correram atrás dela até alguma voz, em algum lugar, ordenar que parassem.
+
+John observou por alguns segundos.
+
+A farinha que chegava às mãos de Beatrice tinha começado muito antes daquela manhã.
+
+Alguém preparara a terra.
+
+Alguém plantara o trigo.
+
+Alguém o colhera.
+
+Alguém o trouxera até ali.
+
+E agora Beatrice retirava pão do forno enquanto a vila seguia seu dia como se nada disso fosse extraordinário.
+
+Talvez não fosse.
+
+Talvez fosse exatamente esse o segredo.
+
+Arkham não precisava que uma única pessoa fizesse tudo.
+
+Precisava apenas que cada uma fizesse a sua parte.
+
+Beatrice empurrou alguma coisa pelo balcão.
+
+John olhou.
+
+Um pequeno pedaço de pão.
+
+Ainda quente.
+
+— Não tenho dinheiro comigo.
+
+— Eu não disse que estava vendendo.
+
+— Então isso é perigoso.
+
+— Por quê?
+
+John pegou o pedaço.
+
+— Porque eu posso me acostumar.
+
+— Nesse caso, amanhã eu cobro.
+
+Ele partiu um pedaço com os dedos.
+
+A crosta estalou.
+
+John provou.
+
+Ficou em silêncio.
+
+Beatrice esperou.
+
+— Bem?
+
+John mastigou devagar, assumindo uma expressão exageradamente séria.
+
+— Acho que vou precisar de outro para formar uma opinião.
+
+Beatrice puxou o restante do pão para longe dele.
+
+— Vá para a igreja.
+
+John riu.
+
+Lá fora, os sinos tocaram novamente.
+
+Dessa vez, ele levantou a cabeça imediatamente.
+
+Beatrice apontou para a porta sem sequer olhar.
+
+— Agora.
+
+John colocou o último pedaço na boca e começou a sair.
+
+— Obrigado.
+
+— Depois você paga.
+
+Ele parou na porta.
+
+— Você disse que não estava vendendo.
+
+— Mudei de ideia.
+
+John balançou a cabeça, sorrindo, e voltou para a rua.
+
+Atrás dele, ouviu Beatrice chamando alguma coisa sobre não aparecer no dia seguinte esperando outra amostra grátis.
+
+Não respondeu.
+
+O caminho para a igreja o esperava.
+
+E, por enquanto, aquele ainda era o tipo de problema que uma manhã em Arkham podia oferecer.
+
 ---
 
 ## 2. 📋 Notas editoriais de continuidade
 
-- Esta é a primeira página aprovada do Capítulo 1; a continuação será construída e validada página por página.
+- Páginas 1 e 2 aprovadas; a continuação será construída e validada página por página.
 - O capítulo começa deliberadamente antes de a guerra dominar a percepção cotidiana de John.
 - Arkham é apresentada primeiro como lar, comunidade e rotina, para que ameaças posteriores tenham peso emocional.
 - John permanece um jovem soldado sem poderes extraordinários ou destino conhecido por ele.
-- A localização/origem da madeira do primeiro arco de equipamento permanece em aberto e não é canonizada nesta página.
-- Cedric e John já demonstram familiaridade cotidiana; o grau e a história dessa relação poderão ser aprofundados nas páginas seguintes sem contradizer esta abertura.
+- A localização/origem da madeira do primeiro arco de equipamento permanece em aberto. A igreja surge como destino de John, mas o motivo da ida ainda não foi definido nem canonizado.
+- Uma possibilidade futura é relacionar a igreja à Madeira Comum ou a uma história/lenda associada ao item, mas isso permanece apenas como hipótese de desenvolvimento e não como cânone.
+- Cedric e John demonstram familiaridade cotidiana; o grau e a história dessa relação poderão ser aprofundados posteriormente.
+- Beatrice é apresentada em coerência com NPC-005: padeira, ligada ao pão fresco e ao trigo produzido nas fazendas de Arkham. A cena ocorre na padaria física, sem depender da banca de praça prevista na rota documental.
 - Personagens e locais devem surgir organicamente na prosa, sem transformar a narrativa em catálogo do GDD.
