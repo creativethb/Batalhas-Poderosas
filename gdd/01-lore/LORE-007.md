@@ -20,120 +20,226 @@ data_atualizacao: "2026-09-27"
 
 Antes que a guerra tivesse um rosto, Arkham tinha manhãs.
 
-Elas chegavam devagar à Colina Leste, primeiro tocando os telhados, depois escorrendo pelas paredes de pedra e madeira até alcançar os caminhos ainda úmidos da noite. Quando o sol finalmente ultrapassava as elevações ao redor da vila, encontrava um lugar que já começava a despertar.
+John gostava delas.
 
-John conhecia aquele despertar.
+Não porque fossem silenciosas. Arkham nunca despertava em silêncio. Havia sempre alguma porta de madeira reclamando ao ser aberta, algum balde encontrando o fundo de um poço, rodas de carroça esmagando a terra ainda úmida da madrugada. Quando o sol alcançava os primeiros telhados, metade da vila já parecia discutir com o novo dia.
 
-Conhecia-o tão bem que raramente precisava olhar pela janela para saber o que acontecia lá fora.
+Naquela manhã, John despertou antes que alguém precisasse chamá-lo.
 
-Havia um momento em que Arkham permanecia suspensa entre o silêncio e o trabalho. Depois vinha o primeiro ruído. Uma porta aberta. Passos sobre a terra. O ranger de uma carroça. Uma voz distante chamando alguém pelo nome. E, pouco a pouco, a vila inteira parecia lembrar que tinha coisas a fazer.
+Ficou alguns instantes deitado, olhando para as vigas de madeira acima da cama. Uma faixa estreita de luz atravessava a janela e cortava o quarto, iluminando pequenas partículas de poeira que flutuavam no ar.
+
+Não havia nada de extraordinário naquele teto.
+
+Talvez fosse justamente por isso que gostasse tanto dele.
+
+John se levantou, vestiu-se sem pressa e empurrou a janela.
+
+O ar fresco entrou de uma vez.
+
+Lá fora, Arkham despertava.
+
+Vista da Colina Leste, a vila parecia maior do que realmente era. Os telhados se espalhavam entre caminhos de terra, árvores, cercas e pequenos terrenos cultivados. Mais distante, onde as construções começavam a rarear, o verde tomava conta novamente da paisagem.
+
+Uma fina coluna de fumaça já subia de uma chaminé.
+
+Depois outra.
+
+E outra.
+
+John apoiou os braços no parapeito.
+
+Em algum ponto abaixo, um galo anunciou a manhã com tamanha convicção que outro respondeu alguns segundos depois, aparentemente ofendido pela concorrência.
+
+John sorriu.
 
 Era assim quase todos os dias.
 
-E John gostava disso.
+Quando deixou a casa, o sol ainda não havia vencido completamente o frescor da madrugada. O caminho que descia a colina guardava pequenas poças da noite anterior, e ele precisou contornar uma delas para não começar o dia com as botas cobertas de lama.
 
-Não porque Arkham fosse grandiosa. Não era. Havia cidades maiores em Arkan, muralhas mais altas, mercados mais ricos e lugares que provavelmente jamais precisariam explicar sua importância a um viajante. Arkham não tinha essa pretensão.
+Não conseguiu evitar a segunda.
 
-Ali, cada construção parecia existir porque alguém precisava dela.
+Olhou para o próprio pé.
 
-Cada caminho levava a algum trabalho.
+Suspirou.
 
-Cada porta tinha um rosto conhecido do outro lado.
+E continuou andando.
 
-Para John, aquilo bastava.
+Quanto mais descia, mais Arkham deixava de ser paisagem e se transformava em gente.
 
-Da Colina Leste, a vila se revelava aos poucos. Os caminhos desciam em direção às áreas mais movimentadas, encontrando casas, postos de trabalho e os lugares onde a vida de Arkham se cruzava. Mais adiante, a praça começava a receber seus primeiros passos. Em algum ponto, metal encontrava metal na oficina. O som era seco, firme, impossível de confundir.
+Uma carroça passou lentamente por ele, carregada com sacos e caixotes. O homem que segurava as rédeas levantou dois dedos em cumprimento.
+
+John respondeu da mesma maneira.
+
+Não perguntou o que havia nos caixotes.
+
+Em Arkham, sempre havia alguma coisa sendo levada para algum lugar.
+
+Madeira para uma oficina. Farinha para a padaria. Ferramentas para os campos. Mantimentos chegando da fazenda. Mercadorias que atravessavam o armazém antes de desaparecerem pelas portas de alguma casa.
+
+A vila funcionava assim: centenas de pequenas tarefas que ninguém considerava importantes até o dia em que alguém deixava de fazê-las.
+
+John conhecia aqueles caminhos desde menino.
+
+Conhecia a pedra solta que fazia as carroças saltarem perto da curva. Sabia qual cerca tinha uma tábua quebrada havia meses e qual cachorro latia para qualquer desconhecido, mas jamais levantava do lugar para fazer alguma coisa a respeito.
+
+Conhecia até os sons.
+
+Por isso percebeu quando ouviu o primeiro golpe.
+
+**Clang.**
+
+O som metálico atravessou a manhã.
+
+John continuou caminhando.
+
+**Clang.**
+
+Uma pausa.
+
+**Clang.**
+
+Não precisava olhar para saber de onde vinha.
 
 Cedric já estava trabalhando.
 
-John sorriu sozinho.
+Quando se aproximou da oficina, o ar mudou. O frescor da manhã perdeu espaço para uma corrente quente que escapava pela entrada. Havia cheiro de carvão, ferro aquecido e madeira queimada.
 
-Se um dia o sol decidisse não nascer, pensou, talvez Mestre Cedric continuasse martelando até convencê-lo a voltar.
+John diminuiu o passo.
 
-O som atravessava a manhã em intervalos irregulares e se misturava a outros. Madeira sendo arrastada. Animais inquietos. Conversas curtas. O movimento dos trabalhadores que conheciam suas tarefas tão bem quanto conheciam as próprias mãos.
+Lá dentro, entre o brilho alaranjado da forja e as sombras da oficina, Mestre Cedric trabalhava.
 
-Arkham não despertava de uma vez.
+Não era preciso conversar com ele para saber se estava ocupado. Bastava observar a maneira como segurava o martelo.
 
-Ela se montava.
+Naquela manhã, definitivamente estava.
 
-Peça por peça.
+John ficou alguns segundos olhando.
 
-Pessoa por pessoa.
+Cedric ergueu o martelo.
 
-John deixou a casa e tomou o caminho que conhecia desde muito antes de vestir-se como soldado. Não havia cerimônia naquele gesto. Seus pés encontravam as curvas quase sozinhos. Certas pedras ele evitava sem pensar. Certos pontos faziam seus olhos se erguerem por hábito.
+Golpeou.
 
-A vila tinha mudado ao longo dos anos. Ele também.
+Faíscas saltaram.
 
-Ainda assim, havia manhãs em que tudo parecia exatamente onde deveria estar.
+Ergueu novamente.
 
-Na direção da padaria, o começo de um cheiro quente escapava para o caminho e disputava espaço com o ar fresco. Em outra parte da vila, alguém preparava ferramentas para mais um dia. Próximo aos acessos, os guardas mantinham sua rotina. Mais distante, para além do núcleo das casas, os trabalhos que sustentavam Arkham já chamavam seus moradores.
+Outro golpe.
 
-John observava tudo sem a solenidade de quem contempla uma paisagem.
+John já tinha visto aquela cena dezenas de vezes. Talvez centenas.
 
-Ele apenas estava em casa.
+Ainda assim, havia alguma coisa fascinante em observar um pedaço de metal sem forma entrar naquela oficina e, depois de fogo, força e paciência suficientes, sair de lá transformado em alguma coisa que tinha propósito.
 
-Talvez fosse justamente por isso que reparasse em tão pouco e, ao mesmo tempo, soubesse tanto.
+Cedric percebeu sua presença sem interromper o trabalho.
 
-Sabia onde o caminho ficava escorregadio depois da chuva. Sabia em que hora o movimento aumentaria. Sabia reconhecer alguns trabalhadores pelo modo de andar antes mesmo de ver seus rostos. Sabia que determinadas conversas começariam iguais às do dia anterior e terminariam com as mesmas reclamações.
+— Se continuar parado aí, rapaz, vou começar a cobrar pela vista.
 
-Essas pequenas certezas tinham um valor que John nunca precisara medir.
+John abriu um sorriso.
 
-A paz costuma ser assim.
+— Bom dia para você também, mestre.
 
-Enquanto existe, parece apenas o intervalo normal entre um dia e outro.
+— O dia ainda está decidindo.
 
-John ainda não pensava nela como algo que pudesse acabar.
+Outro golpe.
 
-Naquela manhã, seus pensamentos eram menores.
+**Clang.**
 
-Treinar. Trabalhar. Tornar-se mais forte.
+John riu pelo nariz e voltou ao caminho.
 
-Talvez ajudar alguém antes que o dia terminasse. Talvez ouvir uma bronca que não merecia. Talvez merecê-la. Talvez passar pela oficina e encontrar Cedric ocupado demais para conversar, embora não ocupado o bastante para deixar de notar alguma postura errada ou alguma ferramenta fora do lugar.
+Não precisava de mais.
 
-Coisas comuns.
+Em Arkham, algumas conversas duravam uma tarde inteira.
 
-Coisas de Arkham.
+Outras precisavam de duas frases.
 
-Ao seguir em direção à parte mais viva da vila, John ergueu os olhos por um instante.
+Poucos minutos depois, o cheiro da forja começou a desaparecer.
 
-Arkham estava diante dele.
+Outro tomou seu lugar.
 
-As casas. Os caminhos. A praça. Os locais de trabalho. A igreja. A fumaça subindo de onde o fogo já havia sido aceso. Os sons se sobrepondo até formarem aquele ruído particular que nenhuma outra vila poderia reproduzir exatamente da mesma maneira.
+Pão.
 
-Ele não sabia explicar por que gostava tanto daquilo.
+John parou.
 
-Talvez porque cada som dissesse, à sua maneira, que as pessoas estavam ali.
+Inspirou novamente, só para ter certeza.
 
-Vivas.
+Pão recém-assado.
 
-Ocupadas.
+Virou o rosto na direção da padaria.
 
-Seguras.
+Aquilo era injusto.
 
-John respirou fundo e continuou descendo.
+Beatrice tinha descoberto havia muito tempo que não precisava chamar clientes. Bastava abrir as janelas.
 
-Ainda havia tempo antes que as notícias chegassem.
+John considerou mudar seu caminho.
 
-Tempo antes que nomes distantes começassem a aparecer nas conversas.
+Considerou seriamente.
 
-Tempo antes que estradas deixassem de trazer apenas viajantes e mercadorias.
+Então ouviu os sinos da igreja marcando a hora e desistiu da ideia.
 
-Tempo antes que John entendesse que um lar não é apenas o lugar para onde alguém retorna.
+— Depois — prometeu a si mesmo.
 
-Às vezes, é o lugar pelo qual alguém decide ficar.
+Continuou em direção à praça.
 
-Naquela manhã, porém, ele não sabia de nada disso.
+A essa altura, Arkham já estava completamente acordada.
 
-E Arkham, por algumas horas ainda, podia simplesmente ser Arkham.
+Vozes se misturavam. Portas se abriam. Alguém discutia o preço de alguma coisa que John não conseguiu identificar. Um homem carregava uma caixa grande demais para carregar sozinho e recusava ajuda com a teimosia de quem preferia quebrar a coluna a admitir o erro.
+
+Perto dali, dois guardas conversavam antes da troca de posto.
+
+Uma mulher varria a frente de casa, empurrando a mesma poeira de ontem para o mesmo canto de sempre.
+
+Crianças atravessaram correndo entre os adultos e desapareceram por outro caminho antes que alguém pudesse reclamar.
+
+John chegou à Praça Central e, por alguns instantes, simplesmente ficou ali.
+
+Ao redor dele, Arkham seguia acontecendo.
+
+A igreja observava a vila de sua posição elevada. Mais além estavam caminhos que levavam ao cais, às áreas de trabalho, ao santuário e às terras que alimentavam boa parte daquela gente. Fora do centro, a fazenda já devia estar desperta havia horas.
+
+John não enxergava tudo dali.
+
+Não precisava.
+
+Sabia que estava lá.
+
+E talvez essa fosse a estranha segurança de chamar algum lugar de lar.
+
+Não era conhecer cada pedra.
+
+Era saber o que existia depois da curva.
+
+Saber quem provavelmente estaria atrás de determinada porta.
+
+Reconhecer um lugar pelo cheiro antes mesmo de vê-lo.
+
+John respirou fundo.
+
+Naquela manhã, não havia monstros esperando nos caminhos.
+
+Nenhuma criatura escondida sob Arkham.
+
+Nenhum grande destino chamando seu nome.
+
+Havia trabalho a fazer.
+
+Pessoas para encontrar.
+
+Coisas pequenas demais para entrarem em qualquer canção.
+
+E John ainda não sabia que, muitos anos depois, seriam justamente aquelas coisas pequenas que ele tentaria recordar com mais força.
+
+Naquele momento, porém, o futuro não lhe devia explicações.
+
+Arkham estava ali.
+
+E aquilo bastava.
 
 ---
 
 ## 2. 📋 Notas editoriais de continuidade
 
+- Esta é a primeira página aprovada do Capítulo 1; a continuação será construída e validada página por página.
 - O capítulo começa deliberadamente antes de a guerra dominar a percepção cotidiana de John.
 - Arkham é apresentada primeiro como lar, comunidade e rotina, para que ameaças posteriores tenham peso emocional.
 - John permanece um jovem soldado sem poderes extraordinários ou destino conhecido por ele.
-- A localização/origem da madeira do primeiro arco de equipamento não é definida neste capítulo.
-- A guerra existe no pano de fundo do cânone, mas sua entrada concreta na experiência de John será construída progressivamente.
+- A localização/origem da madeira do primeiro arco de equipamento permanece em aberto e não é canonizada nesta página.
+- Cedric e John já demonstram familiaridade cotidiana; o grau e a história dessa relação poderão ser aprofundados nas páginas seguintes sem contradizer esta abertura.
 - Personagens e locais devem surgir organicamente na prosa, sem transformar a narrativa em catálogo do GDD.
-- Continuação do capítulo deve ser cruzada com o estado canônico dos NPCs, locais e onboarding antes de fixar novos acontecimentos.
