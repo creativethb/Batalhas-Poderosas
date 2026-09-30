@@ -6,29 +6,58 @@ relacionados:
   - "LORE-002"
   - "NPC-001"
   - "NPC-002"
+  - "NPC-014"
+  - "ITEM-001"
+  - "ITEM-002"
   - "ITEM-003"
+  - "DOS-004"
   - "BP-2026-002"
-atualizado_por: "agente"
+atualizado_por: "ChatGPT"
+data_atualizacao: "2026-09-30"
 ---
 
 # Loop Principal e Progressão de Gameplay
 
 ## 1. Loop Central
-O ciclo de jogo em Batalhas Poderosas equilibra três pilares fundamentais:
-1. **Exploração & Coleta:** Vasculhar a vila, residências, florestas e minas em busca de recursos, diálogos com anciões e segredos.
-2. **Artesanato & Preparação:** Levar materiais aos artesãos (como a Forja do Cedric) para confeccionar equipamentos aprimorados.
-3. **Combate & Missões:** Enfrentar ameaças locais, patrulhar perímetros e desbravar portais para outras dimensões.
+O ciclo de jogo equilibra:
+1. Exploração & Coleta.
+2. Artesanato & Preparação.
+3. Combate & Missões.
 
-## 2. Fase 1: Despertar em Arkham
-- **Spawn:** Jogador acorda no interior de sua casa na Colina Leste.
-- **Objetivo 1:** Coletar 1 Madeira Comum na mesa principal.
-- **Objetivo 2:** Ir até o bosque a oeste e conversar com o Ancião Eldrin para obter o Galho Sagrado.
-- **Objetivo 3:** Ir até a oficina de Mestre Cedric na praça da vila e forjar a Espada de Madeira Sagrada.
-- **Recompensa:** Espada de Madeira Sagrada equipada diretamente nas mãos de John com persistência total pós-morte.
+## 2. Fase 1: preparação de John
 
-## 3. Inicialização e Liberação do Jogador
+### Fluxo narrativo/gameplay em revisão
+1. John procura Mestre Cedric buscando uma espada de madeira para treinamento.
+2. Cedric não possui uma pronta e orienta John a reunir os materiais.
+3. John vai a um estabelecimento da vila ligado ao trabalho ou fornecimento de madeira e obtém um pedaço de Madeira Comum.
+4. John leva a Madeira Comum ao padre da vila e pede sua unção.
+5. Depois do rito, o material passa a ser Madeira Ungida.
+6. John obtém também o Galho da Árvore Sagrada / Madeira Sagrada, ligado à Árvore Sagrada e a Eldrin.
+7. John retorna à oficina de Cedric com a Madeira Ungida e a Madeira Sagrada.
+8. Cedric fabrica a espada de madeira destinada ao treinamento.
+9. John prossegue com sua preparação.
 
-A abertura do jogo foi reorganizada para impedir que o jogador veja o mundo sendo montado antes de estar pronto.
+### Pendências antes da implementação definitiva
+- Definir qual estabelecimento fornece a Madeira Comum.
+- Definir/identificar o padre da vila.
+- Definir a ordem final entre a obtenção/unção da madeira comum e o Galho Sagrado.
+- Criar ou revisar a ficha da Madeira Ungida.
+- Revisar o nome e a receita definitiva da espada.
+- Atualizar diálogos de Cedric, padre e Eldrin.
+- Alterar no Roblox Studio a origem física da Madeira Comum.
+- Validar o ciclo completo em Playtest.
+
+> LEGADO ATUAL: a implementação que coloca Madeira Comum na mesa da Casa de John pertence ao fluxo antigo e não deve orientar novas decisões narrativas.
+
+## 3. Princípio do arco
+As etapas adicionais não existem apenas para alongar o tutorial. Cada deslocamento deve apresentar uma parte da vila, fortalecer relações com seus moradores e dar significado à fabricação da primeira espada deste ciclo.
+
+Madeira Ungida e Madeira Sagrada são materiais distintos:
+- Madeira Ungida: madeira comum obtida por John e depois ungida pelo padre.
+- Madeira Sagrada: galho proveniente da Árvore Sagrada e ligado a Eldrin.
+
+## 4. Inicialização e Liberação do Jogador
+A abertura técnica permanece preparada para impedir que o jogador veja o mundo sendo montado antes de estar pronto.
 
 Fluxo atual:
 1. A tela inicial é exibida primeiro.
@@ -38,17 +67,15 @@ Fluxo atual:
 5. A tela de carregamento permanece cobrindo a abertura até a confirmação final do cliente.
 
 ### Medição local de referência — 20/09/2026
-
 | Marco | Tempo aproximado |
 | :--- | ---: |
 | Carregamento base do jogo | 0,36 s |
 | Posicionamento de John + chegada da casa | 5,40 s |
 | Recursos visuais essenciais da casa prontos | 6,37 s |
 
-> Estes valores são **medições de teste local**, não metas canônicas de desempenho. Devem ser reavaliados conforme o projeto evoluir.
+> Valores de teste local, não metas canônicas de desempenho.
 
-## 4. Estado Atual do Áudio
-
-- IDs inválidos de sons locais que geravam avisos no console foram removidos, mantendo os objetos preparados para receber novos áudios.
-- A música global da Vila de Arkham permanece em `SoundService`, pois pertence ao gameplay geral.
-- O ID atual dessa música ainda apresenta falha de download e deve ser substituído futuramente por um áudio válido e autorizado.
+## 5. Estado Atual do Áudio
+- IDs inválidos de sons locais que geravam avisos no console foram removidos.
+- A música global da vila permanece em SoundService.
+- O ID atual dessa música ainda apresenta falha de download e deve ser substituído futuramente.
