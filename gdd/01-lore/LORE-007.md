@@ -7,7 +7,7 @@ relacionados:
   - "LOCAL-001"
   - "LOCAL-007"
   - "NPC-005"
-data_atualizacao: "2026-09-27"
+data_atualizacao: "2026-09-30"
 ---
 
 # O Conto das Batalhas Poderosas
@@ -475,16 +475,372 @@ O caminho para a igreja o esperava.
 
 E, por enquanto, aquele ainda era o tipo de problema que uma manhã em Arkham podia oferecer.
 
+
+### Página 3
+
+O caminho para a igreja começava pouco depois da praça.
+
+John o tomou ainda terminando de mastigar o último pedaço de pão.
+
+Não precisou olhar para trás para imaginar Beatrice na porta da padaria, provavelmente satisfeita por tê-lo expulsado a tempo e ainda mais satisfeita por ter transformado uma amostra grátis em uma dívida futura.
+
+Sorriu sozinho.
+
+A subida não era longa, mas bastava para que os sons da praça começassem a perder força. O ruído das carroças ficou para trás. As conversas se tornaram indistintas. Até o martelo de Cedric, que vez ou outra ainda conseguia alcançar aquela parte da vila, parecia chegar mais fraco.
+
+Os sinos já haviam se calado.
+
+John subiu os últimos degraus.
+
+A porta da igreja estava aberta.
+
+Parou diante dela por um instante.
+
+Não por hesitação.
+
+Estava apenas terminando o pão.
+
+Passou a língua pelos dentes, limpou uma migalha da roupa e entrou.
+
+A mudança de luz fez seus olhos levarem alguns segundos para se acostumar.
+
+Lá dentro, o ar era mais fresco. O cheiro de madeira antiga substituiu o de pão que ainda parecia preso às suas roupas. A claridade atravessava as janelas e se espalhava pelo chão em faixas compridas.
+
+Então ouviu vozes.
+
+Muitas.
+
+Infantis.
+
+John fechou os olhos por um segundo.
+
+Uma batalha, pensou, talvez tivesse sido mais simples.
+
+— Ele chegou!
+
+A declaração veio de algum ponto à frente.
+
+John abriu os olhos.
+
+Vários rostos se viraram ao mesmo tempo.
+
+As crianças estavam reunidas mais adiante, algumas sentadas corretamente, outras apenas fazendo uma interpretação bastante generosa do que significava estar sentada.
+
+Uma delas levantou.
+
+— Você demorou.
+
+John olhou ao redor, procurando apoio entre os adultos.
+
+Não encontrou nenhum.
+
+— Bom dia para você também.
+
+Algumas crianças riram.
+
+Outra mão se ergueu imediatamente.
+
+John apontou.
+
+— Nem comecei ainda.
+
+A mão continuou no alto.
+
+— Mas eu já tenho uma pergunta.
+
+— Isso é preocupante.
+
+Mais risos.
+
+John caminhou até elas.
+
+A mão permanecia levantada.
+
+— Está bem. Qual é a pergunta?
+
+— É verdade que você já entrou numa dungeon?
+
+A igreja ficou estranhamente quieta.
+
+John parou.
+
+Havia muitas respostas possíveis.
+
+Algumas eram curtas.
+
+Outras provavelmente não deveriam ser contadas a crianças.
+
+— É verdade.
+
+A reação foi imediata.
+
+Várias mãos subiram.
+
+— Tinha monstros?
+
+— Você estava sozinho?
+
+— Encontrou tesouro?
+
+— Matou alguma coisa?
+
+— Viu alguém morrer?
+
+A última pergunta derrubou as outras.
+
+Algumas mãos baixaram.
+
+John procurou quem a fizera.
+
+Era um menino sentado mais atrás.
+
+Não parecia assustado.
+
+Parecia curioso.
+
+John conhecia aquela curiosidade.
+
+Já a tinha visto antes.
+
+Às vezes em crianças.
+
+Às vezes em homens que nunca haviam segurado uma espada fora de um campo de treinamento.
+
+Ele puxou uma cadeira e a virou antes de se sentar diante delas.
+
+— Acho que precisamos começar de outro lugar.
+
+Uma menina franziu a testa.
+
+— Da entrada da dungeon?
+
+— De bem antes da entrada.
+
+— Quanto antes?
+
+John pensou.
+
+— De quando alguém manda vocês arrumarem a cama.
+
+Houve uma revolta imediata.
+
+— Isso não tem nada a ver!
+
+— Tem bastante.
+
+— Com dungeon?
+
+— Principalmente com dungeon.
+
+Algumas crianças olharam umas para as outras, desconfiadas.
+
+John apoiou os braços no encosto da cadeira.
+
+— Vocês acham que um soldado aprende disciplina quando começa uma batalha?
+
+Ninguém respondeu.
+
+— Aprende quando ninguém está olhando.
+
+Uma das crianças levantou a mão.
+
+John apontou para ela.
+
+— Quando arruma a cama?
+
+— Também.
+
+Outra mão.
+
+— Quando limpa a espada?
+
+— Principalmente.
+
+Outra.
+
+— Quando obedece?
+
+John demorou um pouco mais para responder.
+
+— Quando entende por que precisa obedecer.
+
+Aquilo produziu um silêncio diferente.
+
+Menos inquieto.
+
+John continuou:
+
+— Uma batalha é a parte que todo mundo gosta de colocar nas histórias. Espadas, escudos, gente correndo, alguém fazendo alguma coisa heroica no momento certo.
+
+Fez uma pequena pausa.
+
+— O problema é que ninguém conta as horas antes disso.
+
+As crianças o observavam.
+
+— Ninguém canta sobre quem verificou as provisões. Sobre quem percebeu que uma correia estava quase rompendo. Sobre quem contou as tochas antes de entrar num lugar onde não havia luz. Sobre quem prestou atenção ao caminho para que todos conseguissem voltar.
+
+A menina da primeira pergunta tornou a levantar a mão.
+
+— Você já esqueceu alguma coisa?
+
+John estreitou os olhos.
+
+— Próxima pergunta.
+
+A igreja explodiu em risadas.
+
+— Então já!
+
+— Eu não disse isso.
+
+— Disse sim!
+
+— Definitivamente não disse.
+
+— O que você esqueceu?
+
+John olhou para a porta.
+
+Ainda dava tempo de fugir.
+
+Talvez Beatrice o escondesse na padaria.
+
+Provavelmente cobraria.
+
+— Quando vocês forem mais velhos — disse ele — vão descobrir que algumas histórias existem apenas para ensinar uma lição.
+
+— Qual?
+
+— Nunca contar tudo para crianças.
+
+As risadas voltaram.
+
+John sorriu.
+
+Era por isso que aceitava aqueles convites.
+
+Não porque se considerasse alguém particularmente importante.
+
+Muito menos porque acreditasse que suas histórias mereciam ser repetidas.
+
+Mas aquelas crianças conheciam o Reino de Arkan de uma maneira diferente da dele.
+
+Para elas, o Reino estava nos símbolos, nas histórias dos adultos, nos viajantes que atravessavam a vila e nas ordens que, de tempos em tempos, chegavam de lugares que algumas jamais haviam visto.
+
+John conhecia estradas.
+
+Conhecia postos de guarda.
+
+Conhecia noites mal dormidas.
+
+Conhecia o peso de caminhar ao lado de alguém importante e saber que, se alguma coisa acontecesse, era o seu corpo que deveria estar entre o perigo e aquela pessoa.
+
+Conhecia também a parte que ninguém costumava colocar nas canções.
+
+A espera.
+
+O cansaço.
+
+O medo que chegava antes.
+
+E o silêncio que às vezes vinha depois.
+
+O menino do fundo ainda o observava.
+
+John percebeu.
+
+A pergunta continuava ali, mesmo sem ser repetida.
+
+*Viu alguém morrer?*
+
+John poderia responder.
+
+Não respondeu.
+
+Ainda não.
+
+Em vez disso, levantou-se.
+
+— Certo. Vamos fazer um acordo.
+
+As crianças se ajeitaram.
+
+— Eu conto uma história.
+
+Alguns rostos imediatamente se iluminaram.
+
+— Uma de verdade — acrescentou John.
+
+Mais ainda.
+
+— Mas vocês vão ter que descobrir sozinhos qual é a parte importante dela.
+
+Uma mão surgiu.
+
+— Tem batalha?
+
+John inclinou a cabeça.
+
+— Talvez.
+
+Outra.
+
+— Tem dungeon?
+
+— Talvez.
+
+Outra.
+
+— Tem monstro?
+
+John abriu a boca.
+
+Parou.
+
+Sorriu.
+
+— Vocês fazem perguntas demais.
+
+Do fundo da igreja veio uma voz adulta:
+
+— Foi exatamente por isso que eu o chamei.
+
+John virou o rosto.
+
+E encontrou o padre observando a cena.
+
+As crianças riram outra vez.
+
+John balançou a cabeça.
+
+— Estou começando a achar que fui enganado para vir aqui.
+
+— E mesmo assim veio.
+
+John olhou para as crianças.
+
+Depois para o padre.
+
+— É.
+
+Puxou novamente a cadeira.
+
+— Eu vim.
+
+E começou a história.
+
 ---
 
 ## 2. 📋 Notas editoriais de continuidade
 
-- Páginas 1 e 2 aprovadas; a continuação será construída e validada página por página.
+- Páginas 1, 2 e 3 aprovadas; a continuação será construída e validada página por página.
 - O capítulo começa deliberadamente antes de a guerra dominar a percepção cotidiana de John.
 - Arkham é apresentada primeiro como lar, comunidade e rotina, para que ameaças posteriores tenham peso emocional.
 - John permanece um jovem soldado sem poderes extraordinários ou destino conhecido por ele.
-- A localização/origem da madeira do primeiro arco de equipamento permanece em aberto. A igreja surge como destino de John, mas o motivo da ida ainda não foi definido nem canonizado.
-- Uma possibilidade futura é relacionar a igreja à Madeira Comum ou a uma história/lenda associada ao item, mas isso permanece apenas como hipótese de desenvolvimento e não como cânone.
+- A ida de John à igreja nesta manhã está ligada a um convite para conversar com as crianças em uma atividade/aula dominical, coerente com seu histórico de serviço ao Reino de Arkan.
+- A Página 3 começa a revelar a experiência militar anterior de John de forma orgânica, sem transformar a narrativa em exposição biográfica.
+- O primeiro arco de preparação do gameplay prevê que a Madeira Comum seja obtida em estabelecimento adequado e posteriormente ungida pelo padre, mas essa mecânica não é introduzida nesta cena literária.
 - Cedric e John demonstram familiaridade cotidiana; o grau e a história dessa relação poderão ser aprofundados posteriormente.
 - Beatrice é apresentada em coerência com NPC-005: padeira, ligada ao pão fresco e ao trigo produzido nas fazendas de Arkham. A cena ocorre na padaria física, sem depender da banca de praça prevista na rota documental.
 - Personagens e locais devem surgir organicamente na prosa, sem transformar a narrativa em catálogo do GDD.
