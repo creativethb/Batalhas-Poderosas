@@ -177,3 +177,29 @@
 | **`BP-2026-006`** | Diário de John — Elemento Narrativo e Funcional | Narrativa & Lore | `CANONICO` | `gdd/99-canon/CANON-006.md` |
 | **`BP-2026-007`** | Protocolo Narrativo — Diário e Livro/Lore | Narrativa & Sistema | `CANONICO` | `gdd/99-canon/CANON-007.md` |
 | **`BP-2026-008`** | Expansão Rural e Masterplan da Fazenda | Arquitetura & Economia | `CANONICO` | `gdd/99-canon/CANON-008.md` |
+
+
+## Atualização da masmorra — 05/10/2026
+
+| ID | Nome | Função | Estado | Documento |
+|---|---|---|---|---|
+| BEST-001 | Autômato de Pedra — Lacaio | Adversário da masmorra | EM_DESENVOLVIMENTO | [BEST-001](gdd/04-bestiario/BEST-001.md) |
+| BEST-002 | Autômato de Pedra — Guardião do Piso 1 | Adversário da masmorra | EM_DESENVOLVIMENTO | [BEST-002](gdd/04-bestiario/BEST-002.md) |
+| BEST-003 | Autômato de Empurrão | Adversário da masmorra | EM_DESENVOLVIMENTO | [BEST-003](gdd/04-bestiario/BEST-003.md) |
+| BEST-004 | Soldado de Maça | Adversário da masmorra | EM_DESENVOLVIMENTO | [BEST-004](gdd/04-bestiario/BEST-004.md) |
+| BEST-005 | Sentinela de Elite Blindada | Adversário da masmorra | EM_DESENVOLVIMENTO | [BEST-005](gdd/04-bestiario/BEST-005.md) |
+| BEST-006 | Sentinela de Ardósia | Adversário da masmorra | EM_DESENVOLVIMENTO | [BEST-006](gdd/04-bestiario/BEST-006.md) |
+| BEST-007 | Golem Forjador de Cinzas | Adversário da masmorra | EM_DESENVOLVIMENTO | [BEST-007](gdd/04-bestiario/BEST-007.md) |
+| BEST-008 | Aparição de Monge | Adversário da masmorra | EM_DESENVOLVIMENTO | [BEST-008](gdd/04-bestiario/BEST-008.md) |
+| BEST-009 | Patriarca Sepultado | Adversário da masmorra | EM_DESENVOLVIMENTO | [BEST-009](gdd/04-bestiario/BEST-009.md) |
+| BEST-010 | Pretoriano da Guarda Real | Adversário da masmorra | EM_DESENVOLVIMENTO | [BEST-010](gdd/04-bestiario/BEST-010.md) |
+| BEST-011 | Espadachim do Selo | Adversário da masmorra | EM_DESENVOLVIMENTO | [BEST-011](gdd/04-bestiario/BEST-011.md) |
+| BEST-012 | Besteiro do Mezanino | Adversário da masmorra | EM_DESENVOLVIMENTO | [BEST-012](gdd/04-bestiario/BEST-012.md) |
+| BEST-013 | Espírito Guardião das Criptas | Adversário da masmorra | EM_DESENVOLVIMENTO | [BEST-013](gdd/04-bestiario/BEST-013.md) |
+| BEST-014 | Valerius I — O Marechal de Ferro | Adversário da masmorra | EM_DESENVOLVIMENTO | [BEST-014](gdd/04-bestiario/BEST-014.md) |
+| BEST-015 | Gárgula de Vigia | Ameaça de cenário / manifestação | EM_DESENVOLVIMENTO | [BEST-015](gdd/04-bestiario/BEST-015.md) |
+| BEST-016 | Espectro Errante | Ameaça de cenário / manifestação | EM_DESENVOLVIMENTO | [BEST-016](gdd/04-bestiario/BEST-016.md) |
+| DNG-009 | Masmorra — mapa atual de pisos, rotas e integração | Consolidação da implementação | EM_DESENVOLVIMENTO | [DNG-009](gdd/07-masmorras/DNG-009.md) |
+| DNG-010 | Segundo piso — Ala Leste / Câmaras Mecânicas | Rota do segundo piso | EM_DESENVOLVIMENTO | [DNG-010](gdd/07-masmorras/DNG-010.md) |
+| DNG-011 | Segundo piso — Ala Oeste / Arquivos Arcanos | Rota do segundo piso | EM_DESENVOLVIMENTO | [DNG-011](gdd/07-masmorras/DNG-011.md) |
+| DNG-012 | Segundo piso — Ala Norte / Domínio dos Reis | Rota do segundo piso | EM_DESENVOLVIMENTO | [DNG-012](gdd/07-masmorras/DNG-012.md) |

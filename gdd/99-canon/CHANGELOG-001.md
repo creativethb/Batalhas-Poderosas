@@ -102,3 +102,8 @@ A versão **2.0** representa, portanto, uma mudança estrutural de geração do 
 **Provisório / em reconstrução histórica.**
 
 Os marcos 1.0, 1.1, 1.3, 1.4 e 2.0 estão registrados a partir da memória atual do desenvolvimento. As versões 1.2, 1.5 e a distribuição precisa dos acontecimentos entre 1.6 e 1.9 devem ser refinadas quando houver conferência dos registros anteriores.
+
+
+## Masmorra — consolidação de 05/10/2026
+
+Três rotas do Piso 2 integradas à vila: Leste procedural, Oeste fixa e Norte linear. Bestiário atualizado para BEST-001 a BEST-016, com duas ameaças sem Humanoid separadas dos 14 arquétipos de combate. Fichas DNG-009 a DNG-012 registram percurso, imagens pendentes, recompensas persistentes e limites. Besta de Éter e Cetro dos Patriarcas entram no inventário persistente; chaves da dungeon são temporárias. Loot monetário, munição limitada, balanceamento por grupo e domínios 2–6 futuros. Index preservado; catálogo descoberto automaticamente pelo site. Alteração da nomenclatura da árvore adiada.

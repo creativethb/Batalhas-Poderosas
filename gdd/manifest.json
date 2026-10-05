@@ -53,7 +53,8 @@
       "renderer": "dossie",
       "slug": "bestiario",
       "grupo": "UNIVERSO",
-      "descricao": "Criaturas, autômatos, guardiões e inimigos catalogados de Arkan."
+      "descricao": "Adversários da masmorra dos pisos 1 e 2: autômatos, guardas, besteiros, espectros e chefes; ameaças fixas identificadas separadamente.",
+      "assets": "assets/bestiario"
     },
     {
       "id": "livro",
@@ -175,7 +176,8 @@
       "renderer": "gdd",
       "slug": "masmorras",
       "grupo": "GAMEPLAY & SISTEMAS",
-      "descricao": "Arquitetura técnica, geração procedural DFS, armadilhas e progressão das masmorras."
+      "descricao": "Pisos e rotas da masmorra: Leste procedural, Oeste fixa e Norte linear; progressão, integração e pendências.",
+      "assets": "assets/masmorras"
     },
     {
       "id": "dossie",

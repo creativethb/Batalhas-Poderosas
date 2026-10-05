@@ -333,3 +333,8 @@ Todos os 20+ NPCs da vila utilizam rig oficial **R15 com malha arredondada (Rig 
 ---
 
 *Documento gerado e mantido pelo Subagente Bibliotecário de Batalhas Poderosas.*
+
+
+## Masmorra — consolidação de 05/10/2026
+
+Três rotas do Piso 2 integradas à vila: Leste procedural, Oeste fixa e Norte linear. Bestiário atualizado para BEST-001 a BEST-016, com duas ameaças sem Humanoid separadas dos 14 arquétipos de combate. Fichas DNG-009 a DNG-012 registram percurso, imagens pendentes, recompensas persistentes e limites. Besta de Éter e Cetro dos Patriarcas entram no inventário persistente; chaves da dungeon são temporárias. Loot monetário, munição limitada, balanceamento por grupo e domínios 2–6 futuros. Index preservado; catálogo descoberto automaticamente pelo site. Alteração da nomenclatura da árvore adiada.

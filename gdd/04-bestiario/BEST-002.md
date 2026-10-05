@@ -1,23 +1,43 @@
 ---
 id: "BEST-002"
 nome: "Autômato de Pedra — Guardião do Piso 1"
-categoria: "Autômatos"
+funcao: "Adversário da masmorra"
 status: "EM_DESENVOLVIMENTO"
+localizacao: "P1"
 relacionados:
   - "GAME-002"
-atualizado_por: "agente"
+  - "DNG-009"
+imagem: "./assets/bestiario/BEST-002.png"
+atualizado_por: "Codex"
+data_atualizacao: "2026-10-05"
 ---
 
 # Autômato de Pedra — Guardião do Piso 1
 
-## Estado atual
+## Identidade e ocorrência
 
-- Chefe do primeiro piso da masmorra.
-- Usa o avatar R15 próprio do Guardião e uma clava presa à mão direita.
-- Possui 450 pontos de vida, ataque de clava e comportamento de perseguição.
-- O Guardião é invocado com o corpo estabilizado antes de ser liberado para combate.
-- A clava deve permanecer sem massa e soldada diretamente à malha da mão direita para não alterar o equilíbrio do avatar.
+- **Local:** P1.
+- **Categoria:** Chefe.
+- **Modelos:** `Golem_Pedra`.
+- **Vida configurada no prefab:** 450 HP (valor provisório, sujeito a ajustes de runtime e balanceamento).
+
+## Gameplay
+
+Chefe da arena final do primeiro piso; sua derrota participa da liberação da chave e do portal de saída.
+
+## Estado e limites
+
+HP do prefab; conferir eventuais ajustes de runtime antes de fechar o balanceamento.
+
+Inspeção de estrutura e código em Edit em 05/10/2026; não representa nova validação completa em Play ou teste real com cinco clientes.
 
 ## Lore
 
 O nome próprio, a origem e a história do Guardião serão definidos quando a lore dos autômatos for escrita.
+
+## Referência visual reservada
+
+> **Imagem pendente:** Guardião / Golem de Pedra. Espaço reservado para inserir a imagem da ficha.
+> Arquivo futuro: `./assets/bestiario/BEST-002.png`.
+
+Não há imagem definitiva anexada nesta atualização.
