@@ -5,6 +5,7 @@ funcao: "Plano Mestre de Consolidação, NPCs, Economia e Gameplay"
 status: "EM_DESENVOLVIMENTO"
 localizacao: "Vila de Arkham & Fazenda de Arkan"
 relacionados:
+  - "ITEM-007"
   - "GAME-001"
   - "GAME-004"
   - "GAME-006"
@@ -47,8 +48,8 @@ relacionados:
   - "NPC-027"
   - "NPC-028"
   - "NPC-029"
-atualizado_por: "ChatGPT"
-data_atualizacao: "2026-09-23"
+atualizado_por: "codex"
+data_atualizacao: "2026-10-06"
 ---
 
 # Mapa de Integração do Mundo de Arkham
@@ -146,7 +147,7 @@ Este documento não fixa preços, moeda, drops de masmorra ou missões ainda nã
 - 🔎 `DNG-002` já documenta comércio subterrâneo com Tobias, Ouro Arcaico, poções/tônicos/kits, taxa de Guilda e materiais de forja. Isso precisa ser confrontado com o que realmente está implementado antes de ampliar ou balancear a economia.
 - 🔎 `DNG-001` afirma que a masmorra é a única fonte de recursos raros necessários ao fortalecimento do reino, enquanto o plano de integração exige múltiplas fontes de renda e atividade. Na próxima revisão de design, separar claramente **recursos raros de aventura** de **fontes gerais de renda**.
 - 🔎 `GAME-002` documenta combo atual de 5 golpes; qualquer divergência com o comportamento real do John deve ser verificada no Studio.
-- 🔎 Defesa aparece visualmente preparada em `GAME-003`, mas ainda não implementada.
+- ✅ Defesa básica do Escudo de Madeira (**ITEM-007**) implementada e testada em Play em 06/10/2026: botão móvel existente e controles de PC, postura, movimento reduzido e bloqueio frontal no servidor. Ver **GAME-002** e **GAME-003**; parry/durabilidade permanecem futuros.
 - 🔎 `DNG-006` registra validação pendente da coleta corrigida da Chave do Guardião.
 - ✅ O prefab `ServerStorage.Dungeon_NPCs.Automato_Lacaio` foi limpo dos dados indevidos de Rowan; a origem era o próprio prefab salvo, sem script reaplicando a contaminação. Clonagem/controlador foram validados em Playtest controlado; a geração procedural completa permanece para validação futura.
 - 🟡 Pastor, alfaiataria e destinos finais de lã/pescado/madeira continuam lacunas documentais deliberadas, a serem decididas após a auditoria física.

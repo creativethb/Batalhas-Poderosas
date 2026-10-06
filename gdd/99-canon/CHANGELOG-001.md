@@ -5,11 +5,12 @@ funcao: "Registro histórico de desenvolvimento"
 status: "EM_DESENVOLVIMENTO"
 localizacao: "GDD / Histórico de Versões"
 relacionados:
+  - "ITEM-007"
   - "LOCAL-003"
   - "LOCAL-009"
   - "GAME-008"
-atualizado_por: "ChatGPT"
-data_atualizacao: "2026-09-22"
+atualizado_por: "codex"
+data_atualizacao: "2026-10-06"
 ---
 
 # Histórico de Versões — Evolução de Arkham
@@ -107,3 +108,16 @@ Os marcos 1.0, 1.1, 1.3, 1.4 e 2.0 estão registrados a partir da memória atual
 ## Masmorra — consolidação de 05/10/2026
 
 Três rotas do Piso 2 integradas à vila: Leste procedural, Oeste fixa e Norte linear. Bestiário atualizado para BEST-001 a BEST-016, com duas ameaças sem Humanoid separadas dos 14 arquétipos de combate. Fichas DNG-009 a DNG-012 registram percurso, imagens pendentes, recompensas persistentes e limites. Besta de Éter e Cetro dos Patriarcas entram no inventário persistente; chaves da dungeon são temporárias. Loot monetário, munição limitada, balanceamento por grupo e domínios 2–6 futuros. Index preservado; catálogo descoberto automaticamente pelo site. Alteração da nomenclatura da árvore adiada.
+
+
+## Escudo inicial e defesa — 06/10/2026
+
+Registro da implementação local, sem atribuir nova versão pública ao jogo.
+
+- **ITEM-007:** Escudo de Madeira, cortesia única de Cedric na primeira entrega da espada, inventário/equipamento persistentes e encaixe manual preservado.
+- **GAME-001 / NPC-001 / ITEM-003:** escudo no circuito entrega → inventário → equipamento → combate. A revisão narrativa com Madeira Ungida permanece pendente.
+- **GAME-002 / GAME-003:** guarda mantida, animação procedural, caminhada a 10 studs/s, exclusão de ações incompatíveis e bloqueio frontal de 120° no servidor.
+- **GAME-008 / GAME-009:** defesa implementada/TESTADA; proteção corporal e expansões de escudos continuam pendentes.
+- Play real em PC e toque no simulador de iPhone 17 Pro em paisagem; Lacaio, Guardião e Vesplume; dano traseiro/lateral; equipamento; morte/renascimento; menus/diálogo; autoridade do servidor. Último Play sem erros de runtime.
+- Não testados: celular/controle físicos, multiplayer e percurso completo das rotas do Piso 2. Parry, durabilidade e economia de escudos não foram implementados.
+- Índice e categoria Itens & Equipamentos sincronizados; captura real em ./assets/itens/ITEM-007.png. O mini-site atual descobre fichas pelo catálogo Git e lê o frontmatter, sem duplicar textos no HTML.

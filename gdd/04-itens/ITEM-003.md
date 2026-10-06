@@ -3,6 +3,7 @@ id: "ITEM-003"
 nome: "Espada de Madeira Sagrada"
 status: "CANONICO"
 relacionados:
+  - "ITEM-007"
   - "ITEM-001"
   - "ITEM-002"
   - "NPC-001"
@@ -11,7 +12,7 @@ relacionados:
   - "LORE-002"
 imagem: "./assets/itens/ITEM-003.png"
 atualizado_por: "codex"
-data_atualizacao: "2026-09-22"
+data_atualizacao: "2026-10-06"
 ---
 
 # Ficha de Equipamento: Espada de Madeira Sagrada
@@ -32,3 +33,8 @@ data_atualizacao: "2026-09-22"
 ## 3. Equipamento em desenvolvimento
 
 Ao equipar a espada pelo Alforge, John a carrega na diagonal das costas. O comando de sacar transfere a arma para a mão e mantém o combate existente; guardar a arma a devolve às costas. A representação nas costas é uma cópia visual presa ao tronco, sem colisão e sem peso físico. O encaixe foi definido na referência manual do John e aplicado ao personagem real. A posição relativa e a orientação foram comparadas em Playtest de desenvolvimento no computador em 2026-09-22; a referência temporária foi removida após o ajuste.
+
+
+## 4. Entrega inicial com escudo
+
+Ao concluir a primeira forja existente, Cedric entrega **um Escudo de Madeira (ITEM-007) como cortesia**, uma única vez. O escudo não adiciona custo ou ingredientes à receita da espada. Na mão secundária, permite guarda com a espada na mão direita. Enquanto defende, golpes de espada/dash são impedidos; ao soltar, voltam ao normal (**GAME-002**).

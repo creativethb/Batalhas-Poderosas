@@ -3,10 +3,12 @@ id: "GAME-002"
 nome: "Sistema de Combate e Combos"
 status: "CANONICO"
 relacionados:
+  - "ITEM-007"
   - "ITEM-003"
   - "GAME-001"
   - "BP-2026-005"
-atualizado_por: "agente"
+atualizado_por: "codex"
+data_atualizacao: "2026-10-06"
 ---
 
 # Sistema de Combate e Combos de Espada
@@ -35,6 +37,26 @@ A especificação registrada descreve uma sequência encadeada de 5 animações 
 - A ferramenta neutraliza a postura rígida nativa do Roblox (`507768375`).
 - O braço de John permanece solto e relaxado para baixo, balançando de forma natural durante a caminhada e corrida.
 
+
+## 5. Defesa básica com Escudo de Madeira — implementada
+
+**ITEM-007** entra no circuito inicial como cortesia de Cedric junto à primeira espada. Exige escudo válido equipado na mão secundária; segurar o comando ergue o braço esquerdo e mantém o escudo à frente do tronco. Soltar encerra suavemente a postura.
+
+- **PC:** botão direito do mouse ou C. **Mobile:** botão Defesa existente, por toque mantido. **Controle:** ButtonL2 mapeado, sem teste em controle físico nesta etapa.
+- **Guarda frontal:** arco de 120° (±60°), validado pelo servidor; ataques comuns bloqueáveis são interceptados integralmente. Costas e lados fora do arco recebem dano normal.
+- **Caminhada:** 10 studs/s na guarda, frente aos 16 habituais. Levantar o escudo encerra a corrida.
+- **Ações incompatíveis:** espada, dash, corrida, segundo pulo e animações manuais de sacar/guardar não se sobrepõem à guarda. Ação já em execução impede iniciar defesa; telas exclusivas/diálogo encerram a guarda.
+- **Encerramento seguro:** soltar, perder foco, desequipar, morrer, renascer ou entrar em estado incompatível limpa a defesa. O comando é renovado periodicamente e expira no servidor, evitando guarda presa.
+- **Animação:** sobreposição procedural apenas nas juntas esquerdas, após o Animator, com entrada de 0,18 s e saída de 0,22 s. Preserva pernas e braço direito e suporta AnimationConstraint do John atual e Motor6D. A prioridade é resolvida pela camada de pose e pela exclusão das ações incompatíveis, sem ID temporário de animação.
+- **Impacto:** pequeno recuo e som físico discreto, sem magia ou indicadores novos.
+
+O GerenciadorCombateServer mantém o remote de dano existente e coordena solicitações de guarda/ação. A regra comum reside em SistemasGameplay.CombateDefesaService: estado autoritativo, equipamento e AplicarDano. Cada ataque comum informa sua origem no servidor; IA, alcance, cadência e progressão são preservados. Bloqueavel=false permite ignorar a guarda; QuebraGuarda=true permanece ponto de extensão, sem ataque novo criado. Armadilhas e efeitos de área mantêm o comportamento anterior.
+
+A configuração de espada encontrada no código mantém três animações, cooldown de 0,38 s e reset de 1,15 s. A referência anterior de cinco golpes nas seções 1–2 permanece identificada como especificação com validação pendente; esta tarefa não migra o combo.
+
+**Playtest realizado:** C/mouse direito; toque mantido no botão móvel no simulador de iPhone 17 Pro em paisagem; segurar/soltar; caminhada; frente/costas/lateral; ataque marcado como não bloqueável; Lacaio, golpe do Guardião e ácido do Vesplume reais; desequipar/requipar; conflitos com espada/dash/corrida; morte/renascimento; bolsa e interrupção de diálogo; rejeição de pose falsificada no cliente. O Play final não apresentou erros de runtime. Não houve teste de telefone/controle físicos, multiplayer ou progressão completa do Piso 2.
+
+Parry, reflexão, durabilidade, reparo, variantes e compra permanecem fora desta etapa.
 
 ## 6. Autômatos da Masmorra
 Os lacaios do primeiro piso usam um rig interno R15 nativo com o visual do golem comum aplicado sobre ele; o Guardião do Piso 1 usa o avatar R15 próprio do chefe. Ambos usam somente as animações R15 padrão do Roblox para espera, caminhada e corrida; não há marcha procedural. O rig interno mantém os lacaios firmes após o despertar, sem travar a animação.

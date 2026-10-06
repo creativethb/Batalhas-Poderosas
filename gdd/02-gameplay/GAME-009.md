@@ -5,19 +5,21 @@ funcao: "Checklist operacional para quitar conteúdo físico e coletável antes 
 status: "EM_DESENVOLVIMENTO"
 localizacao: "Vila de Arkham"
 relacionados:
+  - "ITEM-007"
   - "GAME-001"
   - "GAME-002"
   - "GAME-008"
   - "ITEM-001"
   - "ITEM-002"
   - "ITEM-003"
-  - "ITEM-004"\n  - "ITEM-005"
+  - "ITEM-004"
+  - "ITEM-005"
   - "LOCAL-002"
   - "LOCAL-005"
   - "LOCAL-006"
   - "LOCAL-007"
-atualizado_por: "ChatGPT"
-data_atualizacao: "2026-09-23"
+atualizado_por: "codex"
+data_atualizacao: "2026-10-06"
 ---
 
 # Painel Linear de Consolidação — Itens, Interações e Cadeias
@@ -103,9 +105,10 @@ A ordem abaixo é a fila principal. Não avançar por impulso para novas expans�
 - [x] Espada de Madeira Sagrada — ITEM-003.
 
 **Pendências desta fase**
-- [ ] **Escudo inicial** — equipamento defensivo inicial. Nome, origem, materiais e atributos: A DEFINIR.
+- [x] **Escudo de Madeira — ITEM-007** — cortesia única de Cedric na primeira forja; visual criado com encaixe manual aprovado, inventário/equipamento persistentes e defesa frontal funcional. Estado: **TESTADO** em Play de PC e simulador de celular em 06/10/2026; validação final pelo responsável permanece distinta dos testes executados.
 - [x] **Peitoral de Vidro — ITEM-005** — proteção corporal inicial criada por Mestre Cedric. Peça metálica com Inscrições da Forja; ao sofrer impacto, absorve parte da força e assume temporariamente aparência translúcida. Definição documental concluída; obtenção, balanceamento, criação visual/3D, implementação, teste e validação permanecem pendentes.
-- [ ] Definir como escudo e proteção entram na sequência inicial sem alterar o que já está validado da obtenção da espada.
+- [x] Definir a entrada do escudo: cortesia junto à primeira espada, sem custo/material extra e sem alterar a obtenção existente da espada.
+- [ ] Definir/implementar a obtenção da proteção corporal inicial (Peitoral de Vidro), preservando a sequência validada.
 
 **Critério de quitação:** os equipamentos iniciais aprovados existem, podem ser obtidos/equipados, foram testados e estão VALIDADOS.
 
@@ -223,7 +226,7 @@ A ordem abaixo é a fila principal. Não avançar por impulso para novas expans�
 ### ETAPA K — Equipamentos e aprimoramento
 
 - [ ] Consolidar armas existentes e futuras aprovadas.
-- [ ] Consolidar escudos.
+- [ ] Consolidar escudos além do inicial. O Escudo de Madeira (**ITEM-007**) já está implementado e TESTADO; variantes, compra, aprimoramentos, durabilidade e manutenção continuam fora desta etapa.
 - [ ] Consolidar proteções/armaduras leves.
 - [ ] Definir níveis de aprimoramento somente depois das cadeias de materiais.
 - [ ] Para cada melhoria, registrar equipamento-base + materiais + quantidades + NPC/estação + resultado.

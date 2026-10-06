@@ -124,7 +124,7 @@
       "renderer": "dossie",
       "slug": "itens",
       "grupo": "GAMEPLAY & SISTEMAS",
-      "descricao": "Armas, madeiras de criação e artefatos de inventário.",
+      "descricao": "Armas, escudos, madeiras de criação e artefatos de inventário.",
       "assets": "assets/itens"
     },
     {

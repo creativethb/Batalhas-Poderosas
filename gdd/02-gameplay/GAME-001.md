@@ -3,6 +3,7 @@ id: "GAME-001"
 nome: "Loop Principal e Progressão de Gameplay"
 status: "CANONICO"
 relacionados:
+  - "ITEM-007"
   - "LORE-002"
   - "NPC-001"
   - "NPC-002"
@@ -12,8 +13,8 @@ relacionados:
   - "ITEM-003"
   - "DOS-004"
   - "BP-2026-002"
-atualizado_por: "ChatGPT"
-data_atualizacao: "2026-09-30"
+atualizado_por: "codex"
+data_atualizacao: "2026-10-06"
 ---
 
 # Loop Principal e Progressão de Gameplay
@@ -34,8 +35,8 @@ O ciclo de jogo equilibra:
 5. Depois do rito, o material passa a ser Madeira Ungida.
 6. John obtém também o Galho da Árvore Sagrada / Madeira Sagrada, ligado à Árvore Sagrada e a Eldrin.
 7. John retorna à oficina de Cedric com a Madeira Ungida e a Madeira Sagrada.
-8. Cedric fabrica a espada de madeira destinada ao treinamento.
-9. John prossegue com sua preparação.
+8. Cedric fabrica a espada de madeira destinada ao treinamento e entrega o Escudo de Madeira (**ITEM-007**) como cortesia única, sem custo adicional.
+9. John equipa a espada e o escudo no inventário, pratica ataque, guarda frontal e esquiva, e prossegue com sua preparação.
 
 ### Pendências antes da implementação definitiva
 - Definir qual estabelecimento fornece a Madeira Comum.
@@ -48,6 +49,15 @@ O ciclo de jogo equilibra:
 - Validar o ciclo completo em Playtest.
 
 > LEGADO ATUAL: a implementação que coloca Madeira Comum na mesa da Casa de John pertence ao fluxo antigo e não deve orientar novas decisões narrativas.
+
+### Escudo integrado ao circuito atual — 06/10/2026
+
+A primeira forja existente com Cedric entrega a espada e **um Escudo de Madeira de cortesia**. O diálogo explicita a cortesia; a explicação pode ser consultada novamente sem repetir a recompensa. A receita e os materiais atuais da espada foram preservados.
+
+O escudo entra no inventário persistente e pode ser equipado na mão secundária, mantendo a espada na mão direita. John levanta a guarda, caminha com velocidade reduzida e bloqueia ataques comuns pela frente; ao soltar, retoma ataque e dash. Ver **ITEM-007**, **GAME-002** e **GAME-003**.
+
+Essa adição já funciona no circuito implementado. A alteração da origem da Madeira Comum, a unção e a Madeira Ungida acima continuam como revisão pendente; esta entrega não implementa essas etapas.
+
 
 ## 3. Princípio do arco
 As etapas adicionais não existem apenas para alongar o tutorial. Cada deslocamento deve apresentar uma parte da vila, fortalecer relações com seus moradores e dar significado à fabricação da primeira espada deste ciclo.

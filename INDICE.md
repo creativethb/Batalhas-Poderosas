@@ -10,7 +10,7 @@
 | ID | Nome | Função / Cargo | Localização | Status | Arquivo | Resumo |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
 | **`NPC-000`** | O Rei Mago (Alric) | Antagonista Trágico | Fronteiras de Arkan | `CANONICO` | `gdd/03-npcs/NPC-000.md` | Antigo conselheiro traído; marcha na Guerra da Reparação por sua família e exílio. |
-| **`NPC-001`** | Mestre Cedric | Ferreiro Real da Vila | Oficina (Praça Sul) | `CANONICO` | `gdd/03-npcs/NPC-001.md` | Forja a Espada de Madeira Sagrada usando Madeira Comum e Sagrada. |
+| **`NPC-001`** | Mestre Cedric | Ferreiro Real da Vila | Oficina (Praça Sul) | `CANONICO` | `gdd/03-npcs/NPC-001.md` | Forja a Espada de Madeira Sagrada e entrega o Escudo de Madeira inicial como cortesia única. |
 | **`NPC-002`** | Ancião Eldrin | Guardião da Árvore Sagrada | Santuário Oeste | `CANONICO` | `gdd/03-npcs/NPC-002.md` | Sábio milenar que transmite a lenda e concede o Galho Sagrado. |
 | **`NPC-003`** | Guarda Rowan | Sentinela dos Acessos Leste | Estrada da Mina | `CANONICO` | `gdd/03-npcs/NPC-003.md` | Patrulha a rota da montanha e mina com armadura R15 detalhada. |
 | **`NPC-004`** | Guarda Aldous | Sentinela da Praça Central | Praça Central | `CANONICO` | `gdd/03-npcs/NPC-004.md` | Comandante da guarda que vigia os 6 portões do perímetro da vila. |
@@ -58,7 +58,10 @@
 | **`ITEM-001`** | Madeira Comum | Material de Criação | Comum | `CANONICO` | `gdd/04-itens/ITEM-001.md` | Coletada na bancada da Casa de John para base da primeira espada. |
 | **`ITEM-002`** | Madeira Sagrada | Relíquia Mística | Raro | `CANONICO` | `gdd/04-itens/ITEM-002.md` | Ramo ancestral da Árvore Sagrada concedido por Eldrin. |
 | **`ITEM-003`** | Espada de Madeira Sagrada | Arma Branca (1H) | Sagrada | `CANONICO` | `gdd/04-itens/ITEM-003.md` | Lâmina forjada por Cedric; dano 22, combo de 5 hits e brilho místico. |
-| **`ITEM-004`** | Diário de John | Item Narrativo / Gameplay | Único | `CANONICO` | `gdd/04-itens/ITEM-004.md` | Caderno permanente no inventário que registra as memórias e capítulos da jornada. |\n| **`ITEM-005`** | Peitoral de Vidro | Equipamento / Proteção Corporal | A DEFINIR | `CANONICO` | `gdd/04-itens/ITEM-005.md` | Peitoral metálico forjado por Cedric; sob impacto, as Inscrições da Forja absorvem parte da força e tornam a peça temporariamente translúcida. |
+| **`ITEM-004`** | Diário de John | Item Narrativo / Gameplay | Único | `CANONICO` | `gdd/04-itens/ITEM-004.md` | Caderno permanente no inventário que registra as memórias e capítulos da jornada. |
+| **`ITEM-005`** | Peitoral de Vidro | Equipamento / Proteção Corporal | A DEFINIR | `CANONICO` | `gdd/04-itens/ITEM-005.md` | Peitoral metálico forjado por Cedric; sob impacto, as Inscrições da Forja absorvem parte da força e tornam a peça temporariamente translúcida. |
+| **`ITEM-007`** | Escudo de Madeira | Equipamento / Defesa Frontal | Comum | `CANONICO` | `gdd/04-itens/ITEM-007.md` | Cortesia única de Cedric junto à primeira espada; guarda frontal de 120°, caminhada reduzida e validação no servidor. |
+
 
 ---
 
