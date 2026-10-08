@@ -5,11 +5,13 @@ funcao: "Adversário da masmorra"
 status: "EM_DESENVOLVIMENTO"
 localizacao: "P1"
 relacionados:
+  - "GAME-010"
+  - "DNG-013"
   - "GAME-002"
   - "DNG-009"
 imagem: "./assets/bestiario/BEST-001.png"
 atualizado_por: "Codex"
-data_atualizacao: "2026-10-05"
+data_atualizacao: "2026-10-08"
 ---
 
 # Autômato de Pedra — Lacaio
@@ -17,13 +19,13 @@ data_atualizacao: "2026-10-05"
 ## Identidade e ocorrência
 
 - **Local:** P1.
-- **Categoria:** Comum.
+- **Categoria:** Apoio do Guardião; excluído do catálogo comum atual.
 - **Modelos:** `Automato_Lacaio`.
 - **Vida configurada no prefab:** 100 HP (valor provisório, sujeito a ajustes de runtime e balanceamento).
 
 ## Gameplay
 
-Inimigo das salas do primeiro piso. O controlador escolhe o prefab Automato_Lacaio para inimigos comuns.
+No estado atual, os dois Lacaios pertencem à batalha do Guardião do Piso 1. Não integram o sorteio comum de Vesplume, Grumelo, Pedrino, Brisalto e Cascudo. A batalha e seus controladores foram preservados nesta rodada. Consulte DNG-013 e GAME-010 para a distribuição atual.
 
 ## Estado e limites
 

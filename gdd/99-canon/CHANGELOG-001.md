@@ -5,12 +5,15 @@ funcao: "Registro histórico de desenvolvimento"
 status: "EM_DESENVOLVIMENTO"
 localizacao: "GDD / Histórico de Versões"
 relacionados:
+  - "GAME-010"
+  - "DNG-013"
   - "ITEM-007"
   - "LOCAL-003"
   - "LOCAL-009"
   - "GAME-008"
-atualizado_por: "codex"
-data_atualizacao: "2026-10-06"
+imagem: ""
+atualizado_por: "Codex"
+data_atualizacao: "2026-10-08"
 ---
 
 # Histórico de Versões — Evolução de Arkham
@@ -121,3 +124,15 @@ Registro da implementação local, sem atribuir nova versão pública ao jogo.
 - Play real em PC e toque no simulador de iPhone 17 Pro em paisagem; Lacaio, Guardião e Vesplume; dano traseiro/lateral; equipamento; morte/renascimento; menus/diálogo; autoridade do servidor. Último Play sem erros de runtime.
 - Não testados: celular/controle físicos, multiplayer e percurso completo das rotas do Piso 2. Parry, durabilidade e economia de escudos não foram implementados.
 - Índice e categoria Itens & Equipamentos sincronizados; captura real em ./assets/itens/ITEM-007.png. O mini-site atual descobre fichas pelo catálogo Git e lê o frontmatter, sem duplicar textos no HTML.
+
+
+## Piso 1 — encontros, criaturas e baús — 08/10/2026
+
+- GAME-010 e DNG-013 registram o estado do sorteio, os cinco módulos comuns, dano, guarda e integração dos baús.
+- BEST-017 atualizado de conceitual para gameplay implementada; BEST-018 Grumelo, BEST-019 Pedrino, BEST-020 Brisalto, BEST-021 Cascudo e BEST-022 Baú Falso incluídos, com espaço para imagens.
+- BEST-001 corrigido para apoio do Guardião, fora das salas comuns. Batalha do chefe preservada.
+- Baú verdadeiro nos altares: abrir/fechar e sinal único preparado para loot, sem entregar recompensas. Baú Falso: transformação original, mordida, investida e derrota; ponto controlado exclusivo de Studio, sorteio desativado.
+- Solo atual: um a três inimigos; pesos 5/55/40 para quantidade. Frequências finais, salas de recompensa aleatória e dificuldade por grupo ainda não habilitadas.
+- Decisão do usuário: moedas atuais são apenas para testes; economia definitiva não estabelecida. DNG-002 distingue proposta econômica de implementação.
+- Playtest com espada, contato, bloqueio, recuperações, baús e gerador; ativação do Guardião preservada. Multiplayer real e combate completo do chefe não validados nesta rodada.
+- Manifesto, índice e catálogo do bestiário sincronizados. O site descobre os Markdown pela árvore Git; index.html preservado conforme orientação do usuário. A alteração de nomenclatura da árvore continua adiada.

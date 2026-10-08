@@ -1,49 +1,58 @@
 ---
 id: "BEST-017"
 nome: "Vesplume"
-funcao: "Adversário da masmorra"
+funcao: "Aéreo de ataque à distância"
 status: "EM_DESENVOLVIMENTO"
-localizacao: "P1"
+localizacao: "Masmorra — Piso 1"
 relacionados:
-  - "DNG-009"
+  - "DNG-013"
+  - "GAME-010"
+  - "GAME-002"
 imagem: "./assets/bestiario/BEST-017.png"
-atualizado_por: "ChatGPT"
-data_atualizacao: "2026-10-05"
+atualizado_por: "Codex"
+data_atualizacao: "2026-10-08"
 ---
 
 # Vesplume
 
-## Identidade e ocorrência
+## Identidade
 
-- **Local:** P1.
-- **Categoria:** Comum.
-- **Tipo:** Criatura cavernícola voadora e bioluminescente.
+Criatura cavernícola voadora, de corpo mole e parcialmente translúcido, asas membranosas e bolsa orgânica de secreção luminosa e corrosiva. A bioluminescência é biológica, não manifestação de magia.
 
-## Conceito
+## Gameplay implementada
 
-O Vesplume é uma criatura cavernícola de corpo mole e parcialmente translúcido, adaptada às áreas escuras do primeiro piso. Possui asas membranosas e uma bolsa orgânica interna onde acumula uma secreção naturalmente luminosa e corrosiva.
+Espécie aérea comum do Piso 1, habilitada no sorteio com as quatro espécies terrestres. Posiciona-se → prepara disparo com aviso → expele secreção → recupera em voo baixo móvel → retoma.
 
-Sua bioluminescência é uma característica biológica da espécie, não uma manifestação de magia.
+Após disparar, desce gradualmente para permitir aproximação pela Espada de Madeira, mantendo evasão reduzida. Não fica imóvel aguardando dano. Separação lateral e intervalos individuais evitam aglomeração e sincronização contínua.
 
-## Gameplay proposto
+O projétil causa 12 de dano pelo serviço existente, pode ser bloqueado e pode ser refletido pelo parry já implementado. Reflexão que atinge o emissor provoca breve desestabilização e recuperação.
 
-O Vesplume ocupa o papel de inimigo aéreo de ataque à distância. Paira e se reposiciona durante o combate, expelindo sua secreção luminosa contra o jogador.
+| Configuração provisória | Valor |
+|---|---:|
+| Vida observada nos testes do prefab | 90 |
+| Altura normal / recuperação | 5,5 / 3,4 studs acima do piso |
+| Velocidade normal / recuperação | 8 / 3 studs/s |
+| Preparação do disparo | 0,9 s |
+| Intervalo configurado | 3,6–4,7 s, acrescido do aviso e seleção de posição |
+| Recuperação / desestabilização por reflexão | 2,8 / 0,5 s |
+| Distância pretendida normal / recuperação | 16 / 7 studs |
+| Separação pretendida / limite mínimo | 8 / 5,5 studs |
 
-O comportamento exato do ataque, dano, alcance, frequência, quantidade de vida e demais valores de balanceamento ainda serão definidos e validados em gameplay.
+Configuração em `PISO1_Vesplume.Config`; a vida vem do prefab. A oscilação visual acrescenta cerca de ±0,24 stud à altura. Asas, boca, voo e efeitos usam o controlador procedural existente.
+
+## Estado e validação
+
+Modelo, controle de voo, ataque, recuperação e spawn estão implementados, substituindo o estado apenas conceitual registrado em 05/10/2026. Play com espada real derrotou um, dois e três Vesplumes. Escudo, reflexão para o emissor e saída lateral foram verificados. A geração de 08/10 confirmou a coexistência com as quatro espécies terrestres.
+
+Os testes automatizaram movimento e timing; não representam dificuldade definitiva, execução manual de dash/parry, multiplayer real ou revisão de toda geometria.
 
 ## Espólio e integração futura
 
-A secreção bioluminescente do Vesplume fica registrada como possível recurso coletável futuro. Ela poderá integrar a cadeia de produção ou reabastecimento dos Frascos Luminosos após tratamento ou refinamento.
-
-Nome definitivo do recurso, probabilidades de obtenção, quantidade, valor econômico e integração com a Guilda ainda não estão definidos.
-
-## Estado e limites
-
-Criatura definida conceitualmente para ampliar a variedade de adversários comuns do Piso 1. Modelo 3D, rig, animações, comportamento, spawn e loot ainda não estão implementados.
+A secreção bioluminescente permanece como possível recurso futuro para a cadeia dos Frascos Luminosos, após tratamento/refinamento. Nome do recurso, probabilidades, quantidades e integração com Guilda/economia não estão definidos. Não há loot implementado para esta espécie nesta etapa.
 
 ## Referência visual reservada
 
 > **Imagem pendente:** Vesplume.
-> Arquivo futuro: `./assets/bestiario/BEST-017.png`.
+> Arquivo reservado: `./assets/bestiario/BEST-017.png`.
 
-Não há imagem definitiva anexada nesta atualização.
+O modelo atual é provisório. A imagem definitiva será anexada depois; não foi criada uma imagem fictícia nesta atualização.

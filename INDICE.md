@@ -44,10 +44,30 @@
 
 ## 🐺 Bestiário (`/gdd/04-bestiario/`)
 
-| ID | Nome | Categoria | Status | Arquivo | Resumo |
-| :--- | :--- | :--- | :--- | :--- | :--- |
-| **`BEST-001`** | Autômato de Pedra — Lacaio | Autômatos | `EM_DESENVOLVIMENTO` | `gdd/04-bestiario/BEST-001.md` | Inimigo comum do primeiro piso, com dois ataques e desmontagem ao ser derrotado. |
-| **`BEST-002`** | Autômato de Pedra — Guardião do Piso 1 | Autômatos | `EM_DESENVOLVIMENTO` | `gdd/04-bestiario/BEST-002.md` | Chefe do primeiro piso, equipado com clava e responsável pela chave de progressão. |
+| ID | Nome | Estado | Arquivo |
+| :--- | :--- | :--- | :--- |
+| BEST-001 | Autômato de Pedra — Lacaio | EM_DESENVOLVIMENTO | [Ficha](gdd/04-bestiario/BEST-001.md) |
+| BEST-002 | Autômato de Pedra — Guardião do Piso 1 | EM_DESENVOLVIMENTO | [Ficha](gdd/04-bestiario/BEST-002.md) |
+| BEST-003 | Autômato de Empurrão | EM_DESENVOLVIMENTO | [Ficha](gdd/04-bestiario/BEST-003.md) |
+| BEST-004 | Soldado de Maça | EM_DESENVOLVIMENTO | [Ficha](gdd/04-bestiario/BEST-004.md) |
+| BEST-005 | Sentinela de Elite Blindada | EM_DESENVOLVIMENTO | [Ficha](gdd/04-bestiario/BEST-005.md) |
+| BEST-006 | Sentinela de Ardósia | EM_DESENVOLVIMENTO | [Ficha](gdd/04-bestiario/BEST-006.md) |
+| BEST-007 | Golem Forjador de Cinzas | EM_DESENVOLVIMENTO | [Ficha](gdd/04-bestiario/BEST-007.md) |
+| BEST-008 | Aparição de Monge | EM_DESENVOLVIMENTO | [Ficha](gdd/04-bestiario/BEST-008.md) |
+| BEST-009 | Patriarca Sepultado | EM_DESENVOLVIMENTO | [Ficha](gdd/04-bestiario/BEST-009.md) |
+| BEST-010 | Pretoriano da Guarda Real | EM_DESENVOLVIMENTO | [Ficha](gdd/04-bestiario/BEST-010.md) |
+| BEST-011 | Espadachim do Selo | EM_DESENVOLVIMENTO | [Ficha](gdd/04-bestiario/BEST-011.md) |
+| BEST-012 | Besteiro do Mezanino | EM_DESENVOLVIMENTO | [Ficha](gdd/04-bestiario/BEST-012.md) |
+| BEST-013 | Espírito Guardião das Criptas | EM_DESENVOLVIMENTO | [Ficha](gdd/04-bestiario/BEST-013.md) |
+| BEST-014 | Valerius I — O Marechal de Ferro | EM_DESENVOLVIMENTO | [Ficha](gdd/04-bestiario/BEST-014.md) |
+| BEST-015 | Gárgula de Vigia | EM_DESENVOLVIMENTO | [Ficha](gdd/04-bestiario/BEST-015.md) |
+| BEST-016 | Espectro Errante | EM_DESENVOLVIMENTO | [Ficha](gdd/04-bestiario/BEST-016.md) |
+| BEST-017 | Vesplume | EM_DESENVOLVIMENTO | [Ficha](gdd/04-bestiario/BEST-017.md) |
+| BEST-018 | Grumelo | EM_DESENVOLVIMENTO | [Ficha](gdd/04-bestiario/BEST-018.md) |
+| BEST-019 | Pedrino | EM_DESENVOLVIMENTO | [Ficha](gdd/04-bestiario/BEST-019.md) |
+| BEST-020 | Brisalto | EM_DESENVOLVIMENTO | [Ficha](gdd/04-bestiario/BEST-020.md) |
+| BEST-021 | Cascudo | EM_DESENVOLVIMENTO | [Ficha](gdd/04-bestiario/BEST-021.md) |
+| BEST-022 | Baú Falso | EM_DESENVOLVIMENTO | [Ficha](gdd/04-bestiario/BEST-022.md) |
 
 ---
 
@@ -206,3 +226,13 @@
 | DNG-010 | Segundo piso — Ala Leste / Câmaras Mecânicas | Rota do segundo piso | EM_DESENVOLVIMENTO | [DNG-010](gdd/07-masmorras/DNG-010.md) |
 | DNG-011 | Segundo piso — Ala Oeste / Arquivos Arcanos | Rota do segundo piso | EM_DESENVOLVIMENTO | [DNG-011](gdd/07-masmorras/DNG-011.md) |
 | DNG-012 | Segundo piso — Ala Norte / Domínio dos Reis | Rota do segundo piso | EM_DESENVOLVIMENTO | [DNG-012](gdd/07-masmorras/DNG-012.md) |
+
+
+## Atualização do Piso 1 — 08/10/2026
+
+| ID | Documento | Estado |
+|---|---|---|
+| GAME-010 | [Encontros e combate do Piso 1](gdd/02-gameplay/GAME-010.md) | EM_DESENVOLVIMENTO |
+| DNG-013 | [Piso 1 — inimigos, encontros e baús](gdd/07-masmorras/DNG-013.md) | EM_DESENVOLVIMENTO |
+
+Catálogo comum: BEST-017 a BEST-021. BEST-022 é encontro especial de teste. Moedas atuais são provisórias; loot, sorteio dos baús e balanceamento por grupo permanecem futuros.

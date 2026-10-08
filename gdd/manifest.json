@@ -53,7 +53,7 @@
       "renderer": "dossie",
       "slug": "bestiario",
       "grupo": "UNIVERSO",
-      "descricao": "Adversários da masmorra dos pisos 1 e 2: autômatos, guardas, besteiros, espectros e chefes; ameaças fixas identificadas separadamente.",
+      "descricao": "Criaturas dos pisos 1 e 2: cinco espécies comuns do Piso 1, Baú Falso como encontro especial, Guardião e apoio, guardas, besteiros, espectros e chefes.",
       "assets": "assets/bestiario"
     },
     {
@@ -112,7 +112,8 @@
         "GAME-004",
         "GAME-005",
         "GAME-006",
-        "GAME-007"
+        "GAME-007",
+        "GAME-010"
       ]
     },
     {
