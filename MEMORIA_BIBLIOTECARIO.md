@@ -338,3 +338,9 @@ Todos os 20+ NPCs da vila utilizam rig oficial **R15 com malha arredondada (Rig 
 ## Masmorra — consolidação de 05/10/2026
 
 Três rotas do Piso 2 integradas à vila: Leste procedural, Oeste fixa e Norte linear. Bestiário atualizado para BEST-001 a BEST-016, com duas ameaças sem Humanoid separadas dos 14 arquétipos de combate. Fichas DNG-009 a DNG-012 registram percurso, imagens pendentes, recompensas persistentes e limites. Besta de Éter e Cetro dos Patriarcas entram no inventário persistente; chaves da dungeon são temporárias. Loot monetário, munição limitada, balanceamento por grupo e domínios 2–6 futuros. Index preservado; catálogo descoberto automaticamente pelo site. Alteração da nomenclatura da árvore adiada.
+
+## Desenvolvimento — 08/10/2026: inspeção e espólios
+
+GAME-011 e ITEM-008/009/010: inspeção/coleta compartilhada apenas do Vesplume, integrada ao BancoDeItens, InventarioService.Transact, carteira e BP_DataStore_V1 existentes. Ficha independente oculta bolsa e volta ao mesmo item; miniaturas vetoriais.
+
+Play local verificou vazio, combinações, parcial, replay/quantidade/distância, bolsa/informações, gesto, espada real e limpeza. Multiplayer, hardware de toque/controle e recarga entre servidores pendentes. Moedas/chances provisórias; nenhuma receita/loja/contrato adicionado. Nomenclatura da árvore segue adiada.

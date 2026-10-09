@@ -235,4 +235,15 @@
 | GAME-010 | [Encontros e combate do Piso 1](gdd/02-gameplay/GAME-010.md) | EM_DESENVOLVIMENTO |
 | DNG-013 | [Piso 1 — inimigos, encontros e baús](gdd/07-masmorras/DNG-013.md) | EM_DESENVOLVIMENTO |
 
-Catálogo comum: BEST-017 a BEST-021. BEST-022 é encontro especial de teste. Moedas atuais são provisórias; loot, sorteio dos baús e balanceamento por grupo permanecem futuros.
+Catálogo comum: BEST-017 a BEST-021. BEST-022 é encontro especial com frequência provisória de teste. Espólios do Vesplume implementados em GAME-011; loot dos baús/demais espécies e balanceamento por grupo seguem futuros. Moedas atuais são provisórias.
+
+## Inspeção e espólios — 08/10/2026
+
+| ID | Documento | Estado |
+|---|---|---|
+| GAME-011 | [Inspeção e espólios compartilhados](gdd/02-gameplay/GAME-011.md) | EM_DESENVOLVIMENTO |
+| ITEM-008 | [Secreção Luminescente](gdd/04-itens/ITEM-008.md) | EM_DESENVOLVIMENTO |
+| ITEM-009 | [Membrana de Vesplume](gdd/04-itens/ITEM-009.md) | EM_DESENVOLVIMENTO |
+| ITEM-010 | [Glândula Luminosa](gdd/04-itens/ITEM-010.md) | EM_DESENVOLVIMENTO |
+
+Espólios habilitados somente para Vesplume. Testes locais realizados; multiplayer/plataformas físicas/validação final pendentes. IDs anteriores preservados. Site descobre novas fichas pelo Git Tree; index.html preservado.

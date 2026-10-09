@@ -8,6 +8,10 @@ relacionados:
   - "DNG-013"
   - "GAME-010"
   - "GAME-002"
+  - "GAME-011"
+  - "ITEM-008"
+  - "ITEM-009"
+  - "ITEM-010"
 imagem: "./assets/bestiario/BEST-017.png"
 atualizado_por: "Codex"
 data_atualizacao: "2026-10-08"
@@ -31,10 +35,10 @@ O projétil causa 12 de dano pelo serviço existente, pode ser bloqueado e pode 
 |---|---:|
 | Vida observada nos testes do prefab | 90 |
 | Altura normal / recuperação | 5,5 / 3,4 studs acima do piso |
-| Velocidade normal / recuperação | 8 / 3 studs/s |
-| Preparação do disparo | 0,9 s |
-| Intervalo configurado | 3,6–4,7 s, acrescido do aviso e seleção de posição |
-| Recuperação / desestabilização por reflexão | 2,8 / 0,5 s |
+| Velocidade normal / recuperação | 8 / 4 studs/s |
+| Preparação inicial / segunda | 0,8 / 0,38 s |
+| Intervalo após a salva | 2,6–3,6 s |
+| Recuperação / desestabilização por reflexão | 1,4 / 0,65 s |
 | Distância pretendida normal / recuperação | 16 / 7 studs |
 | Separação pretendida / limite mínimo | 8 / 5,5 studs |
 
@@ -46,33 +50,25 @@ Modelo, controle de voo, ataque, recuperação e spawn estão implementados, sub
 
 Os testes automatizaram movimento e timing; não representam dificuldade definitiva, execução manual de dash/parry, multiplayer real ou revisão de toda geometria.
 
-## Espólios planejados e integração futura
+## Espólios implementados — 08/10/2026
 
-> **Estado: PLANEJAMENTO APROVADO PARA DOCUMENTAÇÃO, NÃO IMPLEMENTADO.** Os nomes e funções iniciais abaixo foram aceitos como ponto de partida. Raridades propostas, chances, quantidades, preços, receitas e contratos ainda dependem de balanceamento/validação. Não converter sugestões de uso futuro em receitas canônicas.
+**IMPLEMENTADO e TESTADO em Play local; validação final/multiplayer pendentes.**
 
-| Espólio | Raridade proposta | Descrição breve para inspeção | Finalidade e destinos previstos |
+| Espólio | Ficha | Raridade | Uso atual / destino futuro |
 |---|---|---|---|
-| Secreção Luminescente | Comum | Líquido bioluminescente extraído da criatura. | Recurso biológico a tratar/refinar para a cadeia dos Frascos Luminosos; potencial abastecimento de iluminação de John. |
-| Membrana de Vesplume | Comum | Membrana leve e flexível das asas. | Material possível para boticário ou artesão; receita específica não definida. |
-| Glândula Luminosa | Raro | Órgão responsável pela produção da secreção luminosa. | Componente de interesse comercial da Guilda, com possíveis contratos e usos avançados em iluminação/alquimia, ainda não definidos. |
-| Moeda de Cobre | Moeda, sem raridade de espólio | Moeda corrente encontrada entre os espólios. | Uso direto na economia da vila. |
-| Moeda de Prata | Moeda, sem raridade de espólio | Moeda corrente de maior valor. | Uso direto na economia da vila; chance e quantidade devem respeitar o custo de produtos básicos, como o pão. |
+| Secreção Luminescente | ITEM-008 | Comum | Coleta/bolsa/informações; tratamento futuro para iluminação. |
+| Membrana de Vesplume | ITEM-009 | Comum | Coleta/bolsa/informações; boticário/artesanato futuros. |
+| Glândula Luminosa | ITEM-010 | Raro | Coleta/bolsa/informações; Guilda/receitas avançadas planejadas. |
+| Cobre | GAME-011 | Moeda | Carteira existente, até 10 unidades por sorteio. |
+| Prata | GAME-011 | Moeda | Mesma carteira, até 2; conversão provisória existente preservada. |
 
-### Inspeção, coleta e informações
+Sorteio único, vazio possível, resultado compartilhado, coleta parcial e ficha independente. Sem drops individuais no chão. Corpo inerte após derrota; afundamento após encerramento efetivo da sala/grupo.
 
-- Ao derrotar o Vesplume, o sorteio de espólios acontece **uma única vez** e fica associado ao corpo; reabrir a inspeção não sorteia novamente.
-- O corpo permanece após a animação de derrota. Ao aproximar-se, o jogador pode usar **Inspecionar**, com animação própria de John, para abrir uma janela compacta de espólios.
-- A janela mostra itens efetivamente sorteados, quantidades, raridade quando aplicável, descrição curta e opção de **recolher individualmente** ou deixar no corpo.
-- A ação **Informações** apresenta uma ficha mais completa: identidade, origem, propriedades, utilidades atuais e usos futuros claramente rotulados como planejados, além de possíveis destinatários comerciais.
-- Itens não recolhidos continuam no mesmo corpo enquanto ele estiver disponível. Ao sair da sala, o corpo é removido com efeito de afundar/ser puxado pela terra; espólios restantes deixam de estar disponíveis.
-- Coleta, inventário e eventual venda devem ser validados no servidor para impedir duplicação. Implementação e regras de multiplayer ainda precisam ser especificadas.
-- As moedas são possibilidades adicionais, não substituem os três materiais. **Probabilidades, quantidades e valores de venda permanecem a definir.**
+GAME-011 registra chances, segurança, ciclo real, scripts/testes. Reabrir não sorteia. Refinar, vender, fabricar ou cumprir contratos continua futuro.
 
-### Cadeias previstas
+### Refinamento de combate vigente
 
-`Vesplume → inspeção → material/moedas → inventário → iluminação, boticário, artesão, Guilda ou comércio → uso/venda/entrega futura`
-
-Cada material deverá possuir ficha própria `ITEM-XXX` em `gdd/04-itens/` conforme o padrão do GAME-009, com informações curta/completa e imagem reservada, após verificar a numeração disponível. Nenhuma receita ou estabelecimento novo é criado por esta ficha.
+Salva de dois disparos: aviso inicial 0,8 s; espera de 0,48 s e segunda preparação de 0,38 s. Travamento de mira 0,16 s antes do tiro, previsão limitada a 0,22 s/3 studs. Intervalo seguinte 2,6–3,6 s; recuperação 1,4 s; velocidade de recuperação 4 studs/s; desestabilização por reflexão 0,65 s. Substituem a tabela anterior de teste.
 
 ## Referência visual
 

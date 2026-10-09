@@ -3,7 +3,7 @@ id: "BEST-022"
 nome: "Baú Falso"
 funcao: "Encontro especial disfarçado de baú"
 status: "EM_DESENVOLVIMENTO"
-localizacao: "Masmorra — Piso 1 / ponto controlado no Studio"
+localizacao: "Masmorra — Piso 1 / altar dedicado de baú"
 relacionados:
   - "DNG-013"
   - "GAME-010"
@@ -58,9 +58,9 @@ Todas as animações são procedurais nos motores existentes: transformação, r
 
 ## Integração atual e futura
 
-No Studio, um ponto controlado por Dungeon_Ativa é criado numa sala *_Bau, verificando piso e volume livre. Não substitui baús verdadeiros, não bloqueia o eixo de passagem e nunca escolhe a arena do Guardião. O original está reservado em ServerStorage; o prefab funcional fica em Dungeon_NPCs.
+O seletor PISO1_EncontrosSpawn.CriarBau usa um único ponto no altar das salas Bau. Uma escolha determinística por sessão/sala cria o verdadeiro ou o falso, com verificação de baú existente antes de instanciar. O original está reservado em ServerStorage; o prefab funcional fica em Dungeon_NPCs. A arena do Guardião e o catálogo de cinco inimigos comuns permanecem separados.
 
-O sorteio automático continua desativado. `FrequenciaProcedural=0.03` é apenas um parâmetro provisório preparado e **não é aplicado**. O ponto de teste não aparece automaticamente em servidores publicados. A chegada do baú verdadeiro interativo não habilitou o sorteio do falso.
+O refinamento habilitou `ProceduralAtivo=true` e `FrequenciaProcedural=0.12`, valores provisórios aplicados somente nesse ponto dedicado. `ModoTesteStudio=false` desativa o ponto de teste adicional, evitando sobreposição. O peso BauFalso do sorteio de salas comuns continua zero; isso não desativa o seletor do altar. Nenhum dos dois baús concede loot nesta etapa.
 
 ## Validação e pendências
 

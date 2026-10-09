@@ -19,7 +19,7 @@ relacionados:
   - "LOCAL-006"
   - "LOCAL-007"
 atualizado_por: "codex"
-data_atualizacao: "2026-10-06"
+data_atualizacao: "2026-10-08"
 ---
 
 # Painel Linear de Consolidação — Itens, Interações e Cadeias
@@ -212,6 +212,11 @@ A ordem abaixo é a fila principal. Não avançar por impulso para novas expans�
 - [ ] Testar e validar.
 
 ### ETAPA J — Masmorras / loot
+
+**Recorte de 08/10/2026:** inspeção/coleta compartilhada somente do Vesplume, com ITEM-008 Secreção Luminescente, ITEM-009 Membrana de Vesplume e ITEM-010 Glândula Luminosa. Materiais persistentes entram no alforge existente; moedas na carteira. Miniaturas/ficha independente criadas. Detalhes e chances em GAME-011.
+
+**IMPLEMENTADO / TESTADO EM PLAY LOCAL**, ainda não VALIDADO pelo responsável. Não quita a cadeia econômica: tratamento, receitas, contratos, venda, outros inimigos/baús e economia definitiva pendentes.
+
 
 - [ ] Auditar os baús e demais interações físicas já existentes.
 - [ ] Fazer o baú funcional somente quando a regra de loot estiver definida.
