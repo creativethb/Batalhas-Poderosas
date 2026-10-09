@@ -74,9 +74,9 @@ Os testes automatizaram movimento e timing; não representam dificuldade definit
 
 Cada material deverá possuir ficha própria `ITEM-XXX` em `gdd/04-itens/` conforme o padrão do GAME-009, com informações curta/completa e imagem reservada, após verificar a numeração disponível. Nenhuma receita ou estabelecimento novo é criado por esta ficha.
 
-## Referência visual reservada
+## Referência visual
 
-> **Imagem pendente:** Vesplume.
-> Arquivo reservado: `./assets/bestiario/BEST-017.png`.
+> **Imagem publicada:** Vesplume, arte horizontal aprovada para o Bestiário.
+> Arquivo: `./assets/bestiario/BEST-017.png`.
 
-O modelo atual é provisório. A imagem definitiva será anexada depois; não foi criada uma imagem fictícia nesta atualização.
+A ilustração é a referência visual da ficha; o modelo 3D do jogo permanece independente da arte do GDD.
