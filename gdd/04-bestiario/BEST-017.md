@@ -46,9 +46,33 @@ Modelo, controle de voo, ataque, recuperação e spawn estão implementados, sub
 
 Os testes automatizaram movimento e timing; não representam dificuldade definitiva, execução manual de dash/parry, multiplayer real ou revisão de toda geometria.
 
-## Espólio e integração futura
+## Espólios planejados e integração futura
 
-A secreção bioluminescente permanece como possível recurso futuro para a cadeia dos Frascos Luminosos, após tratamento/refinamento. Nome do recurso, probabilidades, quantidades e integração com Guilda/economia não estão definidos. Não há loot implementado para esta espécie nesta etapa.
+> **Estado: PLANEJAMENTO APROVADO PARA DOCUMENTAÇÃO, NÃO IMPLEMENTADO.** Os nomes e funções iniciais abaixo foram aceitos como ponto de partida. Raridades propostas, chances, quantidades, preços, receitas e contratos ainda dependem de balanceamento/validação. Não converter sugestões de uso futuro em receitas canônicas.
+
+| Espólio | Raridade proposta | Descrição breve para inspeção | Finalidade e destinos previstos |
+|---|---|---|---|
+| Secreção Luminescente | Comum | Líquido bioluminescente extraído da criatura. | Recurso biológico a tratar/refinar para a cadeia dos Frascos Luminosos; potencial abastecimento de iluminação de John. |
+| Membrana de Vesplume | Comum | Membrana leve e flexível das asas. | Material possível para boticário ou artesão; receita específica não definida. |
+| Glândula Luminosa | Raro | Órgão responsável pela produção da secreção luminosa. | Componente de interesse comercial da Guilda, com possíveis contratos e usos avançados em iluminação/alquimia, ainda não definidos. |
+| Moeda de Cobre | Moeda, sem raridade de espólio | Moeda corrente encontrada entre os espólios. | Uso direto na economia da vila. |
+| Moeda de Prata | Moeda, sem raridade de espólio | Moeda corrente de maior valor. | Uso direto na economia da vila; chance e quantidade devem respeitar o custo de produtos básicos, como o pão. |
+
+### Inspeção, coleta e informações
+
+- Ao derrotar o Vesplume, o sorteio de espólios acontece **uma única vez** e fica associado ao corpo; reabrir a inspeção não sorteia novamente.
+- O corpo permanece após a animação de derrota. Ao aproximar-se, o jogador pode usar **Inspecionar**, com animação própria de John, para abrir uma janela compacta de espólios.
+- A janela mostra itens efetivamente sorteados, quantidades, raridade quando aplicável, descrição curta e opção de **recolher individualmente** ou deixar no corpo.
+- A ação **Informações** apresenta uma ficha mais completa: identidade, origem, propriedades, utilidades atuais e usos futuros claramente rotulados como planejados, além de possíveis destinatários comerciais.
+- Itens não recolhidos continuam no mesmo corpo enquanto ele estiver disponível. Ao sair da sala, o corpo é removido com efeito de afundar/ser puxado pela terra; espólios restantes deixam de estar disponíveis.
+- Coleta, inventário e eventual venda devem ser validados no servidor para impedir duplicação. Implementação e regras de multiplayer ainda precisam ser especificadas.
+- As moedas são possibilidades adicionais, não substituem os três materiais. **Probabilidades, quantidades e valores de venda permanecem a definir.**
+
+### Cadeias previstas
+
+`Vesplume → inspeção → material/moedas → inventário → iluminação, boticário, artesão, Guilda ou comércio → uso/venda/entrega futura`
+
+Cada material deverá possuir ficha própria `ITEM-XXX` em `gdd/04-itens/` conforme o padrão do GAME-009, com informações curta/completa e imagem reservada, após verificar a numeração disponível. Nenhuma receita ou estabelecimento novo é criado por esta ficha.
 
 ## Referência visual reservada
 
