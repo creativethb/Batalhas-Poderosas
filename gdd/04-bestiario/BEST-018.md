@@ -52,9 +52,9 @@ Prefab de execução em `ServerStorage.Dungeon_NPCs`; protótipos de edição fi
 
 História própria, espólios e valores econômicos ainda não foram definidos. Esta ficha registra gameplay implementada, sem inventar origem narrativa ou recompensas.
 
-## Referência visual reservada
+## Referência visual
 
-> **Imagem pendente:** Grumelo.
-> Arquivo reservado: `./assets/bestiario/BEST-018.png`.
+> **Imagem publicada:** Grumelo, representação artística para o Bestiário.
+> Arquivo: `./assets/bestiario/BEST-018.png`.
 
-O modelo atual é provisório. A imagem definitiva será anexada depois; não foi criada uma imagem fictícia nesta atualização.
+A ilustração representa a criatura no GDD; o modelo 3D atual no jogo permanece provisório.
