@@ -58,6 +58,10 @@ Todas as animações são procedurais nos motores existentes: transformação, r
 
 ## Integração atual e futura
 
+> **Planejamento de espólios (não implementado):** propostas consultáveis em [CATALOGO-ESPOLIOS-PROPOSTOS](../04-itens/CATALOGO-ESPOLIOS-PROPOSTOS.md), com fichas individuais ITEM-023 a ITEM-025. Não tratar propostas como loot ativo nem alterar a gameplay sem aprovação.
+
+
+
 O seletor PISO1_EncontrosSpawn.CriarBau usa um único ponto no altar das salas Bau. Uma escolha determinística por sessão/sala cria o verdadeiro ou o falso, com verificação de baú existente antes de instanciar. O original está reservado em ServerStorage; o prefab funcional fica em Dungeon_NPCs. A arena do Guardião e o catálogo de cinco inimigos comuns permanecem separados.
 
 O refinamento habilitou `ProceduralAtivo=true` e `FrequenciaProcedural=0.12`, valores provisórios aplicados somente nesse ponto dedicado. `ModoTesteStudio=false` desativa o ponto de teste adicional, evitando sobreposição. O peso BauFalso do sorteio de salas comuns continua zero; isso não desativa o seletor do altar. Nenhum dos dois baús concede loot nesta etapa.
