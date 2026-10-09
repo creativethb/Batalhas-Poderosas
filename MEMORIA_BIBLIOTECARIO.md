@@ -344,3 +344,7 @@ Três rotas do Piso 2 integradas à vila: Leste procedural, Oeste fixa e Norte l
 GAME-011 e ITEM-008/009/010: inspeção/coleta compartilhada apenas do Vesplume, integrada ao BancoDeItens, InventarioService.Transact, carteira e BP_DataStore_V1 existentes. Ficha independente oculta bolsa e volta ao mesmo item; miniaturas vetoriais.
 
 Play local verificou vazio, combinações, parcial, replay/quantidade/distância, bolsa/informações, gesto, espada real e limpeza. Multiplayer, hardware de toque/controle e recarga entre servidores pendentes. Moedas/chances provisórias; nenhuma receita/loja/contrato adicionado. Nomenclatura da árvore segue adiada.
+
+## 09/10/2026 — expansão autorizada dos espólios
+
+ITEM-011–022 implementados provisoriamente no catálogo e inspeção existentes; BEST-018–021 e GAME-009/011 sincronizados. Miniaturas nativas, coleta compartilhada e moedas preservadas. Baú Falso e ITEM-023–025 excluídos. Testes locais registrados, multiplayer real e recarga entre servidores pendentes. index.html/renderizador preservados; sem VALIDADO.

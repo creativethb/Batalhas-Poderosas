@@ -19,7 +19,7 @@ data_atualizacao: "2026-10-09"
 
 # Catálogo de espólios — propostas consultáveis
 
-> **ATENÇÃO: DOCUMENTO DE PLANEJAMENTO.** A lista não autoriza alterações no Studio, sorteios, preços, receitas ou canonização. O agente deve conferir a lore, o GDD e a implementação real antes de propor aprovação. Itens ITEM-011 a ITEM-025 têm fichas individuais **PROPOSTAS**, não são objetos criados no jogo.
+> **ESTADO EM 09/10/2026:** ITEM-011 a ITEM-022 autorizados provisoriamente, implementados e testados em Play local. ITEM-023 a ITEM-025 continuam propostas, sem loot no Baú Falso. Economia, arte e validação definitiva permanecem futuras.
 
 ## 1. Base implementada a preservar
 
@@ -31,21 +31,21 @@ BEST-017 Vesplume: ITEM-008 Secreção Luminescente (Comum), ITEM-009 Membrana d
 |---|---|---|---|---|---|
 | ITEM-011 | Grumelo (018) | Esporos de Grumelo | Comum | Pó de esporos recolhido do corpo fúngico. | Alquimia, fertilização ou encomendas de coleta; efeitos ainda não definidos. |
 | ITEM-012 | Grumelo (018) | Fibra Fúngica | Comum | Fibras flexíveis do caule do Grumelo. | Artesanato, revestimentos e combinações futuras, sem receita aprovada. |
-| ITEM-013 | Grumelo (018) | Núcleo de Esporos | Raro | Estrutura densa responsável pela produção de esporos. | Reagente especial para alquimia e pesquisa, sem efeito mágico confirmado. |
+| ITEM-013 | Grumelo (018) | Núcleo de Esporos | Raro | Tecido fúngico compacto; função biológica não confirmada. | Reagente especial para alquimia e pesquisa, sem efeito mágico confirmado. |
 | ITEM-014 | Pedrino (019) | Fragmento de Rocha | Comum | Pedaço de rocha desprendido do Pedrino. | Construção, oficina ou venda futura. |
 | ITEM-015 | Pedrino (019) | Cascalho Mineral | Comum | Mistura de pequenos grãos minerais. | Processamento, construção ou comércio. |
 | ITEM-016 | Pedrino (019) | Coração de Pedra | Raro | Nódulo mineral compacto do Pedrino. | Reforço de equipamentos ou pesquisa mineral futura. |
 | ITEM-017 | Brisalto (020) | Pena de Correnteza | Comum | Filamento leve associado ao movimento do Brisalto. | Artesanato e componentes leves. |
-| ITEM-018 | Brisalto (020) | Essência de Brisa | Comum | Resíduo volátil recolhido após a derrota. | Alquimia ou pesquisa futura. |
+| ITEM-018 | Brisalto (020) | Essência de Brisa | Comum | Amostra de identidade provisória; efeitos não confirmados. | Alquimia ou pesquisa futura. |
 | ITEM-019 | Brisalto (020) | Cristal de Corrente Ascendente | Raro | Depósito cristalino raro associado ao Brisalto. | Aprimoramentos de mobilidade futuros, sem bônus definido. |
 | ITEM-020 | Cascudo (021) | Placa de Carapaça | Comum | Segmento rígido da proteção externa do Cascudo. | Artesanato e reforços. |
-| ITEM-021 | Cascudo (021) | Quitina Resistente | Comum | Material estrutural da carapaça. | Equipamentos e ferramentas futuras. |
+| ITEM-021 | Cascudo (021) | Quitina Resistente | Comum | Revestimento de nome provisório; quitina não confirmada. | Equipamentos e ferramentas futuras. |
 | ITEM-022 | Cascudo (021) | Placa Intacta de Cascudo | Raro | Placa preservada sem rachaduras. | Proteções de maior qualidade e contratos futuros. |
 | ITEM-023 | Baú Falso (022) | Dente de Baú Falso | Comum | Dente rígido retirado da mandíbula do Baú Falso. | Ferramentas ou peças decorativas. |
 | ITEM-024 | Baú Falso (022) | Dobradiça Retorcida | Comum | Ferragem recuperada do Baú Falso. | Reaproveitamento por artesãos. |
 | ITEM-025 | Baú Falso (022) | Fechadura Viva | Raro | Mecanismo incomum ligado ao disfarce do Baú Falso. | Pesquisa e mecanismos especiais futuros. |
 
-Cada ITEM-011 a ITEM-025 possui descrição longa, origem, uso atual, status, representação visual reservada e pontos de validação na própria ficha. Não há chance, quantidade ou valor aprovado. Moedas devem usar a carteira já existente; nenhum saldo paralelo.
+Cada ITEM-011 a ITEM-025 possui descrição longa, origem, uso atual, status, representação visual reservada e pontos de validação na própria ficha. ITEM-011–022 têm chances e quantidades provisórias autorizadas em GAME-011. ITEM-023–025 continuam sem chance ou quantidade autorizada. Nenhum preço definitivo. Moedas devem usar a carteira já existente; nenhum saldo paralelo.
 
 ## 3. Banco de ideias para os demais inimigos (NÃO cadastrar como ITEM ainda)
 
@@ -82,7 +82,7 @@ O botão **Informações** deve poder exibir, para cada item aprovado e implemen
 - Um sorteio autoritativo por corpo, possibilidade de vazio, conjunto compartilhado, inspeção seletiva, sem drops individuais no chão. Preservar segurança, concorrência e encerramento de sala.
 - Não fixar chance, quantidade, preço, transformação, bônus, efeito, receita ou destinatário comercial antes de aprovação.
 - Respeitar raridades de GAME-009: Comum, Raro e Épico conforme necessidade; Lendário e Secreto não são escopo atual.
-- Estados: A DEFINIR → DEFINIDO → CRIADO → IMPLEMENTADO → TESTADO → VALIDADO. Todas as novas fichas estão em proposta anterior à aprovação/DEFINIDO.
+- Estados: A DEFINIR → DEFINIDO → CRIADO → IMPLEMENTADO → TESTADO → VALIDADO. ITEM-011–022 estão IMPLEMENTADOS / TESTADOS localmente, sem VALIDADO. ITEM-023–025 continuam propostas anteriores à aprovação.
 - Imagem reservada não significa arte pronta. Não editar index.html nem alterar renderizador/arquitetura do GDD.
 
 ## 6. Ordem sugerida para o agente

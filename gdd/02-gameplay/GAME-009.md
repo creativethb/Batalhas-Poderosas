@@ -213,7 +213,7 @@ A ordem abaixo é a fila principal. Não avançar por impulso para novas expans�
 
 ### ETAPA J — Masmorras / loot
 
-**Recorte de 08/10/2026:** inspeção/coleta compartilhada somente do Vesplume, com ITEM-008 Secreção Luminescente, ITEM-009 Membrana de Vesplume e ITEM-010 Glândula Luminosa. Materiais persistentes entram no alforge existente; moedas na carteira. Miniaturas/ficha independente criadas. Detalhes e chances em GAME-011.
+**Recorte atualizado em 09/10/2026:** inspeção/coleta compartilhada de Vesplume, Grumelo, Pedrino, Brisalto e Cascudo, com ITEM-008 a ITEM-022. Expansão autorizada com identidades e valores provisórios, implementada/testada localmente, sem VALIDADO. Baú Falso excluído. Materiais persistentes entram no alforge existente; moedas na carteira. Miniaturas/ficha independente criadas. Detalhes e chances em GAME-011.
 
 **IMPLEMENTADO / TESTADO EM PLAY LOCAL**, ainda não VALIDADO pelo responsável. Não quita a cadeia econômica: tratamento, receitas, contratos, venda, outros inimigos/baús e economia definitiva pendentes.
 

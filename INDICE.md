@@ -235,7 +235,7 @@
 | GAME-010 | [Encontros e combate do Piso 1](gdd/02-gameplay/GAME-010.md) | EM_DESENVOLVIMENTO |
 | DNG-013 | [Piso 1 — inimigos, encontros e baús](gdd/07-masmorras/DNG-013.md) | EM_DESENVOLVIMENTO |
 
-Catálogo comum: BEST-017 a BEST-021. BEST-022 é encontro especial com frequência provisória de teste. Espólios do Vesplume implementados em GAME-011; loot dos baús/demais espécies e balanceamento por grupo seguem futuros. Moedas atuais são provisórias.
+Catálogo comum: BEST-017 a BEST-021. BEST-022 é encontro especial com frequência provisória de teste. Espólios dos cinco inimigos comuns implementados em GAME-011; Baú Falso excluído, balanceamento por grupo e economia definitiva futuros. Moedas atuais são provisórias.
 
 ## Inspeção e espólios — 08/10/2026
 
@@ -246,4 +246,21 @@ Catálogo comum: BEST-017 a BEST-021. BEST-022 é encontro especial com frequên
 | ITEM-009 | [Membrana de Vesplume](gdd/04-itens/ITEM-009.md) | EM_DESENVOLVIMENTO |
 | ITEM-010 | [Glândula Luminosa](gdd/04-itens/ITEM-010.md) | EM_DESENVOLVIMENTO |
 
-Espólios habilitados somente para Vesplume. Testes locais realizados; multiplayer/plataformas físicas/validação final pendentes. IDs anteriores preservados. Site descobre novas fichas pelo Git Tree; index.html preservado.
+Espólios habilitados para Vesplume, Grumelo, Pedrino, Brisalto e Cascudo (ITEM-008–022). Testes locais realizados; multiplayer/plataformas físicas/validação final pendentes. IDs anteriores preservados. Site descobre novas fichas pelo Git Tree; index.html preservado.
+
+## Expansão de espólios — 09/10/2026
+
+| ID | Ficha | Estado |
+|---|---|---|
+| ITEM-011 | [Esporos de Grumelo](gdd/04-itens/ITEM-011.md) | EM_DESENVOLVIMENTO |
+| ITEM-012 | [Fibra Fúngica](gdd/04-itens/ITEM-012.md) | EM_DESENVOLVIMENTO |
+| ITEM-013 | [Núcleo de Esporos](gdd/04-itens/ITEM-013.md) | EM_DESENVOLVIMENTO |
+| ITEM-014 | [Fragmento de Rocha](gdd/04-itens/ITEM-014.md) | EM_DESENVOLVIMENTO |
+| ITEM-015 | [Cascalho Mineral](gdd/04-itens/ITEM-015.md) | EM_DESENVOLVIMENTO |
+| ITEM-016 | [Coração de Pedra](gdd/04-itens/ITEM-016.md) | EM_DESENVOLVIMENTO |
+| ITEM-017 | [Pena de Correnteza](gdd/04-itens/ITEM-017.md) | EM_DESENVOLVIMENTO |
+| ITEM-018 | [Essência de Brisa](gdd/04-itens/ITEM-018.md) | EM_DESENVOLVIMENTO |
+| ITEM-019 | [Cristal de Corrente Ascendente](gdd/04-itens/ITEM-019.md) | EM_DESENVOLVIMENTO |
+| ITEM-020 | [Placa de Carapaça](gdd/04-itens/ITEM-020.md) | EM_DESENVOLVIMENTO |
+| ITEM-021 | [Quitina Resistente](gdd/04-itens/ITEM-021.md) | EM_DESENVOLVIMENTO |
+| ITEM-022 | [Placa Intacta de Cascudo](gdd/04-itens/ITEM-022.md) | EM_DESENVOLVIMENTO |

@@ -5,6 +5,22 @@ funcao: "Coleta seletiva autoritativa integrada ao alforge e à carteira"
 status: "EM_DESENVOLVIMENTO"
 localizacao: "Masmorra — Piso 1 / bolsa de John"
 relacionados:
+  - "BEST-018"
+  - "BEST-019"
+  - "BEST-020"
+  - "BEST-021"
+  - "ITEM-011"
+  - "ITEM-012"
+  - "ITEM-013"
+  - "ITEM-014"
+  - "ITEM-015"
+  - "ITEM-016"
+  - "ITEM-017"
+  - "ITEM-018"
+  - "ITEM-019"
+  - "ITEM-020"
+  - "ITEM-021"
+  - "ITEM-022"
   - "BEST-017"
   - "ITEM-008"
   - "ITEM-009"
@@ -13,22 +29,22 @@ relacionados:
   - "GAME-010"
   - "DNG-013"
 atualizado_por: "Codex"
-data_atualizacao: "2026-10-08"
+data_atualizacao: "2026-10-09"
 ---
 
 # Inspeção e espólios compartilhados
 
 ## Escopo e arquitetura implementados
 
-Somente **Vesplume** está habilitado. Os demais inimigos, baús, Guardião e Piso 2 não receberam espólios nesta etapa. Nenhuma loja, fabricação, melhoria, contrato ou economia definitiva foi criada.
+**Vesplume, Grumelo, Pedrino, Brisalto e Cascudo** estão habilitados. Baú Falso, Guardião e inimigos de outros pisos permanecem fora desta expansão. Nenhuma loja, fabricação, melhoria, contrato ou economia definitiva foi criada.
 
-BancoDeItens continua sendo o catálogo central. ITEM-008/009/010 acrescentam metadados separados da interface: origem, propriedades, descrições, usos atuais/futuros e destinos. IDs de runtime permanecem estáveis.
+BancoDeItens continua sendo o catálogo central. ITEM-008 a ITEM-022 acrescentam metadados separados da interface: origem, propriedades, descrições, usos atuais/futuros e destinos. IDs de runtime permanecem estáveis.
 
 EspoliosConfig define probabilidades e quantidades. EspoliosService mantém uma tabela no servidor por instância derrotada, com GUID, revisão e observadores. EspoliosServer recebe apenas coleta/fechamento; o prompt autoriza a inspeção.
 
 InventarioService.Transact existente transfere materiais e moedas sem yield após pré-validação de todos os saldos. Atributos, sincronização da bolsa e BP_DataStore_V1 permanecem a arquitetura única. Nenhum inventário ou DataStore paralelo.
 
-## Sorteio provisório
+## Sorteio provisório do Vesplume — preservado
 
 Resultado único por corpo; reabrir, fechar ou desconectar nunca sorteia novamente.
 
@@ -49,11 +65,26 @@ Todas as probabilidades, contagens e moedas são **DE TESTE**, ajustáveis em Es
 
 A carteira existente usa cobre: 10 cobres equivalem a 1 prata; 1.000 cobres a 1 ouro. Preservado esse formato, 10 cobres + 2 pratas creditam 30 unidades de cobre. Nenhum saldo paralelo de prata.
 
+## Expansão autorizada em 09/10/2026
+
+20% de vazio forçado por corpo; nos demais 80%, sorteios independentes das entradas abaixo. Nenhum sorteio adicional de prêmio máximo nas quatro novas espécies.
+
+| Criatura | Material A | Material B | Material raro | Cobre | Prata |
+|---|---|---|---|---|---|
+| Grumelo | ITEM-011: 55%, 1–3 | ITEM-012: 45%, 1–2 | ITEM-013: 8%, 1 | 35%, 1–6 | 5%, 1 |
+| Pedrino | ITEM-014: 60%, 1–3 | ITEM-015: 45%, 1–3 | ITEM-016: 8%, 1 | 35%, 1–8 | 6%, 1 |
+| Brisalto | ITEM-017: 50%, 1–2 | ITEM-018: 40%, 1–2 | ITEM-019: 6%, 1 | 30%, 1–5 | 4%, 1 |
+| Cascudo | ITEM-020: 55%, 1–2 | ITEM-021: 40%, 1–2 | ITEM-022: 8%, 1 | 35%, 1–8 | 6%, 1 |
+
+Chances condicionais, não probabilidades absolutas. Falhas de todas as entradas podem resultar em vazio adicional. Núcleo é tecido fúngico compacto sem função biológica confirmada; Coração é nódulo mineral, não órgão vivo. Nomes do Brisalto e Quitina Resistente permanecem provisórios, sem poderes de vento ou composição quitinosa canonizados.
+
 ## Derrota e inspeção
 
 Voo/IA param; luz apaga. A derrota anterior era dissolução de 0,5 s seguida de destruição. Para permitir inspeção, a dissolução final foi adiada: o modelo original pousa inerte e recolhe as asas durante a transição. Rig, vida, ataques e voo foram preservados.
 
 Prompt **Inspecionar**, 10 studs, jogador vivo e perfil carregado: E no PC, X no controle e botão contextual de toque/clique. Ignora o sistema de conversa da vila.
+
+Grumelo, Pedrino, Brisalto e Cascudo mantêm a pose de derrota existente, com combate interrompido e raiz imóvel. A antiga destruição após quatro segundos é substituída pelo registro de espólios após a pose e pela limpeza de sala existente. Fora de uma sessão válida, a limpeza anterior permanece. Prompt **Examinar**, com nome da espécie correto no corpo e na interface. O Vesplume conserva seu prompt Inspecionar e sua rotina.
 
 John realiza gesto procedural breve de observação, compatível com Motor6D/AnimationConstraint, sem âncora, teleporte ou mudança de velocidade. Movimento interrompe o gesto. Com arma sacada, preserva os braços e usa cabeça/cintura. Nenhum ID de animação fictício.
 
@@ -65,7 +96,7 @@ Janela de espólios com miniatura, nome, quantidade, raridade e prévia. Clique/
 
 **Informações** abre ficha independente mais ampla, com miniatura maior. A bolsa/lista anterior fica oculta; voltar restaura o contexto do mesmo item. BP_ItemInterface compartilha a apresentação; BP_UIState/BP_UITheme existentes coordenam exclusividade/paleta.
 
-Miniaturas vetoriais nativas representam amostra luminosa em vidro, fragmento de asa com nervuras e glândula com ducto/núcleo. Também aparecem na bolsa. Sem drops físicos individuais ou assets fictícios.
+Miniaturas vetoriais nativas representam amostra luminosa em vidro, fragmento de asa com nervuras e glândula com ducto/núcleo. Também aparecem na bolsa. Os 12 novos materiais têm miniaturas nativas distintas: esporos, fibras, tecido compacto, fragmentos/grãos/nódulo mineral, filamento, amostra em frasco, cristal e placas/revestimentos. Sem drops físicos individuais ou assets fictícios.
 
 Layout usa a área da ScreenGui e respeita inset; no toque, +/− têm 44 px. Controle possui foco dourado, A para ativar, B para voltar/fechar e stick direito para rolar a ficha. Transição/som discreto. A base aceita futuros equipamentos/consumíveis/diário, sem adicionar seus conteúdos agora.
 
@@ -101,6 +132,18 @@ Saída do último jogador reutiliza o critério existente do gerador, personagen
 - Espada real: Vesplume de 90 de vida derrotado após cinco impactos de 22; corpo/prompt permaneceram.
 - Corpo permaneceu 21 s com John na sala; saída provocou encerramento, afundamento e remoção.
 - Ficha conferida com conteúdo rolável e rodapé separado em 329×568, 700×300 e 700×483; troca efetiva de contêiner estreito/amplo restaurou tipografia e miniatura. Isso é teste de layout, sem equivaler a aparelho físico.
+
+## Testes da expansão — 09/10/2026
+
+- Quatro rotinas reais de derrota: corpos registrados, prompt Examinar e nome da espécie.
+- Vazio forçado e resultados completos controlados; configurações restauradas. Coleta parcial, reabertura, restante, moedas, replay, excesso, NaN, infinito e ID falso.
+- 10.000 sementes por espécie, incluindo regressão do Vesplume: limites de quantidades respeitados.
+- Export/Import dos 12 materiais pela persistência existente. Perfil e carteira originais restaurados após testes.
+- Cliente: miniaturas e fichas dos 12 itens criadas sem erro; miniaturas conferidas em captura da interface.
+- Cliques reais na inspeção do Grumelo: seleção e coleta de três esporos; Informações da Fibra Fúngica abriu ficha com origem correta e lista oculta. Carteira e materiais restaurados antes de encerrar o Play.
+- Corpos permaneceram mais de 21 s na sala ocupada; limpeza após saída conferida para as quatro espécies.
+- Regressão do Vesplume: 2.769 vazios e 185 combinações máximas, iguais ao teste anterior nas mesmas 10.000 sementes. Seu controlador e o algoritmo Sortear permaneceram iguais.
+- Quantidades conferidas em 50.000 sorteios: Grumelo 3.052 vazios, Pedrino 2.920, Brisalto 3.453, Cascudo 3.147; nenhuma combinação de prêmio adicional nas novas espécies.
 
 ## Pendências
 

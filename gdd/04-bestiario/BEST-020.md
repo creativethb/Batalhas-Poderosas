@@ -5,12 +5,16 @@ funcao: "Terrestre saltitante"
 status: "EM_DESENVOLVIMENTO"
 localizacao: "Masmorra — Piso 1"
 relacionados:
+  - "GAME-011"
+  - "ITEM-017"
+  - "ITEM-018"
+  - "ITEM-019"
   - "DNG-013"
   - "GAME-010"
   - "GAME-002"
 imagem: "./assets/bestiario/BEST-020.png"
 atualizado_por: "Codex"
-data_atualizacao: "2026-10-08"
+data_atualizacao: "2026-10-09"
 ---
 
 # Brisalto
@@ -50,11 +54,11 @@ Prefab de execução em `ServerStorage.Dungeon_NPCs`; protótipos de edição fi
 
 ## Lore e espólios
 
-> **Planejamento de espólios (não implementado):** propostas consultáveis em [CATALOGO-ESPOLIOS-PROPOSTOS](../04-itens/CATALOGO-ESPOLIOS-PROPOSTOS.md), com fichas individuais ITEM-017 a ITEM-019. Não tratar propostas como loot ativo nem alterar a gameplay sem aprovação.
+> **Espólios implementados em 09/10/2026:** [ITEM-017 Pena de Correnteza](../04-itens/ITEM-017.md), [ITEM-018 Essência de Brisa](../04-itens/ITEM-018.md), [ITEM-019 Cristal de Corrente Ascendente](../04-itens/ITEM-019.md). Interação Examinar, sorteio único compartilhado com 20% de vazio forçado e coleta seletiva pelo sistema de GAME-011. Valores e identidades provisórios.
 
 
 
-História própria, espólios e valores econômicos ainda não foram definidos. Esta ficha registra gameplay implementada, sem inventar origem narrativa ou recompensas.
+História própria e economia definitiva continuam a definir. Os materiais autorizados estão implementados e testados em Play local; multiplayer real, persistência entre servidores e validação final pendentes. Combate, rig e animações preservados; apenas a limpeza após derrota foi integrada à inspeção.
 
 ## Referência visual reservada
 

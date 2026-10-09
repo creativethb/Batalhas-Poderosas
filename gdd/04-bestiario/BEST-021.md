@@ -5,12 +5,16 @@ funcao: "Terrestre com guarda direcional"
 status: "EM_DESENVOLVIMENTO"
 localizacao: "Masmorra — Piso 1"
 relacionados:
+  - "GAME-011"
+  - "ITEM-020"
+  - "ITEM-021"
+  - "ITEM-022"
   - "DNG-013"
   - "GAME-010"
   - "GAME-002"
 imagem: "./assets/bestiario/BEST-021.png"
 atualizado_por: "Codex"
-data_atualizacao: "2026-10-08"
+data_atualizacao: "2026-10-09"
 ---
 
 # Cascudo
@@ -54,11 +58,11 @@ Prefab de execução em `ServerStorage.Dungeon_NPCs`; protótipos de edição fi
 
 ## Lore e espólios
 
-> **Planejamento de espólios (não implementado):** propostas consultáveis em [CATALOGO-ESPOLIOS-PROPOSTOS](../04-itens/CATALOGO-ESPOLIOS-PROPOSTOS.md), com fichas individuais ITEM-020 a ITEM-022. Não tratar propostas como loot ativo nem alterar a gameplay sem aprovação.
+> **Espólios implementados em 09/10/2026:** [ITEM-020 Placa de Carapaça](../04-itens/ITEM-020.md), [ITEM-021 Quitina Resistente](../04-itens/ITEM-021.md), [ITEM-022 Placa Intacta de Cascudo](../04-itens/ITEM-022.md). Interação Examinar, sorteio único compartilhado com 20% de vazio forçado e coleta seletiva pelo sistema de GAME-011. Valores e identidades provisórios.
 
 
 
-História própria, espólios e valores econômicos ainda não foram definidos. Esta ficha registra gameplay implementada, sem inventar origem narrativa ou recompensas.
+História própria e economia definitiva continuam a definir. Os materiais autorizados estão implementados e testados em Play local; multiplayer real, persistência entre servidores e validação final pendentes. Combate, rig e animações preservados; apenas a limpeza após derrota foi integrada à inspeção.
 
 ## Referência visual reservada
 

@@ -1,46 +1,56 @@
 ---
 id: "ITEM-015"
 nome: "Cascalho Mineral"
-funcao: "Proposta de material coletável de Pedrino"
+funcao: "Material coletável de Pedrino"
 tipo: "Material"
 raridade: "Comum"
-status: "PROPOSTO"
-localizacao: "Masmorra — Piso 1 (planejado)"
+status: "EM_DESENVOLVIMENTO"
+localizacao: "Masmorra — Piso 1 "
 relacionados:
   - "BEST-019"
   - "GAME-009"
   - "GAME-011"
-imagem: "./assets/itens/ITEM-015.png"
-atualizado_por: "ChatGPT — proposta editorial"
+imagem: "./assets/itens/ITEM-015.svg"
+atualizado_por: "Codex"
 data_atualizacao: "2026-10-09"
 ---
 
 # Cascalho Mineral
 
-> **PROPOSTA NÃO APROVADA.** Esta ficha documenta a ideia; não confirma cadastro em BancoDeItens, drop, arte ou funcionalidade no jogo.
+> **IMPLEMENTADO / TESTADO EM PLAY LOCAL — identidade, arte e economia provisórias.** Autorização de 09/10/2026. Não equivale a VALIDADO pelo responsável.
 
-## Identificação e apresentação consultável
-- **ID documental reservado:** ITEM-015. **ID de runtime:** a definir pelo agente após aprovação, sem colisões.
-- **Categoria:** material coletável. **Raridade proposta:** Comum. **Origem:** BEST-019, Pedrino.
-- **Prévia na interface:** Pequenos grãos minerais misturados.
-- **Descrição completa:** Partículas recolhidas após derrota, sem pureza garantida.
-- **Propriedades confirmadas:** nenhuma além da origem e natureza sugeridas; efeitos mágicos, curativos, corrosivos ou atributos numéricos não definidos.
+## Identificação e informações consultáveis
 
-## Obtenção e quantidade
-Possível saque de Pedrino derrotado no Piso 1, sujeito à auditoria e à aprovação. Pretende-se usar o sorteio único compartilhado por corpo, inspeção seletiva e bolsa existente de GAME-011. **Chance, quantidade, moeda associada e capacidade econômica: A DEFINIR.** Não há coleta implementada para este item.
+- **ID documental:** ITEM-015. **ID de runtime:** `cascalho_mineral`.
+- **Categoria:** Material. **Raridade:** Comum. **Origem:** Pedrino (BEST-019), corpos derrotados no Piso 1.
+- **Descrição curta:** Pequenos grãos minerais misturados.
+- **Descrição completa:** Partículas minerais recolhidas após a derrota, sem pureza garantida.
+- **Propriedades:** Material mineral heterogêneo; sem atributos de equipamento.
+
+## Obtenção provisória
+
+Interação **Examinar** no corpo derrotado. Sorteio único e compartilhado, com 20% de vazio forçado. Nos demais resultados, chance independente de **45%**, quantidade **1–3**. As falhas de todas as entradas também podem produzir saque vazio. Moedas da criatura constam em GAME-011.
+
+Coleta seletiva com revisões no servidor; fechar/reabrir não altera o resultado. O corpo permanece disponível enquanto a sala está ocupada, respeitando a limpeza existente de GAME-011.
 
 ## Uso atual
-Nenhum. Não pode ser vendido, consumido, fabricado ou equipado como funcionalidade já existente.
 
-## Uso futuro proposto
-Processamento e comércio. São possibilidades editoriais, **sem receita, estação, NPC comprador, transformação, preço ou efeito definidos**.
+Coletar, guardar no alforge e consultar informações. Material empilhável e persistente pelo InventarioService/BP_DataStore_V1 existentes. Sem consumo, fabricação, venda ou efeito de equipamento nesta etapa.
+
+## Possibilidades futuras
+
+Processamento e comércio. Possibilidades futuras, sem receita, preço, comprador, contrato, bônus ou aprimoramento disponível.
 
 ## Representação e integração
-- **Miniatura/arte reservada:** `./assets/itens/ITEM-015.png` (arquivo não criado).
-- Quando aprovado, a ficha **Informações** deve mostrar nome, raridade, origem, prévia, descrição completa, uso atual e futuro claramente separado; mesma fonte de metadados para inspeção e alforge.
-- Reaproveitar BancoDeItens, EspoliosConfig, EspoliosService, InventarioService, BP_ItemInterface e BP_DataStore_V1; não criar serviços paralelos.
 
-## Estado e validação
-**A DEFINIR / proposta editorial.** Pendente aprovação de nome, adequação à criatura, descrição, imagem, quantidades, probabilidades, preços e testes multiplayer. Não avançar para DEFINIDO/IMPLEMENTADO sem autorização.
+Miniatura estilizada nativa em BP_ItemInterface, sem imagens externas. Representação vetorial de referência: `./assets/itens/ITEM-015.svg`. Arte provisória, sem estabelecer anatomia ou poderes.
 
-Ver [catálogo consolidado](CATALOGO-ESPOLIOS-PROPOSTOS.md).
+BancoDeItens fornece nome, descrições, categoria, raridade, origem, propriedades e usos para inspeção, alforge e ficha independente. EspoliosConfig/EspoliosService reutilizados; carteira e persistência preservadas.
+
+## Testes e pendências
+
+Play local: rotina real de derrota e registro, saque vazio, coleta parcial e restante, reabertura, rejeição de replay/quantidades inválidas, coleta do material e moedas. Miniatura e ficha criadas no cliente. Export/Import dos 12 materiais exercitado.
+
+**Pendentes:** multiplayer real com vários clientes, salvar/recarregar entre servidores reais, validação artística, identidade final e economia. Nenhuma receita, venda ou contrato implementado.
+
+Ver [catálogo consolidado](CATALOGO-ESPOLIOS-PROPOSTOS.md) e [sistema](../02-gameplay/GAME-011.md).
