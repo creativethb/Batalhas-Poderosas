@@ -54,6 +54,10 @@ Prefab de execução em `ServerStorage.Dungeon_NPCs`; protótipos de edição fi
 
 ## Lore e espólios
 
+> **Planejamento de espólios (não implementado):** propostas consultáveis em [CATALOGO-ESPOLIOS-PROPOSTOS](../04-itens/CATALOGO-ESPOLIOS-PROPOSTOS.md), com fichas individuais ITEM-020 a ITEM-022. Não tratar propostas como loot ativo nem alterar a gameplay sem aprovação.
+
+
+
 História própria, espólios e valores econômicos ainda não foram definidos. Esta ficha registra gameplay implementada, sem inventar origem narrativa ou recompensas.
 
 ## Referência visual reservada
