@@ -9,6 +9,7 @@ relacionados:
   - "GAME-001"
   - "GAME-002"
   - "GAME-008"
+  - "GAME-012"
   - "ITEM-001"
   - "ITEM-002"
   - "ITEM-003"
@@ -19,7 +20,7 @@ relacionados:
   - "LOCAL-006"
   - "LOCAL-007"
 atualizado_por: "codex"
-data_atualizacao: "2026-10-08"
+data_atualizacao: "2026-10-09"
 ---
 
 # Painel Linear de Consolidação — Itens, Interações e Cadeias
@@ -215,7 +216,7 @@ A ordem abaixo é a fila principal. Não avançar por impulso para novas expans�
 
 **Recorte atualizado em 09/10/2026:** inspeção/coleta compartilhada de Vesplume, Grumelo, Pedrino, Brisalto e Cascudo, com ITEM-008 a ITEM-022. Expansão autorizada com identidades e valores provisórios, implementada/testada localmente, sem VALIDADO. Baú Falso excluído. Materiais persistentes entram no alforge existente; moedas na carteira. Miniaturas/ficha independente criadas. Detalhes e chances em GAME-011.
 
-**IMPLEMENTADO / TESTADO EM PLAY LOCAL**, ainda não VALIDADO pelo responsável. Não quita a cadeia econômica: tratamento, receitas, contratos, venda, outros inimigos/baús e economia definitiva pendentes.
+**IMPLEMENTADO / TESTADO EM PLAY LOCAL**, ainda não VALIDADO pelo responsável. Não quita a cadeia econômica: venda provisória à Guilda e pagamento na Tesouraria implementados conforme GAME-012; tratamento, receitas, contratos, outros inimigos/baús e economia definitiva pendentes.
 
 
 - [ ] Auditar os baús e demais interações físicas já existentes.
@@ -287,3 +288,7 @@ Ao concluir uma pendência:
 3. reservar/atualizar sua imagem em `assets/itens/` quando houver arte;
 4. atualizar o índice documental quando necessário;
 5. registrar versão pública somente quando o conjunto planejado da etapa estiver testado e validado, evitando microversões por pequenas alterações.
+
+## 09/10/2026 — ciclo econômico funcional
+
+ITEM-008–022 podem ser entregues à Guilda pelos preços provisórios de GAME-012. Comprovante pendente e pagamento único persistem no mesmo perfil do inventário/carteira. Recepção, avaliação no anexo e Tesouraria conectadas aos protótipos existentes. Implementação e testes registrados em GAME-012; estado TESTADO, sem VALIDADO.

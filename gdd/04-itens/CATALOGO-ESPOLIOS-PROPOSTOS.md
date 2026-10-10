@@ -19,7 +19,7 @@ data_atualizacao: "2026-10-09"
 
 # Catálogo de espólios — propostas consultáveis
 
-> **ESTADO EM 09/10/2026:** ITEM-011 a ITEM-022 autorizados provisoriamente, implementados e testados em Play local. ITEM-023 a ITEM-025 continuam propostas, sem loot no Baú Falso. Economia, arte e validação definitiva permanecem futuras.
+> **ESTADO EM 09/10/2026:** ITEM-011 a ITEM-022 autorizados provisoriamente, implementados e testados em Play local. ITEM-023 a ITEM-025 continuam propostas, sem loot no Baú Falso. Compra provisória pela Guilda implementada em GAME-012; economia definitiva, arte final e validação permanecem futuras.
 
 ## 1. Base implementada a preservar
 
@@ -91,3 +91,27 @@ O botão **Informações** deve poder exibir, para cada item aprovado e implemen
 2. Solicitar validação dos nomes e descrições; manter as propostas distinguíveis do cânone.
 3. Só após aprovação, planejar probabilidades/quantidades por inimigo, moedas e testes com GAME-011.
 4. Deixar BEST-001 a BEST-016 em backlog, sem criação massiva automática.
+
+## Compra provisória pela Guilda — 09/10/2026
+
+Autorizada e implementada para ITEM-008–022. Cadastro único em GuildaEconomiaConfig; entrega confirmada retira material e gera comprovante persistente, recebido na Tesouraria. ITEM-023–025 e Baú Falso continuam fora. Sem contratos, fabricação ou economia definitiva.
+
+| Ficha | Material | Cobre por unidade |
+|---|---|---:|
+| ITEM-008 | Secreção Luminescente | 4 |
+| ITEM-009 | Membrana de Vesplume | 6 |
+| ITEM-010 | Glândula Luminosa | 35 |
+| ITEM-011 | Esporos de Grumelo | 3 |
+| ITEM-012 | Fibra Fúngica | 5 |
+| ITEM-013 | Núcleo de Esporos | 30 |
+| ITEM-014 | Fragmento de Rocha | 4 |
+| ITEM-015 | Cascalho Mineral | 5 |
+| ITEM-016 | Coração de Pedra | 35 |
+| ITEM-017 | Pena de Correnteza | 5 |
+| ITEM-018 | Essência de Brisa | 6 |
+| ITEM-019 | Cristal de Corrente Ascendente | 40 |
+| ITEM-020 | Placa de Carapaça | 5 |
+| ITEM-021 | Quitina Resistente | 7 |
+| ITEM-022 | Placa Intacta de Cascudo | 40 |
+
+Testes e limites em [GAME-012](../02-gameplay/GAME-012.md).

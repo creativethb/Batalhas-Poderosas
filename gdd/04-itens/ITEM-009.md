@@ -10,9 +10,10 @@ relacionados:
   - "BEST-017"
   - "GAME-009"
   - "GAME-011"
+  - "GAME-012"
 imagem: "./assets/itens/ITEM-009.svg"
 atualizado_por: "Codex"
-data_atualizacao: "2026-10-08"
+data_atualizacao: "2026-10-09"
 ---
 
 # Membrana de Vesplume
@@ -39,18 +40,24 @@ Chance provisória por entrada: **40%**, após passar pelo teste de vazio de 20%
 
 ## Uso atual
 
-Coletar, guardar na bolsa e consultar informações. Não há consumo, venda, troca, receita, aprimoramento ou contrato implementado.
+Coletar, guardar na bolsa, consultar informações e entregar à Guilda de Arkan para venda por **6 cobres por unidade**, valor provisório. Após a confirmação, o material sai do alforge e o valor fica pendente na Tesouraria. Não há consumo, receita, aprimoramento ou contrato implementado.
 
 ## Possibilidades futuras e destinos
 
 Possíveis aplicações no boticário ou no artesanato.
 
-Boticário ou artesão, como possibilidades futuras. Venda, tratamento, receitas e preços não implementados.
+Boticário ou artesão, como possibilidades futuras. Tratamento e receitas não implementados; destinatários comerciais adicionais a definir.
 
-Quantidades de receitas, transformação e resultado permanecem **PLANEJADOS / A DEFINIR**. Nenhuma nova profissão ou serviço foi habilitado.
+Quantidades de receitas, transformação e resultado permanecem **PLANEJADOS / A DEFINIR**. Receitas e serviços adicionais continuam futuros.
 
 ## Implementação, testes e validação
 
 **IMPLEMENTADO e TESTADO em Play local de PC:** catálogo, coleta seletiva, armazenamento pelo InventarioService, miniatura e informações. Materiais entram no Export/Import existente e no mesmo perfil BP_DataStore_V1.
 
 O teste não comprova salvar/recarregar entre servidores reais. Multiplayer com dois a seis clientes, toque físico e controle físico permanecem pendentes. A validação estética final pelo responsável é distinta dos testes técnicos.
+
+## Compra pela Guilda — versão funcional de 09/10/2026
+
+Preço de teste: **6 cobres por unidade**, cadastrado em GuildaEconomiaConfig. Venda unitária ou em lote: seleção → cotação calculada no servidor → confirmação → retirada exata → comprovante persistente → pagamento único na Tesouraria. Cancelar a cotação não retira materiais nem cria valores.
+
+Inventário, carteira e comprovantes usam o mesmo perfil BP_DataStore_V1. As informações de uso/destino na inspeção, alforge e ficha independente foram atualizadas pelo BancoDeItens. Preço não é definitivo; fabricação, contratos e aprimoramentos não estão disponíveis. Testes técnicos e limitações em [GAME-012](../02-gameplay/GAME-012.md); não marcar VALIDADO por inferência.

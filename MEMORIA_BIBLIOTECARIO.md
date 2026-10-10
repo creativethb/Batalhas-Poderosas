@@ -348,3 +348,7 @@ Play local verificou vazio, combinações, parcial, replay/quantidade/distância
 ## 09/10/2026 — expansão autorizada dos espólios
 
 ITEM-011–022 implementados provisoriamente no catálogo e inspeção existentes; BEST-018–021 e GAME-009/011 sincronizados. Miniaturas nativas, coleta compartilhada e moedas preservadas. Baú Falso e ITEM-023–025 excluídos. Testes locais registrados, multiplayer real e recarga entre servidores pendentes. index.html/renderizador preservados; sem VALIDADO.
+
+## 09/10/2026 — economia autorizada da Guilda
+
+GAME-012 registra primeira venda funcional de ITEM-008–022 e pagamentos persistentes no perfil BP_DataStore_V1. Três atendentes provisórias ativadas: orientação, entrega e Tesouraria. Preços centralizados e temporários; fichas, catálogo e GAME-009/011 atualizados. Testes locais, concorrência/falhas simuladas, DataStore real isolado, interface e padaria registrados. Contratos/receitas/economia definitiva futuros; sem VALIDADO. index.html/renderizador/arquitetura preservados.

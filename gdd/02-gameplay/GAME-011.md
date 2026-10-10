@@ -26,6 +26,7 @@ relacionados:
   - "ITEM-009"
   - "ITEM-010"
   - "GAME-009"
+  - "GAME-012"
   - "GAME-010"
   - "DNG-013"
 atualizado_por: "Codex"
@@ -36,7 +37,7 @@ data_atualizacao: "2026-10-09"
 
 ## Escopo e arquitetura implementados
 
-**Vesplume, Grumelo, Pedrino, Brisalto e Cascudo** estão habilitados. Baú Falso, Guardião e inimigos de outros pisos permanecem fora desta expansão. Nenhuma loja, fabricação, melhoria, contrato ou economia definitiva foi criada.
+**Vesplume, Grumelo, Pedrino, Brisalto e Cascudo** estão habilitados. Baú Falso, Guardião e inimigos de outros pisos permanecem fora desta expansão. A venda de materiais à Guilda foi autorizada e implementada posteriormente em GAME-012. Fabricação, melhoria, contratos e economia definitiva continuam futuros.
 
 BancoDeItens continua sendo o catálogo central. ITEM-008 a ITEM-022 acrescentam metadados separados da interface: origem, propriedades, descrições, usos atuais/futuros e destinos. IDs de runtime permanecem estáveis.
 
@@ -152,3 +153,7 @@ Dois clientes simultâneos, cinco/seis jogadores, saída de um enquanto outro pe
 Export/Import exercitado; salvar/recarregar entre servidores reais não foi forçado. Perfil/moedas dos testes foram restaurados. Não houve nova travessia completa de Guardião/Piso 2; nenhum de seus controladores foi modificado.
 
 Estado: **IMPLEMENTADO / TESTADO EM PLAY LOCAL**, distinto de VALIDADO pelo responsável. Balanceamento, economia e arte definitiva continuam em desenvolvimento.
+
+## Integração econômica — 09/10/2026
+
+Os 15 materiais coletados entram no ciclo de venda/pagamento de GAME-012. Sorteio por corpo, vazio, saque compartilhado, revisão e coleta seletiva mantidos. InventarioService recusa uma coleta enquanto grava uma operação econômica, preservando o resultado e a revisão para nova tentativa. Uso/destino consultável atualizado no BancoDeItens.

@@ -10,6 +10,7 @@ relacionados:
   - "BEST-020"
   - "GAME-009"
   - "GAME-011"
+  - "GAME-012"
 imagem: "./assets/itens/ITEM-017.svg"
 atualizado_por: "Codex"
 data_atualizacao: "2026-10-09"
@@ -35,11 +36,11 @@ Coleta seletiva com revisões no servidor; fechar/reabrir não altera o resultad
 
 ## Uso atual
 
-Coletar, guardar no alforge e consultar informações. Material empilhável e persistente pelo InventarioService/BP_DataStore_V1 existentes. Sem consumo, fabricação, venda ou efeito de equipamento nesta etapa.
+Coletar, guardar no alforge e consultar informações. Material empilhável e persistente pelo InventarioService/BP_DataStore_V1 existentes. Venda à Guilda implementada por **5 cobres por unidade**, valor provisório; entrega no anexo e pagamento na Tesouraria. Sem consumo, fabricação ou efeito de equipamento nesta etapa.
 
 ## Possibilidades futuras
 
-Artesanato e peças leves. Possibilidades futuras, sem receita, preço, comprador, contrato, bônus ou aprimoramento disponível.
+Artesanato e peças leves. Possibilidades futuras, sem receita, contrato, bônus ou aprimoramento disponível.
 
 ## Representação e integração
 
@@ -51,6 +52,12 @@ BancoDeItens fornece nome, descrições, categoria, raridade, origem, propriedad
 
 Play local: rotina real de derrota e registro, saque vazio, coleta parcial e restante, reabertura, rejeição de replay/quantidades inválidas, coleta do material e moedas. Miniatura e ficha criadas no cliente. Export/Import dos 12 materiais exercitado.
 
-**Pendentes:** multiplayer real com vários clientes, salvar/recarregar entre servidores reais, validação artística, identidade final e economia. Nenhuma receita, venda ou contrato implementado.
+**Pendentes:** multiplayer real com vários clientes, salvar/recarregar entre servidores reais, validação artística, identidade final e economia. Venda provisória à Guilda implementada conforme GAME-012; receitas e contratos permanecem futuros.
 
 Ver [catálogo consolidado](CATALOGO-ESPOLIOS-PROPOSTOS.md) e [sistema](../02-gameplay/GAME-011.md).
+
+## Compra pela Guilda — versão funcional de 09/10/2026
+
+Preço de teste: **5 cobres por unidade**, cadastrado em GuildaEconomiaConfig. Venda unitária ou em lote: seleção → cotação calculada no servidor → confirmação → retirada exata → comprovante persistente → pagamento único na Tesouraria. Cancelar a cotação não retira materiais nem cria valores.
+
+Inventário, carteira e comprovantes usam o mesmo perfil BP_DataStore_V1. As informações de uso/destino na inspeção, alforge e ficha independente foram atualizadas pelo BancoDeItens. Preço não é definitivo; fabricação, contratos e aprimoramentos não estão disponíveis. Testes técnicos e limitações em [GAME-012](../02-gameplay/GAME-012.md); não marcar VALIDADO por inferência.

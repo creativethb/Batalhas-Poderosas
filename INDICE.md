@@ -264,3 +264,11 @@ Espólios habilitados para Vesplume, Grumelo, Pedrino, Brisalto e Cascudo (ITEM-
 | ITEM-020 | [Placa de Carapaça](gdd/04-itens/ITEM-020.md) | EM_DESENVOLVIMENTO |
 | ITEM-021 | [Quitina Resistente](gdd/04-itens/ITEM-021.md) | EM_DESENVOLVIMENTO |
 | ITEM-022 | [Placa Intacta de Cascudo](gdd/04-itens/ITEM-022.md) | EM_DESENVOLVIMENTO |
+
+## GAME-012 — economia da masmorra e Guilda de Arkan
+
+| ID | Nome | Estado | Arquivo |
+|---|---|---|---|
+| GAME-012 | Economia da masmorra e atendimento da Guilda de Arkan | EM_DESENVOLVIMENTO | [Ficha](gdd/02-gameplay/GAME-012.md) |
+
+Compra provisória de ITEM-008–022, comprovantes persistentes e pagamento na carteira existente. Implementado/testado localmente e em chave isolada do DataStore; validação e multiplayer real pendentes.
