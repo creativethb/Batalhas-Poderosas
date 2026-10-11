@@ -10,7 +10,7 @@ relacionados:
   - "DNG-002"
 imagem: "./assets/bestiario/BEST-022.png"
 atualizado_por: "Codex"
-data_atualizacao: "2026-10-08"
+data_atualizacao: "2026-10-11"
 ---
 
 # Baú Falso
@@ -52,25 +52,25 @@ Parâmetros em `PISO1_BauFalso.Config`. Os ataques usam o serviço existente de 
 
 ## Derrota e animações
 
-Derrota interrompe IA, movimento, animação de caminhada, consultas ofensivas e prompt; o corpo perde equilíbrio e permanece inativo. Marca `EncontroConcluido` e emite `EncontroEncerrado`, sem entregar loot.
+Derrota interrompe IA, movimento, animação de caminhada, consultas ofensivas e prompt; o corpo perde equilíbrio e permanece inativo. Marca `EncontroConcluido` e emite `EncontroEncerrado`, com registro de espólios por inspeção após a derrota do baú revelado.
 
 Todas as animações são procedurais nos motores existentes: transformação, respiração, caminhada alternada, tampa, flexão das pernas e queda. Não foram publicados novos IDs.
 
 ## Integração atual e futura
 
-> **Planejamento de espólios (não implementado):** propostas consultáveis em [CATALOGO-ESPOLIOS-PROPOSTOS](../04-itens/CATALOGO-ESPOLIOS-PROPOSTOS.md), com fichas individuais ITEM-023 a ITEM-025. Não tratar propostas como loot ativo nem alterar a gameplay sem aprovação.
+> **Espólios implementados provisoriamente em 11/10/2026:** ITEM-023 a ITEM-025, por inspeção compartilhada de GAME-011; detalhes abaixo.
 
 
 
 O seletor PISO1_EncontrosSpawn.CriarBau usa um único ponto no altar das salas Bau. Uma escolha determinística por sessão/sala cria o verdadeiro ou o falso, com verificação de baú existente antes de instanciar. O original está reservado em ServerStorage; o prefab funcional fica em Dungeon_NPCs. A arena do Guardião e o catálogo de cinco inimigos comuns permanecem separados.
 
-O refinamento habilitou `ProceduralAtivo=true` e `FrequenciaProcedural=0.12`, valores provisórios aplicados somente nesse ponto dedicado. `ModoTesteStudio=false` desativa o ponto de teste adicional, evitando sobreposição. O peso BauFalso do sorteio de salas comuns continua zero; isso não desativa o seletor do altar. Nenhum dos dois baús concede loot nesta etapa.
+O refinamento habilitou `ProceduralAtivo=true` e `FrequenciaProcedural=0.35`, valores provisórios aplicados às salas com baú. `GarantirFalsoAteBau=2` força um falso até o segundo baú gerado caso o primeiro tenha sido verdadeiro. `ModoTesteStudio=false` desativa o ponto de teste adicional, evitando sobreposição. O peso BauFalso do sorteio de salas comuns continua zero; isso não desativa o seletor do altar. O Baú Falso concede materiais por inspeção após a derrota; a premiação do verdadeiro segue seu controlador próprio.
 
 ## Validação e pendências
 
 Interação real, foco oculto/revelado, trava concorrente, 48 peças mantidas, dano e morte na transformação verificados. Mordida de 12, investida de 16, bloqueio, saída lateral, trajetória fixa, parede e recuperações testados. John venceu com cinco golpes reais de 22 da Espada de Madeira; após a morte, não houve novos ataques nem peças com colisão/consulta ativa.
 
-Multiplayer real, frequência final, loot e revisão artística definitiva permanecem pendentes. Saídas laterais foram controladas pelo teste, sem acionar o comando real de dash.
+Multiplayer real, frequência final, economia e revisão artística definitiva permanecem pendentes. Saídas laterais foram controladas pelo teste, sem acionar o comando real de dash.
 
 ## Referência visual reservada
 
@@ -78,3 +78,12 @@ Multiplayer real, frequência final, loot e revisão artística definitiva perma
 > Arquivo reservado: `./assets/bestiario/BEST-022.png`.
 
 O modelo atual é provisório. A imagem definitiva será anexada depois; não foi criada uma imagem fictícia nesta atualização.
+
+
+## Espólios do Baú Falso — 11/10/2026
+
+Autorizados nesta data e implementados no Studio pelo sistema existente. ITEM-023 (dente_bau_falso): 55%, 1–2; ITEM-024 (dobradica_retorcida): 45%, 1; ITEM-025 (fechadura_viva): 8%, 1. Valores provisórios centralizados em EspoliosConfig. 20% de vazio forçado; nos demais casos, entradas independentes. Vazio total teórico 38,216%. Sem moedas, venda, preço ou receitas.
+
+Após a derrota do baú revelado, ControladorBauFalso registra o corpo em EspoliosService. Morte durante a revelação também permite inspeção; derrotar o disfarce intacto por modo dev não concede materiais. Sorteio único, coleta seletiva compartilhada, alforge e persistência existentes preservados. Miniaturas nativas e informações compartilhadas em BP_ItemInterface/BancoDeItens.
+
+Testado em Play local: transformação, morte, inspeção com três materiais, miniaturas, coleta parcial/integral, pedidos repetidos e excesso rejeitados, saque vazio e exportação do inventário. 10.000 sorteios verificaram limites. Não houve multiplayer real ou reconexão entre servidores. Estado IMPLEMENTADO / TESTADO localmente, sem marcar VALIDADO. Place não publicado nesta tarefa.
