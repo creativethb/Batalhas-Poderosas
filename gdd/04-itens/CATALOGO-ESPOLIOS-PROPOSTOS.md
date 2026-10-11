@@ -13,13 +13,13 @@ relacionados:
   - "BEST-020"
   - "BEST-021"
   - "BEST-022"
-atualizado_por: "ChatGPT — proposta para validação"
-data_atualizacao: "2026-10-09"
+atualizado_por: "Codex"
+data_atualizacao: "2026-10-11"
 ---
 
 # Catálogo de espólios — propostas consultáveis
 
-> **ESTADO EM 09/10/2026:** ITEM-011 a ITEM-022 autorizados provisoriamente, implementados e testados em Play local. ITEM-023 a ITEM-025 continuam propostas, sem loot no Baú Falso. Compra provisória pela Guilda implementada em GAME-012; economia definitiva, arte final e validação permanecem futuras.
+> **ESTADO EM 09/10/2026:** ITEM-011 a ITEM-022 autorizados provisoriamente, implementados e testados em Play local. ITEM-023 a ITEM-025 foram autorizados e implementados por inspeção em 11/10/2026, com testes locais e valores provisórios. Compra provisória pela Guilda implementada em GAME-012; economia definitiva, arte final e validação permanecem futuras.
 
 ## 1. Base implementada a preservar
 
@@ -45,7 +45,7 @@ BEST-017 Vesplume: ITEM-008 Secreção Luminescente (Comum), ITEM-009 Membrana d
 | ITEM-024 | Baú Falso (022) | Dobradiça Retorcida | Comum | Ferragem recuperada do Baú Falso. | Reaproveitamento por artesãos. |
 | ITEM-025 | Baú Falso (022) | Fechadura Viva | Raro | Mecanismo incomum ligado ao disfarce do Baú Falso. | Pesquisa e mecanismos especiais futuros. |
 
-Cada ITEM-011 a ITEM-025 possui descrição longa, origem, uso atual, status, representação visual reservada e pontos de validação na própria ficha. ITEM-011–022 têm chances e quantidades provisórias autorizadas em GAME-011. ITEM-023–025 continuam sem chance ou quantidade autorizada. Nenhum preço definitivo. Moedas devem usar a carteira já existente; nenhum saldo paralelo.
+Cada ITEM-011 a ITEM-025 possui descrição longa, origem, uso atual, status, representação visual reservada e pontos de validação na própria ficha. ITEM-011–022 têm chances e quantidades provisórias autorizadas em GAME-011. ITEM-023–025 passaram a ter chances e quantidades provisórias em 11/10/2026, descritas abaixo. Nenhum preço definitivo. Moedas devem usar a carteira já existente; nenhum saldo paralelo.
 
 ## 3. Banco de ideias para os demais inimigos (NÃO cadastrar como ITEM ainda)
 
@@ -82,7 +82,7 @@ O botão **Informações** deve poder exibir, para cada item aprovado e implemen
 - Um sorteio autoritativo por corpo, possibilidade de vazio, conjunto compartilhado, inspeção seletiva, sem drops individuais no chão. Preservar segurança, concorrência e encerramento de sala.
 - Não fixar chance, quantidade, preço, transformação, bônus, efeito, receita ou destinatário comercial antes de aprovação.
 - Respeitar raridades de GAME-009: Comum, Raro e Épico conforme necessidade; Lendário e Secreto não são escopo atual.
-- Estados: A DEFINIR → DEFINIDO → CRIADO → IMPLEMENTADO → TESTADO → VALIDADO. ITEM-011–022 estão IMPLEMENTADOS / TESTADOS localmente, sem VALIDADO. ITEM-023–025 continuam propostas anteriores à aprovação.
+- Estados: A DEFINIR → DEFINIDO → CRIADO → IMPLEMENTADO → TESTADO → VALIDADO. ITEM-011–022 estão IMPLEMENTADOS / TESTADOS localmente, sem VALIDADO. ITEM-023–025 estão IMPLEMENTADOS / TESTADOS localmente desde 11/10/2026; não VALIDADO.
 - Imagem reservada não significa arte pronta. Não editar index.html nem alterar renderizador/arquitetura do GDD.
 
 ## 6. Ordem sugerida para o agente
@@ -94,7 +94,7 @@ O botão **Informações** deve poder exibir, para cada item aprovado e implemen
 
 ## Compra provisória pela Guilda — 09/10/2026
 
-Autorizada e implementada para ITEM-008–022. Cadastro único em GuildaEconomiaConfig; entrega confirmada retira material e gera comprovante persistente, recebido na Tesouraria. ITEM-023–025 e Baú Falso continuam fora. Sem contratos, fabricação ou economia definitiva.
+Autorizada e implementada para ITEM-008–022. Cadastro único em GuildaEconomiaConfig; entrega confirmada retira material e gera comprovante persistente, recebido na Tesouraria. ITEM-023–025 e Baú Falso continuam fora da compra pela Guilda, embora a coleta por inspeção esteja implementada. Sem contratos, fabricação ou economia definitiva.
 
 | Ficha | Material | Cobre por unidade |
 |---|---|---:|
@@ -115,3 +115,12 @@ Autorizada e implementada para ITEM-008–022. Cadastro único em GuildaEconomia
 | ITEM-022 | Placa Intacta de Cascudo | 40 |
 
 Testes e limites em [GAME-012](../02-gameplay/GAME-012.md).
+
+
+## Espólios do Baú Falso — 11/10/2026
+
+Autorizados nesta data e implementados no Studio pelo sistema existente. ITEM-023 (dente_bau_falso): 55%, 1–2; ITEM-024 (dobradica_retorcida): 45%, 1; ITEM-025 (fechadura_viva): 8%, 1. Valores provisórios centralizados em EspoliosConfig. 20% de vazio forçado; nos demais casos, entradas independentes. Vazio total teórico 38,216%. Sem moedas, venda, preço ou receitas.
+
+Após a derrota do baú revelado, ControladorBauFalso registra o corpo em EspoliosService. Morte durante a revelação também permite inspeção; derrotar o disfarce intacto por modo dev não concede materiais. Sorteio único, coleta seletiva compartilhada, alforge e persistência existentes preservados. Miniaturas nativas e informações compartilhadas em BP_ItemInterface/BancoDeItens.
+
+Testado em Play local: transformação, morte, inspeção com três materiais, miniaturas, coleta parcial/integral, pedidos repetidos e excesso rejeitados, saque vazio e exportação do inventário. 10.000 sorteios verificaram limites. Não houve multiplayer real ou reconexão entre servidores. Estado IMPLEMENTADO / TESTADO localmente, sem marcar VALIDADO. Place não publicado nesta tarefa.
