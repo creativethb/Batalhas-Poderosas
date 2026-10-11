@@ -30,16 +30,16 @@ relacionados:
   - "GAME-010"
   - "DNG-013"
 atualizado_por: "Codex"
-data_atualizacao: "2026-10-09"
+data_atualizacao: "2026-10-11"
 ---
 
 # Inspeção e espólios compartilhados
 
 ## Escopo e arquitetura implementados
 
-**Vesplume, Grumelo, Pedrino, Brisalto e Cascudo** estão habilitados. Baú Falso, Guardião e inimigos de outros pisos permanecem fora desta expansão. A venda de materiais à Guilda foi autorizada e implementada posteriormente em GAME-012. Fabricação, melhoria, contratos e economia definitiva continuam futuros.
+**Vesplume, Grumelo, Pedrino, Brisalto e Cascudo** estão habilitados. O Baú Falso foi integrado posteriormente em 11/10/2026, conforme seção abaixo. Guardião e inimigos de outros pisos permanecem fora desta expansão. A venda de materiais à Guilda foi autorizada e implementada posteriormente em GAME-012. Fabricação, melhoria, contratos e economia definitiva continuam futuros.
 
-BancoDeItens continua sendo o catálogo central. ITEM-008 a ITEM-022 acrescentam metadados separados da interface: origem, propriedades, descrições, usos atuais/futuros e destinos. IDs de runtime permanecem estáveis.
+BancoDeItens continua sendo o catálogo central. ITEM-008 a ITEM-025 acrescentam metadados separados da interface: origem, propriedades, descrições, usos atuais/futuros e destinos. IDs de runtime permanecem estáveis.
 
 EspoliosConfig define probabilidades e quantidades. EspoliosService mantém uma tabela no servidor por instância derrotada, com GUID, revisão e observadores. EspoliosServer recebe apenas coleta/fechamento; o prompt autoriza a inspeção.
 
@@ -157,3 +157,12 @@ Estado: **IMPLEMENTADO / TESTADO EM PLAY LOCAL**, distinto de VALIDADO pelo resp
 ## Integração econômica — 09/10/2026
 
 Os 15 materiais coletados entram no ciclo de venda/pagamento de GAME-012. Sorteio por corpo, vazio, saque compartilhado, revisão e coleta seletiva mantidos. InventarioService recusa uma coleta enquanto grava uma operação econômica, preservando o resultado e a revisão para nova tentativa. Uso/destino consultável atualizado no BancoDeItens.
+
+
+## Espólios do Baú Falso — 11/10/2026
+
+Autorizados nesta data e implementados no Studio pelo sistema existente. ITEM-023 (dente_bau_falso): 55%, 1–2; ITEM-024 (dobradica_retorcida): 45%, 1; ITEM-025 (fechadura_viva): 8%, 1. Valores provisórios centralizados em EspoliosConfig. 20% de vazio forçado; nos demais casos, entradas independentes. Vazio total teórico 38,216%. Sem moedas, venda, preço ou receitas.
+
+Após a derrota do baú revelado, ControladorBauFalso registra o corpo em EspoliosService. Morte durante a revelação também permite inspeção; derrotar o disfarce intacto por modo dev não concede materiais. Sorteio único, coleta seletiva compartilhada, alforge e persistência existentes preservados. Miniaturas nativas e informações compartilhadas em BP_ItemInterface/BancoDeItens.
+
+Testado em Play local: transformação, morte, inspeção com três materiais, miniaturas, coleta parcial/integral, pedidos repetidos e excesso rejeitados, saque vazio e exportação do inventário. 10.000 sorteios verificaram limites. Não houve multiplayer real ou reconexão entre servidores. Estado IMPLEMENTADO / TESTADO localmente, sem marcar VALIDADO. Place não publicado nesta tarefa.
