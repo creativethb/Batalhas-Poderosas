@@ -135,6 +135,10 @@ Total: 16 scripts/módulos. Originais preservados em `ServerStorage.RECOMPENSAS_
 
 **Pendente:** dois clientes reais coletando simultaneamente, desconexão/troca real entre servidores durante uma transação, virada real de meia-noite, inventário cheio e erros reais de DataStore no cliente, passagem completa com grupo, revisão artística e teste completo da Padaria/Guilda com atendimento físico. Os testes de concorrência, reconexão, falha e relógio acima usam simulação controlada, além da recarga em DataStore real. Não são homologação multiplayer. Não foi publicada uma nova versão do place nesta etapa.
 
+## Correção de interação após teste do usuário — 11/10/2026
+
+O baú verdadeiro estava ativo, mas seu botão não aparecia: o supressor global usa estilo Custom e EspoliosClient reconhecia apenas o prompt dos corpos. A interface agora reconhece também `PromptBau` do Baú Verdadeiro do Piso 1. Teste pelo acionamento nativo do prompt confirmou ABRIR, abertura da tampa e janela individual com itens/moedas em uma nova sessão de Play. Nenhuma recompensa foi coletada pelo agente. A validação anterior pelo atalho de teste do controlador não havia coberto essa apresentação do botão; este teste cobre o fluxo de interação.
+
 ## Próxima avaliação
 
 Testar com John e outros jogadores, especialmente direitos individuais, coleta parcial, três rendimentos, quarta interação vazia e progressão pela chave. Refinar somente depois os valores provisórios, arte e funções futuras autorizadas; não antecipar missões, venda dos novos itens ou equipamentos funcionais.
