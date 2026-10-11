@@ -5,6 +5,7 @@ funcao: "Coleta seletiva autoritativa integrada ao alforge e à carteira"
 status: "EM_DESENVOLVIMENTO"
 localizacao: "Masmorra — Piso 1 / bolsa de John"
 relacionados:
+  - "GAME-013"
   - "BEST-018"
   - "BEST-019"
   - "BEST-020"
@@ -166,3 +167,8 @@ Autorizados nesta data e implementados no Studio pelo sistema existente. ITEM-02
 Após a derrota do baú revelado, ControladorBauFalso registra o corpo em EspoliosService. Morte durante a revelação também permite inspeção; derrotar o disfarce intacto por modo dev não concede materiais. Sorteio único, coleta seletiva compartilhada, alforge e persistência existentes preservados. Miniaturas nativas e informações compartilhadas em BP_ItemInterface/BancoDeItens.
 
 Testado em Play local: transformação, morte, inspeção com três materiais, miniaturas, coleta parcial/integral, pedidos repetidos e excesso rejeitados, saque vazio e exportação do inventário. 10.000 sorteios verificaram limites. Não houve multiplayer real ou reconexão entre servidores. Estado IMPLEMENTADO / TESTADO localmente, sem marcar VALIDADO. Place não publicado nesta tarefa.
+
+
+## Recompensas individuais do Piso 1 — 11/10/2026
+
+[GAME-013](GAME-013.md) documenta a extensão da inspeção/persistência para Baú Verdadeiro e Guardião. Ela usa a mesma carteira, alforge e janela existentes, com direitos individuais e contadores diários separados. Os corpos dos inimigos comuns e do Baú Falso preservam seu resultado compartilhado e sorteio único. ITEM-026–037 não receberam novos preços na Guilda. O Elmo de Vidro e a chave não participam do sorteio. Funções futuras de equipamentos e investigação continuam indisponíveis.

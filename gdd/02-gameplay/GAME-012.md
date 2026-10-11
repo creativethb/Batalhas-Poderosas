@@ -5,6 +5,7 @@ funcao: "Venda de materiais, comprovantes persistentes e pagamentos na carteira 
 status: "EM_DESENVOLVIMENTO"
 localizacao: "Masmorra / alforge / Guilda de Arkan"
 relacionados:
+  - "GAME-013"
   - "GAME-009"
   - "GAME-011"
   - "ITEM-008"
@@ -124,3 +125,8 @@ Dois clientes reais, troca entre servidores publicados, interrupção física do
 Contratos completos, fabricação, aluguel, banco, empréstimos, economia definitiva, novos itens/pisos e personalidades das atendentes não implementados. Não houve nova travessia completa do Guardião/Piso 2; combate não foi alterado. Place editado no Studio; publicação do Roblox não executada nesta etapa.
 
 index.html, renderizador e arquitetura do mini-site preservados.
+
+
+## Recompensas individuais do Piso 1 — 11/10/2026
+
+[GAME-013](GAME-013.md) documenta a extensão da inspeção/persistência para Baú Verdadeiro e Guardião. Ela usa a mesma carteira, alforge e janela existentes, com direitos individuais e contadores diários separados. Os corpos dos inimigos comuns e do Baú Falso preservam seu resultado compartilhado e sorteio único. ITEM-026–037 não receberam novos preços na Guilda. O Elmo de Vidro e a chave não participam do sorteio. Funções futuras de equipamentos e investigação continuam indisponíveis.

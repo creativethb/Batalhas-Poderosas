@@ -5,6 +5,7 @@ funcao: "Sorteio, IA, dano e integração de baús"
 status: "EM_DESENVOLVIMENTO"
 localizacao: "Masmorra — Piso 1"
 relacionados:
+  - "GAME-013"
   - "DNG-013"
   - "GAME-011"
   - "GAME-002"
@@ -88,3 +89,8 @@ GAME-011 acrescenta inspeção/espólios compartilhados exclusivamente do Vesplu
 [DNG-014](../07-masmorras/DNG-014.md) e os catálogos individuais registram a proposta de itens do Baú Verdadeiro e do Guardião. Não modificam este sorteio, seus pesos, o combate, os controladores ou a dinâmica de abertura. Chave continua fora do sorteio; Elmo de Vidro não é drop.
 
 As afirmações acima de espólios exclusivos do Vesplume ou ambos os baús sem loot pertencem às etapas históricas de 08/10. O estado posterior das seis fontes de inspeção (cinco comuns e Baú Falso) está em GAME-011; isso não integra as novas recompensas documentais.
+
+
+## Recompensas individuais do Piso 1 — 11/10/2026
+
+[GAME-013](GAME-013.md) documenta a extensão da inspeção/persistência para Baú Verdadeiro e Guardião. Ela usa a mesma carteira, alforge e janela existentes, com direitos individuais e contadores diários separados. Os corpos dos inimigos comuns e do Baú Falso preservam seu resultado compartilhado e sorteio único. ITEM-026–037 não receberam novos preços na Guilda. O Elmo de Vidro e a chave não participam do sorteio. Funções futuras de equipamentos e investigação continuam indisponíveis.

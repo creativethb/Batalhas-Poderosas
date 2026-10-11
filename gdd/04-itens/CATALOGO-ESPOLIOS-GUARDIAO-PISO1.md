@@ -2,9 +2,10 @@
 id: "CAT-ESPOLIOS-003"
 nome: "Espólios propostos do Guardião Ancestral — Piso 1"
 funcao: "Coleção documental de recompensas propostas"
-status: "PLANEJADO"
+status: "EM_DESENVOLVIMENTO"
 localizacao: "Masmorra — Piso 1"
 relacionados:
+  - "GAME-013"
   - "DNG-014"
   - "DNG-013"
   - "GAME-010"
@@ -19,7 +20,9 @@ data_atualizacao: "2026-10-11"
 ---
 # Espólios propostos do Guardião Ancestral — Piso 1
 
-> **DOCUMENTAÇÃO E ARTE.** Coleção aprovada como proposta nesta solicitação. Sem sorteio, itens funcionais, chances, preços ou nova implementação no Roblox Studio. Raridades provisórias não equivalem a chances.
+> **ESTADO ATUAL — PARTE 2:** cadastro e recompensas aplicados no Studio. A seção histórica abaixo descreve somente a Parte 1. Tabelas, usos atuais e testes em [GAME-013](../02-gameplay/GAME-013.md).
+
+> **HISTÓRICO DA PARTE 1 — DOCUMENTAÇÃO E ARTE.** Coleção aprovada como proposta nesta solicitação. Sem sorteio, itens funcionais, chances, preços ou nova implementação no Roblox Studio. Raridades provisórias não equivalem a chances.
 
 | ID | Item | Categoria | Raridade proposta | Finalidade proposta |
 |---|---|---|---|---|
@@ -52,3 +55,12 @@ Elmo de Vidro não é recompensa deste chefe. As três ideias anteriores de mate
 Cada ficha tem uma imagem própria em `./assets/itens/ITEM-XXX.png`, com o nome dentro da arte e identidade da Oficina de Cedric. As artes de ITEM-033 a ITEM-037 foram produzidas e conferidas em 1672 × 941; aprovação artística final ainda pendente. Modelos 3D, inventário, uso, coleta, venda, sorteio e farm permanecem para autorização posterior.
 
 [Consolidação e auditoria](../07-masmorras/DNG-014.md).
+
+
+## Atualização funcional — Parte 2, 11/10/2026
+
+A etapa documental anterior é preservada como histórico. A Parte 2 autorizou e aplicou sorteio individual, coleta seletiva e persistência no Studio. [GAME-013](../02-gameplay/GAME-013.md) registra configuração provisória, regras, scripts, testes e pendências.
+
+Baús contam a primeira coleta efetiva por encontro; o Guardião reserva o rendimento na vitória dos participantes elegíveis, mesmo sem coleta imediata. Os contadores são independentes e renovam à meia-noite de Brasília. Moedas vão à carteira existente. A Bolsa de Moedas Antigas é a representação desse crédito direto, sem um segundo recipiente remunerado. A chave de progressão segue independente e o Elmo de Vidro continua excluído.
+
+Ração, Bandagem e Pernil possuem consumo e cura. O Fragmento registra leitura permanente no Diário, sem consumir o papel. Óleo, armaduras, escudo e candelabro têm cadastro, obtenção, persistência e informações; iluminação, equipagem, desgaste, reparos, venda e investigação permanecem futuros. Testado não equivale a validação final.

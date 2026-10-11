@@ -5,6 +5,7 @@ funcao: "Checklist operacional para quitar conteúdo físico e coletável antes 
 status: "EM_DESENVOLVIMENTO"
 localizacao: "Vila de Arkham"
 relacionados:
+  - "GAME-013"
   - "ITEM-007"
   - "GAME-001"
   - "GAME-002"
@@ -296,3 +297,8 @@ ITEM-008–022 podem ser entregues à Guilda pelos preços provisórios de GAME-
 ## Fila documental de recompensas — 11/10/2026
 
 ITEM-026–037: funções pretendidas e raridades provisórias documentadas, artes conceituais individuais no GDD, sem modelos ou integração funcional. ITEM-038: Elmo de Vidro como investigação futura; fora dos drops. Referências: DNG-014 e DOS-005. Nenhum desses itens está IMPLEMENTADO, TESTADO ou VALIDADO no jogo. Esta etapa de documentação não altera a ordem da fila funcional nem autoriza iniciar consumo, venda, equipamentos ou missões.
+
+
+## Recompensas individuais do Piso 1 — 11/10/2026
+
+[GAME-013](GAME-013.md) documenta a extensão da inspeção/persistência para Baú Verdadeiro e Guardião. Ela usa a mesma carteira, alforge e janela existentes, com direitos individuais e contadores diários separados. Os corpos dos inimigos comuns e do Baú Falso preservam seu resultado compartilhado e sorteio único. ITEM-026–037 não receberam novos preços na Guilda. O Elmo de Vidro e a chave não participam do sorteio. Funções futuras de equipamentos e investigação continuam indisponíveis.

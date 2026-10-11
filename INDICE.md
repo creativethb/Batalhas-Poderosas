@@ -275,26 +275,35 @@ Compra provisória de ITEM-008–022, comprovantes persistentes e pagamento na c
 
 ## Catálogos de recompensas do Piso 1 — 11/10/2026
 
-Documentação e arte; nenhum item novo foi integrado ao jogo.
+Parte 1: catálogo e arte. Parte 2: recompensas individuais integradas ao Studio, com funções futuras explicitadas em GAME-013.
 
 | ID | Documento | Estado |
 |---|---|---|
-| ITEM-026 | [Ração de Explorador](gdd/04-itens/ITEM-026.md) | PLANEJADO |
-| ITEM-027 | [Bandagem de Campo](gdd/04-itens/ITEM-027.md) | PLANEJADO |
-| ITEM-028 | [Bolsa de Moedas Antigas](gdd/04-itens/ITEM-028.md) | PLANEJADO |
-| ITEM-029 | [Taça de Bronze Antiga](gdd/04-itens/ITEM-029.md) | PLANEJADO |
-| ITEM-030 | [Relicário de Pedra](gdd/04-itens/ITEM-030.md) | PLANEJADO |
-| ITEM-031 | [Fragmento de Registro Antigo](gdd/04-itens/ITEM-031.md) | PLANEJADO |
-| ITEM-032 | [Frasco de Óleo para Lamparina](gdd/04-itens/ITEM-032.md) | PLANEJADO |
-| ITEM-033 | [Elmo de Cobre](gdd/04-itens/ITEM-033.md) | PLANEJADO |
-| ITEM-034 | [Peitoral de Couro](gdd/04-itens/ITEM-034.md) | PLANEJADO |
-| ITEM-035 | [Escudo de Ferro Reforçado](gdd/04-itens/ITEM-035.md) | PLANEJADO |
-| ITEM-036 | [Candelabro de Expedição](gdd/04-itens/ITEM-036.md) | PLANEJADO |
-| ITEM-037 | [Pernil Assado](gdd/04-itens/ITEM-037.md) | PLANEJADO |
+| ITEM-026 | [Ração de Explorador](gdd/04-itens/ITEM-026.md) | EM_DESENVOLVIMENTO |
+| ITEM-027 | [Bandagem de Campo](gdd/04-itens/ITEM-027.md) | EM_DESENVOLVIMENTO |
+| ITEM-028 | [Bolsa de Moedas Antigas](gdd/04-itens/ITEM-028.md) | EM_DESENVOLVIMENTO |
+| ITEM-029 | [Taça de Bronze Antiga](gdd/04-itens/ITEM-029.md) | EM_DESENVOLVIMENTO |
+| ITEM-030 | [Relicário de Pedra](gdd/04-itens/ITEM-030.md) | EM_DESENVOLVIMENTO |
+| ITEM-031 | [Fragmento de Registro Antigo](gdd/04-itens/ITEM-031.md) | EM_DESENVOLVIMENTO |
+| ITEM-032 | [Frasco de Óleo para Lamparina](gdd/04-itens/ITEM-032.md) | EM_DESENVOLVIMENTO |
+| ITEM-033 | [Elmo de Cobre](gdd/04-itens/ITEM-033.md) | EM_DESENVOLVIMENTO |
+| ITEM-034 | [Peitoral de Couro](gdd/04-itens/ITEM-034.md) | EM_DESENVOLVIMENTO |
+| ITEM-035 | [Escudo de Ferro Reforçado](gdd/04-itens/ITEM-035.md) | EM_DESENVOLVIMENTO |
+| ITEM-036 | [Candelabro de Expedição](gdd/04-itens/ITEM-036.md) | EM_DESENVOLVIMENTO |
+| ITEM-037 | [Pernil Assado](gdd/04-itens/ITEM-037.md) | EM_DESENVOLVIMENTO |
 | ITEM-038 | [Elmo de Vidro](gdd/04-itens/ITEM-038.md) | PLANEJADO |
-| CAT-ESPOLIOS-002 | [Recompensas do Baú Verdadeiro](gdd/04-itens/CATALOGO-RECOMPENSAS-BAU-VERDADEIRO.md) | PLANEJADO |
-| CAT-ESPOLIOS-003 | [Espólios do Guardião](gdd/04-itens/CATALOGO-ESPOLIOS-GUARDIAO-PISO1.md) | PLANEJADO |
+| CAT-ESPOLIOS-002 | [Recompensas do Baú Verdadeiro](gdd/04-itens/CATALOGO-RECOMPENSAS-BAU-VERDADEIRO.md) | EM_DESENVOLVIMENTO |
+| CAT-ESPOLIOS-003 | [Espólios do Guardião](gdd/04-itens/CATALOGO-ESPOLIOS-GUARDIAO-PISO1.md) | EM_DESENVOLVIMENTO |
 | DOS-005 | [Registro de um Guerreiro Esquecido](gdd/06-dossie/DOS-005.md) | PLANEJADO |
-| DNG-014 | [Catálogo de recompensas propostas do Piso 1](gdd/07-masmorras/DNG-014.md) | PLANEJADO |
+| DNG-014 | [Catálogo de recompensas propostas do Piso 1](gdd/07-masmorras/DNG-014.md) | EM_DESENVOLVIMENTO |
 
 A Chave do Guardião permanece nos registros existentes de DNG-003/DNG-006; o Elmo de Vidro não aparece em baús nem é entregue pelo chefe. O carregamento automático usa a árvore Git; index.html preservado.
+
+
+## GAME-013 — recompensas individuais e rendimento diário do Piso 1
+
+| ID | Documento | Estado |
+|---|---|---|
+| GAME-013 | [Recompensas individuais, coleta e persistência do Piso 1](gdd/02-gameplay/GAME-013.md) | EM_DESENVOLVIMENTO |
+
+Configuração provisória centralizada; três etapas diárias independentes por categoria, Diário persistente, curativos e proteção transacional. Testes executados e multiplayer real pendente descritos na ficha. `index.html` preservado.
