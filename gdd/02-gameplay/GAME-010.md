@@ -16,7 +16,7 @@ relacionados:
   - "BEST-022"
 imagem: ""
 atualizado_por: "Codex"
-data_atualizacao: "2026-10-08"
+data_atualizacao: "2026-10-11"
 ---
 
 # Encontros e combate do Piso 1
@@ -82,3 +82,9 @@ Máximo de duas repetições consecutivas da quantidade anterior. PISO1_CombateC
 Registro anterior de 5.000 sementes descreve a configuração anterior. Refinamento posterior testou 2.000 planos: 209 de um, 893 de dois, 732 de três, 166 de recompensa; máximo de duas quantidades consecutivas iguais. Teste de 240 pontos dedicados de baú: 207 verdadeiros e 33 falsos, um por ponto.
 
 GAME-011 acrescenta inspeção/espólios compartilhados exclusivamente do Vesplume, com materiais na bolsa e moedas na carteira existentes. Não altera a coordenação de combate, Guardião, baús ou Piso 2. Multiplayer real continua pendente.
+
+## Recompensas documentais — 11/10/2026
+
+[DNG-014](../07-masmorras/DNG-014.md) e os catálogos individuais registram a proposta de itens do Baú Verdadeiro e do Guardião. Não modificam este sorteio, seus pesos, o combate, os controladores ou a dinâmica de abertura. Chave continua fora do sorteio; Elmo de Vidro não é drop.
+
+As afirmações acima de espólios exclusivos do Vesplume ou ambos os baús sem loot pertencem às etapas históricas de 08/10. O estado posterior das seis fontes de inspeção (cinco comuns e Baú Falso) está em GAME-011; isso não integra as novas recompensas documentais.

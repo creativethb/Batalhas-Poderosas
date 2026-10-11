@@ -272,3 +272,29 @@ Espólios habilitados para Vesplume, Grumelo, Pedrino, Brisalto e Cascudo (ITEM-
 | GAME-012 | Economia da masmorra e atendimento da Guilda de Arkan | EM_DESENVOLVIMENTO | [Ficha](gdd/02-gameplay/GAME-012.md) |
 
 Compra provisória de ITEM-008–022, comprovantes persistentes e pagamento na carteira existente. Implementado/testado localmente e em chave isolada do DataStore; validação e multiplayer real pendentes.
+
+## Catálogos de recompensas do Piso 1 — 11/10/2026
+
+Documentação e arte; nenhum item novo foi integrado ao jogo.
+
+| ID | Documento | Estado |
+|---|---|---|
+| ITEM-026 | [Ração de Explorador](gdd/04-itens/ITEM-026.md) | PLANEJADO |
+| ITEM-027 | [Bandagem de Campo](gdd/04-itens/ITEM-027.md) | PLANEJADO |
+| ITEM-028 | [Bolsa de Moedas Antigas](gdd/04-itens/ITEM-028.md) | PLANEJADO |
+| ITEM-029 | [Taça de Bronze Antiga](gdd/04-itens/ITEM-029.md) | PLANEJADO |
+| ITEM-030 | [Relicário de Pedra](gdd/04-itens/ITEM-030.md) | PLANEJADO |
+| ITEM-031 | [Fragmento de Registro Antigo](gdd/04-itens/ITEM-031.md) | PLANEJADO |
+| ITEM-032 | [Frasco de Óleo para Lamparina](gdd/04-itens/ITEM-032.md) | PLANEJADO |
+| ITEM-033 | [Elmo de Cobre](gdd/04-itens/ITEM-033.md) | PLANEJADO |
+| ITEM-034 | [Peitoral de Couro](gdd/04-itens/ITEM-034.md) | PLANEJADO |
+| ITEM-035 | [Escudo de Ferro Reforçado](gdd/04-itens/ITEM-035.md) | PLANEJADO |
+| ITEM-036 | [Candelabro de Expedição](gdd/04-itens/ITEM-036.md) | PLANEJADO |
+| ITEM-037 | [Pernil Assado](gdd/04-itens/ITEM-037.md) | PLANEJADO |
+| ITEM-038 | [Elmo de Vidro](gdd/04-itens/ITEM-038.md) | PLANEJADO |
+| CAT-ESPOLIOS-002 | [Recompensas do Baú Verdadeiro](gdd/04-itens/CATALOGO-RECOMPENSAS-BAU-VERDADEIRO.md) | PLANEJADO |
+| CAT-ESPOLIOS-003 | [Espólios do Guardião](gdd/04-itens/CATALOGO-ESPOLIOS-GUARDIAO-PISO1.md) | PLANEJADO |
+| DOS-005 | [Registro de um Guerreiro Esquecido](gdd/06-dossie/DOS-005.md) | PLANEJADO |
+| DNG-014 | [Catálogo de recompensas propostas do Piso 1](gdd/07-masmorras/DNG-014.md) | PLANEJADO |
+
+A Chave do Guardião permanece nos registros existentes de DNG-003/DNG-006; o Elmo de Vidro não aparece em baús nem é entregue pelo chefe. O carregamento automático usa a árvore Git; index.html preservado.

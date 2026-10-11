@@ -20,7 +20,7 @@ relacionados:
   - "LOCAL-006"
   - "LOCAL-007"
 atualizado_por: "codex"
-data_atualizacao: "2026-10-09"
+data_atualizacao: "2026-10-11"
 ---
 
 # Painel Linear de Consolidação — Itens, Interações e Cadeias
@@ -292,3 +292,7 @@ Ao concluir uma pendência:
 ## 09/10/2026 — ciclo econômico funcional
 
 ITEM-008–022 podem ser entregues à Guilda pelos preços provisórios de GAME-012. Comprovante pendente e pagamento único persistem no mesmo perfil do inventário/carteira. Recepção, avaliação no anexo e Tesouraria conectadas aos protótipos existentes. Implementação e testes registrados em GAME-012; estado TESTADO, sem VALIDADO.
+
+## Fila documental de recompensas — 11/10/2026
+
+ITEM-026–037: funções pretendidas e raridades provisórias documentadas, artes conceituais individuais no GDD, sem modelos ou integração funcional. ITEM-038: Elmo de Vidro como investigação futura; fora dos drops. Referências: DNG-014 e DOS-005. Nenhum desses itens está IMPLEMENTADO, TESTADO ou VALIDADO no jogo. Esta etapa de documentação não altera a ordem da fila funcional nem autoriza iniciar consumo, venda, equipamentos ou missões.

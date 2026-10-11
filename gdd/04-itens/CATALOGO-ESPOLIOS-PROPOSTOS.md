@@ -124,3 +124,7 @@ Autorizados nesta data e implementados no Studio pelo sistema existente. ITEM-02
 Após a derrota do baú revelado, ControladorBauFalso registra o corpo em EspoliosService. Morte durante a revelação também permite inspeção; derrotar o disfarce intacto por modo dev não concede materiais. Sorteio único, coleta seletiva compartilhada, alforge e persistência existentes preservados. Miniaturas nativas e informações compartilhadas em BP_ItemInterface/BancoDeItens.
 
 Testado em Play local: transformação, morte, inspeção com três materiais, miniaturas, coleta parcial/integral, pedidos repetidos e excesso rejeitados, saque vazio e exportação do inventário. 10.000 sorteios verificaram limites. Não houve multiplayer real ou reconexão entre servidores. Estado IMPLEMENTADO / TESTADO localmente, sem marcar VALIDADO. Place não publicado nesta tarefa.
+
+## Coleções documentais posteriores — 11/10/2026
+
+Baú Verdadeiro: [CAT-ESPOLIOS-002](CATALOGO-RECOMPENSAS-BAU-VERDADEIRO.md), ITEM-026–032. Guardião: [CAT-ESPOLIOS-003](CATALOGO-ESPOLIOS-GUARDIAO-PISO1.md), ITEM-033–037. Apenas propostas documentadas, sem drops ativos. As três ideias minerais anteriores para BEST-002 continuam backlog histórico, sem cadastro; não integram automaticamente a coleção aprovada nesta solicitação. Chave e Elmo de Vidro estão fora do sorteio. [DNG-014](../07-masmorras/DNG-014.md) descreve a auditoria e [DOS-005](../06-dossie/DOS-005.md) preserva a proposta narrativa.
