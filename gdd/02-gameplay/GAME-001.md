@@ -27,28 +27,24 @@ O ciclo de jogo equilibra:
 
 ## 2. Fase 1: preparação de John
 
-### Fluxo narrativo/gameplay em revisão
-1. John procura Mestre Cedric buscando uma espada de madeira para treinamento.
-2. Cedric não possui uma pronta e orienta John a reunir os materiais.
-3. John vai a um estabelecimento da vila ligado ao trabalho ou fornecimento de madeira e obtém um pedaço de Madeira Comum.
-4. John leva a Madeira Comum ao padre da vila e pede sua unção.
-5. Depois do rito, o material passa a ser Madeira Ungida.
-6. John obtém também o Galho da Árvore Sagrada / Madeira Sagrada, ligado à Árvore Sagrada e a Eldrin.
-7. John retorna à oficina de Cedric com a Madeira Ungida e a Madeira Sagrada.
-8. Cedric fabrica a espada de madeira destinada ao treinamento e entrega o Escudo de Madeira (**ITEM-007**) como cortesia única, sem custo adicional.
-9. John equipa a espada e o escudo no inventário, pratica ataque, guarda frontal e esquiva, e prossegue com sua preparação.
+### Fluxo narrativo/gameplay aprovado para desenvolvimento — 12/10/2026
+1. Na primeira missão **A Primeira Lâmina**, John procura Mestre Cedric para obter uma espada de treinamento.
+2. Cedric explica que precisa de **uma Madeira Ungida** e **um galho da Árvore Sagrada (Madeira Sagrada)**. Ele orienta John a procurar o padre na igreja, mas **não revela onde obter a Madeira Sagrada**.
+3. O padre revela que, atrás da igreja, existe a **Árvore Ancestral**, árvore muito antiga de origem desconhecida, possivelmente vinda de um reino distante segundo a tradição oral. Sua forma e suas folhas são inteiramente quadradas, diferentes de todas as árvores conhecidas, inclusive da Árvore Sagrada.
+4. Aos pés da Árvore Ancestral há um pedaço de madeira bruta, quadrada, que John recolhe. Para diferenciar origem e transformação, o item bruto pode ser apresentado como **Madeira da Árvore Ancestral**; sua nomenclatura definitiva no inventário ainda será validada.
+5. John retorna ao padre, que unge o material. O item resultante é **Madeira Ungida**.
+6. John pergunta ao padre onde obter o galho da Árvore Sagrada. O padre o encaminha ao **Ancião Eldrin**, no santuário da Árvore Sagrada.
+7. John obtém a **Madeira Sagrada** com Eldrin e retorna a Cedric.
+8. Cedric confere e consome **1 Madeira Ungida + 1 Madeira Sagrada**, fabrica a primeira espada de treinamento e entrega **um Escudo de Madeira (ITEM-007)** como cortesia única.
+9. A missão é concluída individualmente e de forma persistente. O diálogo introdutório de Cedric deixa de ser oferecido a esse jogador, inclusive em sessões futuras. Cedric passa a oferecer seus serviços habituais, como manutenção e melhorias, à medida que forem implementados.
 
-### Pendências antes da implementação definitiva
-- Definir qual estabelecimento fornece a Madeira Comum.
-- Definir/identificar o padre da vila.
-- Definir a ordem final entre a obtenção/unção da madeira comum e o Galho Sagrado.
-- Criar ou revisar a ficha da Madeira Ungida.
-- Revisar o nome e a receita definitiva da espada.
-- Atualizar diálogos de Cedric, padre e Eldrin.
-- Alterar no Roblox Studio a origem física da Madeira Comum.
-- Validar o ciclo completo em Playtest.
-
-> LEGADO ATUAL: a implementação que coloca Madeira Comum na mesa da Casa de John pertence ao fluxo antigo e não deve orientar novas decisões narrativas.
+### Estado de implementação e pendências
+- **Definição narrativa aprovada; implementação integral pendente.** Não confundir este fluxo com sistemas já funcionais no Studio.
+- A Árvore Ancestral é um novo elemento/local de interesse **atrás da igreja**; requer ficha própria no catálogo de locais e implementação física, com tronco/madeira coletável aos pés.
+- O padre ainda não tem nome nem ficha final; sua criação, diálogos e rito de unção estão pendentes.
+- Rever fichas de itens, receita da espada, diálogos e objetivos sequenciais da missão, aproveitando inventário, notificações e navegação já existentes.
+- Dividir a implementação em etapas médias e validar o ciclo completo antes de publicar.
+- **Legado:** a Madeira Comum na Casa de John e a obtenção em estabelecimento comercial são fluxos antigos, não a nova rota narrativa. A expressão “Madeira Comum” pode descrever matéria-prima bruta, mas **não é o item final exigido por Cedric**.
 
 ### Escudo integrado ao circuito atual — 06/10/2026
 
@@ -56,7 +52,7 @@ A primeira forja existente com Cedric entrega a espada e **um Escudo de Madeira 
 
 O escudo entra no inventário persistente e pode ser equipado na mão secundária, mantendo a espada na mão direita. John levanta a guarda, caminha com velocidade reduzida e bloqueia ataques comuns pela frente; ao soltar, retoma ataque e dash. Ver **ITEM-007**, **GAME-002** e **GAME-003**.
 
-Essa adição já funciona no circuito implementado. A alteração da origem da Madeira Comum, a unção e a Madeira Ungida acima continuam como revisão pendente; esta entrega não implementa essas etapas.
+Essa adição já funciona no circuito implementado. A nova rota da Árvore Ancestral, a unção pelo padre e a obtenção da Madeira Ungida permanecem pendentes de implementação; a entrega anterior não as implementou.
 
 
 ## 3. Princípio do arco
