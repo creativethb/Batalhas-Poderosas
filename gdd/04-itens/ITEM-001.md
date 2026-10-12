@@ -10,7 +10,7 @@ relacionados:
   - "GAME-001"
 imagem: "./assets/itens/ITEM-001.png"
 atualizado_por: "ChatGPT"
-data_atualizacao: "2026-09-30"
+data_atualizacao: "2026-10-12"
 ---
 
 # Ficha de Item: Madeira Comum
@@ -19,12 +19,12 @@ data_atualizacao: "2026-09-30"
 - **ID do Item:** `Madeira`
 - **Tipo:** Material de Criação / Recurso Base
 - **Raridade:** Comum (Branco)
-- **Local de Obtenção:** estabelecimento da vila ligado ao trabalho ou fornecimento de madeira, ainda a definir.
+- **Local de Obtenção:** aos pés da Árvore Ancestral, situada atrás da igreja de Arkham.
 
-> A antiga localização sobre a mesa da Casa de John pertence ao fluxo provisório anterior e não é mais a origem narrativa definitiva do recurso.
+> A origem narrativa definida em 12/10/2026 é um pedaço de madeira de forma quadrada aos pés da Árvore Ancestral. A Casa de John e o estabelecimento comercial são rotas antigas. A implementação física ainda está pendente.
 
 ## 2. Descrição
-Madeira comum utilizada como recurso de criação. No primeiro ciclo de preparação de John, ele obtém um pedaço desse material e o leva ao padre da vila para receber a unção.
+Madeira comum utilizada como recurso de criação, recolhida inicialmente aos pés da misteriosa Árvore Ancestral de folhas quadradas. No primeiro ciclo de preparação de John, ele obtém um pedaço desse material e o leva ao padre da vila para receber a unção.
 
 ## 3. Transformação por atributo
 
