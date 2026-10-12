@@ -15,7 +15,7 @@ relacionados:
   - "BP-2026-001"
   - "GAME-001"
 atualizado_por: "agente_bibliotecario"
-data_atualizacao: "2026-09-08"
+data_atualizacao: "2026-10-12"
 imagem: "./assets/characters/john-cover.png"
 ---
 
@@ -31,20 +31,19 @@ imagem: "./assets/characters/john-cover.png"
 
 ---
 
-## 2. A Sequência Inicial Canônica
+## 2. A Sequência Inicial Canônica — percurso revisado em 12/10/2026
 
-1. John obtém **Madeira Comum**.
-2. John busca a bênção do **Ancião Eldrin** na **Árvore Sagrada** (`LOCAL-004`).
-3. Recebe o **Galho Sagrado** (Madeira Sagrada — `ITEM-002`).
-4. Forja a **Espada de Madeira Sagrada** (`ITEM-003`) com **Mestre Cedric** (`NPC-001`).
-5. Treina e se prepara para proteger Arkham.
-6. Enfrenta uma força esmagadoramente superior.
-7. É teletransportado à força para o **Multiverso**.
-8. Precisa sobreviver às dimensões desconhecidas.
-9. Precisa desvendar as chaves dimensionais.
-10. Precisa retornar mais forte para salvar Arkan.
+1. John procura Mestre Cedric para obter uma espada de treinamento.
+2. Cedric pede **Madeira Ungida** e **Madeira Sagrada**, orientando John a conversar com o padre na igreja, sem revelar onde fica a Árvore Sagrada.
+3. O padre apresenta a história da **Árvore Ancestral**, situada atrás da igreja: árvore antiquíssima, de origem desconhecida, que a tradição associa a um reino distante. Sua aparência é excepcionalmente quadrada, inclusive as folhas, e ela não se confunde com a Árvore Sagrada.
+4. John recolhe aos pés da Árvore Ancestral um pedaço de madeira bruta de forma quadrada e o leva ao padre, que o unge e o transforma em **Madeira Ungida**.
+5. John pergunta ao padre sobre o galho da Árvore Sagrada; o padre o encaminha ao **Ancião Eldrin**.
+6. John recebe a **Madeira Sagrada** com Eldrin e retorna a Cedric.
+7. Cedric consome os dois materiais, fabrica a primeira espada e entrega também um **Escudo de Madeira** como cortesia única.
+8. John treina e se prepara para proteger Arkham.
+9. Posteriormente enfrenta uma força esmagadoramente superior, é teletransportado à força para o Multiverso e precisará encontrar um caminho para retornar e salvar Arkan.
 
-> 🟢 **CANONICO:** A localização inicial e a coleta da Madeira Comum ocorrem na Casa de John, localizada na Colina Leste.
+> **Nota de continuidade:** o antigo roteiro que localizava a Madeira Comum na Casa de John, na Colina Leste, foi substituído como planejamento narrativo. A nova sequência ainda depende de implementação e validação no Roblox Studio. O mistério da origem da Árvore Ancestral deve permanecer sem explicação definitiva.
 
 ---
 
