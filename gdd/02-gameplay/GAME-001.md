@@ -13,8 +13,10 @@ relacionados:
   - "ITEM-003"
   - "DOS-004"
   - "BP-2026-002"
+  - "GAME-014"
+  - "GAME-015"
 atualizado_por: "codex"
-data_atualizacao: "2026-10-06"
+data_atualizacao: "2026-10-13"
 ---
 
 # Loop Principal e Progressão de Gameplay
@@ -85,3 +87,11 @@ Fluxo atual:
 - IDs inválidos de sons locais que geravam avisos no console foram removidos.
 - A música global da vila permanece em SoundService.
 - O ID atual dessa música ainda apresenta falha de download e deve ser substituído futuramente.
+
+## 6. Universo único, formação na guilda e modos de sessão — aprovado em 13/10/2026
+
+**Decisão de design aprovada, implementação pendente:** o jogo preservará uma campanha e um perfil persistente por jogador em três tipos de entrada: Solo desde o começo; grupo privado com convites controlados pelo líder; mundo público para exploração e atividades compartilhadas. Progressão, inventário, economia, missões, classes e conquistas acompanham o jogador entre sessões. Cenas exclusivas de John (incluindo a casa e o diário) devem ocorrer em contexto pessoal sem interferir na vila compartilhada. **Ver GAME-014**, que contém regras de entrada, menu, carregamento, bloqueios e pendências técnicas.
+
+O primeiro ciclo de formação inclui **A Primeira Lâmina** já definida acima e, futuramente, cadastro/treinamento na guilda, primeira classe e concessão persistente da **Insígnia da Guilda**. Só então são desbloqueados **Jogar com Amigos** e **Mundo Público**, também validados no servidor. As classes são **múltiplas por personagem**, com pontos de habilidade distribuídos individualmente e novas especializações registradas na **Carteira da Guilda**, sem escolha permanente obrigatória. **Ver GAME-015** para a distinção entre guilda, grupo, classes, conquista e desbloqueio.
+
+**Ordem de trabalho:** a **Etapa 3 (padre, Árvore Ancestral e Madeira Ungida)** está **adiada temporariamente, não cancelada**. Prioridade atual é planejar e consolidar arquitetura do menu e acesso. Não declarar novos modos, classes, treinamento ou insígnia implementados nem publicar sem autorização.
