@@ -8,6 +8,7 @@ relacionados:
   - "NPC-001"
   - "NPC-002"
   - "NPC-014"
+  - "NPC-030"
   - "ITEM-001"
   - "ITEM-002"
   - "ITEM-003"
@@ -32,7 +33,7 @@ O ciclo de jogo equilibra:
 ### Fluxo narrativo/gameplay aprovado para desenvolvimento — 12/10/2026
 1. Na primeira missão **A Primeira Lâmina**, John procura Mestre Cedric para obter uma espada de treinamento.
 2. Cedric explica que precisa de **uma Madeira Ungida** e **um galho da Árvore Sagrada (Madeira Sagrada)**. Ele orienta John a procurar o padre na igreja, mas **não revela onde obter a Madeira Sagrada**.
-3. O padre revela que, atrás da igreja, existe a **Árvore Ancestral**, árvore muito antiga de origem desconhecida, possivelmente vinda de um reino distante segundo a tradição oral. Sua forma e suas folhas são inteiramente quadradas, diferentes de todas as árvores conhecidas, inclusive da Árvore Sagrada.
+3. Padre Mináille revela que, atrás da igreja, existe a **Árvore Ancestral**, árvore muito antiga de origem desconhecida, possivelmente vinda de um reino distante segundo a tradição oral. Sua forma e suas folhas são inteiramente quadradas, diferentes de todas as árvores conhecidas, inclusive da Árvore Sagrada.
 4. Aos pés da Árvore Ancestral há um pedaço de madeira bruta, quadrada, que John recolhe. Para diferenciar origem e transformação, o item bruto pode ser apresentado como **Madeira da Árvore Ancestral**; sua nomenclatura definitiva no inventário ainda será validada.
 5. John retorna ao padre, que unge o material. O item resultante é **Madeira Ungida**.
 6. John pergunta ao padre onde obter o galho da Árvore Sagrada. O padre o encaminha ao **Ancião Eldrin**, no santuário da Árvore Sagrada.
@@ -43,7 +44,7 @@ O ciclo de jogo equilibra:
 ### Estado de implementação e pendências
 - **Definição narrativa aprovada; implementação integral pendente.** Não confundir este fluxo com sistemas já funcionais no Studio.
 - A Árvore Ancestral é um novo elemento/local de interesse **atrás da igreja**; requer ficha própria no catálogo de locais e implementação física, com tronco/madeira coletável aos pés.
-- O padre ainda não tem nome nem ficha final; sua criação, diálogos e rito de unção estão pendentes.
+- O sacerdote já tem nome e ficha canônica: **Padre Mináille (NPC-030)**, originário da Vila Real. Sua criação física, diálogos e rito de unção no Studio continuam pendentes.
 - Rever fichas de itens, receita da espada, diálogos e objetivos sequenciais da missão, aproveitando inventário, notificações e navegação já existentes.
 - Dividir a implementação em etapas médias e validar o ciclo completo antes de publicar.
 - **Legado:** a Madeira Comum na Casa de John e a obtenção em estabelecimento comercial são fluxos antigos, não a nova rota narrativa. A expressão “Madeira Comum” pode descrever matéria-prima bruta, mas **não é o item final exigido por Cedric**.
