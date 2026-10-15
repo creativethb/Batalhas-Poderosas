@@ -1,6 +1,6 @@
 ---
 id: "GAME-007"
-nome: "Navegação da Vila e Mapa do Diário"
+nome: "Navegação da Vila e Mapa Independente"
 status: "EM_DESENVOLVIMENTO"
 relacionados:
   - "GAME-005"
@@ -11,82 +11,30 @@ relacionados:
   - "LOCAL-004"
   - "LOCAL-005"
   - "LOCAL-006"
-atualizado_por: "codex"
-data_atualizacao: "2026-09-22"
+atualizado_por: "Codex"
+data_atualizacao: "2026-10-15"
 ---
 
-# Navegação da Vila e Mapa do Diário
+# Navegação da Vila e Mapa Independente
 
-O sistema de navegação orienta John pela Vila de Arkham sem substituir a exploração. O mapa é consultado no Diário de John ou aberto diretamente pelo atalho de teclado durante o desenvolvimento. Durante o percurso, uma microbússola discreta indica somente a direção do destino marcado.
+O mapa e o diário são interfaces separadas. A bússola existente aponta para destinos reais e objetivos da missão, sem teletransportar o jogador.
 
----
+## 1. Acesso atual
 
-## 1. Fluxo de Uso
+- `mapa_arkham`: item único, não empilhável e persistente no inventário existente; `UseMode="AbrirMapa"`.
+- O atalho M e o acesso de interface dependem da posse. Não há concessão automática nesta etapa.
+- Selecionar um destino fecha o mapa e ativa a microbússola existente. Zoom, arrasto e lista de destinos reutilizam NavegacaoVilaClientV2.
+- A bússola de missão **não depende da posse do mapa**: Cedric → igreja → árvore/retorno ao padre → Eldrin seguem os objetivos da campanha.
+- A interface independente substitui a janela anterior por BP_UIState. Não exige abrir o diário nem uma categoria da bolsa.
 
-1. John abre o Diário.
-2. Seleciona **Mapa da Vila**.
-3. O mapa horizontal abre em tela cheia como uma representação ilustrada da vila.
-4. John arrasta para explorar e usa os controles de zoom quando necessário.
-5. Seleciona um local pelo marcador na arte ou pela lista com nomes, que também funciona em telas pequenas.
-6. O mapa e o Diário fecham automaticamente; uma microbússola com ponteiro dourado em relevo passa a indicar o caminho.
-7. Ao tocar ou clicar na microbússola, John pode **parar a orientação** ou **abrir o mapa** para escolher outro destino. No controle, o botão Y abre essas opções e B as fecha. Ao chegar perto do destino, a orientação é encerrada.
+## 2. Geografia e destinos
 
-No computador, o atalho **M** abre e fecha o mapa diretamente. A aba **Mapa da Vila** continua disponível no Diário para computador e mobile.
+A arte topográfica e os destinos existentes foram preservados: casa, mercado, oficina, padaria, taverna, guilda, estábulo, serraria, moinho, igreja, santuário e Paço. A conferência cartográfica fina continua necessária quando houver alteração da vila. Referências de destino devem usar a posição real, não coordenadas antigas copiadas das fichas.
 
-O sistema marca um destino; ele não teleporta o jogador nem mostra uma rota obrigatória.
+## 3. Planejamento ainda aberto
 
----
+A forma e o momento de aquisição do mapa não foram definidos. Descoberta gradual de áreas, interrogações e filtragem por locais descobertos são planejamento; não inferir que já funcionam. O antigo estado proposto `MapaDaVilaDesbloqueado` não substitui a verificação de posse do item implementado.
 
-## 2. Estado de Desenvolvimento
+## 4. Testes e limites
 
-Durante o desenvolvimento, o mapa fica disponível diretamente para permitir validação da navegação da vila. A implementação usa uma arte horizontal própria da Vila de Arkham, com marcadores ligados aos destinos reais. A arte é uma interpretação visual em desenvolvimento; a conferência cartográfica fina com a topologia final do mundo ainda é necessária.
-
-A primeira versão contém destinos reais da vila, incluindo Casa de John, Mercado Central, Oficina de Cedric, Padaria, Taverna do Javali Dourado, Guilda, Estábulo, Serraria, Moinho, Igreja, Santuário de Eldrin e Paço Municipal.
-
-O mapa abre com a vila inteira visível e preserva zoom e arrasto em computador e mobile. A tela combina arte, marcadores menores com área de toque preservada e uma lista rolável de destinos por nome. A lista de jogadores do Roblox fica oculta somente enquanto o mapa está aberto, para liberar a área de leitura.
-
----
-
-## 3. Progressão Canônica Planejada
-
-John inicia a jornada sem acesso ao Mapa da Vila. Em um ponto narrativo futuro, ele encontrará ou receberá o item **Mapa da Vila**, que será integrado ao Diário de John.
-
-Após a aquisição:
-
-- a página de mapa será liberada;
-- áreas ainda não descobertas poderão aparecer como interrogações;
-- ao chegar a uma área, seu ícone e nome reais serão revelados;
-- somente locais já descobertos por John deverão aparecer como destinos;
-- a microbússola será ativada apenas após a seleção de um destino disponível.
-
-O desbloqueio técnico previsto usa o estado `MapaDaVilaDesbloqueado` no jogador. O evento narrativo de aquisição, seu responsável e o momento da campanha permanecem a definir.
-
----
-
-## 4. Diretrizes de Experiência
-
-- O mapa oferece orientação sem eliminar a necessidade de explorar.
-- A microbússola ocupa pouco espaço e mostra somente um ponteiro dourado de aparência tridimensional; ela some ao chegar próximo ao destino.
-- O Diário é a fonte central de consulta e preserva seu papel narrativo e funcional.
-- A expansão da vila deve acrescentar novos destinos ao catálogo de navegação junto com a documentação correspondente.
-- A imagem do mapa e a posição dos marcadores devem ser atualizadas juntas quando a topologia da vila mudar.
-
----
-
-## 5. Validação Atual
-
-Em playtest de desenvolvimento:
-
-- o Diário abriu o Mapa da Vila;
-- o mapa topográfico exibiu os 12 marcadores de destino;
-- o zoom foi validado em computador;
-- no simulador de iPhone em paisagem, a arte horizontal, os marcadores e a lista de destinos couberam na tela;
-- ao selecionar o Mercado Central pelo nome, o mapa e o Diário fecharam e a microbússola foi ativada;
-- o atalho M abriu o mapa diretamente no computador e a sobreposição da lista de jogadores foi removida.
-
-
----
-
-## 6. Ajuste de controle da microbússola
-
-O menu de opções fica associado à própria microbússola, sem botão permanente adicional na HUD. Parar a orientação limpa o destino ativo e oculta o indicador. O acesso por toque e mouse, assim como o encerramento da orientação, foi conferido em Playtest no computador em 2026-09-22. O mapeamento Y/B foi implementado para controle, mas ainda requer validação com um controle físico.
+Play de 13/10: sem posse, M não abriu o mapa e o acesso ficou oculto; após aquisição temporária pelo serviço existente, abriu independentemente. Selecionar Cedric encerrou o mapa e ativou a bússola. Exportação e recarga em memória mantiveram mapa/diário sem criar outra carteira. Arte, zoom e destinos já tinham testes locais anteriores em PC/simulador mobile. Controle Y/B foi mapeado anteriormente, mas validação com controle físico permanece pendente. Não houve nova reconexão real entre servidores.

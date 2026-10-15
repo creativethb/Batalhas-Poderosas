@@ -12,7 +12,7 @@ relacionados:
   - "ITEM-022"
 imagem: ""
 atualizado_por: "Codex"
-data_atualizacao: "2026-10-09"
+data_atualizacao: "2026-10-15"
 ---
 
 # Economia da masmorra e da Guilda de Arkan
@@ -23,7 +23,7 @@ data_atualizacao: "2026-10-09"
 
 Criaturas comuns do Piso 1 → inspeção compartilhada de GAME-011 → coleta seletiva → alforge persistente → entrega à Guilda → comprovante pendente → recebimento na Tesouraria → carteira existente.
 
-Os 15 materiais ITEM-008–022 já cadastrados são aceitos. Baú Falso, Guardião e outros pisos não recebem novos espólios. As probabilidades e o sorteio adicional do Vesplume permanecem iguais.
+Os 15 materiais ITEM-008–022 são aceitos para venda. Materiais do Baú Falso e recompensas do Guardião têm obtenção posterior descrita em GAME-011/GAME-013, mas não foram incluídos neste catálogo de compra. Outros pisos não recebem preços automaticamente. As probabilidades e o sorteio adicional do Vesplume permanecem iguais.
 
 ## Três postos
 
@@ -130,3 +130,9 @@ index.html, renderizador e arquitetura do mini-site preservados.
 ## Recompensas individuais do Piso 1 — 11/10/2026
 
 [GAME-013](GAME-013.md) documenta a extensão da inspeção/persistência para Baú Verdadeiro e Guardião. Ela usa a mesma carteira, alforge e janela existentes, com direitos individuais e contadores diários separados. Os corpos dos inimigos comuns e do Baú Falso preservam seu resultado compartilhado e sorteio único. ITEM-026–037 não receberam novos preços na Guilda. O Elmo de Vidro e a chave não participam do sorteio. Funções futuras de equipamentos e investigação continuam indisponíveis.
+
+## Carteira e acesso independentes — 13/10/2026
+
+A janela monetária `CarteiraBP` foi separada da bolsa. `InterfaceItems.carteira_john` é apenas um acesso de consulta em Tudo/Especiais: não pode ser adquirido como estoque, não é contado/exportado como mercadoria e não cria saldo paralelo. Saldo, conversão e pagamentos continuam nos serviços existentes. A futura Carteira da Guilda de GAME-015 é um registro de filiação/classes, não uma segunda carteira de moedas.
+
+Reorganização testou abertura independente, conversão, rejeição da aquisição do acesso e recarga de perfil em memória, sem vendas/pagamentos nessa rodada. Os testes econômicos anteriores permanecem descritos nas seções próprias; nenhuma nova homologação financeira foi feita pela atualização documental.

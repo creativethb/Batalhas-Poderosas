@@ -1,14 +1,20 @@
 # MEMÓRIA PERSISTENTE DO BIBLIOTECÁRIO — BATALHAS PODEROSAS
 
-> **DIRETÓRIO OFICIAL DE MEMÓRIA:** `F:\Bibliotecário_GDD`  
+> **DIRETÓRIO HISTÓRICO DE MEMÓRIA:** `F:\Bibliotecário_GDD`
 > **FUNÇÃO DO DOCUMENTO:** Registro consolidado, fidedigno e persistente do estado, lore canônica, mecânicas e sistemas do projeto **Batalhas Poderosas** entre sessões de desenvolvimento.  
-> **ÚLTIMA ATUALIZAÇÃO:** 14/09/2026  
+> **ÚLTIMA REVISÃO:** 15/10/2026
 
 ---
 
+## Estado vigente e acompanhamento — 15/10/2026
+
+Esta memória contém registros históricos de setembro. Para implementação atual, consultar GAME-001 (primeira missão), GAME-014 (menu antes da intro e continuidade Solo), GAME-005/007/012 (diário, mapa e carteira independentes), GAME-013/ITEM-033–036 (equipamentos/candelabro) e CHANGELOG-001. BP-2026-009 substitui a rota histórica de BP-2026-002. O conflito do Rei Mago segue CANON-003/LORE-006, sem inferir motivações a partir de resumos antigos.
+
+Procedimento permanente: [Manutenção do GDD](docs/MANUTENCAO-GDD.md). O acompanhamento de entregas fica no GDD_ACOMPANHAMENTO.md da raiz do workspace. Atualizar a fila após mudanças relevantes e registrar a sincronização confirmada; não depender apenas deste resumo. Os blocos históricos abaixo não prevalecem sobre as fichas revisadas.
+
 ## 1. Manifesto de Trabalho do Bibliotecário
 
-1. **Memória Externa Viva:** Sempre que uma nova sessão for iniciada, este documento é a fonte de verdade para recuperar o contexto do projeto.
+1. **Memória Externa Viva:** Ao iniciar uma sessão, consultar o acompanhamento local e as fichas atuais indicadas acima. As decisões e implementações revisadas prevalecem sobre os resumos históricos desta memória.
 2. **Atualização Obrigatória:** Qualquer sistema implementado, decisão aprovada, alteração de mecânica ou mudança estrutural relevante realizada pelo agente desenvolvedor deve ser imediatamente consolidada nesta memória.
 3. **Critério de Canonicidade:** Registros marcados como `STATUS: CANÔNICO` representam decisões oficiais aprovadas pelo dono do projeto. Ideias e testes não são canônicos até aprovação explícita.
 4. **Sem Duplicações e Sem Contradições:** Informações antigas substituídas devem ser atualizadas para manter a memória limpa, clara e pronta para alimentar o **GDD oficial no GitHub**.

@@ -8,8 +8,8 @@ relacionados:
   - "GAME-009"
   - "GAME-012"
   - "GAME-014"
-atualizado_por: "ChatGPT"
-data_atualizacao: "2026-10-13"
+atualizado_por: "Codex"
+data_atualizacao: "2026-10-15"
 ---
 
 # Guilda, Carteira do Aventureiro, Classes e Conquistas
@@ -24,7 +24,7 @@ Uma **equipe/grupo privado** de jogadores não equivale a uma nova guilda. O lí
 ## 2. Formação inicial e direito ao multiplayer
 Uma pessoa que entra pela primeira vez só pode selecionar **Solo / Continuar História**. A sequência formativa aprovada é:
 1. Abertura e narrativa pessoal na casa de John, diário e começo da aventura.
-2. Primeira missão **A Primeira Lâmina**: sequência Cedric → padre/Árvore Ancestral → Eldrin/Árvore Sagrada → Cedric, com espada e escudo segundo GAME-001. **Etapa 3 da Árvore Ancestral está ADIADA, não cancelada.**
+2. Primeira missão **A Primeira Lâmina**: sequência Cedric → padre/Árvore Ancestral → Eldrin/Árvore Sagrada → Cedric, com espada e escudo segundo GAME-001. **Trecho implementado e testado localmente; ver GAME-001. Formação na guilda ainda futura.**
 3. Inscrição/treinamento inicial na guilda, incluindo prova de aprendizado ainda a desenhar.
 4. Escolha/desbloqueio de **pelo menos uma primeira classe**, sem ficar restrito para sempre a ela.
 5. Concessão permanente da **Insígnia da Guilda**, registrando conclusão da formação e conquista **Aventureiro de Arkham** (nome de trabalho para a conquista, confirmar apresentação final).
@@ -87,4 +87,4 @@ O líder controla os convites para sua sessão privada; o convidado preserva ní
 ## 9. Sequência operacional
 **Planejar → construir treino básico → cadastrar primeira classe → conceder/validar insígnia → destravar botões e acesso servidor → testar persistência e reentrada → ampliar classes.** Não tentar criar todas as classes ou todas as conquistas no mesmo ciclo. Não publicar sem validação e autorização.
 
-**Estado:** definição de design aprovada, implementação futura. A Etapa 3 da Árvore Ancestral permanece adiada até retomada explícita.
+**Estado:** formação, classes e Insígnia continuam planejadas. A Primeira Lâmina e o menu Solo já têm implementação descrita em GAME-001/GAME-014; isso não concede os desbloqueios desta ficha. A Carteira da Guilda planejada é distinta da janela monetária CarteiraBP já existente.

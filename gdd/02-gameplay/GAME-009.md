@@ -20,8 +20,8 @@ relacionados:
   - "LOCAL-005"
   - "LOCAL-006"
   - "LOCAL-007"
-atualizado_por: "codex"
-data_atualizacao: "2026-10-11"
+atualizado_por: "Codex"
+data_atualizacao: "2026-10-15"
 ---
 
 # Painel Linear de Consolidação — Itens, Interações e Cadeias
@@ -215,9 +215,9 @@ A ordem abaixo é a fila principal. Não avançar por impulso para novas expans�
 
 ### ETAPA J — Masmorras / loot
 
-**Recorte atualizado em 09/10/2026:** inspeção/coleta compartilhada de Vesplume, Grumelo, Pedrino, Brisalto e Cascudo, com ITEM-008 a ITEM-022. Expansão autorizada com identidades e valores provisórios, implementada/testada localmente, sem VALIDADO. Baú Falso excluído. Materiais persistentes entram no alforge existente; moedas na carteira. Miniaturas/ficha independente criadas. Detalhes e chances em GAME-011.
+**Recorte atual em 15/10/2026:** cinco espécies comuns e Baú Falso têm inspeção compartilhada (ITEM-008–025, GAME-011). Baú Verdadeiro e Guardião usam direitos individuais, tabelas e limites diários de GAME-013. Saque dos corpos aguarda limpeza do próprio cômodo. Valores provisórios; testes locais não equivalem a VALIDADO. Materiais seguem ao alforge e moedas à carteira existentes.
 
-**IMPLEMENTADO / TESTADO EM PLAY LOCAL**, ainda não VALIDADO pelo responsável. Não quita a cadeia econômica: venda provisória à Guilda e pagamento na Tesouraria implementados conforme GAME-012; tratamento, receitas, contratos, outros inimigos/baús e economia definitiva pendentes.
+**IMPLEMENTADO / TESTADO EM PLAY LOCAL**, ainda não VALIDADO pelo responsável. Não quita a cadeia econômica: venda provisória à Guilda e pagamento na Tesouraria implementados conforme GAME-012; tratamento, receitas, contratos, expansões não autorizadas e economia definitiva pendentes. Baús do Piso 1 já têm integração em GAME-013.
 
 
 - [ ] Auditar os baús e demais interações físicas já existentes.
@@ -255,7 +255,7 @@ Exemplo puramente estrutural, sem canonizar nomes ou números:
 | Ordem | Núcleo | Estado inicial |
 |---:|---|---|
 | A | Gameplay inicial de John | EM CONSOLIDAÇÃO |
-| B | Oficina de Cedric / Forja | PENDENTE |
+| B | Oficina de Cedric / Forja | PRIMEIRA FORJA FUNCIONAL; serviços adicionais pendentes |
 | C | Boticário | PENDENTE |
 | D | Pesca / Lucan / Cais | PENDENTE |
 | E | Madeira / Garrick / Serraria | PENDENTE |
@@ -263,8 +263,8 @@ Exemplo puramente estrutural, sem canonizar nomes ou números:
 | G | Alfaiataria / proteção leve | PENDENTE |
 | H | Taverna | PENDENTE |
 | I | Mercado / Armazém / Tobias | PENDENTE |
-| J | Masmorras / loot | PENDENTE |
-| K | Equipamentos e aprimoramento | PENDENTE |
+| J | Masmorras / loot | IMPLEMENTADO / TESTES LOCAIS; validação final pendente |
+| K | Equipamentos e aprimoramento | EQUIPAMENTOS PARCIAIS IMPLEMENTADOS; aprimoramentos pendentes |
 
 A ordem pode ser alterada por decisão humana quando uma dependência real exigir, mas o painel deve continuar representando uma fila única e rastreável.
 
@@ -294,11 +294,16 @@ Ao concluir uma pendência:
 
 ITEM-008–022 podem ser entregues à Guilda pelos preços provisórios de GAME-012. Comprovante pendente e pagamento único persistem no mesmo perfil do inventário/carteira. Recepção, avaliação no anexo e Tesouraria conectadas aos protótipos existentes. Implementação e testes registrados em GAME-012; estado TESTADO, sem VALIDADO.
 
-## Fila documental de recompensas — 11/10/2026
+## Recompensas e equipamentos — estado de 15/10/2026
 
-ITEM-026–037: funções pretendidas e raridades provisórias documentadas, artes conceituais individuais no GDD, sem modelos ou integração funcional. ITEM-038: Elmo de Vidro como investigação futura; fora dos drops. Referências: DNG-014 e DOS-005. Nenhum desses itens está IMPLEMENTADO, TESTADO ou VALIDADO no jogo. Esta etapa de documentação não altera a ordem da fila funcional nem autoriza iniciar consumo, venda, equipamentos ou missões.
+ITEM-026–037 já possuem cadastro e integração de recompensa; ITEM-028 representa crédito direto de moedas. Ração, Bandagem e Pernil têm consumo/cura; o Fragmento registra leitura. Elmo de Bronze, Peitoral de Couro e Escudo de Ferro Reforçado são equipáveis; candelabro tem lançamento direto, luz, coleta e desgaste por unidade. Detalhes em GAME-013 e ITEM-033–036.
 
+Elmo: 5% de redução de dano de combate provisória. Peitoral e superioridade específica do escudo: números não definidos. Reparos, venda desses equipamentos, receitas adicionais e investigação do Elmo de Vidro continuam futuros. ITEM-038 permanece fora dos drops. Não confundir Peitoral de Couro com Peitoral de Vidro.
+
+### Leitura dos checklists históricos
+
+As caixas das etapas B–K são uma fila de consolidação/validação, não uma negação automática das implementações parciais descritas aqui. Primeira forja funcional (GAME-001), economia provisória (GAME-012) e recompensas (GAME-013) têm testes locais. Validação final, serviços adicionais e cadeias ainda não implementadas continuam pendentes.
 
 ## Recompensas individuais do Piso 1 — 11/10/2026
 
-[GAME-013](GAME-013.md) documenta a extensão da inspeção/persistência para Baú Verdadeiro e Guardião. Ela usa a mesma carteira, alforge e janela existentes, com direitos individuais e contadores diários separados. Os corpos dos inimigos comuns e do Baú Falso preservam seu resultado compartilhado e sorteio único. ITEM-026–037 não receberam novos preços na Guilda. O Elmo de Vidro e a chave não participam do sorteio. Funções futuras de equipamentos e investigação continuam indisponíveis.
+[GAME-013](GAME-013.md) documenta a extensão da inspeção/persistência para Baú Verdadeiro e Guardião. Ela usa a mesma carteira, alforge e janela existentes, com direitos individuais e contadores diários separados. Os corpos dos inimigos comuns e do Baú Falso preservam seu resultado compartilhado e sorteio único. ITEM-026–037 não receberam novos preços na Guilda. O Elmo de Vidro e a chave não participam do sorteio. Equipamentos atuais estão descritos nas fichas ITEM-033–036; serviços futuros e investigação continuam indisponíveis.

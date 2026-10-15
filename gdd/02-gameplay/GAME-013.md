@@ -31,7 +31,7 @@ relacionados:
   - "ITEM-038"
 imagem: ""
 atualizado_por: "Codex"
-data_atualizacao: "2026-10-11"
+data_atualizacao: "2026-10-15"
 ---
 
 # Recompensas individuais do Piso 1 — Parte 2
@@ -87,13 +87,13 @@ Ração cura 25%, Bandagem 15% e Pernil 100% da vida máxima, limitados ao máxi
 
 LER REGISTRO exige possuir o Fragmento, registra `RegistroGuerreiroEsquecido` na seção persistente do Diário e mostra `DIARIO-CAP1-005`. Texto fixo preservado de DOS-005. O papel não é consumido; a descoberta permanece após remoção ou futura venda. Não cria missão, localização do elmo ou atendimento de investigação em Cedric.
 
-Óleo, elmo, peitoral, escudo e candelabro entram no alforge e têm informações. Não há equipagem, proteção extra, luz, posicionamento ou desgaste implementados. O ciclo futuro de três recolhimentos do candelabro, condição danificada, reparo e sucata permanece documental. Taça e Relicário não têm preços ou venda habilitados; o catálogo atual da Guilda continua ITEM-008–022.
+Óleo permanece sem abastecimento funcional. Elmo de Bronze, peitoral e escudo foram integrados posteriormente ao equipamento existente; candelabro possui lançamento direto pela bolsa, iluminação, coleta e desgaste. Estado detalhado em ITEM-033–036. Elmo reduz provisoriamente 5% do dano de combate; defesa numérica do peitoral e superioridade do escudo ainda não definidas. Reparos, sucata e abastecimento continuam futuros. Taça/Relicário e os novos equipamentos não receberam preços de venda; catálogo atual da Guilda continua ITEM-008–022.
 
 As imagens tituladas 1672 × 941 da Parte 1 permanecem intactas no GDD. A gameplay usa miniaturas procedurais nativas da interface existente: 12 desenhos conferidos, sem importação das PNGs como assets Roblox. Aprovação artística final permanece pendente.
 
 ## Persistência e segurança
 
-Extensão do perfil existente `BP_DataStore_V1`: template versão 4 reconcilia dados antigos, adicionando `RecompensasMasmorra` e `Diario.Descobertas`. Reutiliza `PersistenciaService`, inventário e carteira, preservando dados de Guilda e demais sistemas.
+Extensão do perfil existente `BP_DataStore_V1`: na implantação desta etapa, o template versão 4 reconciliou dados antigos, adicionando `RecompensasMasmorra` e `Diario.Descobertas`. Reutiliza `PersistenciaService`, inventário e carteira, preservando dados de Guilda e demais sistemas.
 
 O servidor calcula a data por UTC menos 3 horas e renova os contadores à meia-noite de Brasília, na próxima operação da categoria. Reconectar, trocar de servidor, reconstruir a masmorra ou resetar progresso não renova artificialmente o limite. Cada geração e encontro possui GUID estável; resultado, etapa, saldo remanescente e revisão ficam no perfil do jogador.
 
@@ -141,4 +141,8 @@ O baú verdadeiro estava ativo, mas seu botão não aparecia: o supressor global
 
 ## Próxima avaliação
 
-Testar com John e outros jogadores, especialmente direitos individuais, coleta parcial, três rendimentos, quarta interação vazia e progressão pela chave. Refinar somente depois os valores provisórios, arte e funções futuras autorizadas; não antecipar missões, venda dos novos itens ou equipamentos funcionais.
+Testar com John e outros jogadores, especialmente direitos individuais, coleta parcial, três rendimentos, quarta interação vazia e progressão pela chave. Refinar valores e arte depois da avaliação. Equipamentos funcionais foram autorizados e integrados posteriormente (ITEM-033–036); missões de investigação, manutenção e venda dos novos itens continuam futuras. A versão 5 do mesmo perfil acrescentou marcadores narrativos (GAME-014), preservando RecompensasMasmorra.
+
+## Evidências das integrações posteriores
+
+Elmo: equipar/desequipar e status 5% de redução/95% de dano recebido conferidos localmente, com ocultação/restauração de cabelo. Peitoral: testes de idle, caminhada, ataque, guarda, repetição e posse; nenhum bônus defensivo numérico aprovado. Escudo: prefab físico integrado ao slot secundário e regras existentes; balanceamento específico pendente. Candelabro: Play com três lançamentos/coletas, luz, bloqueio do quarto uso e preservação do item danificado; revisão final testou clique LANCAR, fechamento da bolsa, retorno da espada e coleta E. Não houve homologação multiplayer ou em dispositivo físico dessas integrações nesta documentação.

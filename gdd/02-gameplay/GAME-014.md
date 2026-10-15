@@ -1,7 +1,7 @@
 ---
 id: "GAME-014"
 nome: "Universo Único, Menu de Entrada e Modos de Sessão"
-status: "PLANEJADO"
+status: "EM_DESENVOLVIMENTO"
 funcao: "Arquitetura de entrada, campanha individual, solo, grupo privado e mundo público"
 relacionados:
   - "GAME-001"
@@ -10,13 +10,13 @@ relacionados:
   - "GAME-012"
   - "GAME-013"
   - "GAME-015"
-atualizado_por: "ChatGPT"
-data_atualizacao: "2026-10-13"
+atualizado_por: "Codex"
+data_atualizacao: "2026-10-15"
 ---
 
 # Universo Único, Menu de Entrada e Modos de Sessão
 
-> **DECISÃO DE DESIGN APROVADA EM 13/10/2026. IMPLEMENTAÇÃO PENDENTE.** Este documento define o comportamento desejado. Não declara que menu, teleporte, sessões privadas, convites ou bloqueios estejam funcionais no Studio.
+> **Estado conferido em 15/10/2026:** menu visual e integração Solo implementados/testados localmente. Sessões privadas, Mundo Público, formação/insígnia, isolamento multiplayer e teletransportes permanecem planejados. Este documento distingue a execução atual das regras futuras.
 
 ## 1. Princípio central
 **Batalhas Poderosas tem um universo narrativo único e um perfil persistente por jogador.** Solo, grupo privado e servidor público são maneiras de acessar o mesmo jogo, não três campanhas, personagens, economias ou inventários separados. Ao trocar de sessão o jogador preserva: identidade/protagonismo da própria campanha, progresso de missões e objetivos, diário, moedas, inventário/alforge, equipamentos, habilidades, pontos de habilidade, classes aprendidas, inscrição/insígnia da guilda e conquistas.
@@ -38,24 +38,44 @@ Cenas narrativas que exigem um ambiente exclusivo, especialmente John na única 
 O mundo público não é outra lore nem um apagamento das missões principais. **Quais objetivos principais poderão avançar no público, e quais exigirão ambiente pessoal, serão catalogados por missão**, sem afirmar agora que toda campanha funciona ali. Evitar duplicar fisicamente a Casa de John para cada participante.
 
 ## 3. Menu principal e abertura existente
-Sequência **pretendida**, sujeita a auditoria da inicialização real:
-1. Carregamento técnico mínimo necessário do Roblox e apresentação da abertura cinematográfica já existente (30 s). Não prometer menu antes de qualquer carregamento.
-2. Ao terminar a abertura, apresentar **menu principal** com fundo derivado do último enquadramento, sem título/logotipo gravado na imagem; logo e botões são elementos próprios da UI.
-3. Botões: **Continuar História / Jogar Solo** (disponível); **Jogar com Amigos** e **Mundo Público** (visíveis, atenuados, não acionáveis até desbloqueio); **Configurações**, **Conquistas** e **Créditos** (itens graduais, conforme implementação).
-4. Ao escolher Solo, carregar/iniciar a sessão narrativa e então a **cutscene de John na escrivaninha** (25 s) quando for a primeira vez, preservando a sequência existente, leitura/coleta do diário e a missão **A Primeira Lâmina**. Ao retornar com introdução concluída, não forçar repetição; comportamento de reprises será decidido.
-5. Quando a Insígnia estiver registrada no perfil, permitir escolher sessão por convite ou pública. Verificações no servidor são obrigatórias: bloquear somente na interface não basta.
 
-Abertura cinematográfica e cutscene na casa são coisas distintas. Não refazer seus conteúdos ou quebrar as transições. Preparar UI responsiva em desktop, celular e controle, aproveitando sistemas existentes. Configurações futuras: volume geral, música, efeitos, controles, sensibilidade de câmera e elementos da HUD. **Escopo inicial do menu: fluxo e fundamentos visuais; não implantar todas as opções de uma vez.**
+Ordem implementada: **entrada → Menu Principal → seleção Solo → preparação + intro recorrente → cutscene pessoal se pendente → gameplay**.
+
+- Solo disponível; Amigos e Mundo Público visíveis com bloqueio e requisito da Insígnia. Sua presença não representa sessões multiplayer funcionais.
+- A intro atual é exibida também para quem retorna. `CampanhaConfig` centraliza o catálogo, hoje somente `ArkanAtual` / `BP_AberturaConfig`, e a política futura de evitar repetição consecutiva. Não há outras intros ativas.
+- O servidor decide a elegibilidade da cutscene. O perfil existente foi reconciliado para versão 5 com `Narrativa.IntroducaoJohnConcluida` e `Narrativa.UltimaIntroId`. Saves antigos sem marcador recebem a cena uma vez; não se deduz sua conclusão pela espada ou pelo Piso 1.
+- Conclusão pessoal é confirmada depois da sequência e do posicionamento seguro sob o fade, com tempo mínimo, commit persistente e idempotência. Interrupção anterior mantém a cena pendente. Falha de confirmação não libera a entrada desprotegida.
+- Retorno seguro: `CasaJohnFrenteEscrivaninha`, com checagem de piso e espaço livre. Não há salvamento geral da última coordenada. Inventário, moedas, diário e missões continuam no mesmo perfil; cada sessão começa sem itens equipados, preservando a posse.
+- A liberação exige assets essenciais no cliente, perfil, Fase1Pronta e confirmação do servidor. Se a intro acabar antes, manter a transição protegida até prontidão real.
+- Intro e cutscene existentes foram preservadas. O áudio da cutscene segue até o fim antes da música ambiente. O menu usa o tema da vila (`106121868942949`) em loop e volume moderado, coordenado por contexto para não sobrepor a intro.
+- Interface responsiva com logo oficial separado, PNGs reutilizáveis, estados normal/destaque/pressionado/bloqueado e área segura. Refinamento de 14/10 usa 22 recursos visuais; os 21 PNGs originais foram preservados como referência. Configurações, Conquistas e Créditos têm navegação conforme a implementação; a existência de uma tela não certifica todas as opções futuras.
+
+### Componentes atuais
+
+`ReplicatedFirst.BP_MenuPrincipal`, `CarregamentoInicial`, `ReplicatedStorage.BP_MenuPrincipal.CampanhaConfig`, `ServerScriptService.SistemasGameplay.MenuPrincipalService`, `GerenciadorAberturaFase1` e os controladores existentes de cutscene/persistência. Não foi criado perfil paralelo.
+
+### Medições e testes registrados
+
+| Marco local | Antes | Depois da Etapa 2 |
+|---|---:|---:|
+| Fase1Pronta observada | 1,43 s | 0,70 s |
+| Perfil disponível | 2,25 s | 2,44 s |
+| Recursos do menu | 3,05 s | 3,31 s |
+| Solo até gameplay no retorno | 62,95 s | 35,51 s |
+
+Amostras únicas de Studio, com cache/condições diferentes; não demonstram ganho geral de carregamento. A diferença da última linha decorre principalmente de não repetir a cutscene pessoal. A espera induzida de 128,51 s testou mundo lento, não desempenho normal.
+
+Play cobriu perfil novo em memória, retorno com marcador concluído, câmera/controles liberados e entrada protegida além da duração da intro. Testes de serviço cobriram conclusão antecipada recusada, idempotência, reabertura em memória e preservação de inventário/moedas/missões/diário. Refinamento visual teve testes em simuladores mobile e desktop. Não houve nesta etapa desconexão física, teste multiplayer, teleporte, telefone ou controle físicos. Não declarar VALIDADO com base nesses ensaios.
 
 ## 4. Progressão multiplayer e cooperação
 - Missões, requisitos, diálogos e recompensas são avaliados individualmente pelo servidor para cada jogador.
 - Companheiros podem acompanhar explorações, lutas e atividades e aceitar missões compatíveis; ajudar não concede automaticamente a etapa narrativa pendente.
-- Recompensas e elegibilidade de loot permanecem individuais, respeitando os sistemas existentes GAME-011/012/013 e suas regras específicas.
+- Respeitar as regras específicas existentes: corpos comuns e Baú Falso têm saque compartilhado (GAME-011); Baú Verdadeiro e Guardião têm direitos individuais (GAME-013). Não converter todo loot para um único regime.
 - Salvamento/transferência entre servidores não deve duplicar itens ou sobrescrever dados. Planejar controle de concorrência de sessões, gravação segura, recuperação de falha e validação no servidor.
 - Ponto de entrada/retorno deve considerar o progresso individual e a natureza da sessão, sem alterar a história de outros participantes.
 - Convites de grupo são controlados pelo líder. Comportamento após saída/desconexão do líder, reconexão, limite de convidados e política de remoção ainda estão **PENDENTES**.
 
-## 5. Arquitetura técnica a avaliar, não implementação aprovada
+## 5. Arquitetura atual e separação futura
 O Roblox oferece recursos para múltiplos *places* na mesma experiência, teleportes, servidores reservados e dados persistentes; a topologia final (um place com roteamento ou places especializados) exige inspeção dos places e scripts atuais e teste real. O menu poderá residir em um lobby/place inicial técnico; isso **não está decidido**. Não migrar automaticamente Place1 nem Mundo Livre, não substituir Place2 e não criar novos places sem estudo e autorização. Teleporte e servidores reservados devem ser testados em ambiente publicado de teste, já que testes locais do Studio não cobrem tudo.
 
 Preferir **um perfil e serviços centrais**, com regras de sessão por contexto, em vez de inventários, moedas e catálogos duplicados. Validar chamadas remotas, permissões e replicação para múltiplos jogadores.
@@ -66,19 +86,19 @@ Ambos **Jogar com Amigos** e **Mundo Público** são liberados por uma condiçã
 Até essa liberação, apenas a campanha Solo é acionável, inclusive diante de convites ou tentativas de teleporte direto. Revalidar elegibilidade no servidor.
 
 ## 7. Pendências deliberadas
-- Limites de participantes do privado e público.
-- Fluxo de convite, expiração, saída do líder, continuidade da sessão e reconexão.
-- Quais trechos da missão principal poderão ocorrer no público sem colisão narrativa.
-- Persistência e restauração de cenas, checkpoints e locais de entrada.
-- Interface e opções efetivas de configurações, imagens finais, créditos e eventuais reprises.
-- Topologia definitiva dos places e impacto nas rotinas de carregamento existentes.
-- Política de progressão cooperativa para atividades futuras e recompensas compartilháveis.
 
-## 8. Fases de implementação, sem publicação automática
-1. **Auditar** carregamento atual, abertura, cutscene, dados persistentes, places, HUD e fluxo de gameplay; desenhar transição para o menu sem quebrar a intro.
-2. **Menu visual e estados:** tela pós-abertura, botões bloqueados com requisito explícito, Solo funcional sem regressão, Configurações e Conquistas com escopo definido.
-3. **Fundação de perfil e desbloqueios:** registro persistente, verificação servidor e testes de dois jogadores.
-4. **Sessões/convites/teleporte:** modo solo reservado, grupo com anfitrião e público, testes externos de transferência e concorrência.
-5. **Expansões posteriores:** guilda jogável, treinamento, classes, missões cooperativas e opções ampliadas. O desbloqueio real depende da formação estar funcional; não antecipar concessões.
+- Sessões privadas/públicas, convites, saída do líder, limites e reconexão reais.
+- Registro da Insígnia, formação e desbloqueios (GAME-015).
+- Isolamento das cenas pessoais, checkpoint fora da casa e salvamento de posição por contexto.
+- Topologia de Places e testes externos de transferência/concorrência.
+- Conteúdo adicional de configurações/conquistas, alternativas de intro e homologação em dispositivos físicos.
 
-**Estado:** decisão arquitetural documentada; Studio não verificado para esta funcionalidade, nada deste documento deve ser marcado como implementado.
+## 8. Próximas fases
+
+Menu e continuidade Solo já possuem implementação. As fases seguintes devem auditar a separação de sessões e a elegibilidade, preservando o perfil e os serviços centrais. Não habilitar multiplayer somente removendo o cadeado visual; não criar outros Places ou conceder insígnia automaticamente. Publicação do jogo exige autorização própria.
+
+## Limitação técnica atual e exceção administrativa planejada
+
+O Place ainda prepara mapa, NPCs e serviços antes da seleção Solo. Não foi feita migração, sessão reservada ou teleporte. A cutscene ainda atua sobre porta/cadeira no ambiente do servidor: sua execução com convidados exige isolamento antes de habilitar os modos.
+
+O usuário solicitou uma exceção administrativa futura para convidar testadores pelos meios padrão da Roblox, mesmo sem a formação inicial. Essa política precisa de autorização validada no servidor e não deve copiar progresso nem interromper a cutscene do convidado. **Não está certificada como implementada**; identidade administrativa, escopo e testes devem ser conferidos na etapa multiplayer.

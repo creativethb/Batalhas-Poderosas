@@ -18,7 +18,7 @@ relacionados:
   - "ITEM-032"
 imagem: ""
 atualizado_por: "Codex"
-data_atualizacao: "2026-10-11"
+data_atualizacao: "2026-10-15"
 ---
 # Recompensas propostas do Baú Verdadeiro — Piso 1
 
@@ -56,7 +56,7 @@ Taça e Relicário têm venda futura prevista na Guilda; o Relicário deve ter v
 
 ## Estado visual e funcional
 
-Cada ficha tem uma imagem própria em `./assets/itens/ITEM-XXX.png`, com o nome dentro da arte e identidade da Oficina de Cedric. As artes de ITEM-026 a ITEM-032 foram produzidas e conferidas em 1672 × 941; aprovação artística final ainda pendente. Modelos 3D, inventário, uso, coleta, venda, sorteio e farm permanecem para autorização posterior.
+Cada ficha tem uma imagem própria em `./assets/itens/ITEM-XXX.png`, com o nome dentro da arte e identidade da Oficina de Cedric. As artes de ITEM-026 a ITEM-032 foram produzidas e conferidas em 1672 × 941; aprovação artística final ainda pendente. Inventário, sorteio, coleta e usos de consumo/leitura foram integrados pela Parte 2. Novas vendas, abastecimento e funções não descritas nas fichas permanecem futuras. A arte conceitual não certifica um modelo físico individual de cada material.
 
 [Consolidação e auditoria](../07-masmorras/DNG-014.md).
 
@@ -67,4 +67,4 @@ A etapa documental anterior é preservada como histórico. A Parte 2 autorizou e
 
 Baús contam a primeira coleta efetiva por encontro; o Guardião reserva o rendimento na vitória dos participantes elegíveis, mesmo sem coleta imediata. Os contadores são independentes e renovam à meia-noite de Brasília. Moedas vão à carteira existente. A Bolsa de Moedas Antigas é a representação desse crédito direto, sem um segundo recipiente remunerado. A chave de progressão segue independente e o Elmo de Vidro continua excluído.
 
-Ração, Bandagem e Pernil possuem consumo e cura. O Fragmento registra leitura permanente no Diário, sem consumir o papel. Óleo, armaduras, escudo e candelabro têm cadastro, obtenção, persistência e informações; iluminação, equipagem, desgaste, reparos, venda e investigação permanecem futuros. Testado não equivale a validação final.
+Ração, Bandagem e Pernil possuem consumo e cura; o Fragmento registra leitura no Diário sem consumir o papel. Elmo de Bronze, Peitoral de Couro e Escudo de Ferro Reforçado são equipáveis; o candelabro tem lançamento, luz, coleta e desgaste. Óleo sem abastecimento funcional; manutenção, novas vendas e investigação continuam futuras. Detalhes e limites em GAME-013/ITEM-033–036. TESTADO localmente não equivale a VALIDADO.

@@ -14,7 +14,7 @@ relacionados:
   - "BEST-021"
   - "BEST-022"
 atualizado_por: "Codex"
-data_atualizacao: "2026-10-11"
+data_atualizacao: "2026-10-15"
 ---
 
 # Catálogo de espólios — propostas consultáveis
@@ -127,4 +127,4 @@ Testado em Play local: transformação, morte, inspeção com três materiais, m
 
 ## Coleções documentais posteriores — 11/10/2026
 
-Baú Verdadeiro: [CAT-ESPOLIOS-002](CATALOGO-RECOMPENSAS-BAU-VERDADEIRO.md), ITEM-026–032. Guardião: [CAT-ESPOLIOS-003](CATALOGO-ESPOLIOS-GUARDIAO-PISO1.md), ITEM-033–037. Apenas propostas documentadas, sem drops ativos. As três ideias minerais anteriores para BEST-002 continuam backlog histórico, sem cadastro; não integram automaticamente a coleção aprovada nesta solicitação. Chave e Elmo de Vidro estão fora do sorteio. [DNG-014](../07-masmorras/DNG-014.md) descreve a auditoria e [DOS-005](../06-dossie/DOS-005.md) preserva a proposta narrativa.
+Baú Verdadeiro: [CAT-ESPOLIOS-002](CATALOGO-RECOMPENSAS-BAU-VERDADEIRO.md), ITEM-026–032. Guardião: [CAT-ESPOLIOS-003](CATALOGO-ESPOLIOS-GUARDIAO-PISO1.md), ITEM-033–037. Recompensas individuais implementadas posteriormente, com tabelas e testes em GAME-013. As três ideias minerais anteriores para BEST-002 continuam backlog histórico, sem cadastro; não integram automaticamente a coleção aprovada nesta solicitação. Chave e Elmo de Vidro estão fora do sorteio. [DNG-014](../07-masmorras/DNG-014.md) descreve a auditoria e [DOS-005](../06-dossie/DOS-005.md) preserva a proposta narrativa.

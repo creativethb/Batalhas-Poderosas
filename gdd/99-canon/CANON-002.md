@@ -1,13 +1,14 @@
 ---
 id: "BP-2026-002"
 nome: "Início da Jornada na Casa de John"
-status: "CANONICO"
+status: "DESCONTINUADO"
 relacionados:
   - "LOCAL-001"
   - "LORE-002"
   - "ITEM-001"
   - "BP-2026-001"
-atualizado_por: "agente"
+atualizado_por: "Codex"
+data_atualizacao: "2026-10-15"
 ---
 
 # Decisão Canônica: Início na Casa de John
@@ -17,3 +18,7 @@ STATUS: CANÔNICO
 DECISÃO: O jogador inicia sua aventura dentro da Casa de John na Colina Leste da Vila de Arkham. O início do gameplay foca na preparação: coletar 1x Madeira Comum na mesa de sua casa, buscar a bênção e o Galho Sagrado com o Ancião Eldrin na Árvore Sagrada, e forjar a Espada de Madeira Sagrada na oficina com Mestre Cedric.
 DATA: 08/09/2026
 ```
+
+## Substituição formal — 15/10/2026
+
+Registro histórico preservado. **Substituído por BP-2026-009 (CANON-009.md)**, que formaliza a rota posterior já aprovada: casa/diário → Cedric → igreja/Padre Mináille → Árvore Ancestral → unção → Eldrin → Cedric. O início na casa permanece; a madeira na mesa e a atribuição da unção a Eldrin não são a rota atual.

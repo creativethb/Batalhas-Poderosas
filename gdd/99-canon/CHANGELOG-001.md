@@ -13,7 +13,7 @@ relacionados:
   - "GAME-008"
 imagem: ""
 atualizado_por: "Codex"
-data_atualizacao: "2026-10-08"
+data_atualizacao: "2026-10-15"
 ---
 
 # Histórico de Versões — Evolução de Arkham
@@ -136,3 +136,17 @@ Registro da implementação local, sem atribuir nova versão pública ao jogo.
 - Decisão do usuário: moedas atuais são apenas para testes; economia definitiva não estabelecida. DNG-002 distingue proposta econômica de implementação.
 - Playtest com espada, contato, bloqueio, recuperações, baús e gerador; ativação do Guardião preservada. Multiplayer real e combate completo do chefe não validados nesta rodada.
 - Manifesto, índice e catálogo do bestiário sincronizados. O site descobre os Markdown pela árvore Git; index.html preservado conforme orientação do usuário. A alteração de nomenclatura da árvore continua adiada.
+
+## Consolidação documental — 15/10/2026
+
+Atualização retrospectiva com base nas entregas de 10–15/10, sem nova versão do jogo ou execução de gameplay nesta rodada.
+
+- GAME-001/NPC-030/ITEM-001–003: ciclo do padre, coleta atrás da igreja, unção, encaminhamento a Eldrin e primeira forja funcional; Cedric preservado. BP-2026-009 substitui formalmente BP-2026-002, cujo texto histórico foi mantido.
+- GAME-014: menu antes da intro recorrente, cutscene pessoal por marcador persistente, retorno seguro à frente da escrivaninha e espera por prontidão real. Mesmo Place; multiplayer e teleporte ainda futuros. GAME-015 mantém formação/classes planejadas.
+- GAME-005/007/012/ITEM-004: diário, mapa e carteira independentes; áudio correto da primeira página; posse do mapa sem forma de aquisição definida.
+- GAME-002/003/004: combo de três golpes, especiais, descanso armado, parry com limites explícitos; HUD de diálogo em duas fases, novas molduras e controles mobile. Respostas sem rolagem ainda são proposta. Warning FoundationProvider não foi declarado resolvido.
+- GAME-009/011/013 e fichas relacionadas: saque de corpos após limpar o próprio cômodo; recompensas compartilhadas/individuais diferenciadas; elmo, peitoral e escudo equipáveis; candelabro com lançamento direto, coleta e desgaste. Sem novas receitas, preços ou manutenção. Elmo de Bronze preserva ITEM-033 e o runtime elmo_cobre; título antigo da arte precisa de revisão visual.
+- BEST-018/022 e NPC-002: rig/ataque do Grumelo, cuspe de objetos do Baú Falso e instalação provisória de Eldrin. Buraco no braço/ombro do ancião segue pendente, não reparado nesta rodada.
+- Manifesto e índice documental revisados; index.html/renderizador intactos. Incluído procedimento de manutenção e acompanhamento local por entrega.
+
+Evidência: relatórios locais datados das implementações e inspeções de código da edição do Studio em 15/10. Simulações de perfil não foram descritas como reconexão de rede real; medições de layout não certificam toque/gamepad físicos. Não houve novos testes de combate, transações, cutscenes ou multiplayer nesta atualização documental. Não promovidos estados para VALIDADO.

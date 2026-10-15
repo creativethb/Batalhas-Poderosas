@@ -11,8 +11,8 @@ relacionados:
   - "GAME-002"
   - "LORE-002"
 imagem: "./assets/itens/ITEM-003.png"
-atualizado_por: "codex"
-data_atualizacao: "2026-10-06"
+atualizado_por: "Codex"
+data_atualizacao: "2026-10-15"
 ---
 
 # Ficha de Equipamento: Espada de Madeira Sagrada
@@ -26,7 +26,7 @@ data_atualizacao: "2026-10-06"
 
 ## 2. Atributos & Mecânicas
 - **Dano por Golpe:** `22` pontos de dano físico/sagrado por impacto.
-- **Cadência de Ataque:** Referência documental de combo encadeado de 5 golpes; a contagem e a cadência atuais dependem de validação posterior no Roblox Studio (`GAME-002`).
+- **Cadência de Ataque:** Três golpes individuais e clip combinado de três impactos por entradas rápidas; especiais contextuais e tempos provisórios em GAME-002.
 - **Efeitos Visuais:** Lâmina entalhada em madeira nobre com iluminação mística esmeralda (`PointLight` verde suave).
 - **Persistência:** Restaurada automaticamente no inventário de John caso renasça; o estado de equipamento deve ser aplicado pelo sistema de inventário.
 
@@ -38,3 +38,7 @@ Ao equipar a espada pelo Alforge, John a carrega na diagonal das costas. O coman
 ## 4. Entrega inicial com escudo
 
 Ao concluir a primeira forja existente, Cedric entrega **um Escudo de Madeira (ITEM-007) como cortesia**, uma única vez. O escudo não adiciona custo ou ingredientes à receita da espada. Na mão secundária, permite guarda com a espada na mão direita. Enquanto defende, golpes de espada/dash são impedidos; ao soltar, voltam ao normal (**GAME-002**).
+
+## Integração atual — 15/10/2026
+
+Primeira forja consome 1 Madeira Ungida (estado de `madeira_comum`) e 1 Madeira Sagrada, entregando espada e cortesia única do escudo. A posse persiste; início de sessão sem equipagem automática não remove a espada. Sacar/guardar mantém a representação anterior até o final da animação e então transfere entre posição de repouso e mão; encaixe manual preservado. Detalhes da missão em GAME-001 e de combate em GAME-002. Não criar receita paralela.

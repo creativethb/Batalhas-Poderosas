@@ -14,8 +14,8 @@ relacionados:
   - "ITEM-003"
   - "BP-2026-001"
   - "GAME-001"
-atualizado_por: "agente_bibliotecario"
-data_atualizacao: "2026-10-12"
+atualizado_por: "Codex"
+data_atualizacao: "2026-10-15"
 imagem: "./assets/characters/john-cover.png"
 ---
 
@@ -43,7 +43,7 @@ imagem: "./assets/characters/john-cover.png"
 8. John treina e se prepara para proteger Arkham.
 9. Posteriormente enfrenta uma força esmagadoramente superior, é teletransportado à força para o Multiverso e precisará encontrar um caminho para retornar e salvar Arkan.
 
-> **Nota de continuidade:** o antigo roteiro que localizava a Madeira Comum na Casa de John, na Colina Leste, foi substituído como planejamento narrativo. A nova sequência ainda depende de implementação e validação no Roblox Studio. O mistério da origem da Árvore Ancestral deve permanecer sem explicação definitiva.
+> **Nota de continuidade:** o antigo roteiro que localizava a Madeira Comum na Casa de John, na Colina Leste, foi substituído como planejamento narrativo. A nova sequência foi implementada e testada localmente; GAME-001 registra o estado e os limites. Validação final de rede e dispositivos continua pendente. O mistério da origem da Árvore Ancestral deve permanecer sem explicação definitiva.
 
 ---
 

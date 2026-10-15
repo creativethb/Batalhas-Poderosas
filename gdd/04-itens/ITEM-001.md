@@ -9,19 +9,19 @@ relacionados:
   - "ITEM-003"
   - "GAME-001"
 imagem: "./assets/itens/ITEM-001.png"
-atualizado_por: "ChatGPT"
-data_atualizacao: "2026-10-12"
+atualizado_por: "Codex"
+data_atualizacao: "2026-10-15"
 ---
 
 # Ficha de Item: Madeira Comum
 
 ## 1. Dados Básicos
-- **ID do Item:** `Madeira`
+- **ID de runtime:** `madeira_comum` (identificador documental legado: `Madeira`).
 - **Tipo:** Material de Criação / Recurso Base
 - **Raridade:** Comum (Branco)
 - **Local de Obtenção:** aos pés da Árvore Ancestral, situada atrás da igreja de Arkham.
 
-> A origem narrativa definida em 12/10/2026 é um pedaço de madeira de forma quadrada aos pés da Árvore Ancestral. A Casa de John e o estabelecimento comercial são rotas antigas. A implementação física ainda está pendente.
+> A origem narrativa definida em 12/10/2026 é um pedaço de madeira de forma quadrada aos pés da Árvore Ancestral. A Casa de John e o estabelecimento comercial são rotas antigas. A coleta individual está implementada no ponto atrás da igreja; ver GAME-001.
 
 ## 2. Descrição
 Madeira comum utilizada como recurso de criação, recolhida inicialmente aos pés da misteriosa Árvore Ancestral de folhas quadradas. No primeiro ciclo de preparação de John, ele obtém um pedaço desse material e o leva ao padre da vila para receber a unção.
@@ -39,7 +39,7 @@ Durante a gameplay:
 
 Portanto, a Madeira Ungida não é um segundo recurso coletado no mundo: é a Madeira Comum transformada pelo rito.
 
-> 🟡 **IMPLEMENTAÇÃO PENDENTE:** o nome técnico definitivo do atributo, sua representação no inventário e a regra de persistência ainda devem ser definidos no Roblox Studio. O conceito canônico é a transformação do mesmo material.
+**IMPLEMENTADO / TESTADO localmente:** o estado de unção é mantido no progresso persistente existente, sem criar outro ID de item. BancoDeItens/BP_ItemInterface apresentam origem, descrição e nome contextual de Madeira Ungida. Repetições não duplicam o material; o servidor revalida o rito antes do commit. Reconexão física e multiplayer real permanecem pendentes.
 
 ## 4. Distinção da Madeira Sagrada
 
@@ -52,7 +52,7 @@ Cedric deverá receber os dois materiais no ciclo inicial de fabricação da esp
 
 ## 5. Uso no ciclo inicial
 
-A receita e o nome definitivo da espada ainda serão revisados para refletir corretamente o novo fluxo:
+A primeira forja existente reconhece o estado de unção e consome uma unidade de cada material. O nome atual da espada é preservado (ITEM-003):
 
 **Madeira Comum → unção pelo padre → Madeira Ungida**
 

@@ -10,7 +10,7 @@ relacionados:
   - "DNG-002"
 imagem: "./assets/bestiario/BEST-022.png"
 atualizado_por: "Codex"
-data_atualizacao: "2026-10-11"
+data_atualizacao: "2026-10-15"
 ---
 
 # Baú Falso
@@ -87,3 +87,13 @@ Autorizados nesta data e implementados no Studio pelo sistema existente. ITEM-02
 Após a derrota do baú revelado, ControladorBauFalso registra o corpo em EspoliosService. Morte durante a revelação também permite inspeção; derrotar o disfarce intacto por modo dev não concede materiais. Sorteio único, coleta seletiva compartilhada, alforge e persistência existentes preservados. Miniaturas nativas e informações compartilhadas em BP_ItemInterface/BancoDeItens.
 
 Testado em Play local: transformação, morte, inspeção com três materiais, miniaturas, coleta parcial/integral, pedidos repetidos e excesso rejeitados, saque vazio e exportação do inventário. 10.000 sorteios verificaram limites. Não houve multiplayer real ou reconexão entre servidores. Estado IMPLEMENTADO / TESTADO localmente, sem marcar VALIDADO. Place não publicado nesta tarefa.
+
+## Ataque adicional: lançamento de objetos — 11/10/2026
+
+Em distância provisória de 4,2–23 studs, prepara por 0,85 s e lança 1–3 objetos falsos, com intervalo de 6,5 s. Preserva mordida e investida. O catálogo contém oito protótipos do usuário sem plataformas: elmos, escudo, peitoral, candelabro, relicário, taça e frasco. Não são recompensas coletáveis.
+
+Trajetória balística sem perseguir o alvo, rastro breve e dano via CombateDefesaService; um dano por jogador por salva. Ao cair, os objetos ficam inertes, sem dano de contato e com colisão, preservando tamanho próprio de cada objeto. A redução inicial para 1,25 stud foi corrigida; escudo mede aproximadamente 2,529×2,900×1,063 e candelabro 1,692×3,225×1,600 studs.
+
+Permanecem enquanto o corpo do baú existir, inclusive após a derrota. Limite provisório de 36 por baú; remover baú/sala limpa os objetos. Originais em `ServerStorage.BauFalso_Referencias`; prefabs em `BP_BauFalso_ObjetosFalsos`, fora do Workspace.
+
+Play solo controlado verificou transformação, salvas de 1/2/3, dano, limite, colisores, aterrissagem dos oito modelos e limpeza. Não houve multiplayer, percurso procedural completo ou teste manual prolongado de travessia dos obstáculos. Scripts: PISO1_BauFalso, BauFalsoProjeteis e BauFalsoObjetosLimpeza.

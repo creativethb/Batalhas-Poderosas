@@ -40,6 +40,8 @@
 | **`NPC-028`** | Oren | Civil / função específica indefinida | Circulação pela vila | `EM_DESENVOLVIMENTO` | `gdd/03-npcs/NPC-028.md` | Civil com referências conflitantes a recados/Armazém; função formal adiada. |
 | **`NPC-029`** | Selma | Civil / Moradora | Praça e circulação pela vila | `EM_DESENVOLVIMENTO` | `gdd/03-npcs/NPC-029.md` | Moradora com rota e diálogo de vida cotidiana. |
 
+| **`NPC-030`** | Padre Mináille | Sacerdote missionário | Igreja de Arkham | `CANONICO` | `gdd/03-npcs/NPC-030.md` | Orienta coleta/unção e encaminha a Eldrin; modelo provisório funcional. |
+
 ---
 
 ## 🐺 Bestiário (`/gdd/04-bestiario/`)
@@ -167,7 +169,7 @@
 | **`GAME-004`** | Sistema de Diálogo e Câmera | Interação & Cena | `CANONICO` | `gdd/02-gameplay/GAME-004.md` |
 | **`GAME-005`** | Sistema do Diário de John | Inventário, Narrativa & Desbloqueio | `CANONICO` | `gdd/02-gameplay/GAME-005.md` |
 | **`GAME-006`** | Cadeia Produtiva e Economia Rural | Economia & Produção | `CANONICO` | `gdd/02-gameplay/GAME-006.md` |
-| **`GAME-007`** | Navegação da Vila e Mapa do Diário | Navegação & Interface | `EM_DESENVOLVIMENTO` | `gdd/02-gameplay/GAME-007.md` |
+| **`GAME-007`** | Navegação da Vila e Mapa Independente | Navegação & Interface | `EM_DESENVOLVIMENTO` | `gdd/02-gameplay/GAME-007.md` |
 | **`GAME-008`** | Mapa de Integração do Mundo de Arkham | Consolidação & Integração | `EM_DESENVOLVIMENTO` | `gdd/02-gameplay/GAME-008.md` |
 | **`GAME-009`** | Painel Linear de Consolidação — Itens, Interações e Cadeias | Consolidação Linear | `EM_DESENVOLVIMENTO` | `gdd/02-gameplay/GAME-009.md` |
 
@@ -193,13 +195,14 @@
 | ID | Título | Categoria | Status | Arquivo |
 | :--- | :--- | :--- | :--- | :--- |
 | **`BP-2026-001`** | Protagonista John e Origem do Soldado | Narrativa Core | `CANONICO` | `gdd/99-canon/CANON-001.md` |
-| **`BP-2026-002`** | Início na Casa de John | Gameplay Inicial | `CANONICO` | `gdd/99-canon/CANON-002.md` |
+| **`BP-2026-002`** | Início na Casa de John | Gameplay Inicial | `DESCONTINUADO` | `gdd/99-canon/CANON-002.md` |
 | **`BP-2026-003`** | A Guerra do Rei Mago | Lore & História | `CANONICO` | `gdd/99-canon/CANON-003.md` |
 | **`BP-2026-004`** | Desacoplamento do Sandbox | Arquitetura | `CANONICO` | `gdd/99-canon/CANON-004.md` |
 | **`BP-2026-005`** | Padrão UX Multiplataforma | Interface | `CANONICO` | `gdd/99-canon/CANON-005.md` |
 | **`BP-2026-006`** | Diário de John — Elemento Narrativo e Funcional | Narrativa & Lore | `CANONICO` | `gdd/99-canon/CANON-006.md` |
 | **`BP-2026-007`** | Protocolo Narrativo — Diário e Livro/Lore | Narrativa & Sistema | `CANONICO` | `gdd/99-canon/CANON-007.md` |
 | **`BP-2026-008`** | Expansão Rural e Masterplan da Fazenda | Arquitetura & Economia | `CANONICO` | `gdd/99-canon/CANON-008.md` |
+| **`BP-2026-009`** | Início na Casa e Rota da Primeira Lâmina | Gameplay Inicial | `CANONICO` | `gdd/99-canon/CANON-009.md` |
 
 
 ## Atualização da masmorra — 05/10/2026
@@ -286,7 +289,7 @@ Parte 1: catálogo e arte. Parte 2: recompensas individuais integradas ao Studio
 | ITEM-030 | [Relicário de Pedra](gdd/04-itens/ITEM-030.md) | EM_DESENVOLVIMENTO |
 | ITEM-031 | [Fragmento de Registro Antigo](gdd/04-itens/ITEM-031.md) | EM_DESENVOLVIMENTO |
 | ITEM-032 | [Frasco de Óleo para Lamparina](gdd/04-itens/ITEM-032.md) | EM_DESENVOLVIMENTO |
-| ITEM-033 | [Elmo de Cobre](gdd/04-itens/ITEM-033.md) | EM_DESENVOLVIMENTO |
+| ITEM-033 | [Elmo de Bronze](gdd/04-itens/ITEM-033.md) | EM_DESENVOLVIMENTO |
 | ITEM-034 | [Peitoral de Couro](gdd/04-itens/ITEM-034.md) | EM_DESENVOLVIMENTO |
 | ITEM-035 | [Escudo de Ferro Reforçado](gdd/04-itens/ITEM-035.md) | EM_DESENVOLVIMENTO |
 | ITEM-036 | [Candelabro de Expedição](gdd/04-itens/ITEM-036.md) | EM_DESENVOLVIMENTO |
@@ -307,3 +310,15 @@ A Chave do Guardião permanece nos registros existentes de DNG-003/DNG-006; o El
 | GAME-013 | [Recompensas individuais, coleta e persistência do Piso 1](gdd/02-gameplay/GAME-013.md) | EM_DESENVOLVIMENTO |
 
 Configuração provisória centralizada; três etapas diárias independentes por categoria, Diário persistente, curativos e proteção transacional. Testes executados e multiplayer real pendente descritos na ficha. `index.html` preservado.
+
+
+## Entrada e continuidade — 15/10/2026
+
+| ID | Documento | Estado |
+|---|---|---|
+| GAME-014 | [Universo Único, Menu de Entrada e Modos de Sessão](gdd/02-gameplay/GAME-014.md) | EM_DESENVOLVIMENTO: Solo implementado; multiplayer futuro |
+| GAME-015 | [Guilda, Carteira, Classes e Conquistas](gdd/02-gameplay/GAME-015.md) | PLANEJADO: formação/classes/insígnia |
+
+Menu → Solo → intro recorrente → cutscene pessoal se pendente → gameplay. A Primeira Lâmina está implementada com coleta atrás da igreja e unção pelo Padre Mináille; BP-2026-009 substitui o roteiro histórico BP-2026-002. Diário, mapa e carteira possuem janelas independentes. Elmo de Bronze mantém ITEM-033/ID elmo_cobre; arte titulada antiga precisa de revisão, sem novo item.
+
+Manutenção documental: [procedimento](docs/MANUTENCAO-GDD.md). Estados de teste e pendências nas fichas; index.html e renderizador preservados.

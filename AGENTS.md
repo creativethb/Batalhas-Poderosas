@@ -91,7 +91,7 @@ Sempre que o usuário solicitar uma alteração ou adição:
    - `docs(npc): adicionar NPC-008 NomeDoNPC`
    - `feat(gameplay): balancear dano da espada ITEM-003`
    - `canon(core): registrar CANON-006 RegraX`
-7. **Push:** Envie as mudanças para a branch `main`.
+7. **Push:** Sincronize a branch aprovada somente quando houver autorização aplicável à entrega. Confirme o hash remoto e registre a sincronização; não confunda commit local com publicação.
 
 ---
 
@@ -99,3 +99,10 @@ Sempre que o usuário solicitar uma alteração ou adição:
 
 - **NUNCA** faça commit, log ou espelhamento do Personal Access Token (PAT) do GitHub em nenhum arquivo versionado (`.md`, `.json`, `.txt`, `.html`, scripts ou relatórios).
 - O token deve existir unicamente em variáveis voláteis de ambiente durante a sessão do terminal.
+
+
+## 8. Acompanhamento contínuo do GDD
+
+Siga `docs/MANUTENCAO-GDD.md`. Ao concluir alteração relevante de Batalhas Poderosas, registre no `GDD_ACOMPANHAMENTO.md` local a entrega, fichas afetadas, evidências, testes e pendências. Consulte essa fila antes da próxima atualização documental e mantenha-a sincronizada com os commits efetivos.
+
+**Restrição explícita do usuário:** não alterar index.html, renderizador ou arquitetura do mini-site. Ela prevalece sobre orientações anteriores deste manual que mencionam editar o HTML. Atualize Markdown, INDICE.md e manifest.json quando necessário, preservando descoberta automática e IDs. Esta rotina não agenda tarefas nem autoriza publicação do jogo.

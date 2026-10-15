@@ -8,10 +8,10 @@ relacionados:
   - "NPC-008"
   - "ITEM-001"
   - "ITEM-004"
-  - "BP-2026-002"
+  - "BP-2026-009"
 imagem: "./assets/characters/casa-do-jhon-cover.png"
-atualizado_por: "ChatGPT"
-data_atualizacao: "2026-09-24"
+atualizado_por: "Codex"
+data_atualizacao: "2026-10-15"
 ---
 
 # Ficha de Local: Casa de John
@@ -22,5 +22,9 @@ data_atualizacao: "2026-09-24"
 
 ## 2. Estrutura & Mobília
 - Construção de pedra e carvalho com 22 MeshParts detalhados (mesa de jantar, poltrona da lareira com estofado anatômico, cômoda, cama, bancada de trabalho, tapetes e candelabros).
-- **Madeira Coletável:** Ponto de spawn de 1x Madeira Comum sobre a bancada principal.
+- **Diário e escrivaninha:** início pessoal de John. A coleta inicial de madeira foi transferida para trás da igreja (GAME-001/ITEM-001); não é uma recompensa da bancada da casa.
 - **Zona Proibida de NPCs:** Possui barreira `PathfindingModifier` (`NPCProibido`) que impede a entrada de NPCs na residência.
+
+## Continuidade de entrada
+
+Cutscene pessoal na primeira jornada apropriada, após menu/intro (GAME-014). Durante o fade, John é colocado no lado livre à frente da escrivaninha antes de devolver controles. Cadeira recua ao levantar; não há deslocamento lateral sem animação. A porta usada na cena conserva continuidade de abertura e interação local de abrir/fechar. Mobília/decoração foram agrupadas com a casa para acompanharem transformações. Medidas e contagem antiga de malhas são referência histórica, não inventário técnico atual.

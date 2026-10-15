@@ -7,8 +7,8 @@ relacionados:
   - "GAME-002"
   - "GAME-004"
   - "BP-2026-005"
-atualizado_por: "codex"
-data_atualizacao: "2026-10-06"
+atualizado_por: "Codex"
+data_atualizacao: "2026-10-15"
 ---
 
 # Sistema de Locomoção, Dash e Duplo Pulo
@@ -28,17 +28,21 @@ O sistema integra esquiva e aceleração no mesmo canal de comando:
 - **Mecânica:** Trava a mira e retícula de combate no alvo inimigo mais próximo em até 60 studs.
 - **Cancelamento:** Ao afastar mais de 72 studs ou ao reacionar o comando.
 
-## 4. HUD Mobile e Estados de Combate
+## 4. HUD mobile e estados de combate
 
-- **Exploração:** mantém os comandos de pulo e dash/corrida acessíveis; o botão da arma permanece acima deles. Defesa também fica acessível quando o escudo está equipado, mesmo com a espada guardada.
-- **Arma sacada:** ataque, defesa e foco se expandem em torno dos comandos principais. Ao guardar a arma, ataque e foco recolhem; Defesa permanece acessível se o escudo estiver equipado.
-- **Dash/Corrida:** toque breve no botão executa dash; segurar ativa corrida; soltar encerra a corrida. O botão acompanha a posição do pulo.
-- **Ergonomia:** o conjunto respeita a área segura da tela e usa separação maior entre os botões para reduzir toques acidentais em paisagem.
-- **Leitura visual:** ícones próprios de ataque, escudo, foco, arma, dash e pulo substituem símbolos genéricos; as funções dos comandos permanecem iguais. O ícone do pulo é aplicado sobre o controle nativo, preservando sua área de toque.
-- **Defesa:** implementada em 06/10/2026. Manter o botão existente pressionado levanta a guarda; soltar encerra. Exige escudo equipado (**ITEM-007**). No PC: botão direito do mouse ou C; ButtonL2 mapeado para controle. A guarda reduz a caminhada a 10 studs/s e impede dash/corrida. O Q continua exclusivo do dash.
+- Exploração: pulo, dash/corrida e sacar. Com arma sacada, o leque revela ataque, defesa e foco; defesa depende do escudo. Fechar interface exclusiva restaura os controles anteriores, sem duplicá-los.
+- Refinamento de 11/10: círculos de 64 px e separação entre centros de 78 px; foco e defesa alinhados, defesa próxima do ataque, sacar acima do ataque, pulo/dash à esquerda. Layout estreito tem alternativa em duas colunas. Medidas são lógicas e adaptáveis, não pixels físicos universais.
+- Seis ícones próprios individuais, centralizados em BP_ControlesVisuais; não são recortes reposicionados de um atlas.
+- Uma única rotina controla o layout móvel. DashController acompanha TouchGui/JumpButton nativos que aparecem tardiamente, sem exigir que o pulo esteja visível e sem criar duplicatas.
+- Defesa mantém as regras de GAME-002: segurar/soltar, caminhada a 10 studs/s e exclusão de dash/corrida. A implementação atual de parry está descrita separadamente naquela ficha.
 
-A versão de desenvolvimento foi conferida no simulador de iPhone em paisagem, nos estados de exploração, arma sacada e arma guardada. O conjunto expandiu e recolheu sem sobreposição dos botões. O novo botão de pulo foi conferido visualmente no simulador, e um toque nele acionou o salto.
+Testes em simulador verificaram expansão/recolhimento, alinhamento, ocultação durante bolsa e estabilidade das posições. A tarja remanescente do Scriptorium foi corrigida no controlador próprio. Telefone físico, ergonomia real e controles específicos da besta permanecem pendentes.
 
+### Inicialização do dash — 15/10/2026
+
+O aviso antecipado de JumpButton ausente foi corrigido para acompanhar a chegada do controle nativo e só avisar, se necessário, após início efetivo da gameplay. Play ficou 44,77 s no menu sem aviso falso e exibiu um dash de 64×64 ao entrar. Não houve alteração da física de locomoção.
+
+O aviso FoundationProvider/UIBlox é distinto: foi reproduzido também em Place vazio, sem scripts do projeto, em PC/mobile. A origem exata no cliente Roblox e a homologação fora do Studio continuam pendentes; não foi ocultado nem declarado resolvido.
 
 ## 5. Música da Masmorra
 - A exploração do primeiro piso usa música ambiente medieval de mistério, em loop, com volume moderado.

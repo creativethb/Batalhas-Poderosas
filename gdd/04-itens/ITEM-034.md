@@ -16,12 +16,12 @@ relacionados:
   - "BEST-002"
 imagem: "./assets/itens/ITEM-034.png"
 atualizado_por: "Codex"
-data_atualizacao: "2026-10-11"
+data_atualizacao: "2026-10-15"
 ---
 
 # Peitoral de Couro
 
-> **PARTE 2 — IMPLEMENTAÇÃO INICIAL EM 11/10/2026.** Cadastro, inspeção e persistência foram integrados ao Studio. Uso atual está descrito abaixo; funções futuras e narrativa proposta não são funcionalidades disponíveis. TESTADO em cenários definidos em GAME-013; aprovação final e multiplayer real pendentes.
+> **Estado revisto em 15/10/2026:** recompensa e uso funcional integrados ao sistema existente. Abaixo estão separados implementação, valores provisórios e funções futuras. Testes locais não equivalem a validação final ou multiplayer real.
 
 ## Identificação e aparência
 
@@ -51,17 +51,17 @@ Sorteio individual após a derrota do **Guardião Ancestral do Piso 1 — BEST-0
 
 ## Utilidade atual e futura
 
-**Uso atual no jogo:** Coletável individual do Guardião, persistente no alforge e consultável. Ainda não equipável e sem redução de dano.
+**Uso atual:** recompensa individual persistente; pode equipar/desequipar no torso pelo inventário existente. Modelo `BP_PeitoralCouro_Modelo`, acessório/attachment com vínculo ao corpo, escala e orientação ajustadas manualmente. Não substitui o Peitoral de Vidro (ITEM-005).
 
-**Direção de design aprovada (uso disponível conforme acima):** Proteção física futura do torso, com intenção de preservar mobilidade. Redução de dano, encaixe no avatar e penalidades de movimento não definidos; nenhuma função equipável está implementada.
+**Defesa numérica:** ainda não definida; equipagem visual funcional não autoriza inventar porcentagem de redução ou penalidade de movimento.
 
-**Dependências ainda abertas:** Parâmetros de defesa, slot, durabilidade e sorteio a definir.
+**Testes locais:** idle, caminhada, ataque, guarda, equipagem repetida sem duplicação e recusa sem posse. Os ajustes posteriores de tamanho foram manuais; clipping em todas as animações e dispositivos físicos continuam sujeitos a avaliação. Venda, durabilidade, fabricação e reparo são futuros.
 
 ## Comercialização e relação com NPCs
 
 Venda, comprador e preço permanecem a definir.
 
-John poderá equipá-lo futuramente. Fabricante e serviços de oficina para essa peça não foram definidos.
+John já pode equipá-lo. Fabricante e serviços de oficina para essa peça não foram definidos.
 
 Preços, receitas, contratos e serviços não são disponibilizados por esta documentação. A economia existente permanece intacta.
 
@@ -70,7 +70,7 @@ Preços, receitas, contratos e serviços não são disponibilizados por esta doc
 - **Caminho da arte:** `./assets/itens/ITEM-034.png`.
 - **Identidade visual:** referência direta da imagem publicada da Oficina de Mestre Cedric e do Peitoral de Vidro; nome na própria arte, tipografia creme/dourada, faixa preta e moldura ornamentada. Dimensão final 1672 × 941.
 - **Miniatura:** PRODUZIDA E CONFERIDA visualmente nesta etapa; arquivo real em 1672 × 941, com nome dentro da arte. Aprovação artística final pelo usuário ainda pendente.
-- **Modelo 3D:** não criado nesta etapa. **BancoDeItens, informações, inspeção/alforge e persistência:** cadastrados. Miniatura de gameplay gerada pela interface nativa; a arte PNG do GDD não foi importada como asset Roblox.
+- **Modelo 3D:** integrado ao Studio em etapa posterior à arte inicial; encaixe/uso descritos nesta ficha. **BancoDeItens, informações, inspeção/alforge e persistência:** existentes preservados. Miniatura de gameplay gerada pela interface nativa; a arte PNG do GDD não foi importada como asset Roblox.
 - **Testes:** sorteios, transações e miniaturas conferidos; usos específicos e limites em GAME-013. Não marcar como VALIDADO; multiplayer real e avaliação final pendentes.
 
 ## Referência do catálogo

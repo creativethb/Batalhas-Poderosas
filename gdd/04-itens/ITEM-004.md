@@ -12,8 +12,8 @@ relacionados:
   - "LORE-003"
   - "LOCAL-001"
 imagem: "./assets/itens/ITEM-004.png"
-atualizado_por: "agente_bibliotecario"
-data_atualizacao: "2026-09-08"
+atualizado_por: "Codex"
+data_atualizacao: "2026-10-15"
 ---
 
 # Ficha de Item: Diário de John
@@ -38,3 +38,7 @@ Um caderno com encadernação em couro rústico escurecido, costura manual gross
 - **Indescartável:** Não pode ser vendido, descartado, trocado ou destruído.
 - **Consulta em Runtime:** Quando selecionado/aberto fora de combate, aciona a interface imersiva do Diário (`HUD_Diario`), permitindo ao jogador ler as entradas desbloqueadas organizadas por capítulos.
 - **Desbloqueio Progressivo de Entradas:** Cada avanço relevante na campanha principal libera novos registros com indicador visual de novidade (*não lido*).
+
+## Interface e narração atuais — 15/10/2026
+
+HUD_Diario é independente da bolsa; o item, a tecla J e o livro físico encaminham ao mesmo leitor. Mapa e carteira não são abas obrigatórias do diário. Primeiro registro narrado: `90096381155243`, com pausa/retomada/reinício e volume. Os demais áudios estão pendentes. Conteúdo bloqueado não é narrado. Estado de teste e limitações em GAME-005.

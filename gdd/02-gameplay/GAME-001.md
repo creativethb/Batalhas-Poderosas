@@ -13,11 +13,11 @@ relacionados:
   - "ITEM-002"
   - "ITEM-003"
   - "DOS-004"
-  - "BP-2026-002"
+  - "BP-2026-009"
   - "GAME-014"
   - "GAME-015"
-atualizado_por: "codex"
-data_atualizacao: "2026-10-13"
+atualizado_por: "Codex"
+data_atualizacao: "2026-10-15"
 ---
 
 # Loop Principal e Progressão de Gameplay
@@ -41,22 +41,23 @@ O ciclo de jogo equilibra:
 8. Cedric confere e consome **1 Madeira Ungida + 1 Madeira Sagrada**, fabrica a primeira espada de treinamento e entrega **um Escudo de Madeira (ITEM-007)** como cortesia única.
 9. A missão é concluída individualmente e de forma persistente. O diálogo introdutório de Cedric deixa de ser oferecido a esse jogador, inclusive em sessões futuras. Cedric passa a oferecer seus serviços habituais, como manutenção e melhorias, à medida que forem implementados.
 
-### Estado de implementação e pendências
-- **Definição narrativa aprovada; implementação integral pendente.** Não confundir este fluxo com sistemas já funcionais no Studio.
-- A Árvore Ancestral é um novo elemento/local de interesse **atrás da igreja**; requer ficha própria no catálogo de locais e implementação física, com tronco/madeira coletável aos pés.
-- O sacerdote já tem nome e ficha canônica: **Padre Mináille (NPC-030)**, originário da Vila Real. Sua criação física, diálogos e rito de unção no Studio continuam pendentes.
-- Rever fichas de itens, receita da espada, diálogos e objetivos sequenciais da missão, aproveitando inventário, notificações e navegação já existentes.
-- Dividir a implementação em etapas médias e validar o ciclo completo antes de publicar.
-- **Legado:** a Madeira Comum na Casa de John e a obtenção em estabelecimento comercial são fluxos antigos, não a nova rota narrativa. A expressão “Madeira Comum” pode descrever matéria-prima bruta, mas **não é o item final exigido por Cedric**.
+### Estado de implementação — conferência em 15/10/2026
 
-### Escudo integrado ao circuito atual — 06/10/2026
+**IMPLEMENTADO e TESTADO localmente**, com refinamento do trecho do padre em 13/10. O ciclo Cedric → Padre Mináille → coleta atrás da igreja → unção → encaminhamento a Eldrin → Madeira Sagrada → Cedric está funcional. A antiga indicação de adiamento foi superada pela execução autorizada.
 
-A primeira forja existente com Cedric entrega a espada e **um Escudo de Madeira de cortesia**. O diálogo explicita a cortesia; a explicação pode ser consultada novamente sem repetir a recompensa. A receita e os materiais atuais da espada foram preservados.
+- `MissaoInicialService` e os sistemas existentes de diálogo, inventário, bússola e persistência controlam o progresso individual. A conversa de Cedric e a primeira forja foram preservadas.
+- Coleta em `Workspace.Vila.05_IgrejaDeArkham_V1.MadeiraColetavelIgreja`; árvore real referenciada por `ArvoreAncestralReferencia.Value`. O destaque e a retirada visual são individuais.
+- O cadastro-base é `madeira_comum`; a unção muda estado/apresentação para **Madeira Ungida**, sem duplicar a quantidade. `madeira_sagrada` continua separado.
+- Cerimônia provisória de 2,4 s, validação de material/estado/proximidade no servidor e token por jogador. Interrupção antes do commit não transforma a madeira.
+- Após a unção, o objetivo permanece no padre até concluir a conversa. `ProgressoFase1.PadreEncaminhouEldrin` conserva o encaminhamento entre sessões.
+- Cedric consome 1 Madeira Ungida + 1 Madeira Sagrada e concede uma espada e um Escudo de Madeira (ITEM-007), sem repetir a recompensa.
+- Notificações de missão usam a apresentação existente e esperam a confirmação do jogador; a bússola acompanha o objetivo real.
 
-O escudo entra no inventário persistente e pode ser equipado na mão secundária, mantendo a espada na mão direita. John levanta a guarda, caminha com velocidade reduzida e bloqueia ataques comuns pela frente; ao soltar, retoma ataque e dash. Ver **ITEM-007**, **GAME-002** e **GAME-003**.
+**Testes registrados:** 24 verificações de serviços com armazenamento isolado em memória; Play passando pelos callbacks e remotos reais desde o menu até a forja; interrupção/retomada da unção; repetição recusada; independência de dois perfis simulados. Os deslocamentos entre os locais foram posicionados para teste, não percorridos integralmente a pé. Reconexão física, dois clientes reais e dispositivos físicos continuam pendentes. Não marcar como VALIDADO.
 
-Essa adição já funciona no circuito implementado. A nova rota da Árvore Ancestral, a unção pelo padre e a obtenção da Madeira Ungida permanecem pendentes de implementação; a entrega anterior não as implementou.
+O refinamento da missão foi publicado no Place em 13/10/2026 às 15:31:09, após autorização específica. Isso não comprova publicação de refinamentos posteriores da interface. A presente atualização é documental.
 
+**Pendências:** modelos definitivos, revisão artística, balanceamento e homologação real de rede. A antiga coleta na casa/comércio não é a rota ativa. O registro histórico BP-2026-002 foi substituído por BP-2026-009.
 
 ## 3. Princípio do arco
 As etapas adicionais não existem apenas para alongar o tutorial. Cada deslocamento deve apresentar uma parte da vila, fortalecer relações com seus moradores e dar significado à fabricação da primeira espada deste ciclo.
@@ -65,34 +66,22 @@ Madeira Ungida e Madeira Sagrada são materiais distintos:
 - Madeira Ungida: madeira comum obtida por John e depois ungida pelo padre.
 - Madeira Sagrada: galho proveniente da Árvore Sagrada e ligado a Eldrin.
 
-## 4. Inicialização e Liberação do Jogador
-A abertura técnica permanece preparada para impedir que o jogador veja o mundo sendo montado antes de estar pronto.
+## 4. Inicialização e liberação do jogador
 
-Fluxo atual:
-1. A tela inicial é exibida primeiro.
-2. A rotina duplicada de abertura foi removida.
-3. A Casa de John é preparada em paralelo com a inicialização geral do mundo.
-4. John só é liberado quando está corretamente posicionado, a casa foi recebida pelo cliente e os recursos visuais essenciais foram carregados.
-5. A tela de carregamento permanece cobrindo a abertura até a confirmação final do cliente.
+Fluxo atual: **Menu Principal → Solo → abertura cinematográfica recorrente → cutscene de John, apenas se pendente → fade → gameplay**. O menu não exige assistir à abertura antes de escolher o modo.
 
-### Medição local de referência — 20/09/2026
-| Marco | Tempo aproximado |
-| :--- | ---: |
-| Carregamento base do jogo | 0,36 s |
-| Posicionamento de John + chegada da casa | 5,40 s |
-| Recursos visuais essenciais da casa prontos | 6,37 s |
+O perfil único usa `Narrativa.IntroducaoJohnConcluida`, sem inferir conclusão pela primeira espada ou existência de save. A confirmação ocorre no ponto seguro da cutscene, sob o fade, após posicionamento na área livre à frente da escrivaninha. Interromper antes disso mantém a cena pendente. Retornos usam `CasaJohnFrenteEscrivaninha`, sem afirmar restauração da última coordenada.
 
-> Valores de teste local, não metas canônicas de desempenho.
+Só há liberação após prontidão do cliente, perfil, Fase1 e confirmação do servidor. Se a abertura acabar antes, a cobertura de carregamento permanece. A posse dos itens persiste, mas cada entrada começa sem equipamentos vestidos/sacados, conforme decisão aprovada. Ver GAME-014 para componentes, medições locais e limites.
 
-## 5. Estado Atual do Áudio
-- IDs inválidos de sons locais que geravam avisos no console foram removidos.
-- A música global da vila permanece em SoundService.
-- O ID atual dessa música ainda apresenta falha de download e deve ser substituído futuramente.
+## 5. Áudio
+
+O menu reutiliza o tema da vila (`106121868942949`) em loop, com volume moderado e controle de contexto. Abertura, cutscene e vila não devem sobrepor as músicas. O áudio atual da cutscene (`86574858496121`) deve tocar até o fim antes da entrada da música ambiente. Narração do primeiro registro do diário é distinta (`90096381155243`, GAME-005). A antiga anotação de download inválido da música da vila não descreve a configuração atual.
 
 ## 6. Universo único, formação na guilda e modos de sessão — aprovado em 13/10/2026
 
-**Decisão de design aprovada, implementação pendente:** o jogo preservará uma campanha e um perfil persistente por jogador em três tipos de entrada: Solo desde o começo; grupo privado com convites controlados pelo líder; mundo público para exploração e atividades compartilhadas. Progressão, inventário, economia, missões, classes e conquistas acompanham o jogador entre sessões. Cenas exclusivas de John (incluindo a casa e o diário) devem ocorrer em contexto pessoal sem interferir na vila compartilhada. **Ver GAME-014**, que contém regras de entrada, menu, carregamento, bloqueios e pendências técnicas.
+**Decisão de design aprovada; Solo e menu implementados, modos multiplayer pendentes:** o jogo preservará uma campanha e um perfil persistente por jogador em três tipos de entrada: Solo desde o começo; grupo privado com convites controlados pelo líder; mundo público para exploração e atividades compartilhadas. Progressão, inventário, economia, missões, classes e conquistas acompanham o jogador entre sessões. Cenas exclusivas de John (incluindo a casa e o diário) devem ocorrer em contexto pessoal sem interferir na vila compartilhada. **Ver GAME-014**, que contém regras de entrada, menu, carregamento, bloqueios e pendências técnicas.
 
 O primeiro ciclo de formação inclui **A Primeira Lâmina** já definida acima e, futuramente, cadastro/treinamento na guilda, primeira classe e concessão persistente da **Insígnia da Guilda**. Só então são desbloqueados **Jogar com Amigos** e **Mundo Público**, também validados no servidor. As classes são **múltiplas por personagem**, com pontos de habilidade distribuídos individualmente e novas especializações registradas na **Carteira da Guilda**, sem escolha permanente obrigatória. **Ver GAME-015** para a distinção entre guilda, grupo, classes, conquista e desbloqueio.
 
-**Ordem de trabalho:** a **Etapa 3 (padre, Árvore Ancestral e Madeira Ungida)** está **adiada temporariamente, não cancelada**. Prioridade atual é planejar e consolidar arquitetura do menu e acesso. Não declarar novos modos, classes, treinamento ou insígnia implementados nem publicar sem autorização.
+**Estado de trabalho:** o trecho do padre/Árvore Ancestral foi implementado e refinado. Formação na guilda, classes, insígnia e modos multiplayer continuam futuros. Não confundir a conclusão da primeira espada com a implementação de toda a formação. O Place ainda é único; não houve migração ou teleporte nesta etapa.

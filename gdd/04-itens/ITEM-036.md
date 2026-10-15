@@ -18,12 +18,12 @@ relacionados:
   - "BEST-002"
 imagem: "./assets/itens/ITEM-036.png"
 atualizado_por: "Codex"
-data_atualizacao: "2026-10-11"
+data_atualizacao: "2026-10-15"
 ---
 
 # Candelabro de Expedição
 
-> **PARTE 2 — IMPLEMENTAÇÃO INICIAL EM 11/10/2026.** Cadastro, inspeção e persistência foram integrados ao Studio. Uso atual está descrito abaixo; funções futuras e narrativa proposta não são funcionalidades disponíveis. TESTADO em cenários definidos em GAME-013; aprovação final e multiplayer real pendentes.
+> **Estado revisto em 15/10/2026:** recompensa e uso funcional integrados ao sistema existente. Abaixo estão separados implementação, valores provisórios e funções futuras. Testes locais não equivalem a validação final ou multiplayer real.
 
 ## Identificação e aparência
 
@@ -32,14 +32,14 @@ data_atualizacao: "2026-10-11"
 - **Raridade proposta:** Raro; não determina uma probabilidade de drop.
 - **Nome no catálogo:** Candelabro de Expedição.
 - **ID de runtime:** `candelabro_expedicao`; GDD `ITEM-036`.
-- **Aparência:** Candelabro compacto com base estável e suporte metálico para transporte. O desenho de fontes de luz na miniatura é conceitual; não estabelece combustível, duração ou alcance.
+- **Aparência:** Candelabro compacto com base estável e suporte metálico para transporte. A arte inicial é conceitual; o modelo integrado usa recipientes protegidos de líquido luminoso. Parâmetros provisórios de iluminação estão na seção de uso, sem combustível externo implementado.
 - **Propriedades confirmadas:** somente as características materiais e a direção de uso descritas nesta solicitação. Não há efeito mágico ou bônus adicional aprovado para este item.
 
 ## Descrições consultáveis
 
 **Descrição curta para o inventário:** Candelabro portátil de metal, pensado para iluminar câmaras e passagens.
 
-**Descrição detalhada:** Candelabro compacto com base estável e suporte metálico para transporte. O desenho de fontes de luz na miniatura é conceitual; não estabelece combustível, duração ou alcance. Utilitário proposto para expedições prolongadas. Criador e antiga expedição não definidos. Sem origem mágica ou ancestral especial confirmada.
+**Descrição detalhada:** Candelabro compacto com base estável e suporte metálico para transporte. A arte inicial é conceitual; o modelo integrado usa recipientes protegidos de líquido luminoso. Parâmetros provisórios de iluminação estão na seção de uso, sem combustível externo implementado. Utilitário proposto para expedições prolongadas. Criador e antiga expedição não definidos. Sem origem mágica ou ancestral especial confirmada.
 
 ## História, origem e limites narrativos
 
@@ -53,11 +53,17 @@ Sorteio individual após a derrota do **Guardião Ancestral do Piso 1 — BEST-0
 
 ## Utilidade atual e futura
 
-**Uso atual no jogo:** Coletável individual raro do Guardião, persistente no alforge e consultável. Posicionamento, luz, três recolhimentos, estado danificado, reparo e sucata permanecem futuros.
+**Uso atual:** ação **LANCAR** diretamente no alforge, sem equipagem manual. O menu fecha antes do gesto; a espada é guardada temporariamente durante o arremesso e retorna ao estado de saque anterior. Trajetória em arco respeita obstáculos e coloca o objeto iluminando o chão.
 
-**Direção de design aprovada (uso disponível conforme acima):** Dinâmica futura: posicionar no chão, iluminar, recolher e reposicionar. Após três posicionamentos, ao recolher pela terceira vez, passa ao estado danificado sem desaparecer. O equipamento danificado permanece persistente e pode futuramente ser restaurado na Oficina de Cedric ou vendido como sucata à Guilda.
+Ao aproximar, o proprietário vê um aviso compacto **E COLETAR** (122×32 pixels lógicos), sem abrir a janela de espólios. Um objeto ativo por jogador; validações e estoque permanecem no servidor/sistema existente.
 
-**Dependências ainda abertas:** Raio, combustível, duração, contagem entre sessões e efeito da condição danificada sobre a iluminação a definir. Não presumir ligação funcional com ITEM-032.
+`ConfiguracaoCandelabro` centraliza os valores provisórios: três usos, distância de lançamento 12 studs e luz de alcance 48/intensidade 3. Cada unidade mantém estado em `perfil.Candelabros.Unidades`. O terceiro recolhimento torna a unidade danificada; um quarto lançamento é bloqueado. O item permanece no inventário e a recuperação de sessão conserva desgaste.
+
+**Ainda futuro:** manutenção em Cedric, venda como sucata, preços, abastecimento e consumo de ITEM-032. Não presumir combustível externo funcional ou serviço disponível.
+
+**Visual:** modelo único com recipientes protegidos de líquido luminoso, conforme direção aprovada. Não estabelece composição/receita do líquido. Dano é indicado por Highlight; os vidros não se quebram individualmente nessa malha.
+
+**Testes:** Play com três lançamentos/coletas, luz, posse, bloqueio de duplicação/quarto uso, preservação da unidade e desgaste; revisão direta testou clique LANCAR, fechamento do menu, retorno da espada e coleta E. Não testados multiplayer, telefone/controle físicos ou manutenção.
 
 ## Comercialização e relação com NPCs
 
@@ -72,21 +78,20 @@ Preços, receitas, contratos e serviços não são disponibilizados por esta doc
 - **Caminho da arte:** `./assets/itens/ITEM-036.png`.
 - **Identidade visual:** referência direta da imagem publicada da Oficina de Mestre Cedric e do Peitoral de Vidro; nome na própria arte, tipografia creme/dourada, faixa preta e moldura ornamentada. Dimensão final 1672 × 941.
 - **Miniatura:** PRODUZIDA E CONFERIDA visualmente nesta etapa; arquivo real em 1672 × 941, com nome dentro da arte. Aprovação artística final pelo usuário ainda pendente.
-- **Modelo 3D:** não criado nesta etapa. **BancoDeItens, informações, inspeção/alforge e persistência:** cadastrados. Miniatura de gameplay gerada pela interface nativa; a arte PNG do GDD não foi importada como asset Roblox.
+- **Modelo 3D:** integrado ao Studio em etapa posterior à arte inicial; encaixe/uso descritos nesta ficha. **BancoDeItens, informações, inspeção/alforge e persistência:** existentes preservados. Miniatura de gameplay gerada pela interface nativa; a arte PNG do GDD não foi importada como asset Roblox.
 - **Testes:** sorteios, transações e miniaturas conferidos; usos específicos e limites em GAME-013. Não marcar como VALIDADO; multiplayer real e avaliação final pendentes.
 
-## Estados e ciclo propostos
+## Estados e ciclo implementados
 
-| Estado / momento | Comportamento pretendido |
+| Momento | Comportamento atual |
 |---|---|
-| Normal | Item portátil persistente, passível de posicionamento futuro. |
-| Posicionado | Ilumina o local; raio, combustível e duração ainda não definidos. |
-| Primeiro e segundo recolhimentos | Volta ao inventário para reposicionamento. |
-| Terceiro posicionamento | Continua o ciclo até ser recolhido. |
-| Recolhimento após o terceiro posicionamento | Passa a **danificado**, sem desaparecer. |
-| Danificado | Permanece como estado do mesmo equipamento; uso luminoso nessa condição a definir. Restauração por Cedric e venda de sucata são propostas futuras. |
+| Normal no alforge | Persistente; ação LANCAR disponível quando elegível. |
+| Lançado | Ilumina no chão; coleta exclusiva do proprietário. |
+| Primeiro e segundo recolhimentos | Retorna ao inventário conservando usos. |
+| Terceiro recolhimento | Torna-se danificado, sem desaparecer. |
+| Danificado | Permanece no inventário; novo lançamento bloqueado. Reparo/sucata futuros. |
 
-Não criar outro ITEM para a condição danificada, não zerar automaticamente o contador e não implementar reparo ou desgaste global agora. O modo de persistir o contador e o estado será decidido na implementação autorizada.
+Não criar outro ITEM para a condição danificada nem zerar automaticamente seu contador. Modelo físico e estado de desgaste não acrescentam um sistema global de durabilidade.
 
 ## Referência do catálogo
 

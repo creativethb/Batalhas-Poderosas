@@ -31,7 +31,7 @@ relacionados:
   - "GAME-010"
   - "DNG-013"
 atualizado_por: "Codex"
-data_atualizacao: "2026-10-11"
+data_atualizacao: "2026-10-15"
 ---
 
 # Inspeção e espólios compartilhados
@@ -171,4 +171,14 @@ Testado em Play local: transformação, morte, inspeção com três materiais, m
 
 ## Recompensas individuais do Piso 1 — 11/10/2026
 
-[GAME-013](GAME-013.md) documenta a extensão da inspeção/persistência para Baú Verdadeiro e Guardião. Ela usa a mesma carteira, alforge e janela existentes, com direitos individuais e contadores diários separados. Os corpos dos inimigos comuns e do Baú Falso preservam seu resultado compartilhado e sorteio único. ITEM-026–037 não receberam novos preços na Guilda. O Elmo de Vidro e a chave não participam do sorteio. Funções futuras de equipamentos e investigação continuam indisponíveis.
+[GAME-013](GAME-013.md) documenta a extensão da inspeção/persistência para Baú Verdadeiro e Guardião. Ela usa a mesma carteira, alforge e janela existentes, com direitos individuais e contadores diários separados. Os corpos dos inimigos comuns e do Baú Falso preservam seu resultado compartilhado e sorteio único. ITEM-026–037 não receberam novos preços na Guilda. O Elmo de Vidro e a chave não participam do sorteio. Equipamentos implementados posteriormente são descritos em ITEM-033–036/GAME-013; investigação futura continua indisponível.
+
+## Liberação de corpos por cômodo — 11/10/2026
+
+Corpos permanecem disponíveis para o sistema existente, mas a interação de saque fica bloqueada enquanto houver inimigo vivo **no mesmo cômodo** ou lote pendente de geração. O servidor recusa tentativas antecipadas; não basta esconder o botão. Limpar outra sala não é requisito. Isso evita que o comando de ataque abra o loot durante uma luta próxima.
+
+A liberação preserva sorteio único por corpo, vazio, resultado compartilhado e coleta parcial. Testes controlados do serviço verificaram sala ocupada/liberada, lote pendente e independência entre salas. Não houve teste multiplayer real ou novo percurso integral da masmorra nesta correção.
+
+## Interfaces independentes e ergonomia — 13–15/10/2026
+
+Alforge conserva estoque e coleta existentes; diário (GAME-005), mapa (GAME-007) e carteira monetária são janelas próprias. A carteira é apenas consulta do saldo existente, não outro inventário. Refinamento mobile preserva ações de pelo menos 44 px lógicos, detalhes roláveis quando necessários, ficha independente e navegação horizontal das categorias. Essa rolagem da bolsa não deve ser confundida com a proposta ainda pendente de respostas de diálogo sem rolagem.

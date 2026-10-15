@@ -10,8 +10,8 @@ relacionados:
   - "LOCAL-001"
   - "GAME-001"
   - "ITEM-004"
-atualizado_por: "agente_bibliotecario"
-data_atualizacao: "2026-09-22"
+atualizado_por: "Codex"
+data_atualizacao: "2026-10-15"
 ---
 
 # Sistema do Diário de John
@@ -25,7 +25,7 @@ O Diário de John é simultaneamente **lore + narrativa + sistema de gameplay + 
 | Campo | Definição |
 | :--- | :--- |
 | **Onde** | Casa de John — Colina Leste, Vila de Arkham (LOCAL-001) |
-| **Quando** | Início da introdução, antes ou junto da coleta da Madeira Comum |
+| **Quando** | Início da jornada na casa; a Madeira Comum agora é coletada atrás da igreja (GAME-001) |
 | **Como** | Jogador interage com o Diário no cenário (ProximityPrompt ou pickup automático) |
 | **Resultado** | Diário entra no inventário do jogador permanentemente |
 
@@ -120,8 +120,12 @@ O gatilho de gameplay está implementado no fluxo de conclusão do Piso 01 (`DNG
 
 ---
 
-## 9. Interface integrada em desenvolvimento
+## 9. Interface independente — implementação de 13/10/2026
 
-A consulta do Diário usa a aba **Diário** do menu Alforge. Selecionar o Diário no inventário, usar o atalho J ou interagir com o item físico encaminha para essa mesma aba, com a lista de entradas, o texto integral, o estado de leitura e o acesso ao Mapa da Vila. A tela antiga do Diário permanece como componente legado, mas não é exibida nesse fluxo durante o jogo.
+O leitor atual é `HUD_Diario`, separado da bolsa. Interagir com o livro físico, selecionar o item em Tudo/Especiais ou usar J abre o mesmo sistema existente. A categoria Diário e o leitor embutido no alforge foram removidos. Conteúdo, remotos, leitura e desbloqueios continuam no BancoDeDiario/GerenciadorDiarioServer.
 
-O conteúdo e os desbloqueios continuam vindo do sistema narrativo existente; a interface não cria novas entradas. A integração foi conferida em Playtest no computador em 2026-09-22.
+`SistemaDiario.NarracaoConfig` associa `DIARIO-CAP1-001` ao áudio **90096381155243**. Pausa, retomada, reinício e volume são locais; fechar ou trocar de página interrompe a narração. Páginas bloqueadas não reproduzem áudio. O ID anterior 127165247009922 era dos pensamentos, não a gravação do registro. Os demais áudios ainda dependem de fornecimento.
+
+Mapa e carteira são interfaces independentes (GAME-007/GAME-012), coordenadas com as janelas existentes por BP_UIState; o diário não precisa abrir a bolsa para ser consultado.
+
+**Testes registrados:** interação E, leitor independente, pausa/reinício, página bloqueada, leitura persistente e recarga de perfil em memória; layouts estreito/paisagem simulados. O áudio corrigido carregou no Studio com duração de 19,879 s; o Play completo de reprodução ocorreu antes da troca de ID, não foi repetido para essa alteração pontual. Dispositivos físicos e reconexão publicada permanecem pendentes.

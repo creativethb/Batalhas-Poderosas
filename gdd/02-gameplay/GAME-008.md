@@ -48,8 +48,8 @@ relacionados:
   - "NPC-027"
   - "NPC-028"
   - "NPC-029"
-atualizado_por: "codex"
-data_atualizacao: "2026-10-06"
+atualizado_por: "Codex"
+data_atualizacao: "2026-10-15"
 ---
 
 # Mapa de Integração do Mundo de Arkham
@@ -357,3 +357,9 @@ A auditoria física já foi concluída e o primeiro assentamento dos profissiona
 A fundação de Menu/Inventário está em processo de atualização no Studio para receber os sistemas futuros; ela não deve ser marcada como concluída até a validação final da implementação.
 
 Este documento deve ser atualizado continuamente: cada pendência concluída muda para ✅, permitindo que o desenvolvimento avance por fechamento de lacunas em vez de expansão aleatória.
+
+## Consolidação de implementação — 15/10/2026
+
+Este mapa mantém as cadeias futuras como backlog. Para estado atual, prevalecem as fichas especializadas: GAME-001 (ciclo do padre/coleta/unção/Eldrin/primeira forja implementado), GAME-014 (menu antes da intro, retorno e marcador narrativo), GAME-005/GAME-007 (diário e mapa independentes), GAME-012 (carteira e economia provisória) e GAME-013/ITEM-033–036 (recompensas, equipagem e candelabro). O Peitoral de Vidro continua uma cadeia distinta ainda futura.
+
+Testes locais não quitam a validação final. Remodelagem do braço/ombro de Eldrin, respostas sem rolagem, aquisição do mapa, outros áudios do diário e multiplayer permanecem pendências explícitas. Não retomar essas expansões automaticamente ao ler checklists antigos.

@@ -14,7 +14,7 @@ relacionados:
   - "GAME-002"
 imagem: "./assets/bestiario/BEST-018.png"
 atualizado_por: "Codex"
-data_atualizacao: "2026-10-09"
+data_atualizacao: "2026-10-15"
 ---
 
 # Grumelo
@@ -27,7 +27,7 @@ Inimigo comum do Piso 1, ativo no sorteio das salas Ruinas e PilaresArmadilha. P
 
 Observar → aproximar → golpe simples ou sequência dupla → recuperar → recuar → reposicionar. Usa intervalos individuais e separação para evitar ataques perfeitamente sincronizados. Busca de caminho é usada quando encontra obstáculos.
 
-O golpe simples usa o braço direito; a sequência dupla acrescenta o golpe esquerdo, com preparação mais perceptível. O dano ocorre pelo contato da mão durante a janela real do movimento, uma vez por vítima por golpe, limitado por direção, alcance e paredes.
+O golpe simples atual usa o clip de ataque com a mão direita; o duplo repete esse ataque com pausa de 0,16 s, preservando preparação mais perceptível. A descrição anterior de alternar o braço esquerdo não corresponde ao refinamento de 10/10. O dano ocorre pelo contato da mão durante a janela real do movimento, uma vez por vítima por golpe, limitado por direção, alcance e paredes.
 
 | Configuração provisória | Valor |
 |---|---:|
@@ -48,7 +48,9 @@ Play com a Espada de Madeira real contra um, dois e três Grumelos; bloqueio por
 
 ## Modelo e animações
 
-Modelo e rig R15 preparados preservados; o acabamento artístico continua provisório. Idle 507766388, caminhada 507777826, corrida 507767714, pulo 507765000 e queda 507767968 são as animações padrão configuradas. Golpes, preparação, reação e derrota usam poses e transições Motor6D.C0, sem novos IDs publicados. Ter IDs configurados não equivale a validação visual de todas as trilhas.
+Modelo manual de 15 MeshParts corporais e 15 AnimationConstraints, Humanoid R15, altura 4,2 studs. Rig anterior preservado fora do Workspace. Locomoção usa os IDs padrão cadastrados; ataque nativo `127956831239286`, velocidade 1,5, com contato avaliado entre 0,43–0,76 s do tempo real do clip. Simples uma vez; duplo repete com pausa de 0,16 s.
+
+Reação/derrota compostas em Transform/PreSimulation sem acumular C0; compensação visual dos pés durante o ataque não desloca a raiz física. Colisão concentrada na raiz e malhas consultáveis. Testes solo contra 1/2/3 criaturas, bloqueio, quatro golpes reais de John e derrota foram registrados. A medição do pé usa caixas, não vértices; terreno inclinado, multiplayer e especial de esporos ainda pendentes.
 
 Prefab de execução em `ServerStorage.Dungeon_NPCs`; protótipos de edição ficam reservados fora do Workspace.
 
