@@ -11,7 +11,7 @@ relacionados:
   - "GAME-013"
   - "GAME-015"
 atualizado_por: "Codex"
-data_atualizacao: "2026-10-15"
+data_atualizacao: "2026-10-16"
 ---
 
 # Universo Único, Menu de Entrada e Modos de Sessão
@@ -102,3 +102,65 @@ Menu e continuidade Solo já possuem implementação. As fases seguintes devem a
 O Place ainda prepara mapa, NPCs e serviços antes da seleção Solo. Não foi feita migração, sessão reservada ou teleporte. A cutscene ainda atua sobre porta/cadeira no ambiente do servidor: sua execução com convidados exige isolamento antes de habilitar os modos.
 
 O usuário solicitou uma exceção administrativa futura para convidar testadores pelos meios padrão da Roblox, mesmo sem a formação inicial. Essa política precisa de autorização validada no servidor e não deve copiar progresso nem interromper a cutscene do convidado. **Não está certificada como implementada**; identidade administrativa, escopo e testes devem ser conferidos na etapa multiplayer.
+
+## 9. Acompanhamento das etapas do Menu Principal — 16/10/2026
+
+> **Registro de planejamento e evidências relatadas, não homologação.** Os resultados das Etapas 3 e 4 abaixo provêm dos relatórios de execução do Studio de 15 e 16/10/2026, ainda sem revisão direta do responsável, publicação ou migração dos perfis de produção. A descrição histórica de perfil único e seleção Solo nas seções anteriores corresponde à arquitetura anterior à Etapa 3; a arquitetura local mais recente usa **uma conta com até três jornadas independentes**, mais Partida Livre temporária. A adoção em produção está bloqueada até implantação coordenada.
+
+### Estados de acompanhamento
+
+- **PROGRAMADO:** aprovado para execução futura, ainda não implementado.
+- **EM ANDAMENTO:** implementação em execução.
+- **IMPLEMENTADO / TESTADO LOCALMENTE:** agente relatou execução e testes controlados, sem homologação do responsável.
+- **AGUARDANDO VALIDAÇÃO:** depende de inspeção e aceite do responsável; não equivale a VALIDADO.
+- **VALIDADO:** somente após confirmação expressa do responsável e evidências apropriadas.
+- **BLOQUEADO:** há dependência técnica ou autorização pendente.
+- **ADIADO:** melhoria futura fora da prioridade atual, sem cancelamento.
+
+### Quadro de etapas
+
+| ID | Etapa | Estado | Próxima ação / ressalva |
+|---|---|---|---|
+| MENU-01 | Interface visual, recursos e estrutura inicial | IMPLEMENTADO / TESTADO LOCALMENTE; AGUARDANDO VALIDAÇÃO | Confirmar visual e funcionamento em dispositivos reais. |
+| MENU-02 | Introdução, cutscene de John e retomada | IMPLEMENTADO / TESTADO LOCALMENTE; AGUARDANDO VALIDAÇÃO | Confirmar regressões e continuidade após as etapas posteriores. |
+| MENU-03 | Três espaços de campanha e Partida Livre | IMPLEMENTADO / TESTADO LOCALMENTE; AGUARDANDO VALIDAÇÃO | Revisar migração, isolamento, dados legados e implantação coordenada. |
+| MENU-04 | Configurações e acessibilidade | IMPLEMENTADO / TESTADO LOCALMENTE; AGUARDANDO VALIDAÇÃO | Validar controles, persistência global e dispositivos físicos. |
+| MENU-05 | Perfil e Conquistas | PROGRAMADO | Auditar dados reais por conta e por jornada; não inventar conquistas nem recompensas. |
+| MENU-06 | Jogar com Amigos | PROGRAMADO | Projetar e testar exceção para amigos autorizados em desenvolvimento; preservar proteção das cenas e dos dados individuais. |
+| MENU-07 | Validação final do Menu Principal | PROGRAMADO | Regressão integral, testes físicos, persistência, retorno e aceite antes da liberação. |
+
+### Checklist de implementação e homologação
+
+- [x] **MENU-01:** implementação visual inicial relatada.
+- [x] **MENU-02:** entrada Solo e cinemáticas implementadas e testadas localmente segundo relatório.
+- [x] **MENU-03:** três jornadas, seleção, exclusão protegida e Partida Livre implementadas em edição local, com testes isolados relatados.
+- [x] **MENU-04:** preferências globais de áudio, câmera compatível, legibilidade e interface implementadas em edição local, com testes controlados relatados.
+- [ ] Validar pessoalmente as Etapas 1–4 e conferir o salvamento integral da edição do Studio.
+- [ ] Planejar e executar a **migração de produção** dos saves legados sem coexistência incompatível de servidores antigos; atualmente desabilitada.
+- [ ] Implementar **MENU-05: Perfil e Conquistas** com estatísticas e marcos reais, separados por conta e jornada.
+- [ ] Implementar **MENU-06: Jogar com Amigos**, inclusive autorização controlada de amigos testadores sem exigir insígnia durante o desenvolvimento; Mundo Público continua bloqueado.
+- [ ] Executar **MENU-07: validação final**, inclusive aparelhos físicos, controle real, múltiplos clientes e recuperação após falhas.
+- [ ] Registrar o aceite expresso do responsável antes de alterar o estado de qualquer etapa para VALIDADO.
+
+### Melhorias futuras e pendências não bloqueantes da Etapa 4
+
+| ID | Tema | Estado | Observação |
+|---|---|---|---|
+| MENU-F01 | Pré-carregamento inteligente durante o menu | ADIADO | Não é prioridade; medir benefício antes de implementar. |
+| MENU-F02 | Remapeamento de comandos | PROGRAMADO | Requer integração específica com os controladores. |
+| MENU-F03 | Sensibilidade de toque e controle | PROGRAMADO | Não certificada na Etapa 4. |
+| MENU-F04 | Inversão vertical da câmera | PROGRAMADO | Exige análise dos controladores existentes. |
+| MENU-F05 | Separar música e voz nos áudios mesclados | PROGRAMADO | Depende de assets de áudio separados. |
+| MENU-F06 | Alternativas de introdução cinematográfica | PROGRAMADO | Respeitar catálogo e política de não repetição quando houver mais de uma. |
+| MENU-F07 | Checkpoints adicionais e retomada contextual | PROGRAMADO | Não substituir o retorno seguro atual por coordenadas arbitrárias. |
+| MENU-F08 | Homologação em celular, tablet e controle físicos | PROGRAMADO | Testes de layout/simulador não substituem dispositivo físico. |
+| MENU-F09 | Diagnóstico de animações com falha de carregamento | PROGRAMADO | Investigar IDs 128184686642891, 96036565188344 e 76316048879551 sem atribuir a falha ao menu. |
+| MENU-F10 | Aviso UIBlox/FoundationProvider | PROGRAMADO | Investigar apenas se houver impacto reproduzível; origem aparente em CorePackages do Roblox. |
+
+### Dependências e regras de manutenção
+
+1. **MENU-03 e MENU-04 não estão em produção.** A migração definitiva permanece desabilitada e a publicação depende de autorização separada.
+2. **Jogar com Amigos** não deve ser dado como implementado por existir um botão. A exceção de desenvolvimento para amigos autorizados está pendente; não liberar Mundo Público nem contornar validações de servidor.
+3. O registro de **conclusão de implementação** não equivale a validação humana ou homologação de produção.
+4. Atualizar esta seção e as fichas relacionadas após cada relatório verificado, preservando IDs estáveis, histórico e dependências. Não inventar estados de sistemas não auditados.
+5. Este checklist é documental. Uma futura visualização agregada no dashboard deverá ler dados estruturados do repositório, sem duplicar estados em código estático nem alterar o renderizador sem necessidade.
