@@ -164,3 +164,15 @@ O usuário solicitou uma exceção administrativa futura para convidar testadore
 3. O registro de **conclusão de implementação** não equivale a validação humana ou homologação de produção.
 4. Atualizar esta seção e as fichas relacionadas após cada relatório verificado, preservando IDs estáveis, histórico e dependências. Não inventar estados de sistemas não auditados.
 5. Este checklist é documental. Uma futura visualização agregada no dashboard deverá ler dados estruturados do repositório, sem duplicar estados em código estático nem alterar o renderizador sem necessidade.
+
+## 10. Decisão de design: progresso por jornada e conquistas globais — 16/10/2026
+
+**APROVADO PARA DESIGN; implementação de conquistas ainda pendente.** Esta decisão prevalece sobre menções históricas a um perfil único ou a conquistas vinculadas a slots nas seções anteriores.
+
+- **Conta Roblox:** identidade do jogador, preferências globais e coleção permanente de conquistas únicas, com registro de obtenção. O menu principal apresenta essas conquistas mesmo sem jornada selecionada.
+- **Cada uma das três jornadas:** progresso narrativo, missões e objetivos (incluindo *A Primeira Lâmina*), inventário, moedas, equipamentos e demais estados da campanha, isolados dos outros slots.
+- **Repetição em outra jornada:** refazer um marco não duplica a conquista global, nem a conquista já obtida conclui a missão, entrega itens ou transfere progresso para o novo slot.
+- **Partida Livre:** continua temporária; a elegibilidade para conceder cada conquista global deve ser definida explicitamente. Na ausência de regra, não conceder.
+- **Títulos de reconhecimento:** conceito futuro derivável de conquistas globais, sem nomes, quantidades, recompensas ou desbloqueios aprovados. Não confundir com Insígnia da Guilda.
+
+**Execução em quatro entregas controladas:** MENU-05.1 Perfil global (identidade/avatar); MENU-05.2 resumo de progresso por jornada; MENU-05.3 catálogo, concessão e persistência de conquistas globais; MENU-05.4 integração e validação. Não considerar essas entregas implementadas apenas por estarem planejadas. Reutilizar os serviços existentes, preservar dados legados e não habilitar migração ou publicação sem autorização.
