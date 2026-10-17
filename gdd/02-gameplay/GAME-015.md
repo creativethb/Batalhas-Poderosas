@@ -88,3 +88,11 @@ O líder controla os convites para sua sessão privada; o convidado preserva ní
 **Planejar → construir treino básico → cadastrar primeira classe → conceder/validar insígnia → destravar botões e acesso servidor → testar persistência e reentrada → ampliar classes.** Não tentar criar todas as classes ou todas as conquistas no mesmo ciclo. Não publicar sem validação e autorização.
 
 **Estado:** formação, classes e Insígnia continuam planejadas. A Primeira Lâmina e o menu Solo já têm implementação descrita em GAME-001/GAME-014; isso não concede os desbloqueios desta ficha. A Carteira da Guilda planejada é distinta da janela monetária CarteiraBP já existente.
+
+## 10. Escopo das conquistas globais e progresso por jornada — 16/10/2026
+
+**Decisão de design aprovada; implementação pendente.** As conquistas são marcos permanentes **da conta Roblox**, não dos três slots de campanha. Cada jornada conserva isoladamente seus objetivos, missões, inventário, economia e evolução narrativa. Uma conquista já obtida permanece visível no Menu Principal sem jornada selecionada, mas nunca satisfaz automaticamente um objetivo de outra jornada.
+
+A mesma conquista não é contada duas vezes quando o acontecimento se repete em outro slot. A Partida Livre só pode conceder conquistas globais para marcos cuja elegibilidade nessa modalidade seja explicitamente aprovada; por padrão, não conceder. Títulos por quantidade de conquistas são apenas ideia futura, sem nome ou limite oficial. A **Insígnia da Guilda** permanece uma habilitação específica futura e não é substituída por títulos ou pela coleção de conquistas. Não criar conquistas ou recompensas para preencher catálogo.
+
+A Carteira da Guilda poderá consultar registros globais quando sua implementação for autorizada, sem duplicar a fonte de verdade das conquistas. As regras de progressão das classes e da campanha permanecem próprias de cada jornada até especificação adicional. Esta seção prevalece sobre referências anteriores ambíguas a conquistas como dados exclusivos da jornada.
