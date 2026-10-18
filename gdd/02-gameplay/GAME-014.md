@@ -10,6 +10,7 @@ relacionados:
   - "GAME-012"
   - "GAME-013"
   - "GAME-015"
+  - "GAME-017"
 atualizado_por: "Codex"
 data_atualizacao: "2026-10-16"
 ---
@@ -176,3 +177,14 @@ O usuário solicitou uma exceção administrativa futura para convidar testadore
 - **Títulos de reconhecimento:** conceito futuro derivável de conquistas globais, sem nomes, quantidades, recompensas ou desbloqueios aprovados. Não confundir com Insígnia da Guilda.
 
 **Execução em quatro entregas controladas:** MENU-05.1 Perfil global (identidade/avatar); MENU-05.2 resumo de progresso por jornada; MENU-05.3 catálogo, concessão e persistência de conquistas globais; MENU-05.4 integração e validação. Não considerar essas entregas implementadas apenas por estarem planejadas. Reutilizar os serviços existentes, preservar dados legados e não habilitar migração ou publicação sem autorização.
+
+
+## 11. Academia como Place especializado e dependências de sessão — 18/10/2026
+
+**Decisão posterior à seção 5, restrita ao campus da Academia:** planejar a **Academia da Guilda** como Place adicional da **mesma experiência** Batalhas Poderosas. Esta decisão não transfere automaticamente o menu principal, não substitui Place1 ou Mundo Livre, e não significa que a topologia geral dos modos tenha sido homologada.
+
+Após cadastro na sede da Guilda em Arkham, o aprendiz poderá viajar para a Academia, com chegada **dentro do térreo**, em ponto seguro da recepção, e retorno seguro à vila. A formação obrigatória será **Espada e Escudo** e a experiência prática utilizará um coliseu com módulos temporários de desafio. Para isolamento da narrativa e treino pessoal, foi aprovada como **arquitetura-alvo** uma sessão reservada por aprendiz; implementação efetiva e testes externos de teleporte/servidor reservado ainda pendentes. Não presumir que um Baseplate existente está publicado ou integrado: confirmar PlaceId e vínculo primeiro.
+
+A aprovação na prova final deverá gerar a Insígnia da Guilda validada pelo servidor, respeitando a separação entre **progresso de jornada** e **conquistas globais** definida na seção 10. **PENDENTE:** explicitar a elegibilidade por conta versus por jornada para modos multiplayer, sem propagar progresso de um slot a outro. Os guardas da masmorra deverão verificar a habilitação em integração posterior.
+
+**Ver [GAME-017 — Academia da Guilda de Arkan](GAME-017.md)** para arquitetura, construção por etapas, transições e critérios de teste; [GAME-015](GAME-015.md) permanece responsável pelas regras gerais da instituição, classes, carteira e insígnia. Este adendo registra design, não declara teleporte, treinamento nem modos de sessão implementados.
