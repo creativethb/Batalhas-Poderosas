@@ -11,9 +11,14 @@ relacionados:
   - "LOCAL-003"
   - "LOCAL-009"
   - "GAME-008"
+  - "DNG-003"
+  - "DNG-006"
+  - "DNG-007"
+  - "DNG-009"
+  - "DNG-010"
 imagem: ""
 atualizado_por: "Codex"
-data_atualizacao: "2026-10-15"
+data_atualizacao: "2026-10-18"
 ---
 
 # Histórico de Versões — Evolução de Arkham
@@ -150,3 +155,11 @@ Atualização retrospectiva com base nas entregas de 10–15/10, sem nova versã
 - Manifesto e índice documental revisados; index.html/renderizador intactos. Incluído procedimento de manutenção e acompanhamento local por entrega.
 
 Evidência: relatórios locais datados das implementações e inspeções de código da edição do Studio em 15/10. Simulações de perfil não foram descritas como reconexão de rede real; medições de layout não certificam toque/gamepad físicos. Não houve novos testes de combate, transações, cutscenes ou multiplayer nesta atualização documental. Não promovidos estados para VALIDADO.
+
+## 18/10/2026 — Planejamento documental de otimização procedural da Dungeon
+
+- Consolidado na seção 4 de [DNG-006](../07-masmorras/DNG-006.md) o planejamento futuro já existente de Room Culling, sem criar ficha ou ID duplicado.
+- Preservados Grande Átrio, rotas documentadas e Ala Leste com cinco câmaras procedurais e terminal fixo. Descrições históricas de Piso 2 indisponível/Oeste apenas conceitual distinguidas dos registros posteriores DNG-009 a DNG-012.
+- Relacionados carregamento por piso, sockets e rota: DNG-003, DNG-007, DNG-009 e DNG-010. Esclarecido que ausência de salas ativas não significa memória zero, nem Destroy comprova limpeza completa.
+- Registrados riscos, decisões pendentes, plano comparativo de memória/instâncias/física/geração/fluidez e critérios de validação, incluindo multiplayer, retorno e estado de recompensas.
+- Atualização exclusivamente documental: sem inspeção de runtime nesta rodada, implementação, benchmark, novas decisões narrativas, alteração de sistemas ou publicação da experiência. Nenhum ganho de desempenho declarado.
