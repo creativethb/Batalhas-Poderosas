@@ -172,3 +172,70 @@ data_atualizacao: "2026-10-18"
 A primeira entrega jogável será considerada completa **somente** quando houver evidência de: missão inicial e espada/escudo → cadastro na Guilda → teleporte de ida seguro → entrada interna da Academia → instrução/desafios e avaliação → insígnia persistida uma única vez → retorno seguro → guardas da masmorra liberando apenas quem tem habilitação; mais verificação das restrições de acesso multiplayer previstas.
 
 **Situação atual:** objetivo e arquitetura planejados; implementação de formação, teleporte, insígnia, controle dos guardas e novas classes **não verificada/não concluída**.
+
+
+## 11. Registro de execução informado pelo agente estrutural — 18/10/2026
+
+> **FONTE:** relatório textual do agente *Antigravity AI — Engenheiro Chefe de Arquitetura Luau*, fornecido pelo responsável em 18/10/2026, intitulado **“RELATÓRIO DE AUDITORIA TÉCNICA E CONFORMIDADE ESTRUTURAL”**. O agente emitiu laudo “APROVADO COM LOUVOR” e declarou 100% de navegabilidade. **Essas são alegações do relatório, não homologação independente do responsável ou inspeção direta deste registro.** Capturas referenciadas em caminhos locais do computador do agente não foram abertas/verificadas nesta atualização.
+
+### 11.1 Identificação e escopo relatados
+
+- **Place ID de trabalho informado:** `118729171012472` (`Lugar de yagoblox1008: 10182026_2`); conferir diretamente associação à experiência antes de eventual publicação ou teleporte.
+- **Modelo raiz informado:** `Workspace.AcademiaDaGuilda`; **459 Parts/Models** relatados, separados nos quatro setores abaixo.
+- Terreno preservado: Baseplate **2.048 × 2.048 studs**, superfície **Y = 0**, reserva central **X = −250 a +250**, **Z = −225 a +225**; paisagismo exterior informado como intacto.
+- Envelope construído informado: **X = −96 a +96**, **Z = −200 a +151**.
+- Grama procedural sob os pisos teria sido eliminada com tratamento localizado de Terrain.
+- **Sem gameplay, NPCs, interfaces, teleporte ou mobiliário definitivo** segundo o agente; não confundir com teste independente de ausência de scripts.
+
+### 11.2 Dimensões executadas segundo o laudo
+
+| Setor | Dimensões e posição relatadas | Observação |
+|---|---|---|
+| Edifício principal | **160 × 100 studs**; X −80 a +80, Z −200 a −100 | Telhado básico em duas águas, altura máxima relatada 44,8 |
+| Recepção e Spawn | **50 × 30**; X −25 a +25, Z −200 a −170; Spawn `(0, 1.5, −185)` | Ponto de testes interno; não equivale a teleporte configurado |
+| Vestíbulos oeste/leste | Cada um **55 × 30** | Frente do edifício |
+| Grande Salão | **80 × 55**; X −40 a +40, Z −170 a −115 | Eixo central |
+| Sala de Instrução | **40 × 55**; X −80 a −40, Z −170 a −115 | Ala oeste |
+| Sala Reservada | **40 × 55**; X +40 a +80, Z −170 a −115 | Ala leste |
+| Sala de Apoio | **40 × 15**; X −80 a −40, Z −115 a −100 | Ala norte-oeste |
+| Escada Futura | **40 × 15**; X +40 a +80, Z −115 a −100 | Fechada, **sem escada nem segundo pavimento** |
+| Galeria Norte | **80 × 15**; X −40 a +40, Z −115 a −100 | Acesso ao corredor |
+| Corredor edifício-arena | **20 de largura interna × 65 de comprimento**, X −10 a +10, Z −100 a −35 | Altura relatada de 16 |
+| Coliseu | **180 de diâmetro interno**, centro X 0 / Z +55 | Piso aberto ao céu; raio interno 90 |
+| Muralha da arena | **6 de espessura**, raio externo 96, **192 de diâmetro externo**, 26 de altura, ameias a Y 29 | 64 segmentos construtivos relatados |
+| Pórtico de acesso | **20 de vão livre × 18 de altura**, Z −35 | Inspecionar encontro com a muralha e condição da grade |
+
+**Observação de geometria:** o extremo sul teórico do círculo externo está em **Z = −41**, enquanto o corredor termina em **Z = −35**. Isso pode representar uma conexão atravessando a espessura da muralha, mas requer inspeção do encontro do portal, das colisões e dos acabamentos. Não declarar falha ou conformidade sem observar o modelo.
+
+### 11.3 Organização informada no Workspace
+
+```text
+Workspace.AcademiaDaGuilda
+├── 01_Fundacoes_E_Pisos             [15 instâncias relatadas]
+├── 02_Edificio_Principal            [134 instâncias relatadas]
+├── 03_Corredor_Acesso_Arena         [56 instâncias relatadas]
+└── 04_Coliseu_Arena                 [254 instâncias relatadas]
+```
+
+Soma informada dos setores: **459**. Nomes e organização são referências para o agente de refinamento; antes de editar, conferir a hierarquia real no Studio.
+
+### 11.4 Evidências/testes declarados, sem homologação independente
+
+O relatório declarou uma bateria de **11 checkpoints** de circulação por raycasts: chegada/spawn, recepção, salão, salas laterais, apoio, galeria, corredor, pórtico, arena e bloqueio da futura escada. Todos constam como aprovados pelo próprio agente. Também alegou ausência de z-fighting, vedação de cobertura, alinhamento de pisos, uso de gravação no histórico e oito capturas de telas do Studio, referenciadas por caminhos locais `C:/Users/User/.gemini/antigravity/brain/.../media_0.jpg`. **Essas capturas não foram anexadas nem inspecionadas nesta atualização.** Teste automatizado de varredura não substitui teste de personagem real, revisão visual nem aceite humano.
+
+### 11.5 Controle dos marcos a partir do relatório
+
+| Marco | Estado documental em 18/10/2026 |
+|---|---|
+| ACA-00 | Place ID informado; vínculo/publicação ainda exigem conferência |
+| ACA-01 | Terreno relatado preparado; preservar e conferir |
+| ACA-02 | Planta operacional aplicada segundo agente; conformidade precisa de inspeção |
+| ACA-03 | **Construção relatada concluída**, aguardando inspeção |
+| ACA-04 | **Construção relatada concluída**, aguardando inspeção |
+| ACA-05 | **Coberturas e estrutura básica relatadas concluídas**, aguardando inspeção |
+| ACA-06 | **AGUARDANDO VALIDAÇÃO VISUAL E ACEITE DO RESPONSÁVEL** |
+| ACA-07–ACA-09 | **PENDENTES**; não avançar para gameplay apenas com este laudo |
+
+**Próxima ação acordada:** realizar auditoria visual no Roblox Studio (pelo menos vista aérea sem telhado, fachada, recepção/spawn, salões, corredor/portão e arena), conferir escala, piso, fechamento de coberturas, portas e navegação real. Só depois autorizar refinamento arquitetônico. Nesta fase posterior, separar **acabamento/fachadas/iluminação** de **mobiliário** e de **gameplay**. Não publicar e não substituir os dados de planejamento por suposições.
+
+**Histórico:** preservar o laudo do agente como fonte de evidência relatada; homologação final permanece reservada ao responsável.
