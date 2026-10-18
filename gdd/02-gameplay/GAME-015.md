@@ -8,6 +8,7 @@ relacionados:
   - "GAME-009"
   - "GAME-012"
   - "GAME-014"
+  - "GAME-017"
 atualizado_por: "Codex"
 data_atualizacao: "2026-10-15"
 ---
@@ -96,3 +97,14 @@ O líder controla os convites para sua sessão privada; o convidado preserva ní
 A mesma conquista não é contada duas vezes quando o acontecimento se repete em outro slot. A Partida Livre só pode conceder conquistas globais para marcos cuja elegibilidade nessa modalidade seja explicitamente aprovada; por padrão, não conceder. Títulos por quantidade de conquistas são apenas ideia futura, sem nome ou limite oficial. A **Insígnia da Guilda** permanece uma habilitação específica futura e não é substituída por títulos ou pela coleção de conquistas. Não criar conquistas ou recompensas para preencher catálogo.
 
 A Carteira da Guilda poderá consultar registros globais quando sua implementação for autorizada, sem duplicar a fonte de verdade das conquistas. As regras de progressão das classes e da campanha permanecem próprias de cada jornada até especificação adicional. Esta seção prevalece sobre referências anteriores ambíguas a conquistas como dados exclusivos da jornada.
+
+
+## 11. Atualização da formação inicial e Academia — 18/10/2026
+
+**DECISÃO POSTERIOR APROVADA; prevalece sobre o texto histórico da seção 2 que previa escolha livre da primeira classe.** A formação inicial será obrigatoriamente **Espada e Escudo**, sem escolha inicial entre especializações. O aluno se registra na sede da Guilda em Arkham e viaja para a **Academia da Guilda**, um Place adicional da mesma experiência; essa academia pertence à mesma instituição, não constitui nova guilda.
+
+A formação acontece em sessão pessoal prevista, com chegada interna à recepção, instrução, etapas práticas e prova final em um **coliseu aberto e modular**. Somente após aprovação validada no servidor a jornada recebe a **Insígnia da Guilda**. Os dois guardas da entrada da masmorra deverão exigir essa habilitação; as regras de acesso multiplayer continuam sujeitas ao GAME-014. Outras classes (como Arqueiro e Combatente Pesado) ficam para expansão posterior, sem exclusividade permanente. O requisito exato de progresso na masmorra para liberá-las não foi fechado.
+
+**Escopo de dados ainda pendente:** determinar como a insígnia obtida em uma jornada se relaciona com elegibilidade de modos na conta e com as três jornadas independentes, sem usar conquista global como substituto do treinamento. Não conceder habilitação automaticamente aos demais slots enquanto essa regra não estiver definida.
+
+**Ficha operacional e arquitetônica de referência:** [GAME-017 — Academia da Guilda de Arkan](GAME-017.md). A sequência é **Place e terreno → planta compatibilizada → construção física → treinamento e teleporte → integração de insignia/guardas → teste integral**. O Place/Baseplate foi relatado pelo responsável; PlaceId, geometria e conclusão não verificados. Nenhum novo sistema é declarado implementado neste registro.
